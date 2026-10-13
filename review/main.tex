@@ -1,0 +1,33 @@
+% !TeX program = xelatex
+% Build from this directory: latexmk -xelatex main.tex
+\documentclass[UTF8,a4paper,11pt,fontset=fandol]{ctexart}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,longtable,array}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+\setcounter{tocdepth}{2}
+\newtheorem{proposition}{命题}[section]
+\newtheorem{lemma}[proposition]{引理}
+\theoremstyle{definition}
+\newtheorem{definition}[proposition]{定义}
+\theoremstyle{remark}
+\newtheorem{remark}[proposition]{注}
+\newcommand{\srclabel}[1]{\texttt{#1}}
+\newcommand{\recordstatus}[1]{\par\noindent\textbf{状态：}#1\par}
+\title{Combinatorial invariance of Kazhdan--Lusztig polynomials\\审稿工作稿}
+\author{}
+\date{更新：2026年10月13日}
+\begin{document}
+\maketitle
+\noindent 本文档保存审读过程中的背景、证明核查、疑问、评论和修订历史，尚非提交版审稿。用户意见、助手分析和实际核查结果分别标注。迁入的既有分析不因格式迁移而获得新的验证，也不代表用户已认可。
+\tableofcontents
+\input{sections/01-context}
+\input{sections/02-proof-audit}
+\input{sections/03-comments}
+\input{sections/04-assessment-history}
+\appendix
+\input{appendices/klv-extension}
+\input{references}
+\end{document}
