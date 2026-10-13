@@ -1,0 +1,42 @@
+\section{综合评价与审稿结论}\label{sec:assessment}
+
+\subsection{用户的评价}
+截至 2026-10-13 当前可见交流，用户尚未表达对具体引理或整篇论文的最终评价，也没有决定接受或拒绝。询问“证明是否正确”与要求逐步讲解，均不等于认可或否定论文。
+\recordstatus{尚未形成用户确认的审稿结论。}
+
+\subsection{先前助手的暂定判断}
+\paragraph{来源。}2026-10-13 的旧版 \path{notes/proof-audit-zh.md}，以及当时的 \path{README.md}。
+
+旧笔记的判断为：正文的关键证明链条闭合，未找到实质性缺口；尤其未发现“先假定部分核自由，再用它证明部分核自由”的循环，也未发现把余维一相等直接误当全局相等的错误。因此，先前助手的判断支持普通等参数 KL 证明成立。
+
+以上仅作为助手先前审读意见保留，不是用户意见，也不是定稿裁决。其依据是第\ref{sec:proof-audit}节列出的具体逻辑检查，而非小规模多项式表一致或作者署名。本次整理没有重新核查所有这些推断。
+
+\subsection{核查范围与限制}
+旧笔记的积极判断针对正文及其标准输入接口，不是 Lean 等形式化认证，也不声称独立重证所有外部引用定理。尚未完成独立 BMP 层计算。字符定理、BMP--Soergel 对应等大定理作为已知输入使用；旧笔记记录检查了相关假设与所需结论，而非重证整篇引用文献。
+
+有限检查不证明原文主定理，也不证明一般 KLV 组合不变性。关于 KLV，不能只更换多项式名称：原文后半的正比较机制可作形式性抽象，但秩二模型、边模描述、消失阶公式和正路径因子分解仍需新的实质性工作，见附录\ref{app:klv}。
+
+\section{交流与修订记录}\label{sec:history}
+
+\subsection{D-001：审稿目标与持续记录要求}\label{dialogue:D001}
+\paragraph{日期与来源。}2026-10-13；用户当前对话。
+\paragraph{用户原话。}“注意我是想写这个文章的审稿，你在 AGENTS.md 里面写清楚，我跟你交流里面反映出来的重要信息都要记录下来。特别注意我不清楚，有疑惑，有评价的地方。”
+\paragraph{确认的要求。}协作目标是撰写审稿；重要交流须落到仓库，尤其是理解困难、疑问和评价。
+\paragraph{处理历史。}助手最初把论文专属背景写入 \path{AGENTS.md}，并建立 Markdown 交流日志。用户随后在 D-004 中纠正了文件职责；现以 D-004 为准，具体内容保存在本 LaTeX 工作稿。
+
+\subsection{D-002：逐步讲解与知识起点}\label{dialogue:D002}
+\paragraph{日期与来源。}2026-10-13；用户当前对话。
+\paragraph{用户要求。}一步步讲清楚论文的证明；懂 Coxeter group 的定义，基本知道 Hecke algebra 的定义。具体原话及未确认背景见第\ref{sec:reader-background}节。
+\recordstatus{待展开讲解；未记录为用户已理解尚未讲解的步骤。}
+
+\subsection{D-003：正确性与 KLV 推广}\label{dialogue:D003}
+\paragraph{日期与来源。}2026-10-13；当前项目中可见的此前用户请求。
+\paragraph{用户问题与授权。}用户询问证明是否正确、能否推广到 KLV，并允许在 \texttt{jiajunma/combkl} 仓库工作。
+\paragraph{主题定位。}分别见 Q-001（第\ref{question:correctness}处）与 Q-002（第\ref{question:klv}处）。既有助手审读判断与 KLV 分析分别迁入第\ref{sec:proof-audit}节及附录\ref{app:klv}，不能当作用户已认可的意见。
+
+\subsection{D-004：通用规则与 LaTeX 意见正文分离}\label{dialogue:D004}
+\paragraph{日期与来源。}2026-10-13；用户对本轮文件组织的纠正。
+\paragraph{用户原话。}“non agents。md 只是审稿 repo 的 generic instruction。审稿/评论意见放在 latex 里面（管理好章节）”。
+\paragraph{当前决定。}\path{AGENTS.md} 只保存通用审稿规则；论文专属背景、疑问、评论、评价与交流历史保存于 LaTeX；通过主文件与分章节源文件管理。旧版 Markdown 审读、推广和交流笔记迁入相应章节，不再并行维护意见日志。
+\paragraph{迁移来源。}三个旧文件为 \path{notes/proof-audit-zh.md}、\path{notes/klv-extension-zh.md} 和 \path{notes/referee-dialogue-zh.md}。交流日志迁移前的 blob 为 \nolinkurl{4694347bbd6a4fce64d90841fc1f149a1bbb4da1}；其 D-001 至 D-003 的实质内容和意见归属在本稿中保留。
+\paragraph{范围。}这是文件职责与格式的修正，不是新增的数学审稿意见。用户尚未评价的事项仍保持未评价状态。
