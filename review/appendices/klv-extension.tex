@@ -1,0 +1,168 @@
+\section{KLV 推广：相关研究笔记}\label{app:klv}
+\paragraph{来源与状态。}
+本附录迁自 2026-10-13 的旧版助手笔记 \path{notes/klv-extension-zh.md}，原 blob 为 \nolinkurl{dcea719b975893d4a52f2f676fe9ca79fadfcf73}。保留既有分析、计算记录和限制；本次格式迁移未重新核查全部数学陈述或运行计算。这不是用户的审稿评价，也不宣称一般 KLV 组合不变性已获证明。
+
+\subsection{不同的输入结构}
+一般 KLV 指标是 \(\gamma=(\mathcal O,\mathcal L)\)：对称子群在旗簇上的轨道及其不可约等变局部系统。至少须区分：轨道闭包偏序；包含局部系统的参数偏序；进一步包含简单 Hecke 作用、cross action/Cayley 变换及 bar 归一化的结构。
+
+普通 KL 的“无标签 Bruhat 区间”不能与这三种结构混为一谈。尤其不能把含 KL/KLV 系数作为权重的 W-graph 当作独立输入数据，以免循环。
+
+\subsubsection{不能忘掉局部系统的例子}
+取 \(G=SL_2(\mathbb C)\)，\(K=SO_2(\mathbb C)\simeq\mathbb C^\times\)。共轭到对角环面后，它在 \(G/B=\mathbb P^1\) 的仿射坐标上作用为 \(z\mapsto t^2z\)。轨道为 \(\{0\},\mathbb C^\times,\{\infty\}\)。开轨道稳定子为 \(\mu_2\)，因此有单值化分别为 \(+1\) 和 \(-1\) 的两个秩一等变局部系统 \(\mathcal L_+,\mathcal L_-\)。
+
+在边界点，局部 IC stalk 的相关空间为 \(\ker(T-1)\)。对 \(T=1\) 维数为一；对 \(T=-1\) 为零。在通常几何归一化下，相应边界系数分别为
+\[
+P_{(0,1),(\mathbb C^\times,\mathcal L_+)}=1,\qquad
+P_{(0,1),(\mathbb C^\times,\mathcal L_-)}=0.
+\]
+计算直接来自穿孔圆盘上的中间延拓：\(T-1\) 可逆时局部上同调消失。它否定的是“忘掉局部系统，仅凭相同轨道区间决定全部 KLV”。两个开轨道参数可处于不同中心特征或不同块；这个例子不声称它们在完整 KLV 参数偏序中给出同构区间，更不否定固定块内的某种正确组合不变性命题。
+
+\subsection{平凡局部系统下的不同秩二结构}
+对 \((SL_{2n},Sp_{2n})\)，不可约等变局部系统都平凡。可用 twisted identities
+\[
+\iota=\{\theta(w^{-1})w:w\in S_{2n}\},\qquad
+\theta(s_i)=s_{2n-i}
+\]
+标记参数，秩为 \(\rho(x)=\ell(x)/2\)，偏序是 \(\iota\) 上的诱导 Bruhat 序。这里的秩二区间可以有三或四个元素；普通 Bruhat 秩二区间则有四个元素。
+
+采用 Abdallah--Hultman\cite{AH} 的 \(Q\) 归一化，其命题 2.7 给出，对 \(s\in D_R(w)\)，
+\[
+Q_{u,w}=\begin{cases}
+Q_{u*s,w*s},&u*s<u,\\
+qQ_{u*s,w*s}+(q-1)Q_{u,w*s},&u*s>u,\\
+qQ_{u,w*s},&u*s=u,
+\end{cases}
+\qquad u*s=\theta(s)us.
+\]
+第三行是固定点项，不能从普通 KL 的两分支递推原封不动获得。
+
+\subsubsection{三点链的直接计算}
+在 \(SL_4/Sp_4\) 中，全部 twisted identities 为
+\[
+u=1234<v=2143<w=3412,\qquad \rho(u),\rho(v),\rho(w)=0,1,2.
+\]
+取 \(s=s_2\)，有 \(w*s=v\)、\(u*s=u\)。上述递推给出
+\[
+Q_{u,v}=q-1,\quad Q_{v,w}=q-1,\quad Q_{u,w}=q^2-q.
+\]
+互反关系
+\[
+q^{\rho(w)-\rho(u)}P^\iota_{u,w}(q^{-1})
+=\sum_{z\in[u,w]_\iota}Q_{u,z}(q)P^\iota_{z,w}(q)
+\]
+及严格次数界给出 \(P^\iota_{u,w}=1\)。这是原文二面体模型不能直接套用的例子，不是 KLV 组合不变性的反例。
+
+\subsubsection{三点链上的正矩阵分解}
+令 \(0<q<1\)、\(T=q^{-1/2}-q^{1/2}\)，并定义归一化互反矩阵
+\[
+\widehat Q_{a,b}(q)=q^{(\rho(b)-\rho(a))/2}Q_{a,b}(q^{-1}).
+\]
+在上述三点链上，它是
+\[
+\widehat Q(q)=
+\begin{pmatrix}
+1&T&q^{-1/2}T\\
+0&1&T\\
+0&0&1
+\end{pmatrix}.
+\]
+若 \(E_{uv}\) 表示矩阵单位，则直接相乘得到
+\[
+\widehat Q(q)
+=(1+TE_{uv})(1+TE_{vw})(1+q^{1/2}TE_{uw}),
+\]
+因为 \(T^2+q^{1/2}T=q^{-1}-1=q^{-1/2}T\)。所有因子在 \(0<q<1\) 都非负且对角为一。
+
+这说明最小例子并未破坏正矩阵策略；需要改变的是局部边权。跨两层的补充因子系数是 \(q^{1/2}T=1-q\)，不是普通证明中统一使用的 \(T\)。这只是这个矩阵的代数恒等式，尚未建立与根顺序、实际层限制映射相容的全局几何解释。
+
+\subsection{形式性比较引理}\label{klv:comparison-lemmas}
+\begin{proposition}[互反比较]\label{prop:reciprocal-comparison}
+设两个有限分次参数区间由秩保持双射识别，具有顶点 \(b\) 和多项式 \(P_x,P'_x\)。对 \(x<b\)，假设 \(\deg P_x,\deg P'_x<d(x,b)/2\)，并设
+\[
+p_x=q^{-d(x,b)/2}P_x,\qquad p'_x=q^{-d(x,b)/2}P'_x.
+\]
+假设所有 \(x>u\) 已有 \(P_x=P'_x\)，且对于每个 \(0<q<1\) 有两个对角为一的上三角矩阵 \(A,A'\)，满足
+\[
+p\le A'p(q^{-1}),\qquad p'=A'p'(q^{-1}),
+\]
+\[
+p'\le Ap'(q^{-1}),\qquad p=Ap(q^{-1}).
+\]
+则 \(P_u=P'_u\)。
+\end{proposition}
+\begin{proof}
+在第一对关系的底部行相减，所有严格较高顶点相消，得到 \(\Delta(q)\le\Delta(q^{-1})\)。第二对给出反向不等式。故 \(\Delta(q)=\Delta(q^{-1})\)。左式只含严格负的 \(q^{1/2}\) 次幂，右式只含严格正次幂，因此二者都为零。
+\end{proof}
+
+本命题一旦给定比较不等式，甚至不需要矩阵的非负性。非负性用于从逐步局部不等式建立总比较，并在最终相等后消去所有局部亏损。
+
+\begin{proposition}[亏损消失]\label{prop:defect-vanishing}
+若 \(D_k\le M_kD_{k-1}\)，所有 \(M_k\) 非负且对角为一，并且
+\(D_r=M_r\cdots M_1D_0\)，则各步均为等式。
+\end{proposition}
+\begin{proof}
+写 \(\delta_k=M_kD_{k-1}-D_k\ge0\)，则
+\[
+0=\sum_k M_r\cdots M_{k+1}\delta_k.
+\]
+各乘积对角至少为一，所以任何正坐标都在相应求和项中保留下来；所有 \(\delta_k\) 必为零。
+\end{proof}
+
+这两条是原文全局机制的形式性部分。KLV 的实质问题是构造满足这些假设的局部模块、比较不等式和互反矩阵分解，而不是再证明这两个代数引理。
+
+\subsection{带完整 bar 数据的基准}
+\begin{proposition}\label{prop:bar-benchmark}
+设两组预典范基数据的标准基为 \(\{m_\gamma\}\)、\(\{m'_{\gamma'}\}\)，规范基均由 bar 不变性及同一个严格三角次数条件唯一确定。若保持顺序与分次的标准基双射诱导映射 \(F\)，且
+\[
+F(m_\gamma)=m'_{\phi(\gamma)},\qquad
+F(\overline m)=\overline{F(m)},
+\]
+则 \(F\) 保持规范基及相应 KLV 系数。
+\end{proposition}
+\begin{proof}
+\(F(C_\delta)\) 保持首项、严格三角性与 bar 不变性，故由唯一性等于 \(C'_{\phi(\delta)}\)。比较标准基系数即可。
+\end{proof}
+
+这只是基准不变性，不是“无标签区间决定 KLV”的新证明。仅保持 Hecke 模作用而不检查 bar 归一化，一般不足以直接引用它。若从标准 Hecke 作用及最小参数上的初始 bar 数据构造比较映射，仍须证明它与 bar 相容。
+
+研究目标应是减少所需输入：例如秩一类型、局部系统对应和变换数据能否由某种较弱的装饰区间恢复，而不是把未知 KLV 系数本身写进装饰。
+
+\subsection{与已知结果的关系}
+Abdallah--Hultman\cite{AH} 的定理 1.2 针对固定无不动点对合偏序中的上区间 \([u,w_0]\)。它说明这种上区间同构保持相关 KLV 多项式。经 \(w_0\) 乘法转到 twisted identities，就是主下区间版本；它不是说每个任意端点区间 \([x,y]_\iota\) 已足够。
+
+Barkley--Gaetz\cite{BG} 的结果把普通 KL 组合不变性与适当的抛物型版本联系起来。需要的输入是完整普通区间及标记子集
+\[
+([u,v],\ [u,v]\cap W^J),
+\]
+而不是只给商中的无标签区间。因此若接受本次普通 KL 主定理，正确装饰版本的抛物型结论随之可得。只有在具体 KLV 问题已经证明能归约到这些普通或抛物型对象时，这才给出该 KLV 情形的结论；不能称为所有 KLV 的推广。
+
+\subsection{既有计算记录及边界}\label{klv:computations}
+脚本 \path{tests/check_models.py} 的计算步骤是：枚举固定无不动点对合，再左乘 \(w_0\) 得到 twisted identities；用排列的前缀排序判据计算环境 Bruhat 序；取诱导偏序；用\cite{AH}命题 2.7 计算 \(Q\)；用互反关系与次数界求 \(P\)。
+
+每对参数都验证完整互反恒等式及系数非负性。每个上端点的每个可用简单下降都复算 \(Q\) 递推，检查与选定下降一致。偏序同构使用完整有向 Hasse 图的精确同构检测。顶点秩、层数和出入度只是预筛选，不把哈希相同直接当成同构。
+
+\begin{center}\small
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+对称对 & 参数数 & 区间数 & 非常数 \(P\) & 同构类 & 下降检查数 \\
+\midrule
+\(SL_4/Sp_4\) & 3 & 6 & 0 & 3 & 4 \\
+\(SL_6/Sp_6\) & 15 & 101 & 2 & 18 & 195 \\
+\(SL_8/Sp_8\) & 105 & 3490 & 510 & 398 & 11044 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+逐组比较均未发现同构区间多项式不同；没有进行跨群的区间同构比较。不是所有样本都只有常数多项式：例如在 \(SL_6/Sp_6\) 中，
+\[
+P^\iota_{123456,426153}=1+q,\qquad
+P^\iota_{213465,426153}=1+q.
+\]
+原始输出见 \path{results/checks.json}；多项式用常数项在前的系数数组表示，例如 \texttt{[0,-1,1]} 表示 \(q^2-q\)。
+
+这些实验支持继续研究该对称对中的任意区间命题，但不是证明；它们也不覆盖其他对称对、非平凡局部系统、所有实群的表示块或原文 BMP 层论。旧运行说明记录环境为 Python 3.13.5、NetworkX 3.6.1。本次迁移未重跑程序。
+
+\subsection{后续数学任务}
+首先固定目标 KLV 参数类别及允许的区间装饰。随后构造能够同时表示相关 stalk 与全向上核的范畴模型，并验证端点的互反分次。对于秩一和秩二 Hecke 子模，需要保留固定点、分叉与局部系统作用，求出实际局部像和所需权重。
+
+三点链上的分解提供了一个必须通过的最小测试。下一关键命题应是：这些局部正因子能以与区间比较相容的次序组合成 KLV 的互反矩阵，并从实际局部模块推出相应 Hilbert 不等式。只有完成这个命题，才能用第\ref{klv:comparison-lemmas}小节的形式论证结束推广。
