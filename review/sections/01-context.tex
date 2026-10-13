@@ -1,0 +1,47 @@
+\section{审读对象、版本与阅读起点}\label{sec:context}
+
+\subsection{审读对象与目标}
+审读对象为 OpenAI 署名、日期为 2026-09-24 的
+\emph{Combinatorial invariance of Kazhdan--Lusztig polynomials}，见文献\cite{reviewed-paper}。
+用户在 2026-10-13 明确说明，阅读目的是撰写该文审稿，并要求逐步讲清楚证明。
+工作仓库为 \texttt{jiajunma/combkl}。
+
+原文断言：对任意 Coxeter 系统中的抽象 Bruhat 区间同构
+\[
+\iota:[u,b]\simeq [u',b']
+\]
+有普通等参数多项式 \(P_{u,b}=P_{u',b'}\)。该范围包括无限和非晶体系统，但不能把结论中的多项式直接替换成一般 KLV、抛物型或不等参数多项式。
+
+\subsection{原文版本与定位}
+既有助手审读记录使用的 \texttt{agoramachina/openai-math} 提交为
+\begin{quote}\small
+\nolinkurl{adc7f1241b42e322a6451854ab7e4b4c146bf78a}。
+\end{quote}
+文件前缀为
+\begin{quote}\small
+\path{preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/}。
+\end{quote}
+2026-10-13 本轮读取该目录的 \texttt{main} 文件元数据时，下列五份正文的 blob SHA 与既有记录一致；这不等于本轮重新核验了全部正文。
+
+\begin{longtable}{@{}p{0.29\linewidth}p{0.66\linewidth}@{}}
+\toprule 文件 & blob SHA \\
+\midrule\endhead
+\path{01-introduction.tex} & \nolinkurl{a2fcd19ab52b0ad00bbb27351ff8471271cdae9e} \\
+\path{02-background.tex} & \nolinkurl{8fdf4e8c9dd32aad14c46d20e386bbc1d8cf45d5} \\
+\path{03-dihedral.tex} & \nolinkurl{4276da937b44f07fc5fb42dbc6f863374ee44456} \\
+\path{04-localization.tex} & \nolinkurl{0adb21ab2f1045d414f47083269501d7e3f55135} \\
+\path{05-comparison.tex} & \nolinkurl{9ff9e9e45c2d90571fc7cde60ae1f50c2a28c6e7} \\
+\bottomrule
+\end{longtable}
+正文以下以原文 TeX label 定位关键引理，避免编号随编辑漂移。
+
+\subsection{用户已确认的知识起点}\label{sec:reader-background}
+\paragraph{来源：用户，2026-10-13。}
+用户原话为：“给我一步步讲清楚这个论文的证明。我懂 coxeter group 的定义。Hecke algebra 基本上知道定义。”
+
+已确认的起点是懂 Coxeter group 的定义，基本知道 Hecke algebra 的定义。
+用户对 KL 基、KL 多项式、Bruhat 序与反射图、moment graph、BMP 层、Soergel 理论及局部化的熟悉程度尚未确认；“未确认”不等于“不懂”。
+\recordstatus{待展开逐步讲解。当前尚无用户对具体讲解步骤的理解确认。}
+
+\subsection{审稿与相关研究的范围}
+用户先前另问证明是否正确，以及能否推广到 KLV 多项式。这两个任务分别处理：普通等参数 KL 原文的审读在正文；KLV 相关工作在附录\ref{app:klv}。推广需要新的输入不自动构成原文缺陷。
