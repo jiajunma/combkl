@@ -1,0 +1,87 @@
+{
+  "warning": "Finite sanity checks only; no full BMP/sheaf proof verification and no general KLV theorem.",
+  "dihedral_later_edge_check": {
+    "finite_dihedral_m": [
+      2,
+      18
+    ],
+    "infinite_dihedral_absolute_length_bound": 18,
+    "edge_top_order_cases": 47536,
+    "failures": 0
+  },
+  "symplectic_klv": [
+    {
+      "degree_n": 4,
+      "number_of_parameters": 3,
+      "intervals_including_singletons": 6,
+      "nonconstant_polynomial_intervals": 0,
+      "poset_isomorphism_classes": 3,
+      "exact_isomorphism_tests": 3,
+      "counterexamples": [],
+      "all_descent_checks": 4
+    },
+    {
+      "degree_n": 6,
+      "number_of_parameters": 15,
+      "intervals_including_singletons": 101,
+      "nonconstant_polynomial_intervals": 2,
+      "poset_isomorphism_classes": 18,
+      "exact_isomorphism_tests": 83,
+      "counterexamples": [],
+      "all_descent_checks": 195
+    },
+    {
+      "degree_n": 8,
+      "number_of_parameters": 105,
+      "intervals_including_singletons": 3490,
+      "nonconstant_polynomial_intervals": 510,
+      "poset_isomorphism_classes": 398,
+      "exact_isomorphism_tests": 3092,
+      "counterexamples": [],
+      "all_descent_checks": 11044
+    }
+  ],
+  "SL4_Sp4_three_element_chain": {
+    "twisted_identity_parameters_one_based": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        2,
+        1,
+        4,
+        3
+      ],
+      [
+        3,
+        4,
+        1,
+        2
+      ]
+    ],
+    "ranks": [
+      0,
+      1,
+      2
+    ],
+    "Q_bottom_middle": [
+      -1,
+      1
+    ],
+    "Q_middle_top": [
+      -1,
+      1
+    ],
+    "Q_bottom_top": [
+      0,
+      -1,
+      1
+    ],
+    "P_bottom_top": [
+      1
+    ]
+  }
+}
