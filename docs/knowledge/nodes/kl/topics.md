@@ -22,3 +22,13 @@ Definitions and constructions are marked formalized; theorem entries are marked 
 ## Using the notes
 
 Technical terms link automatically to definitions. The graph records mathematical prerequisites, while Lean panels link to the unchanged source snapshot. Old published node URLs redirect to their current chapter locations.
+
+Proofs are written as numbered derivations. Follow the stated hypotheses,
+the definitions of each map or state, and the calculations in order; links
+lead to the supporting proofs rather than only naming a theorem.
+
+Lean is authoritative when the sources differ. Entries affected by such a
+difference include a “Relation to the OpenAI notes” section with precise
+locations in both sources. In particular, the actual sheaf character used
+in Lean's R-first proof is not silently identified with the KL polynomial
+used in the preprint's comparison argument.

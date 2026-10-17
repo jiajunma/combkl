@@ -53,15 +53,42 @@ coordinatewise.
 
 *Proof.*
 
-For a suffix \(e::q\), the one-edge estimate says
+### Step 1. Fix the order conventions
+
+Write the chronological edge list as \(p=[e_1,\ldots,e_r]\), with \(e_i:x_i\to y_i\). Let \(p_i=[e_{i+1},\ldots,e_r]\), so \(p_0=p\) and \(p_r=[]\). Denote the actual state by \(D_i=D_{p_i}(t)\), and put \(M_i=\tau_{x_i,y_i,T}\), \(T=t^{-1}-t>0\).
+
+The edge-image inclusion hypothesis is supplied for every suffix \(e_i::p_i\). It therefore permits the one-edge estimate at each of the following steps.
+
+### Step 2. Verify the vector inequality for one removal
+
+At \(x_i\), removing \(e_i\) replaces \(F\cup\{e_i\}\) by \(F\), where \(F\) is the set of outgoing edges in \(p_i\). The one-edge estimate reads
 \[
-D_q\leq\tau_{e,T}D_{e::q}.
+(D_i)_{x_i}\le(D_{i-1})_{x_i}+T(D_{i-1})_{y_i}.
 \]
-Only the source coordinate changes; all others have identical remaining conditions. Starting with the full list, substitute these inequalities successively. Each substitution is valid because elementary transfers preserve the coordinatewise order for \(T\geq0\).
+Here the upper state can be taken from \(i-1\), because \(x_i\ne y_i\), so removing an edge with source \(x_i\) does not alter the remaining conditions at \(y_i\).
 
-The resulting product appears in reverse list order because the first removed edge acts nearest to the initial vector and the last removed edge acts outermost. Expanding this product produces the ordered-path matrix, so the geometric reflection schedule connects the sheaf filtration to the R-polynomial path formula.
+At any \(z\ne x_i\), no outgoing condition changes, so
+\((D_i)_z=(D_{i-1})_z=(M_iD_{i-1})_z\).
+Thus \(D_i\le M_iD_{i-1}\) in every coordinate.
 
-No equality is asserted yet. The discrepancy measures possible edge-image deficits that the endpoint-rigidity argument will later eliminate.
+### Step 3. Induct through the complete list
+
+For \(i=0\), the statement \(D_0\le D_0\) is equality.
+Assume
+\(D_{i-1}\le M_{i-1}\cdots M_1D_0\).
+By transfer monotonicity,
+\(M_iD_{i-1}\le M_iM_{i-1}\cdots M_1D_0\).
+Combine this with Step 2 to get the induction conclusion
+\(D_i\le M_i\cdots M_1D_0\).
+
+At \(i=r\), this is
+\[
+D_{[]}(t)\le M_r\cdots M_1D_p(t).
+\]
+
+### Step 4. Identify the product notation
+
+The dispatch convention lists the outermost operator first. Consequently the product \(M_r\cdots M_1\) is dispatch along \(p^{\mathrm{rev}}\). This proves the displayed theorem, including its list reversal. For an empty list, Step 3 already gives equality with the identity operator.
 
 ## References
 

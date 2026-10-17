@@ -54,11 +54,47 @@ is projective.
 
 *Proof.*
 
-The map \(T\to f(S)\), \(t\mapsto\psi(g(t))\), is surjective by the equality of embedded images. Injectivity of \(\psi\) and saturation show that its kernel is \(aT\). Multiplication by \(a\) identifies this kernel with the projective module \(T\).
+### Step 1. Give the common image two surjective presentations
 
-Compare this projective presentation of the common image with the surjection \(S\to f(S)\). The kernel-comparison result for projective presentations shows that the latter kernel is projective. Identifying that kernel with \(S\cap\ker f\) gives the conclusion.
+Let \(U=f(S)=\psi(g(T))\). Define
+\[
+a_1:S\twoheadrightarrow U,\quad s\mapsto f(s),
+\qquad
+a_2:T\twoheadrightarrow U,\quad t\mapsto\psi(g(t)).
+\]
+They are surjective by the definition of \(U\) and the image-equality hypothesis. We want to prove that \(\ker a_1=S\cap\ker f\) is projective.
 
-For the graded polynomial modules of the blueprint, a separate homogeneous-basis theorem then turns this projectivity into graded freeness. This step explains why image equality, rather than merely an inequality of Hilbert series, is the input to reverse freeness.
+A module is projective precisely when every surjection onto it admits a linear section. We use this splitting property below.
+
+### Step 2. Identify the second kernel
+
+If \(a_2(t)=0\), injectivity of \(\psi\) gives \(g(t)=0\). Since \(\ker g=aP\), write \(t=av\) with \(v\in P\). The element \(t\) belongs to \(T\); saturation therefore gives \(v\in T\). Thus \(\ker a_2\subseteq aT\).
+Conversely \(a_2(av)=\psi(g(av))=0\) for \(v\in T\), so \(\ker a_2=aT\).
+
+Multiplication by \(a\) on \(P\) is injective, hence its restriction \(T\to aT\) is injective as well as surjective. It is an isomorphism. Therefore \(\ker a_2\simeq T\) is projective.
+
+### Step 3. Form the pullback of the two presentations
+
+Define
+\[
+E=\{(s,t)\in S\oplus T:a_1(s)=a_2(t)\}.
+\]
+Projection \(E\to S\) is surjective: given \(s\), lift \(a_1(s)\) through \(a_2\). Its kernel is \(\{0\}\oplus\ker a_2\). Because \(S\) is projective, this sequence splits:
+\[
+E\simeq\ker a_2\oplus S.
+\]
+Both summands are projective, so \(E\) is projective.
+
+Projection \(E\to T\) is also surjective, now using surjectivity of \(a_1\). Its kernel is \(\ker a_1\oplus\{0\}\). Since \(T\) is projective, this sequence also splits:
+\[
+E\simeq\ker a_1\oplus T.
+\]
+
+### Step 4. Extract the desired projective summand
+
+The second splitting makes \(\ker a_1\) a direct summand of the projective module \(E\). Direct summands of projective modules are projective: extend any lifting problem by zero on the complementary summand, lift it from \(E\), and restrict the lift back to the desired summand.
+
+Finally, an element of \(\ker a_1\) is an element \(s\in S\) satisfying \(f(s)=0\), so the forgetful map identifies it with \(S\cap\ker f\). Transport projectivity across this identification.
 
 ## References
 

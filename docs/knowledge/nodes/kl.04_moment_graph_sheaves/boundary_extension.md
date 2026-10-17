@@ -64,9 +64,35 @@ Set \(B^x=F_x\); its lower restriction maps are the components of \(F_x\to D_x\h
 
 *Proof.*
 
-Any old global section determines an element of \(D_x\), which lifts through the surjection \(p\). That lift supplies the new stalk coordinate, hence a new global section. If a prescribed edge-closed set contains \(x\), it also contains every adjacent upper vertex, so the old extension already has the required boundary values and the prescribed \(x\)-coordinate can be retained. If it omits \(x\), choose a lift freely.
+### Step 1. Construct the new modules and restrictions
 
-For global generation at \(x\), start with any vector of \(F_x\); its boundary belongs to \(D_x\), so some old global section realizes it. At old vertices, extend a previously generating section by the same lifting argument.
+Let \(x\) be the new bottom vertex and let the old graph contain all its upper targets \(y_e\). Set
+\(Q_e=B^{y_e}/\alpha_eB^{y_e}\).
+For an old global section \(f\), take its tuple of quotient values \((f_{y_e}\bmod\alpha_e)_e\). Let \(D_x\) be the image of this map.
+
+Choose a minimal graded free cover \(p:F_x\twoheadrightarrow D_x\), as constructed in [[node:kl.notes.minimal_cover_existence]]. The new stalk is \(F_x\); the lower map along \(e\) is its \(e\)-component under \(F_x\to D_x\subseteq\bigoplus_eQ_e\). The upper map is the quotient map \(B^{y_e}\to Q_e\). Old modules and restrictions are unchanged.
+
+### Step 2. Characterize a global section of the extension
+
+A pair \((v,f)\), with \(v\in F_x\) and \(f\) an old global section, is a new global section exactly when \(p(v)\) equals the boundary tuple of \(f\). Old edges are compatible because \(f\) is; each new edge imposes exactly one coordinate of this equality.
+
+Every old global section extends: its boundary tuple belongs to \(D_x\) by definition, so choose a preimage under the surjection \(p\).
+
+### Step 3. Prove extension from an edge-closed subset
+
+Let \(\Omega\) be closed upward along the actual edges, and let a compatible assignment be given there. Restrict to the old vertices, obtaining an edge-closed subset of the old graph. Use its extension property to get an old global section \(g\).
+
+If \(x\notin\Omega\), choose any lift of the boundary tuple of \(g\) under \(p\), as in Step 2. This changes none of the prescribed coordinates.
+
+If \(x\in\Omega\), edge closure forces every target \(y_e\) into \(\Omega\). Thus \(g\) agrees with the prescribed assignment at each \(y_e\). Its boundary tuple equals \(p(v)\) for the already prescribed \(v\in F_x\), by compatibility on the new edges. Retain that \(v\). Again Step 2 proves global compatibility.
+
+### Step 4. Prove global generation
+
+At an old vertex, choose an old global section realizing the desired stalk value and extend it using Step 2. At \(x\), start with an arbitrary \(v\in F_x\). Its image \(p(v)\in D_x\) is, by the definition of \(D_x\), the boundary tuple of some old global section \(f\). The pair \((v,f)\) is then global and realizes \(v\).
+
+### Step 5. Check the remaining construction data
+
+The new stalk is free by the cover construction. New upper maps satisfy the quotient rule by definition. The outgoing boundary map at \(x\) has kernel \(\ker p\), contained in \(A_{>0}F_x\), so it is minimal. At every old vertex no outgoing edge or stalk changed, so its previous minimality condition remains valid.
 
 ## References
 

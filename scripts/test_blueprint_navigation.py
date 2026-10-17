@@ -95,6 +95,12 @@ class BlueprintNavigationIntegrationTest(unittest.TestCase):
             guide = self.root / "nodes" / Path(*node.primary_topic.split(".")) / "topics.md"
             self.assertIn("[[node:" + node.id + "]]", guide.read_text(), node.id)
 
+    def test_published_proofs_match_their_exposition_review(self):
+        from build_knowledge import validate_proof_walkthroughs
+        result = validate_proof_walkthroughs(self.nodes)
+        self.assertEqual(result["reviewed_theorem_walkthroughs"],
+                         sum(node.kind == "theorem" for node in self.nodes))
+
 
 if __name__ == "__main__":
     unittest.main()

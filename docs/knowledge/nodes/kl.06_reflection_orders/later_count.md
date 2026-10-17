@@ -51,20 +51,54 @@ where \(\ell_D\) is the relative dihedral length.
 
 *Proof.*
 
-Use [[node:kl.paths.graph_invariance]] to transport the relative interval to a root plane in the target system while preserving relative rank differences. Express the ambient later-edge indicators as counts in that target interval. The signed-integer dihedral calculation gives the difference of these counts; the coordinate equalities transport it back. The small-rank cases are included separately, removing the intermediate restriction that the relative interval have rank at least two.
+### Step 1. Reduce the transported count to one genuine target dihedral interval
 
-## A long edge in type \(A_2\)
+For relative rank at least two, use the full interval transport theorem. It supplies a bijection onto a target dihedral interval, preserving relative length differences and actual reflection edges. The coordinate equality \(F(z)a'=\phi(za_0)\) identifies the target root label of each transported edge, not just its incidence.
 
-Use the reflection order
+Therefore the two sums of later-edge indicators in the statement equal the corresponding later counts in this target interval. Surjectivity of the range is essential: without it, a count could omit target vertices.
+
+### Step 2. Write the signed-index rule
+
+Index target dihedral elements by integers, with length \(|i|\). An edge \(i\to j\) has \(|i|<|j|\), odd \(|i|+|j|\), and reflection parameter \(i+j\). The angular order lists positive odd parameters increasingly, followed by negative odd parameters increasingly. Denote this comparison by \(\prec\).
+
+For an endpoint \(a\), a vertex \(z\) contributes to the later count exactly when
 \[
-\alpha_1<\alpha_1+\alpha_2<\alpha_2
+|a|<|z|,\qquad a+z\text{ is odd},\qquad i+j\prec a+z.
 \]
-in the rank-two system \(S_3\). The edge \(1\to w_0\) is labelled by \(\alpha_1+\alpha_2\). At the identity, exactly one supported upward edge has a later label, namely the edge labelled by \(\alpha_2\). At \(w_0\), there are no upward edges. Hence
-\[
-h_1-h_{w_0}=1=\frac{3-0-1}{2}.
-\]
+A lower ideal has two elements in each internal positive rank and a single top \(c\). Its count is consequently the sum of these indicators at \(z=r,-r\), for \(r<|c|\), plus the indicator at \(c\).
 
-The quantity is not the length of the edge itself. It measures the excess of later conditions at its lower endpoint. After localization, each such condition contributes one uniformizer, so the count becomes the exponent of the scalar correction in the edge-image comparison.
+### Step 3. Evaluate the two possible sign cases
+
+Put \(L=|i|\), \(M=|j|\), \(C=|c|\), and \(k=(M-L-1)/2\). The edge parity says \(M-L=2k+1\).
+Among the ranks strictly between \(L\) and \(M\), the eligible ranks are
+\[
+L+1,L+3,\ldots,L+2k-1;
+\]
+the map \(a\mapsto L+1+2a\), \(0\le a<k\), is a bijection, so there are \(k\).
+
+Substitution in the signed comparison gives the following exact counts:
+\[
+\begin{array}{c|cc}
+&h_i&h_j\\
+j>0&k+(C-M)&C-M\\
+j<0&k&0.
+\end{array}
+\]
+For \(j>0\), each eligible rank beyond \(M\) contributes its two opposite-sign vertices; the possible singleton top completes this alternating-parity count to \(C-M\). For \(j<0\), the signed angular inequality excludes all those later ranks. At ranks between \(L\) and \(M\), precisely one vertex contributes to the lower count and none to the upper count. The distinguished edge itself is excluded by strictness.
+
+The tail term \(C-M\) can also be checked without an ellipsis. For the upper endpoint, if \(C-M=2s\), there are \(s\) eligible internal ranks contributing two vertices each and no top contribution, giving \(2s\). If \(C-M=2s+1\), there are \(s\) such ranks plus the singleton top, giving \(2s+1\). For the lower endpoint with \(j>0\) and \(C>M\), the formerly excluded partner at rank \(M\) contributes one. An even difference gives \(1+2(s-1)+1=2s\); an odd difference gives \(1+2s=2s+1\). The \(k\) contributions below rank \(M\) are unchanged.
+
+Subtracting either row therefore gives \(h_i-h_j=k\).
+
+### Step 4. Handle the small relative interval separately
+
+If the source relative interval has rank below two but contains the specified edge, its rank is one. Its only vertices are the lower endpoint and that edge's upper endpoint. No strictly later upward edge occurs at either vertex, so both counts are zero, and \((1-1)/2=0\).
+
+### Step 5. Transport the integer result back
+
+For larger rank, Step 1 identifies the counts, and relative rank preservation identifies
+\(M-L=\ell_D(y)-\ell_D(x)\).
+Thus Step 3 gives exactly the stated formula. This uses the target system's genuine angular order, even when its transported ordering is not itself a reflection order in the source system.
 
 ## References
 

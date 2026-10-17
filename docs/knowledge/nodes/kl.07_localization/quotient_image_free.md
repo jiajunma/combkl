@@ -54,13 +54,29 @@ Then \(q(L)\), regarded as a module over \(R/(a)\), is free.
 
 *Proof.*
 
-Restrict \(q\) to \(L\). If \(v\in L\) maps to zero, write \(v=aw\) using the kernel description in \(M\). Saturation puts \(w\) in \(L\), so the restricted kernel is exactly \(aL\). Hence
-\[
-q(L)\simeq L/aL.
-\]
-Choose a finite \(R\)-basis of \(L\). Its images give an \(R/(a)\)-basis of the quotient, proving the claim.
+### Step 1. Restrict the map to the chosen submodule
 
-In the edge comparison, \(a\) is the edge label and \(L\) is an upper terminal kernel. Freeness of \(L\) comes from the smaller-interval induction. Saturation follows from regularity of this label on the other relevant edge modules. This yields the genuinely free target needed by the height-one localization argument.
+Let \(I=q(L)\). Restriction gives a surjection \(q_L:L\twoheadrightarrow I\). An element of its kernel is a vector \(v\in L\) with \(q(v)=0\).
+
+The ambient kernel condition gives \(v=aw\) for some \(w\in M\). Since \(aw=v\in L\), saturation gives \(w\in L\). Thus every kernel element belongs to \(aL\). Conversely \(q(aw)=0\) for every \(w\in L\), so \(\ker q_L=aL\).
+
+### Step 2. Write the quotient isomorphism explicitly
+
+Define
+\[
+\theta:L/aL\longrightarrow I,\qquad [v]\longmapsto q(v).
+\]
+If \(v-v'=aw\), their images agree, so the map is well-defined. It is surjective because \(I=q(L)\). If \(\theta([v])=0\), Step 1 gives \(v\in aL\), so \([v]=0\). Thus it is injective.
+
+The action of \(R/(a)\) is compatible with this map: replacing a scalar by another representative changes its product by an \(a\)-multiple, which is zero in both modules. Hence \(\theta\) is an \(R/(a)\)-linear isomorphism.
+
+### Step 3. Reduce a basis and prove it remains a basis
+
+Choose a finite \(R\)-basis \(e_1,\ldots,e_r\) of \(L\). Every vector in \(L/aL\) is a combination of their residue classes, so they span.
+
+If \(\sum_i\overline c_i[e_i]=0\), lift the coefficients to \(c_i\in R\). The vector \(\sum_ic_ie_i\) belongs to \(aL\), so it equals \(a\sum_id_ie_i\). Uniqueness of basis coordinates gives \(c_i=ad_i\), hence every \(\overline c_i=0\). Thus the residue classes are independent.
+
+They form a free \(R/(a)\)-basis, and the isomorphism in Step 2 transfers it to \(I\).
 
 ## References
 

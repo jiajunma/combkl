@@ -54,7 +54,31 @@ If \(\phi:[u,b]\simeq[u',b']\) is an order isomorphism, then every comparable pa
 
 *Proof.*
 
-First establish that a nontrivial Bruhat interval contains a next step increasing length by one. Compare rank differences with lengths of strictly increasing chains. An interval isomorphism sends strict chains to strict chains, giving one inequality; its inverse gives the other. Since the bottom and top are determined by the order, the full interval rank difference is preserved as well.
+### Step 1. Produce a length-one successor inside any nontrivial interval
+
+We use the elementary simple maps \(L_s,U_s\) and their monotonicity established in the subword proof. We claim that \(x<y\) admits \(x<z\le y\) with \(\ell(z)=\ell(x)+1\). Prove this by induction on \(\ell(y)\). Choose a simple descent \(s\) of \(y\).
+
+If \(x\le sy\) and \(x=sy\), take \(z=y\). If \(x<sy\), apply induction inside \([x,sy]\), whose top is shorter, and retain the resulting \(z\).
+
+It remains to treat \(x\not\le sy\). If \(s\) raised \(x\), monotonicity of \(L_s\) would give \(x=L_s(x)\le L_s(y)=sy\), a contradiction. Thus \(s\) lowers both \(x\) and \(y\), and monotonicity gives \(sx<sy\). Induction provides
+\(sx<w\le sy\) with \(\ell(w)=\ell(sx)+1=\ell(x)\).
+
+Monotonicity of \(U_s\) gives \(x=U_s(sx)\le U_s(w)\le U_s(sy)=y\).
+The reflection \(s\) must raise \(w\): if it lowered \(w\), then \(U_s(w)=w\), so \(x\le w\) with equal lengths would force \(x=w\le sy\), again a contradiction. Take \(z=sw=U_s(w)\). Its length is \(\ell(x)+1\), proving the claim in every case.
+
+### Step 2. Build a maximal-length chain
+
+Repeat Step 1 on the remaining interval \([z,y]\). Each step raises length by exactly one, and the length cannot exceed \(\ell(y)\). We obtain a chain from \(x\) to \(y\) with exactly
+\(d=\ell(y)-\ell(x)\) strict steps.
+
+Every strictly increasing chain has at most \(d\) steps, since each strict Bruhat comparison raises integer length by at least one. Thus \(d\) is the maximum number of strict steps in a chain between the two endpoints.
+
+### Step 3. Transport the chain and apply the inverse
+
+An order isomorphism \(\phi\) preserves every strict comparison and takes distinct vertices to distinct vertices. Transporting the chain from Step 2 gives a chain of \(d\) strict steps between \(\phi(x)\) and \(\phi(y)\). Therefore
+\(d(x,y)\le d(\phi(x),\phi(y))\).
+
+Apply the same argument to \(\phi^{-1}\) to obtain the reverse inequality. The two rank differences are equal. Applying this to the bottom and top gives the full-interval statement, because an order isomorphism preserves the unique minimum and maximum.
 
 ## References
 

@@ -66,21 +66,44 @@ is perfect over \(R\).
 
 *Proof.*
 
-For \(a\in A\), its even part \((a+\tau(a))/2\) is fixed by \(\tau\). Write \(a-\tau(a)=\alpha d\). Applying \(\tau\), using involutivity and the sign of \(\alpha\), and cancelling \(\alpha\) shows that \(d\) is fixed. Thus
-\[
-a=\frac{a+\tau(a)}2+\alpha\frac d2
-\]
-has the required form. Applying \(\tau\) to two such expressions and subtracting proves uniqueness.
+### Step 1. Construct the two invariant coordinates
 
-Because \(\alpha^2\in R\), multiplication gives
+For \(a\in A\), put \(a_0=(a+\tau(a))/2\). Involutivity gives \(\tau(a_0)=a_0\), so \(a_0\in R=A^\tau\).
+By the divisibility hypothesis choose \(d\) with \(a-\tau(a)=\alpha d\). Apply \(\tau\):
 \[
-\operatorname{tr}\bigl((a_0+\alpha a_1)(b_0+\alpha b_1)\bigr)
-=a_0b_1+a_1b_0.
+\tau(a)-a=-\alpha\tau(d).
 \]
-The pairing matrix in the basis \(1,\alpha\) is
-\(\begin{pmatrix}0&1\\1&0\end{pmatrix}\), which is invertible over \(R\). This proves perfectness without passing to a fraction field.
+Negating the original equation also gives \(\tau(a)-a=-\alpha d\). Since \(\alpha\ne0\) and \(A\) is a domain, cancellation gives \(\tau(d)=d\). Thus \(a_1=d/2\in R\).
 
-For a simple reflection acting on the coefficient ring, this gives the extension \(A^s\subseteq A\) used in Bott–Samelson tensor induction. The trace normalization here selects the \(\alpha\)-coefficient; it is one half of \((a-s(a))/\alpha\).
+Adding the even and odd parts gives \(a=a_0+\alpha a_1\). Division by two is legitimate over the stated characteristic-zero coefficient field.
+
+### Step 2. Prove uniqueness
+
+Suppose \(a_0+\alpha a_1=b_0+\alpha b_1\), with all four coefficients in \(R\). Apply \(\tau\) to obtain \(a_0-\alpha a_1=b_0-\alpha b_1\). Subtracting gives
+\(2\alpha(a_1-b_1)=0\).
+The scalar \(2\alpha\) is nonzero in the domain, so \(a_1=b_1\), and substitution gives \(a_0=b_0\). Hence \(1,\alpha\) form an \(R\)-basis of \(A\).
+
+### Step 3. Compute the trace pairing
+
+Because \(\tau(\alpha^2)=\alpha^2\), the element \(\alpha^2\) belongs to \(R\). Multiplication gives
+\[
+(a_0+\alpha a_1)(b_0+\alpha b_1)
+=(a_0b_0+\alpha^2a_1b_1)+\alpha(a_0b_1+a_1b_0).
+\]
+The trace is the second coordinate, so
+\(\operatorname{tr}(ab)=a_0b_1+a_1b_0\).
+
+### Step 4. Verify perfection by an explicit dual basis
+
+The pairings of \(1,\alpha\) are
+\[
+\operatorname{tr}(1)=0,\quad
+\operatorname{tr}(\alpha)=1,\quad
+\operatorname{tr}(\alpha^2)=0.
+\]
+Thus \(\alpha,1\) are the dual basis to \(1,\alpha\). More explicitly, if an \(R\)-linear functional has values \(u\) on \(1\) and \(v\) on \(\alpha\), the element \(v+\alpha u\) pairs with them to give exactly \(u,v\). This proves the map to the dual is both surjective and injective over \(R\) itself.
+
+The trace is \((a-\tau(a))/(2\alpha)\), with the quotient understood through the divisibility already proved, not through a fraction-field extension.
 
 ## References
 

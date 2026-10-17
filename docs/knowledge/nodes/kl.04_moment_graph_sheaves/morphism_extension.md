@@ -48,11 +48,35 @@ Let \(A\) be a connected nonnegatively graded Noetherian domain, and let the lab
 
 *Proof.*
 
-Choose a maximal vertex \(x\) outside \(U\). All its strict upper neighbors already lie in \(U\). The existing morphism induces a map between boundary images. Freeness of \(B^x\) lets this map lift through the surjective boundary map from \(C^x\). Flabbiness and global generation are what identify the required boundary image and supply that surjection.
+### Step 1. Identify the boundary map forced at the next vertex
 
-For each new edge, the quotient rules ensure that the stalk lift descends to an edge map. The two commuting-square equations then hold by construction. Enlarge \(U\) by \(x\) and repeat. Finiteness guarantees termination.
+Suppose a morphism is already defined on an upper set \(U\), and choose a maximal missing vertex \(x\). Every outgoing target of \(x\) lies in \(U\).
 
-The source freeness and the target boundary-surjectivity play different roles. The theorem does not require choosing unrelated isomorphisms of the edge modules.
+The existing edge maps send boundary tuples of \(B\)-sections above \(x\) to boundary tuples of \(C\)-sections above \(x\). Thus they induce a graded map \(D_B(x)\to D_C(x)\) between boundary images.
+
+For either sheaf, the image of the stalk boundary map equals this boundary image. One containment follows from global generation: realize any stalk value by a global section. The reverse containment follows from flabbiness: extend a section above \(x\) globally and take its value at \(x\). Both hypotheses in the statement are used here.
+
+### Step 2. Lift the required boundary map to a stalk map
+
+Compose \(B^x\to D_B(x)\to D_C(x)\). The map \(C^x\twoheadrightarrow D_C(x)\) is surjective by its definition as an image.
+
+Choose a homogeneous basis of the free graded module \(B^x\). For a basis vector of degree \(n\), choose any preimage in \(C^x\) of its required boundary value, then retain the degree-\(n\) component of that preimage. Since the quotient map preserves degree, this component still has the required image. Extending linearly gives a degree-zero map \(f_x:B^x\to C^x\) with the required boundary equation.
+
+### Step 3. Define the new edge maps and check well-definedness
+
+For an incoming edge \(e:z\to x\), the map on its upper stalk \(x\) induces
+\[
+B^x/\alpha_eB^x\longrightarrow C^x/\alpha_eC^x.
+\]
+It is well-defined because \(A\)-linearity sends \(\alpha_ev\) to \(\alpha_ef_x(v)\). Use the upper quotient identifications to obtain the edge map. The lower vertex \(z\) is not in \(U\): otherwise the upper-set property would already put \(x\) in \(U\). Hence no previously imposed lower square is disturbed.
+
+For outgoing edges \(x\to y\), the edge map is already determined by the upper data. The boundary equation from Step 2 is precisely the required lower commuting square. Old squares remain unchanged.
+
+### Step 4. Complete finite downward induction
+
+We have extended the partial morphism from \(U\) to \(U\cup\{x\}\), preserving all its old vertex maps. This new set is upper, because all vertices strictly above \(x\) were already present. Its complement is smaller. Repeat until no vertex is missing.
+
+This proves an actual sheaf morphism: both endpoint squares commute on every edge, rather than merely giving unrelated maps of stalks.
 
 ## References
 

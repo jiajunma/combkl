@@ -53,9 +53,30 @@ then \(f=0\). Consequently, two integral polynomials satisfying the strict half-
 
 *Proof.*
 
-Equality at infinitely many points of an open interval identifies \(f\) with its \(d\)-reflection. If \(f\ne0\), compare its highest nonzero coefficient: reflection matches it with a coefficient strictly above the original degree, which must vanish. This is a contradiction.
+### Step 1. Turn reciprocal evaluations into a polynomial identity
 
-For two integral polynomials, apply the result to their difference after mapping to real coefficients, then use injectivity of the coefficient embedding.
+Let \(p\in\mathbb R[q]\), with \(m=\deg p\) when \(p\ne0\), and assume \(2\operatorname{natDegree}(p)<d\). In particular its degree is at most \(d\), so
+\[
+p^\vee(q)=q^dp(q^{-1})
+\]
+is a polynomial: if \(p(q)=\sum_{i=0}^m a_iq^i\), then
+\(p^\vee(q)=\sum_{i=0}^m a_iq^{d-i}\).
+
+The hypothesis gives \(p(q)=p^\vee(q)\) for every real \(0<q<1\). The interval contains infinitely many numbers; therefore the polynomial \(p-p^\vee\) has infinitely many roots and is zero. We have obtained the polynomial identity \(p=p^\vee\), not just equality at a selected parameter.
+
+### Step 2. Compare one decisive coefficient
+
+Suppose \(p\ne0\). Its coefficient \(a_m\) is nonzero. Since \(2m<d\), we have \(d-m>m\), so the coefficient of \(q^{d-m}\) in \(p\) is zero.
+
+But the coefficient of \(q^{d-m}\) in \(p^\vee\) is exactly \(a_m\): the term with index \(i=m\) produces that exponent, and no other index does. The identity \(p=p^\vee\) therefore says \(0=a_m\), a contradiction. Hence \(p=0\).
+
+### Step 3. Apply this to a difference of two integral polynomials
+
+Let \(P,P'\in\mathbb Z[q]\), each strictly below the middle degree. Put
+\(p=(P-P')\) and view its coefficients in \(\mathbb R\).
+Subtraction cannot increase the degree beyond the maximum of the two original degrees, so \(p\) satisfies the same strict half-degree bound.
+
+If the assumed reciprocal-difference equation holds for \(P-P'\), Steps 1–2 give \(p=0\) over \(\mathbb R\). Injectivity of \(\mathbb Z\to\mathbb R\) gives \(P=P'\) over \(\mathbb Z\). No positivity of the coefficients of \(P\) or \(P'\) is used.
 
 ## References
 

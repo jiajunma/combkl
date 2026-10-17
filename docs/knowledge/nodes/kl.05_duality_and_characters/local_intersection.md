@@ -69,6 +69,18 @@ Thus its matrix entries satisfy positive-degree constraints. For a homogeneous b
 
 The map itself is distinct from a numerical bilinear form obtained by specializing coefficients. The strict degree conclusion for a particular diagonal entry includes an explicit nonvanishing hypothesis, stated separately.
 
+<!-- source-comparison:start -->
+## Relation to the OpenAI notes
+
+**Different intermediate statement.**
+
+**OpenAI notes:** The grading-normalization proposition identifies the stalk graded rank with the canonical KL polynomial and uses the Elias–Williamson character theorem through the cited moment-graph bridges. [bg:normalization](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L253).
+
+**Lean (primary):** The development defines the equality of actual stalk characters and canonical KL polynomials as StalkCharacterObligation. The unconditional theorem used in the main route is R-reciprocity for the actual character. The local strict half-degree implication retains an explicit nonzero-diagonal hypothesis. [SheafMorphisms:219](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L219), [DyerPaths:62](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L62), [PositiveTransfer:186](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean#L186).
+
+**How to read this entry:** Follow the proved character-reciprocity and duality statements here. Do not silently replace the actual character C by P, or read the conditional local-degree lemma as an unconditional character-identification theorem. The completed invariance proof uses the R-first route to avoid that substitution.
+<!-- source-comparison:end -->
+
 ## References
 
 [Related paper context](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L253).

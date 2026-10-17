@@ -45,9 +45,36 @@ Let \(M\) be a finitely generated graded polynomial module, and let \(S\subseteq
 
 *Proof.*
 
-Finite homogeneous generators give a graded surjection from a finite sum of shifted free modules onto \(M\). [[node:kl.sheaves.hilbert_free]] bounds the relevant series and proves convergence and finiteness of each graded dimension.
+### Step 1. Compare the finite-dimensional pieces
 
-Containment makes every graded dimension difference nonnegative. Equality of the sums forces all these differences to vanish. Decomposing an arbitrary element of \(T\) into homogeneous components then proves \(T\subseteq S\).
+Write \(M=\bigoplus_nM_n\), and put \(S_n=S\cap M_n\) and \(T_n=T\cap M_n\). The containment \(S\subseteq T\) gives \(S_n\subseteq T_n\), hence
+\[
+a_n=\dim T_n-\dim S_n\ge0.
+\]
+Each dimension is finite. Indeed, choose finite homogeneous generators of \(M\). In each degree, monomials times those generators span a finite-dimensional space. The same finite-dimensional bound applies to its subspaces \(S_n,T_n\).
+
+### Step 2. Justify the convergent difference series
+
+A generator of degree \(d\) contributes at most the Hilbert series \(q^d/(1-q)^N\), where \(N\) is the number of variables. A finite sum of these expressions bounds both \(H_S(q)\) and \(H_T(q)\) for \(0<q<1\). Thus subtraction of their convergent series is legitimate:
+\[
+H_T(q)-H_S(q)=\sum_n a_nq^n.
+\]
+The hypothesis makes the left-hand side zero.
+
+### Step 3. Prove every coefficient difference is zero
+
+Fix a degree \(m\). Every summand on the right is nonnegative, so
+\(0\le a_mq^m\le\sum_n a_nq^n=0\).
+Since \(q^m>0\), \(a_m=0\). This works for every \(m\).
+Therefore \(S_m\subseteq T_m\) are finite-dimensional subspaces of the same dimension, and hence \(S_m=T_m\).
+
+This last implication follows by extending a basis of \(S_m\) to a basis of \(T_m\): the equality of dimensions leaves no additional basis vectors.
+
+### Step 4. Recover the whole subspace
+
+Take \(v\in T\). Its homogeneous decomposition is a finite sum \(v=\sum_m v_m\). The assumed closure of \(T\) under homogeneous components gives \(v_m\in T_m\). Step 3 gives \(v_m\in S_m\subseteq S\). Because \(S\) is a subspace, the finite sum \(v\) lies in \(S\).
+
+Thus \(T\subseteq S\), and the original containment proves equality. Closure of \(S\) under homogeneous components was not needed. The argument detects a nonzero difference in any degree, including one supported in higher codimension.
 
 ## References
 

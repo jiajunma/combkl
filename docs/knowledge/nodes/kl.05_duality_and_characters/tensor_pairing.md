@@ -64,11 +64,55 @@ with the trace value included back into \(A\).
 
 *Proof.*
 
-First restrict scalars from \(A\) to \(R\), composing the pairing with the trace. Frobenius duality identifies the restricted module with its \(R\)-dual: this is the step that preserves perfectness, not merely bilinearity. Extend scalars back to \(A\); finite freeness makes the extended pairing perfect.
+### Step 1. Restrict the original pairing through the Frobenius trace
 
-The displayed formula follows on pure tensors. Equality of bilinear maps can be checked on pure tensors, so symmetry follows from symmetry on \(N\). If \(N\) has a balanced right action, let it act on the second tensor factor. On pure tensors, balance reduces to the corresponding identity on \(N\); tensor induction extends the equality to arbitrary sums.
+Let \(B_N:N\times N\to A\) be the perfect pairing, and define the \(R\)-valued pairing
+\(b(m,n)=\operatorname{tr}(B_N(m,n))\).
+The trace is \(R\)-linear, so \(b\) is \(R\)-bilinear.
 
-Iterating this construction makes the perfect pairing part of the word object itself. No denominators are introduced at any stage.
+Choose an \(R\)-basis \(a_i\) of the finite free Frobenius extension and its trace-dual basis \(a_i^\vee\):
+\(\operatorname{tr}(a_ia_j^\vee)=\delta_{ij}\).
+Choose an \(A\)-basis \(n_j\) of \(N\) and its pairing-dual basis \(n_j^\vee\). Then
+\[
+b(a_in_j,a_h^\vee n_k^\vee)
+=\operatorname{tr}(a_ia_h^\vee\delta_{jk})
+=\delta_{ih}\delta_{jk}.
+\]
+Thus the restricted pairing is perfect; its two dual bases have been exhibited.
+
+### Step 2. Extend scalars and derive the formula
+
+On \(A\otimes_RN\), define
+\[
+B(a\otimes m,b\otimes n)=ab\,\operatorname{tr}(B_N(m,n)).
+\]
+This respects the tensor relation: for \(r\in R\), moving \(r\) from the first scalar factor to \(m\) gives the same value by \(R\)-linearity of the trace. The same verification works in the second argument. Bilinearity therefore extends the formula to arbitrary tensors.
+
+The bases from Step 1 extend to the \(A\)-bases \(1\otimes a_in_j\) and \(1\otimes a_i^\vee n_j^\vee\), with the same identity pairing matrix. Hence the induced pairing is perfect.
+
+### Step 3. Check symmetry
+
+If \(B_N(m,n)=B_N(n,m)\), then on pure tensors
+\[
+ab\,\operatorname{tr}(B_N(m,n))
+=ba\,\operatorname{tr}(B_N(n,m)).
+\]
+The coefficient algebra is commutative. Every tensor is a finite sum of pure tensors, so bilinearity proves symmetry for arbitrary arguments.
+
+### Step 4. Check balance of the induced right action
+
+Let the original right action satisfy
+\(B_N(mr,n)=B_N(m,nr)\).
+The induced action changes only the second tensor factor:
+\((a\otimes m)r=a\otimes(mr)\).
+Consequently
+\[
+B((a\otimes m)r,b\otimes n)
+=ab\,\operatorname{tr}(B_N(mr,n))
+=ab\,\operatorname{tr}(B_N(m,nr))
+=B(a\otimes m,(b\otimes n)r).
+\]
+Again finite bilinear expansion gives the statement for arbitrary tensors. These calculations establish the properties preserved at each Bott–Samelson induction step.
 
 ## References
 

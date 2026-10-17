@@ -63,17 +63,58 @@ q^{d(x,y)}P_{x,y}(q^{-1})
 
 *Proof.*
 
-Induct on \(d=d(x,y)\). The diagonal case is immediate. For \(x<y\), expand the reflection of the defect using the already established reciprocity equations on \([z,y]\). Interchange the finite sums and apply reciprocal R-kernel cancellation. The result is
-\(\operatorname{reflect}_d D_{x,y}=-D_{x,y}\).
+### Step 1. Make the induction data explicit
 
-For any anti-reciprocal polynomial \(D\), coefficient comparison gives
+For \(x<y\), put \(d=d(x,y)\) and
 \[
-\operatorname{reflect}_d(-\operatorname{low}_dD)
-=-\operatorname{low}_dD+D.
+D_{x,y}=\sum_{x<z\le y}R_{x,z}P_{z,y},
+\qquad P_{x,y}=-\operatorname{low}_dD_{x,y}.
 \]
-Below the middle degree this uses the retained coefficients; above the middle it uses their negatives under reflection. When \(d\) is even, the middle coefficient vanishes because it equals its own negative over \(\mathbb Z\). Substituting the recursive definition proves reciprocity. The strict degree bound follows from the truncation itself.
+Every term \(P_{z,y}\) has smaller rank because \(z>x\). Induct on \(d\). The diagonal case has \(P_{x,x}=R_{x,x}=1\), so reciprocity holds.
 
-This separates the construction of \(P\) from the later uniqueness argument that identifies it with the selected canonical KL family.
+The construction itself gives \(\deg P_{x,y}<d/2\): the truncation retains exactly the exponents \(i\) with \(2i<d\), and changing a sign creates no new exponent.
+
+### Step 2. Reflect the defect and substitute the smaller reciprocity equations
+
+Let a bar on an entry with endpoints \(u,v\) mean reflection in degree \(d(u,v)\). Rank additivity and the degree bounds give
+\[
+\overline{D}_{x,y}
+=\sum_{x<z\le y}\overline R_{x,z}\,\overline P_{z,y}.
+\]
+The induction hypothesis says
+\(\overline P_{z,y}=\sum_{z\le w\le y}R_{z,w}P_{w,y}\).
+Substitute it and interchange the two finite sums:
+\[
+\overline D_{x,y}
+=\sum_{x<w\le y}
+\left(\sum_{x<z\le w}\overline R_{x,z}R_{z,w}\right)P_{w,y}.
+\]
+
+### Step 3. Evaluate the inner sum
+
+For \(w>x\), the R-kernel identity gives
+\(\sum_{x\le z\le w}\overline R_{x,z}R_{z,w}=0\).
+Its \(z=x\) term is \(R_{x,w}\), because \(R_{x,x}=1\). Removing that term gives
+\[
+\sum_{x<z\le w}\overline R_{x,z}R_{z,w}=-R_{x,w}.
+\]
+Thus Step 2 becomes
+\(\overline D_{x,y}=-\sum_{x<w\le y}R_{x,w}P_{w,y}=-D_{x,y}\).
+This proves the anti-reciprocity required by the lower-half construction.
+
+### Step 4. Solve the anti-reciprocal equation coefficient by coefficient
+
+Write \(D=\sum_i a_iq^i\), and set \(P=-\sum_{2i<d}a_iq^i\). Anti-reciprocity says \(a_{d-i}=-a_i\). If \(d\) is even, its middle coefficient satisfies \(a_{d/2}=-a_{d/2}\), hence is zero over \(\mathbb Z\).
+
+For \(2i<d\), the coefficient of \(q^i\) in \(\overline P\) is zero, and that in \(P+D\) is \(-a_i+a_i=0\).
+For \(2i>d\), the coefficient in \(\overline P\) is \(-a_{d-i}=a_i\), and that in \(P+D\) is \(a_i\).
+At the middle, both are zero. Outside degrees \(0,\ldots,d\), the bounds give zero. Hence \(\overline P=P+D\).
+
+### Step 5. Restore the omitted diagonal summand
+
+Since \(R_{x,x}=1\), \(P_{x,y}+D_{x,y}\) is exactly
+\(\sum_{x\le z\le y}R_{x,z}P_{z,y}\).
+Step 4 is the desired reciprocity equation. Together with the degree observation in Step 1, this completes the induction.
 
 ## References
 

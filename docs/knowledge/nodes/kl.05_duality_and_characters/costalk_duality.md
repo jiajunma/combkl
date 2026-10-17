@@ -60,9 +60,42 @@ In particular \(K_x\) is finite free because \(B^x\) is finite free.
 
 *Proof.*
 
-The quotient rules and coprimality of the appropriate incoming labels identify \(K_x\), after inserting the necessary incoming-label product, with global sections supported only at \(x\). Perfection and cut balance identify those supported sections with the dual of the stalk: a functional on \(B^x\) pulls back through evaluation to a functional on global sections, and its representing section has the required support.
+### Step 1. Identify the full kernel with single-vertex supported sections
 
-Composing the two identifications gives the displayed equivalence. Its grading shift must still be tracked separately. The next reciprocity statement performs that calculation instead of treating this ungraded isomorphism as degree zero.
+Let \(\beta_x\) be the product of labels on incoming edges at \(x\). For \(k\in K_x\), form the assignment with coordinate \(\beta_xk\) at \(x\) and zero elsewhere.
+
+On an outgoing edge, compatibility holds because the restriction of \(k\) is zero. On an incoming edge, its label divides \(\beta_x\), so the quotient restriction of \(\beta_xk\) is zero. On all other edges both coordinates vanish. Thus the assignment is a global section supported at \(x\).
+
+Conversely, a supported section has its \(x\)-coordinate in \(\alpha_eB^x\) for every incoming edge. Their labels are pairwise relatively prime linear forms. Expanding in a free basis of \(B^x\), divisibility by each label implies divisibility by their product, so the coordinate is \(\beta_xk\).
+
+For any outgoing edge \(h\), compatibility gives \(\beta_x\rho_{x,h}(k)=0\). No incoming label is proportional to the label of \(h\). The edge module is free over the quotient by that linear label, so multiplication by \(\beta_x\) is injective there. Hence \(\rho_{x,h}(k)=0\), and \(k\in K_x\). Multiplication by \(\beta_x\) is injective on the free stalk, giving a bijection.
+
+### Step 2. Turn a stalk functional into a supported section
+
+For \(\lambda\in(B^x)^*\), compose with the surjective evaluation map \(\Gamma(V,B)\to B^x\). Perfection of the global pairing gives a unique section \(m\) satisfying
+\(\langle m,n\rangle=\lambda(n_x)\) for all global sections \(n\).
+
+Let \(C_y\) be the integral cut at \(y\), obtained by multiplying coordinate projection by a common nonzero product \(L\) of labels. If \(y\ne x\), cut balance gives
+\[
+\langle C_ym,n\rangle=\langle m,C_yn\rangle
+=\lambda((C_yn)_x)=0.
+\]
+Perfection gives \(C_ym=0\), hence \(Lm_y=0\). The stalk is torsion-free and \(L\ne0\), so \(m_y=0\). Thus \(m\) is supported at \(x\).
+
+### Step 3. Turn a supported section into a stalk functional
+
+Suppose \(m\) is supported at \(x\), and \(n_x=0\). Since the vertex set is finite,
+\(Ln=\sum_{y\ne x}C_yn\).
+Then
+\[
+L\langle m,n\rangle
+=\sum_{y\ne x}\langle m,C_yn\rangle
+=\sum_{y\ne x}\langle C_ym,n\rangle=0.
+\]
+The coefficient ring is a domain, so \(\langle m,n\rangle=0\).
+Thus pairing with \(m\) factors through evaluation at \(x\), giving a well-defined functional on \(B^x\). Surjectivity of evaluation makes this factor unique.
+
+Steps 2–3 are inverse by uniqueness of the perfect-pairing representative. Compose their equivalence with Step 1 to obtain \(K_x\simeq(B^x)^*\). A dual of a finite free module is finite free, proving the freeness conclusion.
 
 ## References
 

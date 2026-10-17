@@ -49,7 +49,34 @@ every compatible section on \(\Omega\) extends to a global section.
 
 *Proof.*
 
-Induct on the number of vertices not yet assigned. Choose a maximal such vertex \(a\). Every vertex strictly above \(a\) already has a value, so flabbiness supplies a value at \(a\) compatible with those values. A surviving edge from an assigned lower vertex to \(a\) would force \(a\in\Omega\), contrary to its choice. All remaining such edges have zero modules, and impose no condition. Add \(a\) and continue the induction.
+### Step 1. Formulate the invariant maintained during extension
+
+Let \(L\) be the set of surviving edges, and assume every edge outside \(L\) has zero edge module. We are given a compatible section on \(\Omega\), where
+\(s(e)\in\Omega,\ e\in L\) implies \(t(e)\in\Omega\).
+
+We extend it one vertex at a time, retaining both this edge-closure property and all already assigned values. Induct on the finite number of vertices outside \(\Omega\).
+
+### Step 2. Choose the next vertex and use ordinary flabbiness
+
+If no vertex remains, the assignment is global. Otherwise choose a maximal vertex \(a\) outside \(\Omega\). Every \(y>a\) lies in \(\Omega\), so the prescribed assignment restricts to a compatible section on the upper set \(\{y:y>a\}\).
+
+Ordinary flabbiness supplies a global section \(h\) agreeing with those values. Define a new assignment by retaining every old value on \(\Omega\) and assigning \(h_a\) at \(a\).
+
+### Step 3. Check every possible new edge condition
+
+An edge whose two endpoints already lie in \(\Omega\) remains compatible.
+
+For an edge \(a\to y\), maximality gives \(y\in\Omega\), and \(h_y\) equals the prescribed value there. Global compatibility of \(h\) proves the new equation.
+
+An edge \(x\to a\) with \(x\in\Omega\) cannot survive: if it belonged to \(L\), edge closure of \(\Omega\) would force \(a\in\Omega\). Its edge module is therefore zero, so both restriction values equal zero automatically.
+
+These exhaust all edges whose endpoints lie in \(\Omega\cup\{a\}\).
+
+### Step 4. Check closure and continue induction
+
+For a surviving edge with source in the old \(\Omega\), its target was already in \(\Omega\). For one with source \(a\), its target is above \(a\), hence belongs to \(\Omega\) by maximality. Thus \(\Omega\cup\{a\}\) remains closed under surviving edges.
+
+Exactly one missing vertex has been added, and all prescribed values were retained. Apply induction to finish the extension. This proves extension from the larger class of edge-closed sets, not merely from order-theoretic upper sets.
 
 ## References
 

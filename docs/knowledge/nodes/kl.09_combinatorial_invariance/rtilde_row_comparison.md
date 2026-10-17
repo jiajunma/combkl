@@ -53,23 +53,65 @@ If all upper kernels needed in the current schedule are free, then
 \qquad(0<t<1).
 \]
 
+<!-- source-comparison:start -->
+## Relation to the OpenAI notes
+
+**Different proof route.**
+
+**OpenAI notes:** The simultaneous induction compares normalized KL vectors, obtains P-invariance from the strict half-degree bound, and then recovers bottom terminal-kernel freeness from endpoint equality. [sec:induction](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/05-comparison.tex#L194), [eq:comparison](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/05-comparison.tex#L298), [eq:reciprocal-vector](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/05-comparison.tex#L311).
+
+**Lean (primary):** The simultaneous induction first proves normalized R-invariance together with suffix-kernel freeness in both transported directions. It cancels known bottom R-row entries against one actual source-character vector. Canonical KL equality is proved afterwards in a separate induction using the now common R-matrix and the canonical degree bound. [Invariance:136](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L136), [Invariance:190](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L190), [Invariance:427](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L427).
+
+**How to read this entry:** The detailed proof on this page follows Lean. Its induction inputs, the vector being compared, and the point where endpoint equality becomes available must be read in that order; they are not interchangeable with the preprint’s P-first steps.
+<!-- source-comparison:end -->
+
 *Proof.*
 
-Subtract the source system's exact actual-character reciprocity identity from the bottom coordinate of [[node:kl.comparison.global_comparison]]. Every term below the top cancels by the row hypothesis. The normalized top character is one, leaving precisely the difference of the two displayed R-tilde values.
+### Step 1. Define the vector and both matrices on the same index set
 
-## Why the two sheaf characters need not be identified
-
-Both matrices in the subtraction act on the same source-system vector \(c(t^{-1})\). The target matrix appears because the schedule was transported from the target reflection order; the exact identity uses the source matrix because it comes from the source sheaf's own reciprocity.
-
-Their bottom-row difference is
+Fix \(0<t<1\) and \(T=t^{-1}-t\). Let \(X=[a,b]\). Using the actual source sheaf, set
 \[
-\sum_{z\in[u,b]}
-\bigl(\widetilde R_{u,z}(T)
--\widetilde R'_{u',\phi(z)}(T)\bigr)c_z(t^{-1}).
+v_z=c_z(t^{-1}),\qquad
+A_{x,z}=\widetilde R_{x,z}(T),\qquad
+A'_{x,z}=\widetilde R'_{\phi(x),\phi(z)}(T).
 \]
-All coefficients with \(z\ne b\) vanish by induction. The remaining factor is \(c_b(t^{-1})=1\). Hence the comparison isolates a polynomial entry without asserting equality of source and target characters.
+Both matrices and the vector are indexed by \(X\). In particular, \(v\) is not changed to a target-system character vector when \(A'\) is used.
 
-The reverse argument uses the target sheaf's own character vector. This is why the implementation can prove R-tilde invariance before invoking the canonical KL degree bound.
+### Step 2. Write the two identities to be compared
+
+The source character reciprocity gives the exact equality \(c(t)=Av\). Upper-kernel freeness supplies the image inclusions required for [[node:kl.comparison.global_comparison]], giving \(c(t)\le A'v\).
+
+Substitute the first equality into the second and take coordinate \(a\):
+\[
+\sum_{z\in X}A_{a,z}v_z\le\sum_{z\in X}A'_{a,z}v_z.
+\]
+The interval is finite, so these are ordinary finite sums.
+
+### Step 3. Cancel the already known entries explicitly
+
+The row hypothesis says \(A_{a,z}=A'_{a,z}\) for every \(z\ne b\). Put
+\(S=\sum_{z\in X,\ z\ne b}A_{a,z}v_z\).
+Splitting both sums into their top term and the remaining terms gives
+\[
+S+A_{a,b}v_b\le S+A'_{a,b}v_b.
+\]
+Subtracting the same real number \(S\) from both sides gives
+\(A_{a,b}v_b\le A'_{a,b}v_b\).
+There is no sign assumption on the canceled summands.
+
+### Step 4. Compute the remaining scalar
+
+The top stalk is \(A\) generated in degree zero, so \(C_{b,b}(q)=1\). Its normalization exponent is \(\ell(b)-\ell(b)=0\). Hence
+\[
+v_b=c_b(t^{-1})=(t^{-1})^0C_{b,b}(t^{-2})=1.
+\]
+An interval order isomorphism takes the unique bottom to the unique bottom and the unique top to the unique top; thus \(\phi(a)=a'\), \(\phi(b)=b'\).
+The inequality from Step 3 is precisely
+\[
+\widetilde R_{a,b}(T)\le\widetilde R'_{a',b'}(T).
+\]
+
+The argument isolated one matrix entry using the same source vector on both sides. It did not require identifying source and target stalk characters.
 
 ## References
 

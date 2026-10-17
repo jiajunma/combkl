@@ -48,17 +48,45 @@ Let \(A=k[x_1,\ldots,x_N]\), with every variable in degree one. Suppose that a f
 
 *Proof.*
 
-First sum the geometric series over monomials, inducting on the number of variables, to compute the Hilbert series of the polynomial ring. Each graded piece of a shifted free module decomposes into the corresponding shifted polynomial pieces. The graded linear equivalence supplied by a homogeneous basis then reduces the formula to a finite sum of shifted free-module formulas.
+### Step 1. Describe one homogeneous piece using the basis
 
-## Reading degrees from the series
+Let \(m_i\) be a finite homogeneous basis with \(\deg m_i=d_i\). Every \(m\in M\) has a unique expression \(\sum_i a_im_i\). The expression is homogeneous of degree \(n\) precisely when \(a_i\) is homogeneous of degree \(n-d_i\) for every \(i\).
 
-Let \(A=k[x,y]\), and take a free module with generators in degrees zero and one. Its Hilbert series is
+To verify the reverse implication, decompose each \(a_i\) by degree. Components of total degree different from \(n\) must sum to zero. Linear independence of the \(m_i\) forces the corresponding coefficients to vanish separately. Hence
 \[
-\frac{1+q}{(1-q)^2}.
+M_n\simeq\bigoplus_i A_{n-d_i},
+\qquad \dim_kM_n=\sum_i\dim_kA_{n-d_i}.
 \]
-The coefficient of \(q^n\) counts a copy of \(A_n\) and, for \(n\ge1\), a copy of \(A_{n-1}\). Multiplying by \((1-q)^2\) removes the polynomial-ring contribution and leaves the generator-degree polynomial \(1+q\).
 
-This normalization explains the factor \((1-q)^N\) in the global state. It does not imply that every intermediate kernel is free. For a general finite graded module the Hilbert series still converges at \(0<q<1\), and can be compared before a free basis has been established.
+### Step 2. Compute the polynomial-ring series
+
+Monomials \(X_1^{a_1}\cdots X_N^{a_N}\), with \(a_j\ge0\), form a basis of \(A\). Their degree is \(a_1+\cdots+a_N\). For \(0<q<1\),
+\[
+\sum_n\dim_k(A_n)q^n
+=\sum_{a_1,\ldots,a_N\ge0}q^{a_1+\cdots+a_N}
+=\left(\sum_{a\ge0}q^a\right)^N
+=(1-q)^{-N}.
+\]
+The geometric series converges, and its finite product gives the required convergent monomial sum.
+
+### Step 3. Account for the basis shifts
+
+For a fixed \(i\), change the summation index \(m=n-d_i\):
+\[
+\sum_{n\in\mathbb Z}\dim_k(A_{n-d_i})q^n
+=q^{d_i}\sum_{m\ge0}\dim_k(A_m)q^m
+=q^{d_i}(1-q)^{-N}.
+\]
+This works even for an integer shift \(d_i<0\), because \(q>0\), and the degrees remain bounded below for each shifted summand.
+
+### Step 4. Sum the finitely many basis contributions
+
+Use the dimension equality in Step 1 and interchange a finite sum with the convergent series:
+\[
+H_M(q)=\sum_iq^{d_i}(1-q)^{-N}
+=\frac{\sum_iq^{d_i}}{(1-q)^N}.
+\]
+Thus a generator of positive degree contributes a positive exponent in the numerator, as required by the grading convention.
 
 ## References
 

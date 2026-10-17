@@ -52,11 +52,36 @@ Then
 
 *Proof.*
 
-Expanding the difference from the identity gives
+### Step 1. Expand the composite in the stated order
+
+Write \(r_{\alpha,f}(v)=v-f(v)\alpha\) and \(r_{\beta,g}(v)=v-g(v)\beta\). First apply the second map:
 \[
-v\longmapsto(-f(v)+f(\beta)g(v))\alpha-g(v)\beta.
+r_{\alpha,f}(r_{\beta,g}(v))
+=v-g(v)\beta-f(v-g(v)\beta)\alpha.
 \]
-This proves containment in the stated span. Independence of the two forms makes \(v\mapsto(f(v),g(v))\) surjective onto \(k^2\). The displayed change of coefficients is invertible, so every linear combination of \(\alpha,\beta\) occurs, proving the reverse containment.
+Linearity of \(f\) gives
+\[
+(r_{\alpha,f}r_{\beta,g}-1)(v)
+=(-f(v)+f(\beta)g(v))\alpha-g(v)\beta.
+\]
+Thus every image vector lies in \(\operatorname{span}\{\alpha,\beta\}\).
+
+### Step 2. Explain why the pair of functionals is surjective
+
+Consider \(F:V\to k^2\), \(F(v)=(f(v),g(v))\). If its image were a proper subspace of the two-dimensional space \(k^2\), some nonzero linear functional on \(k^2\), say \((a,b)\mapsto ca+db\), would vanish on that image.
+
+Then \(cf+dg=0\), with \((c,d)\ne(0,0)\), contradicting the assumed independence of \(f,g\). Hence \(F\) is surjective.
+
+### Step 3. Produce a preimage for an arbitrary vector in the plane
+
+Take \(a\alpha+b\beta\). By Step 2 choose \(v\) satisfying
+\[
+g(v)=-b,\qquad f(v)=-a-bf(\beta).
+\]
+Substitution into the expression in Step 1 gives coefficient
+\(-f(v)+f(\beta)g(v)=a\) at \(\alpha\), and coefficient \(-g(v)=b\) at \(\beta\). Therefore the chosen plane vector lies in the image.
+
+The two containments prove equality. Independence of \(\alpha,\beta\) is not needed for this abstract formula; independence of the functionals is the hypothesis that supplies the chosen values in Step 3.
 
 ## References
 

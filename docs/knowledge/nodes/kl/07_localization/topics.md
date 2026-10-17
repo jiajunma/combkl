@@ -15,8 +15,9 @@ Define both images inside one edge module and define the actual reduced-root pro
 Relative flabbiness and model decomposition supply the localized sheaf identification, including the maps that embed its edge images.
 
 1. [[node:kl.notes.dihedral_models]]
-2. [[node:kl.notes.sheaf_localization]]
-3. [[node:kl.local.localized_decomposition]]
+2. [[node:kl.detail.dihedral_model_properties]]
+3. [[node:kl.notes.sheaf_localization]]
+4. [[node:kl.local.localized_decomposition]]
 
 ## The free target and global membership
 

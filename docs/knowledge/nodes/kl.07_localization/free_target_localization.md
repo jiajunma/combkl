@@ -50,19 +50,37 @@ x/1\in M_{\mathfrak p}
 
 *Proof.*
 
-The forward implication follows by localization. For the converse, choose a nonzero denominator \(c\) with \(cx\in M\), and induct on its prime factorization. At each prime factor \(p\), localized membership supplies a second denominator not divisible by \(p\). Compare the two expressions in a free basis of \(M\); divisibility of the coordinates allows \(p\) to be removed from the first denominator. Torsion-freeness of \(E\) justifies cancellation. Repeating the argument gives \(x\in M\).
+### Step 1. Translate localized membership into denominators
 
-## What localization can and cannot recover
+The implication \(x\in M\Rightarrow x/1\in M_{\mathfrak p}\) is immediate.
+For the converse, the generic-span hypothesis provides \(c\ne0\) with \(cx\in M\).
 
-The freeness assumption concerns the target \(M\) in which membership is tested. The argument uses its free coordinates to clear denominators. It does not require the submodule being compared with \(M\) to be reflexive.
+For an irreducible element \(p\), the ideal \((p)\) is prime of height one in the stated Noetherian UFD. The localized membership assumption gives a denominator \(a\notin(p)\) with \(ax\in M\). Equivalently \(p\nmid a\). If equality in the localization initially uses two denominators, multiply them; both lie outside the prime, so their product still does.
 
-For an explicit distinction, let \(C=k[s,t]\) and \(I=(s,t)\). At every height-one prime, at least one of \(s,t\) is invertible, so
+### Step 2. Remove one prime factor from c
+
+Suppose \(c=pc_1\). In the free module \(M\), let \(m=pc_1x\) and \(n=ax\). They satisfy
+\(am=pc_1n\).
+Choose a free basis \((e_i)\) of \(M\) and expand both vectors in their finitely supported coordinates:
 \[
-I_{\mathfrak p}=C_{\mathfrak p}.
+a\,m_i=pc_1n_i\quad\text{for every }i.
 \]
-Nevertheless \(I\ne C\), since \(C/I\simeq k\). This quotient is concentrated at the origin and is invisible to those localizations.
+Since \(p\) is prime and does not divide \(a\), it divides every \(m_i\). Write \(m_i=pu_i\), retaining finite support, and put \(m'=\sum_i u_ie_i\in M\). Then \(m=pm'\).
 
-Thus the edge argument first proves an inclusion into a free target. Its later global Hilbert comparison detects the remaining quotient, including a quotient of finite length like this one. The two steps have different mathematical jobs.
+### Step 3. Cancel in the ambient module
+
+The two expressions for \(m\) give
+\(p(c_1x-m')=0\) in \(E\). The ambient module is torsion-free and \(p\ne0\), so \(c_1x=m'\in M\). Thus one prime factor of the denominator has been removed.
+
+### Step 4. Finish by unique factorization
+
+Factor the original nonzero \(c\) into a unit times finitely many irreducibles, counted with multiplicity. Repeat Steps 1–3 for every factor. When only a unit \(u\) remains, \(ux\in M\) implies \(x=u^{-1}(ux)\in M\).
+
+This proves the equivalence. If the ring is a field, every nonzero denominator is already a unit, so the same argument covers the empty family of height-one primes.
+
+### Step 5. Keep the direction of application straight
+
+The free module is the target in which membership is being tested. The theorem does not say that two arbitrary submodules with equal height-one localizations are equal. For example \((s,t)\subsetneq k[s,t]\) has the same localization as the whole ring at every height-one prime. The later Hilbert comparison, not localization alone, detects that possible remaining quotient.
 
 ## References
 

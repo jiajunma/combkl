@@ -49,11 +49,29 @@ The assertion is existence of an isomorphism, not uniqueness of that isomorphism
 
 *Proof.*
 
-Construct an isomorphism by descending through the vertex order. At \(b\), both stalks are the normalized rank-one module. Suppose it is already constructed on an upper set. The quotient rules induce compatible isomorphisms on the adjacent edge modules, and hence on the next boundary image.
+### Step 1. Prove the local minimal-cover comparison
 
-Both new stalks are minimal graded free covers of the identified boundary image. Lift the comparison through the covers. Their maps on the quotient by the positive-degree ideal are isomorphisms; graded Nakayama upgrades the lift to an isomorphism. The upper quotient property supplies the corresponding edge maps. Continue until every vertex has been added.
+Let \(p:F\twoheadrightarrow D\) and \(q:G\twoheadrightarrow D\) be minimal graded free covers. Freeness of \(F\) allows a graded lift \(h:F\to G\) with \(qh=p\), by lifting a homogeneous basis degree by degree.
 
-This result justifies making choices of minimal covers in the construction. It identifies the resulting graded sheaf independently of those choices; it does not identify its character with a KL polynomial.
+Both covers induce isomorphisms modulo the positive ideal \(J\). For example, if \(p(v)\in JD\), lift an expression for \(p(v)\) from \(JF\); subtracting that lift puts \(v\) in \(\ker p\subseteq JF\). Thus \(p^{-1}(JD)=JF\), proving injectivity of the induced quotient map. Surjectivity is inherited from \(p\). The same applies to \(q\). Hence \(h\) is an isomorphism modulo \(J\).
+
+### Step 2. Upgrade the lift to an isomorphism
+
+The cokernel of \(h\) is graded and bounded below; its quotient by \(J\) is zero. Graded Nakayama makes it zero, so \(h\) is surjective. Since \(G\) is free, \(h\) has a linear section, giving \(F\simeq G\oplus K\), where \(K=\ker h\).
+
+Injectivity modulo \(J\) gives \(K\subseteq JF\). Projecting this containment onto the summand \(K\) gives \(K=JK\). The kernel is homogeneous and bounded below, so graded Nakayama gives \(K=0\). Thus \(h\) is bijective. Its inverse preserves degree because a bijective graded map has a unique homogeneous preimage of each homogeneous element.
+
+### Step 3. Start the sheaf comparison at the top
+
+Both top stalks are the normalized module \(A\). Identify them by their prescribed graded normalization. There are no edges above the greatest vertex, so this is compatible initial data.
+
+Suppose a graded isomorphism is already defined on an upper set. Choose a maximal missing vertex \(x\). The existing isomorphism identifies sections above \(x\), hence their boundary images. The two stalk boundary maps are minimal covers of that common image: surjectivity onto it follows from flabbiness and global generation, and kernel minimality is a boundary-sheaf condition.
+
+### Step 4. Extend over x and its incident edges
+
+Apply Steps 1–2 to obtain the stalk isomorphism at \(x\), commuting with the boundary maps. Outgoing lower squares therefore commute. Incoming edge modules are quotients by the same labels; the stalk isomorphism induces their edge isomorphisms, commuting with upper restrictions. All old maps are retained.
+
+The enlarged vertex set is upper and has smaller complement. Finite downward induction yields a graded isomorphism of the whole sheaves. The choices of lifts show why existence is asserted; the resulting isomorphism is not claimed to be unique.
 
 ## References
 

@@ -50,9 +50,32 @@ split the top stalk, then \(B\) is a graded direct summand of \(C\).
 
 *Proof.*
 
-Extend \(i_b\) and \(p_b\) to sheaf morphisms \(i\) and \(p\). The composite \(f=pi\) is the identity at the top. Minimality propagates invertibility of an endomorphism downward: at each next stalk its induced map on the minimal generator quotient is invertible, and graded Nakayama completes the step. Hence \(f\) is a sheaf automorphism.
+### Step 1. Extend both top maps with their hypotheses checked
 
-Replace \(i\) by \(if^{-1}\). Then \(p(if^{-1})=1\) on every stalk and edge. This correction is essential: arbitrary extensions of a split pair at the top need not initially compose to the identity everywhere.
+The given maps \(i_b:B^b\to C^b\), \(p_b:C^b\to B^b\) satisfy \(p_bi_b=1\).
+Apply the morphism-extension theorem once to \(B\to C\) and once to \(C\to B\). Both sheaves are flabby, globally generated, and obey the same upper quotient rule. Both have free stalks, so the required source-freeness condition holds in each direction. We obtain graded morphisms \(i,p\) agreeing with the given maps at \(b\).
+
+Their composite \(f=pi\) is a sheaf endomorphism of \(B\) whose top component is the identity. It need not yet be the identity at other vertices.
+
+### Step 2. Show that f is invertible below the top
+
+Induct downward. Suppose its stalk maps are invertible above \(x\). Their quotient maps make its outgoing edge maps invertible, and hence identify the boundary image at \(x\) with itself by an automorphism \(a\).
+
+The stalk map \(f_x\) lies over \(a\) on the minimal cover \(B^x\to D_x\). Lift \(a^{-1}\) through the cover, obtaining a graded map \(l\). Then both \(f_xl-1\) and \(lf_x-1\) have image in the cover kernel, hence in \(JB^x\).
+
+A graded self-map congruent to the identity modulo \(J\) is bijective: its homogeneous cokernel has zero quotient modulo \(J\), so Nakayama makes it surjective; on a finite free module, a surjective self-map has invertible determinant and is injective. Therefore \(f_xl\) and \(lf_x\) are bijective. The former makes \(f_x\) surjective and the latter makes it injective. This completes the downward induction.
+
+### Step 3. Construct the inverse as a sheaf morphism
+
+Invert each bijective stalk and edge map. The equations expressing commutation with restrictions can be multiplied by these inverses, proving the same commutation equations for them. The inverses preserve degree, so they assemble into a graded sheaf inverse \(f^{-1}\).
+
+### Step 4. Correct the splitting
+
+Set \(\widehat i=i f^{-1}\). Then
+\[
+p\widehat i=pi f^{-1}=ff^{-1}=1
+\]
+at every stalk and edge. Thus \(B\) is a graded direct summand of \(C\). The correction is explicit; the argument never assumes that arbitrary extensions of the two top maps already split.
 
 ## References
 

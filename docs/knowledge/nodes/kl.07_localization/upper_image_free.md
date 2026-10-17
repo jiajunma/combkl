@@ -47,19 +47,31 @@ Let \(e:x\to y\) have label \(\alpha\), and let \(L=L_y(G)\) be the upper endpoi
 
 *Proof.*
 
-The upper edge map has kernel \(\alpha B^y\), so
-\[
-J\simeq L/(L\cap\alpha B^y).
-\]
-We claim \(L\cap\alpha B^y=\alpha L\). One inclusion is immediate. If \(\alpha v\in L\), then for every remaining edge \(g\),
-\[
-\alpha\,\rho_g(v)=0.
-\]
-Its label is not proportional to \(\alpha\), and its module is free over the quotient by that other label. Multiplication by \(\alpha\) on this edge module is injective. Hence \(\rho_g(v)=0\) for every \(g\), proving \(v\in L\).
+### Step 1. Check the saturation required by the quotient-image theorem
 
-It follows that \(J\simeq L/\alpha L\). Reducing an \(A\)-basis of \(L\) modulo \(\alpha\) gives a \(C\)-basis of \(J\).
+Let \(L=K_y(G)\), and suppose \(\alpha_ev\in L\). For each remaining outgoing edge \(h:y\to z\),
+\[
+0=\rho_{y,h}(\alpha_ev)=\alpha_e\rho_{y,h}(v).
+\]
+The label \(\alpha_e\) belongs to an incoming edge at \(y\), while \(\alpha_h\) belongs to an outgoing edge there. They cannot be proportional: the same reflection sends \(y\) to only one other vertex and cannot send it both down to \(x\) and up to \(z\).
 
-There is also full generic rank. The product of the remaining labels times \(B^y\) lies in \(L\); its image modulo \(\alpha\) is nonzero. Consequently \(J\) spans the whole edge module after passing to the fraction field of \(C\). These are the freeness and generic-span inputs required by height-one membership detection.
+The quotient \(A/(\alpha_h)\) is a polynomial domain. The upper quotient rule and freeness of \(B^z\) make \(B^h\) free over that domain. The image of \(\alpha_e\) is nonzero in it, so its multiplication is injective. Therefore \(\rho_{y,h}(v)=0\) for every \(h\in G\), proving \(v\in L\).
+
+### Step 2. Identify the image as a free quotient
+
+The upper restriction along \(e\) has kernel \(\alpha_eB^y\). Step 1 and [[node:kl.detail.quotient_image_free]] give
+\[
+J_e\simeq L/\alpha_eL.
+\]
+The assumed free \(A\)-basis of \(L\) reduces to a free basis over \(C=A/(\alpha_e)\), so \(J_e\) is free over \(C\).
+
+### Step 3. Prove the generic-span statement needed later
+
+Let \(g=\prod_{h\in G}\alpha_h\), with empty product one. For every \(v\in B^y\) and \(h\in G\), the restriction of \(gv\) to \(B^h\) is zero because \(\alpha_h\) is a factor and annihilates that edge module. Thus \(gB^y\subseteq L\).
+
+The upper map \(B^y\twoheadrightarrow B^e\) is surjective, so \(\overline gB^e\subseteq J_e\), where \(\overline g\) is the image in \(C\). No factor of \(g\) is proportional to \(\alpha_e\), so \(\overline g\ne0\).
+
+After passing to the fraction field of \(C\), \(\overline g\) is invertible; therefore \(J_e\) spans all of \(B^e\). Multiplication by the nonzero edge factor gives the same generic-span property for \(f_eJ_e\).
 
 ## References
 

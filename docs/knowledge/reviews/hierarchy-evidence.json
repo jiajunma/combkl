@@ -101,6 +101,7 @@
       "kl.paths.plane_degree"
     ],
     "kl.07_localization": [
+      "kl.detail.dihedral_model_properties",
       "kl.detail.edge_images",
       "kl.detail.quotient_image_free",
       "kl.detail.scaled_images",
@@ -531,7 +532,9 @@
       "id": "kl.detail.boundary_pairing",
       "chapter": "kl.05_duality_and_characters",
       "lean_declarations": [
-        "OAI.KLInvariance.BruhatGraph.boundarySheaf_symmetricPairing"
+        "OAI.KLInvariance.BruhatGraph.boundarySheaf_symmetricPairing",
+        "OAI.KLInvariance.TitsSpace.bottCanonicalAdjointIso",
+        "OAI.KLInvariance.TitsSpace.bottCanonicalPerfectPairing_apply"
       ],
       "paper_locations": [
         "Related paper context; bg:normalization"
@@ -599,6 +602,18 @@
       ],
       "paper_locations": [
         "Related paper context; sec:dihedral"
+      ]
+    },
+    {
+      "id": "kl.detail.dihedral_model_properties",
+      "chapter": "kl.07_localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.model_flabby",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.model_generated",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.model_quotient"
+      ],
+      "paper_locations": [
+        "Dihedral models; loc:models"
       ]
     },
     {
@@ -956,7 +971,8 @@
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.bottProjectiveUpper",
         "OAI.KLInvariance.TitsSpace.bottFlabby",
-        "OAI.KLInvariance.TitsSpace.bottProjectionSheaf_flabby"
+        "OAI.KLInvariance.TitsSpace.bottProjectionSheaf_flabby",
+        "OAI.KLInvariance.TitsSpace.bottProjectiveUpper_cons"
       ],
       "paper_locations": [
         "Related paper context; bg:normalization"
@@ -978,7 +994,8 @@
       "id": "kl.duality.actual_character_reciprocity",
       "chapter": "kl.05_duality_and_characters",
       "lean_declarations": [
-        "OAI.KLInvariance.BruhatGraph.stalkCharacter_reciprocity"
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_reciprocity",
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_natDegree_le"
       ],
       "paper_locations": [
         "2. Real realizations and moment-graph sheaves; sec:background"
@@ -1198,7 +1215,10 @@
       "lean_declarations": [
         "OAI.KLInvariance.exists_finiteIntervalModel",
         "OAI.KLInvariance.FiniteIntervalModel.orderIso",
-        "OAI.KLInvariance.FiniteIntervalModel.kl_eq"
+        "OAI.KLInvariance.FiniteIntervalModel.kl_eq",
+        "OAI.KLInvariance.StandardParabolic.inclusion_injective",
+        "OAI.KLInvariance.StandardParabolic.length_inclusion",
+        "OAI.KLInvariance.StandardParabolic.bruhat_inclusion_iff"
       ],
       "paper_locations": [
         "2. Real realizations and moment-graph sheaves; sec:background"
@@ -1298,7 +1318,8 @@
       "id": "kl.notes.graded_projective_free",
       "chapter": "kl.03_realizations_and_grading",
       "lean_declarations": [
-        "OAI.KLInvariance.Graded.exists_homogeneous_basis_polynomial"
+        "OAI.KLInvariance.Graded.exists_homogeneous_basis_polynomial",
+        "OAI.KLInvariance.Graded.linearIndependent_of_projective_cover"
       ],
       "paper_locations": [
         "6. Reciprocity and simultaneous induction; sec:induction"

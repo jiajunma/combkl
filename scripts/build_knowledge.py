@@ -69,6 +69,27 @@ def declaration_inventory(index, nodes) -> list[dict]:
     return inventory
 
 
+def validate_proof_walkthroughs(nodes):
+    """Check that published proof text matches its explicit exposition review.
+
+    This is a stale-review check, not a mechanical proof-completeness test.
+    """
+    path = KNOWLEDGE / "reviews" / "proof-detail-review.json"
+    review = json.loads(path.read_text(encoding="utf-8"))
+    entries = {entry["node"]: entry for entry in review["proofs"]}
+    theorems = {node.id: node for node in nodes if node.kind == "theorem"}
+    if set(entries) != set(theorems):
+        raise ValueError(f"Proof exposition review has missing/stale nodes: {set(entries) ^ set(theorems)}")
+    for node_id, node in theorems.items():
+        if "*Proof.*" not in node.body or "## References" not in node.body:
+            raise ValueError(f"Missing proof or source references: {node_id}")
+        proof = node.body.split("*Proof.*", 1)[1].split("## References", 1)[0].strip()
+        if hashlib.sha256(proof.encode()).hexdigest() != entries[node_id]["proof_sha256"]:
+            raise ValueError(f"Proof text changed since its exposition review: {node_id}")
+    return {"reviewed_theorem_walkthroughs": len(theorems),
+            "check_scope": "Matches reviewed prose; does not certify mathematical completeness"}
+
+
 def validate_blueprint_hierarchy(nodes, index, config) -> dict:
     """Check the mathematical chapter registry and source correspondence."""
     registered = {topic.id for topic in config.topics if topic.id != "kl"}
@@ -341,6 +362,7 @@ def main() -> None:
     from tools.knowledge.parser import scan_directory
     from tools.knowledge.publish import publish
     from tools.knowledge.definition_links import DefinitionLinks
+    from update_source_comparisons import update_comparisons
 
     snapshot_files = verify_snapshot()
     config = load_project_config(KNOWLEDGE)
@@ -351,6 +373,8 @@ def main() -> None:
     if index.warnings:
         raise ValueError("Declaration indexing warnings:\n" + "\n".join(index.warnings))
     nodes = scan_directory(KNOWLEDGE / "nodes")
+    proof_detail = validate_proof_walkthroughs(nodes)
+    source_comparisons = update_comparisons(KNOWLEDGE, nodes, index, repository, check=True)
     navigation = DefinitionLinks.load(KNOWLEDGE, nodes).summary()
     hierarchy = validate_blueprint_hierarchy(nodes, index, config)
     inventory = declaration_inventory(index, nodes)
@@ -404,6 +428,8 @@ def main() -> None:
         "bundled_source_files_verified": source_files,
         "node_kinds": dict(Counter(node.kind for node in nodes)),
         "node_statuses": dict(Counter(node.status for node in nodes)),
+        "proof_exposition_review": proof_detail,
+        "source_comparisons": source_comparisons,
         "diagnostics": [str(d) for d in diagnostics],
         "browser_automation_used": False,
         **checks,

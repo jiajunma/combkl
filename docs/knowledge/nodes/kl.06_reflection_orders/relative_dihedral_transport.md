@@ -53,11 +53,43 @@ The restriction preserves relative order, relative rank differences, and directe
 
 *Proof.*
 
-The two relative atoms above \(x\) give two distinct reflection labels after transport. They determine a target root plane. Moving through successive ranks, the equality of the two reflection products around each diamond forces all the next labels into this same plane. Hence every image vertex lies in one dihedral coset.
+### Step 1. Transport the relative interval as an actual graph
 
-Next consider two vertices at relative distance two. Exactly two ambient directed two-edge paths join them, and all intermediate vertices belong to the ambient interval. Graph reconstruction transports this precise path count. In the target dihedral coset it forces relative distance two as well. Iterating recovers consecutive ranks and both directions of relative order.
+Choose a minimal representative \(a_0\) of the source dihedral coset. The map \(z\mapsto za_0\) identifies relative reflection edges with ambient ones. Compose it with the given interval order isomorphism \(\phi\), obtaining an injective vertex map \(f\) that sends every relative edge to an ambient target edge by graph invariance.
 
-The image therefore has the full relative interval as its range, rather than merely an embedded dihedral-shaped subgraph. This range statement is what permits later-edge sums to be transported without losing vertices.
+The assumed relative rank is at least two, so the interval has two distinct atoms above its bottom. Their image edge labels give two distinct reflections and hence two independent root directions.
+
+### Step 2. Show that all images lie in one target root plane coset
+
+Let \(P'\) be the plane spanned by these initial roots. Around a rank-two diamond, both two-edge paths have the same product of reflections. The moving-image identity identifies the plane spanned by each pair of labels. Since the two initial directions are independent, that plane is \(P'\).
+
+Apply this successively through the two-vertex internal ranks: once the labels entering a rank lie in \(P'\), the diamonds to the next rank place their outgoing labels in \(P'\) too. Every image vertex is therefore reached from the bottom by reflections in the same maximal plane subgroup \(D'\).
+
+Choose a minimal representative \(a'\) of this target coset and define
+\(F(z)=f(z)(a')^{-1}\in D'\).
+Then \(F(z)a'=f(z)\), and injectivity of \(f\) implies injectivity of \(F\).
+
+### Step 3. Detect relative rank two from the number of paths
+
+Take source vertices at relative rank distance two. The relative interval between them has exactly two middle vertices, and its ambient directed two-edge paths have precisely these intermediates. Graph invariance transports that exact two-path count: every target intermediate lies in the ambient interval and pulls back.
+
+In a dihedral coset, if endpoints have positive even relative difference \(r\), the internal odd ranks supply exactly \(r\) two-edge paths. All such paths are ambient paths, and the common-plane calculation places all ambient intermediates back in this coset. The transported count is two, so \(r=2\).
+
+### Step 4. Recover the consecutive ranks
+
+Every consecutive-rank edge in an interval of rank at least two lies in a consecutive two-edge path. Step 3 makes the target total gap two. Its two edge gaps are positive integers, so both are one. Thus every relative cover is sent to a relative cover.
+
+Following a saturated chain yields
+\[
+\ell_{D'}(F(z))-\ell_{D'}(F(x))
+=\ell_D(z)-\ell_D(x).
+\]
+
+### Step 5. Prove surjectivity onto the full relative interval
+
+The image contains the two endpoints and two distinct vertices in every internal rank. A dihedral interval of the same rank has exactly those numbers of vertices. There is therefore no additional target vertex at any rank, and the image is the whole interval.
+
+Relative order is determined by strict length comparison or equality; relative reflection edges are determined by positive odd length difference. Injectivity and the rank identity preserve and reflect both predicates. This proves every part of the claimed transport, including its range statement.
 
 ## References
 

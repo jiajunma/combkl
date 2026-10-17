@@ -45,7 +45,21 @@ For every \(b\in W\), there is a finite subset \(J\subseteq S\) such that every 
 
 *Proof.*
 
-Choose a reduced expression \(\omega\) for \(b\), and let \(J\) be the set of its letters. By [[node:kl.foundations.subword]], every \(x\le b\) has a reduced expression that is a subword of \(\omega\). Every letter of that expression belongs to \(J\).
+### Step 1. Choose the generator set from one reduced word
+
+Choose a reduced expression \(b=s_1\cdots s_n\), and let
+\(J=\{s_i:1\le i\le n\}\).
+This is a finite set, regardless of the size of the ambient simple-generator set. Repetitions in the word do not create additional elements of \(J\).
+
+### Step 2. Treat an arbitrary lower element using the same set
+
+Take any \(x\le b\). The fixed-word version of the subword criterion provides a reduced expression for \(x\) obtained by retaining selected positions of this same word for \(b\). Every retained letter therefore belongs to \(J\).
+
+Thus, for every \(x\le b\), there is a word in the alphabet \(J\) whose product is \(x\). The set \(J\) was chosen before \(x\); it works simultaneously for the whole lower ideal.
+
+## Notes
+
+This proves the finite-generator-support assertion. It does not yet identify the canonical polynomials in the parabolic subgroup with the ambient ones. That additional transport is established in [[node:kl.main.finite_model_transport]] from the parabolic recursions. Keeping the two assertions separate prevents using combinatorial invariance in its own reduction.
 
 ## References
 

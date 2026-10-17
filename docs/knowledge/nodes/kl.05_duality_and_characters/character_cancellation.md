@@ -54,13 +54,42 @@ q_t=\sum_z r_zp_{t,z}.
 
 *Proof.*
 
-Interchange the two finite sums on the right and bring them to the left:
-\[
-0=\sum_y m_y\left(q_y-\sum_z r_zp_{y,z}\right).
-\]
-All summands except \(y=t\) vanish by hypothesis. The remaining coefficient is \(m_t=1\), so the bracket at \(t\) vanishes.
+### Step 1. Expand the right-hand side in a fixed order
 
-In the application, the word object decomposes into boundary objects. The same multiplicities occur in its stalk and kernel character decompositions. Reciprocity is already known for the lower summands by induction, and the top multiplicity is one. This elementary cancellation extracts reciprocity for the actual top boundary object. It does not require identifying that object's stalk character with the canonical KL polynomial.
+The hypothesis is
+\[
+\sum_y m_yq_y=\sum_z r_z\left(\sum_y m_yp_{y,z}\right).
+\]
+All sums are finite. Distribute multiplication and interchange the summation order:
+\[
+\sum_z\sum_y r_zm_yp_{y,z}
+=\sum_y m_y\left(\sum_zr_zp_{y,z}\right).
+\]
+Only commutativity and finite distributivity are used.
+
+### Step 2. Move all terms into one sum
+
+Subtract the expanded right-hand side from the left:
+\[
+0=\sum_y m_y\left(q_y-\sum_zr_zp_{y,z}\right).
+\]
+This is an identity in the coefficient ring; no ordering or positivity is assumed.
+
+### Step 3. Eliminate each lower-index term
+
+For every \(y\ne t\), the lower identity says
+\(q_y=\sum_zr_zp_{y,z}\). Its parenthesized factor is therefore zero, so that entire summand is zero, regardless of the value of \(m_y\).
+
+The only remaining summand is
+\(m_t(q_t-\sum_zr_zp_{t,z})\).
+
+### Step 4. Use the normalized top multiplicity
+
+The hypothesis \(m_t=1\) changes the last equality to
+\(q_t-\sum_zr_zp_{t,z}=0\).
+Add the finite sum to both sides to obtain the conclusion.
+
+The value one, rather than merely nonzero, means no division is required. The argument therefore works over an arbitrary commutative ring and applies directly to the integral character polynomials.
 
 ## References
 

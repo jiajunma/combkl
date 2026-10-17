@@ -59,9 +59,26 @@ For every Coxeter system, exactly one pair of polynomial families satisfies [[no
 
 *Proof.*
 
-Construct ordinary \(R\)-polynomials from the Hecke action and establish their recursion. Then recurse on interval rank difference, using the strict lower-half operation to construct \(P\). Prove the diagonal and vanishing conditions, the strict degree bound, and reciprocity. This produces a pair satisfying every normalization condition.
+### Step 1. Exhibit a family rather than assume one exists
 
-For uniqueness, the simple-reflection recursion first determines \(R\). With \(R\) fixed, induction on smaller intervals and reciprocal low-degree uniqueness determine \(P\). The selected family must therefore equal this explicitly constructed family.
+Take the constructed ordinary R-family and the lower-half P-family. Their diagonal values are one and their noncomparable values are zero by construction. The Hecke coefficient calculation proves the R-recursion. The lower-half construction proves the strict degree bound, and [[node:kl.detail.kl_recursion]] proves reciprocity. Thus every condition in the definition of a normalized pair is satisfied. This proves existence.
+
+### Step 2. Prove uniqueness of the R-component
+
+Let two normalized pairs be given. Induct on the length of the upper endpoint \(y\), allowing every \(x\). If \(y=1\), only \(x=1\) can lie below it; diagonal and zero conditions give equality.
+
+If \(y\ne1\), choose a simple descent \(s\). Both normalized families satisfy the same R-recursion. Every term on its right has upper endpoint \(sy\), whose length is smaller. The induction hypothesis identifies those terms in both branches, so it identifies the R-values at \((x,y)\).
+
+### Step 3. Prove uniqueness of the P-component
+
+The R-components now agree. Induct on \(d(x,y)\). The diagonal and noncomparable cases are fixed. For \(x<y\), every term with \(z>x\) in the reciprocity sum is equal by induction. Subtract the two reciprocity equations. Their difference \(p=P_{x,y}-P'_{x,y}\) satisfies
+\(\operatorname{reflect}_d p=p\), and both original degree bounds imply that \(p\) is supported strictly below \(d/2\).
+
+If \(p\ne0\), let \(m\) be its highest nonzero degree. Reflection sends that coefficient to degree \(d-m>m\), contradicting equality with \(p\). Hence \(p=0\). This establishes uniqueness of P at the current pair and completes induction.
+
+### Step 4. Identify the selected family
+
+The selected KL family is chosen from the predicate specifying normalized pairs. Step 1 proves that this predicate has a witness, so the selected family satisfies it. Steps 2–3 show that it must equal the explicitly constructed family. Taking the P-component gives the claimed equality for the selected canonical KL polynomials.
 
 ## References
 

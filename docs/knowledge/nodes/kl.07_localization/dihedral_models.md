@@ -77,6 +77,18 @@ After root-plane localization and reduction by one edge label, the remaining pla
 
 The polynomial identity \(P^D=1\), the induced-label model properties, and the local decomposition are distinct steps in the development; each is retained at its own source interface.
 
+<!-- source-comparison:start -->
+## Relation to the OpenAI notes
+
+**Same model properties, different justification.**
+
+**OpenAI notes:** The induced-model lemma justifies applying the character theorem to the restricted reflection-faithful realization and uses the dihedral character calculation to identify the rank-one model. [loc:models](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/04-localization.tex#L125).
+
+**Lean (primary):** The actual induced-label structure model is handled by orbit-spline interpolation. Its congruences, flow-down sections, flabbiness, global generation, and quotient maps are established directly before local model decomposition. [DihedralIntervals:616](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L616), [DihedralIntervals:622](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L622), [DihedralIntervals:626](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L626).
+
+**How to read this entry:** Use the interpolation proof and its actual ambient root labels here. The formula P=1 remains a separate polynomial theorem; it is not substituted for the formal construction of the model properties.
+<!-- source-comparison:end -->
+
 ## References
 
 [4. Localization at a root plane](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/04-localization.tex#L125).

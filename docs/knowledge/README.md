@@ -38,7 +38,7 @@ revision remains the provenance identifier. The link updater validates all
 
     python3 scripts/update_source_links.py 108243e05ed46235bf82dc30d4d90c794579776f
 
-The completed development is represented by 69 `proved` theorem entries and
+The completed development is represented by 70 `proved` theorem entries and
 49 `formalized` definitions/concepts. There are no `admitted` entries. Worked
 teaching examples are explanatory prose unless linked to a separate theorem.
 
@@ -102,6 +102,27 @@ the original paper PDF and all 34 Lean modules under `_sources/`.
 ## Maintenance
 
 The mathematical Markdown entries are authoritative exposition. The original Lean snapshot is preserved separately. Rebuild generated HTML and graphs rather than editing them.
+
+Every theorem entry now has a numbered proof walkthrough, including the
+objects and maps being used, the intermediate calculations, and the precise
+induction or lifting steps. The review inventory is
+[reviews/proof-detail-review.json](reviews/proof-detail-review.json). The
+builder checks that the prose matches the reviewed version; hashes and word
+counts do not themselves certify that an argument is complete.
+
+**Lean is the primary authority when it differs from the OpenAI notes.**
+The affected entries include a visible comparison explaining differences in
+statement, generality, construction, or proof route. These are recorded in
+[source-comparisons.yml](source-comparisons.yml); Python resolves the exact
+paper labels and Lean declaration locations. Refresh and check those sections
+with:
+
+    python3 scripts/update_source_comparisons.py --mdblueprint /path/to/mdblueprint
+    python3 scripts/update_source_comparisons.py --mdblueprint /path/to/mdblueprint --check
+
+In particular, the R-first induction is kept separate from the preprint's
+P-first presentation, and conditional local intersection statements are not
+substituted for the preprint's character theorem.
 
 The structure review separated 44 definitions and intermediate results that
 were previously implicit or folded into broad pages. Its machine-readable

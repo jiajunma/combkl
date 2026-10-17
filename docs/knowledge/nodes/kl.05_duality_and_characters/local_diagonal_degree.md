@@ -51,11 +51,48 @@ then
 2d_i<d(x,b).
 \]
 
+<!-- source-comparison:start -->
+## Relation to the OpenAI notes
+
+**Different intermediate statement.**
+
+**OpenAI notes:** The grading-normalization proposition identifies the stalk graded rank with the canonical KL polynomial and uses the Elias–Williamson character theorem through the cited moment-graph bridges. [bg:normalization](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L253).
+
+**Lean (primary):** The development defines the equality of actual stalk characters and canonical KL polynomials as StalkCharacterObligation. The unconditional theorem used in the main route is R-reciprocity for the actual character. The local strict half-degree implication retains an explicit nonzero-diagonal hypothesis. [SheafMorphisms:219](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L219), [DyerPaths:62](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L62), [PositiveTransfer:186](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean#L186).
+
+**How to read this entry:** Follow the proved character-reciprocity and duality statements here. Do not silently replace the actual character C by P, or read the conditional local-degree lemma as an unconditional character-identification theorem. The completed invariance proof uses the R-first route to avoid that substitution.
+<!-- source-comparison:end -->
+
 *Proof.*
 
-The graded duality makes the displayed diagonal entry homogeneous of degree \(d(x,b)-2d_i\). Minimality puts every coordinate of the image of \(I_x\) in the positive-degree ideal. A nonzero homogeneous element of that ideal has strictly positive degree. Therefore \(d(x,b)-2d_i>0\).
+### Step 1. Compute the degree before using minimality
 
-The nonvanishing assumption is part of this proved implication. It is not a claim that every diagonal of every chosen basis is nonzero. Accordingly, this conditional local statement should not be used as an unconditional stalk-character identification. The R-first proof route uses actual-character reciprocity and simultaneous comparison to reach KL invariance.
+Let \(m_i\) have degree \(d_i\), and let \(\lambda_i\) be its dual basis functional. Its degree is \(-d_i\).
+The inverse stalk–costalk duality has shift \(d=d(x,b)\), so
+\(I_x\lambda_i\) is homogeneous of degree \(d-d_i\).
+Applying \(\lambda_i\) to it gives a homogeneous coefficient
+\[
+a_i=\lambda_i(I_x\lambda_i)\in A_{d-2d_i}.
+\]
+
+### Step 2. Put that coefficient in the positive ideal
+
+For \(x<b\), the boundary-cover minimality condition says
+\(\operatorname{im}I_x=K_x\subseteq A_{>0}B^x\).
+Write \(I_x\lambda_i=\sum_j r_jv_j\) with \(r_j\in A_{>0}\). Since \(\lambda_i\) is \(A\)-linear,
+\(a_i=\sum_jr_j\lambda_i(v_j)\in A_{>0}\).
+
+### Step 3. Use the nonzero hypothesis
+
+By assumption \(a_i\ne0\). A nonzero homogeneous element of the positive ideal has positive degree. Negative-degree pieces of the coefficient ring vanish, and the degree-zero component of every element in the positive ideal is zero. Thus the homogeneous degree \(d-2d_i\) must be strictly positive.
+
+Rearranging gives \(2d_i<d\).
+
+### Step 4. Keep the exact logical scope
+
+The proof used the nonvanishing of this particular diagonal coefficient in Step 3. Without it, zero lies in every homogeneous subspace and no degree conclusion follows from the same calculation. Lean proves this implication with the nonzero hypothesis; it does not supply that hypothesis for every diagonal of every basis.
+
+Accordingly this lemma cannot be substituted for the preprint's unconditional KL-character normalization. The R-first invariance route does not make that substitution.
 
 ## References
 

@@ -50,15 +50,38 @@ Thus the operators constructed from Coxeter length satisfy the stated Hecke quad
 
 *Proof.*
 
-It is enough to evaluate both sides on each basis vector \(e_w\). If \(\ell(sw)>\ell(w)\), then \(L_se_w=e_{sw}\), and the second application crosses a descent:
+### Step 1. Reduce the operator equation to basis vectors
+
+Both sides are linear operators on the free module with basis \(e_w\), so equality is equivalent to equality on each \(e_w\). Fix \(w\). A simple reflection changes its length by exactly one, so there are precisely two cases.
+
+### Step 2. Compute the ascent case
+
+If \(\ell(sw)=\ell(w)+1\), then
+\(L_se_w=e_{sw}\).
+The second application is a descent, since \(s(sw)=w\), and therefore
 \[
-L_s^2e_w=e_w+ae_{sw}=e_w+aL_se_w.
+L_s^2e_w=L_se_{sw}=e_w+ae_{sw}=e_w+aL_se_w.
 \]
-If \(\ell(sw)<\ell(w)\), then \(L_se_w=e_{sw}+ae_w\). Applying \(L_s\) and using the opposite ascent from \(sw\) gives
+
+### Step 3. Compute the descent case
+
+If \(\ell(sw)=\ell(w)-1\), the defining formula gives
+\(L_se_w=e_{sw}+ae_w\).
+Now \(L_se_{sw}=e_w\), because multiplication by \(s\) raises \(sw\) to \(w\). Linearity yields
 \[
-L_s^2e_w=e_w+ae_{sw}+a^2e_w=e_w+aL_se_w.
+L_s^2e_w
+=L_s(e_{sw}+ae_w)
+=e_w+a(e_{sw}+ae_w)
+=e_w+aL_se_w.
 \]
-The two cases exhaust the simple-reflection length alternatives. No inverse of \(a\) is required. Rearranging also shows that \(L_s-a\) is the inverse of \(L_s\).
+
+### Step 4. Conclude and check the inverse
+
+The cases exhaust all \(w\), hence \(L_s^2=1+aL_s\).
+Subtract \(aL_s\) to obtain
+\(L_s(L_s-a)=1\).
+The scalar operator \(a\) commutes with \(L_s\), so also
+\((L_s-a)L_s=1\). Thus \(L_s-a\) is its inverse without requiring \(a\) to be a unit.
 
 ## References
 

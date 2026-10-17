@@ -11,6 +11,7 @@ uses:
 - kl.foundations.finite_support
 - kl.notes.relative_dihedral_intervals
 - kl.realization.reflection_plane
+- kl.paths.plane_degree
 lean:
   repository: openai-kl
   modules:
@@ -57,13 +58,37 @@ is an upward reflection edge. Thus the full directed reflection graph is recover
 
 *Proof.*
 
-For one direction, covers are reflection edges and the eight-edge diamond rule is valid for reflection edges. Induction on the diamond-closure derivation proves \(D(x,y)\Rightarrow x\to y\).
+### Step 1. Prove soundness of the diamond rules
 
-For the converse in finite-generator systems, analyze a non-cover reflection edge in a suitable rank-two reflection subgroup. The dihedral interval supplies a diamond whose component edges have smaller rank difference. Apply induction to those edges and then the closure rule.
+A cover in a Bruhat interval is a reflection edge: a nontrivial chain realizing the order comparison could otherwise have an intermediate vertex, contradicting that it is a cover.
 
-For arbitrary generating sets, place the finite lower ideal below the interval's top in a finitely generated standard parabolic subgroup. Its inclusion preserves the relevant Bruhat order and reflection edges. Apply the finite-generator result there and transport the diamond derivation back.
+For the eight-edge rule, compare the two paths from \(x\) to \(c\) through \(a,b\). Their reflection products are equal. The moving-image formula for a product of two reflections puts all four root labels in the same plane determined by the distinct initial labels. Repeating with \(d\) and then with the two paths to \(z\) puts the entire configuration in one dihedral coset.
 
-The labels themselves are not recovered by this argument. What is recovered is precisely the edge relation needed to transport schedules.
+In a relative dihedral graph, edges have positive odd rank difference. The three-edge path \(x\to a\to c\to z\) has positive odd total rank difference, and the dihedral odd-gap criterion therefore makes \(x\to z\) a reflection edge. This proves preservation by the diamond rule, hence soundness by induction on its derivation.
+
+### Step 2. Choose a justified plane for a non-cover edge
+
+Now let \(x\to y=r_\alpha x\) have ambient length gap greater than one, in a finite-generator system. The inversion calculation gives
+\[
+2\sum_P k_P=\ell(y)-\ell(x)-1>0,
+\]
+with finitely supported nonnegative integral weights. Therefore some plane \(P\) has \(k_P>0\). Choose this plane; an arbitrary plane containing \(\alpha\) would not give the needed conclusion.
+
+The relative-length formula in this plane gives relative gap \(2k_P+1\), at least three. Choose the minimal coset representative so that relative reflection edges are exactly the ambient edges inside that coset.
+
+### Step 3. Construct the smaller eight-edge diamond
+
+A dihedral interval of odd rank \(r\ge3\) has two vertices in each internal rank. Choose \(a,b\) in its first rank and \(c,d\) in rank \(r-1\). The first and last edges have gap one; each of the four middle pairs has odd positive gap \(r-2\). Thus all eight required pairs are reflection edges, with \(a\ne b\) and \(c\ne d\).
+
+Relative comparability implies ambient comparability, so all these vertices lie between \(x\) and \(y\), and hence in the original ambient interval. Each of the eight edges has strictly smaller ambient length difference than \(x\to y\).
+
+### Step 4. Induct on ambient rank difference
+
+For gap one, the edge is a cover and belongs to \(D\). For a larger gap, apply the induction hypothesis to each edge in Step 3. The diamond constructor then places \((x,y)\) in \(D\). This proves completeness in finite generator rank.
+
+### Step 5. Remove the finite-generator assumption
+
+Choose a finite standard parabolic model containing the whole lower ideal below the interval's top. Parabolic inclusion preserves and reflects the order and reflection edges. Apply the finite-generator completeness and soundness there, and transport each cover or diamond derivation through the interval order isomorphism. This gives the equivalence for arbitrary Coxeter systems.
 
 ## References
 

@@ -1,0 +1,174 @@
+authority: Lean is primary when sources differ
+comparisons:
+- id: character-normalization
+  kind: Different intermediate statement
+  nodes:
+  - kl.duality.character_identity_condition
+  - kl.duality.actual_character_reciprocity
+  - kl.detail.costalk_reciprocity
+  - kl.detail.local_diagonal_degree
+  - kl.detail.local_intersection
+  paper_labels:
+  - bg:normalization
+  lean_declarations:
+  - OAI.KLInvariance.BruhatGraph.StalkCharacterObligation
+  - OAI.KLInvariance.BruhatGraph.stalkCharacter_reciprocity
+  - OAI.KLInvariance.BruhatGraph.localIntersection_diagonal_strict_degree
+  paper: The grading-normalization proposition identifies the stalk graded rank with
+    the canonical KL polynomial and uses the Elias–Williamson character theorem through
+    the cited moment-graph bridges.
+  lean: The development defines the equality of actual stalk characters and canonical
+    KL polynomials as StalkCharacterObligation. The unconditional theorem used in
+    the main route is R-reciprocity for the actual character. The local strict half-degree
+    implication retains an explicit nonzero-diagonal hypothesis.
+  consequence: Follow the proved character-reciprocity and duality statements here.
+    Do not silently replace the actual character C by P, or read the conditional local-degree
+    lemma as an unconditional character-identification theorem. The completed invariance
+    proof uses the R-first route to avoid that substitution.
+- id: r-first-induction
+  kind: Different proof route
+  nodes:
+  - kl.comparison.global_comparison
+  - kl.comparison.rtilde_row_comparison
+  - kl.comparison.rtilde_step
+  - kl.comparison.rtilde_invariance
+  - kl.detail.endpoint_equality
+  - kl.main.kl_finite
+  - kl.main.combinatorial_invariance
+  paper_labels:
+  - sec:induction
+  - eq:comparison
+  - eq:reciprocal-vector
+  lean_declarations:
+  - OAI.KLInvariance.BruhatGraph.rTilde_freeness_of_below
+  - OAI.KLInvariance.BruhatGraph.rTilde_invariance_and_freeness
+  - OAI.KLInvariance.BruhatGraph.klPolynomial_invariance_finite
+  paper: The simultaneous induction compares normalized KL vectors, obtains P-invariance
+    from the strict half-degree bound, and then recovers bottom terminal-kernel freeness
+    from endpoint equality.
+  lean: The simultaneous induction first proves normalized R-invariance together with
+    suffix-kernel freeness in both transported directions. It cancels known bottom
+    R-row entries against one actual source-character vector. Canonical KL equality
+    is proved afterwards in a separate induction using the now common R-matrix and
+    the canonical degree bound.
+  consequence: The detailed proof on this page follows Lean. Its induction inputs,
+    the vector being compared, and the point where endpoint equality becomes available
+    must be read in that order; they are not interchangeable with the preprint’s P-first
+    steps.
+- id: reflection-faithfulness
+  kind: Same conclusion, different proof
+  nodes:
+  - kl.notes.reflection_faithfulness
+  paper_labels:
+  - bg:realization
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.isReflection_of_moving_rank_one
+  - OAI.KLInvariance.TitsSpace.reflectionFaithful
+  paper: After showing a rank-one orthogonal change is an involution, the proof invokes
+    the finite-subgroup theorem to conjugate it into a finite standard parabolic subgroup.
+  lean: 'The converse is proved by descent in Coxeter length: an involution with a
+    simple descent is either that commuting simple reflection or has a shorter simple
+    conjugate with the same moving rank.'
+  consequence: Use the length-descent proof given here. The finite-subgroup theorem
+    is part of the paper’s explanation, not an unstated input to this Lean proof.
+- id: r-construction
+  kind: Same polynomial, different construction order
+  nodes:
+  - kl.detail.rtilde_family
+  - kl.detail.rtilde_recursion
+  - kl.foundations.rtilde
+  - kl.paths.dyer_paths
+  paper_labels:
+  - bg:paths
+  - eq:bg-path-formula
+  lean_declarations:
+  - OAI.KLInvariance.Hecke.rTilde
+  - OAI.KLInvariance.Hecke.rTilde_recursion
+  - OAI.KLInvariance.WallDyer.geometric_entry_eq_rTilde
+  paper: The path-formula theorem introduces the normalized R-polynomial through increasing
+    reflection paths and relates it to the ordinary R-polynomial; decreasing paths
+    follow by reversing the reflection order.
+  lean: The normalized R-family is defined first as a coefficient of the Hecke bar
+    transform. Its recursion is proved algebraically, and the geometric path product
+    is later proved equal to that independently constructed family.
+  consequence: Definitions and proofs here begin with Lean’s bar coefficients. The
+    path formula is a theorem identifying two constructions, rather than a definition
+    that would make that identification automatic.
+- id: geometric-order-scope
+  kind: Different stated generality
+  nodes:
+  - kl.paths.dyer_paths
+  - kl.detail.geometric_functional
+  paper_labels:
+  - bg:paths
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.exists_geometric_functional
+  - OAI.KLInvariance.WallDyer.geometric_entry_eq_rTilde
+  paper: The cited Dyer theorem is stated for a reflection order in general; the subsequent
+    comparison chooses geometric reflection orders.
+  lean: The referenced formal entry theorem establishes the required path formula
+    for the constructed geometric functional on a finite lower region of a finite-generator
+    system. Generic pencils and complete root-plane blocks provide its order-independence
+    argument.
+  consequence: Keep the geometric-order hypotheses in this entry. Do not describe
+    this particular Lean declaration as a formalization of every abstract reflection-order
+    variant cited in the paper.
+- id: dihedral-kl-identification
+  kind: Same conclusion, different final identification
+  nodes:
+  - kl.notes.dihedral_kl
+  paper_labels:
+  - loc:dihedral-kl
+  lean_declarations:
+  - OAI.KLInvariance.Dihedral.bar_lowerSum
+  - OAI.KLInvariance.Dihedral.rPolynomial_sum
+  - OAI.KLInvariance.Dihedral.constant_normalizedKL
+  - OAI.KLInvariance.Dihedral.klPolynomial_eq_one
+  paper: After the lower-interval Hecke sum is shown bar invariant, the proof identifies
+    it by the triangular characterization of the KL basis.
+  lean: The same bar calculation is used to derive the sum identity for R-polynomials.
+    Lean then verifies that the constant-on-comparable-pairs P-family satisfies NormalizedKL
+    and applies the proved uniqueness theorem.
+  consequence: The final steps below use the R-sum identity and normalized-family
+    uniqueness, matching Lean’s route to P=1.
+- id: induced-model-construction
+  kind: Same model properties, different justification
+  nodes:
+  - kl.notes.dihedral_models
+  - kl.detail.dihedral_model_properties
+  - kl.local.localized_decomposition
+  paper_labels:
+  - loc:models
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.model_flabby
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.model_generated
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.model_quotient
+  paper: The induced-model lemma justifies applying the character theorem to the restricted
+    reflection-faithful realization and uses the dihedral character calculation to
+    identify the rank-one model.
+  lean: The actual induced-label structure model is handled by orbit-spline interpolation.
+    Its congruences, flow-down sections, flabbiness, global generation, and quotient
+    maps are established directly before local model decomposition.
+  consequence: Use the interpolation proof and its actual ambient root labels here.
+    The formula P=1 remains a separate polynomial theorem; it is not substituted for
+    the formal construction of the model properties.
+- id: square-parameter
+  kind: Equivalent parameter conventions
+  nodes:
+  - kl.foundations.scaled_kl
+  - kl.comparison.normalized_kernel
+  - kl.comparison.edge_increment
+  - kl.detail.schedule_state
+  paper_labels:
+  - eq:state
+  - eq:step
+  lean_declarations:
+  - OAI.KLInvariance.scaledKL
+  - OAI.KLInvariance.BruhatGraph.stateScale
+  - OAI.KLInvariance.BruhatGraph.normalized_edge_increment_le
+  paper: The comparison uses \(0<q<1\), scale \(q^{-d/2}(1-q)^N\), and transfer coefficient
+    \(q^{-1/2}-q^{1/2}\).
+  lean: The comparison uses \(0<t<1\) and substitutes \(q=t^2\). Its scale is \(t^{-d}(1-t^2)^N\)
+    and its transfer coefficient is \(t^{-1}-t\).
+  consequence: These are the same normalization after \(q=t^2\). The proof spells
+    out this substitution and retains the degree-one convention for linear root labels.

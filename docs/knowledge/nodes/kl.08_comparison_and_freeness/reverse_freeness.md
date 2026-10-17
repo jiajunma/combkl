@@ -56,21 +56,45 @@ If every lower edge image in a schedule equals its corrected upper edge image, t
 
 *Proof.*
 
-Start with no remaining conditions; every vertex module is already free. Add conditions back in reverse order. For a new edge, both endpoint kernels for the shorter suffix are already free. Image equality, regularity of the label, and saturation give projectivity of the new kernel. The homogeneous-basis theorem for graded polynomial modules then makes it free. Induct on suffix length.
+### Step 1. State the induction on suffixes
 
-In the main argument, endpoint equality and [[node:kl.comparison.no_deficit]] supply the image equalities. Hilbert detection converts equality of numerical increments into equality of actual submodules.
+Let \(p\) be a finite chronological edge list. Assume the embedded image equality for every suffix \(e::q\) of \(p\). We prove that \(K_x(F_q(x))\) is free for every suffix \(q\) and every vertex \(x\). This is an induction on the length of \(p\), starting from the empty list and adding conditions back.
 
-## The exact-sequence argument at one reverse step
+For \(p=[]\), the only suffix is empty and \(F_{[]}(x)=\varnothing\). Its kernel imposes no equations, so it is the whole stalk \(B^x\), which is free.
 
-Let \(F\) be the already free lower kernel before adding back the next condition, and let \(L\) be the already free upper kernel. The new kernel \(K\) fits into
+### Step 2. Reduce a nonempty list to its tail
+
+Write \(p=e::r\), with \(e:x\to y\). Every suffix of \(r\) is also a suffix of \(p\), so the given equalities restrict to \(r\). The induction hypothesis gives freeness at every vertex for every suffix of \(r\).
+
+A suffix \(q\) of \(p\) is either a suffix of \(r\), already handled, or the whole list \(p\). It remains to handle \(p\).
+
+### Step 3. Identify the only changed kernel
+
+At a vertex \(z\ne x\), adding \(e\) does not change its outgoing conditions; its kernel is the already free tail kernel. At \(x\), put
 \[
-0\longrightarrow K\longrightarrow F\longrightarrow I_e\longrightarrow0.
+S=K_x(F_r(x)),\qquad T=K_y(F_r(y)).
 \]
-The image equality identifies \(I_e\) with the corrected upper image. The upper quotient description gives a free resolution of length one, obtained from multiplication by the edge label on \(L\); multiplication by the correction factor transports its quotient to \(I_e\).
+Both modules are free by the tail induction hypothesis. The new lower kernel is
+\(S\cap\ker\rho_{x,e}\).
 
-Compare these two presentations with Schanuel's lemma. Since all modules in the comparison except \(K\) are free, \(K\) is projective. Its grading and lower degree bound then give a homogeneous free basis by [[node:kl.notes.graded_projective_free]].
+### Step 4. Check every hypothesis of reverse projectivity
 
-The order of the reverse induction matters: both \(F\) and \(L\) belong to the shorter suffix and are available before the new condition is imposed.
+Apply [[node:kl.detail.reverse_projectivity]] with
+\(f=\rho_{x,e}\), \(g=\rho_{y,e}\), and \(\psi\) multiplication by the edge factor \(f_e\).
+
+The given equality is exactly \(f(S)=\psi(g(T))\). The upper quotient rule gives \(\ker g=\alpha_eB^y\). The label \(\alpha_e\) is nonzero and acts injectively on the free stalk \(B^y\). Multiplication by \(f_e\) is injective on the edge module by the established regularity of the actual edge factor.
+
+For saturation, suppose \(\alpha_ev\in T\). For each remaining outgoing edge \(h\) at \(y\),
+\(\alpha_e\rho_{y,h}(v)=\rho_{y,h}(\alpha_ev)=0\).
+The incoming label \(\alpha_e\) acts injectively on each such edge module, so \(\rho_{y,h}(v)=0\). Thus \(v\in T\). All hypotheses are now checked, and the new lower kernel is projective.
+
+### Step 5. Upgrade projectivity to freeness
+
+The new kernel is a homogeneous submodule of a finite nonnegatively graded polynomial-ring module. It is finitely generated because the polynomial ring is Noetherian. Its grading is nonnegative because it inherits the stalk grading.
+
+The homogeneous-basis theorem [[node:kl.notes.graded_projective_free]] therefore applies to this projective module and provides a homogeneous free basis. This gives freeness at \(x\), completing the suffix induction.
+
+If image equalities were obtained from endpoint equality, first use [[node:kl.comparison.no_deficit]] and Hilbert detection to establish them. They are inputs to Step 4, not conclusions assumed earlier in the comparison.
 
 ## References
 

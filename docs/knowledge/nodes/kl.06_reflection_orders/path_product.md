@@ -50,24 +50,31 @@ For an edge \(e:x\to y\), write \(M_e=1+T E_{xy}\). For a list of distinct edges
 
 *Proof.*
 
-Expand each factor as the sum of the identity and its edge term. A chosen sublist contributes a product of matrix units. Since
-\[
-E_{ab}E_{cd}=
-\begin{cases}
-E_{ad},&b=c,\\
-0,&b\ne c,
-\end{cases}
-\]
-the contribution vanishes unless the selected edges are composable. A path of \(r\) edges contributes exactly \(T^r\).
+### Step 1. Expand one transfer into its two summands
 
-For example, with \(x<y<z\),
-\[
-(1+T E_{xy})(1+T E_{yz})
-=1+T E_{xy}+T E_{yz}+T^2E_{xz}.
-\]
-The quadratic term records the path \(x\to y\to z\). Reversing these two factors loses this term. Thus the order in the product contains mathematical information.
+For \(e:x\to y\), the transfer is \(M_e=1+TE_{xy}\). In a product \(M_{e_1}\cdots M_{e_r}\), distributivity chooses either \(1\) or \(TE_e\) from each factor. Therefore terms are indexed by ordered sublists of the original list.
 
-When vectors are updated chronologically, the upper edge must contribute to the \(y\)-coordinate before the lower edge can use that coordinate at \(x\). This explains why increasing chronological processing corresponds to decreasing labels along the contributing path. Dyer's theorem identifies the resulting path polynomial with \(\widetilde R\).
+Selecting \(m\) edges contributes \(T^m\) times their ordered product of matrix units. No edge is selected twice, and the schedule has no repeated edge.
+
+### Step 2. Determine exactly when a matrix-unit product survives
+
+For vertices \(a,b,c,d\),
+\[
+E_{ab}E_{cd}=\begin{cases}E_{ad},&b=c,\\0,&b\ne c.\end{cases}
+\]
+Indeed, \(E_{cd}\) reads coordinate \(d\) into coordinate \(c\), and \(E_{ab}\) can read that result only when \(b=c\).
+
+Inductively, \(E_{x_0x_1}\cdots E_{x_{m-1}x_m}=E_{x_0x_m}\), while a broken incidence makes the product zero. Thus the \((x,y)\)-entry receives precisely the selected sublists that form a directed path from \(x\) to \(y\). The empty selection contributes the identity entry \(\delta_{x,y}\).
+
+### Step 3. Check that each path occurs exactly once
+
+The schedule lists each edge once. A path whose edges occur in that list order determines a unique set of selected positions. Conversely, every surviving selection determines that path. This is a bijection, and its weight is \(T^{\text{number of edges}}\). Hence the entry is the stated finite path sum.
+
+### Step 4. Relate product order to chronological processing
+
+If the edges are applied chronologically as \(e_1,\ldots,e_r\), the resulting operator is \(M_{e_r}\cdots M_{e_1}\), because \(M_{e_1}\) acts first. Thus increasing chronological scores produce decreasing scores along the matrix-unit path.
+
+Tied reflection labels do not create an ambiguity: two edges with the same reflection label cannot be composable, since that reflection would immediately undo itself. Their cross matrix-unit products vanish in both orders, so their transfers commute.
 
 ## References
 

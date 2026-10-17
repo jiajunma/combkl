@@ -9,6 +9,7 @@ topics:
 uses:
 - kl.comparison.positive_transfer
 - kl.detail.transfer_properties
+- kl.sheaves.hilbert_detection
 lean:
   repository: openai-kl
   modules:
@@ -50,22 +51,46 @@ If the final state equals the exact composite of these transfers applied to \(D_
 
 *Proof.*
 
-Induct on the number of steps. Monotonicity puts each actual intermediate state below its ideal counterpart. At the last step, final equality traps the actual transfer between equal vectors, so that step is exact. Injectivity of the last transfer then identifies the preceding actual and ideal states. Apply induction.
+### Step 1. Construct the ideal states
 
-## The accumulated-deficit identity
-
-Writing \(M_k=1+T E_{x_ky_k}\), define the actual deficit
+Let \(M_k=\tau_{x_k,y_k,T}\), where \(T\ge0\) and \(x_k\ne y_k\). Use indices \(k=0,\ldots,n-1\), and define
 \[
-\delta_k=M_kD_{k-1}-D_k\ge0.
+E_0=D_0,\qquad E_{k+1}=M_kE_k.
 \]
-Successive substitution gives
-\[
-M_r\cdots M_1D_0-D_r
-=\sum_{k=1}^r M_r\cdots M_{k+1}\delta_k.
-\]
-Each factor is nonnegative with diagonal one. A positive coordinate of a deficit remains positive in its corresponding summand, so it cannot disappear through subsequent nonnegative transfers.
+The hypotheses are \(D_{k+1}\le M_kD_k\) and \(D_n=E_n\).
 
-At an edge, the deficit is a positive normalization factor times the Hilbert value of \((f_eJ_e)/I_e\). A nonzero graded quotient has a positive value at \(0<q<1\). Consequently a vanishing deficit proves equality of actual edge images, including possible differences supported in higher codimension.
+We first prove \(D_k\le E_k\). At \(k=0\) it is equality. If it holds at \(k\), monotonicity gives \(M_kD_k\le M_kE_k=E_{k+1}\); combining with the given inequality proves it at \(k+1\).
+
+### Step 2. Recover exactness of the final transfer
+
+For \(n>0\), apply Step 1 at \(n-1\):
+\[
+D_n\le M_{n-1}D_{n-1}\le M_{n-1}E_{n-1}=E_n=D_n.
+\]
+The first inequality is the actual last-step bound; the second is monotonicity; the next equality defines \(E_n\); the final equality is the endpoint hypothesis.
+
+For each coordinate, a real number trapped between equal bounds must equal them. Hence
+\(D_n=M_{n-1}D_{n-1}=M_{n-1}E_{n-1}\).
+
+### Step 3. Recover the preceding endpoint
+
+The last equality and injectivity of \(M_{n-1}\), proved in [[node:kl.detail.transfer_properties]], imply
+\(D_{n-1}=E_{n-1}\).
+Injectivity is legitimate because the edge endpoints are distinct. We have therefore recovered the endpoint hypothesis for the shorter list.
+
+### Step 4. Complete induction on the number of steps
+
+For \(n=0\), there are no steps to prove exact. For \(n>0\), Step 2 proves the last step exact; Step 3 gives the endpoint equality needed for the induction hypothesis on the first \(n-1\) steps. All their monotonicity and distinct-endpoint hypotheses are restrictions of the original ones. Induction proves every step exact.
+
+### Step 5. Interpret an exact state step as image equality
+
+In the sheaf application, each state deficit equals a positive scale times
+\[
+H_{f_eJ_e}(q)-H_{I_e}(q),\qquad I_e\subseteq f_eJ_e,\quad0<q<1.
+\]
+The scale is positive, so an exact state step gives equality of these Hilbert values. The upper scaled image is homogeneous. [[node:kl.sheaves.hilbert_detection]] therefore gives \(I_e=f_eJ_e\).
+
+This last deduction uses containment and graded dimensions, not just a statement about ranks. It consequently also detects a difference supported in higher codimension.
 
 ## References
 

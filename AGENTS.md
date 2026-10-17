@@ -76,6 +76,19 @@ designated documents; this section is the reusable authoring contract.
 - Include a coherent reading sequence, worked examples and calculations, and
   enough intermediate reasoning for a reader to follow the argument without
   having to reconstruct it from Lean tactics.
+- Give detailed proofs, not abstract proof summaries. State the ambient
+  objects and hypotheses, define local notation, and explain each inference
+  and displayed equality. For induction, give the induction statement, base
+  case, strictly smaller instances, and their substitutions explicitly.
+- A sentence such as "by duality", "apply decomposition", "cancel lower
+  terms", or "localize and glue" is not an adequate proof step. Spell out the
+  maps, identities, containment directions, or calculations involved. When a
+  substantive lemma is used, state its precise content, verify its hypotheses,
+  and link to a detailed proof of that lemma. Do not hide a missing argument
+  behind a citation to a declaration name or an overview page.
+- Treat successful builds, formula checks, node counts, and source-link
+  checks as mechanical validation only. They cannot certify that the prose
+  contains a readable, complete argument; review proof detail separately.
 - Provide a built public website on GitHub Pages, not only repository source
   files or a localhost preview. Keep the reading guide, definition links,
   dependency graph, and source links usable under the repository's URL prefix.
@@ -161,6 +174,18 @@ designated documents; this section is the reusable authoring contract.
 - Inspect the relevant Lean statements and proof bodies before writing their
   explanation. A matching declaration name or an existing file alone does not
   establish semantic alignment.
+- Use both the Lean proof and the corresponding OpenAI notes as sources.
+  When their hypotheses, normalization, constructions, conclusions, or proof
+  routes differ, state the difference explicitly at the relevant entry with
+  precise locations in both sources. Do not silently combine incompatible
+  steps or describe a Lean theorem as proving a different paper statement.
+  Distinguish a presentation difference from a mathematical discrepancy, and
+  say when correspondence is not established rather than inventing it.
+- When the sources are not aligned, the verified Lean development is the
+  primary authority for the blueprint. Follow its exact definitions,
+  hypotheses, statements, normalizations, and proof route; describe the
+  preprint's differing formulation separately. Do not alter the Lean snapshot
+  or silently replace its argument to make it resemble the prose notes.
 - Check coverage of the main proof route and its prerequisites, including
   definitions and structural conditions. Source dumps and mechanically valid
   links do not substitute for this expository coverage.

@@ -51,9 +51,33 @@ For a finite-generator Coxeter system and \(u\le b\), choose a real basis of the
 
 *Proof.*
 
-[[node:kl.foundations.finite_intervals]] makes the vertex and edge sets finite. The coordinate polynomial ring has no negative-degree part, reduction modulo positive degree leaves the real scalars, and root labels are homogeneous of degree one.
+### Step 1. Check the coefficient and graph hypotheses
 
-Apply the finite ordered-graph construction. Start with the unit module at the top and descend through the vertices. At each new vertex, take a minimal free cover of the boundary image determined by the already constructed upper part, and use it to define the outgoing restriction maps. Induction preserves the edge quotient conditions, extension and generation of sections, and minimality.
+For the Bruhat graph of \([u,b]\), interval finiteness gives finitely many vertices. Its edges are selected pairs of vertices, so there are finitely many edges too. The order has greatest vertex \(b\).
+
+The coefficient ring is a real polynomial ring: it is Noetherian, nonnegatively graded, and its quotient by the positive-degree ideal is \(\mathbb R\). Every root label is homogeneous of degree one. These are exactly the hypotheses needed for the minimal-cover construction.
+
+### Step 2. Induct on the number of vertices
+
+For a one-vertex graph, take \(B^b=A\). There are no edges, every assignment is a global section, and every top-stalk value is realized. Freeness and the top normalization hold; the non-top minimality condition is vacuous.
+
+For a graph with more than one vertex, choose a minimal vertex \(x\). It cannot equal the greatest vertex \(b\), because then every vertex would equal \(b\). No edge can end at \(x\): its source would be strictly smaller than \(x\).
+
+### Step 3. Remove x and apply induction
+
+Remove \(x\) and all edges whose source is \(x\). The remaining graph has fewer vertices, still has greatest vertex \(b\), and inherits the same homogeneous labels. Induction constructs its boundary sheaf.
+
+The removed edges are now a finite list of attachments from a new bottom vertex to their old targets. Apply [[node:kl.detail.boundary_extension]]: form the boundary image, choose its minimal graded free cover, and attach that cover as the stalk at \(x\).
+
+### Step 4. Verify the definition's conditions separately
+
+Old stalks remain free and the new stalk is free. Old quotient maps remain unchanged and new ones were defined as quotients. Extension from edge-closed subsets and global generation hold by the two lifting arguments in the attachment theorem.
+
+The top stalk remains the old stalk \(A\), because \(x\ne b\). Minimality at \(x\) is the kernel condition of its chosen cover; minimality at old vertices is unchanged. Thus all fields required for a minimal-boundary sheaf have been supplied.
+
+### Step 5. Return to the original graph labels
+
+The attachment construction uses a graph with a formally adjoined bottom vertex. Identify that bottom with the removed \(x\), the old vertices with their original vertices, and the two classes of edges with the original edge set. This graph isomorphism preserves sources, targets, and labels. Reindex the constructed sheaf along it to obtain the required sheaf on the original Bruhat graph.
 
 ## References
 

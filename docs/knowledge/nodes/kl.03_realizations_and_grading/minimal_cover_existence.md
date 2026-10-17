@@ -45,11 +45,34 @@ Assume \(A\) is nonnegatively graded over a field \(k\), and every element of \(
 
 *Proof.*
 
-Consider the finite-dimensional quotient \(M/A_{>0}M\). Choose a homogeneous basis and lift it to homogeneous elements \(m_i\in M\), of degrees \(d_i\). Let \(F\) be the finite free module with a basis element of degree \(d_i\) for each lift, and send that basis element to \(m_i\).
+### Step 1. Reduce generation to the scalar quotient
 
-The image and \(A_{>0}M\) together generate \(M\), so graded Nakayama makes the map \(F\to M\) surjective. Modulo \(A_{>0}\), it is the chosen basis isomorphism. Therefore its kernel lies in \(A_{>0}F\), exactly the minimality condition.
+Put \(J=A_{>0}\). The coefficient-ring hypothesis says that every \(a\in A\) is congruent modulo \(J\) to a scalar from \(k\). A finite set of generators of \(M\) therefore spans \(M/JM\) as a vector space over \(k\): in any expression \(\sum a_im_i\), replace each \(a_i\) by its scalar residue.
 
-The construction records the degrees as well as the number of generators. For example, \(A/(x)\) is covered by a degree-zero copy of \(A\); its kernel \((x)\) is contained in \(A_{>0}A\). In the graph construction the same operation is applied to a boundary image, whose generators encode relations among outgoing edges.
+Replace the generators by their finitely many homogeneous components. Their residues still span, and are homogeneous. Choose a basis of \(M/JM\) from these homogeneous residues, and choose corresponding homogeneous lifts \(m_i\in M_{d_i}\). Since \(M\) is nonnegative, every nonzero lift has \(d_i\ge0\).
+
+### Step 2. Prove that the chosen lifts generate M
+
+Let \(N=\sum_iAm_i\). This is a homogeneous submodule, because its generators are homogeneous and scalar multiplication respects degrees. Their residue classes span \(M/JM\), so for every \(m\in M\) there are scalars \(c_i\) with
+\(m-\sum_ic_im_i\in JM\).
+Thus \(M=N+JM\).
+
+Apply the graded Nakayama argument to \(N\). Its homogeneous closure and the nonnegative lower bound have just been checked, so \(N=M\).
+
+### Step 3. Build the free graded source and its map
+
+Take a free module \(F=\bigoplus_iAe_i\), with \(\deg e_i=d_i\), and define \(f:F\to M\) by \(f(e_i)=m_i\). A term \(ae_i\), with \(a\) homogeneous of degree \(r\), maps to \(am_i\) of degree \(r+d_i\). Therefore \(f\) preserves grading. Step 2 proves that it is surjective. Finiteness of the basis makes \(F\) finite free and nonnegatively graded.
+
+### Step 4. Check minimality coefficient by coefficient
+
+Suppose \(\sum_i a_ie_i\in\ker f\). Reduce
+\(\sum_i a_im_i=0\) modulo \(JM\).
+Choose scalar residues \(c_i\) for the \(a_i\). We obtain
+\(\sum_i c_i[m_i]=0\).
+The residue classes \([m_i]\) are linearly independent over \(k\), so every \(c_i=0\). Hence every \(a_i\in J\), and
+\(\sum_i a_ie_i\in JF\).
+
+Thus \(\ker f\subseteq JF\), exactly the minimal-cover condition. The source module, grading, surjection, and kernel containment have all been constructed explicitly.
 
 ## References
 

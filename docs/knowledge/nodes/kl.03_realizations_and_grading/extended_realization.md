@@ -72,17 +72,43 @@ There exists a symmetric nondegenerate form \(\widetilde B\) extending \(B\) on 
 
 *Proof.*
 
-Choose a complement \(U\) to \(K\). The restriction of \(B\) to \(U\) is nondegenerate. On
-\(U\oplus K\oplus K^*\), keep that restriction and pair \(K\) with \(K^*\) by evaluation:
+### Step 1. Separate the radical from a nondegenerate part
+
+Let \(K=\{v:B(v,w)=0\text{ for every }w\in V_0\}\). Choose a vector-space complement \(U\), so every vector of \(V_0\) has a unique form \(u+k\).
+
+The restricted form on \(U\) is nondegenerate. Indeed, if \(u\in U\) is orthogonal to all of \(U\), it is also orthogonal to \(K\) by the definition of the radical and symmetry. It is therefore orthogonal to all \(V_0\), so \(u\in K\). Since \(U\cap K=0\), \(u=0\).
+
+### Step 2. Define the extended form explicitly
+
+Identify \(V_0\oplus K^*\) with \(U\oplus K\oplus K^*\), and put
 \[
 \widetilde B((u,k,\lambda),(u',k',\lambda'))
 =B(u,u')+\lambda(k')+\lambda'(k).
 \]
-This extends the original form because \(K\) is its radical. Orthogonality to \(K^*\), then to \(K\), then to \(U\), forces all three components to vanish, proving nondegeneracy.
+Each term is bilinear. Symmetry follows from symmetry of \(B\) and the interchange of the two evaluation terms.
 
-The original roots remain independent under the inclusion \(V_0\hookrightarrow V\). The nondegenerate form identifies \(V\) with its dual, so their normal linear forms are independent as well.
+For vectors of the original subspace, \(\lambda=\lambda'=0\), so
+\(\widetilde B((u,k,0),(u',k',0))=B(u,u')=B(u+k,u'+k')\).
+Thus this genuinely extends the original form.
 
-Nondegeneracy is asserted for the ambient space. A two-dimensional root subspace may still have a degenerate restricted form, which is allowed in the infinite-dihedral arguments.
+### Step 3. Check nondegeneracy by three separate tests
+
+Suppose \((u,k,\lambda)\) is orthogonal to every vector. Test against \((0,0,\lambda')\): we obtain \(\lambda'(k)=0\) for all \(\lambda'\in K^*\), hence \(k=0\), since linear functionals separate vectors.
+
+Test against \((0,k',0)\): we obtain \(\lambda(k')=0\) for every \(k'\), so \(\lambda=0\).
+Finally test against \((u',0,0)\): \(B(u,u')=0\) for all \(u'\in U\), and Step 1 gives \(u=0\). The radical of the extended form is zero.
+
+### Step 4. Verify the root and normal independence claims
+
+The original simple roots form a basis of \(V_0\). Their inclusion into \(V_0\oplus K^*\) is injective, so their extended vectors remain linearly independent.
+
+Nondegeneracy makes the linear map \(v\mapsto\widetilde B(v,-)\) injective. An injective linear map sends a linearly independent family to a linearly independent family: a vanishing linear combination of their images pulls back to a vanishing combination of the vectors. Thus the corresponding normal forms are independent too.
+
+### Step 5. Compute the dimension
+
+Finite-dimensional duality gives \(\dim K^*=\dim K\). Hence
+\(\dim(V_0\oplus K^*)=|I|+\dim K\).
+Only the ambient extended form is asserted nondegenerate. Its restriction to a root plane can still be degenerate, which is allowed in the later dihedral arguments.
 
 ## References
 

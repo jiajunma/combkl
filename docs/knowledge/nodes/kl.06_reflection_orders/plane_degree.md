@@ -59,7 +59,47 @@ The edge factor \(f_e\), formed from the corresponding reduced root factors, the
 
 *Proof.*
 
-First compute the sum of the inversion defects grouped by planes. Each plane defect is twice its nonnegative weight. Summing over the finite support proves the first identity. The edge factor is the product with those weights as exponents, so its homogeneous degree is their sum.
+### Step 1. Sum the change in inversion indicators
+
+Let \(y=r_\alpha x>x\). For each positive root \(\beta\), let \(n_x(\beta)\) be one if it is inverted by \(x\), and zero otherwise. Only finitely many indicators are nonzero, and
+\(\sum_\beta n_x(\beta)=\ell(x)\).
+Thus the total change is
+\(\sum_\beta(n_y(\beta)-n_x(\beta))=\ell(y)-\ell(x)\).
+
+The distinguished root \(\alpha\) changes from noninverted to inverted, contributing one. Remove it. The remaining total is therefore \(\ell(y)-\ell(x)-1\).
+
+### Step 2. Pair roots before grouping them into planes
+
+Reflection in \(\alpha\), followed by choosing the positive representative of a root line, gives an involution \(\beta\mapsto\beta^*\). It preserves the plane spanned with \(\alpha\).
+
+The root-sign calculation for an upward \(\alpha\)-edge gives
+\[
+(n_y-n_x)(\beta)+(n_y-n_x)(\beta^*)=
+\begin{cases}
+2,&\text{a contributing negative pair},\\
+0,&\text{otherwise}.
+\end{cases}
+\]
+In the contributing case, both roots were noninverted before the move and reflection in \(\alpha\) interchanges their lines with a negative sign. The other sign cases either leave both indicators unchanged or contribute one positive and one negative change, which cancel. The distinguished root has already been removed.
+
+### Step 3. Define and count the half-pairs
+
+For each contributing pair choose the member with smaller geometric slope. The two slopes are distinct, and the involution exchanges the members, so exactly one is chosen. Let \(k_P\) count the chosen members in plane \(P\). These are nonnegative integers, with finite support.
+
+Grouping Step 2 by planes gives a total contribution \(2k_P\) in each plane. Summing and using Step 1 proves
+\[
+2\sum_Pk_P=\ell(y)-\ell(x)-1.
+\]
+
+### Step 4. Compute the polynomial degree
+
+The actual edge factor is
+\(f_e=\prod_P\overline\beta_P^{\,k_P}\)
+in the coefficient ring modulo \(\alpha\). Every reduced root \(\overline\beta_P\) is nonzero and homogeneous of degree one. That quotient ring is a polynomial domain, so the product is nonzero and homogeneous of degree \(\sum_Pk_P\).
+
+A nonzero homogeneous polynomial has total degree equal to its homogeneous degree. Hence
+\(\deg f_e=\sum_Pk_P=(\ell(y)-\ell(x)-1)/2\).
+This explains both the integrality of the half-length expression and its use in the normalized transfer coefficient.
 
 ## References
 
