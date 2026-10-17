@@ -8,12 +8,12 @@ inputs:
   - sources/openai-math.manifest.tsv
   - sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig
   - sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build
-summary: "English lecture notes organized by mathematical dependencies in the completed Lean development, with paper correspondence."
+summary: "English blueprint and knowledge base organized by mathematical dependencies in the completed Lean development, with paper correspondence."
 ---
 
 # Exposition and source correspondence
 
-The user specifies the completed proof as the input to an exposition task. The notes explain its mathematical content rather than replace it with a new proof plan.
+The user specifies the completed proof as the input to an exposition task. The blueprint explains its mathematical content rather than replace it with a new proof plan.
 
 The nine chapters follow the library's mathematical constructions and proof
 dependencies. The user's later clarification supersedes the earlier six-paper-

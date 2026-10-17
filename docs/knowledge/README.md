@@ -1,6 +1,6 @@
-# Lecture notes on KL combinatorial invariance
+# KL Combinatorial Invariance — Blueprint and Knowledge Base
 
-These English notes explain the completed OpenAI Lean development. Chapters
+This English blueprint and knowledge base explains the completed OpenAI Lean development. Chapters
 follow its mathematical constructions and proof dependencies. The preprint
 provides context and correspondence without fixing the chapter boundaries.
 
@@ -24,7 +24,7 @@ Each chapter introduction gives an ordered reading sequence. The entries contain
 
 The supplementary background explains minimal covers, graded Nakayama, graded projectivity, Frobenius pairings, Bott–Samelson word objects, supported sections, and character cancellation.
 
-The paper and Lean implementation organize the final comparison differently. The notes explicitly distinguish the paper's KL-character presentation from the implementation's R-first route, then explain how canonical KL equality is recovered.
+The paper and Lean implementation organize the final comparison differently. The blueprint explicitly distinguishes the paper's KL-character presentation from the implementation's R-first route, then explains how canonical KL equality is recovered.
 
 ## Source correspondence
 
@@ -42,7 +42,7 @@ The completed development is represented by 70 `proved` theorem entries and
 49 `formalized` definitions/concepts. There are no `admitted` entries. Worked
 teaching examples are explanatory prose unless linked to a separate theorem.
 
-Source inventories and imports are supporting data, not separate mathematical topics. The generated site provides declarations.json, module-imports.json, and unchanged files under _sources/. The dependency graph is the mathematical graph of the notes.
+Source inventories and imports are supporting data, not separate mathematical topics. The generated site provides declarations.json, module-imports.json, and unchanged files under _sources/. The dependency graph is the mathematical graph of the knowledge base.
 
 ## Build
 
@@ -81,7 +81,7 @@ Serve the generated site from the repository root:
 
     python3 -m http.server 8765 --bind 127.0.0.1 --directory build/knowledge
 
-Open [the lecture notes](http://127.0.0.1:8765/kl/) or [the dependency graph](http://127.0.0.1:8765/dep_graph_document.html). The graph needs HTTP to load its generated data.
+Open [the blueprint](http://127.0.0.1:8765/kl/) or [the dependency graph](http://127.0.0.1:8765/dep_graph_document.html). The graph needs HTTP to load its generated data.
 
 ## Public website
 

@@ -1,6 +1,6 @@
 # Original paper and Lean sources
 
-This directory preserves the upstream materials used by the lecture notes and review work. Files inside openai-math/ retain their original paths and contents.
+This directory preserves the upstream materials used by the blueprint, knowledge base, and review work. Files inside openai-math/ retain their original paths and contents.
 
 ## Provenance
 

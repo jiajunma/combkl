@@ -56,16 +56,19 @@ This file governs review collaboration and blueprint authoring in this repositor
 
 These requirements govern the mathematical blueprint and its generated site.
 They record the user's explicit requirements, including the clarifications of
-2026-10-17. Keep paper-specific mathematics and review judgments in their
+2026-10-17–18. Keep paper-specific mathematics and review judgments in their
 designated documents; this section is the reusable authoring contract.
 
 ### Purpose and language
 
 - Write the blueprint, its navigation, explanations, and new accompanying
   documentation in **English**.
-- The blueprint must serve as a **textbook or set of lecture notes** based on
-  the Lean development. A declaration catalogue, module inventory, collection
-  of source dumps, or brief proof outline alone does not satisfy the task.
+- Name and present the project as a **Blueprint and Knowledge Base**. Its
+  definitions, results, detailed proofs, and dependency structure explain the
+  Lean development. The user's earlier textbook/lecture-note comparison
+  specifies explanatory depth, not the project's title or identity. A
+  declaration catalogue, module inventory, collection of source dumps, or
+  brief proof outline alone does not satisfy the task.
 - Keep the blueprint's mathematical exposition in its Markdown knowledge
   nodes, with chapter reading guides and generated site output. Review
   questions, judgments, and dialogue history remain in the LaTeX work document;
@@ -104,7 +107,7 @@ designated documents; this section is the reusable authoring contract.
 - Reflect completion in blueprint metadata: Lean-backed theorem entries are
   `proved`, and implemented definitions and source-backed concept overviews
   are `formalized`. Do not label a completed construction `admitted` merely
-  because its lecture-note page combines several declarations. Teaching
+  because its blueprint entry combines several declarations. Teaching
   examples remain exposition unless separately matched to a Lean theorem.
 - Preserve the actual definitions, quantifiers, hypotheses, conclusions,
   grading conventions, and proof dependencies. Do not simplify by silently
@@ -136,7 +139,7 @@ designated documents; this section is the reusable authoring contract.
   inspect, not sufficient rules for classifying mathematical content. One file
   may contain several mathematical subjects, and one construction may span
   several files.
-- Use enough mathematical detail for lecture notes, without arbitrary
+- Give complete, readable mathematical explanations, without arbitrary
   fragmentation into file-level or implementation-level topics. Conversely,
   do not compress substantive intermediate arguments into vague overview
   pages. Granularity is determined by the exposition and proof structure,
@@ -200,5 +203,5 @@ designated documents; this section is the reusable authoring contract.
   checks**; it does not authorize Lean execution, mathematical experiments,
   browser automation, or screen capture.
 - Rebuild and recheck after substantive changes to the exposition or hierarchy.
-  Report what was actually checked, and do not claim comprehensive lecture-note
+  Report what was actually checked, and do not claim comprehensive knowledge-base
   coverage based only on page counts or a successful site build.

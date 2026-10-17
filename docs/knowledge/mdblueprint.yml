@@ -1,6 +1,6 @@
 site:
-  title: Combinatorial invariance of Kazhdan–Lusztig polynomials — Lecture notes
-  short_title: KL invariance
+  title: Combinatorial invariance of Kazhdan–Lusztig polynomials — Blueprint and Knowledge Base
+  short_title: KL Blueprint
 lean:
   default_repository: openai-kl
   repositories:

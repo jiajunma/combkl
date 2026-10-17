@@ -1,18 +1,18 @@
-# combkl — KL invariance lecture notes
+# combkl — KL Invariance Blueprint and Knowledge Base
 
-This repository contains source-linked English lecture notes and review materials for OpenAI's *Combinatorial invariance of Kazhdan–Lusztig polynomials* (September 24, 2026).
+This repository contains a source-linked English blueprint and knowledge base, together with review materials, for OpenAI's *Combinatorial invariance of Kazhdan–Lusztig polynomials* (September 24, 2026).
 
 ## Read the blueprint
 
 - [Published website](https://jiajunma.github.io/combkl/)
-- [Lecture-note reading guide](https://jiajunma.github.io/combkl/kl/)
+- [Blueprint reading guide](https://jiajunma.github.io/combkl/kl/)
 - [Interactive dependency graph](https://jiajunma.github.io/combkl/dep_graph_document.html)
-- [Lecture-note guide and build instructions](docs/knowledge/README.md)
+- [Knowledge-base guide and build instructions](docs/knowledge/README.md)
 - [Main theorem](docs/knowledge/nodes/kl.09_combinatorial_invariance/combinatorial_invariance.md)
 - [Simultaneous R-tilde invariance and freeness](docs/knowledge/nodes/kl.09_combinatorial_invariance/rtilde_invariance.md)
 - [Authoring requirements](AGENTS.md)
 
-The notes follow nine mathematical chapters derived from the Lean development:
+The knowledge base follows nine mathematical chapters derived from the Lean development:
 Bruhat order; Hecke polynomials; realizations and grading; graph sheaves;
 duality and characters; reflection orders; localization; comparison and
 freeness; and the final invariance argument. The preprint remains a reference
@@ -35,13 +35,13 @@ The snapshot in [sources/openai-math/](sources/openai-math/) preserves upstream 
 
 ## Review workspace
 
-The review work document is [review/main.tex](review/main.tex). Its sections retain the review context, proof discussions, questions, assessments, and dialogue history. These records are distinct from the mathematical lecture notes; the historical Chinese records are preserved.
+The review work document is [review/main.tex](review/main.tex). Its sections retain the review context, proof discussions, questions, assessments, and dialogue history. These records are distinct from the mathematical knowledge base; the historical Chinese records are preserved.
 
 AGENTS.md contains collaboration and blueprint authoring requirements. Paper-specific mathematical judgments remain in the review document.
 
 ## Build and reproduce
 
-The documentation builder is scripts/build_knowledge.py; its instructions are in [the lecture-note README](docs/knowledge/README.md). Generated HTML and graph data live under the ignored build/ directory.
+The documentation builder is scripts/build_knowledge.py; its instructions are in [the knowledge-base README](docs/knowledge/README.md). Generated HTML and graph data live under the ignored build/ directory.
 
 The existing finite computations remain in [tests/check_models.py](tests/check_models.py), with recorded output in [results/checks.json](results/checks.json). They are independent of the documentation build. Execute mathematical computations only in an environment authorized by the user.
 
