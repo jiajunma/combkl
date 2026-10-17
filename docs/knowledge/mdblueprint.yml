@@ -1,0 +1,43 @@
+site:
+  title: Combinatorial invariance of Kazhdan–Lusztig polynomials — Lecture notes
+  short_title: KL invariance
+lean:
+  default_repository: openai-kl
+  repositories:
+  - id: openai-kl
+    title: OpenAI KL formalization
+    local_path: ../../sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig
+    subdir: sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig
+    web_url: https://github.com/jiajunma/combkl
+    revision: 108243e05ed46235bf82dc30d4d90c794579776f
+    source_url_template: '{web_url}/blob/{revision}/{path}#L{line}'
+topics:
+- id: kl
+  title: Kazhdan–Lusztig combinatorial invariance
+- id: kl.01_introduction
+  title: 1. Introduction and conventions
+- id: kl.02_background
+  title: 2. Real realizations and moment-graph sheaves
+- id: kl.03_dihedral
+  title: 3. Dihedral intervals and transported reflection orders
+- id: kl.04_localization
+  title: 4. Localization at a root plane
+- id: kl.05_edge_images
+  title: 5. Comparison of edge images
+- id: kl.06_induction
+  title: 6. Reciprocity and simultaneous induction
+graph:
+  max_visible_nodes: 120
+  max_expand_nodes: 100
+sources:
+  library:
+  - id: openai-kl-source
+    title: OpenAI KL Lean development · adc7f124
+    short: Lean source
+    authors: OpenAI
+  - id: openai-kl-paper
+    title: Combinatorial invariance of Kazhdan–Lusztig polynomials
+    short: Paper
+    authors: OpenAI
+math:
+  throw_on_error: true

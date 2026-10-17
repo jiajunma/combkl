@@ -1,0 +1,1096 @@
+{
+  "chapters": {
+    "kl.01_introduction": [
+      "kl.definitions.bar_involution",
+      "kl.definitions.hecke_operators",
+      "kl.definitions.hecke_quadratic_relation",
+      "kl.foundations.bruhat_order",
+      "kl.foundations.bruhat_step",
+      "kl.foundations.canonical_kl",
+      "kl.foundations.interval",
+      "kl.foundations.low_half",
+      "kl.foundations.normalized_kl",
+      "kl.foundations.rtilde",
+      "kl.foundations.scaled_kl",
+      "kl.main.combinatorial_invariance",
+      "kl.notes.hecke_action"
+    ],
+    "kl.02_background": [
+      "kl.duality.actual_character_reciprocity",
+      "kl.duality.bott_character_decomposition",
+      "kl.duality.character_identity_condition",
+      "kl.duality.stalk_character",
+      "kl.foundations.finite_intervals",
+      "kl.foundations.finite_support",
+      "kl.foundations.rank_preservation",
+      "kl.foundations.subword",
+      "kl.main.finite_interval_model",
+      "kl.main.finite_model_transport",
+      "kl.notes.bott_samelson",
+      "kl.notes.boundary_image",
+      "kl.notes.character_cancellation",
+      "kl.notes.extended_realization",
+      "kl.notes.graded_nakayama",
+      "kl.notes.minimal_cover_existence",
+      "kl.notes.path_product",
+      "kl.notes.perfect_pairings",
+      "kl.notes.reflection_faithfulness",
+      "kl.notes.reflection_frobenius",
+      "kl.notes.reflection_order",
+      "kl.notes.supported_pairings",
+      "kl.notes.tensor_pairing",
+      "kl.notes.word_stalks",
+      "kl.paths.dyer_paths",
+      "kl.realization.reflection_plane",
+      "kl.sheaves.boundary_existence",
+      "kl.sheaves.boundary_sheaf",
+      "kl.sheaves.flabbiness",
+      "kl.sheaves.graded_module",
+      "kl.sheaves.graph_sheaf",
+      "kl.sheaves.hilbert_free",
+      "kl.sheaves.minimal_cover",
+      "kl.sheaves.upward_kernel"
+    ],
+    "kl.03_dihedral": [
+      "kl.notes.relative_dihedral_intervals",
+      "kl.notes.relative_dihedral_transport",
+      "kl.paths.graph_invariance",
+      "kl.paths.later_count",
+      "kl.paths.plane_degree"
+    ],
+    "kl.04_localization": [
+      "kl.local.localized_decomposition",
+      "kl.notes.dihedral_kl",
+      "kl.notes.dihedral_models",
+      "kl.notes.sheaf_localization",
+      "kl.sheaves.relative_flabbiness"
+    ],
+    "kl.05_edge_images": [
+      "kl.local.edge_inclusion",
+      "kl.local.free_target_localization",
+      "kl.notes.upper_image_free"
+    ],
+    "kl.06_induction": [
+      "kl.comparison.edge_increment",
+      "kl.comparison.free_suffixes",
+      "kl.comparison.global_comparison",
+      "kl.comparison.no_deficit",
+      "kl.comparison.normalized_kernel",
+      "kl.comparison.positive_transfer",
+      "kl.comparison.reciprocal_rigidity",
+      "kl.comparison.reverse_freeness",
+      "kl.comparison.rtilde_invariance",
+      "kl.comparison.rtilde_row_comparison",
+      "kl.comparison.rtilde_step",
+      "kl.main.kl_finite",
+      "kl.notes.graded_projective_free",
+      "kl.sheaves.hilbert_detection"
+    ]
+  },
+  "module_imports": {
+    "BalancedPairings": [
+      "IntegralPairings"
+    ],
+    "BottSamelson": [
+      "Frobenius"
+    ],
+    "Bruhat": [
+      "Model",
+      "Coxeter"
+    ],
+    "CanonicalKL": [
+      "OrdinaryR"
+    ],
+    "CharacterReciprocity": [
+      "Support"
+    ],
+    "Comparison": [],
+    "Coxeter": [],
+    "Decomposition": [
+      "SheafMorphisms"
+    ],
+    "Dihedral": [
+      "CanonicalKL"
+    ],
+    "DihedralIntervals": [
+      "ReflectionOrders"
+    ],
+    "DyerPaths": [
+      "CharacterReciprocity"
+    ],
+    "EdgeLocalization": [
+      "PlaneLocalization"
+    ],
+    "Frobenius": [
+      "Decomposition"
+    ],
+    "GradedModules": [
+      "ModuleAlgebra"
+    ],
+    "GradedSheaves": [
+      "Sheaves",
+      "GradedModules",
+      "ReflectionSchedules"
+    ],
+    "Hecke": [
+      "Bruhat"
+    ],
+    "HilbertSeries": [
+      "GradedSheaves"
+    ],
+    "IntegralPairings": [
+      "BottSamelson"
+    ],
+    "Invariance": [
+      "SimultaneousInvariance"
+    ],
+    "MinimalExtensions": [
+      "HilbertSeries",
+      "Comparison"
+    ],
+    "Model": [],
+    "ModuleAlgebra": [],
+    "OrdinaryR": [
+      "Hecke"
+    ],
+    "PlaneLocalization": [
+      "DihedralIntervals"
+    ],
+    "PositiveTransfer": [
+      "EdgeLocalization"
+    ],
+    "ReflectionOrders": [
+      "DyerPaths"
+    ],
+    "ReflectionPlane": [],
+    "ReflectionSchedules": [
+      "Tits",
+      "ModuleAlgebra"
+    ],
+    "SheafMorphisms": [
+      "MinimalExtensions"
+    ],
+    "Sheaves": [],
+    "SimultaneousInvariance": [
+      "TerminalKernels"
+    ],
+    "Support": [
+      "BalancedPairings"
+    ],
+    "TerminalKernels": [
+      "PositiveTransfer"
+    ],
+    "Tits": [
+      "Bruhat",
+      "Dihedral",
+      "ReflectionPlane",
+      "Sheaves"
+    ]
+  },
+  "source_topological_order": [
+    "Model",
+    "Coxeter",
+    "Comparison",
+    "ModuleAlgebra",
+    "Sheaves",
+    "ReflectionPlane",
+    "Bruhat",
+    "GradedModules",
+    "Hecke",
+    "OrdinaryR",
+    "CanonicalKL",
+    "Dihedral",
+    "Tits",
+    "ReflectionSchedules",
+    "GradedSheaves",
+    "HilbertSeries",
+    "MinimalExtensions",
+    "SheafMorphisms",
+    "Decomposition",
+    "Frobenius",
+    "BottSamelson",
+    "IntegralPairings",
+    "BalancedPairings",
+    "Support",
+    "CharacterReciprocity",
+    "DyerPaths",
+    "ReflectionOrders",
+    "DihedralIntervals",
+    "PlaneLocalization",
+    "EdgeLocalization",
+    "PositiveTransfer",
+    "TerminalKernels",
+    "SimultaneousInvariance",
+    "Invariance"
+  ],
+  "paper_labels_verified": 48,
+  "main_route_source_witnesses": [
+    {
+      "caller": "OAI.KLInvariance.combinatorial_invariance",
+      "calls": [
+        "exists_finiteIntervalModel",
+        "klPolynomial_invariance_finite"
+      ],
+      "file": "Invariance.lean",
+      "line": 547
+    },
+    {
+      "caller": "OAI.KLInvariance.BruhatGraph.klPolynomial_invariance_finite",
+      "calls": [
+        "bottom_eq_of_comparisons",
+        "scaledKL_eq_transported"
+      ],
+      "file": "Invariance.lean",
+      "line": 427
+    },
+    {
+      "caller": "OAI.KLInvariance.BruhatGraph.rTilde_invariance_and_freeness",
+      "calls": [
+        "rTilde_freeness_of_below"
+      ],
+      "file": "Invariance.lean",
+      "line": 190
+    },
+    {
+      "caller": "OAI.KLInvariance.BruhatGraph.rTilde_freeness_of_below",
+      "calls": [
+        "rTilde_eq_of_smaller_data",
+        "actual_freeSuffixes_of_rTilde_eq"
+      ],
+      "file": "Invariance.lean",
+      "line": 136
+    },
+    {
+      "caller": "OAI.KLInvariance.BruhatGraph.rTilde_eq_of_smaller_data",
+      "calls": [
+        "rTilde_eval_le_of_upper_freeness"
+      ],
+      "file": "Invariance.lean",
+      "line": 95
+    },
+    {
+      "caller": "OAI.KLInvariance.BruhatGraph.actual_freeSuffixes_of_rTilde_eq",
+      "calls": [
+        "schedule_kernels_free_of_endpoint_eq",
+        "actual_endpoint_of_rTilde_eq"
+      ],
+      "file": "SimultaneousInvariance.lean",
+      "line": 296
+    },
+    {
+      "caller": "OAI.KLInvariance.BruhatGraph.schedule_comparison_of_upper_freeness",
+      "calls": [
+        "scheduleState_le",
+        "schedule_edge_image_le"
+      ],
+      "file": "TerminalKernels.lean",
+      "line": 1171
+    },
+    {
+      "caller": "OAI.KLInvariance.BruhatGraph.schedule_edge_image_le",
+      "calls": [
+        "boundary_edge_image_le"
+      ],
+      "file": "TerminalKernels.lean",
+      "line": 1126
+    },
+    {
+      "caller": "OAI.KLInvariance.BruhatGraph.stalkCharacter_reciprocity",
+      "calls": [
+        "bottCharacter_decomposition_both",
+        "finite_character_cancellation"
+      ],
+      "file": "DyerPaths.lean",
+      "line": 62
+    }
+  ],
+  "node_correspondence": [
+    {
+      "id": "kl.comparison.edge_increment",
+      "chapter": "kl.06_induction",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.normalized_edge_increment_le"
+      ],
+      "paper_locations": [
+        "6. Reciprocity and simultaneous induction; sec:induction"
+      ]
+    },
+    {
+      "id": "kl.comparison.free_suffixes",
+      "chapter": "kl.06_induction",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.FreeSuffixes"
+      ],
+      "paper_locations": [
+        "6. Reciprocity and simultaneous induction; sec:induction"
+      ]
+    },
+    {
+      "id": "kl.comparison.global_comparison",
+      "chapter": "kl.06_induction",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.actual_comparison_of_upper_freeness"
+      ],
+      "paper_locations": [
+        "6. Reciprocity and simultaneous induction; sec:induction"
+      ]
+    },
+    {
+      "id": "kl.comparison.no_deficit",
+      "chapter": "kl.06_induction",
+      "lean_declarations": [
+        "OAI.KLInvariance.Comparison.every_step_eq_of_endpoint_eq"
+      ],
+      "paper_locations": [
+        "6. Reciprocity and simultaneous induction; sec:induction"
+      ]
+    },
+    {
+      "id": "kl.comparison.normalized_kernel",
+      "chapter": "kl.06_induction",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.normalizedKernel",
+        "OAI.KLInvariance.BruhatGraph.stateScale"
+      ],
+      "paper_locations": [
+        "6. Reciprocity and simultaneous induction; sec:induction"
+      ]
+    },
+    {
+      "id": "kl.comparison.positive_transfer",
+      "chapter": "kl.06_induction",
+      "lean_declarations": [
+        "OAI.KLInvariance.Comparison.transfer",
+        "OAI.KLInvariance.Comparison.transfer_monotone",
+        "OAI.KLInvariance.Comparison.transfer_injective"
+      ],
+      "paper_locations": [
+        "6. Reciprocity and simultaneous induction; sec:induction"
+      ]
+    },
+    {
+      "id": "kl.comparison.reciprocal_rigidity",
+      "chapter": "kl.06_induction",
+      "lean_declarations": [
+        "OAI.KLInvariance.Comparison.low_degree_zero_of_eval_reciprocal",
+        "OAI.KLInvariance.Comparison.eq_of_eval_difference_reciprocal"
+      ],
+      "paper_locations": [
+        "6. Reciprocity and simultaneous induction; sec:induction"
+      ]
+    },
+    {
+      "id": "kl.comparison.reverse_freeness",
+      "chapter": "kl.06_induction",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.schedule_kernels_free_of_images_eq",
+        "OAI.KLInvariance.BruhatGraph.partial_kernel_free_of_image_eq"
+      ],
+      "paper_locations": [
+        "6. Reciprocity and simultaneous induction; sec:induction"
+      ]
+    },
+    {
+      "id": "kl.comparison.rtilde_invariance",
+      "chapter": "kl.06_induction",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.rTilde_invariance_and_freeness"
+      ],
+      "paper_locations": [
+        "6. Reciprocity and simultaneous induction; sec:induction"
+      ]
+    },
+    {
+      "id": "kl.comparison.rtilde_row_comparison",
+      "chapter": "kl.06_induction",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.rTilde_eval_le_of_upper_freeness"
+      ],
+      "paper_locations": [
+        "6. Reciprocity and simultaneous induction; sec:induction"
+      ]
+    },
+    {
+      "id": "kl.comparison.rtilde_step",
+      "chapter": "kl.06_induction",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.rTilde_eq_of_smaller_data"
+      ],
+      "paper_locations": [
+        "6. Reciprocity and simultaneous induction; sec:induction"
+      ]
+    },
+    {
+      "id": "kl.definitions.bar_involution",
+      "chapter": "kl.01_introduction",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hecke.barBasis",
+        "OAI.KLInvariance.Hecke.barLinear",
+        "OAI.KLInvariance.Hecke.barLinear_inverse"
+      ],
+      "paper_locations": [
+        "1. Introduction and conventions; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.definitions.hecke_operators",
+      "chapter": "kl.01_introduction",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hecke.left",
+        "OAI.KLInvariance.Hecke.right"
+      ],
+      "paper_locations": [
+        "1. Introduction and conventions; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.definitions.hecke_quadratic_relation",
+      "chapter": "kl.01_introduction",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hecke.left_quadratic",
+        "OAI.KLInvariance.HeckeQ.left_quadratic"
+      ],
+      "paper_locations": [
+        "1. Introduction and conventions; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.duality.actual_character_reciprocity",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_reciprocity"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.duality.bott_character_decomposition",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottCharacter_decomposition_both"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.duality.character_identity_condition",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.StalkCharacterObligation"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.duality.stalk_character",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.foundations.bruhat_order",
+      "chapter": "kl.01_introduction",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatLE",
+        "OAI.KLInvariance.bruhat_antisymm"
+      ],
+      "paper_locations": [
+        "1. Introduction and conventions; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.foundations.bruhat_step",
+      "chapter": "kl.01_introduction",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatStep"
+      ],
+      "paper_locations": [
+        "1. Introduction and conventions; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.foundations.canonical_kl",
+      "chapter": "kl.01_introduction",
+      "lean_declarations": [
+        "OAI.KLInvariance.normalizedKL_existsUnique",
+        "OAI.KLInvariance.klFamilies_spec",
+        "OAI.KLInvariance.klPolynomial_eq_constructed"
+      ],
+      "paper_locations": [
+        "1. Introduction and conventions; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.foundations.finite_intervals",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.interval_finite",
+        "OAI.KLInvariance.finite_bruhat_lower"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.foundations.finite_support",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.lower_ideal_finite_generator_support"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.foundations.interval",
+      "chapter": "kl.01_introduction",
+      "lean_declarations": [
+        "OAI.KLInvariance.Interval",
+        "OAI.KLInvariance.rankDifference"
+      ],
+      "paper_locations": [
+        "1. Introduction and conventions; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.foundations.low_half",
+      "chapter": "kl.01_introduction",
+      "lean_declarations": [
+        "OAI.KLInvariance.CanonicalP.lowPart"
+      ],
+      "paper_locations": [
+        "1. Introduction and conventions; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.foundations.normalized_kl",
+      "chapter": "kl.01_introduction",
+      "lean_declarations": [
+        "OAI.KLInvariance.NormalizedKL"
+      ],
+      "paper_locations": [
+        "1. Introduction and conventions; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.foundations.rank_preservation",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.intervalIso_rankDifference",
+        "OAI.KLInvariance.intervalIso_full_rankDifference"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.foundations.rtilde",
+      "chapter": "kl.01_introduction",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hecke.rTilde",
+        "OAI.KLInvariance.rPolynomial_normalization"
+      ],
+      "paper_locations": [
+        "1. Introduction and conventions; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.foundations.scaled_kl",
+      "chapter": "kl.01_introduction",
+      "lean_declarations": [
+        "OAI.KLInvariance.scaledKL",
+        "OAI.KLInvariance.scaledKL_reciprocity"
+      ],
+      "paper_locations": [
+        "1. Introduction and conventions; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.foundations.subword",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.bruhat_iff_reduced_subword"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.local.edge_inclusion",
+      "chapter": "kl.05_edge_images",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.schedule_edge_image_le"
+      ],
+      "paper_locations": [
+        "5. Comparison of edge images; sec:edge"
+      ]
+    },
+    {
+      "id": "kl.local.free_target_localization",
+      "chapter": "kl.05_edge_images",
+      "lean_declarations": [
+        "OAI.KLInvariance.EdgeLattice.mem_iff_localized_at_height_one"
+      ],
+      "paper_locations": [
+        "5. Comparison of edge images; sec:edge"
+      ]
+    },
+    {
+      "id": "kl.local.localized_decomposition",
+      "chapter": "kl.04_localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localized_boundary_decomposition"
+      ],
+      "paper_locations": [
+        "4. Localization at a root plane; sec:localization"
+      ]
+    },
+    {
+      "id": "kl.main.combinatorial_invariance",
+      "chapter": "kl.01_introduction",
+      "lean_declarations": [
+        "OAI.KLInvariance.combinatorial_invariance"
+      ],
+      "paper_locations": [
+        "1. Introduction and conventions; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.main.finite_interval_model",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.FiniteIntervalModel"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.main.finite_model_transport",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.exists_finiteIntervalModel",
+        "OAI.KLInvariance.FiniteIntervalModel.orderIso",
+        "OAI.KLInvariance.FiniteIntervalModel.kl_eq"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.main.kl_finite",
+      "chapter": "kl.06_induction",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.klPolynomial_invariance_finite"
+      ],
+      "paper_locations": [
+        "6. Reciprocity and simultaneous induction; sec:induction"
+      ]
+    },
+    {
+      "id": "kl.notes.bott_samelson",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottSamelson",
+        "OAI.KLInvariance.TitsSpace.BottSamelsonModule",
+        "OAI.KLInvariance.TitsSpace.BottIndex",
+        "OAI.KLInvariance.TitsSpace.bottWeight"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; bg:normalization"
+      ]
+    },
+    {
+      "id": "kl.notes.boundary_image",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.boundaryHom",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.boundaryImage"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; bg:bmp"
+      ]
+    },
+    {
+      "id": "kl.notes.character_cancellation",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.finite_character_cancellation"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; bg:normalization"
+      ]
+    },
+    {
+      "id": "kl.notes.dihedral_kl",
+      "chapter": "kl.04_localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.klPolynomial_eq_one"
+      ],
+      "paper_locations": [
+        "4. Localization at a root plane; loc:dihedral-kl"
+      ]
+    },
+    {
+      "id": "kl.notes.dihedral_models",
+      "chapter": "kl.04_localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.klPolynomial_eq_one",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.model_flabby",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.model_generated",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.model_quotient"
+      ],
+      "paper_locations": [
+        "4. Localization at a root plane; loc:models"
+      ]
+    },
+    {
+      "id": "kl.notes.extended_realization",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.extendedForm_spec",
+        "OAI.KLInvariance.TitsSpace.extendedRoot_linearIndependent",
+        "OAI.KLInvariance.TitsSpace.extendedNormal_linearIndependent",
+        "OAI.KLInvariance.TitsSpace.extended_finrank"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; bg:realization"
+      ]
+    },
+    {
+      "id": "kl.notes.graded_nakayama",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.eq_top_of_positive_smul_sup"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.notes.graded_projective_free",
+      "chapter": "kl.06_induction",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.exists_homogeneous_basis_polynomial"
+      ],
+      "paper_locations": [
+        "6. Reciprocity and simultaneous induction; sec:induction"
+      ]
+    },
+    {
+      "id": "kl.notes.hecke_action",
+      "chapter": "kl.01_introduction",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hecke.left",
+        "OAI.KLInvariance.Hecke.left_quadratic",
+        "OAI.KLInvariance.Hecke.barLinear_left",
+        "OAI.KLInvariance.Hecke.rTilde"
+      ],
+      "paper_locations": [
+        "1. Introduction and conventions; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.notes.minimal_cover_existence",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.exists_minimalCover"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; bg:bmp"
+      ]
+    },
+    {
+      "id": "kl.notes.path_product",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.SchedulePaths.dispatch",
+        "OAI.KLInvariance.SchedulePaths.dispatch_eq_subpaths_sum"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; bg:paths"
+      ]
+    },
+    {
+      "id": "kl.notes.perfect_pairings",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.FrobeniusDuality.PairedModule",
+        "OAI.KLInvariance.FrobeniusDuality.PairedBimodule"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; bg:normalization"
+      ]
+    },
+    {
+      "id": "kl.notes.reflection_faithfulness",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.extendedAction_injective",
+        "OAI.KLInvariance.TitsSpace.reflectionFaithful"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; bg:realization"
+      ]
+    },
+    {
+      "id": "kl.notes.reflection_frobenius",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.ReflectionFrobenius.coordinates",
+        "OAI.KLInvariance.ReflectionFrobenius.trace",
+        "OAI.KLInvariance.ReflectionFrobenius.trace_mul"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; bg:normalization"
+      ]
+    },
+    {
+      "id": "kl.notes.reflection_order",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.RatioOrder"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; bg:paths"
+      ]
+    },
+    {
+      "id": "kl.notes.relative_dihedral_intervals",
+      "chapter": "kl.03_dihedral",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeSubgroup"
+      ],
+      "paper_locations": [
+        "3. Dihedral intervals and transported reflection orders; dih:plane"
+      ]
+    },
+    {
+      "id": "kl.notes.relative_dihedral_transport",
+      "chapter": "kl.03_dihedral",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.transport_interval"
+      ],
+      "paper_locations": [
+        "3. Dihedral intervals and transported reflection orders; dih:transport"
+      ]
+    },
+    {
+      "id": "kl.notes.sheaf_localization",
+      "chapter": "kl.04_localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upwardKernel",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_lowerImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upperImage"
+      ],
+      "paper_locations": [
+        "4. Localization at a root plane; loc:decomposition"
+      ]
+    },
+    {
+      "id": "kl.notes.supported_pairings",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.PerfectPairing"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; bg:normalization"
+      ]
+    },
+    {
+      "id": "kl.notes.tensor_pairing",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.FrobeniusDuality.inducedModule",
+        "OAI.KLInvariance.FrobeniusDuality.inducedModule_pairing_tmul",
+        "OAI.KLInvariance.FrobeniusDuality.inducedPairing_balanced",
+        "OAI.KLInvariance.FrobeniusDuality.inducedPairing_symmetric"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; bg:normalization"
+      ]
+    },
+    {
+      "id": "kl.notes.upper_image_free",
+      "chapter": "kl.05_edge_images",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.upperImage_free"
+      ],
+      "paper_locations": [
+        "5. Comparison of edge images; edge:bound"
+      ]
+    },
+    {
+      "id": "kl.notes.word_stalks",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottWeightProjection",
+        "OAI.KLInvariance.TitsSpace.bottStalk",
+        "OAI.KLInvariance.TitsSpace.bottStalkProjection_surjective"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; bg:normalization"
+      ]
+    },
+    {
+      "id": "kl.paths.dyer_paths",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.WallDyer.geometric_entry_eq_rTilde"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.paths.graph_invariance",
+      "chapter": "kl.03_dihedral",
+      "lean_declarations": [
+        "OAI.KLInvariance.intervalIso_bruhatStep_iff_general"
+      ],
+      "paper_locations": [
+        "3. Dihedral intervals and transported reflection orders; sec:dihedral"
+      ]
+    },
+    {
+      "id": "kl.paths.later_count",
+      "chapter": "kl.03_dihedral",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.transported_count_difference_all"
+      ],
+      "paper_locations": [
+        "3. Dihedral intervals and transported reflection orders; sec:dihedral"
+      ]
+    },
+    {
+      "id": "kl.paths.plane_degree",
+      "chapter": "kl.03_dihedral",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.sum_planeWeight",
+        "OAI.KLInvariance.TitsSpace.edgeFactor_degree_formula"
+      ],
+      "paper_locations": [
+        "3. Dihedral intervals and transported reflection orders; sec:dihedral"
+      ]
+    },
+    {
+      "id": "kl.realization.reflection_plane",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.ReflectionPlane.range_preReflection_product_sub_id"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.sheaves.boundary_existence",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.exists_boundarySheaf"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.sheaves.boundary_sheaf",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.sheaves.flabbiness",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.Flabby"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.sheaves.graded_module",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.sheaves.graph_sheaf",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.OrderedGraph",
+        "OAI.KLInvariance.MomentGraph.Sheaf",
+        "OAI.KLInvariance.MomentGraph.Sheaf.CompatibleOn"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.sheaves.hilbert_detection",
+      "chapter": "kl.06_induction",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hilbert.polynomial_eq_of_value_eq"
+      ],
+      "paper_locations": [
+        "6. Reciprocity and simultaneous induction; sec:induction"
+      ]
+    },
+    {
+      "id": "kl.sheaves.hilbert_free",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hilbert.hasSum_homogeneous_basis"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.sheaves.minimal_cover",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.MinimalCover"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.sheaves.relative_flabbiness",
+      "chapter": "kl.04_localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.extend_closedUnder"
+      ],
+      "paper_locations": [
+        "4. Localization at a root plane; sec:localization"
+      ]
+    },
+    {
+      "id": "kl.sheaves.upward_kernel",
+      "chapter": "kl.02_background",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.upwardKernel"
+      ],
+      "paper_locations": [
+        "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    }
+  ]
+}

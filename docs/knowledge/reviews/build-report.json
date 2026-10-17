@@ -1,0 +1,81 @@
+{
+  "agent": "source-to-md",
+  "target": {
+    "path": "docs/knowledge"
+  },
+  "decision": "extracted",
+  "created_at": "2026-10-17T14:36:14.066259+00:00",
+  "inputs": [
+    "agoramachina/openai-math@adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+  ],
+  "summary": "Source-faithful knowledge base built and structurally checked.",
+  "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "mdblueprint_revision": "dd0743a94b709220f9411964a781da6b2fc61d5b",
+  "snapshot_files_verified": 81,
+  "solution_modules": 34,
+  "named_declarations_indexed": 2991,
+  "mdblueprint_runtime_overrides": [],
+  "code_link_repository": "https://github.com/jiajunma/combkl",
+  "code_link_revision": "108243e05ed46235bf82dc30d4d90c794579776f",
+  "uncovered_structure_fields": 0,
+  "node_count": 74,
+  "definition_navigation": {
+    "engine": "Python registry matcher; no LLM calls",
+    "registry_sha256": "c542ee9338ef1211f678457fb632943e16e6621be6a54811830e1389ef04d3fb",
+    "definition_targets": 26,
+    "aliases": 105
+  },
+  "chapter_count": 6,
+  "bundled_source_files_verified": 34,
+  "node_kinds": {
+    "definition": 28,
+    "theorem": 45,
+    "concept": 1
+  },
+  "node_statuses": {
+    "formalized": 29,
+    "proved": 45
+  },
+  "diagnostics": [
+    "[WARNING] lean.repository.openai-kl: Lean repository 'openai-kl' has uncommitted or untracked files"
+  ],
+  "browser_automation_used": false,
+  "html_pages_checked": 93,
+  "node_pages_checked": 74,
+  "graph_detail_payloads_checked": 74,
+  "generated_definition_links_checked": 271,
+  "definition_link_occurrences": {
+    "kl.comparison.free_suffixes": 17,
+    "kl.comparison.normalized_kernel": 2,
+    "kl.definitions.bar_involution": 5,
+    "kl.definitions.hecke_operators": 15,
+    "kl.definitions.hecke_quadratic_relation": 7,
+    "kl.duality.stalk_character": 9,
+    "kl.foundations.bruhat_order": 8,
+    "kl.foundations.bruhat_step": 23,
+    "kl.foundations.interval": 53,
+    "kl.foundations.normalized_kl": 18,
+    "kl.main.finite_interval_model": 3,
+    "kl.notes.bott_samelson": 11,
+    "kl.notes.boundary_image": 10,
+    "kl.notes.dihedral_models": 7,
+    "kl.notes.perfect_pairings": 10,
+    "kl.notes.reflection_order": 11,
+    "kl.notes.relative_dihedral_intervals": 2,
+    "kl.sheaves.boundary_sheaf": 10,
+    "kl.sheaves.flabbiness": 9,
+    "kl.sheaves.graded_module": 13,
+    "kl.sheaves.graph_sheaf": 11,
+    "kl.sheaves.minimal_cover": 12,
+    "kl.sheaves.upward_kernel": 5
+  },
+  "math_occurrences_extracted": 772,
+  "broken_links": [],
+  "katex": {
+    "renderer": "KaTeX",
+    "version": "0.16.46",
+    "occurrences_checked": 772,
+    "distinct_formulas_checked": 472,
+    "browser_used": false
+  }
+}

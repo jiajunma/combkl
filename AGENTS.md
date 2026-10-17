@@ -1,6 +1,6 @@
-# AGENTS.md — 通用审稿协作规则
+# AGENTS.md — Review collaboration and blueprint authoring
 
-本文件适用于本仓库及其子目录，只规定审稿协作方式。不在这里存放具体论文的背景、数学分析、用户知识状态、疑问、评价或审稿结论；这些内容统一进入 LaTeX 工作稿的相应章节。
+This file governs review collaboration and blueprint authoring in this repository. Review-specific mathematical analysis, user questions and assessments, and review conclusions belong in the corresponding LaTeX work-document sections. Blueprint exposition belongs in the mdblueprint Markdown nodes. Section 7 records the blueprint authoring requirements.
 
 ## 1. 文件职责与章节组织
 
@@ -51,3 +51,116 @@
 候选审稿意见须可追溯到原文和工作稿。区分已确认的数学错误、需作者澄清的步骤、表述建议和个人理解问题。用户未确认时，不把助手的暂定判断写成用户的意见或最终审稿结论。
 
 仓库内整理和记录的授权不等于对外提交审稿、联系作者、发送邮件或公开发布的授权；这些操作须有明确指示。
+
+## 7. Blueprint requirements
+
+These requirements govern the mathematical blueprint and its generated site.
+They record the user's explicit requirements, including the clarifications of
+2026-10-17. Keep paper-specific mathematics and review judgments in their
+designated documents; this section is the reusable authoring contract.
+
+### Purpose and language
+
+- Write the blueprint, its navigation, explanations, and new accompanying
+  documentation in **English**.
+- The blueprint must serve as a **textbook or set of lecture notes** based on
+  the Lean development. A declaration catalogue, module inventory, collection
+  of source dumps, or brief proof outline alone does not satisfy the task.
+- Keep the blueprint's mathematical exposition in its Markdown knowledge
+  nodes, with chapter reading guides and generated site output. Review
+  questions, judgments, and dialogue history remain in the LaTeX work document;
+  do not create a second Markdown review log.
+- Explain all knowledge needed to understand the development: definitions,
+  notation, hypotheses, constructions, intermediate results, proofs, and how
+  they fit together. Introduce specialized prerequisites before using them.
+- Include a coherent reading sequence, worked examples and calculations, and
+  enough intermediate reasoning for a reader to follow the argument without
+  having to reconstruct it from Lean tactics.
+
+### Faithfulness to the completed proof
+
+- When the user specifies that the proof is completed, take that as the scope
+  of the exposition task. Faithfully explain the existing proof; do not turn
+  the task into a search for gaps, a new formalization, or a speculative proof
+  plan. Re-running Lean or reassessing correctness requires a separate task.
+- Reflect completion in blueprint metadata: Lean-backed theorem entries are
+  `proved`, and implemented definitions and source-backed concept overviews
+  are `formalized`. Do not label a completed construction `admitted` merely
+  because its lecture-note page combines several declarations. Teaching
+  examples remain exposition unless separately matched to a Lean theorem.
+- Preserve the actual definitions, quantifiers, hypotheses, conclusions,
+  grading conventions, and proof dependencies. Do not simplify by silently
+  weakening a statement, strengthening a conclusion, or omitting conditions.
+- Explain structures and their fields mathematically. Fields and hypotheses
+  are not additional kernel axioms. Keep conditional interfaces conditional,
+  and distinguish them from unconditional theorems used by the main proof.
+- Distinguish mathematical statements from explanatory examples or derived
+  calculations added for teaching. Do not imply that an added example is a
+  separately formalized declaration unless it actually is.
+- Preserve the upstream paper and Lean snapshot. Expository changes belong in
+  the blueprint, not in the original proof files.
+
+### One mathematical hierarchy
+
+- Organize the subject as **one unified mathematical development**. Do not
+  create separate top-level "Code" and "Mathematics/KL" branches.
+- Use the paper's sections and argument as the chapter-level guide. Determine
+  the internal hierarchy from the actual mathematical objects and the Lean
+  definitions, theorem statements, and proof calls.
+- Inspect and validate that hierarchy **before assigning topics**. File names,
+  import order, namespace prefixes, and superficial keywords are evidence to
+  inspect, not sufficient rules for classifying mathematical content. One file
+  may contain several mathematical subjects, and one construction may span
+  several files.
+- Use enough mathematical detail for lecture notes, without arbitrary
+  fragmentation into file-level or implementation-level topics. Conversely,
+  do not compress substantive intermediate arguments into vague overview
+  pages. Granularity is determined by the exposition and proof structure,
+  not by a target page or node count.
+- Integrate Lean references into the corresponding mathematical entries.
+  Source inventories and module-import data may be provided as supporting
+  material, but must not become a parallel mathematical taxonomy.
+- Keep the mathematical dependency graph distinct from the module-import
+  graph. Record genuine logical prerequisites; do not add a mathematical edge
+  merely because two files import one another or share a topic.
+- If the paper and Lean implementation organize the proof differently,
+  explain their correspondence explicitly. Follow the actual Lean proof
+  steps without falsely identifying them with a different paper argument.
+
+### Source alignment and verification
+
+- Generate links deterministically with Python or TypeScript, not by asking an
+  LLM to insert or repair individual link occurrences. Keep a checked registry
+  of mathematical terms, aliases, definition node IDs, and any topic scopes;
+  resolve URLs from the node's actual chapter and the indexed Lean declaration.
+- Link technical terms in explanatory prose to their definitions, including
+  operators, quadratic relations, and the bar involution. Keep authored prose
+  readable without manually embedded links for each term. Skip formulas, code,
+  existing links, and a definition's self-references. Reject missing targets
+  and ambiguous aliases instead of guessing. Navigation links do not create
+  mathematical dependency edges.
+- Check rendered links in chapter guides, node pages, and graph details.
+  Reject unresolved wiki-reference markers and wrong definition destinations;
+  record reproducible linking evidence in the build report.
+- Give stable paper locations and precise Lean declaration references for
+  mathematical entries, with source files, line locations, and the fixed
+  upstream revision where available.
+- Inspect the relevant Lean statements and proof bodies before writing their
+  explanation. A matching declaration name or an existing file alone does not
+  establish semantic alignment.
+- Check coverage of the main proof route and its prerequisites, including
+  definitions and structural conditions. Source dumps and mechanically valid
+  links do not substitute for this expository coverage.
+- Validate node schemas, references, mathematical dependencies, chapter
+  assignments, and structured-definition field coverage. Generate the graph
+  and site through mdblueprint; do not hand-edit generated graph or HTML files.
+- Check every generated node page and its internal links, and check formula
+  rendering using permitted tools. Keep text-level/source-index checks,
+  document-render checks, and actual Lean/kernel checks clearly distinguished.
+- Respect the user's execution and screen-privacy restrictions. The existing
+  authorization for this task permits local **document construction and
+  checks**; it does not authorize Lean execution, mathematical experiments,
+  browser automation, or screen capture.
+- Rebuild and recheck after substantive changes to the exposition or hierarchy.
+  Report what was actually checked, and do not claim comprehensive lecture-note
+  coverage based only on page counts or a successful site build.
