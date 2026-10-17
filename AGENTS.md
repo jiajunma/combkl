@@ -76,6 +76,11 @@ designated documents; this section is the reusable authoring contract.
 - Include a coherent reading sequence, worked examples and calculations, and
   enough intermediate reasoning for a reader to follow the argument without
   having to reconstruct it from Lean tactics.
+- Provide a built public website on GitHub Pages, not only repository source
+  files or a localhost preview. Keep the reading guide, definition links,
+  dependency graph, and source links usable under the repository's URL prefix.
+  Rebuild and validate through the publishing workflow, and confirm the live
+  revision before reporting deployment complete.
 
 ### Faithfulness to the completed proof
 

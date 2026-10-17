@@ -2,7 +2,9 @@
 
 These English notes explain the completed OpenAI Lean development. The paper supplies the chapter organization; the actual definitions, hypotheses, constructions, proof steps, and declaration references supply the exposition.
 
-Start with the [online reading guide](http://127.0.0.1:8765/kl/) when the local preview is running. The Markdown guide is [nodes/kl/topics.md](nodes/kl/topics.md).
+Start with the [published reading guide](https://jiajunma.github.io/combkl/kl/)
+or the [dependency graph](https://jiajunma.github.io/combkl/dep_graph_document.html).
+The website requires no installation. The Markdown guide is [nodes/kl/topics.md](nodes/kl/topics.md).
 
 ## Chapters
 
@@ -70,6 +72,22 @@ Serve the generated site from the repository root:
     python3 -m http.server 8765 --bind 127.0.0.1 --directory build/knowledge
 
 Open [the lecture notes](http://127.0.0.1:8765/kl/) or [the dependency graph](http://127.0.0.1:8765/dep_graph_document.html). The graph needs HTTP to load its generated data.
+
+## Public website
+
+The built site is hosted at [jiajunma.github.io/combkl](https://jiajunma.github.io/combkl/).
+The workflow in `.github/workflows/blueprint-pages.yml` builds on pushes to
+`codex/kl-source-snapshot` and `main`, and also supports manual runs once the
+workflow is on the default branch. It uses the pinned mdblueprint revision,
+runs the project tests and complete document checks, and uploads only the
+generated `build/knowledge/` directory for deployment. A failed build does not
+replace the public site.
+
+The [public build information](https://jiajunma.github.io/combkl/build-info.json)
+identifies the exact blueprint, tooling, and upstream source revisions.
+The [build report](https://jiajunma.github.io/combkl/build-report.json) records
+the page, link, formula, and status checks. The deployed artifact also includes
+the original paper PDF and all 34 Lean modules under `_sources/`.
 
 ## Maintenance
 

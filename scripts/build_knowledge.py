@@ -372,6 +372,22 @@ def main() -> None:
     (report_dir / "build-report.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
+    # Publish only the generated mathematical site and its build evidence.
+    (output / ".nojekyll").touch()
+    (output / "build-report.json").write_text(
+        json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    source_commit = subprocess.check_output(
+        ["git", "-C", str(ROOT), "rev-parse", "HEAD"], text=True
+    ).strip()
+    (output / "build-info.json").write_text(json.dumps({
+        "site_url": "https://jiajunma.github.io/combkl/",
+        "blueprint_commit": source_commit,
+        "mdblueprint_commit": tool_revision,
+        "upstream_source_commit": REVISION,
+        "built_at": report["created_at"],
+        "node_statuses": report["node_statuses"],
+    }, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, ensure_ascii=False, indent=2))
     print(f"Knowledge base: {output / 'index.html'}")
 

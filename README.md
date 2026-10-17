@@ -4,6 +4,9 @@ This repository contains source-linked English lecture notes and review material
 
 ## Read the blueprint
 
+- [Published website](https://jiajunma.github.io/combkl/)
+- [Lecture-note reading guide](https://jiajunma.github.io/combkl/kl/)
+- [Interactive dependency graph](https://jiajunma.github.io/combkl/dep_graph_document.html)
 - [Lecture-note guide and build instructions](docs/knowledge/README.md)
 - [Main theorem](docs/knowledge/nodes/kl.01_introduction/combinatorial_invariance.md)
 - [Simultaneous R-tilde invariance and freeness](docs/knowledge/nodes/kl.06_induction/rtilde_invariance.md)
@@ -11,7 +14,10 @@ This repository contains source-linked English lecture notes and review material
 
 The notes follow the paper's six sections. Mathematical statements, explanations, examples, and proofs form one hierarchy, with Lean references integrated into the relevant entries.
 
-After building, the reading guide is at build/knowledge/kl/index.html. The local preview is [the lecture-note home](http://127.0.0.1:8765/kl/).
+The published website can be read without installing anything. GitHub Actions
+rebuilds and checks the site when blueprint changes are pushed to the publishing
+branch, then deploys it to GitHub Pages. Local previews remain available after
+building at build/knowledge/kl/index.html.
 
 ## Original materials
 
