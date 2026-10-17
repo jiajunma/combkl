@@ -1,0 +1,161 @@
+redirects:
+  kl/01_introduction/index.html:
+    topic: kl
+  kl/01_introduction/kl_definitions_bar_involution.html:
+    node: kl.definitions.bar_involution
+  kl/01_introduction/kl_definitions_hecke_operators.html:
+    node: kl.definitions.hecke_operators
+  kl/01_introduction/kl_definitions_hecke_quadratic_relation.html:
+    node: kl.definitions.hecke_quadratic_relation
+  kl/01_introduction/kl_foundations_bruhat_order.html:
+    node: kl.foundations.bruhat_order
+  kl/01_introduction/kl_foundations_bruhat_step.html:
+    node: kl.foundations.bruhat_step
+  kl/01_introduction/kl_foundations_canonical_kl.html:
+    node: kl.foundations.canonical_kl
+  kl/01_introduction/kl_foundations_interval.html:
+    node: kl.foundations.interval
+  kl/01_introduction/kl_foundations_low_half.html:
+    node: kl.foundations.low_half
+  kl/01_introduction/kl_foundations_normalized_kl.html:
+    node: kl.foundations.normalized_kl
+  kl/01_introduction/kl_foundations_rtilde.html:
+    node: kl.foundations.rtilde
+  kl/01_introduction/kl_foundations_scaled_kl.html:
+    node: kl.foundations.scaled_kl
+  kl/01_introduction/kl_main_combinatorial_invariance.html:
+    node: kl.main.combinatorial_invariance
+  kl/01_introduction/kl_notes_hecke_action.html:
+    node: kl.notes.hecke_action
+  kl/02_background/index.html:
+    topic: kl
+  kl/02_background/kl_duality_actual_character_reciprocity.html:
+    node: kl.duality.actual_character_reciprocity
+  kl/02_background/kl_duality_bott_character_decomposition.html:
+    node: kl.duality.bott_character_decomposition
+  kl/02_background/kl_duality_character_identity_condition.html:
+    node: kl.duality.character_identity_condition
+  kl/02_background/kl_duality_stalk_character.html:
+    node: kl.duality.stalk_character
+  kl/02_background/kl_foundations_finite_intervals.html:
+    node: kl.foundations.finite_intervals
+  kl/02_background/kl_foundations_finite_support.html:
+    node: kl.foundations.finite_support
+  kl/02_background/kl_foundations_rank_preservation.html:
+    node: kl.foundations.rank_preservation
+  kl/02_background/kl_foundations_subword.html:
+    node: kl.foundations.subword
+  kl/02_background/kl_main_finite_interval_model.html:
+    node: kl.main.finite_interval_model
+  kl/02_background/kl_main_finite_model_transport.html:
+    node: kl.main.finite_model_transport
+  kl/02_background/kl_notes_bott_samelson.html:
+    node: kl.notes.bott_samelson
+  kl/02_background/kl_notes_boundary_image.html:
+    node: kl.notes.boundary_image
+  kl/02_background/kl_notes_character_cancellation.html:
+    node: kl.notes.character_cancellation
+  kl/02_background/kl_notes_extended_realization.html:
+    node: kl.notes.extended_realization
+  kl/02_background/kl_notes_graded_nakayama.html:
+    node: kl.notes.graded_nakayama
+  kl/02_background/kl_notes_minimal_cover_existence.html:
+    node: kl.notes.minimal_cover_existence
+  kl/02_background/kl_notes_path_product.html:
+    node: kl.notes.path_product
+  kl/02_background/kl_notes_perfect_pairings.html:
+    node: kl.notes.perfect_pairings
+  kl/02_background/kl_notes_reflection_faithfulness.html:
+    node: kl.notes.reflection_faithfulness
+  kl/02_background/kl_notes_reflection_frobenius.html:
+    node: kl.notes.reflection_frobenius
+  kl/02_background/kl_notes_reflection_order.html:
+    node: kl.notes.reflection_order
+  kl/02_background/kl_notes_supported_pairings.html:
+    node: kl.notes.supported_pairings
+  kl/02_background/kl_notes_tensor_pairing.html:
+    node: kl.notes.tensor_pairing
+  kl/02_background/kl_notes_word_stalks.html:
+    node: kl.notes.word_stalks
+  kl/02_background/kl_paths_dyer_paths.html:
+    node: kl.paths.dyer_paths
+  kl/02_background/kl_realization_reflection_plane.html:
+    node: kl.realization.reflection_plane
+  kl/02_background/kl_sheaves_boundary_existence.html:
+    node: kl.sheaves.boundary_existence
+  kl/02_background/kl_sheaves_boundary_sheaf.html:
+    node: kl.sheaves.boundary_sheaf
+  kl/02_background/kl_sheaves_flabbiness.html:
+    node: kl.sheaves.flabbiness
+  kl/02_background/kl_sheaves_graded_module.html:
+    node: kl.sheaves.graded_module
+  kl/02_background/kl_sheaves_graph_sheaf.html:
+    node: kl.sheaves.graph_sheaf
+  kl/02_background/kl_sheaves_hilbert_free.html:
+    node: kl.sheaves.hilbert_free
+  kl/02_background/kl_sheaves_minimal_cover.html:
+    node: kl.sheaves.minimal_cover
+  kl/02_background/kl_sheaves_upward_kernel.html:
+    node: kl.sheaves.upward_kernel
+  kl/03_dihedral/index.html:
+    topic: kl
+  kl/03_dihedral/kl_notes_relative_dihedral_intervals.html:
+    node: kl.notes.relative_dihedral_intervals
+  kl/03_dihedral/kl_notes_relative_dihedral_transport.html:
+    node: kl.notes.relative_dihedral_transport
+  kl/03_dihedral/kl_paths_graph_invariance.html:
+    node: kl.paths.graph_invariance
+  kl/03_dihedral/kl_paths_later_count.html:
+    node: kl.paths.later_count
+  kl/03_dihedral/kl_paths_plane_degree.html:
+    node: kl.paths.plane_degree
+  kl/04_localization/index.html:
+    topic: kl
+  kl/04_localization/kl_local_localized_decomposition.html:
+    node: kl.local.localized_decomposition
+  kl/04_localization/kl_notes_dihedral_kl.html:
+    node: kl.notes.dihedral_kl
+  kl/04_localization/kl_notes_dihedral_models.html:
+    node: kl.notes.dihedral_models
+  kl/04_localization/kl_notes_sheaf_localization.html:
+    node: kl.notes.sheaf_localization
+  kl/04_localization/kl_sheaves_relative_flabbiness.html:
+    node: kl.sheaves.relative_flabbiness
+  kl/05_edge_images/index.html:
+    topic: kl
+  kl/05_edge_images/kl_local_edge_inclusion.html:
+    node: kl.local.edge_inclusion
+  kl/05_edge_images/kl_local_free_target_localization.html:
+    node: kl.local.free_target_localization
+  kl/05_edge_images/kl_notes_upper_image_free.html:
+    node: kl.notes.upper_image_free
+  kl/06_induction/index.html:
+    topic: kl
+  kl/06_induction/kl_comparison_edge_increment.html:
+    node: kl.comparison.edge_increment
+  kl/06_induction/kl_comparison_free_suffixes.html:
+    node: kl.comparison.free_suffixes
+  kl/06_induction/kl_comparison_global_comparison.html:
+    node: kl.comparison.global_comparison
+  kl/06_induction/kl_comparison_no_deficit.html:
+    node: kl.comparison.no_deficit
+  kl/06_induction/kl_comparison_normalized_kernel.html:
+    node: kl.comparison.normalized_kernel
+  kl/06_induction/kl_comparison_positive_transfer.html:
+    node: kl.comparison.positive_transfer
+  kl/06_induction/kl_comparison_reciprocal_rigidity.html:
+    node: kl.comparison.reciprocal_rigidity
+  kl/06_induction/kl_comparison_reverse_freeness.html:
+    node: kl.comparison.reverse_freeness
+  kl/06_induction/kl_comparison_rtilde_invariance.html:
+    node: kl.comparison.rtilde_invariance
+  kl/06_induction/kl_comparison_rtilde_row_comparison.html:
+    node: kl.comparison.rtilde_row_comparison
+  kl/06_induction/kl_comparison_rtilde_step.html:
+    node: kl.comparison.rtilde_step
+  kl/06_induction/kl_main_kl_finite.html:
+    node: kl.main.kl_finite
+  kl/06_induction/kl_notes_graded_projective_free.html:
+    node: kl.notes.graded_projective_free
+  kl/06_induction/kl_sheaves_hilbert_detection.html:
+    node: kl.sheaves.hilbert_detection

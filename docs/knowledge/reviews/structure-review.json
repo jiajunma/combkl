@@ -1,0 +1,415 @@
+{
+  "scope": "Mathematical granularity and dependency-based chapter organization",
+  "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "source_modules_indexed": 34,
+  "previous_nodes": 74,
+  "current_nodes": 118,
+  "organization_basis": "Lean definitions, theorem statements, and proof constructions; preprint as reference",
+  "chapters": {
+    "kl.01_bruhat_order": 8,
+    "kl.02_hecke_polynomials": 16,
+    "kl.03_realizations_and_grading": 11,
+    "kl.04_moment_graph_sheaves": 19,
+    "kl.05_duality_and_characters": 19,
+    "kl.06_reflection_orders": 14,
+    "kl.07_localization": 9,
+    "kl.08_comparison_and_freeness": 13,
+    "kl.09_combinatorial_invariance": 9
+  },
+  "findings": [
+    "The six-section constraint merged unrelated algebra, geometry, sheaf, and duality prerequisites into one background chapter.",
+    "Definitions of the ordinary and normalized R families were entangled with their recurrence and normalization theorems.",
+    "Ordered graphs, compatible sections, graded sheaves, and quotient maps lacked separate definition targets.",
+    "Sheaf existence skipped the separate extension, uniqueness, morphism-lifting, splitting, and decomposition nodes.",
+    "Word-sheaf construction and flabbiness were conflated with later boundary-sheaf duality and character identities.",
+    "Reflection-order existence, unlabelled diamond closure, and transported schedule conventions required explicit entries.",
+    "The edge factor, embedded images, scalar quotient, and reverse projectivity were buried behind global comparison statements.",
+    "The remaining-condition state and exact R-matrix endpoint identity needed independent nodes to expose the simultaneous induction."
+  ],
+  "new_entries": [
+    {
+      "id": "kl.detail.strong_exchange",
+      "chapter": "kl.01_bruhat_order",
+      "reason": "Strong exchange and deletion from a reduced word",
+      "lean_declarations": [
+        "OAI.KLInvariance.CoxeterSupport.strong_exchange"
+      ]
+    },
+    {
+      "id": "kl.detail.ordinary_r",
+      "chapter": "kl.02_hecke_polynomials",
+      "reason": "The ordinary R-polynomial family",
+      "lean_declarations": [
+        "OAI.KLInvariance.OrdinaryR.polynomial",
+        "OAI.KLInvariance.OrdinaryR.polynomial_recursion",
+        "OAI.KLInvariance.OrdinaryR.polynomial_degree"
+      ]
+    },
+    {
+      "id": "kl.detail.rtilde_recursion",
+      "chapter": "kl.02_hecke_polynomials",
+      "reason": "The descent recursion for normalized R-polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hecke.rTilde_recursion"
+      ]
+    },
+    {
+      "id": "kl.detail.r_kernel",
+      "chapter": "kl.02_hecke_polynomials",
+      "reason": "The reciprocal convolution identity for R-polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.OrdinaryR.polynomial_kernel_reverse"
+      ]
+    },
+    {
+      "id": "kl.detail.kl_defect",
+      "chapter": "kl.02_hecke_polynomials",
+      "reason": "The defect in the lower-half KL recursion",
+      "lean_declarations": [
+        "OAI.KLInvariance.CanonicalP.defect",
+        "OAI.KLInvariance.CanonicalP.polynomial"
+      ]
+    },
+    {
+      "id": "kl.detail.kl_recursion",
+      "chapter": "kl.02_hecke_polynomials",
+      "reason": "Why the lower-half construction satisfies reciprocity",
+      "lean_declarations": [
+        "OAI.KLInvariance.CanonicalP.lowPart_solution",
+        "OAI.KLInvariance.CanonicalP.polynomial_reciprocity",
+        "OAI.KLInvariance.CanonicalP.polynomial_strict_degree"
+      ]
+    },
+    {
+      "id": "kl.detail.ordered_graph",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "reason": "Ordered graphs and directed edge incidence",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.OrderedGraph"
+      ]
+    },
+    {
+      "id": "kl.detail.compatible_sections",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "reason": "Compatible sections and restriction to a vertex subset",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.CompatibleOn",
+        "OAI.KLInvariance.MomentGraph.Sheaf.sections",
+        "OAI.KLInvariance.MomentGraph.Sheaf.Generated"
+      ]
+    },
+    {
+      "id": "kl.detail.graded_sheaf",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "reason": "Graded sheaves and homogeneous restriction maps",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf"
+      ]
+    },
+    {
+      "id": "kl.detail.upper_quotient",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "reason": "The upper-end edge quotient rule",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.UpperQuotient"
+      ]
+    },
+    {
+      "id": "kl.detail.polynomial_labels",
+      "chapter": "kl.03_realizations_and_grading",
+      "reason": "Reflection roots as polynomial edge labels",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.root",
+        "OAI.KLInvariance.BruhatGraph.polynomialLabel"
+      ]
+    },
+    {
+      "id": "kl.detail.boundary_extension",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "reason": "Attaching a new bottom stalk by a minimal cover",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_edgeFlabby",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_generated"
+      ]
+    },
+    {
+      "id": "kl.detail.boundary_uniqueness",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "reason": "Uniqueness of the minimal-boundary sheaf up to graded isomorphism",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.exists_gradedIso"
+      ]
+    },
+    {
+      "id": "kl.detail.sheaf_morphism",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "reason": "Morphisms of graded graph sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom"
+      ]
+    },
+    {
+      "id": "kl.detail.morphism_extension",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "reason": "Extending a sheaf morphism from an upper set",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.exists_extension"
+      ]
+    },
+    {
+      "id": "kl.detail.boundary_models",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "reason": "Boundary models supported on principal lower ideals",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.BoundaryModels"
+      ]
+    },
+    {
+      "id": "kl.detail.top_splitting",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "reason": "Extending a split top stalk to a sheaf summand",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.splitIn_of_top_split"
+      ]
+    },
+    {
+      "id": "kl.detail.model_decomposition",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "reason": "Decomposing a free flabby sheaf into shifted boundary models",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.exists_modelSumIso"
+      ]
+    },
+    {
+      "id": "kl.detail.graded_character",
+      "chapter": "kl.03_realizations_and_grading",
+      "reason": "The graded-rank polynomial of a free module",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.character",
+        "OAI.KLInvariance.Graded.NonnegativeBasis.polynomial_eq"
+      ]
+    },
+    {
+      "id": "kl.detail.word_sheaf",
+      "chapter": "kl.05_duality_and_characters",
+      "reason": "The pair-projection sheaf of a Bott–Samelson module",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottProjectionSheaf",
+        "OAI.KLInvariance.PairProjection.relation",
+        "OAI.KLInvariance.PairProjection.compatible_iff"
+      ]
+    },
+    {
+      "id": "kl.detail.word_flabbiness",
+      "chapter": "kl.05_duality_and_characters",
+      "reason": "Flabbiness of the actual word sheaf",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottProjectiveUpper",
+        "OAI.KLInvariance.TitsSpace.bottFlabby",
+        "OAI.KLInvariance.TitsSpace.bottProjectionSheaf_flabby"
+      ]
+    },
+    {
+      "id": "kl.detail.section_duality",
+      "chapter": "kl.05_duality_and_characters",
+      "reason": "Balanced perfect duality on global sections",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.SectionDuality"
+      ]
+    },
+    {
+      "id": "kl.detail.costalk_duality",
+      "chapter": "kl.05_duality_and_characters",
+      "reason": "The full outgoing kernel is dual to the stalk",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.costalkEquivDual",
+        "OAI.KLInvariance.BruhatGraph.costalk_free_of_duality"
+      ]
+    },
+    {
+      "id": "kl.detail.boundary_pairing",
+      "chapter": "kl.05_duality_and_characters",
+      "reason": "Symmetric perfect pairings on the actual boundary sheaf",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.boundarySheaf_symmetricPairing"
+      ]
+    },
+    {
+      "id": "kl.detail.costalk_reciprocity",
+      "chapter": "kl.05_duality_and_characters",
+      "reason": "The grading shift in stalk–costalk reciprocity",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.costalk_hilbert_of_duality"
+      ]
+    },
+    {
+      "id": "kl.detail.geometric_functional",
+      "chapter": "kl.06_reflection_orders",
+      "reason": "Existence of a generic functional ordering all positive roots",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.exists_geometric_functional",
+        "OAI.KLInvariance.TitsSpace.functionalRatio_between"
+      ]
+    },
+    {
+      "id": "kl.detail.diamond_closure",
+      "chapter": "kl.06_reflection_orders",
+      "reason": "The unlabelled diamond closure of cover edges",
+      "lean_declarations": [
+        "OAI.KLInvariance.DiamondEdges"
+      ]
+    },
+    {
+      "id": "kl.detail.diamond_reconstruction",
+      "chapter": "kl.06_reflection_orders",
+      "reason": "Recovering every reflection edge from the interval order",
+      "lean_declarations": [
+        "OAI.KLInvariance.diamondEdges_of_bruhatStep_general",
+        "OAI.KLInvariance.diamondEdges_bruhatStep_general"
+      ]
+    },
+    {
+      "id": "kl.detail.edge_factor",
+      "chapter": "kl.06_reflection_orders",
+      "reason": "The reduced-root product attached to an edge",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.edgeFactor",
+        "OAI.KLInvariance.TitsSpace.edgeFactor_nonzero",
+        "OAI.KLInvariance.TitsSpace.edgeFactor_homogeneous"
+      ]
+    },
+    {
+      "id": "kl.detail.transported_schedule",
+      "chapter": "kl.06_reflection_orders",
+      "reason": "Transported reflection schedules and chronological order",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.transportedSchedule",
+        "OAI.KLInvariance.BruhatGraph.chronologicalSchedule"
+      ]
+    },
+    {
+      "id": "kl.detail.edge_images",
+      "chapter": "kl.07_localization",
+      "reason": "Lower and upper images in the same edge module",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerImage",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.upperImage"
+      ]
+    },
+    {
+      "id": "kl.detail.scaled_images",
+      "chapter": "kl.07_localization",
+      "reason": "Scaled equality of embedded edge images",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.ScaledImages",
+        "OAI.KLInvariance.MomentGraph.Sheaf.scaledImages_iff"
+      ]
+    },
+    {
+      "id": "kl.detail.kernel_exact_sequence",
+      "chapter": "kl.08_comparison_and_freeness",
+      "reason": "The exact sequence for adding one outgoing condition",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelHilbert_edge"
+      ]
+    },
+    {
+      "id": "kl.detail.quotient_image_free",
+      "chapter": "kl.07_localization",
+      "reason": "Freeness of a saturated image over the edge quotient ring",
+      "lean_declarations": [
+        "OAI.KLInvariance.ScalarQuotient.saturated_image_free"
+      ]
+    },
+    {
+      "id": "kl.detail.reverse_projectivity",
+      "chapter": "kl.08_comparison_and_freeness",
+      "reason": "Recovering a projective kernel from scaled image equality",
+      "lean_declarations": [
+        "OAI.KLInvariance.ReverseFiltration.inf_kernel_projective_of_image_eq"
+      ]
+    },
+    {
+      "id": "kl.detail.schedule_state",
+      "chapter": "kl.08_comparison_and_freeness",
+      "reason": "Remaining conditions and the Hilbert-state vector",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.remainingConditions",
+        "OAI.KLInvariance.BruhatGraph.scheduleState"
+      ]
+    },
+    {
+      "id": "kl.detail.schedule_comparison",
+      "chapter": "kl.08_comparison_and_freeness",
+      "reason": "From one-edge bounds to the full transfer inequality",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.scheduleState_le"
+      ]
+    },
+    {
+      "id": "kl.detail.endpoint_equality",
+      "chapter": "kl.09_combinatorial_invariance",
+      "reason": "R-matrix equality makes the comparison endpoints exact",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.actual_endpoint_of_rTilde_eq"
+      ]
+    },
+    {
+      "id": "kl.detail.local_intersection",
+      "chapter": "kl.05_duality_and_characters",
+      "reason": "The local intersection map from a stalk dual into the stalk",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.localIntersection",
+        "OAI.KLInvariance.BruhatGraph.localIntersection_range",
+        "OAI.KLInvariance.BruhatGraph.localIntersection_symmetric"
+      ]
+    },
+    {
+      "id": "kl.detail.local_diagonal_degree",
+      "chapter": "kl.05_duality_and_characters",
+      "reason": "A nonzero local diagonal forces a strict half-degree bound",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.localIntersection_diagonal_strict_degree"
+      ]
+    },
+    {
+      "id": "kl.detail.indecomposable_boundary",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "reason": "Indecomposability of the normalized boundary sheaf",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.primitive_identity"
+      ]
+    },
+    {
+      "id": "kl.detail.transfer_properties",
+      "chapter": "kl.08_comparison_and_freeness",
+      "reason": "Monotonicity and injectivity of elementary transfers",
+      "lean_declarations": [
+        "OAI.KLInvariance.Comparison.transfer_monotone",
+        "OAI.KLInvariance.Comparison.transfer_injective"
+      ]
+    },
+    {
+      "id": "kl.detail.hecke_quadratic_identity",
+      "chapter": "kl.02_hecke_polynomials",
+      "reason": "The Hecke operators satisfy the quadratic relation",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hecke.left_quadratic"
+      ]
+    },
+    {
+      "id": "kl.detail.rtilde_family",
+      "chapter": "kl.02_hecke_polynomials",
+      "reason": "The normalized R-family as bar coefficients",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hecke.rTilde",
+        "OAI.KLInvariance.Hecke.rTilde_diagonal",
+        "OAI.KLInvariance.Hecke.rTilde_zero"
+      ]
+    }
+  ],
+  "preserved_node_ids": 74,
+  "legacy_urls_redirected": 80,
+  "review_limits": "Source-level exposition review. Routine implementation lemmas are not each promoted to a mathematical node. No Lean execution or independent re-proof."
+}

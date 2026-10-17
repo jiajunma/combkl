@@ -4,8 +4,10 @@ from tempfile import TemporaryDirectory
 from types import SimpleNamespace
 import json
 import unittest
+from unittest.mock import patch
+import yaml
 
-from build_knowledge import Links, inspect_site
+from build_knowledge import Links, inspect_site, export_redirects
 from tools.knowledge import lean_index
 
 
@@ -83,6 +85,39 @@ class PublishedHTMLTest(unittest.TestCase):
             )
             with self.assertRaisesRegex(ValueError, "Wrong definition destination"):
                 inspect_site(site, [node], lambda n: n.primary_topic, lambda t: t)
+
+
+class LegacyURLTest(unittest.TestCase):
+    def test_redirect_tracks_node_current_topic(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            site = root / "site"
+            (site / "kl" / "new").mkdir(parents=True)
+            (site / "kl" / "new" / "kl_old_term.html").write_text("Definition")
+            (root / "redirects.yml").write_text(yaml.safe_dump({"redirects": {
+                "kl/old/kl_old_term.html": {"node": "kl.old.term"}
+            }}))
+            node = SimpleNamespace(id="kl.old.term", primary_topic="kl.new")
+            config = SimpleNamespace(topics=[SimpleNamespace(id="kl.new")])
+            with patch("build_knowledge.KNOWLEDGE", root):
+                self.assertEqual(export_redirects(site, [node], config), 1)
+            html = (site / "kl/old/kl_old_term.html").read_text()
+            self.assertIn('href="../new/kl_old_term.html"', html)
+            self.assertIn('http-equiv="refresh"', html)
+
+    def test_redirect_cannot_escape_output(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            site = root / "site"
+            site.mkdir()
+            (root / "redirects.yml").write_text(yaml.safe_dump({"redirects": {
+                "../outside.html": {"topic": "kl"}
+            }}))
+            config = SimpleNamespace(topics=[SimpleNamespace(id="kl")])
+            with patch("build_knowledge.KNOWLEDGE", root):
+                with self.assertRaisesRegex(ValueError, "Unsafe legacy URL"):
+                    export_redirects(site, [], config)
+            self.assertFalse((root / "outside.html").exists())
 
 
 if __name__ == "__main__":

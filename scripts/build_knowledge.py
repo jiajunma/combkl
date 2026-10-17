@@ -14,10 +14,12 @@ import re
 import shutil
 import subprocess
 import sys
+import posixpath
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from graphlib import TopologicalSorter
 from html.parser import HTMLParser
+from html import escape
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
@@ -67,8 +69,9 @@ def declaration_inventory(index, nodes) -> list[dict]:
     return inventory
 
 
-def validate_blueprint_hierarchy(nodes, index) -> dict:
-    """Check the paper outline and source references without running Lean."""
+def validate_blueprint_hierarchy(nodes, index, config) -> dict:
+    """Check the mathematical chapter registry and source correspondence."""
+    registered = {topic.id for topic in config.topics if topic.id != "kl"}
     labels = {}
     for path in (PAPER / "build").glob("*.tex"):
         for line, text in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
@@ -79,22 +82,22 @@ def validate_blueprint_hierarchy(nodes, index) -> dict:
         expected_status = "proved" if node.kind == "theorem" else "formalized"
         if node.status != expected_status:
             raise ValueError(f"Completed Lean development has inconsistent blueprint status: {node.id}: {node.status}")
-        if not re.fullmatch(r"kl\.0[1-6]_[a-z_]+", node.primary_topic or ""):
-            raise ValueError(f"Node is outside the paper chapter hierarchy: {node.id}")
+        if node.primary_topic not in registered:
+            raise ValueError(f"Node has an unregistered mathematical chapter: {node.id}")
         if node.id.startswith("code."):
             raise ValueError(f"Separate code topic is not part of this blueprint: {node.id}")
         if re.search(r"[\u3400-\u4dbf\u4e00-\u9fff]", node.title + node.body):
             raise ValueError(f"Non-English authored content: {node.id}")
         paper_spans = [s for s in node.source.spans if s.artifact == "openai-kl-paper"]
-        if not paper_spans:
-            raise ValueError(f"Missing paper correspondence: {node.id}")
+        if not node.lean or not node.lean.declarations:
+            raise ValueError(f"Missing primary Lean correspondence: {node.id}")
         for span in paper_spans:
             label = span.locator.rsplit(";", 1)[-1].strip()
             if label not in labels:
                 raise ValueError(f"Unknown paper label {label!r}: {node.id}")
         chapters.setdefault(node.primary_topic, []).append(node.id)
-    if len(chapters) != 6:
-        raise ValueError("The blueprint must follow the paper's six sections")
+    if set(chapters) != registered:
+        raise ValueError(f"Empty or missing mathematical chapters: {registered ^ set(chapters)}")
     imports = {}
     for module, path in sorted(index.modules.items()):
         dependencies = re.findall(
@@ -131,6 +134,7 @@ def validate_blueprint_hierarchy(nodes, index) -> dict:
                 raise ValueError(f"Missing expected proof-route call: {name} -> {callee}")
         witnesses.append({"caller": name, "calls": callees, "file": decl.file.name, "line": decl.line})
     return {
+        "organization_basis": "Mathematical constructions and proof dependencies in the Lean library",
         "chapters": {k: sorted(v) for k, v in sorted(chapters.items())},
         "module_imports": imports,
         "source_topological_order": source_order,
@@ -143,6 +147,44 @@ def validate_blueprint_hierarchy(nodes, index) -> dict:
             for n in sorted(nodes, key=lambda n: n.id)
         ],
     }
+
+
+def export_redirects(output, nodes, config):
+    """Preserve published URLs after a chapter move without changing node IDs."""
+    import yaml
+    from tools.knowledge.export import home_topic_for_node, topic_path
+
+    registry = KNOWLEDGE / "redirects.yml"
+    if not registry.exists():
+        return 0
+    by_id = {node.id: node for node in nodes}
+    topics = {topic.id for topic in config.topics}
+    redirects = yaml.safe_load(registry.read_text(encoding="utf-8"))["redirects"]
+    for old, target in sorted(redirects.items()):
+        path = output / old
+        if not path.resolve().is_relative_to(output.resolve()) or not old.endswith(".html"):
+            raise ValueError(f"Unsafe legacy URL: {old}")
+        if path.exists():
+            raise ValueError(f"Legacy URL collides with a current page: {old}")
+        if "node" in target:
+            node = by_id[target["node"]]
+            destination = topic_path(home_topic_for_node(node)) + "/" + node.id.replace(".", "_") + ".html"
+        elif target.get("topic") in topics:
+            destination = topic_path(target["topic"]) + "/index.html"
+        else:
+            raise ValueError(f"Unknown redirect target: {target}")
+        if not (output / destination).is_file():
+            raise ValueError(f"Missing redirect destination: {destination}")
+        href = escape(posixpath.relpath(destination, posixpath.dirname(old)), quote=True)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(
+            '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+            f'<meta http-equiv="refresh" content="0;url={href}">'
+            f'<link rel="canonical" href="{href}"><title>Entry moved</title></head>'
+            f'<body><p>This entry has moved to its mathematical chapter. <a href="{href}">Continue reading</a>.</p></body></html>\n',
+            encoding="utf-8",
+        )
+    return len(redirects)
 
 
 def export_source_assets(output: Path, index, hierarchy) -> int:
@@ -310,7 +352,7 @@ def main() -> None:
         raise ValueError("Declaration indexing warnings:\n" + "\n".join(index.warnings))
     nodes = scan_directory(KNOWLEDGE / "nodes")
     navigation = DefinitionLinks.load(KNOWLEDGE, nodes).summary()
-    hierarchy = validate_blueprint_hierarchy(nodes, index)
+    hierarchy = validate_blueprint_hierarchy(nodes, index, config)
     inventory = declaration_inventory(index, nodes)
     diagnostics = check_knowledge_base(KNOWLEDGE, strict_lean_placeholders=True)
     for diagnostic in diagnostics:
@@ -324,6 +366,7 @@ def main() -> None:
         raise ValueError(f"Uncovered structure fields: {len(field_findings)}")
     publish(KNOWLEDGE, output)
     source_files = export_source_assets(output, index, hierarchy)
+    redirected_pages = export_redirects(output, nodes, config)
     checks = inspect_site(output, nodes, home_topic_for_node, topic_path)
     if args.katex_module is not None:
         katex_result = subprocess.check_output([
@@ -357,6 +400,7 @@ def main() -> None:
         "node_count": len(nodes),
         "definition_navigation": navigation,
         "chapter_count": len(hierarchy["chapters"]),
+        "legacy_page_redirects": redirected_pages,
         "bundled_source_files_verified": source_files,
         "node_kinds": dict(Counter(node.kind for node in nodes)),
         "node_statuses": dict(Counter(node.status for node in nodes)),

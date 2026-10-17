@@ -14,18 +14,24 @@ lean:
 topics:
 - id: kl
   title: Kazhdan–Lusztig combinatorial invariance
-- id: kl.01_introduction
-  title: 1. Introduction and conventions
-- id: kl.02_background
-  title: 2. Real realizations and moment-graph sheaves
-- id: kl.03_dihedral
-  title: 3. Dihedral intervals and transported reflection orders
-- id: kl.04_localization
-  title: 4. Localization at a root plane
-- id: kl.05_edge_images
-  title: 5. Comparison of edge images
-- id: kl.06_induction
-  title: 6. Reciprocity and simultaneous induction
+- id: kl.01_bruhat_order
+  title: 1. Coxeter systems and Bruhat order
+- id: kl.02_hecke_polynomials
+  title: 2. Hecke operators and canonical polynomials
+- id: kl.03_realizations_and_grading
+  title: 3. Real realizations and graded algebra
+- id: kl.04_moment_graph_sheaves
+  title: 4. Moment-graph sheaves and minimal extensions
+- id: kl.05_duality_and_characters
+  title: 5. Word objects, duality, and characters
+- id: kl.06_reflection_orders
+  title: 6. Reflection orders and dihedral geometry
+- id: kl.07_localization
+  title: 7. Localization and embedded edge images
+- id: kl.08_comparison_and_freeness
+  title: 8. Hilbert comparisons and kernel freeness
+- id: kl.09_combinatorial_invariance
+  title: 9. Simultaneous induction and combinatorial invariance
 graph:
   max_visible_nodes: 120
   max_expand_nodes: 100

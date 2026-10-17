@@ -1,90 +1,141 @@
 {
+  "organization_basis": "Mathematical constructions and proof dependencies in the Lean library",
   "chapters": {
-    "kl.01_introduction": [
+    "kl.01_bruhat_order": [
+      "kl.detail.strong_exchange",
+      "kl.foundations.bruhat_order",
+      "kl.foundations.bruhat_step",
+      "kl.foundations.finite_intervals",
+      "kl.foundations.finite_support",
+      "kl.foundations.interval",
+      "kl.foundations.rank_preservation",
+      "kl.foundations.subword"
+    ],
+    "kl.02_hecke_polynomials": [
       "kl.definitions.bar_involution",
       "kl.definitions.hecke_operators",
       "kl.definitions.hecke_quadratic_relation",
-      "kl.foundations.bruhat_order",
-      "kl.foundations.bruhat_step",
+      "kl.detail.hecke_quadratic_identity",
+      "kl.detail.kl_defect",
+      "kl.detail.kl_recursion",
+      "kl.detail.ordinary_r",
+      "kl.detail.r_kernel",
+      "kl.detail.rtilde_family",
+      "kl.detail.rtilde_recursion",
       "kl.foundations.canonical_kl",
-      "kl.foundations.interval",
       "kl.foundations.low_half",
       "kl.foundations.normalized_kl",
       "kl.foundations.rtilde",
       "kl.foundations.scaled_kl",
-      "kl.main.combinatorial_invariance",
       "kl.notes.hecke_action"
     ],
-    "kl.02_background": [
+    "kl.03_realizations_and_grading": [
+      "kl.detail.graded_character",
+      "kl.detail.polynomial_labels",
+      "kl.notes.extended_realization",
+      "kl.notes.graded_nakayama",
+      "kl.notes.graded_projective_free",
+      "kl.notes.minimal_cover_existence",
+      "kl.notes.reflection_faithfulness",
+      "kl.realization.reflection_plane",
+      "kl.sheaves.graded_module",
+      "kl.sheaves.hilbert_free",
+      "kl.sheaves.minimal_cover"
+    ],
+    "kl.04_moment_graph_sheaves": [
+      "kl.detail.boundary_extension",
+      "kl.detail.boundary_models",
+      "kl.detail.boundary_uniqueness",
+      "kl.detail.compatible_sections",
+      "kl.detail.graded_sheaf",
+      "kl.detail.indecomposable_boundary",
+      "kl.detail.model_decomposition",
+      "kl.detail.morphism_extension",
+      "kl.detail.ordered_graph",
+      "kl.detail.sheaf_morphism",
+      "kl.detail.top_splitting",
+      "kl.detail.upper_quotient",
+      "kl.notes.boundary_image",
+      "kl.sheaves.boundary_existence",
+      "kl.sheaves.boundary_sheaf",
+      "kl.sheaves.flabbiness",
+      "kl.sheaves.graph_sheaf",
+      "kl.sheaves.relative_flabbiness",
+      "kl.sheaves.upward_kernel"
+    ],
+    "kl.05_duality_and_characters": [
+      "kl.detail.boundary_pairing",
+      "kl.detail.costalk_duality",
+      "kl.detail.costalk_reciprocity",
+      "kl.detail.local_diagonal_degree",
+      "kl.detail.local_intersection",
+      "kl.detail.section_duality",
+      "kl.detail.word_flabbiness",
+      "kl.detail.word_sheaf",
       "kl.duality.actual_character_reciprocity",
       "kl.duality.bott_character_decomposition",
       "kl.duality.character_identity_condition",
       "kl.duality.stalk_character",
-      "kl.foundations.finite_intervals",
-      "kl.foundations.finite_support",
-      "kl.foundations.rank_preservation",
-      "kl.foundations.subword",
-      "kl.main.finite_interval_model",
-      "kl.main.finite_model_transport",
       "kl.notes.bott_samelson",
-      "kl.notes.boundary_image",
       "kl.notes.character_cancellation",
-      "kl.notes.extended_realization",
-      "kl.notes.graded_nakayama",
-      "kl.notes.minimal_cover_existence",
-      "kl.notes.path_product",
       "kl.notes.perfect_pairings",
-      "kl.notes.reflection_faithfulness",
       "kl.notes.reflection_frobenius",
-      "kl.notes.reflection_order",
       "kl.notes.supported_pairings",
       "kl.notes.tensor_pairing",
-      "kl.notes.word_stalks",
-      "kl.paths.dyer_paths",
-      "kl.realization.reflection_plane",
-      "kl.sheaves.boundary_existence",
-      "kl.sheaves.boundary_sheaf",
-      "kl.sheaves.flabbiness",
-      "kl.sheaves.graded_module",
-      "kl.sheaves.graph_sheaf",
-      "kl.sheaves.hilbert_free",
-      "kl.sheaves.minimal_cover",
-      "kl.sheaves.upward_kernel"
+      "kl.notes.word_stalks"
     ],
-    "kl.03_dihedral": [
+    "kl.06_reflection_orders": [
+      "kl.detail.diamond_closure",
+      "kl.detail.diamond_reconstruction",
+      "kl.detail.edge_factor",
+      "kl.detail.geometric_functional",
+      "kl.detail.transported_schedule",
+      "kl.notes.dihedral_kl",
+      "kl.notes.path_product",
+      "kl.notes.reflection_order",
       "kl.notes.relative_dihedral_intervals",
       "kl.notes.relative_dihedral_transport",
+      "kl.paths.dyer_paths",
       "kl.paths.graph_invariance",
       "kl.paths.later_count",
       "kl.paths.plane_degree"
     ],
-    "kl.04_localization": [
-      "kl.local.localized_decomposition",
-      "kl.notes.dihedral_kl",
-      "kl.notes.dihedral_models",
-      "kl.notes.sheaf_localization",
-      "kl.sheaves.relative_flabbiness"
-    ],
-    "kl.05_edge_images": [
+    "kl.07_localization": [
+      "kl.detail.edge_images",
+      "kl.detail.quotient_image_free",
+      "kl.detail.scaled_images",
       "kl.local.edge_inclusion",
       "kl.local.free_target_localization",
+      "kl.local.localized_decomposition",
+      "kl.notes.dihedral_models",
+      "kl.notes.sheaf_localization",
       "kl.notes.upper_image_free"
     ],
-    "kl.06_induction": [
+    "kl.08_comparison_and_freeness": [
       "kl.comparison.edge_increment",
       "kl.comparison.free_suffixes",
       "kl.comparison.global_comparison",
       "kl.comparison.no_deficit",
       "kl.comparison.normalized_kernel",
       "kl.comparison.positive_transfer",
-      "kl.comparison.reciprocal_rigidity",
       "kl.comparison.reverse_freeness",
+      "kl.detail.kernel_exact_sequence",
+      "kl.detail.reverse_projectivity",
+      "kl.detail.schedule_comparison",
+      "kl.detail.schedule_state",
+      "kl.detail.transfer_properties",
+      "kl.sheaves.hilbert_detection"
+    ],
+    "kl.09_combinatorial_invariance": [
+      "kl.comparison.reciprocal_rigidity",
       "kl.comparison.rtilde_invariance",
       "kl.comparison.rtilde_row_comparison",
       "kl.comparison.rtilde_step",
-      "kl.main.kl_finite",
-      "kl.notes.graded_projective_free",
-      "kl.sheaves.hilbert_detection"
+      "kl.detail.endpoint_equality",
+      "kl.main.combinatorial_invariance",
+      "kl.main.finite_interval_model",
+      "kl.main.finite_model_transport",
+      "kl.main.kl_finite"
     ]
   },
   "module_imports": {
@@ -307,7 +358,7 @@
   "node_correspondence": [
     {
       "id": "kl.comparison.edge_increment",
-      "chapter": "kl.06_induction",
+      "chapter": "kl.08_comparison_and_freeness",
       "lean_declarations": [
         "OAI.KLInvariance.BruhatGraph.normalized_edge_increment_le"
       ],
@@ -317,7 +368,7 @@
     },
     {
       "id": "kl.comparison.free_suffixes",
-      "chapter": "kl.06_induction",
+      "chapter": "kl.08_comparison_and_freeness",
       "lean_declarations": [
         "OAI.KLInvariance.BruhatGraph.FreeSuffixes"
       ],
@@ -327,7 +378,7 @@
     },
     {
       "id": "kl.comparison.global_comparison",
-      "chapter": "kl.06_induction",
+      "chapter": "kl.08_comparison_and_freeness",
       "lean_declarations": [
         "OAI.KLInvariance.BruhatGraph.actual_comparison_of_upper_freeness"
       ],
@@ -337,7 +388,7 @@
     },
     {
       "id": "kl.comparison.no_deficit",
-      "chapter": "kl.06_induction",
+      "chapter": "kl.08_comparison_and_freeness",
       "lean_declarations": [
         "OAI.KLInvariance.Comparison.every_step_eq_of_endpoint_eq"
       ],
@@ -347,7 +398,7 @@
     },
     {
       "id": "kl.comparison.normalized_kernel",
-      "chapter": "kl.06_induction",
+      "chapter": "kl.08_comparison_and_freeness",
       "lean_declarations": [
         "OAI.KLInvariance.BruhatGraph.normalizedKernel",
         "OAI.KLInvariance.BruhatGraph.stateScale"
@@ -358,7 +409,7 @@
     },
     {
       "id": "kl.comparison.positive_transfer",
-      "chapter": "kl.06_induction",
+      "chapter": "kl.08_comparison_and_freeness",
       "lean_declarations": [
         "OAI.KLInvariance.Comparison.transfer",
         "OAI.KLInvariance.Comparison.transfer_monotone",
@@ -370,7 +421,7 @@
     },
     {
       "id": "kl.comparison.reciprocal_rigidity",
-      "chapter": "kl.06_induction",
+      "chapter": "kl.09_combinatorial_invariance",
       "lean_declarations": [
         "OAI.KLInvariance.Comparison.low_degree_zero_of_eval_reciprocal",
         "OAI.KLInvariance.Comparison.eq_of_eval_difference_reciprocal"
@@ -381,7 +432,7 @@
     },
     {
       "id": "kl.comparison.reverse_freeness",
-      "chapter": "kl.06_induction",
+      "chapter": "kl.08_comparison_and_freeness",
       "lean_declarations": [
         "OAI.KLInvariance.BruhatGraph.schedule_kernels_free_of_images_eq",
         "OAI.KLInvariance.BruhatGraph.partial_kernel_free_of_image_eq"
@@ -392,7 +443,7 @@
     },
     {
       "id": "kl.comparison.rtilde_invariance",
-      "chapter": "kl.06_induction",
+      "chapter": "kl.09_combinatorial_invariance",
       "lean_declarations": [
         "OAI.KLInvariance.BruhatGraph.rTilde_invariance_and_freeness"
       ],
@@ -402,7 +453,7 @@
     },
     {
       "id": "kl.comparison.rtilde_row_comparison",
-      "chapter": "kl.06_induction",
+      "chapter": "kl.09_combinatorial_invariance",
       "lean_declarations": [
         "OAI.KLInvariance.BruhatGraph.rTilde_eval_le_of_upper_freeness"
       ],
@@ -412,7 +463,7 @@
     },
     {
       "id": "kl.comparison.rtilde_step",
-      "chapter": "kl.06_induction",
+      "chapter": "kl.09_combinatorial_invariance",
       "lean_declarations": [
         "OAI.KLInvariance.BruhatGraph.rTilde_eq_of_smaller_data"
       ],
@@ -422,7 +473,7 @@
     },
     {
       "id": "kl.definitions.bar_involution",
-      "chapter": "kl.01_introduction",
+      "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
         "OAI.KLInvariance.Hecke.barBasis",
         "OAI.KLInvariance.Hecke.barLinear",
@@ -434,7 +485,7 @@
     },
     {
       "id": "kl.definitions.hecke_operators",
-      "chapter": "kl.01_introduction",
+      "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
         "OAI.KLInvariance.Hecke.left",
         "OAI.KLInvariance.Hecke.right"
@@ -445,7 +496,7 @@
     },
     {
       "id": "kl.definitions.hecke_quadratic_relation",
-      "chapter": "kl.01_introduction",
+      "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
         "OAI.KLInvariance.Hecke.left_quadratic",
         "OAI.KLInvariance.HeckeQ.left_quadratic"
@@ -455,8 +506,477 @@
       ]
     },
     {
+      "id": "kl.detail.boundary_extension",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_edgeFlabby",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_generated"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:bmp"
+      ]
+    },
+    {
+      "id": "kl.detail.boundary_models",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.BoundaryModels"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:bmp"
+      ]
+    },
+    {
+      "id": "kl.detail.boundary_pairing",
+      "chapter": "kl.05_duality_and_characters",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.boundarySheaf_symmetricPairing"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:normalization"
+      ]
+    },
+    {
+      "id": "kl.detail.boundary_uniqueness",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.exists_gradedIso"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:bmp"
+      ]
+    },
+    {
+      "id": "kl.detail.compatible_sections",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.CompatibleOn",
+        "OAI.KLInvariance.MomentGraph.Sheaf.sections",
+        "OAI.KLInvariance.MomentGraph.Sheaf.Generated"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:bmp"
+      ]
+    },
+    {
+      "id": "kl.detail.costalk_duality",
+      "chapter": "kl.05_duality_and_characters",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.costalkEquivDual",
+        "OAI.KLInvariance.BruhatGraph.costalk_free_of_duality"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:normalization"
+      ]
+    },
+    {
+      "id": "kl.detail.costalk_reciprocity",
+      "chapter": "kl.05_duality_and_characters",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.costalk_hilbert_of_duality"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:normalization"
+      ]
+    },
+    {
+      "id": "kl.detail.diamond_closure",
+      "chapter": "kl.06_reflection_orders",
+      "lean_declarations": [
+        "OAI.KLInvariance.DiamondEdges"
+      ],
+      "paper_locations": [
+        "Related paper context; sec:dihedral"
+      ]
+    },
+    {
+      "id": "kl.detail.diamond_reconstruction",
+      "chapter": "kl.06_reflection_orders",
+      "lean_declarations": [
+        "OAI.KLInvariance.diamondEdges_of_bruhatStep_general",
+        "OAI.KLInvariance.diamondEdges_bruhatStep_general"
+      ],
+      "paper_locations": [
+        "Related paper context; sec:dihedral"
+      ]
+    },
+    {
+      "id": "kl.detail.edge_factor",
+      "chapter": "kl.06_reflection_orders",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.edgeFactor",
+        "OAI.KLInvariance.TitsSpace.edgeFactor_nonzero",
+        "OAI.KLInvariance.TitsSpace.edgeFactor_homogeneous"
+      ],
+      "paper_locations": [
+        "Related paper context; edge:lattice"
+      ]
+    },
+    {
+      "id": "kl.detail.edge_images",
+      "chapter": "kl.07_localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerImage",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.upperImage"
+      ],
+      "paper_locations": [
+        "Related paper context; edge:lattice"
+      ]
+    },
+    {
+      "id": "kl.detail.endpoint_equality",
+      "chapter": "kl.09_combinatorial_invariance",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.actual_endpoint_of_rTilde_eq"
+      ],
+      "paper_locations": [
+        "Related paper context; sec:induction"
+      ]
+    },
+    {
+      "id": "kl.detail.geometric_functional",
+      "chapter": "kl.06_reflection_orders",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.exists_geometric_functional",
+        "OAI.KLInvariance.TitsSpace.functionalRatio_between"
+      ],
+      "paper_locations": [
+        "Related paper context; sec:dihedral"
+      ]
+    },
+    {
+      "id": "kl.detail.graded_character",
+      "chapter": "kl.03_realizations_and_grading",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.character",
+        "OAI.KLInvariance.Graded.NonnegativeBasis.polynomial_eq"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:realization"
+      ]
+    },
+    {
+      "id": "kl.detail.graded_sheaf",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:bmp"
+      ]
+    },
+    {
+      "id": "kl.detail.hecke_quadratic_identity",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hecke.left_quadratic"
+      ],
+      "paper_locations": [
+        "Related paper context; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.detail.indecomposable_boundary",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.primitive_identity"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:bmp"
+      ]
+    },
+    {
+      "id": "kl.detail.kernel_exact_sequence",
+      "chapter": "kl.08_comparison_and_freeness",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelHilbert_edge"
+      ],
+      "paper_locations": [
+        "Related paper context; sec:induction"
+      ]
+    },
+    {
+      "id": "kl.detail.kl_defect",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.CanonicalP.defect",
+        "OAI.KLInvariance.CanonicalP.polynomial"
+      ],
+      "paper_locations": [
+        "Related paper context; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.detail.kl_recursion",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.CanonicalP.lowPart_solution",
+        "OAI.KLInvariance.CanonicalP.polynomial_reciprocity",
+        "OAI.KLInvariance.CanonicalP.polynomial_strict_degree"
+      ],
+      "paper_locations": [
+        "Related paper context; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.detail.local_diagonal_degree",
+      "chapter": "kl.05_duality_and_characters",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.localIntersection_diagonal_strict_degree"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:normalization"
+      ]
+    },
+    {
+      "id": "kl.detail.local_intersection",
+      "chapter": "kl.05_duality_and_characters",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.localIntersection",
+        "OAI.KLInvariance.BruhatGraph.localIntersection_range",
+        "OAI.KLInvariance.BruhatGraph.localIntersection_symmetric"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:normalization"
+      ]
+    },
+    {
+      "id": "kl.detail.model_decomposition",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.exists_modelSumIso"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:bmp"
+      ]
+    },
+    {
+      "id": "kl.detail.morphism_extension",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.exists_extension"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:bmp"
+      ]
+    },
+    {
+      "id": "kl.detail.ordered_graph",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.OrderedGraph"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:bmp"
+      ]
+    },
+    {
+      "id": "kl.detail.ordinary_r",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.OrdinaryR.polynomial",
+        "OAI.KLInvariance.OrdinaryR.polynomial_recursion",
+        "OAI.KLInvariance.OrdinaryR.polynomial_degree"
+      ],
+      "paper_locations": [
+        "Related paper context; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.detail.polynomial_labels",
+      "chapter": "kl.03_realizations_and_grading",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.root",
+        "OAI.KLInvariance.BruhatGraph.polynomialLabel"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:realization"
+      ]
+    },
+    {
+      "id": "kl.detail.quotient_image_free",
+      "chapter": "kl.07_localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.ScalarQuotient.saturated_image_free"
+      ],
+      "paper_locations": [
+        "Related paper context; edge:lattice"
+      ]
+    },
+    {
+      "id": "kl.detail.r_kernel",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.OrdinaryR.polynomial_kernel_reverse"
+      ],
+      "paper_locations": [
+        "Related paper context; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.detail.reverse_projectivity",
+      "chapter": "kl.08_comparison_and_freeness",
+      "lean_declarations": [
+        "OAI.KLInvariance.ReverseFiltration.inf_kernel_projective_of_image_eq"
+      ],
+      "paper_locations": [
+        "Related paper context; sec:induction"
+      ]
+    },
+    {
+      "id": "kl.detail.rtilde_family",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hecke.rTilde",
+        "OAI.KLInvariance.Hecke.rTilde_diagonal",
+        "OAI.KLInvariance.Hecke.rTilde_zero"
+      ],
+      "paper_locations": [
+        "Related paper context; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.detail.rtilde_recursion",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hecke.rTilde_recursion"
+      ],
+      "paper_locations": [
+        "Related paper context; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.detail.scaled_images",
+      "chapter": "kl.07_localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.ScaledImages",
+        "OAI.KLInvariance.MomentGraph.Sheaf.scaledImages_iff"
+      ],
+      "paper_locations": [
+        "Related paper context; edge:lattice"
+      ]
+    },
+    {
+      "id": "kl.detail.schedule_comparison",
+      "chapter": "kl.08_comparison_and_freeness",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.scheduleState_le"
+      ],
+      "paper_locations": [
+        "Related paper context; sec:induction"
+      ]
+    },
+    {
+      "id": "kl.detail.schedule_state",
+      "chapter": "kl.08_comparison_and_freeness",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.remainingConditions",
+        "OAI.KLInvariance.BruhatGraph.scheduleState"
+      ],
+      "paper_locations": [
+        "Related paper context; sec:induction"
+      ]
+    },
+    {
+      "id": "kl.detail.section_duality",
+      "chapter": "kl.05_duality_and_characters",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.SectionDuality"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:normalization"
+      ]
+    },
+    {
+      "id": "kl.detail.sheaf_morphism",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:bmp"
+      ]
+    },
+    {
+      "id": "kl.detail.strong_exchange",
+      "chapter": "kl.01_bruhat_order",
+      "lean_declarations": [
+        "OAI.KLInvariance.CoxeterSupport.strong_exchange"
+      ],
+      "paper_locations": [
+        "Related paper context; sec:introduction"
+      ]
+    },
+    {
+      "id": "kl.detail.top_splitting",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.splitIn_of_top_split"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:bmp"
+      ]
+    },
+    {
+      "id": "kl.detail.transfer_properties",
+      "chapter": "kl.08_comparison_and_freeness",
+      "lean_declarations": [
+        "OAI.KLInvariance.Comparison.transfer_monotone",
+        "OAI.KLInvariance.Comparison.transfer_injective"
+      ],
+      "paper_locations": [
+        "Related paper context; sec:induction"
+      ]
+    },
+    {
+      "id": "kl.detail.transported_schedule",
+      "chapter": "kl.06_reflection_orders",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.transportedSchedule",
+        "OAI.KLInvariance.BruhatGraph.chronologicalSchedule"
+      ],
+      "paper_locations": [
+        "Related paper context; sec:dihedral"
+      ]
+    },
+    {
+      "id": "kl.detail.upper_quotient",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.UpperQuotient"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:bmp"
+      ]
+    },
+    {
+      "id": "kl.detail.word_flabbiness",
+      "chapter": "kl.05_duality_and_characters",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottProjectiveUpper",
+        "OAI.KLInvariance.TitsSpace.bottFlabby",
+        "OAI.KLInvariance.TitsSpace.bottProjectionSheaf_flabby"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:normalization"
+      ]
+    },
+    {
+      "id": "kl.detail.word_sheaf",
+      "chapter": "kl.05_duality_and_characters",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottProjectionSheaf",
+        "OAI.KLInvariance.PairProjection.relation",
+        "OAI.KLInvariance.PairProjection.compatible_iff"
+      ],
+      "paper_locations": [
+        "Related paper context; bg:normalization"
+      ]
+    },
+    {
       "id": "kl.duality.actual_character_reciprocity",
-      "chapter": "kl.02_background",
+      "chapter": "kl.05_duality_and_characters",
       "lean_declarations": [
         "OAI.KLInvariance.BruhatGraph.stalkCharacter_reciprocity"
       ],
@@ -466,7 +986,7 @@
     },
     {
       "id": "kl.duality.bott_character_decomposition",
-      "chapter": "kl.02_background",
+      "chapter": "kl.05_duality_and_characters",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.bottCharacter_decomposition_both"
       ],
@@ -476,7 +996,7 @@
     },
     {
       "id": "kl.duality.character_identity_condition",
-      "chapter": "kl.02_background",
+      "chapter": "kl.05_duality_and_characters",
       "lean_declarations": [
         "OAI.KLInvariance.BruhatGraph.StalkCharacterObligation"
       ],
@@ -486,7 +1006,7 @@
     },
     {
       "id": "kl.duality.stalk_character",
-      "chapter": "kl.02_background",
+      "chapter": "kl.05_duality_and_characters",
       "lean_declarations": [
         "OAI.KLInvariance.BruhatGraph.stalkCharacter"
       ],
@@ -496,7 +1016,7 @@
     },
     {
       "id": "kl.foundations.bruhat_order",
-      "chapter": "kl.01_introduction",
+      "chapter": "kl.01_bruhat_order",
       "lean_declarations": [
         "OAI.KLInvariance.BruhatLE",
         "OAI.KLInvariance.bruhat_antisymm"
@@ -507,7 +1027,7 @@
     },
     {
       "id": "kl.foundations.bruhat_step",
-      "chapter": "kl.01_introduction",
+      "chapter": "kl.01_bruhat_order",
       "lean_declarations": [
         "OAI.KLInvariance.BruhatStep"
       ],
@@ -517,7 +1037,7 @@
     },
     {
       "id": "kl.foundations.canonical_kl",
-      "chapter": "kl.01_introduction",
+      "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
         "OAI.KLInvariance.normalizedKL_existsUnique",
         "OAI.KLInvariance.klFamilies_spec",
@@ -529,7 +1049,7 @@
     },
     {
       "id": "kl.foundations.finite_intervals",
-      "chapter": "kl.02_background",
+      "chapter": "kl.01_bruhat_order",
       "lean_declarations": [
         "OAI.KLInvariance.interval_finite",
         "OAI.KLInvariance.finite_bruhat_lower"
@@ -540,7 +1060,7 @@
     },
     {
       "id": "kl.foundations.finite_support",
-      "chapter": "kl.02_background",
+      "chapter": "kl.01_bruhat_order",
       "lean_declarations": [
         "OAI.KLInvariance.lower_ideal_finite_generator_support"
       ],
@@ -550,7 +1070,7 @@
     },
     {
       "id": "kl.foundations.interval",
-      "chapter": "kl.01_introduction",
+      "chapter": "kl.01_bruhat_order",
       "lean_declarations": [
         "OAI.KLInvariance.Interval",
         "OAI.KLInvariance.rankDifference"
@@ -561,7 +1081,7 @@
     },
     {
       "id": "kl.foundations.low_half",
-      "chapter": "kl.01_introduction",
+      "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
         "OAI.KLInvariance.CanonicalP.lowPart"
       ],
@@ -571,7 +1091,7 @@
     },
     {
       "id": "kl.foundations.normalized_kl",
-      "chapter": "kl.01_introduction",
+      "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
         "OAI.KLInvariance.NormalizedKL"
       ],
@@ -581,7 +1101,7 @@
     },
     {
       "id": "kl.foundations.rank_preservation",
-      "chapter": "kl.02_background",
+      "chapter": "kl.01_bruhat_order",
       "lean_declarations": [
         "OAI.KLInvariance.intervalIso_rankDifference",
         "OAI.KLInvariance.intervalIso_full_rankDifference"
@@ -592,7 +1112,7 @@
     },
     {
       "id": "kl.foundations.rtilde",
-      "chapter": "kl.01_introduction",
+      "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
         "OAI.KLInvariance.Hecke.rTilde",
         "OAI.KLInvariance.rPolynomial_normalization"
@@ -603,7 +1123,7 @@
     },
     {
       "id": "kl.foundations.scaled_kl",
-      "chapter": "kl.01_introduction",
+      "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
         "OAI.KLInvariance.scaledKL",
         "OAI.KLInvariance.scaledKL_reciprocity"
@@ -614,7 +1134,7 @@
     },
     {
       "id": "kl.foundations.subword",
-      "chapter": "kl.02_background",
+      "chapter": "kl.01_bruhat_order",
       "lean_declarations": [
         "OAI.KLInvariance.bruhat_iff_reduced_subword"
       ],
@@ -624,7 +1144,7 @@
     },
     {
       "id": "kl.local.edge_inclusion",
-      "chapter": "kl.05_edge_images",
+      "chapter": "kl.07_localization",
       "lean_declarations": [
         "OAI.KLInvariance.BruhatGraph.schedule_edge_image_le"
       ],
@@ -634,7 +1154,7 @@
     },
     {
       "id": "kl.local.free_target_localization",
-      "chapter": "kl.05_edge_images",
+      "chapter": "kl.07_localization",
       "lean_declarations": [
         "OAI.KLInvariance.EdgeLattice.mem_iff_localized_at_height_one"
       ],
@@ -644,7 +1164,7 @@
     },
     {
       "id": "kl.local.localized_decomposition",
-      "chapter": "kl.04_localization",
+      "chapter": "kl.07_localization",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.PlaneBasis.localized_boundary_decomposition"
       ],
@@ -654,7 +1174,7 @@
     },
     {
       "id": "kl.main.combinatorial_invariance",
-      "chapter": "kl.01_introduction",
+      "chapter": "kl.09_combinatorial_invariance",
       "lean_declarations": [
         "OAI.KLInvariance.combinatorial_invariance"
       ],
@@ -664,7 +1184,7 @@
     },
     {
       "id": "kl.main.finite_interval_model",
-      "chapter": "kl.02_background",
+      "chapter": "kl.09_combinatorial_invariance",
       "lean_declarations": [
         "OAI.KLInvariance.FiniteIntervalModel"
       ],
@@ -674,7 +1194,7 @@
     },
     {
       "id": "kl.main.finite_model_transport",
-      "chapter": "kl.02_background",
+      "chapter": "kl.09_combinatorial_invariance",
       "lean_declarations": [
         "OAI.KLInvariance.exists_finiteIntervalModel",
         "OAI.KLInvariance.FiniteIntervalModel.orderIso",
@@ -686,7 +1206,7 @@
     },
     {
       "id": "kl.main.kl_finite",
-      "chapter": "kl.06_induction",
+      "chapter": "kl.09_combinatorial_invariance",
       "lean_declarations": [
         "OAI.KLInvariance.BruhatGraph.klPolynomial_invariance_finite"
       ],
@@ -696,7 +1216,7 @@
     },
     {
       "id": "kl.notes.bott_samelson",
-      "chapter": "kl.02_background",
+      "chapter": "kl.05_duality_and_characters",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.bottSamelson",
         "OAI.KLInvariance.TitsSpace.BottSamelsonModule",
@@ -709,7 +1229,7 @@
     },
     {
       "id": "kl.notes.boundary_image",
-      "chapter": "kl.02_background",
+      "chapter": "kl.04_moment_graph_sheaves",
       "lean_declarations": [
         "OAI.KLInvariance.MomentGraph.GradedSheaf.boundaryHom",
         "OAI.KLInvariance.MomentGraph.GradedSheaf.boundaryImage"
@@ -720,7 +1240,7 @@
     },
     {
       "id": "kl.notes.character_cancellation",
-      "chapter": "kl.02_background",
+      "chapter": "kl.05_duality_and_characters",
       "lean_declarations": [
         "OAI.KLInvariance.finite_character_cancellation"
       ],
@@ -730,7 +1250,7 @@
     },
     {
       "id": "kl.notes.dihedral_kl",
-      "chapter": "kl.04_localization",
+      "chapter": "kl.06_reflection_orders",
       "lean_declarations": [
         "OAI.KLInvariance.Dihedral.klPolynomial_eq_one"
       ],
@@ -740,7 +1260,7 @@
     },
     {
       "id": "kl.notes.dihedral_models",
-      "chapter": "kl.04_localization",
+      "chapter": "kl.07_localization",
       "lean_declarations": [
         "OAI.KLInvariance.Dihedral.klPolynomial_eq_one",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.model_flabby",
@@ -753,7 +1273,7 @@
     },
     {
       "id": "kl.notes.extended_realization",
-      "chapter": "kl.02_background",
+      "chapter": "kl.03_realizations_and_grading",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.extendedForm_spec",
         "OAI.KLInvariance.TitsSpace.extendedRoot_linearIndependent",
@@ -766,7 +1286,7 @@
     },
     {
       "id": "kl.notes.graded_nakayama",
-      "chapter": "kl.02_background",
+      "chapter": "kl.03_realizations_and_grading",
       "lean_declarations": [
         "OAI.KLInvariance.Graded.eq_top_of_positive_smul_sup"
       ],
@@ -776,7 +1296,7 @@
     },
     {
       "id": "kl.notes.graded_projective_free",
-      "chapter": "kl.06_induction",
+      "chapter": "kl.03_realizations_and_grading",
       "lean_declarations": [
         "OAI.KLInvariance.Graded.exists_homogeneous_basis_polynomial"
       ],
@@ -786,7 +1306,7 @@
     },
     {
       "id": "kl.notes.hecke_action",
-      "chapter": "kl.01_introduction",
+      "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
         "OAI.KLInvariance.Hecke.left",
         "OAI.KLInvariance.Hecke.left_quadratic",
@@ -799,7 +1319,7 @@
     },
     {
       "id": "kl.notes.minimal_cover_existence",
-      "chapter": "kl.02_background",
+      "chapter": "kl.03_realizations_and_grading",
       "lean_declarations": [
         "OAI.KLInvariance.Graded.ModuleData.exists_minimalCover"
       ],
@@ -809,7 +1329,7 @@
     },
     {
       "id": "kl.notes.path_product",
-      "chapter": "kl.02_background",
+      "chapter": "kl.06_reflection_orders",
       "lean_declarations": [
         "OAI.KLInvariance.SchedulePaths.dispatch",
         "OAI.KLInvariance.SchedulePaths.dispatch_eq_subpaths_sum"
@@ -820,7 +1340,7 @@
     },
     {
       "id": "kl.notes.perfect_pairings",
-      "chapter": "kl.02_background",
+      "chapter": "kl.05_duality_and_characters",
       "lean_declarations": [
         "OAI.KLInvariance.FrobeniusDuality.PairedModule",
         "OAI.KLInvariance.FrobeniusDuality.PairedBimodule"
@@ -831,7 +1351,7 @@
     },
     {
       "id": "kl.notes.reflection_faithfulness",
-      "chapter": "kl.02_background",
+      "chapter": "kl.03_realizations_and_grading",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.extendedAction_injective",
         "OAI.KLInvariance.TitsSpace.reflectionFaithful"
@@ -842,7 +1362,7 @@
     },
     {
       "id": "kl.notes.reflection_frobenius",
-      "chapter": "kl.02_background",
+      "chapter": "kl.05_duality_and_characters",
       "lean_declarations": [
         "OAI.KLInvariance.ReflectionFrobenius.coordinates",
         "OAI.KLInvariance.ReflectionFrobenius.trace",
@@ -854,7 +1374,7 @@
     },
     {
       "id": "kl.notes.reflection_order",
-      "chapter": "kl.02_background",
+      "chapter": "kl.06_reflection_orders",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.RatioOrder"
       ],
@@ -864,7 +1384,7 @@
     },
     {
       "id": "kl.notes.relative_dihedral_intervals",
-      "chapter": "kl.03_dihedral",
+      "chapter": "kl.06_reflection_orders",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.planeSubgroup"
       ],
@@ -874,7 +1394,7 @@
     },
     {
       "id": "kl.notes.relative_dihedral_transport",
-      "chapter": "kl.03_dihedral",
+      "chapter": "kl.06_reflection_orders",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.PlaneBasis.transport_interval"
       ],
@@ -884,7 +1404,7 @@
     },
     {
       "id": "kl.notes.sheaf_localization",
-      "chapter": "kl.04_localization",
+      "chapter": "kl.07_localization",
       "lean_declarations": [
         "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upwardKernel",
         "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_lowerImage",
@@ -896,7 +1416,7 @@
     },
     {
       "id": "kl.notes.supported_pairings",
-      "chapter": "kl.02_background",
+      "chapter": "kl.05_duality_and_characters",
       "lean_declarations": [
         "OAI.KLInvariance.MomentGraph.GradedSheaf.PerfectPairing"
       ],
@@ -906,7 +1426,7 @@
     },
     {
       "id": "kl.notes.tensor_pairing",
-      "chapter": "kl.02_background",
+      "chapter": "kl.05_duality_and_characters",
       "lean_declarations": [
         "OAI.KLInvariance.FrobeniusDuality.inducedModule",
         "OAI.KLInvariance.FrobeniusDuality.inducedModule_pairing_tmul",
@@ -919,7 +1439,7 @@
     },
     {
       "id": "kl.notes.upper_image_free",
-      "chapter": "kl.05_edge_images",
+      "chapter": "kl.07_localization",
       "lean_declarations": [
         "OAI.KLInvariance.BruhatGraph.upperImage_free"
       ],
@@ -929,7 +1449,7 @@
     },
     {
       "id": "kl.notes.word_stalks",
-      "chapter": "kl.02_background",
+      "chapter": "kl.05_duality_and_characters",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.bottWeightProjection",
         "OAI.KLInvariance.TitsSpace.bottStalk",
@@ -941,7 +1461,7 @@
     },
     {
       "id": "kl.paths.dyer_paths",
-      "chapter": "kl.02_background",
+      "chapter": "kl.06_reflection_orders",
       "lean_declarations": [
         "OAI.KLInvariance.WallDyer.geometric_entry_eq_rTilde"
       ],
@@ -951,7 +1471,7 @@
     },
     {
       "id": "kl.paths.graph_invariance",
-      "chapter": "kl.03_dihedral",
+      "chapter": "kl.06_reflection_orders",
       "lean_declarations": [
         "OAI.KLInvariance.intervalIso_bruhatStep_iff_general"
       ],
@@ -961,7 +1481,7 @@
     },
     {
       "id": "kl.paths.later_count",
-      "chapter": "kl.03_dihedral",
+      "chapter": "kl.06_reflection_orders",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.PlaneBasis.transported_count_difference_all"
       ],
@@ -971,7 +1491,7 @@
     },
     {
       "id": "kl.paths.plane_degree",
-      "chapter": "kl.03_dihedral",
+      "chapter": "kl.06_reflection_orders",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.sum_planeWeight",
         "OAI.KLInvariance.TitsSpace.edgeFactor_degree_formula"
@@ -982,7 +1502,7 @@
     },
     {
       "id": "kl.realization.reflection_plane",
-      "chapter": "kl.02_background",
+      "chapter": "kl.03_realizations_and_grading",
       "lean_declarations": [
         "OAI.KLInvariance.ReflectionPlane.range_preReflection_product_sub_id"
       ],
@@ -992,7 +1512,7 @@
     },
     {
       "id": "kl.sheaves.boundary_existence",
-      "chapter": "kl.02_background",
+      "chapter": "kl.04_moment_graph_sheaves",
       "lean_declarations": [
         "OAI.KLInvariance.BruhatGraph.exists_boundarySheaf"
       ],
@@ -1002,7 +1522,7 @@
     },
     {
       "id": "kl.sheaves.boundary_sheaf",
-      "chapter": "kl.02_background",
+      "chapter": "kl.04_moment_graph_sheaves",
       "lean_declarations": [
         "OAI.KLInvariance.MomentGraph.BoundarySheaf"
       ],
@@ -1012,7 +1532,7 @@
     },
     {
       "id": "kl.sheaves.flabbiness",
-      "chapter": "kl.02_background",
+      "chapter": "kl.04_moment_graph_sheaves",
       "lean_declarations": [
         "OAI.KLInvariance.MomentGraph.Sheaf.Flabby"
       ],
@@ -1022,7 +1542,7 @@
     },
     {
       "id": "kl.sheaves.graded_module",
-      "chapter": "kl.02_background",
+      "chapter": "kl.03_realizations_and_grading",
       "lean_declarations": [
         "OAI.KLInvariance.Graded.ModuleData"
       ],
@@ -1032,11 +1552,9 @@
     },
     {
       "id": "kl.sheaves.graph_sheaf",
-      "chapter": "kl.02_background",
+      "chapter": "kl.04_moment_graph_sheaves",
       "lean_declarations": [
-        "OAI.KLInvariance.MomentGraph.OrderedGraph",
-        "OAI.KLInvariance.MomentGraph.Sheaf",
-        "OAI.KLInvariance.MomentGraph.Sheaf.CompatibleOn"
+        "OAI.KLInvariance.MomentGraph.Sheaf"
       ],
       "paper_locations": [
         "2. Real realizations and moment-graph sheaves; sec:background"
@@ -1044,7 +1562,7 @@
     },
     {
       "id": "kl.sheaves.hilbert_detection",
-      "chapter": "kl.06_induction",
+      "chapter": "kl.08_comparison_and_freeness",
       "lean_declarations": [
         "OAI.KLInvariance.Hilbert.polynomial_eq_of_value_eq"
       ],
@@ -1054,7 +1572,7 @@
     },
     {
       "id": "kl.sheaves.hilbert_free",
-      "chapter": "kl.02_background",
+      "chapter": "kl.03_realizations_and_grading",
       "lean_declarations": [
         "OAI.KLInvariance.Hilbert.hasSum_homogeneous_basis"
       ],
@@ -1064,7 +1582,7 @@
     },
     {
       "id": "kl.sheaves.minimal_cover",
-      "chapter": "kl.02_background",
+      "chapter": "kl.03_realizations_and_grading",
       "lean_declarations": [
         "OAI.KLInvariance.Graded.ModuleData.MinimalCover"
       ],
@@ -1074,7 +1592,7 @@
     },
     {
       "id": "kl.sheaves.relative_flabbiness",
-      "chapter": "kl.04_localization",
+      "chapter": "kl.04_moment_graph_sheaves",
       "lean_declarations": [
         "OAI.KLInvariance.MomentGraph.Sheaf.extend_closedUnder"
       ],
@@ -1084,7 +1602,7 @@
     },
     {
       "id": "kl.sheaves.upward_kernel",
-      "chapter": "kl.02_background",
+      "chapter": "kl.04_moment_graph_sheaves",
       "lean_declarations": [
         "OAI.KLInvariance.MomentGraph.Sheaf.upwardKernel"
       ],

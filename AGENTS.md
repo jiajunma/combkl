@@ -109,9 +109,15 @@ designated documents; this section is the reusable authoring contract.
 
 - Organize the subject as **one unified mathematical development**. Do not
   create separate top-level "Code" and "Mathematics/KL" branches.
-- Use the paper's sections and argument as the chapter-level guide. Determine
-  the internal hierarchy from the actual mathematical objects and the Lean
-  definitions, theorem statements, and proof calls.
+- Organize chapters around the mathematical development in the Lean library:
+  objects, constructions, intermediate theorems, and their actual dependencies.
+  The preprint provides context and correspondence, not a mandatory chapter
+  outline. The user's later clarification supersedes the earlier requirement
+  to follow its six sections exactly.
+- Give important reusable definitions and intermediate proof steps their own
+  nodes instead of burying them in overview pages. Preserve overview pages as
+  reading guides when useful, with links to the distinct mathematical nodes.
+  Do not split routine tactic lemmas merely to increase the node count.
 - Inspect and validate that hierarchy **before assigning topics**. File names,
   import order, namespace prefixes, and superficial keywords are evidence to
   inspect, not sufficient rules for classifying mathematical content. One file
@@ -131,6 +137,8 @@ designated documents; this section is the reusable authoring contract.
 - If the paper and Lean implementation organize the proof differently,
   explain their correspondence explicitly. Follow the actual Lean proof
   steps without falsely identifying them with a different paper argument.
+- When reorganizing published chapters, keep stable node IDs and generate
+  redirects for old page URLs so that existing links continue to work.
 
 ### Source alignment and verification
 

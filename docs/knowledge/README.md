@@ -1,6 +1,8 @@
 # Lecture notes on KL combinatorial invariance
 
-These English notes explain the completed OpenAI Lean development. The paper supplies the chapter organization; the actual definitions, hypotheses, constructions, proof steps, and declaration references supply the exposition.
+These English notes explain the completed OpenAI Lean development. Chapters
+follow its mathematical constructions and proof dependencies. The preprint
+provides context and correspondence without fixing the chapter boundaries.
 
 Start with the [published reading guide](https://jiajunma.github.io/combkl/kl/)
 or the [dependency graph](https://jiajunma.github.io/combkl/dep_graph_document.html).
@@ -8,12 +10,15 @@ The website requires no installation. The Markdown guide is [nodes/kl/topics.md]
 
 ## Chapters
 
-1. [Introduction and conventions](nodes/kl/01_introduction/topics.md)
-2. [Real realizations and moment-graph sheaves](nodes/kl/02_background/topics.md)
-3. [Dihedral intervals and transported reflection orders](nodes/kl/03_dihedral/topics.md)
-4. [Localization at a root plane](nodes/kl/04_localization/topics.md)
-5. [Comparison of edge images](nodes/kl/05_edge_images/topics.md)
-6. [Reciprocity and simultaneous induction](nodes/kl/06_induction/topics.md)
+1. [Coxeter systems and Bruhat order](nodes/kl/01_bruhat_order/topics.md)
+2. [Hecke operators and canonical polynomials](nodes/kl/02_hecke_polynomials/topics.md)
+3. [Real realizations and graded algebra](nodes/kl/03_realizations_and_grading/topics.md)
+4. [Moment-graph sheaves and minimal extensions](nodes/kl/04_moment_graph_sheaves/topics.md)
+5. [Word objects, duality, and characters](nodes/kl/05_duality_and_characters/topics.md)
+6. [Reflection orders and dihedral geometry](nodes/kl/06_reflection_orders/topics.md)
+7. [Localization and embedded edge images](nodes/kl/07_localization/topics.md)
+8. [Hilbert comparisons and kernel freeness](nodes/kl/08_comparison_and_freeness/topics.md)
+9. [Simultaneous induction and combinatorial invariance](nodes/kl/09_combinatorial_invariance/topics.md)
 
 Each chapter introduction gives an ordered reading sequence. The entries contain mathematical exposition and supporting Lean references. Worked calculations include rank-one normalization, the \(A_2\) reflection graph, lower-half truncation, a one-edge sheaf, Hilbert normalization, the edge transfer coefficient, and higher-codimension detection.
 
@@ -33,8 +38,8 @@ revision remains the provenance identifier. The link updater validates all
 
     python3 scripts/update_source_links.py 108243e05ed46235bf82dc30d4d90c794579776f
 
-The completed development is represented by 45 `proved` theorem entries and
-29 `formalized` definitions/concepts. There are no `admitted` entries. Worked
+The completed development is represented by 69 `proved` theorem entries and
+49 `formalized` definitions/concepts. There are no `admitted` entries. Worked
 teaching examples are explanatory prose unless linked to a separate theorem.
 
 Source inventories and imports are supporting data, not separate mathematical topics. The generated site provides declarations.json, module-imports.json, and unchanged files under _sources/. The dependency graph is the mathematical graph of the notes.
@@ -54,7 +59,12 @@ or a compatible later version. To reproduce the documented build:
     build/docs-venv/bin/python -m pip install ../mdblueprint
     build/docs-venv/bin/python scripts/build_knowledge.py --mdblueprint ../mdblueprint
 
-The builder verifies the 81-file source manifest, indexes declarations, checks chapter assignments against paper labels, checks the node graph and Lean references, audits structured-definition field coverage, generates the site with mdblueprint, and checks every HTML page and local link. It also records explicit source-text calls on the main proof route. These are documentation checks, not an invocation of Lean or Comparator.
+The builder verifies the 81-file source manifest, indexes declarations, checks
+the mathematical chapter registry and any supplied paper labels, checks the
+node graph and Lean references, audits structured-definition field coverage,
+generates the site with mdblueprint, and checks every HTML page and local link.
+It also records explicit source-text calls on the main proof route. These are
+documentation checks, not an invocation of Lean or Comparator.
 
 For KaTeX checks matching the site's renderer:
 
@@ -92,6 +102,14 @@ the original paper PDF and all 34 Lean modules under `_sources/`.
 ## Maintenance
 
 The mathematical Markdown entries are authoritative exposition. The original Lean snapshot is preserved separately. Rebuild generated HTML and graphs rather than editing them.
+
+The structure review separated 44 definitions and intermediate results that
+were previously implicit or folded into broad pages. Its machine-readable
+inventory is [reviews/structure-review.json](reviews/structure-review.json).
+The chapter registry is open to mathematically justified changes; the builder
+does not enforce the preprint's six-section outline. Stable node IDs remain
+unchanged, and [redirects.yml](redirects.yml) generates redirects for all 80
+previous chapter and node URLs affected by this reorganization.
 
 Definition links are generated by Python during the build, using
 [concept-links.yml](concept-links.yml). That registry associates terms and

@@ -8,11 +8,16 @@ This repository contains source-linked English lecture notes and review material
 - [Lecture-note reading guide](https://jiajunma.github.io/combkl/kl/)
 - [Interactive dependency graph](https://jiajunma.github.io/combkl/dep_graph_document.html)
 - [Lecture-note guide and build instructions](docs/knowledge/README.md)
-- [Main theorem](docs/knowledge/nodes/kl.01_introduction/combinatorial_invariance.md)
-- [Simultaneous R-tilde invariance and freeness](docs/knowledge/nodes/kl.06_induction/rtilde_invariance.md)
+- [Main theorem](docs/knowledge/nodes/kl.09_combinatorial_invariance/combinatorial_invariance.md)
+- [Simultaneous R-tilde invariance and freeness](docs/knowledge/nodes/kl.09_combinatorial_invariance/rtilde_invariance.md)
 - [Authoring requirements](AGENTS.md)
 
-The notes follow the paper's six sections. Mathematical statements, explanations, examples, and proofs form one hierarchy, with Lean references integrated into the relevant entries.
+The notes follow nine mathematical chapters derived from the Lean development:
+Bruhat order; Hecke polynomials; realizations and grading; graph sheaves;
+duality and characters; reflection orders; localization; comparison and
+freeness; and the final invariance argument. The preprint remains a reference
+throughout. Definitions, intermediate results, and proofs have separate
+source-linked entries within this single hierarchy.
 
 The published website can be read without installing anything. GitHub Actions
 rebuilds and checks the site when blueprint changes are pushed to the publishing

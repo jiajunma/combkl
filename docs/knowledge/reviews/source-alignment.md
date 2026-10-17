@@ -8,14 +8,18 @@ inputs:
   - sources/openai-math.manifest.tsv
   - sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig
   - sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build
-summary: "English lecture-note exposition organized by the paper and linked to the actual Lean development."
+summary: "English lecture notes organized by mathematical dependencies in the completed Lean development, with paper correspondence."
 ---
 
 # Exposition and source correspondence
 
 The user specifies the completed proof as the input to an exposition task. The notes explain its mathematical content rather than replace it with a new proof plan.
 
-The paper's six sections determine the chapter hierarchy. File boundaries do not determine mathematical topics: Tits.lean includes both realization geometry and parabolic transport, and 05-comparison.tex contains both paper sections 5 and 6.
+The nine chapters follow the library's mathematical constructions and proof
+dependencies. The user's later clarification supersedes the earlier six-paper-
+section organization. File boundaries alone do not determine topics: the Tits
+development contains both realization geometry and parabolic transport, while
+duality and sheaf decomposition span several modules.
 
 The former separate code branch has been removed. Definitions, lemmas, worked calculations, and proofs form a single mathematical hierarchy. Chapter introductions give the reading sequence. Complete source files and import information are supplementary assets.
 
@@ -37,3 +41,12 @@ The paper's KL-character normalization and the implementation's R-first organiza
 The builder verifies paper labels, declaration locations, the mathematical DAG, module import closure, structure-field coverage, and explicit source-text calls on the main route. The hierarchy-evidence.json report records these checks. Source-text call witnesses are not represented as a kernel-extracted dependency closure.
 
 Teaching examples are explanatory calculations, not claims that each example is a separate Lean declaration. Exact mechanical and rendering results are recorded in build-report.json.
+
+The structure review adds explicit nodes for the R-kernel and lower-half KL
+construction, graded sheaves and quotient maps, downward extension and
+uniqueness, morphism extension and top splitting, boundary-model decomposition,
+word-sheaf flabbiness, section and costalk duality, root-order construction and
+diamond closure, the actual edge factor, filtered edge images, schedule states,
+and reverse projectivity. Conditional local-intersection statements retain
+their nonzero-diagonal hypotheses and are kept separate from the main R-first
+route. The inventory is recorded in structure-review.json.

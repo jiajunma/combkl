@@ -1,57 +1,260 @@
-# These are reading links, not automatically inferred proof dependencies.
 concepts:
-  - node: kl.definitions.hecke_operators
-    terms: [Hecke operators, Hecke operator, left Hecke operator, right Hecke operator]
-  - node: kl.definitions.hecke_operators
-    terms: [operators, operator, right operator, left operator, inverse operators]
-    topics: [kl.01_introduction]
-  - node: kl.definitions.hecke_quadratic_relation
-    terms: [quadratic relations, quadratic relation, Hecke quadratic relation]
-  - node: kl.definitions.bar_involution
-    terms: [bar involution, bar involutions, bar normalization, bar map, bar construction, bar invariance, bar-invariant]
-  - node: kl.foundations.bruhat_order
-    terms: [strong Bruhat order, Bruhat order]
-  - node: kl.foundations.bruhat_step
-    terms: [upward reflection edges, upward reflection edge, reflection edges, reflection edge]
-  - node: kl.foundations.interval
-    terms: [Bruhat intervals, Bruhat interval, interval isomorphism, interval isomorphisms, rank difference, rank differences]
-  - node: kl.foundations.normalized_kl
-    terms: [KL polynomials, KL polynomial, Kazhdan–Lusztig polynomials, Kazhdan–Lusztig polynomial]
-  - node: kl.foundations.low_half
-    terms: [strict lower-half truncation, lower-half truncation, strict lower half]
-  - node: kl.sheaves.graded_module
-    terms: [graded modules, graded module, nonnegatively graded modules, nonnegatively graded module]
-  - node: kl.sheaves.minimal_cover
-    terms: [minimal graded free cover, minimal free covers, minimal free cover, minimal covers, minimal cover]
-  - node: kl.sheaves.graph_sheaf
-    terms: [graph sheaves, graph sheaf, moment-graph sheaves, moment-graph sheaf, compatible sections, compatible section]
-  - node: kl.sheaves.flabbiness
-    terms: [flabbiness, flabby]
-  - node: kl.notes.boundary_image
-    terms: [boundary images, boundary image]
-  - node: kl.sheaves.boundary_sheaf
-    terms: [minimal-boundary sheaves, minimal-boundary sheaf, boundary sheaves, boundary sheaf]
-  - node: kl.sheaves.upward_kernel
-    terms: [upward kernels, upward kernel, upward edge conditions]
-  - node: kl.comparison.free_suffixes
-    terms: [terminal kernels, terminal kernel, terminal-kernel freeness]
-  - node: kl.notes.perfect_pairings
-    terms: [perfect pairings, perfect pairing, paired bimodules, paired bimodule, balance]
-  - node: kl.notes.bott_samelson
-    terms: [Bott–Samelson word objects, Bott–Samelson object, word objects, word object]
-  - node: kl.notes.word_stalks
-    terms: [weight evaluations, weight evaluation, weight projection]
-  - node: kl.duality.stalk_character
-    terms: [stalk characters, stalk character]
-  - node: kl.notes.reflection_order
-    terms: [reflection orders, reflection order, geometric reflection order, transported schedule]
-  - node: kl.notes.relative_dihedral_intervals
-    terms: [relative Bruhat order, relative dihedral intervals, relative dihedral interval, root-plane subgroup, root-plane subgroups]
-  - node: kl.notes.dihedral_models
-    terms: [dihedral models, dihedral model, structure sheaves, structure sheaf]
-  - node: kl.comparison.normalized_kernel
-    terms: [Hilbert states, Hilbert state, normalized Hilbert state, state normalization]
-  - node: kl.comparison.positive_transfer
-    terms: [elementary transfers, elementary transfer, edge transfers, edge transfer]
-  - node: kl.main.finite_interval_model
-    terms: [finite-support models, finite-support model, finite-support interval model]
+- node: kl.definitions.hecke_operators
+  terms:
+  - Hecke operators
+  - Hecke operator
+  - left Hecke operator
+  - right Hecke operator
+- node: kl.definitions.hecke_operators
+  terms:
+  - operators
+  - operator
+  - right operator
+  - left operator
+  - inverse operators
+  topics:
+  - kl.02_hecke_polynomials
+- node: kl.definitions.hecke_quadratic_relation
+  terms:
+  - quadratic relations
+  - quadratic relation
+  - Hecke quadratic relation
+- node: kl.definitions.bar_involution
+  terms:
+  - bar involution
+  - bar involutions
+  - bar normalization
+  - bar map
+  - bar construction
+  - bar invariance
+  - bar-invariant
+- node: kl.foundations.bruhat_order
+  terms:
+  - strong Bruhat order
+  - Bruhat order
+- node: kl.foundations.bruhat_step
+  terms:
+  - upward reflection edges
+  - upward reflection edge
+  - reflection edges
+  - reflection edge
+- node: kl.foundations.interval
+  terms:
+  - Bruhat intervals
+  - Bruhat interval
+  - interval isomorphism
+  - interval isomorphisms
+  - rank difference
+  - rank differences
+- node: kl.foundations.normalized_kl
+  terms:
+  - KL polynomials
+  - KL polynomial
+  - Kazhdan–Lusztig polynomials
+  - Kazhdan–Lusztig polynomial
+- node: kl.foundations.low_half
+  terms:
+  - strict lower-half truncation
+  - lower-half truncation
+  - strict lower half
+- node: kl.sheaves.graded_module
+  terms:
+  - graded modules
+  - graded module
+  - nonnegatively graded modules
+  - nonnegatively graded module
+- node: kl.sheaves.minimal_cover
+  terms:
+  - minimal graded free cover
+  - minimal free covers
+  - minimal free cover
+  - minimal covers
+  - minimal cover
+- node: kl.sheaves.graph_sheaf
+  terms:
+  - graph sheaves
+  - graph sheaf
+  - moment-graph sheaves
+  - moment-graph sheaf
+- node: kl.sheaves.flabbiness
+  terms:
+  - flabbiness
+  - flabby
+- node: kl.notes.boundary_image
+  terms:
+  - boundary images
+  - boundary image
+- node: kl.sheaves.boundary_sheaf
+  terms:
+  - minimal-boundary sheaves
+  - minimal-boundary sheaf
+  - boundary sheaves
+  - boundary sheaf
+- node: kl.sheaves.upward_kernel
+  terms:
+  - upward kernels
+  - upward kernel
+  - upward edge conditions
+- node: kl.comparison.free_suffixes
+  terms:
+  - terminal kernels
+  - terminal kernel
+  - terminal-kernel freeness
+- node: kl.notes.perfect_pairings
+  terms:
+  - perfect pairings
+  - perfect pairing
+  - paired bimodules
+  - paired bimodule
+  - balance
+- node: kl.notes.bott_samelson
+  terms:
+  - Bott–Samelson word objects
+  - Bott–Samelson object
+  - word objects
+  - word object
+- node: kl.notes.word_stalks
+  terms:
+  - weight evaluations
+  - weight evaluation
+  - weight projection
+- node: kl.duality.stalk_character
+  terms:
+  - stalk characters
+  - stalk character
+- node: kl.notes.reflection_order
+  terms:
+  - reflection orders
+  - reflection order
+  - geometric reflection order
+- node: kl.notes.relative_dihedral_intervals
+  terms:
+  - relative Bruhat order
+  - relative dihedral intervals
+  - relative dihedral interval
+  - root-plane subgroup
+  - root-plane subgroups
+- node: kl.notes.dihedral_models
+  terms:
+  - dihedral models
+  - dihedral model
+  - structure sheaves
+  - structure sheaf
+- node: kl.comparison.normalized_kernel
+  terms:
+  - Hilbert states
+  - Hilbert state
+  - normalized Hilbert state
+  - state normalization
+- node: kl.comparison.positive_transfer
+  terms:
+  - elementary transfers
+  - elementary transfer
+  - edge transfers
+  - edge transfer
+- node: kl.main.finite_interval_model
+  terms:
+  - finite-support models
+  - finite-support model
+  - finite-support interval model
+- node: kl.detail.ordered_graph
+  terms:
+  - ordered graph
+  - ordered graphs
+  - outgoing edges
+  - incoming edges
+- node: kl.detail.compatible_sections
+  terms:
+  - compatible section
+  - compatible sections
+  - global sections
+  - global generation
+- node: kl.detail.graded_sheaf
+  terms:
+  - graded sheaf
+  - graded sheaves
+- node: kl.detail.upper_quotient
+  terms:
+  - upper quotient rule
+  - edge quotient rule
+  - upper-end quotient rule
+- node: kl.detail.polynomial_labels
+  terms:
+  - polynomial labels
+  - polynomial label
+  - edge label
+  - edge labels
+- node: kl.detail.boundary_models
+  terms:
+  - boundary models
+  - boundary-model family
+  - boundary model
+  - model sum
+- node: kl.detail.sheaf_morphism
+  terms:
+  - sheaf morphism
+  - sheaf morphisms
+  - graded sheaf morphism
+- node: kl.detail.graded_character
+  terms:
+  - graded-rank polynomial
+  - graded character
+  - homogeneous generator degrees
+- node: kl.detail.ordinary_r
+  terms:
+  - ordinary R-polynomials
+  - ordinary R-polynomial
+  - R-polynomial family
+- node: kl.detail.kl_defect
+  terms:
+  - KL defect
+  - lower-half KL recursion
+- node: kl.detail.word_sheaf
+  terms:
+  - word sheaf
+  - word sheaves
+  - pair-projection sheaf
+- node: kl.detail.section_duality
+  terms:
+  - section duality
+  - integral vertex cut
+  - cut balance
+- node: kl.detail.local_intersection
+  terms:
+  - local intersection map
+  - local intersection form
+- node: kl.detail.diamond_closure
+  terms:
+  - diamond closure
+  - diamond-closure relation
+- node: kl.detail.edge_factor
+  terms:
+  - edge factor
+  - edge factors
+  - reduced-root product
+- node: kl.detail.transported_schedule
+  terms:
+  - transported schedule
+  - transported schedules
+  - chronological schedule
+  - reflection schedule
+- node: kl.detail.edge_images
+  terms:
+  - lower edge image
+  - upper edge image
+  - lower images
+  - upper images
+  - embedded edge images
+- node: kl.detail.scaled_images
+  terms:
+  - scaled image equality
+  - scaled images
+- node: kl.detail.schedule_state
+  terms:
+  - schedule state
+  - schedule states
+  - remaining conditions
+- node: kl.detail.rtilde_family
+  terms:
+  - normalized R-polynomials
+  - normalized R-polynomial

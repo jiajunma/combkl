@@ -60,16 +60,16 @@ class BlueprintNavigationIntegrationTest(unittest.TestCase):
     def test_stable_id_uses_the_current_chapter(self):
         by_id = {n.id: n for n in self.nodes}
         html, missing = renderer._resolve_node_refs_in_html(
-            "[[node:kl.notes.hecke_action|operators]]", by_id, "kl.01_introduction"
+            "[[node:kl.notes.hecke_action|operators]]", by_id, "kl.02_hecke_polynomials"
         )
         self.assertFalse(missing)
         self.assertIn('href="kl_notes_hecke_action.html"', html)
         self.assertNotIn("../notes/", html)
 
     def test_users_example_is_linked_from_plain_prose(self):
-        source = (self.root / "nodes" / "kl" / "01_introduction" / "topics.md").read_text()
+        source = (self.root / "nodes" / "kl" / "02_hecke_polynomials" / "topics.md").read_text()
         self.assertIn("develops the operators, their quadratic relation, and the bar involution", source)
-        html = renderer.render_topic(KnowledgeContext.load(self.root), "kl.01_introduction")
+        html = renderer.render_topic(KnowledgeContext.load(self.root), "kl.02_hecke_polynomials")
         for node_id in ("hecke_operators", "hecke_quadratic_relation", "bar_involution"):
             self.assertIn(f'data-node-id="kl.definitions.{node_id}"', html)
             self.assertIn(f'href="kl_definitions_{node_id}.html"', html)
@@ -89,6 +89,11 @@ class BlueprintNavigationIntegrationTest(unittest.TestCase):
         for node in self.nodes:
             expected = "proved" if node.kind == "theorem" else "formalized"
             self.assertEqual(node.status, expected, node.id)
+
+    def test_each_entry_is_in_its_chapter_reading_sequence(self):
+        for node in self.nodes:
+            guide = self.root / "nodes" / Path(*node.primary_topic.split(".")) / "topics.md"
+            self.assertIn("[[node:" + node.id + "]]", guide.read_text(), node.id)
 
 
 if __name__ == "__main__":
