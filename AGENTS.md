@@ -79,6 +79,13 @@ designated documents; this section is the reusable authoring contract.
 - Include a coherent reading sequence, worked examples and calculations, and
   enough intermediate reasoning for a reader to follow the argument without
   having to reconstruct it from Lean tactics.
+- Topic pages must explain the section's mathematical objective, its inputs
+  and prerequisites, the relationships among its main definitions and
+  theorems, and how its conclusions are used later. Give a connected account
+  of the proof structure before the reading lists; a short description plus
+  a catalogue of links is insufficient. Distinguish logical dependencies
+  from suggested reading order and preserve conditional hypotheses when
+  summarizing a result's role.
 - Give detailed proofs, not abstract proof summaries. State the ambient
   objects and hypotheses, define local notation, and explain each inference
   and displayed equality. For induction, give the induction statement, base

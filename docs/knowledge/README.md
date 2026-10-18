@@ -20,7 +20,15 @@ The website requires no installation. The Markdown guide is [nodes/kl/topics.md]
 8. [Hilbert comparisons and kernel freeness](nodes/kl/08_comparison_and_freeness/topics.md)
 9. [Simultaneous induction and combinatorial invariance](nodes/kl/09_combinatorial_invariance/topics.md)
 
-Each chapter introduction gives an ordered reading sequence. The entries contain mathematical exposition and supporting Lean references. Worked calculations include rank-one normalization, the \(A_2\) reflection graph, lower-half truncation, a one-edge sheaf, Hilbert normalization, the edge transfer coefficient, and higher-codimension detection.
+Each chapter introduction explains its mathematical objective, prerequisites,
+the relationships among its main results, and their uses in later chapters,
+followed by grouped reading sequences. The main guide maps the nine chapters
+to the complete proof and distinguishes the roles of R-polynomials, canonical
+KL polynomials, and actual sheaf characters. The entries contain detailed
+mathematical exposition and supporting Lean references. Worked calculations
+include rank-one normalization, the \(A_2\) reflection graph, lower-half
+truncation, a one-edge sheaf, Hilbert normalization, the edge transfer
+coefficient, and higher-codimension detection.
 
 The supplementary background explains minimal covers, graded Nakayama, graded projectivity, Frobenius pairings, Bott–Samelson word objects, supported sections, and character cancellation.
 
