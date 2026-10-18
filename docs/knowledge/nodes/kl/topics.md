@@ -1,99 +1,83 @@
-# Combinatorial Invariance — Blueprint and Knowledge Base
+# Combinatorial invariance — Blueprint and Knowledge Base
 
-The question is whether the ordinary Kazhdan–Lusztig polynomial attached to an interval can be recovered from the interval's order alone. The usual construction of that polynomial uses simple reflections and the Hecke algebra. An order isomorphism between two intervals is not supplied with those choices.
-
-The theorem says that if
+An order isomorphism of Bruhat intervals
 \[
-\phi:[u,b]\xrightarrow{\sim}[u',b']
+\phi:[a,b]\xrightarrow{\sim}[a',b']
 \]
-is an order isomorphism of Bruhat intervals, then
+determines equality of the Kazhdan–Lusztig polynomials
 \[
-P_{u,b}(q)=P'_{u',b'}(q).
+P_{a,b}(q)=P'_{a',b'}(q).
 \]
-The groups containing the intervals may be different. The exact statement is [[node:kl.main.combinatorial_invariance]].
+The intervals may lie in different Coxeter systems. The complete statement is [[node:kl.main.combinatorial_invariance]].
 
-These chapters assume the definition of a Coxeter group and the basic idea of a Hecke algebra, with brief reminders where needed. They introduce the graph-sheaf, graded-module, and localization constructions through concrete calculations. The linked entries retain the detailed general proofs and their Lean references.
+This knowledge base develops the objects and proofs in the local Lean library. Start with the definitions of Coxeter groups and the basic Hecke algebra; the entries introduce the additional root geometry, graded algebra, sheaves, and localization constructions as they are used.
 
-## Start with one interval and follow it through the proof
+## One interval through the constructions
 
-Take a simple reflection \(s\). The interval \([1,s]\) has just two vertices, \(1<s\). It can be viewed in several ways:
+For a simple reflection \(s\), the interval \([1,s]\) has two vertices and one reflection edge. Take \(A=\mathbb R[\alpha]\), with \(\alpha\) of degree one.
 
-| View | The calculation for this interval |
+| Construction | The calculation on \([1,s]\) |
 |---|---|
-| Order | There is one upward edge, from \(1\) to \(s\). |
-| Canonical polynomials | The Hecke recursion gives \(R_{1,s}=q-1\); reciprocity and the degree bound give \(P_{1,s}=1\). |
-| Graph sheaf | Put \(A=\mathbb R[\alpha]\) at both vertices and \(A/(\alpha)\) at the edge. A section is a pair \((f,g)\) with \(f-g\in\alpha A\). |
-| Outgoing conditions | The lower kernel is \(\alpha A\) while the edge condition is present, and \(A\) after it is removed. The top kernel is always \(A\). |
-| Character and Hilbert value | Each stalk has character \(1\); \(H_A(q)=1/(1-q)\), while \(H_{\alpha A}(q)=q/(1-q)\). |
-| Normalized state | With \(q=t^2\), the state moves from \((t,1)\) to \((t^{-1},1)\) by adding \((t^{-1}-t)\) times the top coordinate to the bottom one. |
+| Polynomial invariants | \(R_{1,s}(q)=q-1\) and \(P_{1,s}(q)=1\). |
+| Graph sheaf | Both stalks are \(A\), the edge module is \(A/(\alpha)\), and both restrictions are reduction modulo \(\alpha\). |
+| Global sections | Pairs \((f,g)\) satisfying \(f-g\in\alpha A\). |
+| Word module | \(A\otimes_{\mathbb R[\alpha^2]}A\), evaluated as the same compatible pairs. |
+| Outgoing kernels | The kernel at \(1\) is \(\alpha A\) with the condition imposed, and \(A\) after removing it. |
+| Hilbert values | \(H_A(q)=1/(1-q)\), while \(H_{\alpha A}(q)=q/(1-q)\). |
+| Normalized state | With \(q=t^2\), the vector changes from \((t,1)\) to \((t^{-1},1)\). |
 
-Each row will be derived in the corresponding chapter. The point of following the same example is that the later numerical vector is built from the earlier modules: it is not an unrelated invariant introduced at the end.
+The transfer coefficient in the last line is \(T=t^{-1}-t\): adding \(T\) times the upper coordinate to the lower one gives \(t+(t^{-1}-t)=t^{-1}\). For \(0<t<1\), this coefficient is positive.
 
-A larger interval has more edges, several outgoing conditions at a vertex, and kernels whose freeness is not automatic. The proof must control those additional features, transport the edge schedule through an unlabelled isomorphism, and compare two resulting polynomial matrices. The small example illustrates the operations; it does not prove those general assertions.
+These calculations recur in the topic guides. Larger intervals have several edge conditions at a vertex; their partial kernels, image maps, and degrees are the objects controlled by the general proof.
 
-## A short vocabulary for the intermediate objects
+## Three polynomial objects
 
-A graph sheaf assigns a module to each vertex and edge, with maps from both endpoints into the edge module. A stalk is a vertex module. A compatible section is a tuple of stalk vectors satisfying every required edge equation.
+The Hecke algebra supplies the ordinary R-polynomials and the canonical KL polynomials. The boundary sheaf supplies a third family through homogeneous bases of its stalks.
 
-An upward kernel consists of the vectors in one stalk that vanish under selected outgoing maps. Its full outgoing kernel is the costalk used here. A schedule is an ordered list of edges; its suffix is the final segment still waiting to be processed.
-
-A graded-rank polynomial records the degrees of a homogeneous basis of a free module. A Hilbert value instead sums the dimensions of all homogeneous pieces at a convergent real parameter. It can be defined even for modules not yet known to be free.
-
-Localization permits selected denominators in the coefficient ring. In this proof it makes some labels invertible, so their edge quotients become zero and the surviving equations can be studied in rank-two pieces.
-
-These descriptions are starting points. Chapter 3 develops the module language, chapter 4 writes the sheaf equations, chapter 7 explains the localizations, and chapter 8 calculates the states.
-
-## Keep the polynomial objects separate
-
-The notation has several layers because different constructions supply different parts of the argument:
-
-| Notation | Meaning |
-|---|---|
-| \(R_{x,y}(q)\) | Ordinary R-polynomial, constructed from Hecke data. |
-| \(\widetilde R_{x,y}(T)\) | Normalized R-polynomial; later identified with an ordered path sum. |
-| \(P_{x,y}(q)\) | Canonical KL polynomial, characterized by reciprocity and a strict degree bound. |
-| \(C_{x,b}(q)\) | Actual boundary-sheaf stalk character, obtained from homogeneous module generators. |
-| \(C_x^{\mathbf s}(q)\) | Stalk character of a tensor word, before separating its boundary-model summands. |
-
-The normalized R-family is defined in [[node:kl.detail.rtilde_family]], the canonical family in [[node:kl.foundations.canonical_kl]], and the actual character in [[node:kl.duality.stalk_character]].
-
-The one-edge example has \(C=P=1\), but the general argument does not assume that equality. It proves the needed reciprocity for \(C\), uses \(C\) to establish R-invariance, and then proves invariance of \(P\) separately.
-
-Also distinguish the Hecke basis element \(T_s\) from the scalar \(T\). In the comparison, \(0<t<1\), \(q=t^2\), and \(T=t^{-1}-t>0\). The precise reciprocal normalization is [[node:kl.foundations.scaled_kl]]. A group envelope \(L_s:W\to W\) in chapter 1 is likewise a different map from a Hecke operator on a free module; the domain and definition specify which object is meant.
-
-## The main proof as a sequence of concrete questions
-
-**First, construct the objects.** Chapters 1–3 establish the finite interval combinatorics, canonical polynomials, and coefficient algebra. Chapter 4 constructs the boundary sheaf by taking minimal covers of actual boundary images. Chapter 5 derives a reciprocal identity for its character using tensor words, pairings, and cancellation.
-
-**Next, establish a conditional comparison.** Chapter 6 reconstructs reflection edges and identifies ordered transfer products with R-polynomials. Chapter 7 proves an inclusion between lower and corrected upper edge images, assuming the upper kernel is free. Chapter 8 turns that inclusion into a state inequality and explains what equality would imply.
-
-**Then, supply the missing freeness in the correct order.** Chapter 9 uses a simultaneous induction. Smaller upper intervals supply the free upper kernels needed for the comparison. Smaller initial intervals supply the already-known R-entries. Cancelling these known entries isolates one new R-polynomial. The inverse interval isomorphism gives the reverse inequality, proving equality.
-
-**Finally, recover new freeness and compare P.** R-matrix equality makes the state comparison exact. The numerical deficits vanish, so the actual image inclusions are equalities. A backward traversal proves the new suffix kernels free, completing the simultaneous induction. A separate canonical-KL induction then eliminates a reciprocal difference using the strict half-degree bound.
-
-The two traversals and two inductions are explained with equations in chapters 8 and 9. They should not be compressed into the instruction “compare and conclude.”
-
-## Where the detailed arguments are developed
-
-| Chapter | Mathematical task | Result carried forward |
+| Family | Defining data | Role in the proof |
 |---|---|---|
-| 1. Coxeter systems and Bruhat order | Derive lifting, subwords, finiteness, and rank preservation from the strong order. | Finite ranked intervals and finite-support reductions; begin with [[node:kl.detail.strong_exchange]]. |
-| 2. Hecke operators and canonical polynomials | Construct R and P and prove their normalizations and reciprocity. | Canonical polynomials and the degree bound, independent of the sheaf construction; see [[node:kl.foundations.canonical_kl]]. |
-| 3. Real realizations and graded algebra | Turn reflections into root labels and establish the algebra of covers, free bases, and Hilbert values. | The coefficient ring and algebraic tools used by sheaves; see [[node:kl.detail.polynomial_labels]] and [[node:kl.notes.graded_projective_free]]. |
-| 4. Moment-graph sheaves and minimal extensions | Construct the boundary sheaf, identify its maps, and prove splitting and decomposition. | Actual sheaf objects and isomorphisms, culminating in [[node:kl.detail.model_decomposition]]. |
-| 5. Word objects, duality, and characters | Build tensor words, prove their character formula, and pass reciprocity to boundary summands. | [[node:kl.duality.actual_character_reciprocity]], the character identity used in the comparison. |
-| 6. Reflection orders and dihedral geometry | Recover reflection edges from order, transport schedules, and identify their path products. | The R-matrix and correction-factor degree; see [[node:kl.paths.dyer_paths]] and [[node:kl.paths.plane_degree]]. |
-| 7. Localization and embedded edge images | Compare two actual images in one edge module through local dihedral models. | [[node:kl.local.edge_inclusion]], conditional on the required upper-kernel freeness. |
-| 8. Hilbert comparisons and kernel freeness | Accumulate edge inequalities and recover freeness when equality is attained. | Forward comparison and reverse freeness, linked by [[node:kl.comparison.no_deficit]]. |
-| 9. Simultaneous induction and invariance | Supply the freeness hypotheses on smaller intervals, prove R-invariance, then compare canonical KL polynomials. | [[node:kl.comparison.rtilde_invariance]] and the final theorem for arbitrary Coxeter systems. |
+| \(R_{x,y}\), and its normalized form \(\widetilde R_{x,y}\) | Bar coefficients and their recursion | Entries of the path-transfer matrix. |
+| \(P_{x,y}\) | Reciprocity with R and a strict degree bound | The canonical family in the final theorem. |
+| \(C_{x,b}\) | Degrees of a homogeneous basis of the actual boundary stalk | The reciprocal vector used in the comparison. |
 
+The definitions are [[node:kl.detail.ordinary_r]], [[node:kl.detail.rtilde_family]], [[node:kl.foundations.normalized_kl]], and [[node:kl.duality.stalk_character]]. The main Lean route proves reciprocity for \(C\), uses it to establish R-invariance, and then applies the characterization of \(P\).
 
-## How to use the chapters
+## How the proof develops
 
-Read the numbered explanations in a chapter before its detailed-entry lists. Those explanations introduce the notation, calculate a small case, and identify the precise theorem needed for the general step. The lists then lead to full statements and proofs.
+**Build the algebraic objects.** Coxeter combinatorics supplies finite ranked intervals. The realization supplies root vectors, their actions, and polynomial edge labels. Graded module theory supplies minimal covers, bases, and Hilbert values. These inputs construct the boundary sheaf.
 
-The worked examples are explanatory calculations. They do not claim to be separate Lean declarations unless an entry explicitly identifies one. Source panels and definition links are generated deterministically from the retained Lean snapshot and the concept registry.
+**Obtain a reciprocal character vector.** Tensor words have explicit evaluation coordinates and perfect pairings. Their characters are Hecke-word coefficients. Decomposing a word sheaf into boundary models gives the same multiplicities for its stalks and full kernels. Finite cancellation yields actual-character reciprocity.
 
-The blueprint follows the completed Lean development. Definitions are marked formalized and theorem entries proved. These describe their mathematical roles in the completed development.
+**Compare the edge images.** Reflection geometry recovers the directed reflection graph from the interval order and provides an edge schedule. Root-plane localization reduces the image calculation to dihedral models. It yields an inclusion of the lower edge image in a homogeneous scalar multiple of the upper image, under the required upper-kernel freeness.
 
-When the Lean argument and the OpenAI notes differ, the relevant entries explain the difference. The main route here uses actual-character reciprocity followed by R-first simultaneous induction. The local intersection statement with its nonzero-diagonal hypothesis and the separate boundary-character identification condition remain explicit related results, rather than hidden assumptions in the main proof.
+**Accumulate the inequalities.** Hilbert exactness converts this inclusion into a one-edge inequality. The degree of the scalar factor makes every normalized step use the same coefficient \(T\). Multiplying the steps gives a transfer matrix, whose entries are normalized R-polynomials by the path formula.
+
+**Run the simultaneous induction.** Proper upper intervals provide target-kernel freeness; proper initial intervals provide known bottom-row R-entries. Cancelling those entries leaves one new R-inequality. The inverse interval isomorphism gives the reverse inequality. R-equality then makes the endpoint comparison exact, so every edge-image inclusion is an equality. Reverse traversal reconstructs all suffix-kernel freeness at the current rank.
+
+**Recover canonical KL invariance.** With the R-matrices equal, a separate induction compares the canonical P-vectors. Their remaining difference is reciprocal and lies strictly below the middle degree, forcing it to vanish. Finite-support interval models carry the result to arbitrary Coxeter systems.
+
+## Mathematical topics
+
+| Topic | Objects and results |
+|---|---|
+| [Coxeter combinatorics](coxeter/index.html) | Words, length, Bruhat order, interval isomorphisms, and finite support. |
+| [Realizations and root geometry](realizations/index.html) | Tits form, extension, actions, roots, signs, and moving planes. |
+| [Hecke algebra and polynomial invariants](02_hecke_polynomials/index.html) | Hecke operators, bar, R-polynomials, canonical P, and rigidity. |
+| [Coefficient algebras and graded modules](graded_algebra/index.html) | Polynomial coefficients, grading, covers, bases, Hilbert values, and module algebra. |
+| [Reflection Frobenius extensions and word modules](word_modules/index.html) | Reflection invariant algebras, tensor induction, evaluations, and word characters. |
+| [Moment-graph sheaves, support, and duality](sheaves/index.html) | Graph sheaves, minimal extension, decomposition, support, duality, and actual characters. |
+| [Reflection orders, dihedral combinatorics, and paths](reflection_combinatorics/index.html) | Dihedral intervals, plane weights, edge reconstruction, schedules, and path formulas. |
+| [Localization and comparison of embedded images](localization/index.html) | Plane and edge rings, local models, correction factors, and embedded images. |
+| [Hilbert comparison and combinatorial invariance](invariance/index.html) | Hilbert-state comparison, reverse freeness, simultaneous R-induction, and KL invariance. |
+
+Each topic guide explains its constructions and organizes the detailed entries by their mathematical role. A definition has one home and can be used throughout the graph.
+
+## Reading routes
+
+To follow the main proof, first read the interval and polynomial definitions, then the overview of the simultaneous induction. Develop the graded-module and sheaf constructions, followed by word duality and the geometric/localization comparison. Return to the full induction with those inputs established.
+
+To understand the geometric side, follow the Tits form, its radical extension, root signs and inversions, induced dihedral systems, geometric orders, and plane localization.
+
+To understand the algebraic side, follow graded components and positive ideals, minimal covers and homogeneous bases, tensor words, sheaf sections, boundary summands, and supported duality.
+
+The dependency graph records the mathematical inputs to individual results. Definition links explain the terminology used in the prose. Lean links identify the declarations at the fixed source revision; comparisons with the OpenAI notes occur at the results where the presentations differ.

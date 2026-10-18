@@ -6,7 +6,7 @@
   "reviewed_entries": [
     {
       "node": "kl.realization.tits_form",
-      "file": "docs/knowledge/nodes/kl.03_realizations_and_grading/tits_form.md",
+      "file": "docs/knowledge/nodes/kl.realizations/tits_form.md",
       "source_declarations": [
         "OAI.KLInvariance.TitsSpace.gram",
         "OAI.KLInvariance.TitsSpace.root",
@@ -20,7 +20,7 @@
     },
     {
       "node": "kl.realization.linear_reflection",
-      "file": "docs/knowledge/nodes/kl.03_realizations_and_grading/linear_reflection.md",
+      "file": "docs/knowledge/nodes/kl.realizations/linear_reflection.md",
       "source_declarations": [
         "OAI.KLInvariance.Realization.geometricSimple",
         "OAI.KLInvariance.Realization.simple_normal_value",
@@ -31,7 +31,7 @@
     },
     {
       "node": "kl.realization.radical_extension",
-      "file": "docs/knowledge/nodes/kl.03_realizations_and_grading/radical_extension.md",
+      "file": "docs/knowledge/nodes/kl.realizations/radical_extension.md",
       "source_declarations": [
         "OAI.KLInvariance.Realization.Extension",
         "OAI.KLInvariance.Realization.extensionForm",
@@ -45,7 +45,7 @@
     },
     {
       "node": "kl.realization.geometric_action",
-      "file": "docs/knowledge/nodes/kl.03_realizations_and_grading/geometric_action.md",
+      "file": "docs/knowledge/nodes/kl.realizations/geometric_action.md",
       "source_declarations": [
         "OAI.KLInvariance.Realization.geometricAction",
         "OAI.KLInvariance.Realization.geometricSimple_liftable",
@@ -61,7 +61,7 @@
     },
     {
       "node": "kl.realization.extended_action",
-      "file": "docs/knowledge/nodes/kl.03_realizations_and_grading/extended_action.md",
+      "file": "docs/knowledge/nodes/kl.realizations/extended_action.md",
       "source_declarations": [
         "OAI.KLInvariance.TitsSpace.extendedAction",
         "OAI.KLInvariance.TitsSpace.extendedAction_simple",
@@ -74,7 +74,7 @@
     },
     {
       "node": "kl.realization.extension_minimality",
-      "file": "docs/knowledge/nodes/kl.03_realizations_and_grading/extension_minimality.md",
+      "file": "docs/knowledge/nodes/kl.realizations/extension_minimality.md",
       "source_declarations": [
         "OAI.KLInvariance.Realization.extension_dimension_minimal",
         "OAI.KLInvariance.Realization.extension_finrank"
@@ -84,8 +84,138 @@
     },
     {
       "node": "kl.notes.extended_realization",
-      "file": "docs/knowledge/nodes/kl.03_realizations_and_grading/extended_realization.md",
+      "file": "docs/knowledge/nodes/kl.realizations/extended_realization.md",
       "review": "Rewritten as the projection-based proof used in Lean, with all three nondegeneracy tests and both independence arguments explicit."
+    },
+    {
+      "node": "kl.algebra.coefficient_algebra",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/coefficient_algebra.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.SymmetricCoefficient",
+        "OAI.KLInvariance.TitsSpace.coefficientAction",
+        "OAI.KLInvariance.TitsSpace.coefficientAction_ι",
+        "OAI.KLInvariance.TitsSpace.simpleRootPolynomial"
+      ],
+      "review": "Read source definitions, surrounding assumptions, and the computations used in the entry.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.grading_components",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/grading_components.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.polynomialGrading",
+        "OAI.KLInvariance.Graded.component",
+        "OAI.KLInvariance.Graded.component_smul_homogeneous",
+        "OAI.KLInvariance.TitsSpace.symmetricGrading"
+      ],
+      "review": "Read source definitions, surrounding assumptions, and the computations used in the entry.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.positive_ideal",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/positive_ideal.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.positiveIdeal"
+      ],
+      "review": "Read source definitions, surrounding assumptions, and the computations used in the entry.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.homogeneous_subquotients",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/homogeneous_subquotients.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.subPiece",
+        "OAI.KLInvariance.Graded.quotientPiece",
+        "OAI.KLInvariance.Graded.ModuleData.sub",
+        "OAI.KLInvariance.Graded.ModuleData.quotient",
+        "OAI.KLInvariance.Graded.ModuleData.kernel",
+        "OAI.KLInvariance.Graded.ModuleData.range"
+      ],
+      "review": "Read source definitions, surrounding assumptions, and the computations used in the entry.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.scalar_twist",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/scalar_twist.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionPairTranslation.Twist",
+        "OAI.KLInvariance.ReflectionPairTranslation.Twist.equiv"
+      ],
+      "review": "Read source definitions, surrounding assumptions, and the computations used in the entry.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.homogeneous_basis",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/homogeneous_basis.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.NonnegativeBasis",
+        "OAI.KLInvariance.Graded.NonnegativeBasis.polynomial",
+        "OAI.KLInvariance.Graded.shiftedPiece"
+      ],
+      "review": "Read source definitions, surrounding assumptions, and the computations used in the entry.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.scalar_quotient",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/scalar_quotient.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.scalarQuotient",
+        "OAI.KLInvariance.EdgeImage.reducedInclusion"
+      ],
+      "review": "Read source definitions, surrounding assumptions, and the computations used in the entry.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.kernel_saturation",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/kernel_saturation.md",
+      "source_declarations": [
+        "OAI.KLInvariance.EdgeImage.kernel_saturated",
+        "OAI.KLInvariance.EdgeImage.reduced_kernel_injective"
+      ],
+      "review": "Read source definitions, surrounding assumptions, and the computations used in the entry.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.graded_module",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/graded_module.md",
+      "review": "Expanded the full definition, examples, and the reduction or component arguments against ModuleData, MinimalCover, and Hilbert.piece/term/value.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.minimal_cover",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/minimal_cover.md",
+      "review": "Expanded the full definition, examples, and the reduction or component arguments against ModuleData, MinimalCover, and Hilbert.piece/term/value.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.hilbert_values",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/hilbert_values.md",
+      "review": "Expanded the full definition, examples, and the reduction or component arguments against ModuleData, MinimalCover, and Hilbert.piece/term/value.",
+      "pending": []
+    },
+    {
+      "node": "kl.geometry.plane_weights",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/plane_weights.md",
+      "review": "Expanded the partner construction, the two sign cases, nonnegative finite plane weights, and their exact sum.",
+      "pending": []
+    },
+    {
+      "node": "kl.geometry.plane_weight_sum",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/plane_weight_sum.md",
+      "review": "Expanded the partner construction, the two sign cases, nonnegative finite plane weights, and their exact sum.",
+      "pending": []
+    },
+    {
+      "node": "kl.paths.plane_degree",
+      "file": "docs/knowledge/nodes/kl.localization/plane_degree.md",
+      "review": "Separated the polynomial degree proof from the geometric plane-weight identity; checked nonzero reduced factors, homogeneity, and the final integer equality.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.compatible_sections",
+      "file": "docs/knowledge/nodes/kl.sheaves/compatible_sections.md",
+      "review": "Aligned the primary section module with Sheaves.sections as a submodule of full ambient assignments. Explained projection to restricted tuples, its kernel and zero-extension splitting, compatibility monotonicity, and the one-edge example.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -189,43 +319,43 @@
     {
       "code": "A1",
       "title": "The realization coefficient algebra",
-      "status": "pending",
+      "status": "in_progress",
       "completion_evidence": []
     },
     {
       "code": "A2",
       "title": "Grading and the positive ideal",
-      "status": "pending",
+      "status": "in_progress",
       "completion_evidence": []
     },
     {
       "code": "A3",
       "title": "Graded modules and maps",
-      "status": "pending",
+      "status": "in_progress",
       "completion_evidence": []
     },
     {
       "code": "A4",
       "title": "Changing coefficients and twisting",
-      "status": "pending",
+      "status": "in_progress",
       "completion_evidence": []
     },
     {
       "code": "A5",
       "title": "Bases, minimal covers, and projectivity",
-      "status": "pending",
+      "status": "in_progress",
       "completion_evidence": []
     },
     {
       "code": "A6",
       "title": "Hilbert series, Hilbert values, and characters",
-      "status": "pending",
+      "status": "in_progress",
       "completion_evidence": []
     },
     {
       "code": "A7",
       "title": "Algebra for support, quotients, and comparison",
-      "status": "pending",
+      "status": "in_progress",
       "completion_evidence": []
     },
     {
@@ -351,7 +481,7 @@
     {
       "code": "O4",
       "title": "Inversion changes and geometric plane weights",
-      "status": "pending",
+      "status": "in_progress",
       "completion_evidence": []
     },
     {
@@ -399,7 +529,7 @@
     {
       "code": "L5",
       "title": "Polynomial correction factors",
-      "status": "pending",
+      "status": "in_progress",
       "completion_evidence": []
     },
     {
@@ -458,10 +588,1029 @@
     }
   ],
   "next_steps": [
-    "Give the finite Coxeter reflection relation its own detailed proof and link the action construction to it.",
-    "Apply the approved topic homes while preserving every stable node ID and generating redirects.",
-    "Expand the remaining realization, coefficient-algebra, and graded-module definitions.",
-    "Review all 61 subtopics for source-defined concepts, detailed theorem proofs, links, and explanatory topic pages.",
-    "Complete mathematical exposition review, full document checks, push, and verify the public deployment."
-  ]
+    "Complete C1/C2: Coxeter words, reflections, signed reflection actions, and their role in the Bruhat proofs.",
+    "Complete R2/R4/R6: finite Coxeter reflection relations, the rank-one orthogonal lemma, root signs, and the cotangent/plane constructions.",
+    "Expand word-module evaluation lattices and sheaf support/cut definitions, including every remaining unmapped structure.",
+    "Review every proof and all 61 subtopics against the local Lean bodies and the corresponding OpenAI notes; replace compressed inference steps.",
+    "Finish the nondefensive prose pass, link coverage, full documentation validation, and public deployment audit."
+  ],
+  "topic_migration": {
+    "status": "applied",
+    "topic_ids": {
+      "C": "kl.coxeter",
+      "R": "kl.realizations",
+      "H": "kl.02_hecke_polynomials",
+      "A": "kl.graded_algebra",
+      "W": "kl.word_modules",
+      "S": "kl.sheaves",
+      "O": "kl.reflection_combinatorics",
+      "L": "kl.localization",
+      "I": "kl.invariance"
+    },
+    "node_subtopics": {
+      "kl.detail.strong_exchange": "C3",
+      "kl.foundations.subword": "C3",
+      "kl.detail.bruhat_lifting": "C3",
+      "kl.foundations.bruhat_order": "C3",
+      "kl.foundations.bruhat_step": "C3",
+      "kl.detail.simple_envelopes": "C3",
+      "kl.foundations.finite_intervals": "C3",
+      "kl.foundations.rank_preservation": "C4",
+      "kl.foundations.interval": "C4",
+      "kl.foundations.finite_support": "C5",
+      "kl.main.finite_interval_model": "C5",
+      "kl.main.finite_model_transport": "C5",
+      "kl.realization.tits_form": "R1",
+      "kl.realization.linear_reflection": "R2",
+      "kl.realization.geometric_action": "R2",
+      "kl.realization.radical_extension": "R3",
+      "kl.notes.extended_realization": "R3",
+      "kl.realization.extension_minimality": "R3",
+      "kl.realization.extended_action": "R4",
+      "kl.notes.reflection_faithfulness": "R4",
+      "kl.realization.reflection_plane": "R4",
+      "kl.detail.positive_roots": "R5",
+      "kl.detail.root_reflection_correspondence": "R5",
+      "kl.detail.root_inversions": "R5",
+      "kl.detail.root_inversion_count": "R5",
+      "kl.definitions.hecke_operators": "H1",
+      "kl.definitions.hecke_quadratic_relation": "H1",
+      "kl.detail.hecke_quadratic_identity": "H1",
+      "kl.notes.hecke_action": "H1",
+      "kl.definitions.bar_involution": "H2",
+      "kl.detail.ordinary_r": "H3",
+      "kl.detail.rtilde_family": "H3",
+      "kl.detail.r_kernel": "H3",
+      "kl.detail.rtilde_recursion": "H3",
+      "kl.foundations.rtilde": "H3",
+      "kl.foundations.normalized_kl": "H4",
+      "kl.foundations.low_half": "H4",
+      "kl.detail.kl_defect": "H4",
+      "kl.detail.kl_recursion": "H4",
+      "kl.foundations.canonical_kl": "H4",
+      "kl.foundations.scaled_kl": "H5",
+      "kl.comparison.reciprocal_rigidity": "H5",
+      "kl.notes.dihedral_kl": "H5",
+      "kl.detail.polynomial_labels": "A1",
+      "kl.detail.linear_quotient": "A1",
+      "kl.sheaves.graded_module": "A3",
+      "kl.detail.graded_maps_shifts": "A3",
+      "kl.detail.coefficient_change": "A4",
+      "kl.notes.graded_nakayama": "A5",
+      "kl.sheaves.minimal_cover": "A5",
+      "kl.notes.minimal_cover_existence": "A5",
+      "kl.notes.graded_projective_free": "A5",
+      "kl.detail.graded_character": "A6",
+      "kl.detail.hilbert_values": "A6",
+      "kl.sheaves.hilbert_free": "A6",
+      "kl.detail.hilbert_exactness": "A6",
+      "kl.sheaves.hilbert_detection": "A6",
+      "kl.notes.reflection_frobenius": "W1",
+      "kl.notes.perfect_pairings": "W2",
+      "kl.notes.tensor_pairing": "W2",
+      "kl.notes.bott_samelson": "W3",
+      "kl.notes.word_stalks": "W4",
+      "kl.detail.word_evaluation_injective": "W4",
+      "kl.detail.word_standard_stalks": "W5",
+      "kl.detail.word_characters": "W7",
+      "kl.detail.word_character_formula": "W7",
+      "kl.detail.ordered_graph": "S1",
+      "kl.detail.graph_transport": "S1",
+      "kl.sheaves.graph_sheaf": "S2",
+      "kl.detail.graded_sheaf": "S2",
+      "kl.detail.compatible_sections": "S2",
+      "kl.sheaves.flabbiness": "S2",
+      "kl.sheaves.relative_flabbiness": "S2",
+      "kl.notes.boundary_image": "S2",
+      "kl.detail.upper_quotient": "S2",
+      "kl.sheaves.upward_kernel": "S2",
+      "kl.detail.sheaf_morphism": "S3",
+      "kl.detail.sheaf_isomorphisms": "S3",
+      "kl.detail.morphism_extension": "S3",
+      "kl.detail.base_change": "S3",
+      "kl.sheaves.boundary_sheaf": "S4",
+      "kl.sheaves.boundary_existence": "S4",
+      "kl.detail.boundary_extension": "S4",
+      "kl.detail.boundary_uniqueness": "S4",
+      "kl.detail.split_summands": "S5",
+      "kl.detail.primitive_projectors": "S5",
+      "kl.detail.primitive_summand": "S5",
+      "kl.detail.top_splitting": "S5",
+      "kl.detail.indecomposable_boundary": "S5",
+      "kl.detail.boundary_models": "S5",
+      "kl.detail.model_sums": "S5",
+      "kl.detail.model_decomposition": "S5",
+      "kl.detail.word_sheaf": "S7",
+      "kl.detail.word_flabbiness": "S7",
+      "kl.detail.section_duality": "S8",
+      "kl.notes.supported_pairings": "S8",
+      "kl.detail.integral_adjoints": "S8",
+      "kl.detail.adjoint_primitivity": "S8",
+      "kl.detail.boundary_pairing": "S8",
+      "kl.detail.costalk_duality": "S8",
+      "kl.duality.stalk_character": "S9",
+      "kl.detail.costalk_reciprocity": "S9",
+      "kl.detail.word_character_reciprocity": "S9",
+      "kl.duality.bott_character_decomposition": "S9",
+      "kl.notes.character_cancellation": "S9",
+      "kl.duality.actual_character_reciprocity": "S9",
+      "kl.duality.character_identity_condition": "S10",
+      "kl.detail.local_intersection": "S10",
+      "kl.detail.local_diagonal_degree": "S10",
+      "kl.notes.reflection_order": "O1",
+      "kl.detail.geometric_functional": "O1",
+      "kl.detail.plane_basis": "O2",
+      "kl.notes.relative_dihedral_intervals": "O2",
+      "kl.notes.relative_dihedral_transport": "O3",
+      "kl.paths.later_count": "O3",
+      "kl.detail.diamond_closure": "O5",
+      "kl.detail.diamond_reconstruction": "O5",
+      "kl.paths.graph_invariance": "O5",
+      "kl.detail.transported_schedule": "O6",
+      "kl.notes.path_product": "O7",
+      "kl.paths.dyer_paths": "O7",
+      "kl.comparison.positive_transfer": "O7",
+      "kl.detail.transfer_properties": "O7",
+      "kl.detail.localization_rings": "L1",
+      "kl.notes.sheaf_localization": "L2",
+      "kl.detail.structure_sheaves": "L3",
+      "kl.notes.dihedral_models": "L3",
+      "kl.detail.dihedral_model_properties": "L3",
+      "kl.detail.local_models": "L4",
+      "kl.local.localized_decomposition": "L4",
+      "kl.detail.edge_factor": "L5",
+      "kl.paths.plane_degree": "L5",
+      "kl.detail.edge_images": "L6",
+      "kl.detail.scaled_images": "L6",
+      "kl.notes.upper_image_free": "L6",
+      "kl.detail.quotient_image_free": "L6",
+      "kl.local.edge_inclusion": "L7",
+      "kl.local.free_target_localization": "L7",
+      "kl.detail.kernel_exact_sequence": "I1",
+      "kl.comparison.normalized_kernel": "I1",
+      "kl.comparison.edge_increment": "I1",
+      "kl.detail.schedule_state": "I2",
+      "kl.detail.schedule_comparison": "I2",
+      "kl.comparison.global_comparison": "I2",
+      "kl.detail.endpoint_equality": "I3",
+      "kl.comparison.no_deficit": "I4",
+      "kl.detail.reverse_projectivity": "I4",
+      "kl.comparison.reverse_freeness": "I4",
+      "kl.comparison.free_suffixes": "I5",
+      "kl.comparison.rtilde_row_comparison": "I5",
+      "kl.comparison.rtilde_step": "I5",
+      "kl.comparison.rtilde_invariance": "I5",
+      "kl.main.kl_finite": "I6",
+      "kl.main.combinatorial_invariance": "I7",
+      "kl.algebra.coefficient_algebra": "A1",
+      "kl.algebra.grading_components": "A2",
+      "kl.algebra.positive_ideal": "A2",
+      "kl.algebra.homogeneous_subquotients": "A3",
+      "kl.algebra.scalar_twist": "A4",
+      "kl.algebra.homogeneous_basis": "A5",
+      "kl.algebra.scalar_quotient": "A7",
+      "kl.algebra.kernel_saturation": "A7",
+      "kl.geometry.plane_weights": "O4",
+      "kl.geometry.plane_weight_sum": "O4"
+    },
+    "moved_nodes": [
+      {
+        "node": "kl.comparison.reverse_freeness",
+        "from": "kl.08_comparison_and_freeness",
+        "to": "kl.invariance",
+        "subtopic": "I4"
+      },
+      {
+        "node": "kl.detail.reverse_projectivity",
+        "from": "kl.08_comparison_and_freeness",
+        "to": "kl.invariance",
+        "subtopic": "I4"
+      },
+      {
+        "node": "kl.comparison.global_comparison",
+        "from": "kl.08_comparison_and_freeness",
+        "to": "kl.invariance",
+        "subtopic": "I2"
+      },
+      {
+        "node": "kl.detail.kernel_exact_sequence",
+        "from": "kl.08_comparison_and_freeness",
+        "to": "kl.invariance",
+        "subtopic": "I1"
+      },
+      {
+        "node": "kl.comparison.normalized_kernel",
+        "from": "kl.08_comparison_and_freeness",
+        "to": "kl.invariance",
+        "subtopic": "I1"
+      },
+      {
+        "node": "kl.detail.schedule_comparison",
+        "from": "kl.08_comparison_and_freeness",
+        "to": "kl.invariance",
+        "subtopic": "I2"
+      },
+      {
+        "node": "kl.sheaves.hilbert_detection",
+        "from": "kl.08_comparison_and_freeness",
+        "to": "kl.graded_algebra",
+        "subtopic": "A6"
+      },
+      {
+        "node": "kl.comparison.edge_increment",
+        "from": "kl.08_comparison_and_freeness",
+        "to": "kl.invariance",
+        "subtopic": "I1"
+      },
+      {
+        "node": "kl.comparison.no_deficit",
+        "from": "kl.08_comparison_and_freeness",
+        "to": "kl.invariance",
+        "subtopic": "I4"
+      },
+      {
+        "node": "kl.comparison.positive_transfer",
+        "from": "kl.08_comparison_and_freeness",
+        "to": "kl.reflection_combinatorics",
+        "subtopic": "O7"
+      },
+      {
+        "node": "kl.detail.schedule_state",
+        "from": "kl.08_comparison_and_freeness",
+        "to": "kl.invariance",
+        "subtopic": "I2"
+      },
+      {
+        "node": "kl.comparison.free_suffixes",
+        "from": "kl.08_comparison_and_freeness",
+        "to": "kl.invariance",
+        "subtopic": "I5"
+      },
+      {
+        "node": "kl.detail.transfer_properties",
+        "from": "kl.08_comparison_and_freeness",
+        "to": "kl.reflection_combinatorics",
+        "subtopic": "O7"
+      },
+      {
+        "node": "kl.detail.hilbert_values",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.graded_algebra",
+        "subtopic": "A6"
+      },
+      {
+        "node": "kl.realization.extension_minimality",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.realizations",
+        "subtopic": "R3"
+      },
+      {
+        "node": "kl.realization.linear_reflection",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.realizations",
+        "subtopic": "R2"
+      },
+      {
+        "node": "kl.detail.root_inversion_count",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.realizations",
+        "subtopic": "R5"
+      },
+      {
+        "node": "kl.detail.coefficient_change",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.graded_algebra",
+        "subtopic": "A4"
+      },
+      {
+        "node": "kl.sheaves.graded_module",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.graded_algebra",
+        "subtopic": "A3"
+      },
+      {
+        "node": "kl.notes.graded_projective_free",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.graded_algebra",
+        "subtopic": "A5"
+      },
+      {
+        "node": "kl.detail.root_reflection_correspondence",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.realizations",
+        "subtopic": "R5"
+      },
+      {
+        "node": "kl.detail.linear_quotient",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.graded_algebra",
+        "subtopic": "A1"
+      },
+      {
+        "node": "kl.notes.minimal_cover_existence",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.graded_algebra",
+        "subtopic": "A5"
+      },
+      {
+        "node": "kl.realization.extended_action",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.realizations",
+        "subtopic": "R4"
+      },
+      {
+        "node": "kl.detail.hilbert_exactness",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.graded_algebra",
+        "subtopic": "A6"
+      },
+      {
+        "node": "kl.detail.polynomial_labels",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.graded_algebra",
+        "subtopic": "A1"
+      },
+      {
+        "node": "kl.notes.reflection_faithfulness",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.realizations",
+        "subtopic": "R4"
+      },
+      {
+        "node": "kl.sheaves.minimal_cover",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.graded_algebra",
+        "subtopic": "A5"
+      },
+      {
+        "node": "kl.realization.radical_extension",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.realizations",
+        "subtopic": "R3"
+      },
+      {
+        "node": "kl.detail.positive_roots",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.realizations",
+        "subtopic": "R5"
+      },
+      {
+        "node": "kl.detail.graded_maps_shifts",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.graded_algebra",
+        "subtopic": "A3"
+      },
+      {
+        "node": "kl.realization.tits_form",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.realizations",
+        "subtopic": "R1"
+      },
+      {
+        "node": "kl.sheaves.hilbert_free",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.graded_algebra",
+        "subtopic": "A6"
+      },
+      {
+        "node": "kl.notes.extended_realization",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.realizations",
+        "subtopic": "R3"
+      },
+      {
+        "node": "kl.realization.geometric_action",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.realizations",
+        "subtopic": "R2"
+      },
+      {
+        "node": "kl.realization.reflection_plane",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.realizations",
+        "subtopic": "R4"
+      },
+      {
+        "node": "kl.detail.root_inversions",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.realizations",
+        "subtopic": "R5"
+      },
+      {
+        "node": "kl.notes.graded_nakayama",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.graded_algebra",
+        "subtopic": "A5"
+      },
+      {
+        "node": "kl.detail.graded_character",
+        "from": "kl.03_realizations_and_grading",
+        "to": "kl.graded_algebra",
+        "subtopic": "A6"
+      },
+      {
+        "node": "kl.comparison.rtilde_row_comparison",
+        "from": "kl.09_combinatorial_invariance",
+        "to": "kl.invariance",
+        "subtopic": "I5"
+      },
+      {
+        "node": "kl.comparison.rtilde_invariance",
+        "from": "kl.09_combinatorial_invariance",
+        "to": "kl.invariance",
+        "subtopic": "I5"
+      },
+      {
+        "node": "kl.main.finite_interval_model",
+        "from": "kl.09_combinatorial_invariance",
+        "to": "kl.coxeter",
+        "subtopic": "C5"
+      },
+      {
+        "node": "kl.main.finite_model_transport",
+        "from": "kl.09_combinatorial_invariance",
+        "to": "kl.coxeter",
+        "subtopic": "C5"
+      },
+      {
+        "node": "kl.detail.endpoint_equality",
+        "from": "kl.09_combinatorial_invariance",
+        "to": "kl.invariance",
+        "subtopic": "I3"
+      },
+      {
+        "node": "kl.comparison.reciprocal_rigidity",
+        "from": "kl.09_combinatorial_invariance",
+        "to": "kl.02_hecke_polynomials",
+        "subtopic": "H5"
+      },
+      {
+        "node": "kl.main.combinatorial_invariance",
+        "from": "kl.09_combinatorial_invariance",
+        "to": "kl.invariance",
+        "subtopic": "I7"
+      },
+      {
+        "node": "kl.comparison.rtilde_step",
+        "from": "kl.09_combinatorial_invariance",
+        "to": "kl.invariance",
+        "subtopic": "I5"
+      },
+      {
+        "node": "kl.main.kl_finite",
+        "from": "kl.09_combinatorial_invariance",
+        "to": "kl.invariance",
+        "subtopic": "I6"
+      },
+      {
+        "node": "kl.detail.strong_exchange",
+        "from": "kl.01_bruhat_order",
+        "to": "kl.coxeter",
+        "subtopic": "C3"
+      },
+      {
+        "node": "kl.foundations.subword",
+        "from": "kl.01_bruhat_order",
+        "to": "kl.coxeter",
+        "subtopic": "C3"
+      },
+      {
+        "node": "kl.foundations.rank_preservation",
+        "from": "kl.01_bruhat_order",
+        "to": "kl.coxeter",
+        "subtopic": "C4"
+      },
+      {
+        "node": "kl.detail.bruhat_lifting",
+        "from": "kl.01_bruhat_order",
+        "to": "kl.coxeter",
+        "subtopic": "C3"
+      },
+      {
+        "node": "kl.foundations.bruhat_order",
+        "from": "kl.01_bruhat_order",
+        "to": "kl.coxeter",
+        "subtopic": "C3"
+      },
+      {
+        "node": "kl.foundations.finite_intervals",
+        "from": "kl.01_bruhat_order",
+        "to": "kl.coxeter",
+        "subtopic": "C3"
+      },
+      {
+        "node": "kl.foundations.finite_support",
+        "from": "kl.01_bruhat_order",
+        "to": "kl.coxeter",
+        "subtopic": "C5"
+      },
+      {
+        "node": "kl.foundations.interval",
+        "from": "kl.01_bruhat_order",
+        "to": "kl.coxeter",
+        "subtopic": "C4"
+      },
+      {
+        "node": "kl.foundations.bruhat_step",
+        "from": "kl.01_bruhat_order",
+        "to": "kl.coxeter",
+        "subtopic": "C3"
+      },
+      {
+        "node": "kl.detail.simple_envelopes",
+        "from": "kl.01_bruhat_order",
+        "to": "kl.coxeter",
+        "subtopic": "C3"
+      },
+      {
+        "node": "kl.detail.structure_sheaves",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.localization",
+        "subtopic": "L3"
+      },
+      {
+        "node": "kl.detail.indecomposable_boundary",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S5"
+      },
+      {
+        "node": "kl.detail.upper_quotient",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S2"
+      },
+      {
+        "node": "kl.notes.boundary_image",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S2"
+      },
+      {
+        "node": "kl.sheaves.boundary_sheaf",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S4"
+      },
+      {
+        "node": "kl.detail.top_splitting",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S5"
+      },
+      {
+        "node": "kl.detail.graded_sheaf",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S2"
+      },
+      {
+        "node": "kl.detail.sheaf_isomorphisms",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S3"
+      },
+      {
+        "node": "kl.detail.primitive_summand",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S5"
+      },
+      {
+        "node": "kl.detail.model_sums",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S5"
+      },
+      {
+        "node": "kl.sheaves.flabbiness",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S2"
+      },
+      {
+        "node": "kl.detail.sheaf_morphism",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S3"
+      },
+      {
+        "node": "kl.detail.model_decomposition",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S5"
+      },
+      {
+        "node": "kl.sheaves.boundary_existence",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S4"
+      },
+      {
+        "node": "kl.sheaves.graph_sheaf",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S2"
+      },
+      {
+        "node": "kl.detail.compatible_sections",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S2"
+      },
+      {
+        "node": "kl.sheaves.relative_flabbiness",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S2"
+      },
+      {
+        "node": "kl.detail.primitive_projectors",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S5"
+      },
+      {
+        "node": "kl.detail.boundary_uniqueness",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S4"
+      },
+      {
+        "node": "kl.detail.morphism_extension",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S3"
+      },
+      {
+        "node": "kl.detail.boundary_models",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S5"
+      },
+      {
+        "node": "kl.detail.graph_transport",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S1"
+      },
+      {
+        "node": "kl.detail.boundary_extension",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S4"
+      },
+      {
+        "node": "kl.detail.split_summands",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S5"
+      },
+      {
+        "node": "kl.detail.ordered_graph",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S1"
+      },
+      {
+        "node": "kl.sheaves.upward_kernel",
+        "from": "kl.04_moment_graph_sheaves",
+        "to": "kl.sheaves",
+        "subtopic": "S2"
+      },
+      {
+        "node": "kl.detail.local_models",
+        "from": "kl.07_localization",
+        "to": "kl.localization",
+        "subtopic": "L4"
+      },
+      {
+        "node": "kl.notes.upper_image_free",
+        "from": "kl.07_localization",
+        "to": "kl.localization",
+        "subtopic": "L6"
+      },
+      {
+        "node": "kl.local.edge_inclusion",
+        "from": "kl.07_localization",
+        "to": "kl.localization",
+        "subtopic": "L7"
+      },
+      {
+        "node": "kl.detail.scaled_images",
+        "from": "kl.07_localization",
+        "to": "kl.localization",
+        "subtopic": "L6"
+      },
+      {
+        "node": "kl.local.localized_decomposition",
+        "from": "kl.07_localization",
+        "to": "kl.localization",
+        "subtopic": "L4"
+      },
+      {
+        "node": "kl.detail.base_change",
+        "from": "kl.07_localization",
+        "to": "kl.sheaves",
+        "subtopic": "S3"
+      },
+      {
+        "node": "kl.detail.edge_images",
+        "from": "kl.07_localization",
+        "to": "kl.localization",
+        "subtopic": "L6"
+      },
+      {
+        "node": "kl.notes.dihedral_models",
+        "from": "kl.07_localization",
+        "to": "kl.localization",
+        "subtopic": "L3"
+      },
+      {
+        "node": "kl.local.free_target_localization",
+        "from": "kl.07_localization",
+        "to": "kl.localization",
+        "subtopic": "L7"
+      },
+      {
+        "node": "kl.detail.dihedral_model_properties",
+        "from": "kl.07_localization",
+        "to": "kl.localization",
+        "subtopic": "L3"
+      },
+      {
+        "node": "kl.detail.localization_rings",
+        "from": "kl.07_localization",
+        "to": "kl.localization",
+        "subtopic": "L1"
+      },
+      {
+        "node": "kl.detail.quotient_image_free",
+        "from": "kl.07_localization",
+        "to": "kl.localization",
+        "subtopic": "L6"
+      },
+      {
+        "node": "kl.notes.sheaf_localization",
+        "from": "kl.07_localization",
+        "to": "kl.localization",
+        "subtopic": "L2"
+      },
+      {
+        "node": "kl.duality.bott_character_decomposition",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.sheaves",
+        "subtopic": "S9"
+      },
+      {
+        "node": "kl.detail.word_character_formula",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.word_modules",
+        "subtopic": "W7"
+      },
+      {
+        "node": "kl.detail.costalk_reciprocity",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.sheaves",
+        "subtopic": "S9"
+      },
+      {
+        "node": "kl.detail.word_flabbiness",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.sheaves",
+        "subtopic": "S7"
+      },
+      {
+        "node": "kl.detail.section_duality",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.sheaves",
+        "subtopic": "S8"
+      },
+      {
+        "node": "kl.detail.word_characters",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.word_modules",
+        "subtopic": "W7"
+      },
+      {
+        "node": "kl.notes.reflection_frobenius",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.word_modules",
+        "subtopic": "W1"
+      },
+      {
+        "node": "kl.detail.integral_adjoints",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.sheaves",
+        "subtopic": "S8"
+      },
+      {
+        "node": "kl.duality.character_identity_condition",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.sheaves",
+        "subtopic": "S10"
+      },
+      {
+        "node": "kl.notes.bott_samelson",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.word_modules",
+        "subtopic": "W3"
+      },
+      {
+        "node": "kl.detail.word_sheaf",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.sheaves",
+        "subtopic": "S7"
+      },
+      {
+        "node": "kl.detail.word_standard_stalks",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.word_modules",
+        "subtopic": "W5"
+      },
+      {
+        "node": "kl.notes.character_cancellation",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.sheaves",
+        "subtopic": "S9"
+      },
+      {
+        "node": "kl.detail.adjoint_primitivity",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.sheaves",
+        "subtopic": "S8"
+      },
+      {
+        "node": "kl.notes.supported_pairings",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.sheaves",
+        "subtopic": "S8"
+      },
+      {
+        "node": "kl.duality.stalk_character",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.sheaves",
+        "subtopic": "S9"
+      },
+      {
+        "node": "kl.detail.word_character_reciprocity",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.sheaves",
+        "subtopic": "S9"
+      },
+      {
+        "node": "kl.detail.boundary_pairing",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.sheaves",
+        "subtopic": "S8"
+      },
+      {
+        "node": "kl.detail.local_diagonal_degree",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.sheaves",
+        "subtopic": "S10"
+      },
+      {
+        "node": "kl.detail.word_evaluation_injective",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.word_modules",
+        "subtopic": "W4"
+      },
+      {
+        "node": "kl.notes.perfect_pairings",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.word_modules",
+        "subtopic": "W2"
+      },
+      {
+        "node": "kl.detail.local_intersection",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.sheaves",
+        "subtopic": "S10"
+      },
+      {
+        "node": "kl.notes.word_stalks",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.word_modules",
+        "subtopic": "W4"
+      },
+      {
+        "node": "kl.detail.costalk_duality",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.sheaves",
+        "subtopic": "S8"
+      },
+      {
+        "node": "kl.notes.tensor_pairing",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.word_modules",
+        "subtopic": "W2"
+      },
+      {
+        "node": "kl.duality.actual_character_reciprocity",
+        "from": "kl.05_duality_and_characters",
+        "to": "kl.sheaves",
+        "subtopic": "S9"
+      },
+      {
+        "node": "kl.detail.plane_basis",
+        "from": "kl.06_reflection_orders",
+        "to": "kl.reflection_combinatorics",
+        "subtopic": "O2"
+      },
+      {
+        "node": "kl.detail.diamond_closure",
+        "from": "kl.06_reflection_orders",
+        "to": "kl.reflection_combinatorics",
+        "subtopic": "O5"
+      },
+      {
+        "node": "kl.detail.transported_schedule",
+        "from": "kl.06_reflection_orders",
+        "to": "kl.reflection_combinatorics",
+        "subtopic": "O6"
+      },
+      {
+        "node": "kl.detail.geometric_functional",
+        "from": "kl.06_reflection_orders",
+        "to": "kl.reflection_combinatorics",
+        "subtopic": "O1"
+      },
+      {
+        "node": "kl.detail.diamond_reconstruction",
+        "from": "kl.06_reflection_orders",
+        "to": "kl.reflection_combinatorics",
+        "subtopic": "O5"
+      },
+      {
+        "node": "kl.notes.relative_dihedral_intervals",
+        "from": "kl.06_reflection_orders",
+        "to": "kl.reflection_combinatorics",
+        "subtopic": "O2"
+      },
+      {
+        "node": "kl.notes.path_product",
+        "from": "kl.06_reflection_orders",
+        "to": "kl.reflection_combinatorics",
+        "subtopic": "O7"
+      },
+      {
+        "node": "kl.detail.edge_factor",
+        "from": "kl.06_reflection_orders",
+        "to": "kl.localization",
+        "subtopic": "L5"
+      },
+      {
+        "node": "kl.notes.relative_dihedral_transport",
+        "from": "kl.06_reflection_orders",
+        "to": "kl.reflection_combinatorics",
+        "subtopic": "O3"
+      },
+      {
+        "node": "kl.notes.reflection_order",
+        "from": "kl.06_reflection_orders",
+        "to": "kl.reflection_combinatorics",
+        "subtopic": "O1"
+      },
+      {
+        "node": "kl.paths.graph_invariance",
+        "from": "kl.06_reflection_orders",
+        "to": "kl.reflection_combinatorics",
+        "subtopic": "O5"
+      },
+      {
+        "node": "kl.paths.dyer_paths",
+        "from": "kl.06_reflection_orders",
+        "to": "kl.reflection_combinatorics",
+        "subtopic": "O7"
+      },
+      {
+        "node": "kl.paths.later_count",
+        "from": "kl.06_reflection_orders",
+        "to": "kl.reflection_combinatorics",
+        "subtopic": "O3"
+      },
+      {
+        "node": "kl.notes.dihedral_kl",
+        "from": "kl.06_reflection_orders",
+        "to": "kl.02_hecke_polynomials",
+        "subtopic": "H5"
+      },
+      {
+        "node": "kl.paths.plane_degree",
+        "from": "kl.06_reflection_orders",
+        "to": "kl.localization",
+        "subtopic": "L5"
+      }
+    ],
+    "stable_ids_preserved": 154,
+    "registered_homes": 9,
+    "current_node_count": 164
+  },
+  "completed_milestones": [
+    "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
+    "Preserved the stable node IDs and generated redirects for the moved published pages.",
+    "Expanded realization and graded-algebra definitions and separated the plane-weight identity from polynomial degree."
+  ],
+  "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source."
 }

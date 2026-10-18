@@ -21,10 +21,9 @@ comparisons:
     KL polynomials as StalkCharacterObligation. The unconditional theorem used in
     the main route is R-reciprocity for the actual character. The local strict half-degree
     implication retains an explicit nonzero-diagonal hypothesis.
-  consequence: Follow the proved character-reciprocity and duality statements here.
-    Do not silently replace the actual character C by P, or read the conditional local-degree
-    lemma as an unconditional character-identification theorem. The completed invariance
-    proof uses the R-first route to avoid that substitution.
+  consequence: The comparison uses the actual character C and its proved R-reciprocity.
+    Canonical P is handled by the later polynomial-rigidity induction. The local degree
+    result applies to a diagonal coefficient satisfying its stated nonvanishing hypothesis.
 - id: r-first-induction
   kind: Different proof route
   nodes:
@@ -51,10 +50,9 @@ comparisons:
     R-row entries against one actual source-character vector. Canonical KL equality
     is proved afterwards in a separate induction using the now common R-matrix and
     the canonical degree bound.
-  consequence: The detailed proof on this page follows Lean. Its induction inputs,
-    the vector being compared, and the point where endpoint equality becomes available
-    must be read in that order; they are not interchangeable with the preprint’s P-first
-    steps.
+  consequence: Proper upper intervals supply kernel freeness, and proper initial intervals
+    supply known R-entries. The new R-equality gives exact endpoints and then current-rank
+    suffix freeness. The canonical degree bound enters the subsequent P-induction.
 - id: reflection-faithfulness
   kind: Same conclusion, different proof
   nodes:
@@ -69,8 +67,9 @@ comparisons:
   lean: 'The converse is proved by descent in Coxeter length: an involution with a
     simple descent is either that commuting simple reflection or has a shorter simple
     conjugate with the same moving rank.'
-  consequence: Use the length-descent proof given here. The finite-subgroup theorem
-    is part of the paper’s explanation, not an unstated input to this Lean proof.
+  consequence: The proof below follows length descent. Its shorter conjugate preserves
+    moving rank, and its commuting case identifies the element with the chosen simple
+    reflection.
 - id: r-construction
   kind: Same polynomial, different construction order
   nodes:
@@ -91,9 +90,8 @@ comparisons:
   lean: The normalized R-family is defined first as a coefficient of the Hecke bar
     transform. Its recursion is proved algebraically, and the geometric path product
     is later proved equal to that independently constructed family.
-  consequence: Definitions and proofs here begin with Lean’s bar coefficients. The
-    path formula is a theorem identifying two constructions, rather than a definition
-    that would make that identification automatic.
+  consequence: The bar construction supplies the R-family and its recursion. The path
+    theorem then identifies that family with the ordered path polynomial.
 - id: geometric-order-scope
   kind: Different stated generality
   nodes:
@@ -110,9 +108,9 @@ comparisons:
     for the constructed geometric functional on a finite lower region of a finite-generator
     system. Generic pencils and complete root-plane blocks provide its order-independence
     argument.
-  consequence: Keep the geometric-order hypotheses in this entry. Do not describe
-    this particular Lean declaration as a formalization of every abstract reflection-order
-    variant cited in the paper.
+  consequence: The geometric-order hypotheses specify the path theorem used here.
+    The generic-functional construction orders all positive roots; the transfer calculation
+    takes place on the finite region in the theorem.
 - id: dihedral-kl-identification
   kind: Same conclusion, different final identification
   nodes:
@@ -129,8 +127,8 @@ comparisons:
   lean: The same bar calculation is used to derive the sum identity for R-polynomials.
     Lean then verifies that the constant-on-comparable-pairs P-family satisfies NormalizedKL
     and applies the proved uniqueness theorem.
-  consequence: The final steps below use the R-sum identity and normalized-family
-    uniqueness, matching Lean’s route to P=1.
+  consequence: The final steps use the R-sum identity and normalized-family uniqueness
+    to obtain P=1.
 - id: induced-model-construction
   kind: Same model properties, different justification
   nodes:
@@ -149,9 +147,8 @@ comparisons:
   lean: The actual induced-label structure model is handled by orbit-spline interpolation.
     Its congruences, flow-down sections, flabbiness, global generation, and quotient
     maps are established directly before local model decomposition.
-  consequence: Use the interpolation proof and its actual ambient root labels here.
-    The formula P=1 remains a separate polynomial theorem; it is not substituted for
-    the formal construction of the model properties.
+  consequence: Orbit-spline interpolation proves the model properties for the ambient
+    root labels. These properties supply the inputs to the local decomposition theorem.
 - id: square-parameter
   kind: Equivalent parameter conventions
   nodes:
@@ -170,8 +167,8 @@ comparisons:
     \(q^{-1/2}-q^{1/2}\).
   lean: The comparison uses \(0<t<1\) and substitutes \(q=t^2\). Its scale is \(t^{-d}(1-t^2)^N\)
     and its transfer coefficient is \(t^{-1}-t\).
-  consequence: These are the same normalization after \(q=t^2\). The proof spells
-    out this substitution and retains the degree-one convention for linear root labels.
+  consequence: The substitution \(q=t^2\) identifies the two normalizations. Linear
+    root labels have degree one throughout the calculation.
 - id: word-versus-boundary-characters
   kind: Different intermediate objects
   nodes:
@@ -189,6 +186,6 @@ comparisons:
   lean: The word-stalk character is proved to equal a positive Hecke-word coefficient.
     Its R-convolution is then proved before model decomposition and cancellation.
     The separate boundary-character identification is exposed as StalkCharacterObligation.
-  consequence: Distinguish a tensor word from its boundary-model summands. The proved
-    word formula and convolution are the inputs used here; they do not assert the
-    separate boundary-character identification.
+  consequence: The word formula and R-convolution describe the tensor word. A common
+    decomposition into boundary models then supplies the character identities used
+    in the cancellation argument.

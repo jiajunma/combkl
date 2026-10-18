@@ -8,16 +8,17 @@ This repository contains a source-linked English blueprint and knowledge base, t
 - [Blueprint reading guide](https://jiajunma.github.io/combkl/kl/)
 - [Interactive dependency graph](https://jiajunma.github.io/combkl/dep_graph_document.html)
 - [Knowledge-base guide and build instructions](docs/knowledge/README.md)
-- [Main theorem](docs/knowledge/nodes/kl.09_combinatorial_invariance/combinatorial_invariance.md)
-- [Simultaneous R-tilde invariance and freeness](docs/knowledge/nodes/kl.09_combinatorial_invariance/rtilde_invariance.md)
+- [Main theorem](docs/knowledge/nodes/kl.invariance/combinatorial_invariance.md)
+- [Simultaneous R-tilde invariance and freeness](docs/knowledge/nodes/kl.invariance/rtilde_invariance.md)
 - [Authoring requirements](AGENTS.md)
 
-The knowledge base follows nine mathematical chapters derived from the Lean development:
-Bruhat order; Hecke polynomials; realizations and grading; graph sheaves;
-duality and characters; reflection orders; localization; comparison and
-freeness; and the final invariance argument. The preprint remains a reference
-throughout. Definitions, intermediate results, and proofs have separate
-source-linked entries within this single hierarchy.
+The knowledge base has nine mathematical topics: Coxeter combinatorics;
+realizations and root geometry; Hecke algebra and polynomial invariants;
+coefficient algebras and graded modules; reflection Frobenius extensions and
+word modules; moment-graph sheaves, support, and duality; reflection orders
+and paths; localization and embedded images; and Hilbert comparison and
+invariance. Definitions, intermediate results, and proofs are connected
+within this hierarchy.
 
 The published website can be read without installing anything. GitHub Actions
 rebuilds and checks the site when blueprint changes are pushed to the publishing

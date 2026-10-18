@@ -57,7 +57,7 @@ Over the Laurent coefficient ring \(\mathbb Z[v,v^{-1}]\), the Hecke bar involut
 \overline{H_w}=H_{w^{-1}}^{-1},\qquad
 \overline{fh}=\overline f\,\overline h.
 \]
-It preserves products and satisfies \(\overline{\overline h}=h\). Semilinearity means that scalar coefficients are transformed as well; the map is not linear over the Laurent ring with its scalars held fixed.
+It preserves products and satisfies \(\overline{\overline h}=h\). Semilinearity transforms scalar coefficients by the involution on the Laurent ring.
 
 For a simple reflection, \(a=v-v^{-1}\) changes to \(-a\), and
 \[
@@ -69,7 +69,7 @@ The implementation first works over a general coefficient ring with a chosen par
 \[
 \operatorname{barLinear}_a\circ\operatorname{barLinear}_{-a}=I.
 \]
-After the Laurent coefficient involution is included, this is the involution above. One should not replace it by the assertion that the fixed-parameter linear transform squares to the identity.
+The Laurent coefficient involution changes the parameter from a to its negative between the two linear transforms. Their displayed composition therefore gives the square of the semilinear involution.
 
 A bar-invariant element is one satisfying \(\overline h=h\). Canonical KL basis elements are specified by bar invariance together with a leading term and a strict triangular degree condition. The bar normalization is the choice of parameter and basis convention used in these formulas.
 

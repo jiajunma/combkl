@@ -398,3 +398,51 @@ concepts:
   terms:
   - extended action
   - extended geometric action
+- node: kl.algebra.coefficient_algebra
+  terms:
+  - symmetric coefficient algebra
+  - symmetric algebra
+  - coefficient algebra
+  - coefficient action
+- node: kl.algebra.grading_components
+  terms:
+  - homogeneous components
+  - homogeneous component
+  - component maps
+  - component map
+  - polynomial grading
+- node: kl.algebra.positive_ideal
+  terms:
+  - positive ideal
+  - positive-degree ideal
+  - augmentation
+- node: kl.algebra.homogeneous_subquotients
+  terms:
+  - homogeneous submodule
+  - homogeneous submodules
+  - quotient grading
+- node: kl.algebra.scalar_twist
+  terms:
+  - scalar twist
+  - twisted scalar action
+  - twisted module
+- node: kl.algebra.homogeneous_basis
+  terms:
+  - homogeneous basis
+  - homogeneous bases
+  - basis degrees
+- node: kl.algebra.scalar_quotient
+  terms:
+  - scalar quotient
+  - scalar quotients
+  - saturated submodule
+  - saturated submodules
+- node: kl.geometry.plane_weights
+  terms:
+  - plane weights
+  - plane weight
+  - half-root
+  - half-roots
+  - root partner
+  - root partners
+  - plane defect

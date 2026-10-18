@@ -604,5 +604,8 @@
         }
       ]
     }
-  ]
+  ],
+  "record_status": "historical_before_approved_topic_reorganization",
+  "superseded_by": "self-contained-revision.json",
+  "history_note": "The paths and prose hashes below identify the earlier numbered chapter exposition. The approved topic reorganization preserves its worked calculations in the current topic guides and records ongoing review separately."
 }

@@ -1,10 +1,10 @@
-# 2. Hecke operators and canonical polynomials
+# Hecke algebra and polynomial invariants
 
 The question is: **what are the polynomials whose invariance we are trying to prove, and why are there two R-families as well as a KL family?** We build them algebraically before introducing sheaves.
 
 Keep three notational distinctions in view. A group element \(s\) satisfies \(s^2=1\). Its unnormalized Hecke basis element \(T_s\) satisfies a different quadratic relation. The letter \(T\) without a subscript will later be a scalar variable in a normalized R-polynomial.
 
-## 1. A Hecke operator is determined by what it does to basis vectors
+## A Hecke operator is determined by what it does to basis vectors
 
 Start with the free module having one basis vector \(T_w\) for each group element \(w\). Finite linear combinations of these vectors form the underlying Hecke module. Left multiplication by \(T_s\) is specified by
 \[
@@ -31,11 +31,11 @@ The source also uses a normalized basis \(H_w\). Its simple operator has matrix
 \[
 \begin{pmatrix}0&1\\1&a\end{pmatrix}
 \]
-on \(H_1,H_s\), with \(a=v-v^{-1}\). Do not substitute the unnormalized quadratic relation into that matrix. The entries on Hecke operators and normalization give the exact correspondence.
+on \(H_1,H_s\), with \(a=v-v^{-1}\). The normalization determines this matrix. The operator and quadratic-relation entries give the conversion to the unnormalized generators.
 
 The overview [[node:kl.notes.hecke_action]] develops the operators, their quadratic relation, and the bar involution.
 
-## 2. How the bar map produces R-polynomials
+## How the bar map produces R-polynomials
 
 The bar operation reverses the parameter and replaces simple Hecke generators by their inverses. The inverse formula above makes this concrete: applying bar to a basis vector generally produces a linear combination of several basis vectors.
 
@@ -55,7 +55,7 @@ R_{1,s}=(q-1)R_{1,1}+qR_{s,1}
 
 Applying bar twice gives the identity map. At the level of coefficient matrices, this says that the appropriately reflected R-matrix is inverse to the original R-matrix. The reciprocal convolution theorem makes that matrix statement precise. It is the compatibility needed for the KL construction below.
 
-## 3. How reciprocity and a degree restriction determine P
+## How reciprocity and a degree restriction determine P
 
 The KL polynomial \(P_{x,y}(q)\) satisfies \(P_{x,x}=1\), vanishes outside Bruhat order, and obeys
 \[
@@ -76,7 +76,7 @@ For a polynomial of degree below \(d/2\), its original coefficients occupy the l
 
 The detailed defect entry fixes the sign used by the implementation when naming this right-hand-side data.
 
-## 4. Work through the two-element interval
+## Work through the two-element interval
 
 For \(x=1,y=s\), we have \(d=1\), so \(P_{1,s}\) must be a constant \(c\). The two terms of reciprocity are
 \[
@@ -87,7 +87,7 @@ Rearranging gives \((q-1)c=q-1\), hence \(c=1\).
 
 This example already shows the roles of the ingredients. The R-recursion supplies \(q-1\); the degree bound reduces the unknown to a constant; reciprocity fixes that constant. In larger intervals the same mechanism determines several low-degree coefficients.
 
-## 5. Why change parameters again?
+## Why change parameters again?
 
 The normalized family is characterized by
 \[
@@ -113,39 +113,46 @@ For \([1,s]\), \(p_1(t)=t^{-1}\) and \(p_s(t)=1\). The equation becomes
 \[
 t^{-1}=t+(t^{-1}-t)\cdot1.
 \]
-This is exactly the one-edge transfer that will reappear in chapter 8.
+This is exactly the one-edge transfer that will reappear in Hilbert comparison.
 
-## 6. What has and has not been established
+## Outputs for the geometric comparison
 
-We have constructed the canonical polynomials and proved their identities. Chapter 6 will identify normalized R-polynomials with ordered path sums. Chapter 9 will prove their invariance first, then compare two canonical KL families using the common R-matrix and the strict degree bound.
+We have constructed the canonical polynomials and proved their identities. reflection orders and paths will identify normalized R-polynomials with ordered path sums. the simultaneous invariance induction will prove their invariance first, then compare two canonical KL families using the common R-matrix and the strict degree bound.
 
-The actual sheaf character introduced in chapter 5 is a further construction, denoted \(C\). It is not defined to equal \(P\). Remembering this distinction is essential to following the verified proof route.
+The actual sheaf character introduced in word modules and sheaf duality is a further construction, denoted \(C\). It is not defined to equal \(P\). Remembering this distinction is essential to following the verified proof route.
 
-## Detailed statements and proofs
 
-The calculations above explain the constructions and transitions. The entries below give the exact hypotheses and detailed proofs for the general results.
+## Definitions and proofs by construction
 
-### Operators and the bar involution
+### Hecke modules and operators
 
-1. [[node:kl.definitions.hecke_operators]]
-2. [[node:kl.definitions.hecke_quadratic_relation]]
-3. [[node:kl.detail.hecke_quadratic_identity]]
-4. [[node:kl.definitions.bar_involution]]
-5. [[node:kl.notes.hecke_action]]
+- [[node:kl.definitions.hecke_operators]]
+- [[node:kl.definitions.hecke_quadratic_relation]]
+- [[node:kl.detail.hecke_quadratic_identity]]
+- [[node:kl.notes.hecke_action]]
 
-### The two R families
+### The bar operation
 
-1. [[node:kl.detail.rtilde_family]]
-2. [[node:kl.detail.rtilde_recursion]]
-3. [[node:kl.detail.ordinary_r]]
-4. [[node:kl.foundations.rtilde]]
-5. [[node:kl.detail.r_kernel]]
+- [[node:kl.definitions.bar_involution]]
 
-### Construction and identification of P
+### The R-polynomial families
 
-1. [[node:kl.foundations.low_half]]
-2. [[node:kl.detail.kl_defect]]
-3. [[node:kl.detail.kl_recursion]]
-4. [[node:kl.foundations.normalized_kl]]
-5. [[node:kl.foundations.canonical_kl]]
-6. [[node:kl.foundations.scaled_kl]]
+- [[node:kl.detail.ordinary_r]]
+- [[node:kl.detail.rtilde_family]]
+- [[node:kl.detail.r_kernel]]
+- [[node:kl.detail.rtilde_recursion]]
+- [[node:kl.foundations.rtilde]]
+
+### Canonical KL polynomials
+
+- [[node:kl.foundations.normalized_kl]]
+- [[node:kl.foundations.low_half]]
+- [[node:kl.detail.kl_defect]]
+- [[node:kl.detail.kl_recursion]]
+- [[node:kl.foundations.canonical_kl]]
+
+### Word expansions and rigidity
+
+- [[node:kl.foundations.scaled_kl]]
+- [[node:kl.comparison.reciprocal_rigidity]]
+- [[node:kl.notes.dihedral_kl]]

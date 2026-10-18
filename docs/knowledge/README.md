@@ -1,39 +1,24 @@
 # KL Combinatorial Invariance — Blueprint and Knowledge Base
 
-This English blueprint and knowledge base explains the completed OpenAI Lean development. Chapters
-follow its mathematical constructions and proof dependencies. The preprint
-provides context and correspondence without fixing the chapter boundaries.
+This English blueprint and knowledge base explains the completed OpenAI Lean development. Its topics follow the mathematical constructions and proof dependencies. The preprint provides context and source correspondence.
 
 Start with the [published reading guide](https://jiajunma.github.io/combkl/kl/)
 or the [dependency graph](https://jiajunma.github.io/combkl/dep_graph_document.html).
 The website requires no installation. The Markdown guide is [nodes/kl/topics.md](nodes/kl/topics.md).
 
-## Chapters
+## Mathematical topics
 
-1. [Coxeter systems and Bruhat order](nodes/kl/01_bruhat_order/topics.md)
-2. [Hecke operators and canonical polynomials](nodes/kl/02_hecke_polynomials/topics.md)
-3. [Real realizations and graded algebra](nodes/kl/03_realizations_and_grading/topics.md)
-4. [Moment-graph sheaves and minimal extensions](nodes/kl/04_moment_graph_sheaves/topics.md)
-5. [Word objects, duality, and characters](nodes/kl/05_duality_and_characters/topics.md)
-6. [Reflection orders and dihedral geometry](nodes/kl/06_reflection_orders/topics.md)
-7. [Localization and embedded edge images](nodes/kl/07_localization/topics.md)
-8. [Hilbert comparisons and kernel freeness](nodes/kl/08_comparison_and_freeness/topics.md)
-9. [Simultaneous induction and combinatorial invariance](nodes/kl/09_combinatorial_invariance/topics.md)
+- [Coxeter combinatorics](nodes/kl/coxeter/topics.md)
+- [Realizations and root geometry](nodes/kl/realizations/topics.md)
+- [Hecke algebra and polynomial invariants](nodes/kl/02_hecke_polynomials/topics.md)
+- [Coefficient algebras and graded modules](nodes/kl/graded_algebra/topics.md)
+- [Reflection Frobenius extensions and word modules](nodes/kl/word_modules/topics.md)
+- [Moment-graph sheaves, support, and duality](nodes/kl/sheaves/topics.md)
+- [Reflection orders, dihedral combinatorics, and paths](nodes/kl/reflection_combinatorics/topics.md)
+- [Localization and comparison of embedded images](nodes/kl/localization/topics.md)
+- [Hilbert comparison and combinatorial invariance](nodes/kl/invariance/topics.md)
 
-The chapter explanations start from the definitions of Coxeter groups and
-Hecke algebras and develop the additional constructions through worked
-calculations. A common two-vertex interval appears as a Bruhat interval,
-a polynomial calculation, a sheaf of congruences, a tensor-word evaluation,
-and a normalized Hilbert-state transfer. Other examples explain the \(A_2\)
-path sum, root-plane localization, and a proper inclusion invisible to rank.
-Each chapter introduces notation, explains the intermediate steps and their
-hypotheses, and then links to the detailed general statements and proofs.
-The main guide distinguishes R-polynomials, canonical KL polynomials, and
-actual sheaf characters before tracing the two inductions.
-
-The supplementary background explains minimal covers, graded Nakayama, graded projectivity, Frobenius pairings, Bott–Samelson word objects, supported sections, and character cancellation.
-
-The paper and Lean implementation organize the final comparison differently. The blueprint explicitly distinguishes the paper's KL-character presentation from the implementation's R-first route, then explains how canonical KL equality is recovered.
+The topic guides develop shared examples and connect definitions to the results that use them. The approved hierarchy and its 61 subtopics are recorded in [the organization plan](../planning/knowledge-base-hierarchy.md). The current exposition work is tracked in [the revision record](reviews/self-contained-revision.json).
 
 ## Source correspondence
 
@@ -47,8 +32,7 @@ revision remains the provenance identifier. The link updater validates all
 
     python3 scripts/update_source_links.py 108243e05ed46235bf82dc30d4d90c794579776f
 
-The completed development is represented by 81 `proved` theorem entries and
-67 `formalized` definitions/concepts. There are no `admitted` entries. Worked
+The current build contains 84 proved theorem entries and 80 formalized definitions/concepts. There are no `admitted` entries. Worked
 teaching examples are explanatory prose unless linked to a separate theorem.
 
 Source inventories and imports are supporting data, not separate mathematical topics. The generated site provides declarations.json, module-imports.json, and unchanged files under _sources/. The dependency graph is the mathematical graph of the knowledge base.
@@ -112,10 +96,7 @@ the original paper PDF and all 34 Lean modules under `_sources/`.
 
 The mathematical Markdown entries are authoritative exposition. The original Lean snapshot is preserved separately. Rebuild generated HTML and graphs rather than editing them.
 
-The [chapter exposition review](reviews/chapter-exposition-review.json)
-records the source anchors and algebraic checks for the worked chapter
-explanations. It also records that the reader's understanding has not yet
-been confirmed; a longer page or a successful build is not that confirmation.
+The [earlier exposition review](reviews/chapter-exposition-review.json) records the source anchors and calculations for the former numbered guides. The [current revision record](reviews/self-contained-revision.json) tracks the approved mathematical topics and their ongoing definition and proof review.
 
 The [Lean-to-KB coverage review](reviews/lean-coverage-review.json) inventories
 2,991 declarations across all 34 source modules and records the mathematical
@@ -127,9 +108,7 @@ coverage percentage: a helper may already be explained within a broader proof.
 The report distinguishes the complete declaration inventory from the detailed
 source review of the selected additions.
 
-Every theorem entry now has a numbered proof walkthrough, including the
-objects and maps being used, the intermediate calculations, and the precise
-induction or lifting steps. The review inventory is
+The theorem entries contain numbered proof walkthroughs. The ongoing self-contained revision expands their prerequisites, intermediate calculations, and induction steps against the local Lean proofs. The review inventory is
 [reviews/proof-detail-review.json](reviews/proof-detail-review.json). The
 builder checks that the prose matches the reviewed version; hashes and word
 counts do not themselves certify that an argument is complete.
@@ -153,8 +132,8 @@ were previously implicit or folded into broad pages. Its machine-readable
 inventory is [reviews/structure-review.json](reviews/structure-review.json).
 The chapter registry is open to mathematically justified changes; the builder
 does not enforce the preprint's six-section outline. Stable node IDs remain
-unchanged, and [redirects.yml](redirects.yml) generates redirects for all 80
-previous chapter and node URLs affected by this reorganization.
+unchanged, and [redirects.yml](redirects.yml) generates redirects for the
+previous topic and node URLs affected by this reorganization.
 
 Definition links are generated by Python during the build, using
 [concept-links.yml](concept-links.yml). That registry associates terms and

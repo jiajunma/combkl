@@ -1,0 +1,105 @@
+# Reflection Frobenius extensions and word modules
+
+A word in the simple generators determines an iterated tensor module. Each reflection supplies an invariant subalgebra and a trace pairing. Tensor induction combines these elementary pieces into a module with a homogeneous basis, evaluation coordinates indexed by subexpressions, and a character controlled by the Hecke algebra.
+
+The sheaf topic later uses the evaluation images as stalks and the simultaneous two-coordinate images as edge constraints. Here the central constructions are the tensor module, its pairings, and its stalk-character recursion.
+
+## One reflection gives a two-term decomposition of the coefficient ring
+
+Use \(A=\mathbb R[\alpha]\), with the simple reflection acting by \(s(\alpha)=-\alpha\). Its invariant subring is \(R=\mathbb R[\alpha^2]\). Every polynomial has a unique even/odd decomposition
+\[
+f(\alpha)=f_0(\alpha^2)+\alpha f_1(\alpha^2).
+\]
+Thus \(A=R\oplus\alpha R\) as an \(R\)-module.
+
+Define a trace by extracting the odd coefficient:
+\[
+\operatorname{tr}(f_0+\alpha f_1)=f_1.
+\]
+The pairing \((f,g)\mapsto\operatorname{tr}(fg)\) has matrix
+\[
+\begin{pmatrix}0&1\\1&0\end{pmatrix}
+\]
+on the \(R\)-basis \(1,\alpha\): the trace of \(1\) and \(\alpha^2\) is zero, and the trace of \(\alpha\) is one. The matrix is invertible over \(R\), so this pairing is perfect.
+
+“Perfect” means that each linear functional is represented by a unique element through the pairing. Over a ring this is stronger than injectivity: multiplication by \(\alpha\) is injective on \(A\) but cannot represent the functional corresponding to \(1\) by division inside \(A\).
+
+The general reflection Frobenius theorem proves this even/odd decomposition and trace pairing for the actual coefficient ring and reflection.
+
+## Build and evaluate the one-letter word module
+
+For the word consisting of \(s\), tensor induction gives
+\[
+B_s=A\otimes_R A.
+\]
+The tensor product identifies \((ar)\otimes b\) with \(a\otimes(rb)\) for \(r\in R\). Since \(A\) has \(R\)-basis \(1,\alpha\), the left \(A\)-module \(B_s\) has basis \(1\otimes1,1\otimes\alpha\).
+
+There are two subexpressions: omit \(s\), giving weight \(1\), or retain it, giving weight \(s\). Their evaluations are
+\[
+\operatorname{ev}_1(a\otimes b)=ab,\qquad
+\operatorname{ev}_s(a\otimes b)=a\,s(b).
+\]
+These maps are well defined because \(s(r)=r\) for \(r\in R\).
+
+On the two basis vectors, the joint evaluation matrix is
+\[
+\begin{pmatrix}1&\alpha\\1&-\alpha\end{pmatrix}.
+\]
+An element with coordinates \(u,v\in A\) maps to
+\[
+(f,g)=(u+\alpha v,\ u-\alpha v).
+\]
+If both outputs are zero, adding gives \(2u=0\) and subtracting gives \(2\alpha v=0\); hence \(u=v=0\). This proves injectivity in the example.
+
+Conversely, the image consists exactly of pairs satisfying \(f-g\in\alpha A\). Given such a pair, set \(u=(f+g)/2\) and \(v=(f-g)/(2\alpha)\), both in \(A\). These are precisely the compatible pairs of moment-graph sheaves. Thus the tensor calculation produces an actual module of sections.
+
+For a longer word, evaluation has one coordinate for every subexpression. The full-evaluation theorem proves injectivity by repeating the two-block argument. Grouping coordinates of equal group weight defines the stalk images.
+
+## Derive the word character formula from a short exact sequence
+
+Let \(C_x^{\mathbf t}(q)\) be the stalk character of an old word \(\mathbf t\), and prepend a simple reflection \(s\). If \(x<sx\), the head projection is surjective onto the old stalk at \(x\), with kernel the old stalk at \(sx\) shifted upward by one degree. Degreewise exactness therefore gives
+\[
+C_x^{s\mathbf t}(q)=C_x^{\mathbf t}(q)+qC_{sx}^{\mathbf t}(q).
+\]
+If \(sx<x\), the other projection gives
+\[
+C_x^{s\mathbf t}(q)=C_{sx}^{\mathbf t}(q)+qC_x^{\mathbf t}(q).
+\]
+The factor \(q\) records the degree-one root multiplication in the kernel; it is not an arbitrary normalization.
+
+These are exactly the coefficient recurrences for multiplication by \(1+T_s\). The empty word has one stalk \(A\) at \(1\), so its character vector is the coefficient vector of \(T_1\). Induction on the word proves
+\[
+C_x^{\mathbf s}(q)=[T_x](1+T_{s_1})\cdots(1+T_{s_m}).
+\]
+
+For the single letter \(s\), the positive Hecke word is \(1+T_s\), and both stalk characters are one. Meanwhile its global section module has basis degrees zero and one, so its graded rank is \(1+q\). Stalk character and global-section character are different quantities.
+
+
+## Definitions and proofs by construction
+
+### A reflection Frobenius extension
+
+- [[node:kl.notes.reflection_frobenius]]
+
+### Paired modules and tensor induction
+
+- [[node:kl.notes.perfect_pairings]]
+- [[node:kl.notes.tensor_pairing]]
+
+### Word modules and homogeneous bases
+
+- [[node:kl.notes.bott_samelson]]
+
+### Evaluation coordinates and stalk images
+
+- [[node:kl.notes.word_stalks]]
+- [[node:kl.detail.word_evaluation_injective]]
+
+### Two-stalk lattices and their kernels
+
+- [[node:kl.detail.word_standard_stalks]]
+
+### Word characters
+
+- [[node:kl.detail.word_characters]]
+- [[node:kl.detail.word_character_formula]]

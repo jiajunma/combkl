@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 27173,
-  "theorem_walkthroughs": 82,
+  "revised_proof_words": 27869,
+  "theorem_walkthroughs": 84,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -14,6 +14,18 @@
   ],
   "mechanical_check_limit": "The build checks text hashes, references, graph structure and formulas. These checks do not certify mathematical or pedagogical completeness.",
   "proofs": [
+    {
+      "node": "kl.algebra.kernel_saturation",
+      "source_declarations": [
+        "OAI.KLInvariance.EdgeImage.kernel_saturated",
+        "OAI.KLInvariance.EdgeImage.reduced_kernel_injective"
+      ],
+      "proof_steps": 3,
+      "previous_proof_words": 0,
+      "revised_proof_words": 179,
+      "proof_sha256": "371cc8fb94c3dc1ff0baadbb92fe262241a19dbc70e20c6d0bd55210b7fc5425",
+      "review": "Compared kernel_saturated and reduced_kernel_injective: scalar injectivity cancels a in the target, and every zero reduced class is represented by a multiple within the original kernel."
+    },
     {
       "node": "kl.comparison.edge_increment",
       "source_declarations": [
@@ -657,6 +669,20 @@
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
     },
     {
+      "node": "kl.geometry.plane_weight_sum",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.negative_pair_not_both",
+        "OAI.KLInvariance.TitsSpace.rootChange_pair",
+        "OAI.KLInvariance.TitsSpace.planeDefect_eq_double_weight",
+        "OAI.KLInvariance.TitsSpace.sum_planeWeight"
+      ],
+      "proof_steps": 5,
+      "previous_proof_words": 0,
+      "revised_proof_words": 387,
+      "proof_sha256": "81d3c0801c71d91230cb4bd1ad53386916dc28403e2ac486f6b9726db2f8f103",
+      "review": "Read the root partner/sign proof, finite-support grouping, and the separate homogeneous-degree calculation. Every inversion-sign case and the exclusion of fixed negative partners are spelled out."
+    },
+    {
       "node": "kl.local.edge_inclusion",
       "source_declarations": [
         "OAI.KLInvariance.BruhatGraph.schedule_edge_image_le"
@@ -919,14 +945,16 @@
     {
       "node": "kl.paths.plane_degree",
       "source_declarations": [
-        "OAI.KLInvariance.TitsSpace.sum_planeWeight",
+        "OAI.KLInvariance.TitsSpace.edgeFactor_homogeneous",
+        "OAI.KLInvariance.TitsSpace.edgeFactor_totalDegree",
+        "OAI.KLInvariance.TitsSpace.edgeFactorDegree_cast",
         "OAI.KLInvariance.TitsSpace.edgeFactor_degree_formula"
       ],
       "proof_steps": 4,
-      "previous_proof_words": 46,
-      "revised_proof_words": 316,
-      "proof_sha256": "7a4c4ff8bf67d52d1cb4e73ba1eea8601f310b1ca0489632a218ce8f2a2e90a2",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "previous_proof_words": 0,
+      "revised_proof_words": 207,
+      "proof_sha256": "3d5588ed32d34b07a54af5eada0aadd15f8a12c36a1cfcaa335ceb99cfecaf62",
+      "review": "Read the root partner/sign proof, finite-support grouping, and the separate homogeneous-degree calculation. Every inversion-sign case and the exclusion of fixed negative partners are spelled out."
     },
     {
       "node": "kl.realization.extension_minimality",
