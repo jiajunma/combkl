@@ -1,27 +1,79 @@
 # Combinatorial Invariance — Blueprint and Knowledge Base
 
-The goal is to explain why an isomorphism of unlabelled Bruhat intervals
+The question is whether the ordinary Kazhdan–Lusztig polynomial attached to an interval can be recovered from the interval's order alone. The usual construction of that polynomial uses simple reflections and the Hecke algebra. An order isomorphism between two intervals is not supplied with those choices.
+
+The theorem says that if
 \[
 \phi:[u,b]\xrightarrow{\sim}[u',b']
 \]
-forces equality of their ordinary Kazhdan–Lusztig polynomials
-\(P_{u,b}(q)=P'_{u',b'}(q)\). The two intervals may come from different Coxeter systems. Their order is the input; root labels and simple-reflection choices are not part of the supplied isomorphism. The precise final statement is [[node:kl.main.combinatorial_invariance]].
+is an order isomorphism of Bruhat intervals, then
+\[
+P_{u,b}(q)=P'_{u',b'}(q).
+\]
+The groups containing the intervals may be different. The exact statement is [[node:kl.main.combinatorial_invariance]].
 
-This knowledge base follows the completed Lean development. Each chapter page explains its mathematical task and the relationships among its results; the linked entries contain definitions and detailed proofs. The chapter order is a reading sequence. The dependency graph records the actual logical prerequisites, which sometimes cross chapter boundaries.
+These chapters assume the definition of a Coxeter group and the basic idea of a Hecke algebra, with brief reminders where needed. They introduce the graph-sheaf, graded-module, and localization constructions through concrete calculations. The linked entries retain the detailed general proofs and their Lean references.
 
-## The objects that connect the chapters
+## Start with one interval and follow it through the proof
 
-There are three polynomial constructions to keep distinct. The ordinary R-polynomials and normalized R-polynomials come from the Hecke bar map. Canonical KL polynomials are constructed using reciprocity and a strict degree bound. Actual boundary-sheaf characters come from homogeneous stalk bases. Their roles are:
+Take a simple reflection \(s\). The interval \([1,s]\) has just two vertices, \(1<s\). It can be viewed in several ways:
 
-| Object | Construction | Role in the proof |
-|---|---|---|
-| Normalized R-family | [[node:kl.detail.rtilde_family]] | Its entries are also path counts; they become the matrices in the comparison argument. |
-| Canonical KL family | [[node:kl.foundations.canonical_kl]] | This is the invariant sought in the final theorem. Its strict half-degree bound supplies the final rigidity argument. |
-| Actual stalk character | [[node:kl.duality.stalk_character]] | Its proved reciprocity and sheaf interpretation supply the numerical comparisons used to establish R-invariance. |
+| View | The calculation for this interval |
+|---|---|
+| Order | There is one upward edge, from \(1\) to \(s\). |
+| Canonical polynomials | The Hecke recursion gives \(R_{1,s}=q-1\); reciprocity and the degree bound give \(P_{1,s}=1\). |
+| Graph sheaf | Put \(A=\mathbb R[\alpha]\) at both vertices and \(A/(\alpha)\) at the edge. A section is a pair \((f,g)\) with \(f-g\in\alpha A\). |
+| Outgoing conditions | The lower kernel is \(\alpha A\) while the edge condition is present, and \(A\) after it is removed. The top kernel is always \(A\). |
+| Character and Hilbert value | Each stalk has character \(1\); \(H_A(q)=1/(1-q)\), while \(H_{\alpha A}(q)=q/(1-q)\). |
+| Normalized state | With \(q=t^2\), the state moves from \((t,1)\) to \((t^{-1},1)\) by adding \((t^{-1}-t)\) times the top coordinate to the bottom one. |
 
-The variable convention is \(q=t^2\), with transfer parameter \(T=t^{-1}-t>0\) for \(0<t<1\). The normalization in [[node:kl.foundations.scaled_kl]] puts polynomial reciprocity into the same matrix form as the sheaf comparison.
+Each row will be derived in the corresponding chapter. The point of following the same example is that the later numerical vector is built from the earlier modules: it is not an unrelated invariant introduced at the end.
 
-## What each chapter contributes
+A larger interval has more edges, several outgoing conditions at a vertex, and kernels whose freeness is not automatic. The proof must control those additional features, transport the edge schedule through an unlabelled isomorphism, and compare two resulting polynomial matrices. The small example illustrates the operations; it does not prove those general assertions.
+
+## A short vocabulary for the intermediate objects
+
+A graph sheaf assigns a module to each vertex and edge, with maps from both endpoints into the edge module. A stalk is a vertex module. A compatible section is a tuple of stalk vectors satisfying every required edge equation.
+
+An upward kernel consists of the vectors in one stalk that vanish under selected outgoing maps. Its full outgoing kernel is the costalk used here. A schedule is an ordered list of edges; its suffix is the final segment still waiting to be processed.
+
+A graded-rank polynomial records the degrees of a homogeneous basis of a free module. A Hilbert value instead sums the dimensions of all homogeneous pieces at a convergent real parameter. It can be defined even for modules not yet known to be free.
+
+Localization permits selected denominators in the coefficient ring. In this proof it makes some labels invertible, so their edge quotients become zero and the surviving equations can be studied in rank-two pieces.
+
+These descriptions are starting points. Chapter 3 develops the module language, chapter 4 writes the sheaf equations, chapter 7 explains the localizations, and chapter 8 calculates the states.
+
+## Keep the polynomial objects separate
+
+The notation has several layers because different constructions supply different parts of the argument:
+
+| Notation | Meaning |
+|---|---|
+| \(R_{x,y}(q)\) | Ordinary R-polynomial, constructed from Hecke data. |
+| \(\widetilde R_{x,y}(T)\) | Normalized R-polynomial; later identified with an ordered path sum. |
+| \(P_{x,y}(q)\) | Canonical KL polynomial, characterized by reciprocity and a strict degree bound. |
+| \(C_{x,b}(q)\) | Actual boundary-sheaf stalk character, obtained from homogeneous module generators. |
+| \(C_x^{\mathbf s}(q)\) | Stalk character of a tensor word, before separating its boundary-model summands. |
+
+The normalized R-family is defined in [[node:kl.detail.rtilde_family]], the canonical family in [[node:kl.foundations.canonical_kl]], and the actual character in [[node:kl.duality.stalk_character]].
+
+The one-edge example has \(C=P=1\), but the general argument does not assume that equality. It proves the needed reciprocity for \(C\), uses \(C\) to establish R-invariance, and then proves invariance of \(P\) separately.
+
+Also distinguish the Hecke basis element \(T_s\) from the scalar \(T\). In the comparison, \(0<t<1\), \(q=t^2\), and \(T=t^{-1}-t>0\). The precise reciprocal normalization is [[node:kl.foundations.scaled_kl]]. A group envelope \(L_s:W\to W\) in chapter 1 is likewise a different map from a Hecke operator on a free module; the domain and definition specify which object is meant.
+
+## The main proof as a sequence of concrete questions
+
+**First, construct the objects.** Chapters 1–3 establish the finite interval combinatorics, canonical polynomials, and coefficient algebra. Chapter 4 constructs the boundary sheaf by taking minimal covers of actual boundary images. Chapter 5 derives a reciprocal identity for its character using tensor words, pairings, and cancellation.
+
+**Next, establish a conditional comparison.** Chapter 6 reconstructs reflection edges and identifies ordered transfer products with R-polynomials. Chapter 7 proves an inclusion between lower and corrected upper edge images, assuming the upper kernel is free. Chapter 8 turns that inclusion into a state inequality and explains what equality would imply.
+
+**Then, supply the missing freeness in the correct order.** Chapter 9 uses a simultaneous induction. Smaller upper intervals supply the free upper kernels needed for the comparison. Smaller initial intervals supply the already-known R-entries. Cancelling these known entries isolates one new R-polynomial. The inverse interval isomorphism gives the reverse inequality, proving equality.
+
+**Finally, recover new freeness and compare P.** R-matrix equality makes the state comparison exact. The numerical deficits vanish, so the actual image inclusions are equalities. A backward traversal proves the new suffix kernels free, completing the simultaneous induction. A separate canonical-KL induction then eliminates a reciprocal difference using the strict half-degree bound.
+
+The two traversals and two inductions are explained with equations in chapters 8 and 9. They should not be compressed into the instruction “compare and conclude.”
+
+## Where the detailed arguments are developed
 
 | Chapter | Mathematical task | Result carried forward |
 |---|---|---|
@@ -35,20 +87,13 @@ The variable convention is \(q=t^2\), with transfer parameter \(T=t^{-1}-t>0\) f
 | 8. Hilbert comparisons and kernel freeness | Accumulate edge inequalities and recover freeness when equality is attained. | Forward comparison and reverse freeness, linked by [[node:kl.comparison.no_deficit]]. |
 | 9. Simultaneous induction and invariance | Supply the freeness hypotheses on smaller intervals, prove R-invariance, then compare canonical KL polynomials. | [[node:kl.comparison.rtilde_invariance]] and the final theorem for arbitrary Coxeter systems. |
 
-## How the main argument closes
 
-The algebraic construction of P and the geometric construction of the actual character C proceed separately. The word-object calculation and model decomposition prove R-reciprocity for C. Independently, unlabelled edge reconstruction and the path formula identify the transfer product associated with a transported schedule.
+## How to use the chapters
 
-At a single edge, root-plane localization compares its lower image with a corrected upper image, provided the upper kernel is free. Hilbert additivity turns this inclusion into an inequality. Iterating gives a comparison between the source character vector and the target R-matrix.
+Read the numbered explanations in a chapter before its detailed-entry lists. Those explanations introduce the notation, calculate a small case, and identify the precise theorem needed for the general step. The lists then lead to full statements and proofs.
 
-The simultaneous induction supplies the missing upper freeness from strictly smaller upper intervals. Previously known R-entries cancel from the bottom row of the comparison. Running the argument for the inverse interval isomorphism gives equality of the new R-entry. Equality of the full R-matrix then makes the comparison endpoints exact. Every intermediate deficit vanishes, Hilbert detection gives actual image equality, and reverse traversal produces the new kernel freeness. This completes both induction assertions without assuming the current bottom kernel is free.
+The worked examples are explanatory calculations. They do not claim to be separate Lean declarations unless an entry explicitly identifies one. Source panels and definition links are generated deterministically from the retained Lean snapshot and the concept registry.
 
-After that induction, the two canonical KL vectors satisfy reciprocity with the same R-matrix. Equality on smaller upper intervals leaves only a reciprocal bottom difference, which the strict half-degree bound forces to vanish. Finite-support parabolic transport then removes the finite-generator restriction.
+The blueprint follows the completed Lean development. Definitions are marked formalized and theorem entries proved. These describe their mathematical roles in the completed development.
 
-## Reading and source conventions
-
-Follow a chapter's grouped reading lists for the definitions and proofs behind its summary. Technical terms acquire definition links during the Python build. The Lean panels lead to the fixed source snapshot, and the dependency graph lets you trace a theorem's prerequisites.
-
-Definitions and constructions are marked formalized; theorem entries are marked proved. Both describe completed parts of the supplied development. They are different mathematical roles, not two levels of unfinished work.
-
-Lean is primary when its route differs from the OpenAI notes. In particular, the main argument uses actual-character reciprocity and R-first simultaneous induction. The separate boundary-character identification condition and the local intersection result with its nonzero-diagonal hypothesis are described in chapter 5, with explicit source comparisons. Their conditions are not silently inserted into the main proof.
+When the Lean argument and the OpenAI notes differ, the relevant entries explain the difference. The main route here uses actual-character reciprocity followed by R-first simultaneous induction. The local intersection statement with its nonzero-diagonal hypothesis and the separate boundary-character identification condition remain explicit related results, rather than hidden assumptions in the main proof.

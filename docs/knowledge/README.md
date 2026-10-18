@@ -20,15 +20,16 @@ The website requires no installation. The Markdown guide is [nodes/kl/topics.md]
 8. [Hilbert comparisons and kernel freeness](nodes/kl/08_comparison_and_freeness/topics.md)
 9. [Simultaneous induction and combinatorial invariance](nodes/kl/09_combinatorial_invariance/topics.md)
 
-Each chapter introduction explains its mathematical objective, prerequisites,
-the relationships among its main results, and their uses in later chapters,
-followed by grouped reading sequences. The main guide maps the nine chapters
-to the complete proof and distinguishes the roles of R-polynomials, canonical
-KL polynomials, and actual sheaf characters. The entries contain detailed
-mathematical exposition and supporting Lean references. Worked calculations
-include rank-one normalization, the \(A_2\) reflection graph, lower-half
-truncation, a one-edge sheaf, Hilbert normalization, the edge transfer
-coefficient, and higher-codimension detection.
+The chapter explanations start from the definitions of Coxeter groups and
+Hecke algebras and develop the additional constructions through worked
+calculations. A common two-vertex interval appears as a Bruhat interval,
+a polynomial calculation, a sheaf of congruences, a tensor-word evaluation,
+and a normalized Hilbert-state transfer. Other examples explain the \(A_2\)
+path sum, root-plane localization, and a proper inclusion invisible to rank.
+Each chapter introduces notation, explains the intermediate steps and their
+hypotheses, and then links to the detailed general statements and proofs.
+The main guide distinguishes R-polynomials, canonical KL polynomials, and
+actual sheaf characters before tracing the two inductions.
 
 The supplementary background explains minimal covers, graded Nakayama, graded projectivity, Frobenius pairings, Bott–Samelson word objects, supported sections, and character cancellation.
 
@@ -110,6 +111,11 @@ the original paper PDF and all 34 Lean modules under `_sources/`.
 ## Maintenance
 
 The mathematical Markdown entries are authoritative exposition. The original Lean snapshot is preserved separately. Rebuild generated HTML and graphs rather than editing them.
+
+The [chapter exposition review](reviews/chapter-exposition-review.json)
+records the source anchors and algebraic checks for the worked chapter
+explanations. It also records that the reader's understanding has not yet
+been confirmed; a longer page or a successful build is not that confirmation.
 
 The [Lean-to-KB coverage review](reviews/lean-coverage-review.json) inventories
 2,991 declarations across all 34 source modules and records the mathematical

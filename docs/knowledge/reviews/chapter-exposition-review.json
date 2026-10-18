@@ -1,0 +1,608 @@
+{
+  "date": "2026-10-18",
+  "scope": "Explanatory chapter revision after the user reported that the earlier summaries remained incomprehensible",
+  "starting_point": "The user previously stated knowledge of Coxeter-group definitions and basic Hecke-algebra definitions; additional background is introduced rather than presumed.",
+  "reader_understanding": "Not yet confirmed by the user",
+  "limits": [
+    "Worked examples are explanatory calculations, not new formalized declarations.",
+    "Formula parsing, reference checks and word counts do not certify mathematical completeness or reader comprehension.",
+    "No Lean execution, mathematical experiments, browser automation or screen capture."
+  ],
+  "chapters": [
+    {
+      "chapter": 0,
+      "path": "docs/knowledge/nodes/kl/topics.md",
+      "words_before": 913,
+      "words_after": 1477,
+      "purpose": "Introduce the common running example, vocabulary and distinct polynomial objects before the chapter map.",
+      "source_sha256": "8b4e15938adaae72009bed1b77c520d8bfbc3ea9b1e3c26f5564d1cb44fde2af",
+      "mathematical_checks": "Distinguished R, normalized R, canonical P, actual boundary C and word C; running example is explicitly illustrative.",
+      "reference_nodes": [
+        "kl.main.combinatorial_invariance",
+        "kl.duality.actual_character_reciprocity",
+        "kl.comparison.rtilde_invariance"
+      ],
+      "source_declarations": [
+        {
+          "name": "OAI.KLInvariance.combinatorial_invariance",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Invariance",
+          "line": 547
+        },
+        {
+          "name": "OAI.KLInvariance.BruhatGraph.stalkCharacter_reciprocity",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.DyerPaths",
+          "line": 62
+        },
+        {
+          "name": "OAI.KLInvariance.BruhatGraph.stalkCharacter_natDegree_le",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.EdgeLocalization",
+          "line": 364
+        },
+        {
+          "name": "OAI.KLInvariance.BruhatGraph.rTilde_invariance_and_freeness",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Invariance",
+          "line": 190
+        }
+      ]
+    },
+    {
+      "chapter": 1,
+      "path": "docs/knowledge/nodes/kl/01_bruhat_order/topics.md",
+      "words_before": 514,
+      "words_after": 1052,
+      "purpose": "Replace compressed summaries with introduced notation, worked calculations and explicit mathematical transitions.",
+      "source_sha256": "5750e55c38ad78e0147ad99cb81e46a037b740d93c0c334187f7d020a9bd7099",
+      "mathematical_checks": "Checked A2 ranks, the long reflection edge, and the four substitutions in simple lifting.",
+      "reference_nodes": [
+        "kl.foundations.bruhat_step",
+        "kl.detail.bruhat_lifting",
+        "kl.foundations.subword"
+      ],
+      "source_declarations": [
+        {
+          "name": "OAI.KLInvariance.BruhatStep",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Model",
+          "line": 14
+        },
+        {
+          "name": "OAI.KLInvariance.bruhatStep_simple_mul",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Bruhat",
+          "line": 262
+        },
+        {
+          "name": "OAI.KLInvariance.lowerSimple_mono",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Bruhat",
+          "line": 387
+        },
+        {
+          "name": "OAI.KLInvariance.upperSimple_mono",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Bruhat",
+          "line": 394
+        },
+        {
+          "name": "OAI.KLInvariance.bruhat_lifting",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Bruhat",
+          "line": 403
+        },
+        {
+          "name": "OAI.KLInvariance.bruhat_iff_reduced_subword",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Bruhat",
+          "line": 439
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "path": "docs/knowledge/nodes/kl/02_hecke_polynomials/topics.md",
+      "words_before": 569,
+      "words_after": 948,
+      "purpose": "Replace compressed summaries with introduced notation, worked calculations and explicit mathematical transitions.",
+      "source_sha256": "dad35345cc0ffcb63d891b506ab72aedfc7c69c05ed853cb3890e3d8e398f20d",
+      "mathematical_checks": "Checked R=q-1, P=1, the sign difference between v-v^{-1} and t^{-1}-t, and scaled rank-one reciprocity.",
+      "reference_nodes": [
+        "kl.detail.ordinary_r",
+        "kl.foundations.normalized_kl",
+        "kl.foundations.rtilde",
+        "kl.foundations.scaled_kl"
+      ],
+      "source_declarations": [
+        {
+          "name": "OAI.KLInvariance.OrdinaryR.polynomial",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.OrdinaryR",
+          "line": 62
+        },
+        {
+          "name": "OAI.KLInvariance.OrdinaryR.polynomial_recursion",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.OrdinaryR",
+          "line": 80
+        },
+        {
+          "name": "OAI.KLInvariance.OrdinaryR.polynomial_degree",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.OrdinaryR",
+          "line": 125
+        },
+        {
+          "name": "OAI.KLInvariance.NormalizedKL",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Model",
+          "line": 55
+        },
+        {
+          "name": "OAI.KLInvariance.Hecke.rTilde",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Hecke",
+          "line": 482
+        },
+        {
+          "name": "OAI.KLInvariance.rPolynomial_normalization",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Dihedral",
+          "line": 676
+        },
+        {
+          "name": "OAI.KLInvariance.scaledKL",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Dihedral",
+          "line": 730
+        },
+        {
+          "name": "OAI.KLInvariance.scaledKL_reciprocity",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Dihedral",
+          "line": 790
+        }
+      ]
+    },
+    {
+      "chapter": 3,
+      "path": "docs/knowledge/nodes/kl/03_realizations_and_grading/topics.md",
+      "words_before": 536,
+      "words_after": 1177,
+      "purpose": "Replace compressed summaries with introduced notation, worked calculations and explicit mathematical transitions.",
+      "source_sha256": "344ae6ac7a64306e669478606c5db5500f2ab3c3fd0ac545d0082af303845acc",
+      "mathematical_checks": "Checked graded shift direction, the A plus A(2) Hilbert calculation, quotient exactness, and the determinant step for projective-to-free conversion.",
+      "reference_nodes": [
+        "kl.detail.linear_quotient",
+        "kl.notes.graded_projective_free",
+        "kl.detail.hilbert_exactness"
+      ],
+      "source_declarations": [
+        {
+          "name": "OAI.KLInvariance.SymmetricPlaneIdeal.quotientEquiv",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.PlaneLocalization",
+          "line": 56
+        },
+        {
+          "name": "OAI.KLInvariance.SymmetricPlaneIdeal.ι_mem_iff",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.PlaneLocalization",
+          "line": 80
+        },
+        {
+          "name": "OAI.KLInvariance.SymmetricPlaneIdeal.ideal_isPrime",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.PlaneLocalization",
+          "line": 107
+        },
+        {
+          "name": "OAI.KLInvariance.EdgeAlgebra.rootQuotientEquiv",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.ReflectionSchedules",
+          "line": 824
+        },
+        {
+          "name": "OAI.KLInvariance.TitsSpace.linear_isUnit_iff",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.PlaneLocalization",
+          "line": 389
+        },
+        {
+          "name": "OAI.KLInvariance.Graded.exists_homogeneous_basis_polynomial",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.GradedModules",
+          "line": 472
+        },
+        {
+          "name": "OAI.KLInvariance.Graded.linearIndependent_of_projective_cover",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.GradedModules",
+          "line": 191
+        },
+        {
+          "name": "OAI.KLInvariance.Hilbert.degreeMap_surjective",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.HilbertSeries",
+          "line": 202
+        },
+        {
+          "name": "OAI.KLInvariance.Hilbert.finrank_exact",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.HilbertSeries",
+          "line": 360
+        },
+        {
+          "name": "OAI.KLInvariance.Hilbert.value_exact_of_summable",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.HilbertSeries",
+          "line": 392
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "path": "docs/knowledge/nodes/kl/04_moment_graph_sheaves/topics.md",
+      "words_before": 704,
+      "words_after": 1258,
+      "purpose": "Replace compressed summaries with introduced notation, worked calculations and explicit mathematical transitions.",
+      "source_sha256": "c8e41b4512bc0a7af77a94698602265ecefa7980dffc3c0fb0b1e4a00b79ae49",
+      "mathematical_checks": "Solved the congruence pair uniquely in the displayed section basis; distinguished generation, flabbiness, boundary image, and suffix kernels.",
+      "reference_nodes": [
+        "kl.detail.compatible_sections",
+        "kl.notes.boundary_image",
+        "kl.sheaves.upward_kernel",
+        "kl.detail.model_decomposition"
+      ],
+      "source_declarations": [
+        {
+          "name": "OAI.KLInvariance.MomentGraph.Sheaf.CompatibleOn",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Sheaves",
+          "line": 41
+        },
+        {
+          "name": "OAI.KLInvariance.MomentGraph.Sheaf.sections",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Sheaves",
+          "line": 161
+        },
+        {
+          "name": "OAI.KLInvariance.MomentGraph.Sheaf.Generated",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Sheaves",
+          "line": 175
+        },
+        {
+          "name": "OAI.KLInvariance.MomentGraph.GradedSheaf.boundaryHom",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.GradedSheaves",
+          "line": 74
+        },
+        {
+          "name": "OAI.KLInvariance.MomentGraph.GradedSheaf.boundaryImage",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.GradedSheaves",
+          "line": 81
+        },
+        {
+          "name": "OAI.KLInvariance.MomentGraph.Sheaf.upwardKernel",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.GradedSheaves",
+          "line": 599
+        },
+        {
+          "name": "OAI.KLInvariance.MomentGraph.GradedSheaf.exists_modelSumIso",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.SheafMorphisms",
+          "line": 1642
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "path": "docs/knowledge/nodes/kl/05_duality_and_characters/topics.md",
+      "words_before": 818,
+      "words_after": 1632,
+      "purpose": "Replace compressed summaries with introduced notation, worked calculations and explicit mathematical transitions.",
+      "source_sha256": "bd3cd5c5627a690494198bb9c2157c8f2933c8a1abcc9eaf28e70226bae85c91",
+      "mathematical_checks": "Checked the invariant-ring trace pairing, both tensor evaluation coordinates, stalk versus section characters, dual degree shifts, and cancellation with common multiplicities. Computed the A-valued one-edge section pairing (ff′−gg′)/(2α) and the supported vector representing a stalk functional.",
+      "reference_nodes": [
+        "kl.notes.reflection_frobenius",
+        "kl.notes.bott_samelson",
+        "kl.detail.word_character_formula",
+        "kl.detail.boundary_pairing",
+        "kl.duality.actual_character_reciprocity",
+        "kl.notes.tensor_pairing"
+      ],
+      "source_declarations": [
+        {
+          "name": "OAI.KLInvariance.ReflectionFrobenius.coordinates",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Decomposition",
+          "line": 1504
+        },
+        {
+          "name": "OAI.KLInvariance.ReflectionFrobenius.trace",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Decomposition",
+          "line": 1517
+        },
+        {
+          "name": "OAI.KLInvariance.ReflectionFrobenius.trace_mul",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Decomposition",
+          "line": 1530
+        },
+        {
+          "name": "OAI.KLInvariance.TitsSpace.bottSamelson",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Frobenius",
+          "line": 394
+        },
+        {
+          "name": "OAI.KLInvariance.TitsSpace.BottSamelsonModule",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Frobenius",
+          "line": 399
+        },
+        {
+          "name": "OAI.KLInvariance.TitsSpace.BottIndex",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Frobenius",
+          "line": 947
+        },
+        {
+          "name": "OAI.KLInvariance.TitsSpace.bottWeight",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Frobenius",
+          "line": 1056
+        },
+        {
+          "name": "OAI.KLInvariance.TitsSpace.bottHeadKernelEquiv",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.BottSamelson",
+          "line": 1578
+        },
+        {
+          "name": "OAI.KLInvariance.TitsSpace.bottHeadRightKernelEquiv",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.BottSamelson",
+          "line": 2045
+        },
+        {
+          "name": "OAI.KLInvariance.TitsSpace.bottStalkCharacter_ascent",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.IntegralPairings",
+          "line": 104
+        },
+        {
+          "name": "OAI.KLInvariance.TitsSpace.bottStalkCharacter_descent",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.IntegralPairings",
+          "line": 120
+        },
+        {
+          "name": "OAI.KLInvariance.TitsSpace.bottStalkCharacter_eq_heckeWord",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.IntegralPairings",
+          "line": 289
+        },
+        {
+          "name": "OAI.KLInvariance.BruhatGraph.boundarySheaf_symmetricPairing",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.EdgeLocalization",
+          "line": 1006
+        },
+        {
+          "name": "OAI.KLInvariance.TitsSpace.bottCanonicalAdjointIso",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.EdgeLocalization",
+          "line": 833
+        },
+        {
+          "name": "OAI.KLInvariance.TitsSpace.bottCanonicalPerfectPairing_apply",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.EdgeLocalization",
+          "line": 906
+        },
+        {
+          "name": "OAI.KLInvariance.BruhatGraph.stalkCharacter_reciprocity",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.DyerPaths",
+          "line": 62
+        },
+        {
+          "name": "OAI.KLInvariance.BruhatGraph.stalkCharacter_natDegree_le",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.EdgeLocalization",
+          "line": 364
+        },
+        {
+          "name": "OAI.KLInvariance.FrobeniusDuality.inducedModule_pairing_tmul",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Frobenius",
+          "line": 276
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "path": "docs/knowledge/nodes/kl/06_reflection_orders/topics.md",
+      "words_before": 639,
+      "words_after": 1148,
+      "purpose": "Replace compressed summaries with introduced notation, worked calculations and explicit mathematical transitions.",
+      "source_sha256": "a94fa2c19e1abd4aff04a767b86e625c693385049d7af7998b2b742e130908d4",
+      "mathematical_checks": "Enumerated all four saturated A2 chains and the single long edge; checked the decreasing paths and product-versus-chronological ordering.",
+      "reference_nodes": [
+        "kl.notes.path_product",
+        "kl.paths.dyer_paths",
+        "kl.detail.diamond_reconstruction",
+        "kl.paths.plane_degree"
+      ],
+      "source_declarations": [
+        {
+          "name": "OAI.KLInvariance.SchedulePaths.dispatch",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.ReflectionSchedules",
+          "line": 1177
+        },
+        {
+          "name": "OAI.KLInvariance.SchedulePaths.dispatch_eq_subpaths_sum",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.DyerPaths",
+          "line": 1794
+        },
+        {
+          "name": "OAI.KLInvariance.WallDyer.geometric_entry_eq_rTilde",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.ReflectionOrders",
+          "line": 1229
+        },
+        {
+          "name": "OAI.KLInvariance.diamondEdges_of_bruhatStep_general",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.DyerPaths",
+          "line": 175
+        },
+        {
+          "name": "OAI.KLInvariance.diamondEdges_bruhatStep_general",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.DyerPaths",
+          "line": 204
+        },
+        {
+          "name": "OAI.KLInvariance.TitsSpace.sum_planeWeight",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.ReflectionSchedules",
+          "line": 621
+        },
+        {
+          "name": "OAI.KLInvariance.TitsSpace.edgeFactor_degree_formula",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.ReflectionSchedules",
+          "line": 993
+        }
+      ]
+    },
+    {
+      "chapter": 7,
+      "path": "docs/knowledge/nodes/kl/07_localization/topics.md",
+      "words_before": 625,
+      "words_after": 1229,
+      "purpose": "Replace compressed summaries with introduced notation, worked calculations and explicit mathematical transitions.",
+      "source_sha256": "58c73591cbf2cede45aa39f6d5918f01ea4485fcb1cefdf8848c939db6f5cefa",
+      "mathematical_checks": "Checked the localization and quotient example, saturation input to upper-image freeness, generic span, and the proper-ideal counterexample to rank-only comparison.",
+      "reference_nodes": [
+        "kl.detail.localization_rings",
+        "kl.notes.upper_image_free",
+        "kl.local.localized_decomposition",
+        "kl.local.free_target_localization"
+      ],
+      "source_declarations": [
+        {
+          "name": "OAI.KLInvariance.EdgeAlgebra.rootIdeal",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.ReflectionSchedules",
+          "line": 771
+        },
+        {
+          "name": "OAI.KLInvariance.EdgeAlgebra.rootLine",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.ReflectionSchedules",
+          "line": 774
+        },
+        {
+          "name": "OAI.KLInvariance.SymmetricPlaneIdeal.ideal",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.PlaneLocalization",
+          "line": 16
+        },
+        {
+          "name": "OAI.KLInvariance.TitsSpace.planePrime",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.PlaneLocalization",
+          "line": 355
+        },
+        {
+          "name": "OAI.KLInvariance.TitsSpace.PlaneRing",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.PlaneLocalization",
+          "line": 381
+        },
+        {
+          "name": "OAI.KLInvariance.TitsSpace.LocalizedEdgeRing",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.PlaneLocalization",
+          "line": 1312
+        },
+        {
+          "name": "OAI.KLInvariance.BruhatGraph.upperImage_free",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.TerminalKernels",
+          "line": 691
+        },
+        {
+          "name": "OAI.KLInvariance.TitsSpace.PlaneBasis.localized_boundary_decomposition",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.TerminalKernels",
+          "line": 200
+        },
+        {
+          "name": "OAI.KLInvariance.EdgeLattice.mem_iff_localized_at_height_one",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.ModuleAlgebra",
+          "line": 106
+        }
+      ]
+    },
+    {
+      "chapter": 8,
+      "path": "docs/knowledge/nodes/kl/08_comparison_and_freeness/topics.md",
+      "words_before": 627,
+      "words_after": 1273,
+      "purpose": "Replace compressed summaries with introduced notation, worked calculations and explicit mathematical transitions.",
+      "source_sha256": "8fd9deed23ce59345c3e30bc2dddb10cb5738d7394185078750a320a67eb3fdb",
+      "mathematical_checks": "Checked both endpoint states and the numerical t=1/2 specialization, every exponent in the transfer coefficient, deficit propagation, and the two-presentation projectivity argument.",
+      "reference_nodes": [
+        "kl.comparison.normalized_kernel",
+        "kl.detail.schedule_state",
+        "kl.comparison.no_deficit",
+        "kl.detail.reverse_projectivity"
+      ],
+      "source_declarations": [
+        {
+          "name": "OAI.KLInvariance.BruhatGraph.normalizedKernel",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.PositiveTransfer",
+          "line": 599
+        },
+        {
+          "name": "OAI.KLInvariance.BruhatGraph.stateScale",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.PositiveTransfer",
+          "line": 591
+        },
+        {
+          "name": "OAI.KLInvariance.BruhatGraph.remainingConditions",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.PositiveTransfer",
+          "line": 1089
+        },
+        {
+          "name": "OAI.KLInvariance.BruhatGraph.scheduleState",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.PositiveTransfer",
+          "line": 1114
+        },
+        {
+          "name": "OAI.KLInvariance.Comparison.every_step_eq_of_endpoint_eq",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Comparison",
+          "line": 119
+        },
+        {
+          "name": "OAI.KLInvariance.ReverseFiltration.inf_kernel_projective_of_image_eq",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.PositiveTransfer",
+          "line": 970
+        }
+      ]
+    },
+    {
+      "chapter": 9,
+      "path": "docs/knowledge/nodes/kl/09_combinatorial_invariance/topics.md",
+      "words_before": 749,
+      "words_after": 1277,
+      "purpose": "Replace compressed summaries with introduced notation, worked calculations and explicit mathematical transitions.",
+      "source_sha256": "884629536bd1784f629f1fb007857b8c4c25d1d6c63e8264d3c75bc4c332d9ae",
+      "mathematical_checks": "Checked smaller-interval hypotheses, the use of one source-character vector in each direction, the order of R/freeness and P inductions, and disjoint degree ranges in rigidity.",
+      "reference_nodes": [
+        "kl.comparison.rtilde_step",
+        "kl.detail.endpoint_equality",
+        "kl.comparison.rtilde_invariance",
+        "kl.main.kl_finite",
+        "kl.main.finite_model_transport"
+      ],
+      "source_declarations": [
+        {
+          "name": "OAI.KLInvariance.BruhatGraph.rTilde_eq_of_smaller_data",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Invariance",
+          "line": 95
+        },
+        {
+          "name": "OAI.KLInvariance.BruhatGraph.actual_endpoint_of_rTilde_eq",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.SimultaneousInvariance",
+          "line": 278
+        },
+        {
+          "name": "OAI.KLInvariance.BruhatGraph.rTilde_invariance_and_freeness",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Invariance",
+          "line": 190
+        },
+        {
+          "name": "OAI.KLInvariance.BruhatGraph.klPolynomial_invariance_finite",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Invariance",
+          "line": 427
+        },
+        {
+          "name": "OAI.KLInvariance.exists_finiteIntervalModel",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Invariance",
+          "line": 484
+        },
+        {
+          "name": "OAI.KLInvariance.FiniteIntervalModel.orderIso",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Invariance",
+          "line": 505
+        },
+        {
+          "name": "OAI.KLInvariance.FiniteIntervalModel.kl_eq",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Invariance",
+          "line": 517
+        },
+        {
+          "name": "OAI.KLInvariance.StandardParabolic.inclusion_injective",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Tits",
+          "line": 1446
+        },
+        {
+          "name": "OAI.KLInvariance.StandardParabolic.length_inclusion",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Tits",
+          "line": 1488
+        },
+        {
+          "name": "OAI.KLInvariance.StandardParabolic.bruhat_inclusion_iff",
+          "module": "OAI.RepresentationTheory.KazhdanLusztig.Tits",
+          "line": 1519
+        }
+      ]
+    }
+  ]
+}

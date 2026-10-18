@@ -86,6 +86,17 @@ designated documents; this section is the reusable authoring contract.
   a catalogue of links is insufficient. Distinguish logical dependencies
   from suggested reading order and preserve conditional hypotheses when
   summarizing a result's role.
+- When the reader still cannot follow a chapter, replace compressed summaries
+  with an explanatory development: introduce the local objects and symbols,
+  work through a small example, display the intermediate calculation, then
+  explain the precise result that generalizes it. Reuse examples across
+  chapters so the same modules, maps, and numbers can be followed through the
+  argument. Do not respond merely by adding more theorem names, specialist
+  vocabulary, or longer summaries. Start from the user's recorded background
+  and distinguish it from any new assumption about their knowledge. Label
+  illustrative calculations appropriately, preserve the general hypotheses,
+  and use reader feedback rather than word counts or successful builds to
+  assess whether an explanation has become understandable.
 - Give detailed proofs, not abstract proof summaries. State the ambient
   objects and hypotheses, define local notation, and explain each inference
   and displayed equality. For induction, give the induction statement, base

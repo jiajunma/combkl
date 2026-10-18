@@ -47,6 +47,8 @@ L_x(F)=\{v\in B^x:\rho_{x,e}(v)=0\text{ for every }e\in F\}.
 \]
 The empty set gives \(L_x(\varnothing)=B^x\). Adding edge conditions decreases this submodule. For an edge \(e:x\to y\), map \(L_x(F)\) and \(L_y(G)\) into the common edge module to obtain the lower and upper images.
 
+When \(F\) contains every outgoing edge at \(x\), this is the full outgoing kernel, called the costalk in this blueprint. At a top vertex there are no outgoing edges, so its full outgoing kernel is the whole stalk. A suffix kernel uses only the outgoing edges still present in a suffix of the chosen schedule.
+
 ## References
 
 [2. Real realizations and moment-graph sheaves](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L2).

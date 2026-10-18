@@ -359,3 +359,17 @@ concepts:
   - local model
   - ungraded model sum
   - ungraded model sums
+- node: kl.sheaves.upward_kernel
+  terms:
+  - costalk
+  - costalks
+  - full outgoing kernel
+  - full outgoing kernels
+  - suffix kernel
+  - suffix kernels
+- node: kl.notes.bott_samelson
+  terms:
+  - tensor word
+  - tensor words
+  - Bott–Samelson module
+  - Bott–Samelson modules
