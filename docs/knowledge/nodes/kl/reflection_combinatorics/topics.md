@@ -59,7 +59,7 @@ The decreasing path sum is \(T+T^3\). The geometric Dyer theorem identifies this
 
 The direct edge jumps three ranks but contributes \(T\), because path weight counts edges, not rank difference. This is a useful distinction when reading the general path formula.
 
-## What the Dyer theorem adds to the matrix expansion
+## Identification of the path polynomial with the R-polynomial
 
 The matrix expansion alone only counts ordered paths. It does not explain why the resulting polynomial is the bar coefficient from Hecke algebra and polynomial invariants.
 

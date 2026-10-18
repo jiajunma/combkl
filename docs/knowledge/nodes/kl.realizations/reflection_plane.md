@@ -6,7 +6,9 @@ status: proved
 primary_topic: kl.realizations
 topics:
 - kl.realizations
-uses: []
+uses:
+- kl.realization.linear_reflection
+- kl.realization.moving_spaces
 lean:
   repository: openai-kl
   modules:
@@ -66,7 +68,7 @@ Linearity of \(f\) gives
 \]
 Thus every image vector lies in \(\operatorname{span}\{\alpha,\beta\}\).
 
-### Step 2. Explain why the pair of functionals is surjective
+### Step 2. Surjectivity of the pair of functionals
 
 Consider \(F:V\to k^2\), \(F(v)=(f(v),g(v))\). If its image were a proper subspace of the two-dimensional space \(k^2\), some nonzero linear functional on \(k^2\), say \((a,b)\mapsto ca+db\), would vanish on that image.
 

@@ -10,7 +10,7 @@ Both are submodules of \(B^e\). The goal is \(I_e\subseteq f_eJ_e\), where \(f_e
 
 The freeness hypothesis concerns the upper kernel \(K_y\). It gives a free target for the lower-image comparison.
 
-## Why the upper image becomes a free module over the edge ring
+## Freeness of the upper image over the edge ring
 
 The upper quotient rule gives
 \[
@@ -32,7 +32,7 @@ If \(K_y\) has an \(A\)-basis of \(r\) elements, their residue classes give a ba
 
 This explains exactly where upper-kernel freeness is consumed. Finite generation or equality of ranks would not supply this free target.
 
-## What localization means in a concrete ring
+## Localization in polynomial coordinates
 
 Take the illustrative coefficient ring \(A=\mathbb R[\alpha,\beta,\gamma]\) and the prime ideal
 \[
@@ -66,7 +66,7 @@ When these labels are pairwise relatively prime in the divisibility sense, this 
 
 The decomposition is an isomorphism of sheaves, so it carries these computed kernels and images through maps that commute with restrictions. An isomorphism of stalk ranks would not be enough.
 
-## Why root-plane counts become a scalar correction
+## Root-plane counts and the scalar correction
 
 Now reduce the illustrative localized ring modulo the current edge label \(\alpha\). A plane label \(\beta+c\alpha\) becomes \(\beta\). More generally, any nonparallel plane root has a nonzero real multiple of \(\beta\) as its reduction. Such factors differ by units.
 
@@ -92,7 +92,7 @@ If a reduced denominator of \(a_i\) contained a factor \(p\), then \(a_i\) could
 
 Apply this argument to each element of \(I_e\), using the local comparisons from the preceding steps. We obtain \(I_e\subseteq f_eJ_e\) globally.
 
-## Why inclusion is the right conclusion at this stage
+## The image inclusion and its Hilbert defect
 
 Consider \(C=\mathbb R[\beta,\gamma]\) and \(I=(\beta,\gamma)\subset C\). At every height-one prime, at least one of \(\beta,\gamma\) is invertible, so \(I\) localizes to the whole ring. Nevertheless \(I\ne C\), since \(1\notin I\).
 

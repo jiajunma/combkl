@@ -59,7 +59,7 @@ The groups themselves may be infinite.
 
 **Lean (primary):** The simultaneous induction first proves normalized R-invariance together with suffix-kernel freeness in both transported directions. It cancels known bottom R-row entries against one actual source-character vector. Canonical KL equality is proved afterwards in a separate induction using the now common R-matrix and the canonical degree bound. [Invariance:136](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L136), [Invariance:190](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L190), [Invariance:427](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L427).
 
-**How to read this entry:** Proper upper intervals supply kernel freeness, and proper initial intervals supply known R-entries. The new R-equality gives exact endpoints and then current-rank suffix freeness. The canonical degree bound enters the subsequent P-induction.
+**Role in the proof:** Proper upper intervals supply kernel freeness, and proper initial intervals supply known R-entries. The new R-equality gives exact endpoints and then current-rank suffix freeness. The canonical degree bound enters the subsequent P-induction.
 <!-- source-comparison:end -->
 
 *Proof.*

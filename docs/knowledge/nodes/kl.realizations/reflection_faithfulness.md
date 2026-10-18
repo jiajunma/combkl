@@ -11,6 +11,8 @@ uses:
 - kl.realization.reflection_plane
 - kl.foundations.subword
 - kl.realization.extended_action
+- kl.realization.moving_spaces
+- kl.realization.orthogonal_rank_one
 lean:
   repository: openai-kl
   modules:
@@ -65,7 +67,7 @@ Thus the root labels detect exactly the group elements having a codimension-one 
 
 **Lean (primary):** The converse is proved by descent in Coxeter length: an involution with a simple descent is either that commuting simple reflection or has a shorter simple conjugate with the same moving rank. [Tits:1156](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean#L1156), [Tits:1255](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean#L1255).
 
-**How to read this entry:** The proof below follows length descent. Its shorter conjugate preserves moving rank, and its commuting case identifies the element with the chosen simple reflection.
+**Role in the proof:** The proof below follows length descent. Its shorter conjugate preserves moving rank, and its commuting case identifies the element with the chosen simple reflection.
 <!-- source-comparison:end -->
 
 *Proof.*

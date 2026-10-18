@@ -42,7 +42,7 @@ The Hecke algebra supplies the ordinary R-polynomials and the canonical KL polyn
 
 The definitions are [[node:kl.detail.ordinary_r]], [[node:kl.detail.rtilde_family]], [[node:kl.foundations.normalized_kl]], and [[node:kl.duality.stalk_character]]. The main Lean route proves reciprocity for \(C\), uses it to establish R-invariance, and then applies the characterization of \(P\).
 
-## How the proof develops
+## Structure of the invariance proof
 
 **Build the algebraic objects.** Coxeter combinatorics supplies finite ranked intervals. The realization supplies root vectors, their actions, and polynomial edge labels. Graded module theory supplies minimal covers, bases, and Hilbert values. These inputs construct the boundary sheaf.
 

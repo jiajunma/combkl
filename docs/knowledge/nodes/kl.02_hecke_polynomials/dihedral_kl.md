@@ -55,7 +55,7 @@ P^D_{x,w}(q)=1\qquad(x\le_D w).
 
 **Lean (primary):** The same bar calculation is used to derive the sum identity for R-polynomials. Lean then verifies that the constant-on-comparable-pairs P-family satisfies NormalizedKL and applies the proved uniqueness theorem. [Dihedral:557](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Dihedral.lean#L557), [Dihedral:605](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Dihedral.lean#L605), [Dihedral:615](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Dihedral.lean#L615), [Dihedral:656](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Dihedral.lean#L656).
 
-**How to read this entry:** The final steps use the R-sum identity and normalized-family uniqueness to obtain P=1.
+**Role in the proof:** The final steps use the R-sum identity and normalized-family uniqueness to obtain P=1.
 <!-- source-comparison:end -->
 
 *Proof.*

@@ -61,7 +61,7 @@ are distinct for distinct positive roots. Ordering roots by these slopes gives t
 
 **Lean (primary):** The referenced formal entry theorem establishes the required path formula for the constructed geometric functional on a finite lower region of a finite-generator system. Generic pencils and complete root-plane blocks provide its order-independence argument. [ReflectionSchedules:126](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L126), [ReflectionOrders:1229](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionOrders.lean#L1229).
 
-**How to read this entry:** The geometric-order hypotheses specify the path theorem used here. The generic-functional construction orders all positive roots; the transfer calculation takes place on the finite region in the theorem.
+**Role in the proof:** The geometric-order hypotheses specify the path theorem used here. The generic-functional construction orders all positive roots; the transfer calculation takes place on the finite region in the theorem.
 <!-- source-comparison:end -->
 
 *Proof.*

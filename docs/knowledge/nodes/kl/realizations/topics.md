@@ -96,3 +96,15 @@ The coefficient algebra uses the extended root space and turns a root vector int
 - [[node:kl.detail.root_reflection_correspondence]]
 - [[node:kl.detail.root_inversions]]
 - [[node:kl.detail.root_inversion_count]]
+
+## Operator relations and dual coordinates
+
+The Chebyshev recurrence computes powers of two simple reflections. For a finite Coxeter exponent, the even or odd vanishing identity makes the product have the required power on the two-root span; the common fixed space completes the calculation on the ambient vector space. The coordinate-dual action applies the same relation theorem to Gram rows and coordinate evaluations, including an infinite generator set.
+
+The moving-space definition separates the linear-algebra statement from the group-theoretic one. An orthogonal map with moving rank one has an explicit reflection formula. The Coxeter argument then uses length descent to identify the group element producing that map.
+
+- [[node:kl.realization.rank_two_coefficients]]
+- [[node:kl.realization.finite_reflection_relations]]
+- [[node:kl.realization.moving_spaces]]
+- [[node:kl.realization.orthogonal_rank_one]]
+- [[node:kl.realization.cotangent_action]]

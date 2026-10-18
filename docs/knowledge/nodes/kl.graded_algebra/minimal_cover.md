@@ -54,7 +54,7 @@ with
 \]
 These conditions specify the source, its freeness, the homogeneous map, its surjectivity, and the minimality of its kernel.
 
-## What remains after reduction
+## Reduction modulo the positive ideal
 
 The map induces
 \[

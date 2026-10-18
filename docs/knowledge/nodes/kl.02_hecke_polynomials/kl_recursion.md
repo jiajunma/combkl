@@ -1,6 +1,6 @@
 ---
 id: kl.detail.kl_recursion
-title: Why the lower-half construction satisfies reciprocity
+title: Reciprocity of the lower-half construction
 kind: theorem
 status: proved
 primary_topic: kl.02_hecke_polynomials
@@ -51,7 +51,7 @@ tags:
 - hecke_polynomials
 ---
 
-# Why the lower-half construction satisfies reciprocity
+# Reciprocity of the lower-half construction
 
 The recursively constructed family satisfies
 \[

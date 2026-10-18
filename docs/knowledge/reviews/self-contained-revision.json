@@ -55,8 +55,10 @@
         "OAI.KLInvariance.TitsSpace.action_preserves"
       ],
       "review": "Definition, ambient assumptions, displayed calculations, and source correspondence checked against local declarations.",
-      "pending": [
-        "Expand the finite Coxeter reflection relation into a standalone detailed proof."
+      "pending": [],
+      "completion_evidence": [
+        "kl.realization.finite_reflection_relations",
+        "kl.realization.rank_two_coefficients"
       ]
     },
     {
@@ -216,6 +218,127 @@
       "file": "docs/knowledge/nodes/kl.sheaves/compatible_sections.md",
       "review": "Aligned the primary section module with Sheaves.sections as a submodule of full ambient assignments. Explained projection to restricted tuples, its kernel and zero-extension splitting, compatibility monotonicity, and the one-edge example.",
       "pending": []
+    },
+    {
+      "node": "kl.coxeter.word_data",
+      "file": "docs/knowledge/nodes/kl.coxeter/word_data.md",
+      "source_declarations": [
+        "OAI.KLInvariance.CoxeterSupport.leftInvSeq_alternating_formula",
+        "OAI.KLInvariance.CoxeterSupport.wordAction_record"
+      ],
+      "review": "Read the local signed-action definitions and proof bodies; all group products and parity conventions are explicit.",
+      "pending": []
+    },
+    {
+      "node": "kl.coxeter.signed_word_action",
+      "file": "docs/knowledge/nodes/kl.coxeter/signed_word_action.md",
+      "source_declarations": [
+        "OAI.KLInvariance.CoxeterSupport.simpleAction",
+        "OAI.KLInvariance.CoxeterSupport.wordAction"
+      ],
+      "review": "Read the local signed-action definitions and proof bodies; all group products and parity conventions are explicit.",
+      "pending": []
+    },
+    {
+      "node": "kl.coxeter.word_sign_record",
+      "file": "docs/knowledge/nodes/kl.coxeter/word_sign_record.md",
+      "source_declarations": [
+        "OAI.KLInvariance.CoxeterSupport.wordAction_record"
+      ],
+      "review": "Read the local signed-action definitions and proof bodies; all group products and parity conventions are explicit.",
+      "pending": []
+    },
+    {
+      "node": "kl.coxeter.signed_coxeter_relations",
+      "file": "docs/knowledge/nodes/kl.coxeter/signed_coxeter_relations.md",
+      "source_declarations": [
+        "OAI.KLInvariance.CoxeterSupport.leftInvSeq_alternating_formula",
+        "OAI.KLInvariance.CoxeterSupport.leftInvSeq_relation_doubled",
+        "OAI.KLInvariance.CoxeterSupport.wordAction_alternating",
+        "OAI.KLInvariance.CoxeterSupport.simpleAction_liftable"
+      ],
+      "review": "Read the local signed-action definitions and proof bodies; all group products and parity conventions are explicit.",
+      "pending": []
+    },
+    {
+      "node": "kl.coxeter.signed_reflection_action",
+      "file": "docs/knowledge/nodes/kl.coxeter/signed_reflection_action.md",
+      "source_declarations": [
+        "OAI.KLInvariance.CoxeterSupport.reflectionAction",
+        "OAI.KLInvariance.CoxeterSupport.reflectionAction_simple",
+        "OAI.KLInvariance.CoxeterSupport.reflectionAction_wordProd",
+        "OAI.KLInvariance.CoxeterSupport.reflectionAction_translation"
+      ],
+      "review": "Read the local signed-action definitions and proof bodies; all group products and parity conventions are explicit.",
+      "pending": []
+    },
+    {
+      "node": "kl.coxeter.reflection_sign_flip",
+      "file": "docs/knowledge/nodes/kl.coxeter/reflection_sign_flip.md",
+      "source_declarations": [
+        "OAI.KLInvariance.CoxeterSupport.reflectionAction_reflection"
+      ],
+      "review": "Read the local signed-action definitions and proof bodies; all group products and parity conventions are explicit.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.rank_two_coefficients",
+      "file": "docs/knowledge/nodes/kl.realizations/rank_two_coefficients.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.rootCoeff",
+        "OAI.KLInvariance.TitsSpace.rootCoeff_zero",
+        "OAI.KLInvariance.TitsSpace.rootCoeff_neg_one",
+        "OAI.KLInvariance.TitsSpace.rootCoeff_succ",
+        "OAI.KLInvariance.TitsSpace.rootCoeff_nonneg"
+      ],
+      "review": "Read the local declarations and proof bodies; expanded the displayed linear algebra and coefficient recurrences.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.finite_reflection_relations",
+      "file": "docs/knowledge/nodes/kl.realizations/finite_reflection_relations.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Realization.reflection_pow_even_eq_one",
+        "OAI.KLInvariance.Realization.reflection_pow_odd_eq_one",
+        "OAI.KLInvariance.Realization.geometric_reflection_relation"
+      ],
+      "review": "Read the local declarations and proof bodies; expanded the displayed linear algebra and coefficient recurrences.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.moving_spaces",
+      "file": "docs/knowledge/nodes/kl.realizations/moving_spaces.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Realization.finrank_moving_conj",
+        "OAI.KLInvariance.Realization.range_reflection_sub_id",
+        "OAI.KLInvariance.Realization.finrank_reflection_sub_id",
+        "OAI.KLInvariance.TitsSpace.reflectionFaithful"
+      ],
+      "review": "Read the local declarations and proof bodies; expanded the displayed linear algebra and coefficient recurrences.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.orthogonal_rank_one",
+      "file": "docs/knowledge/nodes/kl.realizations/orthogonal_rank_one.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Realization.orthogonal_rank_one_form",
+        "OAI.KLInvariance.Realization.orthogonal_finrank_one"
+      ],
+      "review": "Read the local declarations and proof bodies; expanded the displayed linear algebra and coefficient recurrences.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.cotangent_action",
+      "file": "docs/knowledge/nodes/kl.realizations/cotangent_action.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Cotangent.root",
+        "OAI.KLInvariance.Cotangent.simple",
+        "OAI.KLInvariance.Cotangent.action",
+        "OAI.KLInvariance.Cotangent.action_simple",
+        "OAI.KLInvariance.Cotangent.pairing"
+      ],
+      "review": "Read the local declarations and proof bodies; expanded the displayed linear algebra and coefficient recurrences.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -223,19 +346,29 @@
     {
       "code": "C1",
       "title": "Coxeter data, words, length, and reflections",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "exposition_reviewed",
+      "completion_evidence": [
+        "kl.coxeter.word_data"
+      ],
+      "review_scope": "Word products, reduced length, reflections, descents, parity, and the inversion-sequence deletion calculation are defined and explained."
     },
     {
       "code": "C2",
       "title": "Signed reflection actions",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "exposition_reviewed",
+      "completion_evidence": [
+        "kl.coxeter.signed_word_action",
+        "kl.coxeter.word_sign_record",
+        "kl.coxeter.signed_coxeter_relations",
+        "kl.coxeter.signed_reflection_action",
+        "kl.coxeter.reflection_sign_flip"
+      ],
+      "review_scope": "Simple and word permutations, the parity record, Coxeter relations, the descended group action, translation, and self-label sign reversal have explicit definitions and proofs."
     },
     {
       "code": "C3",
       "title": "Strong Bruhat order and lifting",
-      "status": "pending",
+      "status": "in_progress",
       "completion_evidence": []
     },
     {
@@ -259,8 +392,14 @@
     {
       "code": "R2",
       "title": "The geometric action",
-      "status": "in_progress",
-      "completion_evidence": []
+      "status": "exposition_reviewed",
+      "completion_evidence": [
+        "kl.realization.linear_reflection",
+        "kl.realization.geometric_action",
+        "kl.realization.rank_two_coefficients",
+        "kl.realization.finite_reflection_relations"
+      ],
+      "review_scope": "The reflection formula, preservation calculation, finite relations, both Chebyshev parity cases, and construction of the geometric action are explained."
     },
     {
       "code": "R3",
@@ -283,7 +422,7 @@
     {
       "code": "R6",
       "title": "Dual geometry and root planes",
-      "status": "pending",
+      "status": "in_progress",
       "completion_evidence": []
     },
     {
@@ -588,11 +727,11 @@
     }
   ],
   "next_steps": [
-    "Complete C1/C2: Coxeter words, reflections, signed reflection actions, and their role in the Bruhat proofs.",
-    "Complete R2/R4/R6: finite Coxeter reflection relations, the rank-one orthogonal lemma, root signs, and the cotangent/plane constructions.",
+    "Expand the minimal parabolic decomposition and alternating-root formulas used in the simple-root sign theorem; then complete the faithfulness proof chain.",
+    "Complete the root/reflection and signed-root correspondences and finite-support transport explanations.",
     "Expand word-module evaluation lattices and sheaf support/cut definitions, including every remaining unmapped structure.",
-    "Review every proof and all 61 subtopics against the local Lean bodies and the corresponding OpenAI notes; replace compressed inference steps.",
-    "Finish the nondefensive prose pass, link coverage, full documentation validation, and public deployment audit."
+    "Review every remaining proof and subtopic against the local Lean bodies and corresponding OpenAI notes; replace compressed inference steps.",
+    "Continue the direct mathematical prose and title pass, link coverage, document validation, and public deployment audit."
   ],
   "topic_migration": {
     "status": "applied",
@@ -771,7 +910,18 @@
       "kl.algebra.scalar_quotient": "A7",
       "kl.algebra.kernel_saturation": "A7",
       "kl.geometry.plane_weights": "O4",
-      "kl.geometry.plane_weight_sum": "O4"
+      "kl.geometry.plane_weight_sum": "O4",
+      "kl.coxeter.word_data": "C1",
+      "kl.coxeter.signed_word_action": "C2",
+      "kl.coxeter.word_sign_record": "C2",
+      "kl.coxeter.signed_coxeter_relations": "C2",
+      "kl.coxeter.signed_reflection_action": "C2",
+      "kl.coxeter.reflection_sign_flip": "C2",
+      "kl.realization.rank_two_coefficients": "R2",
+      "kl.realization.finite_reflection_relations": "R2",
+      "kl.realization.moving_spaces": "R4",
+      "kl.realization.orthogonal_rank_one": "R4",
+      "kl.realization.cotangent_action": "R6"
     },
     "moved_nodes": [
       {
@@ -1605,12 +1755,44 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 164
+    "current_node_count": 175
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
     "Preserved the stable node IDs and generated redirects for the moved published pages.",
-    "Expanded realization and graded-algebra definitions and separated the plane-weight identity from polynomial degree."
+    "Expanded realization and graded-algebra definitions and separated the plane-weight identity from polynomial degree.",
+    "Expanded the signed Coxeter-action proof chain and the finite geometric reflection relations.",
+    "Applied direct mathematical titles across all rendered pages and recorded the authoring requirement."
   ],
-  "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source."
+  "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
+  "title_style_revision": {
+    "requirement": "Direct mathematical titles; no What/Why/How question framing.",
+    "changed_pages": [
+      "docs/knowledge/nodes/kl.02_hecke_polynomials/kl_recursion.md",
+      "docs/knowledge/nodes/kl/topics.md",
+      "docs/knowledge/nodes/kl.realizations/reflection_plane.md",
+      "docs/knowledge/nodes/kl.graded_algebra/minimal_cover.md",
+      "docs/knowledge/nodes/kl.graded_algebra/graded_nakayama.md",
+      "docs/knowledge/nodes/kl.coxeter/finite_model_transport.md",
+      "docs/knowledge/nodes/kl.invariance/combinatorial_invariance.md",
+      "docs/knowledge/nodes/kl/reflection_combinatorics/topics.md",
+      "docs/knowledge/nodes/kl/02_hecke_polynomials/topics.md",
+      "docs/knowledge/nodes/kl/coxeter/topics.md",
+      "docs/knowledge/nodes/kl/invariance/topics.md",
+      "docs/knowledge/nodes/kl/graded_algebra/topics.md",
+      "docs/knowledge/nodes/kl/localization/topics.md",
+      "docs/knowledge/nodes/kl/sheaves/topics.md"
+    ],
+    "proof_heading_only_changes": [
+      "kl.main.combinatorial_invariance",
+      "kl.main.finite_model_transport",
+      "kl.notes.graded_nakayama",
+      "kl.realization.reflection_plane"
+    ],
+    "validation": {
+      "rendered_html_pages_checked": 435,
+      "question_framed_headings": 0,
+      "source_comparison_label": "Role in the proof"
+    }
+  }
 }

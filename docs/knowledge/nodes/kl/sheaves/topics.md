@@ -50,7 +50,7 @@ A polynomial \(g\) prescribed at \(y\) extends to \((g,g)\), so the example is f
 
 Relative flabbiness is the extension statement for sets closed under the edges that remain relevant after localization. It will be used in localization and edge-image comparison when some edge modules become zero.
 
-## The boundary image tells us what a new stalk must map onto
+## The boundary image as the target of the new stalk
 
 Suppose only the portion of a sheaf strictly above \(x\) has been constructed. Restrict a section there to each edge leaving \(x\). The resulting tuple lies in the product of the outgoing edge modules. The set of all such tuples is the boundary image at \(x\).
 
@@ -80,7 +80,7 @@ The last equality holds because the top vertex has no outgoing edges. Removing t
 
 On a larger graph there are intermediate kernels corresponding to different subsets of conditions. Defining these submodules does not make them free. Their freeness is one of the conclusions of the simultaneous induction, so it cannot be assumed at this stage.
 
-## Why isomorphisms must include the restriction maps
+## Commuting restriction maps in a sheaf isomorphism
 
 A sheaf isomorphism consists of an isomorphism at every vertex and edge, commuting with both restrictions. For example, if \(j_x\) and \(j_e\) are the lower stalk and edge maps, they must satisfy
 \[
@@ -150,7 +150,7 @@ A section supported only at the lower vertex has the form \((\alpha h,0)\). The 
 \]
 Thus the degree-zero dual generator of the stalk corresponds to a supported generator of degree one. The factor \(2\) is an invertible scalar. This calculation shows concretely how the outgoing kernel is related to a shifted stalk dual; the general support-duality theorem constructs this relation with all incoming labels accounted for.
 
-## Why passing to the boundary summand needs an adjoint
+## Adjoint images and the boundary-summand pairing
 
 moment-graph sheaves embeds the normalized boundary sheaf as a split summand of a reduced-word sheaf. Let the inclusion and projection be \(i,p\), with \(pi=1\), and put \(e=ip\). Then \(e^2=e\).
 

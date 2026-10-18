@@ -101,7 +101,7 @@ c(t)\le \widetilde R'(t^{-1}-t)c(t^{-1}),
 \]
 where the prime denotes the target Coxeter system whose order supplied the transported schedule.
 
-## Why exact endpoints force all the intermediate gaps to vanish
+## Endpoint equality and vanishing intermediate deficits
 
 Suppose a later argument establishes equality of the two endpoints. Let \(X_j\) be the ideal state obtained by applying transfers exactly, and \(D_j\) the actual state. Initially they agree. Put \(E_j=X_j-D_j\).
 
@@ -277,7 +277,7 @@ Subtract their bottom equations. Every term indexed by \(z>a\) vanishes by induc
 \Delta(t)=\Delta(t^{-1}).
 \]
 
-## See why the degree bound forces the difference to vanish
+## Vanishing of the reciprocal difference below the middle degree
 
 Put \(p=P_{a,b}-P'_{a',b'}\) and \(d=d(a,b)>0\). Undoing the normalization gives
 \[

@@ -41,7 +41,7 @@ def comparison_blocks(root, index, repository):
             f"**{item['kind']}.**\n\n"
             f"**OpenAI notes:** {item['paper']} " + ", ".join(paper_links) + ".\n\n"
             f"**Lean (primary):** {item['lean']} " + ", ".join(lean_links) + ".\n\n"
-            f"**How to read this entry:** {item['consequence']}"
+            f"**Role in the proof:** {item['consequence']}"
         )
         for node_id in item["nodes"]:
             blocks[node_id].append(text)

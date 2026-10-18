@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 27869,
-  "theorem_walkthroughs": 84,
+  "revised_proof_words": 28804,
+  "theorem_walkthroughs": 89,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -115,6 +115,42 @@
       "revised_proof_words": 368,
       "proof_sha256": "183d03e91754854b72144e0c4ca1078dd7c790b7f869b378bcb7af377df31f51",
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+    },
+    {
+      "node": "kl.coxeter.reflection_sign_flip",
+      "source_declarations": [
+        "OAI.KLInvariance.CoxeterSupport.reflectionAction_reflection"
+      ],
+      "proof_steps": 3,
+      "previous_proof_words": 0,
+      "revised_proof_words": 94,
+      "proof_sha256": "680dab81b49ecae3d5d190f091007bfcd19dca5c2a0e4f9ae681ba105c58d313",
+      "review": "Compared the source induction and group calculations. Expanded the appended-word conjugation, doubled inversion list, and cancellation of inverse sign translations."
+    },
+    {
+      "node": "kl.coxeter.signed_coxeter_relations",
+      "source_declarations": [
+        "OAI.KLInvariance.CoxeterSupport.leftInvSeq_alternating_formula",
+        "OAI.KLInvariance.CoxeterSupport.leftInvSeq_relation_doubled",
+        "OAI.KLInvariance.CoxeterSupport.wordAction_alternating",
+        "OAI.KLInvariance.CoxeterSupport.simpleAction_liftable"
+      ],
+      "proof_steps": 3,
+      "previous_proof_words": 0,
+      "revised_proof_words": 220,
+      "proof_sha256": "ea5999ef066096f6b7e3b97e0a03b67bc42bc4efda28a1fbcb27e37c75e6c161",
+      "review": "Compared the source induction and group calculations. Expanded the appended-word conjugation, doubled inversion list, and cancellation of inverse sign translations."
+    },
+    {
+      "node": "kl.coxeter.word_sign_record",
+      "source_declarations": [
+        "OAI.KLInvariance.CoxeterSupport.wordAction_record"
+      ],
+      "proof_steps": 3,
+      "previous_proof_words": 0,
+      "revised_proof_words": 173,
+      "proof_sha256": "1d9e86a5c5698f06669be2e2eda295e2e35a37e5c8e151f035ef1231fd61afbd",
+      "review": "Compared the source induction and group calculations. Expanded the appended-word conjugation, doubled inversion list, and cancellation of inverse sign translations."
     },
     {
       "node": "kl.detail.adjoint_primitivity",
@@ -463,9 +499,9 @@
       ],
       "proof_steps": 5,
       "previous_proof_words": 84,
-      "revised_proof_words": 403,
-      "proof_sha256": "9e200a751ddb5f62354bac7449db4872d814771b1c7f68a02cb8f00cdf104ae3",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 249,
+      "proof_sha256": "de3696723e2c428ba6c4072a4252be04a405515b93596084395281aec417af2d",
+      "review": "Compared mem_leftInvSeq_of_inversion and strong_exchange. The signed-action and parity results now have separate detailed proofs; the contradiction uses a reduced word for tw and the exact deletion identity."
     },
     {
       "node": "kl.detail.top_splitting",
@@ -722,9 +758,10 @@
       ],
       "proof_steps": 5,
       "previous_proof_words": 74,
-      "revised_proof_words": 265,
-      "proof_sha256": "f8fd73c111fba159e1fcf64f24d44b80973f7cdef3b81bb1ec3238357d981f5e",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 263,
+      "proof_sha256": "a8ad74e6498d9a00f90baeca32a5c5826ca321581f2d1ec4f4cf865896163aeb",
+      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test.",
+      "heading_revision": "Read the step body and named its actual induction setup or interval data; all non-heading proof text is unchanged."
     },
     {
       "node": "kl.main.finite_model_transport",
@@ -738,9 +775,10 @@
       ],
       "proof_steps": 4,
       "previous_proof_words": 63,
-      "revised_proof_words": 541,
-      "proof_sha256": "ec8cb1360438705e9a9eb48c28313238929548b56a94529d3d7666b1401582bc",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 536,
+      "proof_sha256": "a13ca7b2b3943d0f09080c282fd77c9701b628b6329bd75a88ed98c7925a3a03",
+      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test.",
+      "heading_revision": "Replaced the question-style step heading with its mathematical statement; verified the non-heading proof text is unchanged."
     },
     {
       "node": "kl.main.kl_finite",
@@ -796,9 +834,10 @@
       ],
       "proof_steps": 4,
       "previous_proof_words": 143,
-      "revised_proof_words": 265,
-      "proof_sha256": "83a687723ea40204ae3fc187da6848c171dfa668f90227fee711bfa873c4e5c5",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 267,
+      "proof_sha256": "ce490c31c97cb72fb513a35fd4c398bc2537ed2aff9c96c7078879c060fb98fa",
+      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test.",
+      "heading_revision": "Read the step body and named its actual induction setup or interval data; all non-heading proof text is unchanged."
     },
     {
       "node": "kl.notes.graded_projective_free",
@@ -969,15 +1008,42 @@
       "review": "Read extension_dimension_minimal; expanded its orthogonal-complement dimension argument through restriction of dual functionals and rank-nullity, and checked the attaining extension."
     },
     {
+      "node": "kl.realization.finite_reflection_relations",
+      "source_declarations": [
+        "OAI.KLInvariance.Realization.reflection_pow_even_eq_one",
+        "OAI.KLInvariance.Realization.reflection_pow_odd_eq_one",
+        "OAI.KLInvariance.Realization.geometric_reflection_relation"
+      ],
+      "proof_steps": 7,
+      "previous_proof_words": 0,
+      "revised_proof_words": 403,
+      "proof_sha256": "f25ea6c5f9368dddfa87afc98545472fdfc1db776bcbfbd334bade51e897722a",
+      "review": "Expanded the reflection-power identity and checked the matrix, complement coefficients, Chebyshev recurrence, and both parity calculations against geometric_reflection_relation.",
+      "formatting_check": "The second matrix row starts with a space after the TeX row separator; matrix entries remain 2,c,c,2."
+    },
+    {
+      "node": "kl.realization.orthogonal_rank_one",
+      "source_declarations": [
+        "OAI.KLInvariance.Realization.orthogonal_rank_one_form",
+        "OAI.KLInvariance.Realization.orthogonal_finrank_one"
+      ],
+      "proof_steps": 4,
+      "previous_proof_words": 0,
+      "revised_proof_words": 206,
+      "proof_sha256": "f8c6cd4c2fb303c28dddc6fe33d527e7ed8fa3900da7bb48a8aa9ef555033f16",
+      "review": "Followed the rank-one functional construction and the source orthogonality proof; verified f(u)=-2, the nonzero norm, and the final reflection formula."
+    },
+    {
       "node": "kl.realization.reflection_plane",
       "source_declarations": [
         "OAI.KLInvariance.ReflectionPlane.range_preReflection_product_sub_id"
       ],
       "proof_steps": 3,
       "previous_proof_words": 45,
-      "revised_proof_words": 174,
-      "proof_sha256": "a474a28a71ac10d572496cf6ed30dba9f85976612a4c235b5d2a8361a81bf4ae",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 172,
+      "proof_sha256": "678c326b8aa8bfd812b724c90d8892d874019625882a4141c7468f380a0b2903",
+      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test.",
+      "heading_revision": "Replaced the question-style step heading with its mathematical statement; verified the non-heading proof text is unchanged."
     },
     {
       "node": "kl.sheaves.boundary_existence",

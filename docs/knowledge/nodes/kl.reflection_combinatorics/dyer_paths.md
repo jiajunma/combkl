@@ -59,7 +59,7 @@ Expanding the product assigns \(T\) to each edge, so a composable decreasing ref
 
 **Lean (primary):** The normalized R-family is defined first as a coefficient of the Hecke bar transform. Its recursion is proved algebraically, and the geometric path product is later proved equal to that independently constructed family. [Hecke:482](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean#L482), [Hecke:491](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean#L491), [ReflectionOrders:1229](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionOrders.lean#L1229).
 
-**How to read this entry:** The bar construction supplies the R-family and its recursion. The path theorem then identifies that family with the ordered path polynomial.
+**Role in the proof:** The bar construction supplies the R-family and its recursion. The path theorem then identifies that family with the ordered path polynomial.
 
 **Different stated generality.**
 
@@ -67,7 +67,7 @@ Expanding the product assigns \(T\) to each edge, so a composable decreasing ref
 
 **Lean (primary):** The referenced formal entry theorem establishes the required path formula for the constructed geometric functional on a finite lower region of a finite-generator system. Generic pencils and complete root-plane blocks provide its order-independence argument. [ReflectionSchedules:126](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L126), [ReflectionOrders:1229](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionOrders.lean#L1229).
 
-**How to read this entry:** The geometric-order hypotheses specify the path theorem used here. The generic-functional construction orders all positive roots; the transfer calculation takes place on the finite region in the theorem.
+**Role in the proof:** The geometric-order hypotheses specify the path theorem used here. The generic-functional construction orders all positive roots; the transfer calculation takes place on the finite region in the theorem.
 <!-- source-comparison:end -->
 
 *Proof.*

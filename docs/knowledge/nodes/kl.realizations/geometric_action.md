@@ -9,6 +9,8 @@ topics:
 uses:
 - kl.realization.tits_form
 - kl.realization.linear_reflection
+- kl.coxeter.word_data
+- kl.realization.finite_reflection_relations
 lean:
   repository: openai-kl
   modules:
@@ -86,7 +88,7 @@ To define a homomorphism from a presented group, the proposed images must satisf
 \[
 (r_ir_j)^{m_{ij}}=1.
 \]
-The local proof establishes this equation from the simple-root pairings by calculating powers of the two-reflection operator. Consequently equivalent words give the same linear map, and the universal property of the Coxeter presentation supplies \(\rho_0\).
+The proof is [[node:kl.realization.finite_reflection_relations]], which calculates powers using the normalized Chebyshev recurrence and treats both parities of the exponent. Consequently equivalent words give the same linear map, and the universal property of the Coxeter presentation supplies \(\rho_0\).
 
 The same construction works on any real vector space with a bilinear form and root vectors satisfying the specified pairings. The extended action applies it to the extended root space.
 

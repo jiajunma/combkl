@@ -11,6 +11,7 @@ uses:
 - kl.foundations.finite_support
 - kl.foundations.canonical_kl
 - kl.foundations.subword
+- kl.realization.cotangent_action
 lean:
   repository: openai-kl
   modules:
@@ -105,7 +106,7 @@ Injectivity follows from injectivity of the parabolic inclusion.
 
 For surjectivity, an element \(x\le b=j(\bar b)\) has a reduced subword expression inside a reduced expression of \(\bar b\). Hence \(x=j(\bar x)\) for some \(\bar x\le\bar b\). Since \(u\le x\), order reflection gives \(\bar u\le\bar x\). Therefore every element of \([u,b]\) occurs. Restricting the inverse gives the order isomorphism.
 
-### Step 3. Explain why polynomial transport is independent of the main theorem
+### Step 3. Polynomial transport through parabolic inclusion
 
 The parabolic polynomial identity is proved from the defining recursions, not from combinatorial invariance. Parabolic inclusion preserves length and simple multiplication by generators in \(J\). Therefore the R-recursion in the parabolic and the ambient system has identical descent cases and identical lower terms. Induction on the upper endpoint's length identifies the R-families.
 

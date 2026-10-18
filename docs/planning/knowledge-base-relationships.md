@@ -12,7 +12,7 @@ Suggested reading order is a separate layer. For example, a reader can learn gen
 
 The structured [relationship register](knowledge-base-relations.json) records the stages, their inputs, their outputs, and Lean anchors. The stage graph is a mathematical exposition graph; the anchors locate its interfaces in the local source.
 
-## How the nine branches fit together
+## Relationships among the nine branches
 
 **Coxeter combinatorics (C) supplies the common underlying intervals.** The realization branch R equips reflections with roots and actions; H equips intervals with R and P polynomials. These are different constructions on the same Coxeter data.
 

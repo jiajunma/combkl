@@ -4,6 +4,12 @@ The question in this topic is: **what does an unlabelled Bruhat interval actuall
 
 We use the definition of a Coxeter system \((W,S)\). Here \(W\) is the group, \(S\) is its set of simple reflections, and \(1\) is its identity. A word is a finite product of elements of \(S\). The length \(\ell(w)\) is the least number of letters in a word representing \(w\); a word attaining that minimum is reduced.
 
+## Words, inversion sequences, and signed permutations
+
+A word gives a product in the group and a reflection attached to each position. Multiplying its product by that reflection deletes the corresponding letter. The signed word action records the parity of the occurrences of each reflection in this list.
+
+The doubled inversion list of a Coxeter relation makes its sign contribution zero. Consequently the signed word action descends to the group. A reflection then toggles its own label, and this sign change forces every left inversion to occur in the inversion sequence of a reduced word. The deletion identity becomes strong exchange.
+
 ## From reflections to an order
 
 A reflection is a conjugate \(r=wsw^{-1}\) of a simple reflection. Thus every simple reflection is a reflection, but there are usually more reflections than simple generators.
@@ -43,7 +49,7 @@ Each length-one element lies below both length-two elements, which lie below \(w
 
 These examples display the distinction between cover edges and reflection edges. The edge-reconstruction theorem explains how to recover the latter from the order in general.
 
-## What strong exchange supplies
+## Strong exchange and deletion
 
 Choose a reduced word \(b=s_1\cdots s_m\). Suppose a reflection \(r\) shortens \(b\): \(\ell(rb)<\ell(b)\). Strong exchange says that \(rb\) is represented by deleting one of the letters:
 \[
@@ -57,7 +63,7 @@ For the word \(st\) in the example, its subwords give \(1,s,t,st\). This explain
 
 For the full proofs, read [[node:kl.detail.strong_exchange]] followed by [[node:kl.foundations.subword]].
 
-## Why simple multiplication is replaced by envelopes
+## Monotone simple envelopes
 
 Left multiplication itself is not monotone: \(1<s\), but \(s1=s>1=ss\). Instead, fix a simple reflection \(s\) and define
 \[
@@ -77,7 +83,7 @@ L_s(x)=x,\quad L_s(y)=sy,\quad U_s(x)=sx,\quad U_s(y)=y.
 \]
 Monotonicity therefore gives \(x\le sy\) and \(sx\le y\). The general proof is [[node:kl.detail.bruhat_lifting]]. This result also controls the upper sets used in the later induction on tensor words.
 
-## Why the later constructions are finite
+## Finite intervals and finite generator support
 
 The fixed reduced word for \(b\) has \(m\) positions, hence only \(2^m\) choices of positions to retain. Every element below \(b\) is represented by one of those choices. Different choices may represent the same element, but that can only reduce the number of elements. Thus the lower ideal \([1,b]\), and every interval inside it, is finite.
 
@@ -85,7 +91,7 @@ The same argument gives more than cardinality. Every such subword uses only the 
 
 Finally, Bruhat intervals are ranked: saturated chains from \(x\) to \(y\) have \(\ell(y)-\ell(x)\) steps. An order isomorphism preserves covers and chains, so it preserves this rank difference. It need not preserve the separate absolute lengths of the endpoints.
 
-## What to carry into the later constructions
+## Inputs for the geometric and algebraic constructions
 
 We now have finite sums over intervals, a size \(d(x,y)=\ell(y)-\ell(x)\) for induction, and a way to restrict an isomorphism to smaller intervals. Hecke algebra and polynomial invariants uses the finite sums to define reciprocal polynomial identities. reflection orders and paths returns to the distinction between covers and all reflection edges. the simultaneous invariance induction uses finite generator support to transport the final theorem back to arbitrary Coxeter systems.
 
@@ -114,3 +120,12 @@ Before proceeding, check that you can explain why the edge \(1\to w_0\) in the \
 - [[node:kl.foundations.finite_support]]
 - [[node:kl.main.finite_interval_model]]
 - [[node:kl.main.finite_model_transport]]
+
+## The word and signed-action constructions
+
+- [[node:kl.coxeter.word_data]]
+- [[node:kl.coxeter.signed_word_action]]
+- [[node:kl.coxeter.word_sign_record]]
+- [[node:kl.coxeter.signed_coxeter_relations]]
+- [[node:kl.coxeter.signed_reflection_action]]
+- [[node:kl.coxeter.reflection_sign_flip]]

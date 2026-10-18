@@ -50,7 +50,7 @@ then \(N=M\).
 
 *Proof.*
 
-### Step 1. Reformulate what must be proved
+### Step 1. The degree induction and its lower bound
 
 Let \(J=A_{>0}\), let \(N\subseteq M\) be closed under homogeneous components, and assume \(M=N+JM\). Suppose \(M_n=0\) for \(n<d_0\). It suffices to show that every homogeneous element lies in \(N\), because each element of a graded direct sum has only finitely many nonzero homogeneous components.
 

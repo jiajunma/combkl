@@ -385,6 +385,8 @@ concepts:
   terms:
   - linear reflection
   - linear reflections
+  - pre-reflection
+  - pre-reflections
 - node: kl.realization.radical_extension
   terms:
   - radical
@@ -446,3 +448,48 @@ concepts:
   - root partner
   - root partners
   - plane defect
+- node: kl.coxeter.word_data
+  terms:
+  - reduced word
+  - reduced words
+  - reduced expression
+  - left inversion sequence
+  - left inversions
+  - left descent
+  - right descent
+  - reduced expressions
+  - left inversion sequences
+  - left inversion
+  - left descents
+  - right descents
+  - Coxeter reflection
+  - Coxeter reflections
+  - simple generators
+  - simple generator
+- node: kl.coxeter.signed_word_action
+  terms:
+  - signed label
+  - signed labels
+  - signed simple permutation
+  - signed word action
+- node: kl.coxeter.signed_reflection_action
+  terms:
+  - signed reflection action
+  - sign translation
+- node: kl.realization.rank_two_coefficients
+  terms:
+  - Chebyshev polynomials
+  - Chebyshev recurrence
+  - rank-two root coefficients
+- node: kl.realization.moving_spaces
+  terms:
+  - moving space
+  - moving spaces
+  - moving rank
+  - fixed space
+  - reflection faithful
+  - reflection faithfulness
+- node: kl.realization.cotangent_action
+  terms:
+  - cotangent action
+  - coordinate-dual action

@@ -6,7 +6,10 @@ status: proved
 primary_topic: kl.coxeter
 topics:
 - kl.coxeter
-uses: []
+uses:
+- kl.coxeter.word_data
+- kl.coxeter.word_sign_record
+- kl.coxeter.reflection_sign_flip
 lean:
   repository: openai-kl
   modules:
@@ -40,63 +43,51 @@ tags:
 
 # Strong exchange and deletion from a reduced word
 
-Let \(w=s_1\cdots s_n\) be a supplied reduced expression in an arbitrary Coxeter system. If a reflection \(t\) is a left inversion of \(w\), meaning \(\ell(tw)<\ell(w)\), then some position \(j\) satisfies
+Let \(\omega=(i_1,\ldots,i_n)\) be a reduced word for \(w\) in an arbitrary Coxeter system. Suppose a reflection \(t\) satisfies \(\ell(tw)<\ell(w)\). Then there is a position \(j\) such that
 \[
-tw=s_1\cdots\widehat{s_j}\cdots s_n.
+tw=s_{i_1}\cdots\widehat{s_{i_j}}\cdots s_{i_n}.
 \]
-The deletion takes place in this particular reduced expression; the assertion is not merely that some shorter expression exists.
 
 *Proof.*
 
-### Step 1. Record the reflection attached to each position
+### Step 1. Reduce deletion to occurrence in the inversion sequence
 
-For a word \(\omega=(s_1,\ldots,s_n)\), let \(w=s_1\cdots s_n\) and
+Let \(t_j=u_{j-1}s_{i_j}u_{j-1}^{-1}\) be the reflection at position \(j\), where \(u_{j-1}\) is the prefix product. The word-deletion calculation gives
 \[
-t_j=s_1\cdots s_{j-1}s_j s_{j-1}\cdots s_1.
+t_jw=s_{i_1}\cdots\widehat{s_{i_j}}\cdots s_{i_n}.
 \]
-Direct cancellation gives
-\(t_jw=s_1\cdots\widehat{s_j}\cdots s_n\).
-Thus it is enough to show that the given left inversion \(t\) occurs among the \(t_j\).
+It therefore suffices to prove that \(t\) occurs among these entries.
 
-### Step 2. Build the signed action used to detect occurrence
+### Step 2. Evaluate the signed action under the omission assumption
 
-Let a simple reflection \(s\) act on a pair \((r,\varepsilon)\), with \(\varepsilon\in\mathbb Z/2\mathbb Z\), by
+Suppose \(t\) is absent from the inversion sequence of \(\omega\). Its multiplicity is zero, so the word-record theorem gives
 \[
-(r,\varepsilon)\longmapsto(srs,\ \varepsilon+\mathbf1_{r=s}).
+A_w(w^{-1}tw,0)=(t,0).
 \]
-Applying this twice returns the original pair: conjugation by \(s\) squares to the identity, and the same sign change occurs twice.
-
-The Coxeter relation \((s_is_j)^{m_{ij}}=1\) also acts trivially. Its alternating word has inversion list
-\(s_i(s_js_i)^k\), \(0\le k<2m_{ij}\).
-The relation \((s_js_i)^{m_{ij}}=1\) makes the second half of this list identical to the first. Every reflection is therefore counted an even number of times, so the sign change is zero. The first coordinate is conjugation by the identity. Thus the presentation gives a well-defined action \(A_w\) for every \(w\in W\).
-
-### Step 3. Compute the sign recorded by a word
-
-Multiplying the simple actions one at a time gives
+A reflection reverses the sign of its own label. Applying \(A_t\) and using the group-action law gives
 \[
-A_w(w^{-1}rw,\varepsilon)
-=(r,\varepsilon+\#\{j:t_j=r\}\bmod2).
+A_{tw}(w^{-1}tw,0)=(t,1).
 \]
-For the empty word this is immediate. Appending a simple generator adds exactly its conjugate by the preceding prefix to the inversion list, and the simple-action formula adds exactly the corresponding sign indicator. This proves the formula by induction.
 
-A reflection \(t=usu^{-1}\) changes the sign of its own label:
-\(A_t(t,\varepsilon)=(t,\varepsilon+1)\).
-To see this, first apply \(A_{u^{-1}}\), obtaining label \(s\) with some sign translation; \(A_s\) changes that sign once; applying \(A_u\) cancels the two conjugating sign translations.
+### Step 3. Evaluate the same action using a reduced word for tw
 
-### Step 4. Rule out omission of the given inversion
+Choose a reduced word \(\nu\) for \(tw\), of length \(m=\ell(tw)\). Since \(t^2=1\),
+\[
+(tw)^{-1}t(tw)=w^{-1}tw.
+\]
+The word-record theorem for \(\nu\) therefore evaluates exactly the input in Step 2. Its output bit is the multiplicity of \(t\) in the inversion sequence of \(\nu\), reduced modulo two. That bit is one, so this multiplicity is odd and in particular positive.
 
-Suppose \(t\) does not occur in the inversion list of \(\omega\). Step 3 then gives
-\(A_w(w^{-1}tw,0)=(t,0)\).
-Choose a reduced word \(\nu\) for \(tw\). The group action satisfies \(A_{tw}=A_tA_w\), and \(t^2=1\) gives
-\((tw)^{-1}t(tw)=w^{-1}tw\).
-Hence the same input is sent by \(A_{tw}\) to \((t,1)\).
+### Step 4. Derive the contradictory length inequality
 
-By the word-record formula for \(\nu\), the inversion list of \(\nu\) contains \(t\) an odd number of times, in particular at least once. Deleting such a position gives an expression for \(t(tw)=w\) with fewer letters than the reduced word \(\nu\). Therefore
-\(\ell(w)<\ell(tw)\), contradicting the hypothesis \(\ell(tw)<\ell(w)\).
+Choose an occurrence of \(t\) in that sequence. The deletion identity for \(\nu\) expresses \(t(tw)=w\) as a product of \(m-1\) simple generators. Thus
+\[
+\ell(w)\le m-1<m=\ell(tw).
+\]
+This contradicts the assumed inequality \(\ell(tw)<\ell(w)\). The omission assumption is false.
 
-### Step 5. Perform the required deletion
+### Step 5. Delete in the supplied word
 
-Thus \(t=t_j\) for some position \(j\) in the originally supplied word. The cancellation identity in Step 1 gives the required expression with that position deleted. The deleted word need not be reduced; the theorem asserts its product.
+There is therefore a position \(j\) in the original word \(\omega\) with \(t=t_j\). Substituting this equality into the deletion identity in Step 1 gives the required product.
 
 ## References
 

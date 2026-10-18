@@ -189,3 +189,19 @@ comparisons:
   consequence: The word formula and R-convolution describe the tensor word. A common
     decomposition into boundary models then supplies the character identities used
     in the cancellation argument.
+- id: finite-linear-reflection-relations
+  kind: Same relation, different calculation
+  nodes:
+  - kl.realization.finite_reflection_relations
+  paper_labels:
+  - bg:realization
+  lean_declarations:
+  - OAI.KLInvariance.Realization.geometric_reflection_relation
+  paper: The realization lemma verifies the finite Coxeter relation on a positive-definite
+    root plane and its fixed orthogonal complement.
+  lean: The local theorem takes two vectors and two linear functionals with specified
+    cross-evaluations. It proves the relation by an operator-power identity and separate
+    even and odd Chebyshev evaluations.
+  consequence: The displayed matrix recurrence expands the power calculation. Its
+    even and odd vanishings match the local helper lemmas, and the common fixed space
+    gives the identity on the entire ambient vector space.

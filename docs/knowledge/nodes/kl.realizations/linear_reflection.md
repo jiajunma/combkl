@@ -49,11 +49,11 @@ tags:
 
 # Linear reflections from a root and a normal
 
-Let \(V\) be a real vector space, let \(\alpha\in V\), and let \(f:V\to\mathbb R\) be linear with \(f(\alpha)=2\). Define
+Let \(V\) be a real vector space, \(\alpha\in V\), and \(f:V\to\mathbb R\) a linear functional. The associated pre-reflection is
 \[
 r_{\alpha,f}(v)=v-f(v)\alpha.
 \]
-The equation \(f(\alpha)=2\) implies that both \(\alpha\) and \(f\) are nonzero.
+When \(f(\alpha)=2\), this map is a linear reflection. Assume this normalization in the following calculation; it implies that both \(\alpha\) and \(f\) are nonzero.
 
 ## Fixed and moving directions
 

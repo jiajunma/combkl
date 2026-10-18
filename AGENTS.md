@@ -116,6 +116,16 @@ designated documents; this section is the reusable authoring contract.
   Rebuild and validate through the publishing workflow, and confirm the live
   revision before reporting deployment complete.
 
+### Mathematical exposition and titles
+
+- Write the mathematical exposition directly: define the objects, state the
+  hypotheses, give the argument, and explain the resulting construction or
+  theorem. Omit precautionary boilerplate and instructions warning the reader
+  against imagined misunderstandings.
+- Use direct mathematical noun phrases or declarative claims for topic,
+  section, and theorem titles. Do not frame titles as What/Why/How questions.
+  State the mathematical subject of a step in its heading.
+
 ### Faithfulness to the completed proof
 
 - When the user specifies that the proof is completed, take that as the scope

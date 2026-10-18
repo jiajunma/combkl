@@ -63,7 +63,7 @@ For a dihedral reflection subgroup with its actual induced ambient root labels, 
 
 **Lean (primary):** The actual induced-label structure model is handled by orbit-spline interpolation. Its congruences, flow-down sections, flabbiness, global generation, and quotient maps are established directly before local model decomposition. [DihedralIntervals:616](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L616), [DihedralIntervals:622](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L622), [DihedralIntervals:626](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L626).
 
-**How to read this entry:** Orbit-spline interpolation proves the model properties for the ambient root labels. These properties supply the inputs to the local decomposition theorem.
+**Role in the proof:** Orbit-spline interpolation proves the model properties for the ambient root labels. These properties supply the inputs to the local decomposition theorem.
 <!-- source-comparison:end -->
 
 *Proof.*

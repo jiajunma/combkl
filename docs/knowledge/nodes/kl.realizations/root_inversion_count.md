@@ -10,6 +10,8 @@ uses:
 - kl.detail.root_inversions
 - kl.detail.root_reflection_correspondence
 - kl.detail.strong_exchange
+- kl.coxeter.word_sign_record
+- kl.coxeter.signed_reflection_action
 lean:
   repository: openai-kl
   modules:

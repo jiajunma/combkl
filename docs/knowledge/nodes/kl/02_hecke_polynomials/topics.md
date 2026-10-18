@@ -4,7 +4,7 @@ The question is: **what are the polynomials whose invariance we are trying to pr
 
 Keep three notational distinctions in view. A group element \(s\) satisfies \(s^2=1\). Its unnormalized Hecke basis element \(T_s\) satisfies a different quadratic relation. The letter \(T\) without a subscript will later be a scalar variable in a normalized R-polynomial.
 
-## A Hecke operator is determined by what it does to basis vectors
+## Hecke operators on the standard basis
 
 Start with the free module having one basis vector \(T_w\) for each group element \(w\). Finite linear combinations of these vectors form the underlying Hecke module. Left multiplication by \(T_s\) is specified by
 \[
@@ -35,7 +35,7 @@ on \(H_1,H_s\), with \(a=v-v^{-1}\). The normalization determines this matrix. T
 
 The overview [[node:kl.notes.hecke_action]] develops the operators, their quadratic relation, and the bar involution.
 
-## How the bar map produces R-polynomials
+## R-polynomials as coefficients of the bar map
 
 The bar operation reverses the parameter and replaces simple Hecke generators by their inverses. The inverse formula above makes this concrete: applying bar to a basis vector generally produces a linear combination of several basis vectors.
 
@@ -55,7 +55,7 @@ R_{1,s}=(q-1)R_{1,1}+qR_{s,1}
 
 Applying bar twice gives the identity map. At the level of coefficient matrices, this says that the appropriately reflected R-matrix is inverse to the original R-matrix. The reciprocal convolution theorem makes that matrix statement precise. It is the compatibility needed for the KL construction below.
 
-## How reciprocity and a degree restriction determine P
+## Canonical KL polynomials from reciprocity and degree
 
 The KL polynomial \(P_{x,y}(q)\) satisfies \(P_{x,x}=1\), vanishes outside Bruhat order, and obeys
 \[
@@ -87,7 +87,7 @@ Rearranging gives \((q-1)c=q-1\), hence \(c=1\).
 
 This example already shows the roles of the ingredients. The R-recursion supplies \(q-1\); the degree bound reduces the unknown to a constant; reciprocity fixes that constant. In larger intervals the same mechanism determines several low-degree coefficients.
 
-## Why change parameters again?
+## The square parameter and normalized reciprocity
 
 The normalized family is characterized by
 \[
