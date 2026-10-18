@@ -4,7 +4,7 @@
     "path": "docs/knowledge"
   },
   "decision": "extracted",
-  "created_at": "2026-10-18T09:35:55.003555+00:00",
+  "created_at": "2026-10-18T09:38:45.249869+00:00",
   "inputs": [
     "agoramachina/openai-math@adc7f1241b42e322a6451854ab7e4b4c146bf78a"
   ],
@@ -120,7 +120,7 @@
     "renderer": "KaTeX",
     "version": "0.16.46",
     "occurrences_checked": 4624,
-    "distinct_formulas_checked": 2347,
+    "distinct_formulas_checked": 2346,
     "browser_used": false
   }
 }

@@ -49,11 +49,11 @@ On the two basis vectors, the joint evaluation matrix is
 \]
 An element with coordinates \(u,v\in A\) maps to
 \[
-(p,q)=(u+\alpha v,\ u-\alpha v).
+(f,g)=(u+\alpha v,\ u-\alpha v).
 \]
 If both outputs are zero, adding gives \(2u=0\) and subtracting gives \(2\alpha v=0\); hence \(u=v=0\). This proves injectivity in the example.
 
-Conversely, the image consists exactly of pairs satisfying \(p-q\in\alpha A\). Given such a pair, set \(u=(p+q)/2\) and \(v=(p-q)/(2\alpha)\), both in \(A\). These are precisely the compatible pairs of chapter 4. Thus the tensor calculation produces an actual module of sections.
+Conversely, the image consists exactly of pairs satisfying \(f-g\in\alpha A\). Given such a pair, set \(u=(f+g)/2\) and \(v=(f-g)/(2\alpha)\), both in \(A\). These are precisely the compatible pairs of chapter 4. Thus the tensor calculation produces an actual module of sections.
 
 For a longer word, evaluation has one coordinate for every subexpression. The full-evaluation theorem proves injectivity by repeating the two-block argument. Grouping coordinates of equal group weight defines the stalk images.
 
