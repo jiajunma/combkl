@@ -65,7 +65,7 @@ tags:
 
 Let \(A=\operatorname{Sym}_{\mathbb R}(V)\), where \(V\) is the extended realization, and regard \(a\in V\) as the degree-one polynomial \(\iota(a)\). The root line and root ideal are
 \[
-\mathbb Ra\subseteq V,qquad (a)=(\iota(a))\subseteq A.
+\mathbb Ra\subseteq V,\qquad (a)=(\iota(a))\subseteq A.
 \]
 The edge coefficient ring is \(A/(a)\). Reducing another root means taking its actual image in this quotient.
 

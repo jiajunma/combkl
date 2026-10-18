@@ -81,7 +81,7 @@ The left side is a polynomial: the word-stalk duality gives the degree bound \(\
 
 For an invertible parameter \(q\), the unnormalized quadratic relation gives
 \[
-T_s^{-1}=q^{-1}(T_s-(q-1)),qquad
+T_s^{-1}=q^{-1}(T_s-(q-1)),\qquad
 1+T_s^{-1}=q^{-1}(1+T_s).
 \]
 In the source's linear-bar notation, let \(B_q\) be the map relating parameter \(q^{-1}\) to parameter \(q\). Its intertwining identity and the displayed calculation give, by induction on the word,

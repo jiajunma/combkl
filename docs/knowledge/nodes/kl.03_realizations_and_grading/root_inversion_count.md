@@ -65,7 +65,7 @@ The formal signed action implements these two operations. Iterating along a word
 
 Choose a reduced word \(\omega\) for \(w\). Iterating the preceding sign rule gives
 \[
-w^{-1}\cdot(t,0)=(w^{-1}tw,\ c_t),qquad
+w^{-1}\cdot(t,0)=(w^{-1}tw,\ c_t),\qquad
 c_t=\#\{t\text{ in the left inversion sequence of }\omega\}\pmod2.
 \]
 Reducedness makes that sequence repetition-free. Hence \(c_t=1\) exactly when \(t\) occurs, and otherwise \(c_t=0\). The signed action then says that \(w^{-1}a\) is negative exactly when \(t\) occurs. A nonzero real root cannot be both positive and negative, so these alternatives are exclusive.

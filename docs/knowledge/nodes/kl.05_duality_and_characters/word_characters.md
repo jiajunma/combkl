@@ -53,7 +53,7 @@ This construction uses the proved graded freeness of the word stalks.
 
 In the unnormalized Hecke module with standard basis \(T_x\), define the positive word recursively by
 \[
-H_{\varnothing}=T_1,qquad H_{(s,\mathbf t)}=(1+T_s)H_{\mathbf t}.
+H_{\varnothing}=T_1,\qquad H_{(s,\mathbf t)}=(1+T_s)H_{\mathbf t}.
 \]
 Equivalently, apply the left Hecke operator and add the previous vector. This definition is valid for any word; reducedness is not required. The word-character theorem identifies \(C^{\mathbf s}_x\) with the coefficient of \(T_x\) in \(H_{\mathbf s}\).
 

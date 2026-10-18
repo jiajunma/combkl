@@ -77,7 +77,7 @@ If \(\tau(E)a=\tau(E)b\), apply \(\tau^{-1}\) to every coordinate. Because it pr
 
 Equal new evaluations for \(v,w\) now imply
 \[
-v_0+\alpha v_1=w_0+\alpha w_1,qquad
+v_0+\alpha v_1=w_0+\alpha w_1,\qquad
 v_0-\alpha v_1=w_0-\alpha w_1.
 \]
 Subtracting gives \(2\alpha(v_1-w_1)=0\). The coefficient algebra is a domain of characteristic zero and \(\alpha\ne0\), so coordinatewise cancellation gives \(v_1=w_1\). Substitution into the first equation gives \(v_0=w_0\).

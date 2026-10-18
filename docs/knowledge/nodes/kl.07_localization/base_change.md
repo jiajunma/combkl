@@ -47,7 +47,7 @@ tags:
 
 For a homomorphism of commutative rings \(R\to S\) and an \(R\)-linear graph sheaf \(B\), define its scalar extension by
 \[
-(S\otimes_R B)^x=S\otimes_R B^x,qquad
+(S\otimes_R B)^x=S\otimes_R B^x,\qquad
 (S\otimes_R B)^e=S\otimes_R B^e.
 \]
 The restrictions are \(1\otimes\rho_{e,s}\) and \(1\otimes\rho_{e,t}\). A tensor \(s\otimes m\) of a compatible section gives the compatible assignment \((s\otimes m_x)_x\); by linearity this defines the natural map from the tensor product of the section module to the section module after base change.
@@ -55,7 +55,7 @@ The restrictions are \(1\otimes\rho_{e,s}\) and \(1\otimes\rho_{e,t}\). A tensor
 For a vertex set \(\Omega\), collect all compatibility equations into
 \[
 \delta_\Omega:\prod_xB^x\longrightarrow
-\prod_{e:\,s(e),t(e)\in\Omega}B^e,qquad
+\prod_{e:\,s(e),t(e)\in\Omega}B^e,\qquad
 (\delta_\Omega m)_e=\rho_{e,s}(m_{s(e)})-\rho_{e,t}(m_{t(e)}).
 \]
 Then \(\Gamma(\Omega,B)=\ker\delta_\Omega\), using the convention that assignments still have a coordinate at every vertex.

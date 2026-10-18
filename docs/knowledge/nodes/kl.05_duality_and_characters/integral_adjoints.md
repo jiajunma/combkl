@@ -42,7 +42,7 @@ tags:
 
 Let \(R\) be commutative, and let \(d:M\xrightarrow{\sim}\operatorname{Hom}_R(M,R)\) be a perfect bilinear pairing, written \(\langle m,n\rangle=d(m)(n)\). For an \(R\)-linear endomorphism \(f\), define
 \[
-f^*=d^{-1}\circ f^\vee\circ d,qquad
+f^*=d^{-1}\circ f^\vee\circ d,\qquad
 f^\vee(\lambda)=\lambda\circ f.
 \]
 Thus \(\langle f^*m,n\rangle=\langle m,fn\rangle\). Perfection supplies the inverse \(d^{-1}\), so the construction is over \(R\) itself. No passage to a fraction field is required.

@@ -51,10 +51,23 @@ tags:
 
 # Monotone simple envelopes and the Bruhat lifting property
 
-Both \(L_s\) and \(U_s\) preserve Bruhat order. In particular, if \(x\le y\), \(x<s x\), and \(s y<y\), then
+Let \((W,S)\) be a Coxeter system, fix a **simple reflection** \(s\in S\), and write \(\le\) for strong Bruhat order. The lower and upper simple-reflection envelopes are
 \[
-x\le sy,qquad sx\le y.
+L_s(w)=\min_{\le}\{w,sw\},\qquad
+U_s(w)=\max_{\le}\{w,sw\}.
 \]
+These minima and maxima exist because \(w\) and \(sw\) are comparable. Both maps are monotone, in the precise sense that
+\[
+x\le y\quad\Longrightarrow\quad
+L_s(x)\le L_s(y)\ \text{and}\ U_s(x)\le U_s(y).
+\]
+In particular, if \(x\le y\), \(\ell(x)<\ell(sx)\), and \(\ell(sy)<\ell(y)\), then
+\[
+x\le sy,\qquad sx\le y.
+\]
+For a simple reflection, the two length conditions are equivalent to \(x<sx\) and \(sy<y\) in Bruhat order. The multiplication here is on the left.
+
+Monotonicity does not mean preservation of strict inequalities: \(1<s\), but \(L_s(1)=L_s(s)=1\) and \(U_s(1)=U_s(s)=s\). Left multiplication itself is also not monotone, since it sends \(1<s\) to \(s>1\).
 
 *Proof.*
 

@@ -67,7 +67,7 @@ on the root space, and the same formula for the embedded root on the nondegenera
 
 Suppose \(a,b\) represent the same reflection. Apply their two formulas to \(a\). Since \((a,a)=2\), comparison gives
 \[
-(b,a)b=2a,qquad a=c b,qquad c=(b,a)/2.
+(b,a)b=2a,\qquad a=c b,\qquad c=(b,a)/2.
 \]
 Taking squared norms gives \(2=2c^2\), hence \(c=1\) or \(c=-1\) over \(\mathbb R\). Thus \(a=b\) or \(a=-b\).
 

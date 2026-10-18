@@ -115,8 +115,9 @@
       "proof_steps": 4,
       "previous_proof_words": 0,
       "revised_proof_words": 207,
-      "proof_sha256": "38d9cfe078bdb8b7ab367f56fe173cc3ed6625c5e414d5a5a65fb1ff2ab78f2a",
-      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
+      "proof_sha256": "14970ad2e29192e58694515fd659d1d8d6e61f1d6659ad42c266a925c26d0ffd",
+      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness.",
+      "format_correction": "2026-10-18: restored missing backslashes in qquad spacing commands; mathematical assertions unchanged."
     },
     {
       "node": "kl.detail.boundary_extension",
@@ -402,8 +403,9 @@
       "proof_steps": 3,
       "previous_proof_words": 0,
       "revised_proof_words": 343,
-      "proof_sha256": "98ac1f52396607d9f1a04d507dc44b446f4d762599b47f58d9bdd5932749ec54",
-      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
+      "proof_sha256": "b450b25def198d1bb1d21d5ee9368978e86a86fa3a1902f5e4cbc9e88c089fb4",
+      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness.",
+      "format_correction": "2026-10-18: restored missing backslashes in qquad spacing commands; mathematical assertions unchanged."
     },
     {
       "node": "kl.detail.root_reflection_correspondence",
@@ -416,8 +418,9 @@
       "proof_steps": 4,
       "previous_proof_words": 0,
       "revised_proof_words": 290,
-      "proof_sha256": "29c6ce56bb80677e732be94245d72ea4ab0c0381f487d254c6076be20a48a0ae",
-      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
+      "proof_sha256": "9a2cc5e8dd46a0fcd9e65dfff14cde3aac32906e9baaf133ed80e203a562b1d1",
+      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness.",
+      "format_correction": "2026-10-18: restored missing backslashes in qquad spacing commands; mathematical assertions unchanged."
     },
     {
       "node": "kl.detail.rtilde_recursion",
@@ -501,8 +504,9 @@
       "proof_steps": 4,
       "previous_proof_words": 0,
       "revised_proof_words": 395,
-      "proof_sha256": "a0f3ddf25e0f3aff2ed0e8ef9ac627fa786dbc13dfc4cd08259c0830943335fd",
-      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
+      "proof_sha256": "cad8eb1f6265cc67c234af02752ba7b6934dae44c28791b329c1b9c3e789f709",
+      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness.",
+      "format_correction": "2026-10-18: restored missing backslashes in qquad spacing commands; mathematical assertions unchanged."
     },
     {
       "node": "kl.detail.word_evaluation_injective",
@@ -514,8 +518,9 @@
       "proof_steps": 4,
       "previous_proof_words": 0,
       "revised_proof_words": 268,
-      "proof_sha256": "404bc398f62daa82c5274fd456b4cc74432f0269dd5044c3ace4d2849500604f",
-      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
+      "proof_sha256": "74d3927267b22f3b89913fb0a35b495ae1d6e82544966d1152e1511a1961a76f",
+      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness.",
+      "format_correction": "2026-10-18: restored missing backslashes in qquad spacing commands; mathematical assertions unchanged."
     },
     {
       "node": "kl.detail.word_flabbiness",

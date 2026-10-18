@@ -80,7 +80,7 @@ Thus \(a(p)\) is a projector.
 
 Suppose \(f^2=f\), \(fa(p)=f\), and \(a(p)f=f\). Applying \(a\) and reversing the products gives
 \[
-a(f)^2=a(f),qquad pa(f)=a(f),qquad a(f)p=a(f).
+a(f)^2=a(f),\qquad pa(f)=a(f),\qquad a(f)p=a(f).
 \]
 Primitivity of \(p\) therefore gives \(a(f)=0\) or \(a(f)=p\).
 

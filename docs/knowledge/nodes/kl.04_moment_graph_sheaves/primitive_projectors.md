@@ -37,7 +37,7 @@ tags:
 
 A sheaf endomorphism \(e\) is a primitive projector if \(e^2=e\) and every idempotent \(f\) satisfying
 \[
-f^2=f,\qquad fe=f,qquad ef=f
+f^2=f,\qquad fe=f,\qquad ef=f
 \]
 is either zero or \(e\). The last two equations say that \(f\) acts within the summand selected by \(e\).
 

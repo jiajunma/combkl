@@ -4,7 +4,7 @@
     "path": "docs/knowledge"
   },
   "decision": "extracted",
-  "created_at": "2026-10-18T02:21:25.594971+00:00",
+  "created_at": "2026-10-18T08:06:32.797156+00:00",
   "inputs": [
     "agoramachina/openai-math@adc7f1241b42e322a6451854ab7e4b4c146bf78a"
   ],
@@ -53,7 +53,7 @@
   "html_pages_checked": 258,
   "node_pages_checked": 148,
   "graph_detail_payloads_checked": 148,
-  "generated_definition_links_checked": 1127,
+  "generated_definition_links_checked": 1131,
   "definition_link_occurrences": {
     "kl.comparison.free_suffixes": 31,
     "kl.comparison.normalized_kernel": 5,
@@ -89,7 +89,7 @@
     "kl.detail.section_duality": 6,
     "kl.detail.sheaf_isomorphisms": 26,
     "kl.detail.sheaf_morphism": 8,
-    "kl.detail.simple_envelopes": 2,
+    "kl.detail.simple_envelopes": 4,
     "kl.detail.split_summands": 5,
     "kl.detail.structure_sheaves": 3,
     "kl.detail.transported_schedule": 12,
@@ -97,7 +97,7 @@
     "kl.detail.word_characters": 10,
     "kl.detail.word_sheaf": 17,
     "kl.duality.stalk_character": 32,
-    "kl.foundations.bruhat_order": 30,
+    "kl.foundations.bruhat_order": 32,
     "kl.foundations.bruhat_step": 60,
     "kl.foundations.interval": 67,
     "kl.foundations.low_half": 1,
@@ -117,13 +117,13 @@
     "kl.sheaves.minimal_cover": 26,
     "kl.sheaves.upward_kernel": 4
   },
-  "math_occurrences_extracted": 3923,
+  "math_occurrences_extracted": 3935,
   "broken_links": [],
   "katex": {
     "renderer": "KaTeX",
     "version": "0.16.46",
-    "occurrences_checked": 3923,
-    "distinct_formulas_checked": 2059,
+    "occurrences_checked": 3935,
+    "distinct_formulas_checked": 2068,
     "browser_used": false
   }
 }
