@@ -1,0 +1,952 @@
+{
+  "status": "approved-for-implementation",
+  "recorded": "2026-10-18",
+  "scope": "Curated mathematical exposition interfaces; not a module-import graph or a complete Lean declaration dependency extraction.",
+  "source": {
+    "upstream_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+    "combkl_source_revision": "108243e05ed46235bf82dc30d4d90c794579776f",
+    "inventory": "build/knowledge/declarations.json"
+  },
+  "edge_meaning": "Each requires entry supplies definitions, constructions, or proof results used by this stage. Conditional theorem hypotheses are retained in output and discharged in the rank-induction explanation.",
+  "stages": [
+    {
+      "id": "c",
+      "title": "Coxeter intervals",
+      "topics": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "requires": [],
+      "output": "Coxeter data, finite ranked intervals, and restriction to proper subintervals.",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatLE",
+        "OAI.KLInvariance.Interval",
+        "OAI.KLInvariance.rankDifference_subinterval_lt"
+      ]
+    },
+    {
+      "id": "r",
+      "title": "Realizations and roots",
+      "topics": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6"
+      ],
+      "requires": [
+        "c"
+      ],
+      "output": "Root vectors, extended action, reflection faithfulness, and root planes.",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.form",
+        "OAI.KLInvariance.TitsSpace.extendedForm",
+        "OAI.KLInvariance.TitsSpace.reflectionFaithful"
+      ]
+    },
+    {
+      "id": "a",
+      "title": "General graded algebra",
+      "topics": [
+        "A2",
+        "A3",
+        "A4",
+        "A5",
+        "A6",
+        "A7"
+      ],
+      "requires": [],
+      "output": "Graded modules, covers, homogeneous bases, Hilbert identities, and kernel-presentation tools.",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData",
+        "OAI.KLInvariance.Graded.ModuleData.MinimalCover",
+        "OAI.KLInvariance.Hilbert.hasSum_homogeneous_basis",
+        "OAI.KLInvariance.Hilbert.eq_of_value_eq"
+      ]
+    },
+    {
+      "id": "ra",
+      "title": "Root-labelled coefficient algebra",
+      "topics": [
+        "A1"
+      ],
+      "requires": [
+        "r",
+        "a"
+      ],
+      "output": "Symmetric/polynomial coefficients and linear root quotients.",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.symmetricLabel",
+        "OAI.KLInvariance.BruhatGraph.polynomialRoot_prime"
+      ]
+    },
+    {
+      "id": "h",
+      "title": "Hecke operators and R",
+      "topics": [
+        "H1",
+        "H2",
+        "H3",
+        "H5"
+      ],
+      "requires": [
+        "c"
+      ],
+      "output": "Bar coefficients, R-recursion, and positive-word identities.",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hecke.rTilde",
+        "OAI.KLInvariance.HeckeQ.positiveWord_rValue"
+      ]
+    },
+    {
+      "id": "p",
+      "title": "Canonical P and rigidity",
+      "topics": [
+        "H4",
+        "H5"
+      ],
+      "requires": [
+        "h"
+      ],
+      "output": "Canonical KL family and uniqueness from reciprocity and strict degree.",
+      "lean_declarations": [
+        "OAI.KLInvariance.NormalizedKL",
+        "OAI.KLInvariance.klPolynomial_eq_constructed",
+        "OAI.KLInvariance.Comparison.eq_of_scaled_difference_reciprocal"
+      ]
+    },
+    {
+      "id": "s",
+      "title": "General graph sheaves",
+      "topics": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "requires": [
+        "a"
+      ],
+      "output": "Stalk/edge maps, sections, kernels, and graded sheaf morphisms.",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.OrderedGraph",
+        "OAI.KLInvariance.MomentGraph.Sheaf",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf"
+      ]
+    },
+    {
+      "id": "sb",
+      "title": "Boundary sheaves",
+      "topics": [
+        "S4"
+      ],
+      "requires": [
+        "s",
+        "a",
+        "c",
+        "ra"
+      ],
+      "output": "Minimal-cover construction of the actual boundary object and its restrictions.",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.exists_boundarySheaf",
+        "OAI.KLInvariance.BruhatGraph.boundarySheaf"
+      ]
+    },
+    {
+      "id": "sd",
+      "title": "Boundary-model decomposition",
+      "topics": [
+        "S5"
+      ],
+      "requires": [
+        "sb",
+        "a"
+      ],
+      "output": "Split objects, primitive recognition, and decomposition into shifted boundary models.",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.exists_modelSumIso"
+      ]
+    },
+    {
+      "id": "w",
+      "title": "Frobenius word modules",
+      "topics": [
+        "W1",
+        "W2",
+        "W3"
+      ],
+      "requires": [
+        "ra",
+        "a"
+      ],
+      "output": "Iterated tensor modules, homogeneous bases, and perfect word pairings.",
+      "lean_declarations": [
+        "OAI.KLInvariance.FrobeniusDuality.PairedBimodule",
+        "OAI.KLInvariance.TitsSpace.bottSamelson",
+        "OAI.KLInvariance.TitsSpace.bottBasis"
+      ]
+    },
+    {
+      "id": "we",
+      "title": "Word coordinates and lattices",
+      "topics": [
+        "W4",
+        "W5",
+        "W6"
+      ],
+      "requires": [
+        "w",
+        "c"
+      ],
+      "output": "Stalk images, pair projections, and compatible upper images.",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottStalk",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairLattice",
+        "OAI.KLInvariance.ReflectionPairTranslation.lattice"
+      ]
+    },
+    {
+      "id": "wc",
+      "title": "Word characters",
+      "topics": [
+        "W7"
+      ],
+      "requires": [
+        "we",
+        "a",
+        "h"
+      ],
+      "output": "Ascent/descent recursion and equality with positive Hecke-word coefficients.",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_eq_heckeWord"
+      ]
+    },
+    {
+      "id": "ws",
+      "title": "Word sheaves and boundary summands",
+      "topics": [
+        "S7"
+      ],
+      "requires": [
+        "we",
+        "s",
+        "sd"
+      ],
+      "output": "Word sheaves with generation, flabbiness, and boundary splitting.",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottPolynomialSheaf",
+        "OAI.KLInvariance.TitsSpace.bottBoundarySheaf_splitIn"
+      ]
+    },
+    {
+      "id": "sp",
+      "title": "Integral support and boundary duality",
+      "topics": [
+        "S6",
+        "S8"
+      ],
+      "requires": [
+        "ws",
+        "sd",
+        "w",
+        "a"
+      ],
+      "output": "Integral cuts, adjoints, boundary perfect pairings, and costalk duality.",
+      "lean_declarations": [
+        "OAI.KLInvariance.IntegralSupport.cut",
+        "OAI.KLInvariance.BruhatGraph.boundarySheaf_perfectPairing",
+        "OAI.KLInvariance.BruhatGraph.boundaryKernelFree"
+      ]
+    },
+    {
+      "id": "sc",
+      "title": "Actual-character reciprocity",
+      "topics": [
+        "S9"
+      ],
+      "requires": [
+        "wc",
+        "sp",
+        "sd",
+        "h"
+      ],
+      "output": "The reciprocal identity for actual boundary character C.",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottCharacter_decomposition_both",
+        "OAI.KLInvariance.finite_character_cancellation",
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_reciprocity"
+      ]
+    },
+    {
+      "id": "og",
+      "title": "Root orders and dihedral geometry",
+      "topics": [
+        "O1",
+        "O2",
+        "O3"
+      ],
+      "requires": [
+        "r",
+        "c"
+      ],
+      "output": "Ratio orders, induced dihedral systems, and relative interval combinatorics.",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis",
+        "OAI.KLInvariance.TitsSpace.RatioOrder"
+      ]
+    },
+    {
+      "id": "ow",
+      "title": "Geometric plane weights",
+      "topics": [
+        "O4"
+      ],
+      "requires": [
+        "og",
+        "r"
+      ],
+      "output": "Finite nonnegative plane weights and their length-sum identity.",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.sum_planeWeight"
+      ]
+    },
+    {
+      "id": "oe",
+      "title": "Reflection-edge reconstruction",
+      "topics": [
+        "O5"
+      ],
+      "requires": [
+        "ow",
+        "og",
+        "c"
+      ],
+      "output": "Reflection edges recovered from interval order and transported under isomorphism.",
+      "lean_declarations": [
+        "OAI.KLInvariance.diamondEdges_of_bruhatStep",
+        "OAI.KLInvariance.intervalIso_bruhatStep_iff_general"
+      ]
+    },
+    {
+      "id": "os",
+      "title": "Schedules and elementary transfers",
+      "topics": [
+        "O6",
+        "O7"
+      ],
+      "requires": [
+        "og",
+        "c"
+      ],
+      "output": "Sorted edge lists, cutoffs, paths, and elementary dispatch operators.",
+      "lean_declarations": [
+        "OAI.KLInvariance.SchedulePaths.step",
+        "OAI.KLInvariance.SchedulePaths.sortedSchedule"
+      ]
+    },
+    {
+      "id": "op",
+      "title": "Dyer path identity",
+      "topics": [
+        "O7"
+      ],
+      "requires": [
+        "os",
+        "og",
+        "h"
+      ],
+      "output": "Identification of geometric-order path sums with normalized R-polynomials.",
+      "lean_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.polynomial_eq_rTilde",
+        "OAI.KLInvariance.WallDyer.geometric_entry_eq_rTilde"
+      ]
+    },
+    {
+      "id": "ot",
+      "title": "Transported chronological schedule",
+      "topics": [
+        "O6"
+      ],
+      "requires": [
+        "oe",
+        "os"
+      ],
+      "output": "Transported reflection edges, score cutoffs, and suffix descriptions.",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.transportedEdge",
+        "OAI.KLInvariance.BruhatGraph.chronologicalSchedule",
+        "OAI.KLInvariance.BruhatGraph.suffix_target_iff"
+      ]
+    },
+    {
+      "id": "om",
+      "title": "Transported R-matrix",
+      "topics": [
+        "O7",
+        "I3"
+      ],
+      "requires": [
+        "ot",
+        "op"
+      ],
+      "output": "Dispatch entries are the target interval's transported R-entries.",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.transported_dispatch_matrix"
+      ]
+    },
+    {
+      "id": "l0",
+      "title": "Localized sheaves and cosets",
+      "topics": [
+        "L1",
+        "L2"
+      ],
+      "requires": [
+        "ra",
+        "s",
+        "og"
+      ],
+      "output": "Plane localization and the surviving labelled coset graph.",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.planePrime",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset"
+      ]
+    },
+    {
+      "id": "lm",
+      "title": "Local dihedral models",
+      "topics": [
+        "L3",
+        "L4"
+      ],
+      "requires": [
+        "l0",
+        "sb",
+        "og"
+      ],
+      "output": "Structure-model products and decomposition of the localized boundary sheaf.",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.LocalModels",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localized_boundary_decomposition"
+      ]
+    },
+    {
+      "id": "lf",
+      "title": "Correction factor and degree",
+      "topics": [
+        "L5"
+      ],
+      "requires": [
+        "ow",
+        "ra",
+        "l0"
+      ],
+      "output": "Nonzero homogeneous edge factor, its degree, and local associations.",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.edgeFactor_degree_formula",
+        "OAI.KLInvariance.TitsSpace.edgeFactor_local_associated"
+      ]
+    },
+    {
+      "id": "li",
+      "title": "Localized embedded-image equality",
+      "topics": [
+        "L6"
+      ],
+      "requires": [
+        "lm",
+        "lf",
+        "ot"
+      ],
+      "output": "Equality of scaled model images, transported to localized boundary images.",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.ScaledImages",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localized_boundary_scaledImages"
+      ]
+    },
+    {
+      "id": "lg",
+      "title": "Conditional global edge inclusion",
+      "topics": [
+        "L7"
+      ],
+      "requires": [
+        "li",
+        "a"
+      ],
+      "output": "Global lower-image inclusion in the corrected upper image, assuming the specified upper kernel is free.",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.boundary_edge_image_le",
+        "OAI.KLInvariance.BruhatGraph.schedule_edge_image_le"
+      ]
+    },
+    {
+      "id": "i1",
+      "title": "Normalized edge inequality",
+      "topics": [
+        "I1"
+      ],
+      "requires": [
+        "lg",
+        "lf",
+        "a"
+      ],
+      "output": "One-edge Hilbert inequality and equality criterion under the edge-inclusion hypothesis.",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.normalized_edge_increment_le",
+        "OAI.KLInvariance.BruhatGraph.normalized_edge_increment_eq_iff"
+      ]
+    },
+    {
+      "id": "i2",
+      "title": "Conditional schedule comparison",
+      "topics": [
+        "I2"
+      ],
+      "requires": [
+        "i1",
+        "ot"
+      ],
+      "output": "Iterated state inequality, with target-kernel freeness supplied at each step.",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.scheduleState_le",
+        "OAI.KLInvariance.BruhatGraph.actual_comparison_of_upper_freeness"
+      ]
+    },
+    {
+      "id": "i3",
+      "title": "Character endpoint identities",
+      "topics": [
+        "I3"
+      ],
+      "requires": [
+        "sc",
+        "sp",
+        "om"
+      ],
+      "output": "Initial/final states and exact endpoint comparison when all R-entries agree.",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.actual_endpoint_of_rTilde_eq"
+      ]
+    },
+    {
+      "id": "i4",
+      "title": "Equality gives suffix freeness",
+      "topics": [
+        "I4"
+      ],
+      "requires": [
+        "i2",
+        "i3",
+        "a"
+      ],
+      "output": "Vanishing deficits, equality of images, and reverse recovery of free kernels, assuming endpoint equality.",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.schedule_kernels_free_of_endpoint_eq"
+      ]
+    },
+    {
+      "id": "i5",
+      "title": "Simultaneous R and freeness induction",
+      "topics": [
+        "I5"
+      ],
+      "requires": [
+        "i2",
+        "i3",
+        "i4",
+        "c",
+        "h"
+      ],
+      "output": "R-invariance and suffix freeness in both directions by strong rank induction.",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.rTilde_freeness_of_below",
+        "OAI.KLInvariance.BruhatGraph.rTilde_invariance_and_freeness"
+      ]
+    },
+    {
+      "id": "i6",
+      "title": "Canonical KL invariance",
+      "topics": [
+        "I6"
+      ],
+      "requires": [
+        "i5",
+        "p"
+      ],
+      "output": "Equality of P by common R-reciprocity, upper-interval induction, and degree rigidity.",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.scaledKL_eq_transported",
+        "OAI.KLInvariance.BruhatGraph.klPolynomial_invariance_finite"
+      ]
+    },
+    {
+      "id": "cf",
+      "title": "Finite-support interval and polynomial transport",
+      "topics": [
+        "C5"
+      ],
+      "requires": [
+        "c",
+        "r",
+        "p"
+      ],
+      "output": "Finite parabolic interval models with order, rank, and canonical-polynomial transport; inclusion injectivity uses the cotangent action.",
+      "lean_declarations": [
+        "OAI.KLInvariance.StandardParabolic.inclusion_injective",
+        "OAI.KLInvariance.FiniteIntervalModel",
+        "OAI.KLInvariance.FiniteIntervalModel.orderIso",
+        "OAI.KLInvariance.FiniteIntervalModel.kl_eq"
+      ]
+    },
+    {
+      "id": "i7",
+      "title": "Arbitrary Coxeter systems",
+      "topics": [
+        "I7"
+      ],
+      "requires": [
+        "i6",
+        "cf"
+      ],
+      "output": "Transport through finite-support models to the unrestricted invariance theorem.",
+      "lean_declarations": [
+        "OAI.KLInvariance.FiniteIntervalModel.kl_eq",
+        "OAI.KLInvariance.combinatorial_invariance"
+      ]
+    },
+    {
+      "id": "s10",
+      "title": "Character-identification interfaces",
+      "topics": [
+        "S10"
+      ],
+      "requires": [
+        "sp",
+        "p"
+      ],
+      "output": "Conditional character recognition and local-degree statements, with their stated hypotheses.",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.StalkCharacterObligation",
+        "OAI.KLInvariance.BruhatGraph.localIntersection_diagonal_strict_degree"
+      ]
+    }
+  ],
+  "structure_homes": {
+    "OAI.KLInvariance.BruhatGraph.FreeSheaf": "S2",
+    "OAI.KLInvariance.BruhatGraph.FreeSheaf.SectionDuality": "S8",
+    "OAI.KLInvariance.BruhatGraph.SectionDuality": "S8",
+    "OAI.KLInvariance.CoefficientChange": "A4",
+    "OAI.KLInvariance.DiamondEdges": "O5",
+    "OAI.KLInvariance.FiniteIntervalModel": "C5",
+    "OAI.KLInvariance.FrobeniusDuality.PairedBimodule": "W2",
+    "OAI.KLInvariance.FrobeniusDuality.PairedModule": "W2",
+    "OAI.KLInvariance.Graded.ModuleData": "A3",
+    "OAI.KLInvariance.Graded.ModuleData.Hom": "A3",
+    "OAI.KLInvariance.Graded.ModuleData.MinimalCover": "A5",
+    "OAI.KLInvariance.Graded.NonnegativeBasis": "A5",
+    "OAI.KLInvariance.MomentGraph.BoundarySheaf": "S4",
+    "OAI.KLInvariance.MomentGraph.GradedSheaf": "S2",
+    "OAI.KLInvariance.MomentGraph.GradedSheaf.BoundaryModels": "S5",
+    "OAI.KLInvariance.MomentGraph.GradedSheaf.Endomorphism": "S3",
+    "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom": "S3",
+    "OAI.KLInvariance.MomentGraph.GradedSheaf.Iso": "S3",
+    "OAI.KLInvariance.MomentGraph.GradedSheaf.ModelSum": "S5",
+    "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom": "S3",
+    "OAI.KLInvariance.MomentGraph.GradedSheaf.OnIso": "S3",
+    "OAI.KLInvariance.MomentGraph.GradedSheaf.PerfectPairing": "S8",
+    "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn": "S5",
+    "OAI.KLInvariance.MomentGraph.GradedSheaf.SymmetricPerfectPairing": "S8",
+    "OAI.KLInvariance.MomentGraph.GraphEquiv": "S1",
+    "OAI.KLInvariance.MomentGraph.GraphMap": "S1",
+    "OAI.KLInvariance.MomentGraph.OrderedGraph": "S1",
+    "OAI.KLInvariance.MomentGraph.Sheaf": "S2",
+    "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso": "S3",
+    "OAI.KLInvariance.MomentGraph.Sheaf.Iso": "S3",
+    "OAI.KLInvariance.MomentGraph.Sheaf.LocalModels": "L4",
+    "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum": "L4",
+    "OAI.KLInvariance.MomentGraph.Sheaf.OnIso": "S3",
+    "OAI.KLInvariance.NormalizedKL": "H4",
+    "OAI.KLInvariance.ReflectionPairTranslation.Twist": "A4",
+    "OAI.KLInvariance.TitsSpace.PlaneBasis": "O2",
+    "OAI.KLInvariance.TitsSpace.PlaneBasis.InducedSigned": "O2",
+    "OAI.KLInvariance.TitsSpace.RatioOrder": "O1"
+  },
+  "module_homes": {
+    "BalancedPairings": [
+      "S6",
+      "S8"
+    ],
+    "BottSamelson": [
+      "A4",
+      "W4",
+      "W5",
+      "W6",
+      "W7",
+      "S7"
+    ],
+    "Bruhat": [
+      "C3",
+      "C4"
+    ],
+    "CanonicalKL": [
+      "H4",
+      "H5"
+    ],
+    "CharacterReciprocity": [
+      "H5",
+      "A4",
+      "S2",
+      "S5",
+      "S8",
+      "S9",
+      "L4",
+      "L6"
+    ],
+    "Comparison": [
+      "I2",
+      "I4",
+      "I6"
+    ],
+    "Coxeter": [
+      "C1",
+      "C2"
+    ],
+    "Decomposition": [
+      "S5",
+      "O2",
+      "O5"
+    ],
+    "Dihedral": [
+      "C1",
+      "C2",
+      "O2",
+      "O3",
+      "H5"
+    ],
+    "DihedralIntervals": [
+      "O3",
+      "L3"
+    ],
+    "DyerPaths": [
+      "S9",
+      "C5",
+      "O1",
+      "O2",
+      "O3",
+      "O5",
+      "O7"
+    ],
+    "EdgeLocalization": [
+      "O6",
+      "O7",
+      "S3",
+      "S4",
+      "S8",
+      "S9",
+      "S10",
+      "I3"
+    ],
+    "Frobenius": [
+      "W1",
+      "W2",
+      "W3",
+      "W4",
+      "W5",
+      "A4"
+    ],
+    "GradedModules": [
+      "A2",
+      "A3",
+      "A5",
+      "A7"
+    ],
+    "GradedSheaves": [
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "Hecke": [
+      "H1",
+      "H2",
+      "H3",
+      "H5"
+    ],
+    "HilbertSeries": [
+      "A6"
+    ],
+    "IntegralPairings": [
+      "W7",
+      "S8"
+    ],
+    "Invariance": [
+      "C4",
+      "C5",
+      "I5",
+      "I6",
+      "I7"
+    ],
+    "MinimalExtensions": [
+      "S1",
+      "S3",
+      "S4",
+      "S5"
+    ],
+    "Model": [
+      "C4",
+      "H4",
+      "H5"
+    ],
+    "ModuleAlgebra": [
+      "A1",
+      "A2",
+      "A6",
+      "A7"
+    ],
+    "OrdinaryR": [
+      "H3"
+    ],
+    "PlaneLocalization": [
+      "A1",
+      "A7",
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L5",
+      "L6"
+    ],
+    "PositiveTransfer": [
+      "S8",
+      "S10",
+      "A6",
+      "A7",
+      "O6",
+      "I1",
+      "I2",
+      "I4"
+    ],
+    "ReflectionOrders": [
+      "O1",
+      "O2",
+      "O6",
+      "O7"
+    ],
+    "ReflectionPlane": [
+      "R4",
+      "R6"
+    ],
+    "ReflectionSchedules": [
+      "O1",
+      "O3",
+      "O4",
+      "O5",
+      "O6",
+      "O7",
+      "A1",
+      "L5"
+    ],
+    "SheafMorphisms": [
+      "A5",
+      "A6",
+      "S3",
+      "S4",
+      "S5",
+      "S10"
+    ],
+    "Sheaves": [
+      "S1",
+      "S2",
+      "S3",
+      "L3"
+    ],
+    "SimultaneousInvariance": [
+      "C4",
+      "O6",
+      "I3",
+      "I4",
+      "I5",
+      "I6"
+    ],
+    "Support": [
+      "A4",
+      "A6",
+      "S3",
+      "S6",
+      "S7",
+      "S8",
+      "S9"
+    ],
+    "TerminalKernels": [
+      "A7",
+      "S3",
+      "L2",
+      "L4",
+      "L6",
+      "L7",
+      "I2",
+      "I3"
+    ],
+    "Tits": [
+      "C5",
+      "R1",
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R6",
+      "A1"
+    ]
+  },
+  "validation": {
+    "modules": 34,
+    "declarations": 2991,
+    "structures": 35,
+    "inductives": 3,
+    "topic_count": 61,
+    "stage_count": 36,
+    "edge_count": 85,
+    "topological_order": [
+      "a",
+      "c",
+      "h",
+      "r",
+      "s",
+      "og",
+      "p",
+      "ra",
+      "cf",
+      "l0",
+      "os",
+      "ow",
+      "sb",
+      "w",
+      "lf",
+      "lm",
+      "oe",
+      "op",
+      "sd",
+      "we",
+      "ot",
+      "wc",
+      "ws",
+      "li",
+      "om",
+      "sp",
+      "lg",
+      "s10",
+      "sc",
+      "i1",
+      "i3",
+      "i2",
+      "i4",
+      "i5",
+      "i6",
+      "i7"
+    ]
+  },
+  "approved": "2026-10-18"
+}

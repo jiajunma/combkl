@@ -373,3 +373,28 @@ concepts:
   - tensor words
   - Bott–Samelson module
   - Bott–Samelson modules
+- node: kl.realization.tits_form
+  terms:
+  - Tits form
+  - geometric root space
+  - simple roots
+  - simple root
+  - normal functionals
+  - simple normals
+- node: kl.realization.linear_reflection
+  terms:
+  - linear reflection
+  - linear reflections
+- node: kl.realization.radical_extension
+  terms:
+  - radical
+  - dual extension
+  - extended root space
+- node: kl.realization.geometric_action
+  terms:
+  - geometric action
+  - ordinary geometric action
+- node: kl.realization.extended_action
+  terms:
+  - extended action
+  - extended geometric action

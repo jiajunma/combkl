@@ -48,7 +48,13 @@
       "kl.notes.graded_projective_free",
       "kl.notes.minimal_cover_existence",
       "kl.notes.reflection_faithfulness",
+      "kl.realization.extended_action",
+      "kl.realization.extension_minimality",
+      "kl.realization.geometric_action",
+      "kl.realization.linear_reflection",
+      "kl.realization.radical_extension",
       "kl.realization.reflection_plane",
+      "kl.realization.tits_form",
       "kl.sheaves.graded_module",
       "kl.sheaves.hilbert_free",
       "kl.sheaves.minimal_cover"
@@ -1843,6 +1849,73 @@
       ]
     },
     {
+      "id": "kl.realization.extended_action",
+      "chapter": "kl.03_realizations_and_grading",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.extendedAction",
+        "OAI.KLInvariance.TitsSpace.extendedAction_simple",
+        "OAI.KLInvariance.TitsSpace.extendedAction_preserves",
+        "OAI.KLInvariance.TitsSpace.extendedAction_restrict",
+        "OAI.KLInvariance.TitsSpace.dominant"
+      ],
+      "paper_locations": [
+        "Real realizations; bg:realization"
+      ]
+    },
+    {
+      "id": "kl.realization.extension_minimality",
+      "chapter": "kl.03_realizations_and_grading",
+      "lean_declarations": [
+        "OAI.KLInvariance.Realization.extension_dimension_minimal",
+        "OAI.KLInvariance.Realization.extension_finrank"
+      ],
+      "paper_locations": [
+        "Real realizations; bg:realization"
+      ]
+    },
+    {
+      "id": "kl.realization.geometric_action",
+      "chapter": "kl.03_realizations_and_grading",
+      "lean_declarations": [
+        "OAI.KLInvariance.Realization.geometricAction",
+        "OAI.KLInvariance.Realization.geometricSimple_liftable",
+        "OAI.KLInvariance.Realization.geometricAction_simple",
+        "OAI.KLInvariance.TitsSpace.action",
+        "OAI.KLInvariance.TitsSpace.action_simple",
+        "OAI.KLInvariance.TitsSpace.action_preserves"
+      ],
+      "paper_locations": [
+        "Real realizations; bg:realization"
+      ]
+    },
+    {
+      "id": "kl.realization.linear_reflection",
+      "chapter": "kl.03_realizations_and_grading",
+      "lean_declarations": [
+        "OAI.KLInvariance.Realization.geometricSimple",
+        "OAI.KLInvariance.Realization.simple_normal_value",
+        "OAI.KLInvariance.Realization.geometricSimple_preserves"
+      ],
+      "paper_locations": [
+        "Real realizations; bg:realization"
+      ]
+    },
+    {
+      "id": "kl.realization.radical_extension",
+      "chapter": "kl.03_realizations_and_grading",
+      "lean_declarations": [
+        "OAI.KLInvariance.Realization.Extension",
+        "OAI.KLInvariance.Realization.extensionForm",
+        "OAI.KLInvariance.Realization.extensionForm_inl",
+        "OAI.KLInvariance.TitsSpace.Extended",
+        "OAI.KLInvariance.TitsSpace.extendedForm",
+        "OAI.KLInvariance.TitsSpace.extendedRoot"
+      ],
+      "paper_locations": [
+        "Real realizations; bg:realization"
+      ]
+    },
+    {
       "id": "kl.realization.reflection_plane",
       "chapter": "kl.03_realizations_and_grading",
       "lean_declarations": [
@@ -1850,6 +1923,21 @@
       ],
       "paper_locations": [
         "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.realization.tits_form",
+      "chapter": "kl.03_realizations_and_grading",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.gram",
+        "OAI.KLInvariance.TitsSpace.root",
+        "OAI.KLInvariance.TitsSpace.normal",
+        "OAI.KLInvariance.TitsSpace.form",
+        "OAI.KLInvariance.TitsSpace.form_symm",
+        "OAI.KLInvariance.TitsSpace.form_roots"
+      ],
+      "paper_locations": [
+        "Real realizations; bg:realization"
       ]
     },
     {

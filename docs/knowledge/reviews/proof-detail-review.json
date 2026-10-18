@@ -4,7 +4,7 @@
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
   "revised_proof_words": 27173,
-  "theorem_walkthroughs": 81,
+  "theorem_walkthroughs": 82,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -757,11 +757,11 @@
         "OAI.KLInvariance.TitsSpace.extendedNormal_linearIndependent",
         "OAI.KLInvariance.TitsSpace.extended_finrank"
       ],
-      "proof_steps": 5,
+      "proof_steps": 7,
       "previous_proof_words": 112,
-      "revised_proof_words": 320,
-      "proof_sha256": "ab6abb8f27bf5fa95a2db73da15b26d146fbcff96177037cb5f4bdad4f9add3c",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 354,
+      "proof_sha256": "d3c7ee48dc7744ba6b77a274ca2f4f939d1f1db725d9b2a42f04610e05399303",
+      "review": "Compared directly with extensionForm_nondegenerate: test dual directions for pv=0, radical vectors for phi=0, then all original vectors for v in K. Expanded root/normal independence and the dimension calculation."
     },
     {
       "node": "kl.notes.graded_nakayama",
@@ -927,6 +927,18 @@
       "revised_proof_words": 316,
       "proof_sha256": "7a4c4ff8bf67d52d1cb4e73ba1eea8601f310b1ca0489632a218ce8f2a2e90a2",
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+    },
+    {
+      "node": "kl.realization.extension_minimality",
+      "source_declarations": [
+        "OAI.KLInvariance.Realization.extension_dimension_minimal",
+        "OAI.KLInvariance.Realization.extension_finrank"
+      ],
+      "proof_steps": 4,
+      "previous_proof_words": 0,
+      "revised_proof_words": 205,
+      "proof_sha256": "e47db058120ad6b68cf305ddbf7ea7b4fbe8d873faaf527042026b283517ed8b",
+      "review": "Read extension_dimension_minimal; expanded its orthogonal-complement dimension argument through restriction of dual functionals and rank-nullity, and checked the attaining extension."
     },
     {
       "node": "kl.realization.reflection_plane",

@@ -1,12 +1,14 @@
 ---
 id: kl.notes.extended_realization
-title: Extending the Tits form without losing the root data
+title: Nondegeneracy and independence in the extended root space
 kind: theorem
 status: proved
 primary_topic: kl.03_realizations_and_grading
 topics:
 - kl.03_realizations_and_grading
-uses: []
+uses:
+- kl.realization.tits_form
+- kl.realization.radical_extension
 lean:
   repository: openai-kl
   modules:
@@ -52,63 +54,84 @@ tags:
 - background
 ---
 
-# Extending the Tits form without losing the root data
+# Nondegeneracy and independence in the extended root space
 
-Assume that the simple-generator set \(I\) is finite. Let \(V_0=\mathbb R^I\) with the Tits form \(B\), normalized by
+Let \(I\) be finite, let \(V_0=\mathbb R^I\) carry its Tits form \(B\), and let \(K\) be the radical. Choose a linear projection \(p:V_0\to K\) that fixes every element of \(K\). On \(E=V_0\oplus K^*\), use
 \[
-B(\alpha_i,\alpha_i)=2,\qquad
-B(\alpha_i,\alpha_j)=-2\cos(\pi/m_{ij}).
+B_p((v,\phi),(w,\psi))
+=B(v,w)+\phi(pw)+\psi(pv).
 \]
-The convention for an infinite Coxeter exponent is \(\cos(\pi/\infty)=1\).
-
-The form can be degenerate. Writing \(K=\ker B\), enlarge the space to
+Then \(B_p\) is symmetric and nondegenerate and restricts to \(B\) on \(V_0\oplus0\). Both families
 \[
-V=V_0\oplus K^*.
+\widetilde\alpha_i=(\alpha_i,0),\qquad
+\widetilde\nu_i=B_p(\widetilde\alpha_i,-)
 \]
-There exists a symmetric nondegenerate form \(\widetilde B\) extending \(B\) on \(V_0\). The extended simple roots \((\alpha_i,0)\) and the corresponding linear forms \(\widetilde B((\alpha_i,0),-)\) are both independent. Moreover
+are linearly independent. Finally,
 \[
-\dim V=|I|+\dim K.
+\dim E=|I|+\dim K.
 \]
+These conclusions also hold for the extended form chosen from this construction in the Lean development.
 
 *Proof.*
 
-### Step 1. Separate the radical from a nondegenerate part
+### Step 1. Produce the projection
 
-Let \(K=\{v:B(v,w)=0\text{ for every }w\in V_0\}\). Choose a vector-space complement \(U\), so every vector of \(V_0\) has a unique form \(u+k\).
+Choose a vector-space complement \(U\) of \(K\). Write each \(v\in V_0\) uniquely as \(u+k\) with \(u\in U\), \(k\in K\), and set \(p(v)=k\). Uniqueness of the decomposition proves linearity. If \(v=k\in K\), its decomposition is \(0+k\), so \(p(k)=k\).
 
-The restricted form on \(U\) is nondegenerate. Indeed, if \(u\in U\) is orthogonal to all of \(U\), it is also orthogonal to \(K\) by the definition of the radical and symmetry. It is therefore orthogonal to all \(V_0\), so \(u\in K\). Since \(U\cap K=0\), \(u=0\).
+### Step 2. Check symmetry and restriction
 
-### Step 2. Define the extended form explicitly
-
-Identify \(V_0\oplus K^*\) with \(U\oplus K\oplus K^*\), and put
+Each summand in the displayed definition is bilinear. Symmetry of \(B\) gives
 \[
-\widetilde B((u,k,\lambda),(u',k',\lambda'))
-=B(u,u')+\lambda(k')+\lambda'(k).
+\begin{aligned}
+B_p((w,\psi),(v,\phi))
+ &=B(w,v)+\psi(pv)+\phi(pw)\\
+ &=B(v,w)+\phi(pw)+\psi(pv)\\
+ &=B_p((v,\phi),(w,\psi)).
+\end{aligned}
 \]
-Each term is bilinear. Symmetry follows from symmetry of \(B\) and the interchange of the two evaluation terms.
+For two embedded vectors \((v,0),(w,0)\), the two evaluation terms vanish. Hence their pairing is \(B(v,w)\).
 
-For vectors of the original subspace, \(\lambda=\lambda'=0\), so
-\(\widetilde B((u,k,0),(u',k',0))=B(u,u')=B(u+k,u'+k')\).
-Thus this genuinely extends the original form.
+### Step 3. Test orthogonality against the added dual directions
 
-### Step 3. Check nondegeneracy by three separate tests
+Suppose \(x=(v,\phi)\) satisfies \(B_p(x,y)=0\) for every \(y\in E\). Taking \(y=(0,\psi)\) gives
+\[
+0=B_p((v,\phi),(0,\psi))=\psi(pv)
+\]
+for every \(\psi\in K^*\). Linear functionals separate vectors, so \(pv=0\).
 
-Suppose \((u,k,\lambda)\) is orthogonal to every vector. Test against \((0,0,\lambda')\): we obtain \(\lambda'(k)=0\) for all \(\lambda'\in K^*\), hence \(k=0\), since linear functionals separate vectors.
+To see the separation explicitly, if \(pv\ne0\), extend that vector to a basis of \(K\) and define a functional taking value one on it. This contradicts the displayed equality.
 
-Test against \((0,k',0)\): we obtain \(\lambda(k')=0\) for every \(k'\), so \(\lambda=0\).
-Finally test against \((u',0,0)\): \(B(u,u')=0\) for all \(u'\in U\), and Step 1 gives \(u=0\). The radical of the extended form is zero.
+### Step 4. Test against radical vectors
 
-### Step 4. Verify the root and normal independence claims
+For \(k\in K\), symmetry gives \(B(v,k)=B(k,v)=0\). Also \(p(k)=k\) and \(pv=0\). Taking \(y=(k,0)\) therefore gives
+\[
+0=B_p((v,\phi),(k,0))=0+\phi(k)+0.
+\]
+Thus \(\phi\) vanishes on all of \(K\), so \(\phi=0\).
 
-The original simple roots form a basis of \(V_0\). Their inclusion into \(V_0\oplus K^*\) is injective, so their extended vectors remain linearly independent.
+### Step 5. Test against all original vectors
 
-Nondegeneracy makes the linear map \(v\mapsto\widetilde B(v,-)\) injective. An injective linear map sends a linearly independent family to a linearly independent family: a vanishing linear combination of their images pulls back to a vanishing combination of the vectors. Thus the corresponding normal forms are independent too.
+Taking \(y=(w,0)\), with arbitrary \(w\in V_0\), now gives \(B(v,w)=0\). Hence \(v\in K\). The projection fixes radical vectors, so \(pv=v\). Step 3 showed \(pv=0\), and therefore \(v=0\).
 
-### Step 5. Compute the dimension
+We have proved that a vector orthogonal to every vector in the second argument is zero. Symmetry gives the same assertion for the other argument. This proves nondegeneracy.
 
-Finite-dimensional duality gives \(\dim K^*=\dim K\). Hence
-\(\dim(V_0\oplus K^*)=|I|+\dim K\).
-Only the ambient extended form is asserted nondegenerate. Its restriction to a root plane can still be degenerate, which is allowed in the later dihedral arguments.
+### Step 6. Prove root and normal independence
+
+Suppose \(\sum_i c_i\widetilde\alpha_i=0\). Projecting to \(V_0\) gives \(\sum_i c_i\alpha_i=0\). Since the \(\alpha_i\) form a basis, every coefficient is zero.
+
+Now suppose \(\sum_i c_i\widetilde\nu_i=0\). Bilinearity rewrites this equation as
+\[
+B_p\left(\sum_i c_i\widetilde\alpha_i,-\right)=0.
+\]
+Nondegeneracy forces \(\sum_i c_i\widetilde\alpha_i=0\), and root independence forces all \(c_i=0\). Thus the normals are independent as well.
+
+### Step 7. Compute the dimension
+
+The simple-root basis has \(|I|\) elements. A basis of the finite-dimensional radical \(K\) and its dual basis have the same size. Consequently
+\[
+\dim E=\dim V_0+\dim K^*=|I|+\dim K.
+\]
+The dimension-minimality theorem shows that this number is attained by the smallest possible nondegenerate extension preserving the embedded form.
 
 ## References
 

@@ -8,6 +8,7 @@ topics:
 - kl.03_realizations_and_grading
 uses:
 - kl.notes.extended_realization
+- kl.realization.geometric_action
 lean:
   repository: openai-kl
   modules:

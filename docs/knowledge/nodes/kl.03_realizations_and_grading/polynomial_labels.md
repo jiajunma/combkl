@@ -11,6 +11,7 @@ uses:
 - kl.notes.extended_realization
 - kl.detail.positive_roots
 - kl.detail.root_reflection_correspondence
+- kl.realization.radical_extension
 lean:
   repository: openai-kl
   modules:

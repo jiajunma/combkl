@@ -1,0 +1,315 @@
+# Relationships between the proposed KB topics
+
+Recorded: 2026-10-18. Status: organization approved on 2026-10-18; implementation in progress. Topic codes refer to the [full hierarchy](knowledge-base-hierarchy.md).
+
+The mathematical hierarchy gives each concept a home. The relationships explain what the reader carries from that home into another construction or proof. Three kinds of relationship matter:
+
+- **Definition:** one object uses another in its definition.
+- **Construction:** earlier data produces a new object, map, or decomposition.
+- **Proof:** an earlier theorem supplies a specified inference or hypothesis.
+
+Suggested reading order is a separate layer. For example, a reader can learn general graph sheaves before the Tits extension. The Bruhat graph's polynomial labels require the realization when the general definitions are specialized.
+
+The structured [relationship register](knowledge-base-relations.json) records the stages, their inputs, their outputs, and Lean anchors. The stage graph is a mathematical exposition graph; the anchors locate its interfaces in the local source.
+
+## How the nine branches fit together
+
+**Coxeter combinatorics (C) supplies the common underlying intervals.** The realization branch R equips reflections with roots and actions; H equips intervals with R and P polynomials. These are different constructions on the same Coxeter data.
+
+**Graded algebra (A) supplies a common language for the geometric constructions.** The realization produces the coefficient algebra and linear root labels. Graded modules, minimal covers, Hilbert values, and homogeneous bases then support both word modules W and sheaves S.
+
+**Word modules (W) and boundary sheaves (S) meet through actual maps and decompositions.** Tensor words give explicit modules, pairings, and Hecke-controlled characters. Minimal extension gives boundary sheaves. Word sheaves decompose into boundary models, and pairings descend to the relevant summands. Simultaneous stalk/costalk decomposition then yields reciprocity for the actual boundary character.
+
+**Reflection geometry splits into two uses.** In O it yields dihedral systems, edge reconstruction, schedules, and path formulas. In L it determines the surviving graph after localization, the local structure models, and the correction factor for an edge.
+
+**Hilbert comparison (I) joins these outputs.** The local inclusion of embedded images becomes an inequality between numerical states. Actual-character reciprocity describes the endpoints; the path formula identifies the transported transfer matrix. A simultaneous induction proves R-invariance and suffix-kernel freeness. Canonical polynomial rigidity then proves P-invariance, and finite-support models remove the finite-generator restriction.
+
+## The two routes into the comparison
+
+The following diagrams show selected interfaces from the relationship register. Each arrow carries a mathematical output; topic placement does not by itself create an arrow.
+
+### From modules and sheaves to the endpoint vector
+
+<!-- generated-character-diagram -->
+```mermaid
+flowchart TD
+  a["General graded algebra"]
+  ra["Root-labelled coefficient algebra"]
+  h["Hecke operators and R"]
+  s["General graph sheaves"]
+  sb["Boundary sheaves"]
+  sd["Boundary-model decomposition"]
+  w["Frobenius word modules"]
+  we["Word coordinates and lattices"]
+  wc["Word characters"]
+  ws["Word sheaves and boundary summands"]
+  sp["Integral support and boundary duality"]
+  sc["Actual-character reciprocity"]
+  a --> ra
+  a --> s
+  s --> sb
+  a --> sb
+  ra --> sb
+  sb --> sd
+  a --> sd
+  ra --> w
+  a --> w
+  w --> we
+  we --> wc
+  a --> wc
+  h --> wc
+  we --> ws
+  s --> ws
+  sd --> ws
+  ws --> sp
+  sd --> sp
+  w --> sp
+  a --> sp
+  wc --> sc
+  sp --> sc
+  sd --> sc
+  h --> sc
+```
+<!-- /generated-character-diagram -->
+
+There are two constructions to explain before their meeting point. A word module is obtained by successive tensor induction along reflection invariant subalgebras. A boundary sheaf is obtained by successive minimal covers of boundary images. The bridge is the word sheaf and its decomposition into shifted boundary models.
+
+The character calculation uses the same decomposition for stalks and full kernels. The word-level reciprocal identity therefore becomes an identity involving the boundary characters. Lower terms already satisfy reciprocity, and the top multiplicity is one; finite cancellation isolates the new boundary identity. The source interfaces are [TitsSpace.bottCharacter_decomposition_both · CharacterReciprocity.lean:2019](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L2019), [finite_character_cancellation · DyerPaths.lean:15](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L15), and [BruhatGraph.stalkCharacter_reciprocity · DyerPaths.lean:62](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L62).
+
+Write the resulting character as \(C\). It records homogeneous basis degrees of the actual boundary stalk. The argument uses its reciprocity and top value. The canonical polynomial \(P\) was constructed independently in H4 and is compared at the later rigidity stage.
+
+### From roots and intervals to edge comparison
+
+<!-- generated-local-diagram -->
+```mermaid
+flowchart TD
+  r["Realizations and roots"]
+  ra["Root-labelled coefficient algebra"]
+  og["Root orders and dihedral geometry"]
+  ow["Geometric plane weights"]
+  oe["Reflection-edge reconstruction"]
+  os["Schedules and elementary transfers"]
+  ot["Transported chronological schedule"]
+  l0["Localized sheaves and cosets"]
+  lm["Local dihedral models"]
+  lf["Correction factor and degree"]
+  li["Localized embedded-image equality"]
+  lg["Conditional global edge inclusion"]
+  r --> ra
+  r --> og
+  og --> ow
+  r --> ow
+  ow --> oe
+  og --> oe
+  og --> os
+  oe --> ot
+  os --> ot
+  ra --> l0
+  og --> l0
+  l0 --> lm
+  og --> lm
+  ow --> lf
+  ra --> lf
+  l0 --> lf
+  lm --> li
+  lf --> li
+  ot --> li
+  li --> lg
+```
+<!-- /generated-local-diagram -->
+
+The same root-plane geometry has three outputs:
+
+1. It reconstructs reflection edges from the interval order, making edge transport possible.
+2. It controls changes of root order and the path formula for transfer products.
+3. It controls the local outgoing-label counts and the exponents of the correction factor.
+
+The third output is used inside one edge module. Localizing at a plane makes labels outside that plane invertible; the corresponding edge modules vanish. The remaining component is described through a dihedral coset graph. The localized boundary sheaf decomposes into local structure models, where the two images can be calculated as products of labels.
+
+The edge factor matches the difference of these products. Local equality of scaled images, denominator control, and membership in the free target yield the global inclusion. The source interfaces are [TitsSpace.PlaneBasis.localized_boundary_decomposition · TerminalKernels.lean:200](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean#L200), [TitsSpace.PlaneBasis.localized_boundary_scaledImages · TerminalKernels.lean:245](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean#L245), and [BruhatGraph.boundary_edge_image_le · TerminalKernels.lean:1045](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean#L1045).
+
+## The interfaces that topic pages should explain
+
+| Passage | What passes between the topics | Why it is needed |
+|---|---|---|
+| C → R | Simple generators, relations, reflections, and length | Construct the representation and interpret root signs in group-theoretic terms. |
+| C → H | Reduced words and Bruhat recursion | Construct Hecke operators and the canonical polynomial families. |
+| R → A1 | Extended root vectors and their action | Produce the coefficient algebra, its action, and nonzero linear labels. |
+| A → W | Invariant algebras, tensor products, graded bases, and scalar transport | Define word modules and compute their graded pieces and pairings. |
+| A5 + S2 → S4 | Minimal covers of boundary images | Build the boundary sheaf one vertex at a time. |
+| W4–W6 + S1–S3 → S7 | Evaluation images and pair-projection maps | Turn a word module into a sheaf with explicit stalk and edge maps. |
+| W2–W3 + S5–S7 → S8 | Perfect word pairings, integral support, and split maps | Construct pairings on boundary summands and identify costalk duals. |
+| H5 + W7 + S5 + S8 → S9 | Word R-convolution and simultaneous character decomposition | Prove actual-character reciprocity by finite cancellation. |
+| R5–R6 → O1–O4 | Root signs, planes, and inversion changes | Construct orders, induced dihedral systems, and plane weights. |
+| C4 + O4–O5 → O6 | Reconstructed reflection edges and rank-preserving order isomorphisms | Transport an edge schedule using interval order data. |
+| H3 + O1–O3 + O7 → transported matrix | R-recursion and ordered path expansions | Identify transfer entries with normalized R-polynomials. |
+| A1 + R6 + S2–S4 → L1–L4 | Plane ideals, labelled sheaves, and boundary properties | Reduce a localized sheaf to dihedral structure models. |
+| O3–O4 + L3–L5 → L6 | Local outgoing counts and correction-factor exponents | Calculate equality of scaled model images. |
+| A7 + L6 → L7 | Free-target membership and controlled denominators | Pass from local calculations to a global embedded-image inclusion. |
+| A6 + L5–L7 → I1 | Hilbert exactness, a homogeneous factor, and image inclusion | Obtain the normalized one-edge inequality and its equality criterion. |
+| O6–O7 + I1 → I2 | A complete edge schedule and monotone transfer operators | Accumulate the edge inequalities. |
+| S8–S9 + O7 → I3 | Duality, actual-character reciprocity, and the R-matrix | Express and compare initial and terminal states. |
+| A5–A7 + I2–I3 → I4 | Vanishing deficits and two presentations of one image | Recover all suffix-kernel freeness by reverse traversal. |
+| C4 + I1–I4 → I5 | Strict rank decrease and conditional comparison/reconstruction | Prove R-invariance and new freeness together. |
+| H4–H5 + I5 → I6 | A common R-matrix, reciprocity, and strict degree bounds | Prove equality of canonical P-polynomials. |
+| C5 + I6 → I7 | Finite-support models preserving order and polynomials | Obtain the theorem for arbitrary Coxeter systems. |
+
+The conjunctions in this table matter: a consumer usually needs several inputs. Each detailed topic page should identify all of them and state the applicable hypotheses.
+
+## The central induction, with its rank dependencies exposed
+
+Let \(\phi:[a,b]\simeq[a',b']\) be an interval order isomorphism and let \(n=\ell(b)-\ell(a)\). The simultaneous assertion contains:
+
+1. Equality of the normalized R-polynomials at the two endpoint pairs.
+2. Freeness of every remaining-condition kernel for every suffix of the transported chronological schedule.
+3. The corresponding suffix freeness for the inverse isomorphism.
+
+The predicate is [BruhatGraph.FreeSuffixes · SimultaneousInvariance.lean:118](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SimultaneousInvariance.lean#L118). The proof step is [BruhatGraph.rTilde_freeness_of_below · Invariance.lean:136](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L136), and strong rank induction is packaged by [BruhatGraph.rTilde_invariance_and_freeness · Invariance.lean:190](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L190).
+
+```mermaid
+flowchart TD
+  Small["Joint assertion on ranks below n"]
+  Upper["Freeness on proper upper intervals"]
+  Initial["R equality on proper initial intervals"]
+  Bound["Edge inclusions and schedule inequality"]
+  Cancel["Cancel known bottom-row terms"]
+  Opposite["Apply the comparison also to the inverse isomorphism"]
+  REqual["New endpoint R equality"]
+  AllR["All R entries agree on the current interval"]
+  End["Exact endpoint comparison"]
+  Images["Every edge-image inclusion is an equality"]
+  Free["Reverse traversal proves current suffix freeness"]
+  Small --> Upper
+  Small --> Initial
+  Upper --> Bound
+  Bound --> Cancel
+  Initial --> Cancel
+  Cancel --> Opposite
+  Opposite --> REqual
+  REqual --> AllR
+  Small --> AllR
+  AllR --> End
+  End --> Images
+  Bound --> Images
+  Images --> Free
+```
+
+The edges in this diagram have the following meanings:
+
+- A proper upper interval starts at a vertex strictly above \(a\). Its smaller-rank freeness gives precisely the target kernel required at a scheduled edge. The restriction and cutoff identifications are [BruhatGraph.target_free_of_upper_suffixes · SimultaneousInvariance.lean:124](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SimultaneousInvariance.lean#L124).
+- A proper initial interval ends at a vertex strictly below \(b\). Its R-equality supplies the known entries in the bottom row. Cancellation leaves the new endpoint entry. Applying the same comparison to \(\phi^{-1}\) gives the opposite inequality; see [BruhatGraph.rTilde_eq_of_smaller_data · Invariance.lean:95](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L95).
+- Endpoint equality plus smaller-rank equalities gives the full R-matrix equality; see [rTilde_transport_all · Invariance.lean:33](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L33).
+- That matrix equality and actual-character reciprocity make the endpoint comparison exact; see [BruhatGraph.actual_endpoint_of_rTilde_eq · SimultaneousInvariance.lean:278](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SimultaneousInvariance.lean#L278).
+- Exactness propagates to each edge step, where Hilbert equality identifies the actual embedded images. The reverse traversal then obtains suffix freeness; see [BruhatGraph.schedule_kernels_free_of_endpoint_eq · SimultaneousInvariance.lean:217](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SimultaneousInvariance.lean#L217).
+
+The graph is acyclic when ranks are shown: smaller-rank freeness enables the current comparison, and the current equality produces current-rank freeness. The reverse traversal itself starts with the no-condition kernel, which is the free stalk, and adds conditions back.
+
+## Relationships that determine the organization
+
+### Geometric plane weights and polynomial degrees have different consumers
+
+The current entry `kl.paths.plane_degree` combines two results:
+
+- [TitsSpace.sum_planeWeight · ReflectionSchedules.lean:621](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L621) counts geometric inversion changes:
+  \[
+  2\sum_{\Pi}k_{\Pi}=\ell(r_{\alpha}x)-\ell(x)-1.
+  \]
+- [TitsSpace.edgeFactor_degree_formula · ReflectionSchedules.lean:993](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L993) turns that count into the degree of a polynomial correction factor.
+
+The first belongs in O4. It uses inversion roots, the partner construction, and plane weights, and supplies the edge-reconstruction argument. The second belongs in L5. It additionally uses the coefficient quotient, reduced roots, nonvanishing, and homogeneity.
+
+The proposed split lets O5 use the geometric identity directly. It also explains the extra algebra required before a weight sum can be used as a polynomial degree.
+
+### Sheaf construction, word realization, and duality are successive stages
+
+S1–S4 define sheaves and construct boundary sheaves using graded covers. W constructs tensor words. S7 makes the word construction into a sheaf, S5 identifies its boundary summands, and S8 transfers pairings through the relevant maps.
+
+The topic groups W and S consequently have relationships in both directions. At the level of individual constructions the order is:
+
+\[
+\text{general sheaves and word modules}
+\longrightarrow \text{word sheaves and boundary summands}
+\longrightarrow \text{boundary duality}
+\longrightarrow \text{actual-character reciprocity}.
+\]
+
+A single arrow between whole branches would lose this information. The relationship register therefore uses stages within branches.
+
+### Full kernels, partial kernels, and character recognition serve different roles
+
+The full outgoing kernel is the costalk. Its duality and freeness are established by the pairing construction. A partial kernel imposes only the conditions in a schedule suffix. Freeness of all such kernels is one of the outputs of the simultaneous induction.
+
+The property fields of `BoundarySheaf` explain the initial object. They should be presented before theorems about its costalks or schedule kernels, so the reader can see which properties are construction data and which are derived.
+
+The main comparison uses the actual character \(C\), its top normalization, and its reciprocity. The relation to canonical \(P\), and the source's character-identification condition, belongs in S10. In I6, canonical \(P\)-invariance follows from the common R-matrix and strict-degree rigidity. The source interfaces are [BruhatGraph.StalkCharacterObligation · SheafMorphisms.lean:219](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L219), [Comparison.eq_of_scaled_difference_reciprocal · SimultaneousInvariance.lean:328](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SimultaneousInvariance.lean#L328), and [BruhatGraph.klPolynomial_invariance_finite · Invariance.lean:427](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L427).
+
+### Finite-support models return to the realization
+
+C5 has its mathematical home in Coxeter combinatorics. Its complete transport theorem is a later stage: the local proof of the standard parabolic inclusion uses the faithful cotangent action to establish injectivity. Order transport then combines with canonical-polynomial transport. The relationship register therefore gives C5 a separate stage after the relevant parts of R and H; see [StandardParabolic.inclusion_injective · Tits.lean:1446](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean#L1446) and [FiniteIntervalModel.kl_eq · Invariance.lean:517](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L517).
+
+## Reading routes through the hierarchy
+
+**To understand the invariance proof:** start with C3–C4 and H3–H4, then read the overview of I5. Develop A3–A6 and S1–S4 to understand the sheaf objects, W and S5–S9 to obtain the actual-character identity, and O/L to obtain the comparison theorem. Return to I1–I7 for the complete argument.
+
+**To understand the geometric constructions:** follow R1–R6, A1, O1–O5, and L1–L5. The extended realization, induced dihedral systems, plane weights, and local models become one connected development.
+
+**To understand the module and sheaf constructions:** start with A2–A7 and S1–S4. Follow W1–W7 and S5–S9 to see how explicit tensor coordinates produce abstract boundary duality and character reciprocity.
+
+These are navigation routes through common entries. Definition links and prerequisite links let readers branch whenever they need a construction explained.
+
+## Stage-level relationship register
+
+Each row identifies a coherent construction or result, its immediate explanatory prerequisites, its output, and local Lean anchors. A conditional theorem retains its hypothesis in the row. The detailed induction above explains where those hypotheses are discharged.
+
+<!-- generated-stage-register -->
+| Stage and home | Immediate inputs | Output and Lean interfaces |
+|---|---|---|
+| **c — Coxeter intervals** (C1, C2, C3, C4) |  | Coxeter data, finite ranked intervals, and restriction to proper subintervals. [BruhatLE · Model.lean:18](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Model.lean#L18); [Interval · Model.lean:22](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Model.lean#L22); [rankDifference_subinterval_lt · Invariance.lean:20](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L20) |
+| **r — Realizations and roots** (R1, R2, R3, R4, R5, R6) | c | Root vectors, extended action, reflection faithfulness, and root planes. [TitsSpace.form · Tits.lean:374](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean#L374); [TitsSpace.extendedForm · Tits.lean:555](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean#L555); [TitsSpace.reflectionFaithful · Tits.lean:1255](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean#L1255) |
+| **a — General graded algebra** (A2, A3, A4, A5, A6, A7) |  | Graded modules, covers, homogeneous bases, Hilbert identities, and kernel-presentation tools. [Graded.ModuleData · GradedModules.lean:1051](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedModules.lean#L1051); [Graded.ModuleData.MinimalCover · GradedModules.lean:1175](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedModules.lean#L1175); [Hilbert.hasSum_homogeneous_basis · HilbertSeries.lean:321](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/HilbertSeries.lean#L321); [Hilbert.eq_of_value_eq · ModuleAlgebra.lean:549](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ModuleAlgebra.lean#L549) |
+| **ra — Root-labelled coefficient algebra** (A1) | r, a | Symmetric/polynomial coefficients and linear root quotients. [TitsSpace.symmetricLabel · Support.lean:250](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean#L250); [BruhatGraph.polynomialRoot_prime · PlaneLocalization.lean:1372](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PlaneLocalization.lean#L1372) |
+| **h — Hecke operators and R** (H1, H2, H3, H5) | c | Bar coefficients, R-recursion, and positive-word identities. [Hecke.rTilde · Hecke.lean:482](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean#L482); [HeckeQ.positiveWord_rValue · CharacterReciprocity.lean:997](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L997) |
+| **p — Canonical P and rigidity** (H4, H5) | h | Canonical KL family and uniqueness from reciprocity and strict degree. [NormalizedKL · Model.lean:55](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Model.lean#L55); [klPolynomial_eq_constructed · CanonicalKL.lean:286](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean#L286); [Comparison.eq_of_scaled_difference_reciprocal · SimultaneousInvariance.lean:328](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SimultaneousInvariance.lean#L328) |
+| **s — General graph sheaves** (S1, S2, S3) | a | Stalk/edge maps, sections, kernels, and graded sheaf morphisms. [MomentGraph.OrderedGraph · Sheaves.lean:21](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Sheaves.lean#L21); [MomentGraph.Sheaf · Sheaves.lean:28](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Sheaves.lean#L28); [MomentGraph.GradedSheaf · GradedSheaves.lean:20](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L20) |
+| **sb — Boundary sheaves** (S4) | s, a, c, ra | Minimal-cover construction of the actual boundary object and its restrictions. [MomentGraph.exists_boundarySheaf · GradedSheaves.lean:1238](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L1238); [BruhatGraph.boundarySheaf · SheafMorphisms.lean:202](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L202) |
+| **sd — Boundary-model decomposition** (S5) | sb, a | Split objects, primitive recognition, and decomposition into shifted boundary models. [MomentGraph.GradedSheaf.SplitIn · SheafMorphisms.lean:1354](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L1354); [MomentGraph.GradedSheaf.exists_modelSumIso · SheafMorphisms.lean:1642](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L1642) |
+| **w — Frobenius word modules** (W1, W2, W3) | ra, a | Iterated tensor modules, homogeneous bases, and perfect word pairings. [FrobeniusDuality.PairedBimodule · Frobenius.lean:295](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L295); [TitsSpace.bottSamelson · Frobenius.lean:394](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L394); [TitsSpace.bottBasis · Frobenius.lean:967](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L967) |
+| **we — Word coordinates and lattices** (W4, W5, W6) | w, c | Stalk images, pair projections, and compatible upper images. [TitsSpace.bottStalk · Frobenius.lean:1558](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L1558); [TitsSpace.bottHeadPairLattice · BottSamelson.lean:162](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L162); [ReflectionPairTranslation.lattice · Frobenius.lean:2086](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L2086) |
+| **wc — Word characters** (W7) | we, a, h | Ascent/descent recursion and equality with positive Hecke-word coefficients. [TitsSpace.bottStalkCharacter_eq_heckeWord · IntegralPairings.lean:289](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L289) |
+| **ws — Word sheaves and boundary summands** (S7) | we, s, sd | Word sheaves with generation, flabbiness, and boundary splitting. [TitsSpace.bottPolynomialSheaf · Support.lean:417](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean#L417); [TitsSpace.bottBoundarySheaf_splitIn · Support.lean:293](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean#L293) |
+| **sp — Integral support and boundary duality** (S6, S8) | ws, sd, w, a | Integral cuts, adjoints, boundary perfect pairings, and costalk duality. [IntegralSupport.cut · Support.lean:488](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean#L488); [BruhatGraph.boundarySheaf_perfectPairing · CharacterReciprocity.lean:1740](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L1740); [BruhatGraph.boundaryKernelFree · CharacterReciprocity.lean:1799](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L1799) |
+| **sc — Actual-character reciprocity** (S9) | wc, sp, sd, h | The reciprocal identity for actual boundary character C. [TitsSpace.bottCharacter_decomposition_both · CharacterReciprocity.lean:2019](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L2019); [finite_character_cancellation · DyerPaths.lean:15](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L15); [BruhatGraph.stalkCharacter_reciprocity · DyerPaths.lean:62](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L62) |
+| **og — Root orders and dihedral geometry** (O1, O2, O3) | r, c | Ratio orders, induced dihedral systems, and relative interval combinatorics. [TitsSpace.PlaneBasis · Decomposition.lean:619](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean#L619); [TitsSpace.RatioOrder · DyerPaths.lean:1181](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L1181) |
+| **ow — Geometric plane weights** (O4) | og, r | Finite nonnegative plane weights and their length-sum identity. [TitsSpace.sum_planeWeight · ReflectionSchedules.lean:621](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L621) |
+| **oe — Reflection-edge reconstruction** (O5) | ow, og, c | Reflection edges recovered from interval order and transported under isomorphism. [diamondEdges_of_bruhatStep · Decomposition.lean:1347](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean#L1347); [intervalIso_bruhatStep_iff_general · DyerPaths.lean:234](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L234) |
+| **os — Schedules and elementary transfers** (O6, O7) | og, c | Sorted edge lists, cutoffs, paths, and elementary dispatch operators. [SchedulePaths.step · ReflectionSchedules.lean:1172](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L1172); [SchedulePaths.sortedSchedule · ReflectionOrders.lean:582](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionOrders.lean#L582) |
+| **op — Dyer path identity** (O7) | os, og, h | Identification of geometric-order path sums with normalized R-polynomials. [AdaptedDyer.polynomial_eq_rTilde · DyerPaths.lean:2462](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L2462); [WallDyer.geometric_entry_eq_rTilde · ReflectionOrders.lean:1229](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionOrders.lean#L1229) |
+| **ot — Transported chronological schedule** (O6) | oe, os | Transported reflection edges, score cutoffs, and suffix descriptions. [BruhatGraph.transportedEdge · EdgeLocalization.lean:23](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean#L23); [BruhatGraph.chronologicalSchedule · PositiveTransfer.lean:1225](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean#L1225); [BruhatGraph.suffix_target_iff · PositiveTransfer.lean:1280](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean#L1280) |
+| **om — Transported R-matrix** (O7, I3) | ot, op | Dispatch entries are the target interval's transported R-entries. [BruhatGraph.transported_dispatch_matrix · EdgeLocalization.lean:219](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean#L219) |
+| **l0 — Localized sheaves and cosets** (L1, L2) | ra, s, og | Plane localization and the surviving labelled coset graph. [TitsSpace.planePrime · PlaneLocalization.lean:355](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PlaneLocalization.lean#L355); [TitsSpace.PlaneBasis.localizedCoset · PlaneLocalization.lean:562](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PlaneLocalization.lean#L562) |
+| **lm — Local dihedral models** (L3, L4) | l0, sb, og | Structure-model products and decomposition of the localized boundary sheaf. [MomentGraph.Sheaf.LocalModels · CharacterReciprocity.lean:352](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L352); [TitsSpace.PlaneBasis.localized_boundary_decomposition · TerminalKernels.lean:200](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean#L200) |
+| **lf — Correction factor and degree** (L5) | ow, ra, l0 | Nonzero homogeneous edge factor, its degree, and local associations. [TitsSpace.edgeFactor_degree_formula · ReflectionSchedules.lean:993](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L993); [TitsSpace.edgeFactor_local_associated · PlaneLocalization.lean:1579](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PlaneLocalization.lean#L1579) |
+| **li — Localized embedded-image equality** (L6) | lm, lf, ot | Equality of scaled model images, transported to localized boundary images. [MomentGraph.Sheaf.ScaledImages · CharacterReciprocity.lean:443](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L443); [TitsSpace.PlaneBasis.localized_boundary_scaledImages · TerminalKernels.lean:245](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean#L245) |
+| **lg — Conditional global edge inclusion** (L7) | li, a | Global lower-image inclusion in the corrected upper image, assuming the specified upper kernel is free. [BruhatGraph.boundary_edge_image_le · TerminalKernels.lean:1045](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean#L1045); [BruhatGraph.schedule_edge_image_le · TerminalKernels.lean:1126](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean#L1126) |
+| **i1 — Normalized edge inequality** (I1) | lg, lf, a | One-edge Hilbert inequality and equality criterion under the edge-inclusion hypothesis. [BruhatGraph.normalized_edge_increment_le · PositiveTransfer.lean:621](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean#L621); [BruhatGraph.normalized_edge_increment_eq_iff · PositiveTransfer.lean:637](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean#L637) |
+| **i2 — Conditional schedule comparison** (I2) | i1, ot | Iterated state inequality, with target-kernel freeness supplied at each step. [BruhatGraph.scheduleState_le · PositiveTransfer.lean:1148](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean#L1148); [BruhatGraph.actual_comparison_of_upper_freeness · SimultaneousInvariance.lean:264](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SimultaneousInvariance.lean#L264) |
+| **i3 — Character endpoint identities** (I3) | sc, sp, om | Initial/final states and exact endpoint comparison when all R-entries agree. [BruhatGraph.actual_endpoint_of_rTilde_eq · SimultaneousInvariance.lean:278](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SimultaneousInvariance.lean#L278) |
+| **i4 — Equality gives suffix freeness** (I4) | i2, i3, a | Vanishing deficits, equality of images, and reverse recovery of free kernels, assuming endpoint equality. [BruhatGraph.schedule_kernels_free_of_endpoint_eq · SimultaneousInvariance.lean:217](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SimultaneousInvariance.lean#L217) |
+| **i5 — Simultaneous R and freeness induction** (I5) | i2, i3, i4, c, h | R-invariance and suffix freeness in both directions by strong rank induction. [BruhatGraph.rTilde_freeness_of_below · Invariance.lean:136](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L136); [BruhatGraph.rTilde_invariance_and_freeness · Invariance.lean:190](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L190) |
+| **i6 — Canonical KL invariance** (I6) | i5, p | Equality of P by common R-reciprocity, upper-interval induction, and degree rigidity. [BruhatGraph.scaledKL_eq_transported · Invariance.lean:415](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L415); [BruhatGraph.klPolynomial_invariance_finite · Invariance.lean:427](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L427) |
+| **cf — Finite-support interval and polynomial transport** (C5) | c, r, p | Finite parabolic interval models with order, rank, and canonical-polynomial transport; inclusion injectivity uses the cotangent action. [StandardParabolic.inclusion_injective · Tits.lean:1446](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean#L1446); [FiniteIntervalModel · Invariance.lean:476](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L476); [FiniteIntervalModel.orderIso · Invariance.lean:505](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L505); [FiniteIntervalModel.kl_eq · Invariance.lean:517](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L517) |
+| **i7 — Arbitrary Coxeter systems** (I7) | i6, cf | Transport through finite-support models to the unrestricted invariance theorem. [FiniteIntervalModel.kl_eq · Invariance.lean:517](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L517); [combinatorial_invariance · Invariance.lean:547](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean#L547) |
+| **s10 — Character-identification interfaces** (S10) | sp, p | Conditional character recognition and local-degree statements, with their stated hypotheses. [BruhatGraph.StalkCharacterObligation · SheafMorphisms.lean:219](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L219); [BruhatGraph.localIntersection_diagonal_strict_degree · PositiveTransfer.lean:186](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean#L186) |
+<!-- /generated-stage-register -->
+
+## Validation of this planning record
+
+<!-- generated-validation -->
+- The local index accounts for all **34 modules**, **35 structures**, and **3 inductive declarations**; each structure/inductive declaration has one proposed home.
+- The register contains **36 stages** and **85 prerequisite relationships**. Python checked their identifiers and found a topological order.
+- Python resolved every recorded Lean anchor to the fixed source snapshot and checked that its file and declaration line exist locally.
+- Source reading checked the central interfaces: actual-character cancellation, local-to-global edge inclusion with upper-kernel freeness, geometric weight versus polynomial degree, and the rank-induction/reverse-traversal sequence.
+- These are documentation and source-alignment checks. The proposal has not yet been applied to KB entries.
+<!-- /generated-validation -->
+
+The hierarchy and relationship maps were approved on 2026-10-18. Implementation is tracked in docs/knowledge/reviews/self-contained-revision.json.

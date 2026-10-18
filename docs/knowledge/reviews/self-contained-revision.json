@@ -1,0 +1,467 @@
+{
+  "scope": "Approved revision toward a self-contained Blueprint and Knowledge Base",
+  "organization_approved": "2026-10-18",
+  "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "status": "in_progress",
+  "reviewed_entries": [
+    {
+      "node": "kl.realization.tits_form",
+      "file": "docs/knowledge/nodes/kl.03_realizations_and_grading/tits_form.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.gram",
+        "OAI.KLInvariance.TitsSpace.root",
+        "OAI.KLInvariance.TitsSpace.normal",
+        "OAI.KLInvariance.TitsSpace.form",
+        "OAI.KLInvariance.TitsSpace.form_symm",
+        "OAI.KLInvariance.TitsSpace.form_roots"
+      ],
+      "review": "Definition, ambient assumptions, displayed calculations, and source correspondence checked against local declarations.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.linear_reflection",
+      "file": "docs/knowledge/nodes/kl.03_realizations_and_grading/linear_reflection.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Realization.geometricSimple",
+        "OAI.KLInvariance.Realization.simple_normal_value",
+        "OAI.KLInvariance.Realization.geometricSimple_preserves"
+      ],
+      "review": "Definition, ambient assumptions, displayed calculations, and source correspondence checked against local declarations.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.radical_extension",
+      "file": "docs/knowledge/nodes/kl.03_realizations_and_grading/radical_extension.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Realization.Extension",
+        "OAI.KLInvariance.Realization.extensionForm",
+        "OAI.KLInvariance.Realization.extensionForm_inl",
+        "OAI.KLInvariance.TitsSpace.Extended",
+        "OAI.KLInvariance.TitsSpace.extendedForm",
+        "OAI.KLInvariance.TitsSpace.extendedRoot"
+      ],
+      "review": "Definition, ambient assumptions, displayed calculations, and source correspondence checked against local declarations.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.geometric_action",
+      "file": "docs/knowledge/nodes/kl.03_realizations_and_grading/geometric_action.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Realization.geometricAction",
+        "OAI.KLInvariance.Realization.geometricSimple_liftable",
+        "OAI.KLInvariance.Realization.geometricAction_simple",
+        "OAI.KLInvariance.TitsSpace.action",
+        "OAI.KLInvariance.TitsSpace.action_simple",
+        "OAI.KLInvariance.TitsSpace.action_preserves"
+      ],
+      "review": "Definition, ambient assumptions, displayed calculations, and source correspondence checked against local declarations.",
+      "pending": [
+        "Expand the finite Coxeter reflection relation into a standalone detailed proof."
+      ]
+    },
+    {
+      "node": "kl.realization.extended_action",
+      "file": "docs/knowledge/nodes/kl.03_realizations_and_grading/extended_action.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.extendedAction",
+        "OAI.KLInvariance.TitsSpace.extendedAction_simple",
+        "OAI.KLInvariance.TitsSpace.extendedAction_preserves",
+        "OAI.KLInvariance.TitsSpace.extendedAction_restrict",
+        "OAI.KLInvariance.TitsSpace.dominant"
+      ],
+      "review": "Definition, ambient assumptions, displayed calculations, and source correspondence checked against local declarations.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.extension_minimality",
+      "file": "docs/knowledge/nodes/kl.03_realizations_and_grading/extension_minimality.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Realization.extension_dimension_minimal",
+        "OAI.KLInvariance.Realization.extension_finrank"
+      ],
+      "review": "Definition, ambient assumptions, displayed calculations, and source correspondence checked against local declarations.",
+      "pending": []
+    },
+    {
+      "node": "kl.notes.extended_realization",
+      "file": "docs/knowledge/nodes/kl.03_realizations_and_grading/extended_realization.md",
+      "review": "Rewritten as the projection-based proof used in Lean, with all three nondegeneracy tests and both independence arguments explicit."
+    }
+  ],
+  "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
+  "topics": [
+    {
+      "code": "C1",
+      "title": "Coxeter data, words, length, and reflections",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "C2",
+      "title": "Signed reflection actions",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "C3",
+      "title": "Strong Bruhat order and lifting",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "C4",
+      "title": "Intervals, ranks, and order isomorphisms",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "C5",
+      "title": "Standard parabolics and finite support",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "R1",
+      "title": "The geometric root space and Tits form",
+      "status": "in_progress",
+      "completion_evidence": []
+    },
+    {
+      "code": "R2",
+      "title": "The geometric action",
+      "status": "in_progress",
+      "completion_evidence": []
+    },
+    {
+      "code": "R3",
+      "title": "Degeneracy and the nondegenerate extension",
+      "status": "in_progress",
+      "completion_evidence": []
+    },
+    {
+      "code": "R4",
+      "title": "The extended action and reflection faithfulness",
+      "status": "in_progress",
+      "completion_evidence": []
+    },
+    {
+      "code": "R5",
+      "title": "Roots, positivity, and inversions",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "R6",
+      "title": "Dual geometry and root planes",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "H1",
+      "title": "Hecke modules and operators",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "H2",
+      "title": "The bar operation",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "H3",
+      "title": "The R-polynomial families",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "H4",
+      "title": "Canonical KL polynomials",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "H5",
+      "title": "Word expansions and rigidity",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "A1",
+      "title": "The realization coefficient algebra",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "A2",
+      "title": "Grading and the positive ideal",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "A3",
+      "title": "Graded modules and maps",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "A4",
+      "title": "Changing coefficients and twisting",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "A5",
+      "title": "Bases, minimal covers, and projectivity",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "A6",
+      "title": "Hilbert series, Hilbert values, and characters",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "A7",
+      "title": "Algebra for support, quotients, and comparison",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "W1",
+      "title": "A reflection Frobenius extension",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "W2",
+      "title": "Paired modules and tensor induction",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "W3",
+      "title": "Word modules and homogeneous bases",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "W4",
+      "title": "Evaluation coordinates and stalk images",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "W5",
+      "title": "Two-stalk lattices and their kernels",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "W6",
+      "title": "Images over sets of weights",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "W7",
+      "title": "Word characters",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "S1",
+      "title": "Ordered graphs and labels",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "S2",
+      "title": "Sheaves, sections, and boundary data",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "S3",
+      "title": "Operations and morphisms",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "S4",
+      "title": "Boundary sheaves and minimal extension",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "S5",
+      "title": "Summands, primitive objects, and decomposition",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "S6",
+      "title": "Integral support and cut operators",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "S7",
+      "title": "Sheaves associated to words",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "S8",
+      "title": "Perfect pairings and adjoints",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "S9",
+      "title": "Stalk characters and actual-character reciprocity",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "S10",
+      "title": "Related character-identification conditions",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "O1",
+      "title": "Geometric orders on roots",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "O2",
+      "title": "Dihedral systems inside a root plane",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "O3",
+      "title": "Dihedral interval combinatorics",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "O4",
+      "title": "Inversion changes and geometric plane weights",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "O5",
+      "title": "Reconstruction of reflection edges",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "O6",
+      "title": "Schedules and their transport",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "O7",
+      "title": "Paths and transfer products",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "L1",
+      "title": "Plane and edge localizations",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "L2",
+      "title": "Localizing graph sheaves",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "L3",
+      "title": "Dihedral structure models",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "L4",
+      "title": "Local model decomposition",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "L5",
+      "title": "Polynomial correction factors",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "L6",
+      "title": "Embedded lower and upper images",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "L7",
+      "title": "From local comparison to the global edge inclusion",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "I1",
+      "title": "A single edge comparison",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "I2",
+      "title": "A complete schedule",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "I3",
+      "title": "Endpoint identities",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "I4",
+      "title": "Equality and reverse reconstruction of freeness",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "I5",
+      "title": "Simultaneous induction for R and suffix kernels",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "I6",
+      "title": "Canonical KL invariance",
+      "status": "pending",
+      "completion_evidence": []
+    },
+    {
+      "code": "I7",
+      "title": "The unrestricted theorem",
+      "status": "pending",
+      "completion_evidence": []
+    }
+  ],
+  "next_steps": [
+    "Give the finite Coxeter reflection relation its own detailed proof and link the action construction to it.",
+    "Apply the approved topic homes while preserving every stable node ID and generating redirects.",
+    "Expand the remaining realization, coefficient-algebra, and graded-module definitions.",
+    "Review all 61 subtopics for source-defined concepts, detailed theorem proofs, links, and explanatory topic pages.",
+    "Complete mathematical exposition review, full document checks, push, and verify the public deployment."
+  ]
+}

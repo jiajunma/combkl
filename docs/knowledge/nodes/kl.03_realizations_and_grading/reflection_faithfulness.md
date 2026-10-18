@@ -10,6 +10,7 @@ uses:
 - kl.notes.extended_realization
 - kl.realization.reflection_plane
 - kl.foundations.subword
+- kl.realization.extended_action
 lean:
   repository: openai-kl
   modules:

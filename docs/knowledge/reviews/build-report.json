@@ -4,7 +4,7 @@
     "path": "docs/knowledge"
   },
   "decision": "extracted",
-  "created_at": "2026-10-18T09:38:45.249869+00:00",
+  "created_at": "2026-10-18T14:21:25.996196+00:00",
   "inputs": [
     "agoramachina/openai-math@adc7f1241b42e322a6451854ab7e4b4c146bf78a"
   ],
@@ -18,27 +18,27 @@
   "code_link_repository": "https://github.com/jiajunma/combkl",
   "code_link_revision": "108243e05ed46235bf82dc30d4d90c794579776f",
   "uncovered_structure_fields": 0,
-  "node_count": 148,
+  "node_count": 154,
   "definition_navigation": {
     "engine": "Python registry matcher; no LLM calls",
-    "registry_sha256": "a7b0ed4567277dd20d40275185a09af1e258469ce6833cf5e965b54bcac2c7e9",
-    "definition_targets": 64,
-    "aliases": 238
+    "registry_sha256": "ff48ada5305fc3043e79fc9562cdeaa39e10b2429ce3a7c3c0eb4441b1ce5ebc",
+    "definition_targets": 69,
+    "aliases": 253
   },
   "chapter_count": 9,
   "legacy_page_redirects": 80,
   "bundled_source_files_verified": 34,
   "node_kinds": {
-    "theorem": 81,
-    "definition": 66,
+    "theorem": 82,
+    "definition": 71,
     "concept": 1
   },
   "node_statuses": {
-    "proved": 81,
-    "formalized": 67
+    "proved": 82,
+    "formalized": 72
   },
   "proof_exposition_review": {
-    "reviewed_theorem_walkthroughs": 81,
+    "reviewed_theorem_walkthroughs": 82,
     "check_scope": "Matches reviewed prose; does not certify mathematical completeness"
   },
   "source_comparisons": {
@@ -50,10 +50,10 @@
     "[WARNING] lean.repository.openai-kl: Lean repository 'openai-kl' has uncommitted or untracked files"
   ],
   "browser_automation_used": false,
-  "html_pages_checked": 258,
-  "node_pages_checked": 148,
-  "graph_detail_payloads_checked": 148,
-  "generated_definition_links_checked": 1193,
+  "html_pages_checked": 265,
+  "node_pages_checked": 154,
+  "graph_detail_payloads_checked": 154,
+  "generated_definition_links_checked": 1262,
   "definition_link_occurrences": {
     "kl.comparison.free_suffixes": 28,
     "kl.comparison.normalized_kernel": 4,
@@ -79,7 +79,7 @@
     "kl.detail.ordered_graph": 51,
     "kl.detail.ordinary_r": 11,
     "kl.detail.polynomial_labels": 28,
-    "kl.detail.positive_roots": 59,
+    "kl.detail.positive_roots": 61,
     "kl.detail.primitive_projectors": 16,
     "kl.detail.root_inversions": 2,
     "kl.detail.rtilde_family": 13,
@@ -107,6 +107,10 @@
     "kl.notes.reflection_order": 34,
     "kl.notes.relative_dihedral_intervals": 5,
     "kl.notes.word_stalks": 2,
+    "kl.realization.extended_action": 8,
+    "kl.realization.geometric_action": 6,
+    "kl.realization.radical_extension": 15,
+    "kl.realization.tits_form": 38,
     "kl.sheaves.boundary_sheaf": 49,
     "kl.sheaves.flabbiness": 65,
     "kl.sheaves.graded_module": 20,
@@ -114,13 +118,13 @@
     "kl.sheaves.minimal_cover": 26,
     "kl.sheaves.upward_kernel": 56
   },
-  "math_occurrences_extracted": 4624,
+  "math_occurrences_extracted": 4854,
   "broken_links": [],
   "katex": {
     "renderer": "KaTeX",
     "version": "0.16.46",
-    "occurrences_checked": 4624,
-    "distinct_formulas_checked": 2346,
+    "occurrences_checked": 4854,
+    "distinct_formulas_checked": 2485,
     "browser_used": false
   }
 }

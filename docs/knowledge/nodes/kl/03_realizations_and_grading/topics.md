@@ -103,15 +103,23 @@ The calculations above explain the constructions and transitions. The entries be
 
 ### The real coefficient geometry
 
-1. [[node:kl.notes.extended_realization]]
-2. [[node:kl.detail.positive_roots]]
-3. [[node:kl.notes.reflection_faithfulness]]
-4. [[node:kl.detail.root_reflection_correspondence]]
-5. [[node:kl.detail.root_inversions]]
-6. [[node:kl.detail.root_inversion_count]]
-7. [[node:kl.realization.reflection_plane]]
-8. [[node:kl.detail.polynomial_labels]]
-9. [[node:kl.detail.linear_quotient]]
+The Tits form begins with the Coxeter matrix and a basis of simple roots. Its normal functionals determine the simple reflection operators. The radical measures which original vectors pair to zero with every vector; adjoining its dual gives a nondegenerate form while retaining the root space. The extension theorem proves the construction works, the minimality theorem measures its dimension, and the extended-action entry explains how every generator acts on the added coordinates.
+
+1. [[node:kl.realization.tits_form]]
+2. [[node:kl.realization.linear_reflection]]
+3. [[node:kl.realization.geometric_action]]
+4. [[node:kl.realization.radical_extension]]
+5. [[node:kl.notes.extended_realization]]
+6. [[node:kl.realization.extension_minimality]]
+7. [[node:kl.realization.extended_action]]
+8. [[node:kl.detail.positive_roots]]
+9. [[node:kl.notes.reflection_faithfulness]]
+10. [[node:kl.detail.root_reflection_correspondence]]
+11. [[node:kl.detail.root_inversions]]
+12. [[node:kl.detail.root_inversion_count]]
+13. [[node:kl.realization.reflection_plane]]
+14. [[node:kl.detail.polynomial_labels]]
+15. [[node:kl.detail.linear_quotient]]
 
 ### Grading, minimal covers, and characters
 
