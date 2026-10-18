@@ -8,6 +8,7 @@ topics:
 - kl.08_comparison_and_freeness
 uses:
 - kl.sheaves.hilbert_free
+- kl.detail.hilbert_values
 lean:
   repository: openai-kl
   modules:

@@ -13,6 +13,10 @@ uses:
 - kl.notes.tensor_pairing
 - kl.notes.supported_pairings
 - kl.notes.graded_projective_free
+- kl.detail.integral_adjoints
+- kl.detail.adjoint_primitivity
+- kl.detail.primitive_summand
+- kl.detail.word_evaluation_injective
 lean:
   repository: openai-kl
   modules:

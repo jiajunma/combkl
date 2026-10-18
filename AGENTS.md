@@ -192,6 +192,13 @@ designated documents; this section is the reusable authoring contract.
 - Check coverage of the main proof route and its prerequisites, including
   definitions and structural conditions. Source dumps and mechanically valid
   links do not substitute for this expository coverage.
+- Review coverage from the Lean declaration inventory toward the knowledge
+  base: look for concepts used without a definition and important intermediate
+  theorems hidden inside broad summaries. Check the existing prose before
+  declaring an item missing. A declaration without a direct core-node mapping
+  is a candidate for inspection, not proof of a gap or a reason to create a
+  separate page for every helper lemma. Record the scan scope, substantive
+  additions, and remaining limits in the structured coverage review.
 - Validate node schemas, references, mathematical dependencies, chapter
   assignments, and structured-definition field coverage. Generate the graph
   and site through mdblueprint; do not hand-edit generated graph or HTML files.

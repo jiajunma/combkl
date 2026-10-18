@@ -10,6 +10,7 @@ uses:
 - kl.notes.dihedral_models
 - kl.notes.extended_realization
 - kl.realization.reflection_plane
+- kl.detail.structure_sheaves
 lean:
   repository: openai-kl
   modules:

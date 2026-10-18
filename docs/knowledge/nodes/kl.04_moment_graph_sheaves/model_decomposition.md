@@ -12,6 +12,7 @@ uses:
 - kl.detail.top_splitting
 - kl.notes.minimal_cover_existence
 - kl.notes.graded_projective_free
+- kl.detail.model_sums
 lean:
   repository: openai-kl
   modules:

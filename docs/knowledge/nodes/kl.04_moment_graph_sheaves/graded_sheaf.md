@@ -9,6 +9,7 @@ topics:
 uses:
 - kl.sheaves.graph_sheaf
 - kl.sheaves.graded_module
+- kl.detail.graded_maps_shifts
 lean:
   repository: openai-kl
   modules:

@@ -9,6 +9,8 @@ topics:
 uses:
 - kl.foundations.bruhat_step
 - kl.notes.extended_realization
+- kl.detail.positive_roots
+- kl.detail.root_reflection_correspondence
 lean:
   repository: openai-kl
   modules:

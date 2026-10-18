@@ -9,6 +9,7 @@ topics:
 uses:
 - kl.detail.morphism_extension
 - kl.sheaves.boundary_sheaf
+- kl.detail.split_summands
 lean:
   repository: openai-kl
   modules:

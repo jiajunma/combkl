@@ -12,6 +12,7 @@ uses:
 - kl.foundations.rtilde
 - kl.notes.character_cancellation
 - kl.detail.costalk_reciprocity
+- kl.detail.word_character_reciprocity
 lean:
   repository: openai-kl
   modules:

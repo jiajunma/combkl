@@ -9,6 +9,7 @@ topics:
 uses:
 - kl.sheaves.upward_kernel
 - kl.notes.dihedral_models
+- kl.detail.base_change
 lean:
   repository: openai-kl
   modules:

@@ -10,6 +10,7 @@ uses:
 - kl.sheaves.boundary_sheaf
 - kl.detail.boundary_extension
 - kl.notes.graded_nakayama
+- kl.detail.sheaf_isomorphisms
 lean:
   repository: openai-kl
   modules:

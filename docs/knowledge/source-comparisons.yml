@@ -172,3 +172,23 @@ comparisons:
     and its transfer coefficient is \(t^{-1}-t\).
   consequence: These are the same normalization after \(q=t^2\). The proof spells
     out this substitution and retains the degree-one convention for linear root labels.
+- id: word-versus-boundary-characters
+  kind: Different intermediate objects
+  nodes:
+  - kl.detail.word_characters
+  - kl.detail.word_character_formula
+  - kl.detail.word_character_reciprocity
+  paper_labels:
+  - bg:normalization
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.bottStalkCharacter_eq_heckeWord
+  - OAI.KLInvariance.TitsSpace.bottKernelCharacter_rConvolution
+  - OAI.KLInvariance.BruhatGraph.StalkCharacterObligation
+  paper: The normalization discussion identifies indecomposable boundary-sheaf characters
+    with KL polynomials by the cited character theorem.
+  lean: The word-stalk character is proved to equal a positive Hecke-word coefficient.
+    Its R-convolution is then proved before model decomposition and cancellation.
+    The separate boundary-character identification is exposed as StalkCharacterObligation.
+  consequence: Distinguish a tensor word from its boundary-model summands. The proved
+    word formula and convolution are the inputs used here; they do not assert the
+    separate boundary-character identification.

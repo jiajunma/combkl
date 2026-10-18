@@ -9,6 +9,7 @@ topics:
 uses:
 - kl.notes.extended_realization
 - kl.detail.geometric_functional
+- kl.detail.positive_roots
 lean:
   repository: openai-kl
   modules:

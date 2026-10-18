@@ -11,6 +11,7 @@ uses:
 - kl.sheaves.graph_sheaf
 - kl.foundations.canonical_kl
 - kl.notes.dihedral_kl
+- kl.detail.structure_sheaves
 lean:
   repository: openai-kl
   modules:

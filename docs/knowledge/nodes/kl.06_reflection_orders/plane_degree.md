@@ -10,6 +10,7 @@ uses:
 - kl.realization.reflection_plane
 - kl.foundations.bruhat_step
 - kl.detail.edge_factor
+- kl.detail.root_inversion_count
 lean:
   repository: openai-kl
   modules:

@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 23438,
-  "theorem_walkthroughs": 70,
+  "revised_proof_words": 27173,
+  "theorem_walkthroughs": 81,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -105,6 +105,20 @@
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
     },
     {
+      "node": "kl.detail.adjoint_primitivity",
+      "source_declarations": [
+        "OAI.PerfectAdjoint.adjoint_comp",
+        "OAI.PerfectAdjoint.adjoint_adjoint",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.primitive_of_antiInvolution",
+        "OAI.KLInvariance.TitsSpace.bottAdjointSheaf_primitive"
+      ],
+      "proof_steps": 4,
+      "previous_proof_words": 0,
+      "revised_proof_words": 207,
+      "proof_sha256": "38d9cfe078bdb8b7ab367f56fe173cc3ed6625c5e414d5a5a65fb1ff2ab78f2a",
+      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
+    },
+    {
       "node": "kl.detail.boundary_extension",
       "source_declarations": [
         "OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom",
@@ -140,6 +154,20 @@
       "revised_proof_words": 381,
       "proof_sha256": "7d3362e5013d43c930e8d882a94984ac6ce0302ddd155c81a29cbcccf553c1f5",
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+    },
+    {
+      "node": "kl.detail.bruhat_lifting",
+      "source_declarations": [
+        "OAI.KLInvariance.bruhatStep_simple_mul",
+        "OAI.KLInvariance.lowerSimple_mono",
+        "OAI.KLInvariance.upperSimple_mono",
+        "OAI.KLInvariance.bruhat_lifting"
+      ],
+      "proof_steps": 3,
+      "previous_proof_words": 0,
+      "revised_proof_words": 290,
+      "proof_sha256": "bbec784ef789498f135c3f33fcd61e3b1a7643fd2ddfb18c223e15098288810c",
+      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
     },
     {
       "node": "kl.detail.costalk_duality",
@@ -224,6 +252,19 @@
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
     },
     {
+      "node": "kl.detail.hilbert_exactness",
+      "source_declarations": [
+        "OAI.KLInvariance.Hilbert.degreeMap_surjective",
+        "OAI.KLInvariance.Hilbert.finrank_exact",
+        "OAI.KLInvariance.Hilbert.value_exact_of_summable"
+      ],
+      "proof_steps": 4,
+      "previous_proof_words": 0,
+      "revised_proof_words": 210,
+      "proof_sha256": "f043a8ddb468b9fba2c0b71b161fe1d15569c96e88ed7f70803853bd85444bb3",
+      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
+    },
+    {
       "node": "kl.detail.indecomposable_boundary",
       "source_declarations": [
         "OAI.KLInvariance.MomentGraph.BoundarySheaf.primitive_identity"
@@ -259,6 +300,21 @@
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
     },
     {
+      "node": "kl.detail.linear_quotient",
+      "source_declarations": [
+        "OAI.KLInvariance.SymmetricPlaneIdeal.quotientEquiv",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.ι_mem_iff",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.ideal_isPrime",
+        "OAI.KLInvariance.EdgeAlgebra.rootQuotientEquiv",
+        "OAI.KLInvariance.TitsSpace.linear_isUnit_iff"
+      ],
+      "proof_steps": 4,
+      "previous_proof_words": 0,
+      "revised_proof_words": 283,
+      "proof_sha256": "97d422582f2d0dc4109b6106e8f58c918be29e0618bbfb622fe0b0dd9e1cbc00",
+      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
+    },
+    {
       "node": "kl.detail.local_diagonal_degree",
       "source_declarations": [
         "OAI.KLInvariance.BruhatGraph.localIntersection_diagonal_strict_degree"
@@ -292,6 +348,18 @@
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
     },
     {
+      "node": "kl.detail.primitive_summand",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.projector_eq_id_of_primitive",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.isoOfPrimitive"
+      ],
+      "proof_steps": 3,
+      "previous_proof_words": 0,
+      "revised_proof_words": 153,
+      "proof_sha256": "bd1e6f7f084ba9a256c2c926e1b28eafc6da02eb139254d79ce0c493293c45fc",
+      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
+    },
+    {
       "node": "kl.detail.quotient_image_free",
       "source_declarations": [
         "OAI.KLInvariance.ScalarQuotient.saturated_image_free"
@@ -323,6 +391,33 @@
       "revised_proof_words": 298,
       "proof_sha256": "5bc0c36ab433b70744cf3dcb0c54305183ef61921eb06ed35384d99e36fb6f8f",
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+    },
+    {
+      "node": "kl.detail.root_inversion_count",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.Represents.inversion_iff",
+        "OAI.KLInvariance.TitsSpace.rootInversions_finite",
+        "OAI.KLInvariance.TitsSpace.card_rootInversions"
+      ],
+      "proof_steps": 3,
+      "previous_proof_words": 0,
+      "revised_proof_words": 343,
+      "proof_sha256": "98ac1f52396607d9f1a04d507dc44b446f4d762599b47f58d9bdd5932749ec54",
+      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
+    },
+    {
+      "node": "kl.detail.root_reflection_correspondence",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.Represents.unique_up_to_sign",
+        "OAI.KLInvariance.TitsSpace.Represents.reflection_unique",
+        "OAI.KLInvariance.TitsSpace.exists_positive_root",
+        "OAI.KLInvariance.TitsSpace.positiveRootEquiv"
+      ],
+      "proof_steps": 4,
+      "previous_proof_words": 0,
+      "revised_proof_words": 290,
+      "proof_sha256": "29c6ce56bb80677e732be94245d72ea4ab0c0381f487d254c6076be20a48a0ae",
+      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
     },
     {
       "node": "kl.detail.rtilde_recursion",
@@ -381,6 +476,48 @@
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
     },
     {
+      "node": "kl.detail.word_character_formula",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottHeadKernelEquiv",
+        "OAI.KLInvariance.TitsSpace.bottHeadRightKernelEquiv",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_ascent",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_descent",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_eq_heckeWord"
+      ],
+      "proof_steps": 4,
+      "previous_proof_words": 0,
+      "revised_proof_words": 487,
+      "proof_sha256": "6275af8d51cf8e6c89fb83217c5cf66b84d501a5168c03327ddd136d199fc41f",
+      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
+    },
+    {
+      "node": "kl.detail.word_character_reciprocity",
+      "source_declarations": [
+        "OAI.KLInvariance.HeckeQ.barLinear_positiveWord",
+        "OAI.KLInvariance.HeckeQ.positiveWord_rValue",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_reciprocity",
+        "OAI.KLInvariance.TitsSpace.bottKernelCharacter_rConvolution"
+      ],
+      "proof_steps": 4,
+      "previous_proof_words": 0,
+      "revised_proof_words": 395,
+      "proof_sha256": "a0f3ddf25e0f3aff2ed0e8ef9ac627fa786dbc13dfc4cd08259c0830943335fd",
+      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
+    },
+    {
+      "node": "kl.detail.word_evaluation_injective",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix",
+        "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix_injective",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_injective"
+      ],
+      "proof_steps": 4,
+      "previous_proof_words": 0,
+      "revised_proof_words": 268,
+      "proof_sha256": "404bc398f62daa82c5274fd456b4cc74432f0269dd5044c3ace4d2849500604f",
+      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
+    },
+    {
       "node": "kl.detail.word_flabbiness",
       "source_declarations": [
         "OAI.KLInvariance.TitsSpace.bottProjectiveUpper",
@@ -393,6 +530,20 @@
       "revised_proof_words": 785,
       "proof_sha256": "b549e368adb020731bd25137c97b71878689a28a2cdd942e0756dbb99cefa139",
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+    },
+    {
+      "node": "kl.detail.word_standard_stalks",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.BottKernelExact",
+        "OAI.KLInvariance.TitsSpace.bottStandardStalks",
+        "OAI.KLInvariance.TitsSpace.bottKernelExact_cons_nonhead",
+        "OAI.KLInvariance.TitsSpace.bottProjectionSheaf_upper_kernel"
+      ],
+      "proof_steps": 6,
+      "previous_proof_words": 0,
+      "revised_proof_words": 809,
+      "proof_sha256": "3c8b6e2af36def40bfbcf1a305c13247e4ed07cb8150f0a20a999624a79aaffb",
+      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
     },
     {
       "node": "kl.duality.actual_character_reciprocity",

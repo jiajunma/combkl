@@ -8,10 +8,11 @@ A generic functional orders all roots and gives the angular order on every root 
 
 1. [[node:kl.detail.geometric_functional]]
 2. [[node:kl.notes.reflection_order]]
-3. [[node:kl.notes.relative_dihedral_intervals]]
-4. [[node:kl.notes.relative_dihedral_transport]]
-5. [[node:kl.paths.later_count]]
-6. [[node:kl.notes.dihedral_kl]]
+3. [[node:kl.detail.plane_basis]]
+4. [[node:kl.notes.relative_dihedral_intervals]]
+5. [[node:kl.notes.relative_dihedral_transport]]
+6. [[node:kl.paths.later_count]]
+7. [[node:kl.notes.dihedral_kl]]
 
 ## Recovering edges and transporting schedules
 

@@ -10,6 +10,7 @@ uses:
 - kl.sheaves.upward_kernel
 - kl.sheaves.hilbert_free
 - kl.foundations.scaled_kl
+- kl.detail.hilbert_values
 lean:
   repository: openai-kl
   modules:

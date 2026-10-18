@@ -138,8 +138,6 @@ concepts:
   terms:
   - dihedral models
   - dihedral model
-  - structure sheaves
-  - structure sheaf
 - node: kl.comparison.normalized_kernel
   terms:
   - Hilbert states
@@ -258,3 +256,106 @@ concepts:
   terms:
   - normalized R-polynomials
   - normalized R-polynomial
+- node: kl.detail.simple_envelopes
+  terms:
+  - simple-reflection envelopes
+  - lower simple envelope
+  - upper simple envelope
+- node: kl.detail.positive_roots
+  terms:
+  - positive roots
+  - positive root
+  - real roots
+  - real root
+- node: kl.detail.root_inversions
+  terms:
+  - root-inversion set
+  - root inversion set
+  - inversion sets
+  - inversion set
+- node: kl.detail.graded_maps_shifts
+  terms:
+  - homogeneous maps
+  - homogeneous map
+  - grading shifts
+  - grading shift
+  - graded shifts
+  - graded shift
+- node: kl.detail.coefficient_change
+  terms:
+  - coefficient transport
+  - coefficient change
+- node: kl.detail.hilbert_values
+  terms:
+  - Hilbert values
+  - Hilbert value
+  - degreewise defect
+  - degreewise defects
+- node: kl.detail.graph_transport
+  terms:
+  - graph map
+  - graph maps
+  - graph equivalence
+  - graph equivalences
+  - sheaf pullback
+- node: kl.detail.sheaf_isomorphisms
+  terms:
+  - sheaf isomorphism
+  - sheaf isomorphisms
+  - graded sheaf isomorphism
+  - graded sheaf isomorphisms
+  - isomorphism above
+- node: kl.detail.split_summands
+  terms:
+  - split sheaf summand
+  - split sheaf summands
+  - split inclusion
+  - split inclusions
+- node: kl.detail.primitive_projectors
+  terms:
+  - primitive projector
+  - primitive projectors
+  - primitivity
+- node: kl.detail.model_sums
+  terms:
+  - graded model sum
+  - graded model sums
+  - shifted boundary models
+- node: kl.detail.structure_sheaves
+  terms:
+  - structure sheaf
+  - structure sheaves
+- node: kl.detail.base_change
+  terms:
+  - base change
+  - scalar extension
+- node: kl.detail.localization_rings
+  terms:
+  - root-plane ring
+  - root-plane rings
+  - root-plane localization ring
+  - root-plane localization rings
+  - edge coefficient ring
+  - localized edge ring
+- node: kl.detail.plane_basis
+  terms:
+  - plane basis
+  - angular boundary roots
+- node: kl.detail.word_characters
+  terms:
+  - word-stalk character
+  - word-stalk characters
+  - positive Hecke word
+  - positive Hecke words
+- node: kl.detail.integral_adjoints
+  terms:
+  - integral adjoint
+  - integral adjoints
+  - adjoint projector
+  - adjoint projectors
+- node: kl.detail.local_models
+  terms:
+  - local models
+  - local model
+  - ungraded model sum
+  - ungraded model sums

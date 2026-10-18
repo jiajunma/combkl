@@ -38,8 +38,8 @@ revision remains the provenance identifier. The link updater validates all
 
     python3 scripts/update_source_links.py 108243e05ed46235bf82dc30d4d90c794579776f
 
-The completed development is represented by 70 `proved` theorem entries and
-49 `formalized` definitions/concepts. There are no `admitted` entries. Worked
+The completed development is represented by 81 `proved` theorem entries and
+67 `formalized` definitions/concepts. There are no `admitted` entries. Worked
 teaching examples are explanatory prose unless linked to a separate theorem.
 
 Source inventories and imports are supporting data, not separate mathematical topics. The generated site provides declarations.json, module-imports.json, and unchanged files under _sources/. The dependency graph is the mathematical graph of the knowledge base.
@@ -102,6 +102,16 @@ the original paper PDF and all 34 Lean modules under `_sources/`.
 ## Maintenance
 
 The mathematical Markdown entries are authoritative exposition. The original Lean snapshot is preserved separately. Rebuild generated HTML and graphs rather than editing them.
+
+The [Lean-to-KB coverage review](reviews/lean-coverage-review.json) inventories
+2,991 declarations across all 34 source modules and records the mathematical
+families inspected. It adds 18 definition entries and 11 theorem entries,
+including roots and inversions, graded maps and Hilbert values, sheaf transport
+and summands, local coefficient rings, and the word-character route to
+R-reciprocity. Direct declaration mappings are a navigation diagnostic, not a
+coverage percentage: a helper may already be explained within a broader proof.
+The report distinguishes the complete declaration inventory from the detailed
+source review of the selected additions.
 
 Every theorem entry now has a numbered proof walkthrough, including the
 objects and maps being used, the intermediate calculations, and the precise

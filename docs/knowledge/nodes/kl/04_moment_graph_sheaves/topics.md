@@ -9,10 +9,13 @@ Each definition introduces different data or a different extension property. Fre
 1. [[node:kl.detail.ordered_graph]]
 2. [[node:kl.sheaves.graph_sheaf]]
 3. [[node:kl.detail.compatible_sections]]
-4. [[node:kl.detail.graded_sheaf]]
-5. [[node:kl.detail.upper_quotient]]
-6. [[node:kl.sheaves.flabbiness]]
-7. [[node:kl.sheaves.relative_flabbiness]]
+4. [[node:kl.detail.graph_transport]]
+5. [[node:kl.detail.sheaf_isomorphisms]]
+6. [[node:kl.detail.graded_sheaf]]
+7. [[node:kl.detail.upper_quotient]]
+8. [[node:kl.detail.structure_sheaves]]
+9. [[node:kl.sheaves.flabbiness]]
+10. [[node:kl.sheaves.relative_flabbiness]]
 
 ## Minimal extension and uniqueness
 
@@ -30,8 +33,12 @@ A new stalk is a minimal cover of a boundary image. Descending extension constru
 The missing steps between existence and character decomposition are now explicit: lift morphisms, correct a top splitting, identify the indecomposable model, and assemble graded model sums.
 
 1. [[node:kl.detail.sheaf_morphism]]
-2. [[node:kl.detail.morphism_extension]]
-3. [[node:kl.detail.top_splitting]]
-4. [[node:kl.detail.indecomposable_boundary]]
-5. [[node:kl.detail.boundary_models]]
-6. [[node:kl.detail.model_decomposition]]
+2. [[node:kl.detail.split_summands]]
+3. [[node:kl.detail.primitive_projectors]]
+4. [[node:kl.detail.primitive_summand]]
+5. [[node:kl.detail.morphism_extension]]
+6. [[node:kl.detail.top_splitting]]
+7. [[node:kl.detail.indecomposable_boundary]]
+8. [[node:kl.detail.boundary_models]]
+9. [[node:kl.detail.model_sums]]
+10. [[node:kl.detail.model_decomposition]]

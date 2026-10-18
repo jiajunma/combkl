@@ -10,6 +10,7 @@ uses:
 - kl.sheaves.boundary_sheaf
 - kl.detail.sheaf_morphism
 - kl.notes.graded_nakayama
+- kl.detail.primitive_projectors
 lean:
   repository: openai-kl
   modules:

@@ -16,6 +16,8 @@ uses:
 - kl.detail.word_flabbiness
 - kl.detail.costalk_reciprocity
 - kl.detail.boundary_pairing
+- kl.detail.model_sums
+- kl.detail.word_standard_stalks
 lean:
   repository: openai-kl
   modules:

@@ -9,6 +9,7 @@ Define both images inside one edge module and define the actual reduced-root pro
 1. [[node:kl.detail.edge_images]]
 2. [[node:kl.detail.edge_factor]]
 3. [[node:kl.detail.scaled_images]]
+4. [[node:kl.detail.localization_rings]]
 
 ## Local models and localization
 
@@ -16,8 +17,10 @@ Relative flabbiness and model decomposition supply the localized sheaf identific
 
 1. [[node:kl.notes.dihedral_models]]
 2. [[node:kl.detail.dihedral_model_properties]]
-3. [[node:kl.notes.sheaf_localization]]
-4. [[node:kl.local.localized_decomposition]]
+3. [[node:kl.detail.base_change]]
+4. [[node:kl.detail.local_models]]
+5. [[node:kl.notes.sheaf_localization]]
+6. [[node:kl.local.localized_decomposition]]
 
 ## The free target and global membership
 

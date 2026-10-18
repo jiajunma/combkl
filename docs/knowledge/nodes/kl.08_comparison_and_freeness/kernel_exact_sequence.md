@@ -10,6 +10,7 @@ uses:
 - kl.detail.edge_images
 - kl.sheaves.upward_kernel
 - kl.sheaves.hilbert_free
+- kl.detail.hilbert_exactness
 lean:
   repository: openai-kl
   modules:

@@ -12,6 +12,9 @@ uses:
 - kl.notes.dihedral_models
 - kl.notes.sheaf_localization
 - kl.detail.dihedral_model_properties
+- kl.detail.local_models
+- kl.detail.localization_rings
+- kl.detail.graph_transport
 lean:
   repository: openai-kl
   modules:

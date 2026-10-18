@@ -12,6 +12,9 @@ uses:
 - kl.notes.reflection_frobenius
 - kl.notes.tensor_pairing
 - kl.notes.reflection_faithfulness
+- kl.detail.bruhat_lifting
+- kl.detail.word_evaluation_injective
+- kl.detail.word_standard_stalks
 lean:
   repository: openai-kl
   modules:

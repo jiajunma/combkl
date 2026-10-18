@@ -9,6 +9,7 @@ topics:
 uses:
 - kl.notes.relative_dihedral_intervals
 - kl.paths.graph_invariance
+- kl.detail.plane_basis
 lean:
   repository: openai-kl
   modules:

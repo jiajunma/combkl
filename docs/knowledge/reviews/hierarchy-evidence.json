@@ -2,6 +2,8 @@
   "organization_basis": "Mathematical constructions and proof dependencies in the Lean library",
   "chapters": {
     "kl.01_bruhat_order": [
+      "kl.detail.bruhat_lifting",
+      "kl.detail.simple_envelopes",
       "kl.detail.strong_exchange",
       "kl.foundations.bruhat_order",
       "kl.foundations.bruhat_step",
@@ -30,8 +32,17 @@
       "kl.notes.hecke_action"
     ],
     "kl.03_realizations_and_grading": [
+      "kl.detail.coefficient_change",
       "kl.detail.graded_character",
+      "kl.detail.graded_maps_shifts",
+      "kl.detail.hilbert_exactness",
+      "kl.detail.hilbert_values",
+      "kl.detail.linear_quotient",
       "kl.detail.polynomial_labels",
+      "kl.detail.positive_roots",
+      "kl.detail.root_inversion_count",
+      "kl.detail.root_inversions",
+      "kl.detail.root_reflection_correspondence",
       "kl.notes.extended_realization",
       "kl.notes.graded_nakayama",
       "kl.notes.graded_projective_free",
@@ -48,11 +59,18 @@
       "kl.detail.boundary_uniqueness",
       "kl.detail.compatible_sections",
       "kl.detail.graded_sheaf",
+      "kl.detail.graph_transport",
       "kl.detail.indecomposable_boundary",
       "kl.detail.model_decomposition",
+      "kl.detail.model_sums",
       "kl.detail.morphism_extension",
       "kl.detail.ordered_graph",
+      "kl.detail.primitive_projectors",
+      "kl.detail.primitive_summand",
+      "kl.detail.sheaf_isomorphisms",
       "kl.detail.sheaf_morphism",
+      "kl.detail.split_summands",
+      "kl.detail.structure_sheaves",
       "kl.detail.top_splitting",
       "kl.detail.upper_quotient",
       "kl.notes.boundary_image",
@@ -64,14 +82,21 @@
       "kl.sheaves.upward_kernel"
     ],
     "kl.05_duality_and_characters": [
+      "kl.detail.adjoint_primitivity",
       "kl.detail.boundary_pairing",
       "kl.detail.costalk_duality",
       "kl.detail.costalk_reciprocity",
+      "kl.detail.integral_adjoints",
       "kl.detail.local_diagonal_degree",
       "kl.detail.local_intersection",
       "kl.detail.section_duality",
+      "kl.detail.word_character_formula",
+      "kl.detail.word_character_reciprocity",
+      "kl.detail.word_characters",
+      "kl.detail.word_evaluation_injective",
       "kl.detail.word_flabbiness",
       "kl.detail.word_sheaf",
+      "kl.detail.word_standard_stalks",
       "kl.duality.actual_character_reciprocity",
       "kl.duality.bott_character_decomposition",
       "kl.duality.character_identity_condition",
@@ -89,6 +114,7 @@
       "kl.detail.diamond_reconstruction",
       "kl.detail.edge_factor",
       "kl.detail.geometric_functional",
+      "kl.detail.plane_basis",
       "kl.detail.transported_schedule",
       "kl.notes.dihedral_kl",
       "kl.notes.path_product",
@@ -101,8 +127,11 @@
       "kl.paths.plane_degree"
     ],
     "kl.07_localization": [
+      "kl.detail.base_change",
       "kl.detail.dihedral_model_properties",
       "kl.detail.edge_images",
+      "kl.detail.local_models",
+      "kl.detail.localization_rings",
       "kl.detail.quotient_image_free",
       "kl.detail.scaled_images",
       "kl.local.edge_inclusion",
@@ -507,6 +536,27 @@
       ]
     },
     {
+      "id": "kl.detail.adjoint_primitivity",
+      "chapter": "kl.05_duality_and_characters",
+      "lean_declarations": [
+        "OAI.PerfectAdjoint.adjoint_comp",
+        "OAI.PerfectAdjoint.adjoint_adjoint",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.primitive_of_antiInvolution",
+        "OAI.KLInvariance.TitsSpace.bottAdjointSheaf_primitive"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.detail.base_change",
+      "chapter": "kl.07_localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange",
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorSections",
+        "OAI.KLInvariance.MomentGraph.Sheaf.constraint"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.detail.boundary_extension",
       "chapter": "kl.04_moment_graph_sheaves",
       "lean_declarations": [
@@ -549,6 +599,28 @@
       "paper_locations": [
         "Related paper context; bg:bmp"
       ]
+    },
+    {
+      "id": "kl.detail.bruhat_lifting",
+      "chapter": "kl.01_bruhat_order",
+      "lean_declarations": [
+        "OAI.KLInvariance.bruhatStep_simple_mul",
+        "OAI.KLInvariance.lowerSimple_mono",
+        "OAI.KLInvariance.upperSimple_mono",
+        "OAI.KLInvariance.bruhat_lifting"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.detail.coefficient_change",
+      "chapter": "kl.03_realizations_and_grading",
+      "lean_declarations": [
+        "OAI.KLInvariance.CoefficientChange",
+        "OAI.KLInvariance.CoefficientChange.equiv",
+        "OAI.KLInvariance.CoefficientChange.kEquiv",
+        "OAI.KLInvariance.Graded.ModuleData.change"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.detail.compatible_sections",
@@ -672,6 +744,16 @@
       ]
     },
     {
+      "id": "kl.detail.graded_maps_shifts",
+      "chapter": "kl.03_realizations_and_grading",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.Hom",
+        "OAI.KLInvariance.Graded.ModuleData.shift",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.shift"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.detail.graded_sheaf",
       "chapter": "kl.04_moment_graph_sheaves",
       "lean_declarations": [
@@ -680,6 +762,17 @@
       "paper_locations": [
         "Related paper context; bg:bmp"
       ]
+    },
+    {
+      "id": "kl.detail.graph_transport",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GraphMap",
+        "OAI.KLInvariance.MomentGraph.GraphEquiv",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pullback",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.reindex"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.detail.hecke_quadratic_identity",
@@ -692,6 +785,28 @@
       ]
     },
     {
+      "id": "kl.detail.hilbert_exactness",
+      "chapter": "kl.03_realizations_and_grading",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hilbert.degreeMap_surjective",
+        "OAI.KLInvariance.Hilbert.finrank_exact",
+        "OAI.KLInvariance.Hilbert.value_exact_of_summable"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.detail.hilbert_values",
+      "chapter": "kl.03_realizations_and_grading",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hilbert.piece",
+        "OAI.KLInvariance.Hilbert.term",
+        "OAI.KLInvariance.Hilbert.value",
+        "OAI.KLInvariance.Hilbert.defectPiece",
+        "OAI.KLInvariance.Hilbert.defectTerm"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.detail.indecomposable_boundary",
       "chapter": "kl.04_moment_graph_sheaves",
       "lean_declarations": [
@@ -700,6 +815,15 @@
       "paper_locations": [
         "Related paper context; bg:bmp"
       ]
+    },
+    {
+      "id": "kl.detail.integral_adjoints",
+      "chapter": "kl.05_duality_and_characters",
+      "lean_declarations": [
+        "OAI.PerfectAdjoint.adjoint",
+        "OAI.PerfectAdjoint.pairing"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.detail.kernel_exact_sequence",
@@ -735,6 +859,18 @@
       ]
     },
     {
+      "id": "kl.detail.linear_quotient",
+      "chapter": "kl.03_realizations_and_grading",
+      "lean_declarations": [
+        "OAI.KLInvariance.SymmetricPlaneIdeal.quotientEquiv",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.ι_mem_iff",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.ideal_isPrime",
+        "OAI.KLInvariance.EdgeAlgebra.rootQuotientEquiv",
+        "OAI.KLInvariance.TitsSpace.linear_isUnit_iff"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.detail.local_diagonal_degree",
       "chapter": "kl.05_duality_and_characters",
       "lean_declarations": [
@@ -757,6 +893,28 @@
       ]
     },
     {
+      "id": "kl.detail.local_models",
+      "chapter": "kl.07_localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.LocalModels",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.detail.localization_rings",
+      "chapter": "kl.07_localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.EdgeAlgebra.rootIdeal",
+        "OAI.KLInvariance.EdgeAlgebra.rootLine",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.ideal",
+        "OAI.KLInvariance.TitsSpace.planePrime",
+        "OAI.KLInvariance.TitsSpace.PlaneRing",
+        "OAI.KLInvariance.TitsSpace.LocalizedEdgeRing"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.detail.model_decomposition",
       "chapter": "kl.04_moment_graph_sheaves",
       "lean_declarations": [
@@ -765,6 +923,14 @@
       "paper_locations": [
         "Related paper context; bg:bmp"
       ]
+    },
+    {
+      "id": "kl.detail.model_sums",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.ModelSum"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.detail.morphism_extension",
@@ -799,6 +965,14 @@
       ]
     },
     {
+      "id": "kl.detail.plane_basis",
+      "chapter": "kl.06_reflection_orders",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.detail.polynomial_labels",
       "chapter": "kl.03_realizations_and_grading",
       "lean_declarations": [
@@ -808,6 +982,34 @@
       "paper_locations": [
         "Related paper context; bg:realization"
       ]
+    },
+    {
+      "id": "kl.detail.positive_roots",
+      "chapter": "kl.03_realizations_and_grading",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.IsRoot",
+        "OAI.KLInvariance.TitsSpace.Represents",
+        "OAI.KLInvariance.TitsSpace.PositiveRoot",
+        "OAI.KLInvariance.TitsSpace.positiveRootEquiv"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.detail.primitive_projectors",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.PrimitiveProjector"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.detail.primitive_summand",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.projector_eq_id_of_primitive",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.isoOfPrimitive"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.detail.quotient_image_free",
@@ -838,6 +1040,36 @@
       "paper_locations": [
         "Related paper context; sec:induction"
       ]
+    },
+    {
+      "id": "kl.detail.root_inversion_count",
+      "chapter": "kl.03_realizations_and_grading",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.Represents.inversion_iff",
+        "OAI.KLInvariance.TitsSpace.rootInversions_finite",
+        "OAI.KLInvariance.TitsSpace.card_rootInversions"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.detail.root_inversions",
+      "chapter": "kl.03_realizations_and_grading",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.RootInversions",
+        "OAI.KLInvariance.TitsSpace.rootInversionEquiv"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.detail.root_reflection_correspondence",
+      "chapter": "kl.03_realizations_and_grading",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.Represents.unique_up_to_sign",
+        "OAI.KLInvariance.TitsSpace.Represents.reflection_unique",
+        "OAI.KLInvariance.TitsSpace.exists_positive_root",
+        "OAI.KLInvariance.TitsSpace.positiveRootEquiv"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.detail.rtilde_family",
@@ -904,6 +1136,16 @@
       ]
     },
     {
+      "id": "kl.detail.sheaf_isomorphisms",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Iso"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.detail.sheaf_morphism",
       "chapter": "kl.04_moment_graph_sheaves",
       "lean_declarations": [
@@ -914,6 +1156,24 @@
       ]
     },
     {
+      "id": "kl.detail.simple_envelopes",
+      "chapter": "kl.01_bruhat_order",
+      "lean_declarations": [
+        "OAI.KLInvariance.lowerSimple",
+        "OAI.KLInvariance.upperSimple"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.detail.split_summands",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.projector"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.detail.strong_exchange",
       "chapter": "kl.01_bruhat_order",
       "lean_declarations": [
@@ -922,6 +1182,14 @@
       "paper_locations": [
         "Related paper context; sec:introduction"
       ]
+    },
+    {
+      "id": "kl.detail.structure_sheaves",
+      "chapter": "kl.04_moment_graph_sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.detail.top_splitting",
@@ -966,6 +1234,48 @@
       ]
     },
     {
+      "id": "kl.detail.word_character_formula",
+      "chapter": "kl.05_duality_and_characters",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottHeadKernelEquiv",
+        "OAI.KLInvariance.TitsSpace.bottHeadRightKernelEquiv",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_ascent",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_descent",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_eq_heckeWord"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.detail.word_character_reciprocity",
+      "chapter": "kl.05_duality_and_characters",
+      "lean_declarations": [
+        "OAI.KLInvariance.HeckeQ.barLinear_positiveWord",
+        "OAI.KLInvariance.HeckeQ.positiveWord_rValue",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_reciprocity",
+        "OAI.KLInvariance.TitsSpace.bottKernelCharacter_rConvolution"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.detail.word_characters",
+      "chapter": "kl.05_duality_and_characters",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter",
+        "OAI.KLInvariance.HeckeQ.positiveWord"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.detail.word_evaluation_injective",
+      "chapter": "kl.05_duality_and_characters",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix",
+        "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix_injective",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_injective"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.detail.word_flabbiness",
       "chapter": "kl.05_duality_and_characters",
       "lean_declarations": [
@@ -989,6 +1299,17 @@
       "paper_locations": [
         "Related paper context; bg:normalization"
       ]
+    },
+    {
+      "id": "kl.detail.word_standard_stalks",
+      "chapter": "kl.05_duality_and_characters",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.BottKernelExact",
+        "OAI.KLInvariance.TitsSpace.bottStandardStalks",
+        "OAI.KLInvariance.TitsSpace.bottKernelExact_cons_nonhead",
+        "OAI.KLInvariance.TitsSpace.bottProjectionSheaf_upper_kernel"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.duality.actual_character_reciprocity",
