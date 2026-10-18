@@ -219,3 +219,58 @@ designated documents; this section is the reusable authoring contract.
 - Rebuild and recheck after substantive changes to the exposition or hierarchy.
   Report what was actually checked, and do not claim comprehensive knowledge-base
   coverage based only on page counts or a successful site build.
+
+### Lessons from the 2026-10-18 statement and TeX correction
+
+The failure had three separate causes. An ordinary JavaScript string consumed
+an unescaped backslash before the generated Python raw string received the
+text, turning `\qquad` into `qquad`. The theorem's prose also relied on context
+from another entry instead of stating its essential hypotheses and notation.
+Finally, the review over-relied on mechanical evidence: KaTeX accepted the
+bare letters as variables, declaration links resolved, and proof hashes merely
+preserved the already flawed prose. None of those checks established that the
+entry was a complete, correctly written mathematical statement.
+
+- **Protect the outermost text boundary.** Treat mathematical prose as document
+  data. When passing it through JavaScript, shell, Python, or JSON, account for
+  every interpretation layer. A Python raw string or quoted shell heredoc does
+  not protect backslashes already consumed by an outer JavaScript string.
+  Use correctly escaped or raw outer text and avoid unintended interpolation.
+  Read the written file back before building; verify the actual backslashes,
+  subscripts, signs, and delimiters, not just the authoring template. Reuse a
+  generator only after checking its payload against the corrected documents.
+- **Make every theorem independently readable.** Read the Lean declaration
+  together with its surrounding variables and hypotheses. State the ambient
+  objects, essential restrictions, quantifiers, order, action direction, and
+  normalization in the entry. Introduce local symbols before using them and
+  link their definitions. A dependency list, title, or source panel does not
+  replace this setup. For example, a lifting statement must specify a simple
+  reflection, strong Bruhat order, left multiplication, and the envelope maps.
+- **State the exact strength of the claim.** Spell out what terms such as
+  monotone, invariant, free, or equivalent mean in the current statement.
+  Distinguish weak from strict order preservation and distinguish an envelope
+  from the action used to define it. Check a small boundary case by reasoning
+  from the definitions when it clarifies an ambiguity; this does not authorize
+  local mathematical experiments or rerunning Lean.
+- **Check mathematical content in addition to parser acceptance.** Compare
+  the saved Markdown with generated page and graph-detail math. Use the
+  permitted source/HTML/MathML checks under the screen-privacy restrictions.
+  Inspect for bare command names such as `qquad` in mathematical spans and
+  unexpected control characters; review findings rather than blindly replacing
+  valid identifiers. A known malformed example must exercise the relevant
+  content check: both `\qquad` and bare `qquad` pass KaTeX, but only the former
+  produces the intended spacing. Successful rendering syntax is not evidence
+  that symbols, spacing, or hypotheses convey the intended mathematics.
+- **Review before recording acceptance.** Check the standalone statement and
+  the actual proof explanation against the Lean source before recording an
+  accepted exposition review or its hash. A hash detects later changes; it
+  cannot validate the text it fingerprints. Keep Lean completion status
+  separate from prose quality: a completed Lean proof does not automatically
+  make its explanation complete or correct.
+- **Trace and repair the whole affected batch.** Locate the earliest damaged
+  representation before blaming a renderer. Search other entries produced by
+  the same authoring path, repair confirmed instances in the Markdown source,
+  and regenerate through mdblueprint. Refresh only the affected review records
+  after inspecting the changes. Verify the affected live pages and the deployed
+  revision, and report separately what was checked mechanically and what was
+  reviewed mathematically.
