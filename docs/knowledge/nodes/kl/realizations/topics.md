@@ -127,7 +127,10 @@ The moving-space definition separates the linear-algebra statement from the grou
 - [[node:kl.realization.finite_reflection_relations]]
 - [[node:kl.realization.moving_spaces]]
 - [[node:kl.realization.orthogonal_rank_one]]
+- [[node:kl.realization.root_line_isometry]]
 - [[node:kl.realization.cotangent_action]]
+
+For a specified norm-two root \(a\), an isometry whose displacements all lie in \(\mathbb Ra\) is the identity or the reflection in \(a\). Preservation of \(B(a,a)=2\) first gives \(g(a)=a\) or \(g(a)=-a\); pairing \(g(a)\) with \(g(v)\) then determines every displacement coefficient. This root-line calculation is used to identify coefficient characters that agree modulo a linear root polynomial.
 
 ## Root signs, faithfulness, and signed labels
 

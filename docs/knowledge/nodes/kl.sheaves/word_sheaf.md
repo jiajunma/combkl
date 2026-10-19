@@ -91,7 +91,8 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Does the entry preserve the source hypotheses, construction, and conclusion?
+  prompt: Are the bilinear form, coefficient ring, finite coordinate presentation
+    and lifting hypotheses explicit?
   verdict: Read against the named Lean declarations and surrounding variable context;
     explanatory examples are distinguished from the formal statement.
 tags:
@@ -122,7 +123,13 @@ For one reflection, the full evaluation image is
 
 Every \(m\in M_{\mathbf s}\) gives a global section \((\pi_x(m))_x\), because it lifts its own two projections on every edge. Since each stalk projection is onto its image, these global sections generate every stalk.
 
-For a reduced word, the [[node:kl.detail.word_flabbiness|word-lifting theorem]] proves that every compatible global section arises this way. Full evaluation is injective, so the section map is then an isomorphism. This identifies sheaf endomorphisms with word-module endomorphisms preserving the coordinate conditions.
+For a reduced word on its full interval \([1,b]\), the [[node:kl.sheaves.word_section_equivalence|global-section realization theorem]] proves that the section map \(\Psi\) is an isomorphism. A sheaf endomorphism \(F\) acts on sections through its vertex maps; conjugation gives the word-module endomorphism
+\[
+T=\Psi^{-1}\Gamma(F)\Psi.
+\]
+The descent construction below describes the induced stalk and edge maps.
+
+The [[node:kl.detail.word_flabbiness|word-sheaf flabbiness theorem]] extends compatible assignments from upper subsets of the interval. Together with free stalks, exact upper quotients and the normalized top stalk, it gives the [[node:kl.sheaves.word_boundary_summand|word-boundary summand theorem]].
 
 ## Graded maps and pair quotients
 

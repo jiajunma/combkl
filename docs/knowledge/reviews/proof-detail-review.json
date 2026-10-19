@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 66786,
-  "theorem_walkthroughs": 231,
+  "revised_proof_words": 69635,
+  "theorem_walkthroughs": 242,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -1156,16 +1156,17 @@
     {
       "node": "kl.detail.word_flabbiness",
       "source_declarations": [
-        "OAI.KLInvariance.TitsSpace.bottProjectiveUpper",
-        "OAI.KLInvariance.TitsSpace.bottFlabby",
+        "OAI.KLInvariance.TitsSpace.intervalUpperClosure_upper",
+        "OAI.KLInvariance.TitsSpace.intervalUpperClosure_member",
+        "OAI.KLInvariance.TitsSpace.bottIntervalExtension_compatible",
         "OAI.KLInvariance.TitsSpace.bottProjectionSheaf_flabby",
-        "OAI.KLInvariance.TitsSpace.bottProjectiveUpper_cons"
+        "OAI.KLInvariance.TitsSpace.bottProjectionSheaf_generated"
       ],
-      "proof_steps": 6,
+      "proof_steps": 5,
       "previous_proof_words": 148,
-      "revised_proof_words": 795,
-      "proof_sha256": "f5bf3d5040a2e1bd0a57f7a0721c6f930cedf32bf2b373b3d4a7fcb31b8ff2c5",
-      "review": "Rewrote the projectivity assembly to retain the old-word lifting input and the actual tensor-endomorphism splitting. Linked each two-stage argument to its detailed node. The later prime-class and local-projector parts remain scheduled for the W6 expansion."
+      "revised_proof_words": 349,
+      "proof_sha256": "e731ae0ac85cd0ff599b8afe682e8a03733b57e8ba8180178d4a12deef0acc20",
+      "review": "Replaced the former combined outline by the exact ambient-closure proof in bottProjectionSheaf_flabby. Checked both endpoint cases, full-assignment conventions, reduced-word support and the final section map."
     },
     {
       "node": "kl.detail.word_standard_stalks",
@@ -2204,6 +2205,17 @@
       "heading_revision": "Replaced the question-style step heading with its mathematical statement; verified the non-heading proof text is unchanged."
     },
     {
+      "node": "kl.realization.root_line_isometry",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Realization.orthogonal_eq_id_or_rootReflection"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 129,
+      "proof_sha256": "5f0e74117d0a4b7f199e19695857a81c1e3d681e4b49e5344d0c8deec96f10e1",
+      "review": "Read the two cases of orthogonal_eq_id_or_rootReflection. Retained an arbitrary real bilinear form and the exact norm-two and displacement-line hypotheses, and expanded both coefficient equations."
+    },
+    {
       "node": "kl.realization.signed_root_action",
       "source_declarations": [
         "OAI.KLInvariance.TitsSpace.IsRoot.eq_simple_of_nonpos",
@@ -2242,9 +2254,9 @@
         "OAI.KLInvariance.TitsSpace.bottBoundarySheaf_iso_adjoint"
       ],
       "proof_steps": 6,
-      "revised_proof_words": 395,
-      "proof_sha256": "7b5fa05fac4b605c46c11e75ad8d87fedda500e2027332c65f82d172c8346e92",
-      "review": "Read actual word splitting, adjoint image splitting, inherited free stalks and section properties, primitive identity, normalized top maps, and bottBoundarySheaf_iso_adjoint."
+      "revised_proof_words": 410,
+      "proof_sha256": "24448b49b398b0ed9bfe83838522649b05e89bcad654e55554bca986d68d7e78",
+      "review": "Added the dedicated word-boundary summand prerequisite to the already checked top-splitting step; the remaining adjoint-recognition proof is unchanged."
     },
     {
       "node": "kl.sheaves.adjoint_fixed_stalk",
@@ -2751,6 +2763,22 @@
       "review": "Compared bott_projection_zero_iff_annihilates_support, bottAdjoint_preserves_kernel, bottEndOfSheaf_preserves_support, bottAdjointSheaf, and bottEndOfAdjointSheaf. The proof follows integral annihilators and quotient descent."
     },
     {
+      "node": "kl.sheaves.word_boundary_summand",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottBoundarySheafTopInclusion",
+        "OAI.KLInvariance.TitsSpace.bottBoundarySheafTopProjection",
+        "OAI.KLInvariance.TitsSpace.bottBoundarySheafTop_split",
+        "OAI.KLInvariance.TitsSpace.bottBoundarySheaf_splitIn",
+        "OAI.KLInvariance.TitsSpace.bottProjectionSheaf_generated",
+        "OAI.KLInvariance.TitsSpace.bottGradedProjectionSheaf_upperQuotient"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 299,
+      "proof_sha256": "1587d0d7e2f273f6448dfef76d6ccbe5cf81e82bcd227e77a83565680c136d95",
+      "review": "Read the two top maps, their pointwise inverse identity and all arguments to splitIn_of_top_split. Checked the actual symmetric coefficient model, finite interval, free/quotient/flabby/generated properties and graded top normalization."
+    },
+    {
       "node": "kl.sheaves.word_polynomial_stalks",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2761,12 +2789,47 @@
         "OAI.KLInvariance.TitsSpace.bottPolynomialSheaf_free",
         "OAI.KLInvariance.TitsSpace.bottPolynomialSheaf_quotient",
         "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_free",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_upperQuotient"
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_upperQuotient",
+        "OAI.KLInvariance.TitsSpace.bottPolynomialSheaf_flabby",
+        "OAI.KLInvariance.TitsSpace.bottPolynomialSheaf_generated",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_flabby",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_generated"
+      ],
+      "proof_steps": 7,
+      "revised_proof_words": 564,
+      "proof_sha256": "f2497786ff449f7ad2eca24ca680edab02eed8ef9e48fe98c1038ed3491fa626",
+      "review": "Extended the previously reviewed free-stalk/root-quotient transport by checking generation on every interval and flabbiness on a reduced word full interval, using unchanged underlying restriction equations."
+    },
+    {
+      "node": "kl.sheaves.word_section_equivalence",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottVertexProjection",
+        "OAI.KLInvariance.TitsSpace.bottVertexProjection_injective",
+        "OAI.KLInvariance.TitsSpace.bottVertexProjection_stable",
+        "OAI.KLInvariance.TitsSpace.bottVertexProjection_scaled",
+        "OAI.KLInvariance.TitsSpace.bottSection_pair_lift",
+        "OAI.KLInvariance.TitsSpace.bottSection_prime_lift",
+        "OAI.KLInvariance.TitsSpace.bottSection_local_denominator",
+        "OAI.KLInvariance.TitsSpace.bottSection_surjective",
+        "OAI.KLInvariance.TitsSpace.bottSectionEquiv"
       ],
       "proof_steps": 5,
-      "revised_proof_words": 388,
-      "proof_sha256": "89d9ebcd3b9aa61e2bce8335d7968a42861a09d8c53e4008f5dc39fb5b16f911",
-      "review": "Read symmetricLabel, the actual upper-quotient package and coefficientChange_upperQuotient, then bottPolynomialSheaf/free/quotient. Expanded both kernel directions and basis transport; preserved the arbitrary word and interval."
+      "revised_proof_words": 409,
+      "proof_sha256": "8251fc9ca3dd02155e81bcdc2da4d732c3a01498a538c314b84c8b12e049fa2f",
+      "review": "Read the BalancedPairings vertex image proof, including its free-image route, interval class lifting and free-target denominator removal. Kept the reduced word and full interval hypotheses, separate from upper-image projectivity."
+    },
+    {
+      "node": "kl.word.class_lift_assembly",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.FiniteCharacterLocalization.partition_local_denominator",
+        "OAI.KLInvariance.FiniteCharacterLocalization.character_local_denominator"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 227,
+      "proof_sha256": "2e77b8e9cab9c508ddf758ef6955a11ef16c0f693bc8059a915e45e7c32d4727",
+      "review": "Read partition_local_denominator and its quotient-set application. Wrote the product-excluding-one-class coefficients and the coordinatewise single surviving summand explicitly."
     },
     {
       "node": "kl.word.common_kernel_equivalence",
@@ -2986,6 +3049,18 @@
       "review": "Read trace_difference, trace_homogeneous, inducedPairing_basis_homogeneous, and bottDuality_homogeneous. Trace cancellation lowers degree by one; basis induction and coefficient expansion prove the full word-length shift."
     },
     {
+      "node": "kl.word.prime_character_class",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.isReflection_of_prime_character_congruence",
+        "OAI.KLInvariance.TitsSpace.prime_character_class"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 319,
+      "proof_sha256": "db7823c46cc5f15de9bda6881cd90e4150bb3e1f6253ff1606619220f5320139",
+      "review": "Read the nonzero moving vector, associated linear prime, exact range-line identity and reflection-faithfulness step, followed by the root-difference coefficient and full class identification."
+    },
+    {
       "node": "kl.word.reflection_algebra_action",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -3036,6 +3111,32 @@
       "revised_proof_words": 214,
       "proof_sha256": "e8aa1dd18d65fc439a6835913b7e07c2ea62625f15476dbdf1c54f670a3ab65f",
       "review": "Read trace_difference, trace_homogeneous and coordinates_homogeneous. Expanded homogeneous component cancellation and separated the extra unit-degree condition for reflectionBasis_homogeneous."
+    },
+    {
+      "node": "kl.word.residue_class_projector",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.FiniteCharacterLocalization.class_projector",
+        "OAI.KLInvariance.FiniteCharacterLocalization.character_class_projector"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 338,
+      "proof_sha256": "52c63e062c02efb7078402c58d08d0512ab67cb730882339efde7f8630d9a8c5",
+      "review": "Read class_projector and character_class_projector, including choice of tests, residue differences, prime-product nondivisibility and uniformization. Included a concrete congruence-lattice calculation."
+    },
+    {
+      "node": "kl.word.root_character_class",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.reflection_character_congruence_iff",
+        "OAI.KLInvariance.TitsSpace.reflection_character_separates",
+        "OAI.KLInvariance.TitsSpace.coefficientAction_reflection",
+        "OAI.KLInvariance.TitsSpace.reflectionCoefficient_divisible"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 249,
+      "proof_sha256": "795985b36b568ce6ca73241cc73aaee203f0edfc82a361e0f5771d32912a2997",
+      "review": "Read the inverse-character substitution, linear-divisibility conversion, root-line classification, faithful-action recovery and reverse reflection divisibility. Preserved the left reflection relation y=t*x."
     },
     {
       "node": "kl.word.scaled_coordinate_lifts",
@@ -3198,6 +3299,43 @@
       "review": "Read lattice_saturated and PairProjection.compatible_iff. Expanded the twisted scalar equation, annihilation of the scalar difference, cancellation on the quotient and reconstruction of a common preimage."
     },
     {
+      "node": "kl.word.uniform_diagonal_projector",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.FiniteCharacterLocalization.uniform_projector"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 179,
+      "proof_sha256": "be6da5d0b1aedbf604140774a0ccb031010c0eae258e9bf8aa81cf1f178c2f3b",
+      "review": "Read uniform_projector and its two product evaluations. Preserved arbitrary X with finite C and the common scalar multiplier; explained the scaled projection identity rather than asserting unnormalized idempotence."
+    },
+    {
+      "node": "kl.word.upper_image_induction",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottSetProjection_nil_injective",
+        "OAI.KLInvariance.TitsSpace.bottSetImage_nil_subsingleton",
+        "OAI.KLInvariance.TitsSpace.bottSetImage_nil_projective",
+        "OAI.KLInvariance.TitsSpace.bottProjectiveUpper",
+        "OAI.KLInvariance.TitsSpace.bottFlabby"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 269,
+      "proof_sha256": "db7ae16eb3077aba61b647085fef57014452b082c6a934670b5852d9712805df",
+      "review": "Read the two empty-image cases and the precise bottProjectiveUpper induction. Retained the intermediate application of bottFlabby_of_projective to the tail and the final fixed-word lifting application."
+    },
+    {
+      "node": "kl.word.upper_image_lifting",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottFlabby_of_projective"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 283,
+      "proof_sha256": "cb99525ebf82db5ca2a24f75b2c642b2807f3796366c9f7c69860fbb43645072",
+      "review": "Read bottFlabby_of_projective and checked its UFD, projective target, torsion-free ambient and both denominator inputs against the already expanded generic membership theorem."
+    },
+    {
       "node": "kl.word.upper_projectivity_step",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -3257,6 +3395,20 @@
       "revised_proof_words": 311,
       "proof_sha256": "bef51e6a4af29f0fe53cbd074d4d07e19932a1348e13b75ae8971ae429ef767d",
       "review": "Read the sublist/bit-string recursion and both range inclusions. Kept arbitrary generator sets for the combinatorial statement and the finite-generator coefficient context for the derived stalk-support statement."
+    },
+    {
+      "node": "kl.word.word_local_lifting",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottSet_scaled",
+        "OAI.KLInvariance.TitsSpace.BottCompatible.reflection_lift",
+        "OAI.KLInvariance.TitsSpace.BottCompatible.prime_lift",
+        "OAI.KLInvariance.TitsSpace.BottCompatible.local_denominator"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 403,
+      "proof_sha256": "420d0d97e9f4133c9fed5b148cb14e6e627cf5bca0fad5c9bc7e2e4deabf2678",
+      "review": "Read the arbitrary-set scaled lift, reflection orientation split, singleton/pair class lift and finite subexpression-index reduction. Preserved compatibility as the local-denominator hypothesis and avoided assuming U finite or upper."
     }
   ]
 }

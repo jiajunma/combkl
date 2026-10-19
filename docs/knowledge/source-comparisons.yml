@@ -488,8 +488,8 @@ comparisons:
   paper: The free-target lemma uses a polynomial coefficient ring and a finite free
     ambient module. Basis coordinates in the fraction field lie in every height-one
     local ring, so their denominators are units.
-  lean: The free-target interface allows a torsion-free ambient module over a Noetherian
-    UFD and states generic span through nonzero scalar multipliers. Its proof removes
+  lean: The free-target interface allows a torsion-free ambient module over a UFD
+    and states generic span through nonzero scalar multipliers. Its proof removes
     prime factors from those multipliers. A separate projective-target version obtains
     finite-support coordinates through a free-module section and retraction.
   consequence: The proofs below expose the exact generic-span and prime-denominator
@@ -595,6 +595,10 @@ comparisons:
   - kl.word.stable_image_projectivity
   - kl.word.upper_projectivity_step
   - kl.detail.word_flabbiness
+  - kl.word.word_local_lifting
+  - kl.word.upper_image_induction
+  - kl.sheaves.word_section_equivalence
+  - kl.sheaves.word_boundary_summand
   paper_labels:
   - bg:bmp
   lean_declarations:
@@ -603,14 +607,19 @@ comparisons:
   - OAI.KLInvariance.TitsSpace.bottStableUpper_projective
   - OAI.KLInvariance.TitsSpace.bottProjectiveUpper_cons
   - OAI.KLInvariance.TitsSpace.bottFlabby_of_projective
+  - OAI.KLInvariance.TitsSpace.prime_character_class
+  - OAI.KLInvariance.FiniteCharacterLocalization.character_local_denominator
+  - OAI.KLInvariance.TitsSpace.bottSectionEquiv
+  - OAI.KLInvariance.TitsSpace.bottBoundarySheaf_splitIn
   paper: The moment-graph sheaf theorem gives extension of compatible sections on
     upper sets for the normalized boundary sheaf through the cited Braden–MacPherson
     and Soergel bridges.
-  lean: The word module first gives image modules on arbitrary weight sets. On upper
-    sets, the word induction proves projectivity using a tensor endomorphism and two
-    kernel sequences; the common-kernel comparison uses compatible-tuple lifting for
-    the shorter word. A fixed-word prime-denominator argument derives that lifting
-    property from projectivity.
-  consequence: The Blueprint follows the image maps, patched tails and split sequences.
-    This preserves both hypotheses of the induction step and explains the word-module
-    input used to construct the interval sheaf extension property.
+  lean: The word module gives coordinate images and stable coefficient characters.
+    Reflection geometry makes each prime congruence class a single weight or a reflection
+    pair. Explicit diagonal operators combine class lifts, and prime-denominator removal
+    proves compatible-tuple lifting from image projectivity. The word induction supplies
+    upper-image projectivity using its two kernel sequences.
+  consequence: Upper-image lifting gives interval flabbiness after extension to the
+    ambient upper closure. Full-interval section realization also has a direct free-image
+    proof. Free stalks, root quotients, flabbiness, generation and the normalized
+    word top then supply the graded boundary summand.

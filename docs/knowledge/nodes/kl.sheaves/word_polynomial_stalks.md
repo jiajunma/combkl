@@ -11,6 +11,7 @@ uses:
 - kl.detail.word_standard_stalks
 - kl.detail.coefficient_change
 - kl.detail.polynomial_labels
+- kl.detail.word_flabbiness
 lean:
   repository: openai-kl
   modules:
@@ -24,6 +25,10 @@ lean:
   - OAI.KLInvariance.TitsSpace.bottPolynomialSheaf_quotient
   - OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_free
   - OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_upperQuotient
+  - OAI.KLInvariance.TitsSpace.bottPolynomialSheaf_flabby
+  - OAI.KLInvariance.TitsSpace.bottPolynomialSheaf_generated
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_flabby
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_generated
 source:
   spans:
   - artifact: openai-kl-source
@@ -58,14 +63,30 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.Support:348
     format: lean-location
     note: OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_upperQuotient
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Support:431
+    format: lean-location
+    note: OAI.KLInvariance.TitsSpace.bottPolynomialSheaf_flabby
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Support:435
+    format: lean-location
+    note: OAI.KLInvariance.TitsSpace.bottPolynomialSheaf_generated
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Support:368
+    format: lean-location
+    note: OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_flabby
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Support:380
+    format: lean-location
+    note: OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_generated
 verification:
   statement: accepted
   proof: accepted
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Are the rings, scalar maps, finiteness hypotheses, pairing orientation and
-    degree conventions explicit?
+  prompt: Are the bilinear form, coefficient ring, finite coordinate presentation
+    and lifting hypotheses explicit?
   verdict: Read symmetricLabel, the actual upper-quotient package and coefficientChange_upperQuotient,
     then bottPolynomialSheaf/free/quotient. Expanded both kernel directions and basis
     transport; preserved the arbitrary word and interval.
@@ -90,6 +111,8 @@ Every vertex module of \(S_P\) is finite free over \(P\). For an upward reflecti
 \ker(\rho_E^+:S_P^y\to S_P^E)=\gamma_E S_P^y.
 \]
 Consequently \(S_P^E\simeq S_P^y/\gamma_E S_P^y\), and its upper restriction kernel is a free \(P\)-module.
+
+The polynomial word sheaf is globally generated for every word and interval. If the word is reduced and the interval is its full support \([1,\operatorname{prod}(\mathbf t)]\), it is flabby.
 
 <!-- source-comparison:start -->
 ## Relation to the OpenAI notes
@@ -160,6 +183,20 @@ Injectivity follows because a representative maps to zero exactly when it is in 
 
 Finally \(P\) is a domain and \(\gamma_E\ne0\). Multiplication by \(\gamma_E\) is injective on the free stalk and maps it onto its upper kernel. This identifies that kernel with a finite free \(P\)-module. For a homogeneous stalk basis, multiplication by \(\gamma_E\) raises each basis degree by one.
 
+### Step 6. Transport global generation
+
+Fix a vertex and a vector in its polynomial-coordinate stalk. Its underlying vector lies in the old symmetric-coordinate stalk. Stalk surjectivity gives a word vector with that value, and all of its vertex projections form a compatible old global section.
+
+Regard the same section values in the transported modules. The restriction maps have the same underlying functions, so every old compatibility equation remains true. The resulting polynomial-coordinate section has the prescribed vertex value. This proves global generation.
+
+### Step 7. Transport extension from upper sets
+
+Assume now that the word is reduced and the interval is its full support. Let \(U\) be an upper subset and let \(f\) be a polynomial-coordinate assignment compatible on \(U\).
+
+Its underlying symmetric-coordinate assignment satisfies the same edge equations. [[node:kl.detail.word_flabbiness|Word-sheaf flabbiness]] gives a compatible old global assignment \(g\) agreeing with it on \(U\).
+
+Transport each value of \(g\) back to the polynomial module. Compatibility and agreement on \(U\) remain the same equalities of underlying vectors. This gives the required global extension, proving polynomial [[node:kl.detail.word_flabbiness|word-sheaf flabbiness]].
+
 ## References
 
 The local source declarations below give the construction and proof.
@@ -181,3 +218,11 @@ The local source declarations below give the construction and proof.
 `OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_free`: [Support.lean:342](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean#L342).
 
 `OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_upperQuotient`: [Support.lean:348](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean#L348).
+
+`OAI.KLInvariance.TitsSpace.bottPolynomialSheaf_flabby`: [Support.lean:431](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean#L431).
+
+`OAI.KLInvariance.TitsSpace.bottPolynomialSheaf_generated`: [Support.lean:435](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean#L435).
+
+`OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_flabby`: [Support.lean:368](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean#L368).
+
+`OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_generated`: [Support.lean:380](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean#L380).

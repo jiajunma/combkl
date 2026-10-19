@@ -232,17 +232,14 @@
         "w",
         "c"
       ],
-      "output": "Evaluation images, reflected pair lattices, free stalks, exact reflection kernels and compatible upper images.",
+      "output": "Evaluation images, reflected pair lattices, free stalks, exact edge kernels, projective upper images and compatible lifts.",
       "lean_declarations": [
-        "OAI.KLInvariance.TitsSpace.bottStalk",
-        "OAI.KLInvariance.TitsSpace.bottHeadPairLattice",
-        "OAI.KLInvariance.ReflectionPairTranslation.lattice",
         "OAI.KLInvariance.TitsSpace.bottEvaluation",
-        "OAI.KLInvariance.ReflectionFrobenius.wallCoordinate",
         "OAI.KLInvariance.TitsSpace.bottHeadPairEquiv",
-        "OAI.KLInvariance.TitsSpace.BottKernelExact",
         "OAI.KLInvariance.TitsSpace.bottStandardStalks",
-        "OAI.KLInvariance.TitsSpace.bottProjectiveUpper_cons"
+        "OAI.KLInvariance.TitsSpace.prime_character_class",
+        "OAI.KLInvariance.TitsSpace.bottProjectiveUpper",
+        "OAI.KLInvariance.TitsSpace.bottFlabby"
       ]
     },
     {
@@ -272,11 +269,13 @@
         "s",
         "ss"
       ],
-      "output": "Word sheaves with generation, flabbiness, and boundary splitting.",
+      "output": "Graded and polynomial word sheaves, global-section realization, flabbiness and normalized boundary summands.",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.bottPolynomialSheaf",
-        "OAI.KLInvariance.TitsSpace.bottBoundarySheaf_splitIn",
-        "OAI.KLInvariance.TitsSpace.bottPolynomialSheaf_quotient"
+        "OAI.KLInvariance.TitsSpace.bottPolynomialSheaf_quotient",
+        "OAI.KLInvariance.TitsSpace.bottProjectionSheaf_flabby",
+        "OAI.KLInvariance.TitsSpace.bottSectionEquiv",
+        "OAI.KLInvariance.TitsSpace.bottBoundarySheaf_splitIn"
       ]
     },
     {

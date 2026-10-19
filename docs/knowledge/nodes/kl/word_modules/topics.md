@@ -280,6 +280,35 @@ The old restriction sends \((f,g)\) to \(g\), so its kernel consists of \((\alph
 \]
 Its free quotient gives a splitting, exhibiting the rank-two new stalk through the general image construction.
 
+## Prime character classes and diagonal operators
+
+For a prime coefficient \(p\), say that two group weights \(x,y\) are congruent when \(p\) divides \(\chi_x(a)-\chi_y(a)\) for every coefficient \(a\). Pulling test coefficients back through \(\chi_x\) turns this condition into divisibility of linear displacement polynomials for \(yx^{-1}\).
+
+For a root polynomial, the displacement lies in its root line. The [[node:kl.realization.root_line_isometry|root-line isometry theorem]] then gives the identity or that reflection. For a general prime and two distinct congruent weights, a nonzero displacement polynomial is a prime linear generator divisible by \(p\), so it is associated to \(p\). The moving space is consequently a line; reflection faithfulness identifies \(yx^{-1}\) as a reflection. Thus a nontrivial weight class is exactly \(\{x,tx\}\).
+
+The diagonal stabilizer of an image module consists of coordinate weights whose multiplication preserves that image. Coefficient characters belong to it because they come from actual right actions on word vectors. Differences from constant weights and finite products remain stable.
+
+To select one residue class \(C\), choose a test separating a representative from each outside index. The product \(f\) of these tests vanishes outside \(C\) and has values not divisible by \(p\) on \(C\). Put
+\[
+d=\prod_{c\in C}f(c),\qquad
+g=d-\prod_{c\in C}(f(c)-f).
+\]
+Then \(g\) is stable, equals \(d\) throughout \(C\), and is zero outside it. The scalar \(d\) is not divisible by \(p\).
+
+## A common denominator for the class lifts
+
+A compatible tuple lifts on each prime weight class: use stalk surjectivity for a singleton, and the pair-projection edge condition for a reflection pair. For each class \(j\), choose such a lift \(m_j\), its stable selector \(g_j\), and its scalar \(d_j\). The sum
+\[
+\sum_j\left(\prod_{k\ne j}d_k\right)D_{g_j}m_j
+\]
+belongs to the word image and equals \((\prod_jd_j)z\) coordinatewise. Only the term for a coordinate's own class survives. Primality ensures that the common scalar is not divisible by \(p\).
+
+For an arbitrary weight set \(U\), Lean applies this finite argument to subexpression indices whose weights lie in \(U\). Each index carries a whole stalk vector, and repeated group weights give repeated stalk coordinates. A class can therefore contain many indices while representing at most two distinct group weights. Equality in this finite presentation recovers equality in every coordinate of every stalk over \(U\).
+
+The evaluation determinant \(\Delta\ne0\) supplies a generic scalar lift of every tuple. For a compatible tuple, the class construction supplies a scalar avoiding each prime. The projective-target membership theorem removes the prime factors of \(\Delta\) and yields a word lift whenever the upper-coordinate image is projective.
+
+The unconditional word induction now closes: the empty-word image is \(A\) or zero; projectivity of the shorter word gives its lifting property; the two-stage step proves projectivity for the longer word. Applying the fixed-word lifting result gives compatible-tuple lifting for every word.
+
 ## The word character formula from a short exact sequence
 
 Let \(C_x^{\mathbf t}(q)\) be the stalk character of an old word \(\mathbf t\), and prepend a simple reflection \(s\). If \(x<sx\), the head projection is surjective onto the old stalk at \(x\), with kernel the old stalk at \(sx\) shifted upward by one degree. Degreewise exactness therefore gives
@@ -374,6 +403,17 @@ For the single letter \(s\), the positive Hecke word is \(1+T_s\), and both stal
 - [[node:kl.word.common_kernel_equivalence]]
 - [[node:kl.word.stable_image_projectivity]]
 - [[node:kl.word.upper_projectivity_step]]
+- [[node:kl.word.character_congruence]]
+- [[node:kl.word.root_character_class]]
+- [[node:kl.word.prime_character_class]]
+- [[node:kl.word.diagonal_stabilizer]]
+- [[node:kl.word.uniform_diagonal_projector]]
+- [[node:kl.word.residue_class_projector]]
+- [[node:kl.word.class_lift_assembly]]
+- [[node:kl.word.finite_stalk_coordinates]]
+- [[node:kl.word.word_local_lifting]]
+- [[node:kl.word.upper_image_lifting]]
+- [[node:kl.word.upper_image_induction]]
 
 ### Word characters
 

@@ -1099,3 +1099,49 @@ concepts:
   topics:
   - kl.word_modules
   - kl.sheaves
+- node: kl.word.character_congruence
+  terms:
+  - residue relation
+  - residue class
+  - residue classes
+  - prime character class
+  - prime character classes
+  - prime congruence class
+  - prime congruence classes
+  - coefficient-character congruence
+  topics:
+  - kl.word_modules
+  - kl.sheaves
+- node: kl.word.diagonal_stabilizer
+  terms:
+  - diagonal operator
+  - diagonal operators
+  - diagonal stabilizer
+  - stabilizer algebra
+  - stable weight
+  - stable weights
+  - class projector
+  - class projectors
+  - uniform diagonal operator
+  - scaled block projection
+  - scaled block projections
+  topics:
+  - kl.word_modules
+  - kl.sheaves
+- node: kl.word.finite_stalk_coordinates
+  terms:
+  - finite stalk presentation
+  - finite-coordinate presentation
+  - finite coordinate presentation
+  - subexpression-index presentation
+  topics:
+  - kl.word_modules
+  - kl.sheaves
+- node: kl.sheaves.interval_word_extension
+  terms:
+  - ambient upper closure
+  - interval upper closure
+  - interval extension
+  topics:
+  - kl.word_modules
+  - kl.sheaves

@@ -58,6 +58,16 @@ The tensor word supplies a concrete sheaf by taking its image stalk at each vert
 
 A basis of the extended realization changes the symmetric coefficient algebra into a polynomial ring. The transported scalar action is \(p\cdot m=e^{-1}(p)m\), so an old root multiple \(\alpha_E n\) becomes the new multiple \(e(\alpha_E)n\). The same underlying basis vectors remain a basis over the polynomial ring. Thus the polynomial word sheaf has the free stalks and upper quotients required by the later boundary-summand construction.
 
+## Word lifts, interval extensions and global sections
+
+For a reduced word with product \(b\), the word stalks vanish outside \([1,b]\). Given an upper subset \(U\) of this interval, take its upper closure in the ambient group. It meets \([1,b]\) exactly in \(U\). Extend the prescribed assignment by zero outside the interval. An edge whose upper endpoint lies below \(b\) uses the original compatibility condition; an edge whose upper endpoint lies outside the support uses stalk surjectivity at the lower endpoint and the zero upper stalk.
+
+The completed word lifting theorem supplies one word vector for this ambient upper tuple. Its interval projections form the global extension, proving [[node:kl.detail.word_flabbiness|word-sheaf flabbiness]].
+
+On the full interval, the section map is an isomorphism from the word module to all global sections. Its proof uses the free image of the full vertex projection, the same prime-class denominators and the evaluation determinant. This gives the actual module identification used to transport word pairings and adjoints.
+
+Finally, both a normalized boundary sheaf and the reduced word sheaf have top stalk \(A\) in degree zero. Their top identifications give inverse maps. The word sheaf has free stalks, root quotients, flabbiness and global generation, so the [[node:kl.detail.top_splitting|top-splitting theorem]] extends those maps to a graded boundary summand.
+
 ## The boundary image as the target of the new stalk
 
 Suppose only the portion of a sheaf strictly above \(x\) has been constructed. Restrict a section there to each edge leaving \(x\). The resulting tuple lies in the product of the outgoing edge modules. The set of all such tuples is the boundary image at \(x\).
@@ -433,7 +443,10 @@ The actual boundary character \(C\) satisfies the reciprocal identity developed 
 
 - [[node:kl.detail.word_sheaf]]
 - [[node:kl.sheaves.word_polynomial_stalks]]
+- [[node:kl.sheaves.interval_word_extension]]
 - [[node:kl.detail.word_flabbiness]]
+- [[node:kl.sheaves.word_section_equivalence]]
+- [[node:kl.sheaves.word_boundary_summand]]
 
 ### Perfect pairings and adjoints
 

@@ -18,6 +18,7 @@ uses:
 - kl.detail.word_flabbiness
 - kl.detail.top_splitting
 - kl.notes.graded_projective_free
+- kl.sheaves.word_boundary_summand
 lean:
   repository: openai-kl
   modules:
@@ -63,7 +64,8 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Does the entry preserve the source hypotheses, construction, and conclusion?
+  prompt: Are the bilinear form, coefficient ring, finite coordinate presentation
+    and lifting hypotheses explicit?
   verdict: Read against the named Lean declarations and surrounding variable context;
     explanatory examples are distinguished from the formal statement.
 tags:
@@ -93,6 +95,8 @@ The [[node:kl.word.top_stalk|reduced-word top-stalk theorem]] identifies \(W^b\)
 a_0:B^b\to W^b,\qquad b_0:W^b\to B^b.
 \]
 The interval is finite with greatest vertex \(b\), and the symmetric coefficient algebra is a connected graded Noetherian domain. The [[node:kl.detail.top_splitting|top-splitting theorem]] therefore supplies a splitting of \(B\) into \(W\).
+
+The [[node:kl.sheaves.word_boundary_summand|word-boundary summand theorem]] records this application with all its ring, graph and sheaf hypotheses.
 
 Fix any splitting \(i,p\) for the remaining steps.
 
