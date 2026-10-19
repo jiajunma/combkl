@@ -1025,3 +1025,20 @@ concepts:
   topics:
   - kl.word_modules
   - kl.sheaves
+- node: kl.word.tail_maps
+  terms:
+  - ordinary tail map
+  - reflected tail map
+  - tail-extraction maps
+  - tail extraction
+  - local pair of tail projections
+  - local pair map
+  topics:
+  - kl.word_modules
+  - kl.sheaves
+- node: kl.detail.word_sheaf
+  terms:
+  - polynomial word sheaf
+  - polynomial word sheaves
+  - graded word sheaf
+  - graded word sheaves

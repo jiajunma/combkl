@@ -52,6 +52,12 @@ A polynomial \(g\) prescribed at \(y\) extends to \((g,g)\), so the example is f
 
 Relative flabbiness is the extension statement for sets closed under the edges that remain relevant after localization. It will be used in localization and edge-image comparison when some edge modules become zero.
 
+## Word sheaves and their root quotients
+
+The tensor word supplies a concrete sheaf by taking its image stalk at each vertex and the pair-projection quotient at each edge. The word-length induction proves that its stalks are finite free and that an upper edge restriction has kernel exactly the root label times its upper stalk. This identifies the edge module with that root quotient.
+
+A basis of the extended realization changes the symmetric coefficient algebra into a polynomial ring. The transported scalar action is \(p\cdot m=e^{-1}(p)m\), so an old root multiple \(\alpha_E n\) becomes the new multiple \(e(\alpha_E)n\). The same underlying basis vectors remain a basis over the polynomial ring. Thus the polynomial word sheaf has the free stalks and upper quotients required by the later boundary-summand construction.
+
 ## The boundary image as the target of the new stalk
 
 Suppose only the portion of a sheaf strictly above \(x\) has been constructed. Restrict a section there to each edge leaving \(x\). The resulting tuple lies in the product of the outgoing edge modules. The set of all such tuples is the boundary image at \(x\).
@@ -426,6 +432,7 @@ The actual boundary character \(C\) satisfies the reciprocal identity developed 
 ### Sheaves associated to words
 
 - [[node:kl.detail.word_sheaf]]
+- [[node:kl.sheaves.word_polynomial_stalks]]
 - [[node:kl.detail.word_flabbiness]]
 
 ### Perfect pairings and adjoints

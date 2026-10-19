@@ -409,6 +409,7 @@ For two surjective projections, a common endomorphism may act through different 
 - [[node:kl.algebra.quotient_endomorphism_descent]]
 - [[node:kl.algebra.kernel_saturation]]
 - [[node:kl.algebra.scalar_quotient]]
+- [[node:kl.algebra.scalar_quotient_regular]]
 - [[node:kl.algebra.pair_projection]]
 - [[node:kl.algebra.eigenvalue_difference]]
 - [[node:kl.algebra.scalar_free_presentation]]

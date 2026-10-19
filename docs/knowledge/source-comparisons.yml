@@ -564,6 +564,9 @@ comparisons:
   - kl.word.edge_annihilation
   - kl.word.simple_wall_kernel
   - kl.word.head_pair_equivalence
+  - kl.word.nonhead_kernel_step
+  - kl.detail.word_standard_stalks
+  - kl.sheaves.word_polynomial_stalks
   paper_labels:
   - bg:bmp
   lean_declarations:
@@ -571,6 +574,9 @@ comparisons:
   - OAI.KLInvariance.TitsSpace.bottSimpleWall_upper_kernel
   - OAI.KLInvariance.TitsSpace.bottHeadPairEquiv
   - OAI.KLInvariance.TitsSpace.BottKernelExact
+  - OAI.KLInvariance.TitsSpace.bottKernelExact_cons_nonhead
+  - OAI.KLInvariance.TitsSpace.bottStandardStalks
+  - OAI.KLInvariance.TitsSpace.bottPolynomialSheaf_quotient
   paper: The moment-graph sheaf theorem states the quotient description of an edge
     module and freeness for the normalized indecomposable boundary sheaf, through
     the cited moment-graph and Soergel constructions.
@@ -578,6 +584,8 @@ comparisons:
     stalks. Right coefficient characters give label annihilation; a first-factor reflection
     proves the exact kernel across the initial simple reflection. Reflected pair lattices
     then describe stalks after prepending a letter.
-  consequence: These are constructions on the word module. The subsequent simultaneous
-    induction proves stalk freeness and exact kernels for all reflection edges, providing
-    the word-sheaf input to the later boundary-summand construction.
+  consequence: The word-length induction proves stalk freeness and exact kernels together.
+    Its two tail maps, quotient regularity and lattice saturation prove the non-head
+    reflection step; the ascent/descent split sequences prove new stalk freeness.
+    Coefficient transport then gives the polynomial word-sheaf input to the boundary-summand
+    construction.

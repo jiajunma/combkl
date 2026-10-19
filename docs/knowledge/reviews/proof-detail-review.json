@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 62589,
-  "theorem_walkthroughs": 217,
+  "revised_proof_words": 64530,
+  "theorem_walkthroughs": 223,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -391,6 +391,18 @@
       "revised_proof_words": 108,
       "proof_sha256": "d6f28f600ba620db80bda7c8951b6c56e4ab16d4e9a9a63d21acb7de17cfcfa8",
       "review": "Compared mem_of_homogeneous_smul. The component identity and injectivity of scalar multiplication recover degree n-d without a division operation."
+    },
+    {
+      "node": "kl.algebra.scalar_quotient_regular",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.FiniteFreeScalar.exists_smul_iff",
+        "OAI.KLInvariance.FiniteFreeScalar.scalar_quotient_regular"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 199,
+      "proof_sha256": "f9b357ad228bb3d28c837358ac1673e70d7d2a10d7c19d2a2cc7d42e824c035b",
+      "review": "Read the finite-basis scalar divisibility criterion and scalar_quotient_regular. Preserved the general commutative ring, prime-element and exact-kernel assumptions and reproduced the coordinate argument."
     },
     {
       "node": "kl.algebra.subquotient_gradings",
@@ -1128,16 +1140,22 @@
     {
       "node": "kl.detail.word_standard_stalks",
       "source_declarations": [
-        "OAI.KLInvariance.TitsSpace.BottKernelExact",
+        "OAI.KLInvariance.TitsSpace.bottStalk_nil_subsingleton",
+        "OAI.KLInvariance.TitsSpace.bottStalk_nil_free",
+        "OAI.KLInvariance.TitsSpace.bottKernelExact_nil",
+        "OAI.KLInvariance.TitsSpace.bottKernelExact_cons",
+        "OAI.KLInvariance.TitsSpace.bottStalk_free_cons",
+        "OAI.KLInvariance.TitsSpace.bottStalkFinite",
         "OAI.KLInvariance.TitsSpace.bottStandardStalks",
-        "OAI.KLInvariance.TitsSpace.bottKernelExact_cons_nonhead",
+        "OAI.KLInvariance.TitsSpace.bottKernelExact",
+        "OAI.KLInvariance.TitsSpace.bottStalkFree",
         "OAI.KLInvariance.TitsSpace.bottProjectionSheaf_upper_kernel"
       ],
-      "proof_steps": 6,
+      "proof_steps": 7,
       "previous_proof_words": 0,
-      "revised_proof_words": 809,
-      "proof_sha256": "3c8b6e2af36def40bfbcf1a305c13247e4ed07cb8150f0a20a999624a79aaffb",
-      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
+      "revised_proof_words": 697,
+      "proof_sha256": "7569d7786e5f8c8b2117397b6a62c34675520f145e41a9f81328863aa0fc9233",
+      "review": "Replaced the combined outline with the complete simultaneous-induction assembly, explicit empty-word support, root-sign case, two old hypotheses at each new step, finite generation, both edge-kernel inclusions and the free-kernel isomorphism."
     },
     {
       "node": "kl.dihedral.angular_extremes_simple",
@@ -2703,6 +2721,24 @@
       "review": "Compared bott_projection_zero_iff_annihilates_support, bottAdjoint_preserves_kernel, bottEndOfSheaf_preserves_support, bottAdjointSheaf, and bottEndOfAdjointSheaf. The proof follows integral annihilators and quotient descent."
     },
     {
+      "node": "kl.sheaves.word_polynomial_stalks",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.symmetricLabel",
+        "OAI.KLInvariance.TitsSpace.symmetricLabel_represents",
+        "OAI.KLInvariance.TitsSpace.bottGradedProjectionSheaf_upperQuotient",
+        "OAI.KLInvariance.TitsSpace.bottPolynomialSheaf",
+        "OAI.KLInvariance.TitsSpace.bottPolynomialSheaf_free",
+        "OAI.KLInvariance.TitsSpace.bottPolynomialSheaf_quotient",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_free",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_upperQuotient"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 388,
+      "proof_sha256": "89d9ebcd3b9aa61e2bce8335d7968a42861a09d8c53e4008f5dc39fb5b16f911",
+      "review": "Read symmetricLabel, the actual upper-quotient package and coefficientChange_upperQuotient, then bottPolynomialSheaf/free/quotient. Expanded both kernel directions and basis transport; preserved the arbitrary word and interval."
+    },
+    {
       "node": "kl.word.edge_annihilation",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2773,6 +2809,22 @@
       "review": "Read the seed/range proof of headPairEquiv, coordinate recovery and both head projection definitions. Retained the real-linear type and tau-semilinearity of the right projection, then checked both homogeneous coordinate arguments."
     },
     {
+      "node": "kl.word.head_pair_saturation",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.simple_represents",
+        "OAI.KLInvariance.TitsSpace.represents_polynomial_prime",
+        "OAI.KLInvariance.TitsSpace.bottStalkFinite",
+        "OAI.KLInvariance.TitsSpace.bottSimpleEdge_regular",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairLattice_saturated",
+        "OAI.KLInvariance.TitsSpace.bottHeadStalk_divisible"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 381,
+      "proof_sha256": "aadedccf78974622da288554cd51f17eca96548c1f9925ef3d47ba181f82c945",
+      "review": "Read both ascent/descent quotient-regularity applications and their finite-basis input, then the lattice saturation and stalk descent. Preserved both old-word induction hypotheses and the nondivisibility condition."
+    },
+    {
       "node": "kl.word.induced_bimodule",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2801,6 +2853,38 @@
       "revised_proof_words": 228,
       "proof_sha256": "98c589368fdc2b91af9618f7b63a4282d3952dadcb9dab80fc8a524378873c1c",
       "review": "Read inducedBasis, its pure-tensor formula, basis pairing and homogeneous degree statement. Preserved the generic basis-degree hypothesis and separated it from a pre-existing grading on N."
+    },
+    {
+      "node": "kl.word.local_pair_maps",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottTensor_maps_eq",
+        "OAI.KLInvariance.TitsSpace.bottHeadLocalPair_coordinates",
+        "OAI.KLInvariance.TitsSpace.bottHeadLocalPair_mem",
+        "OAI.KLInvariance.TitsSpace.bottHeadLocalPair_zero_iff",
+        "OAI.KLInvariance.TitsSpace.bottHeadLocalPair_value",
+        "OAI.KLInvariance.TitsSpace.bottHeadLocalPair_toStalk",
+        "OAI.KLInvariance.TitsSpace.bottHeadStalk_divisible_of_pair"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 285,
+      "proof_sha256": "ac387e69f92e3e94a3f22964bbed88f8023ac0a73a843d0506e38bf757962a0d",
+      "review": "Read the seed-to-linear-map identity, injective-coordinate membership lemma, zero equivalence and divisible-pair descent. Explained the membership recovery before treating P_x(m) as a lattice vector."
+    },
+    {
+      "node": "kl.word.nonhead_kernel_step",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.represents_polynomial_not_dvd",
+        "OAI.KLInvariance.TitsSpace.bottKernelExact_cons_nonhead",
+        "OAI.KLInvariance.TitsSpace.Represents.act",
+        "OAI.KLInvariance.TitsSpace.Represents.independent_of_ne",
+        "OAI.KLInvariance.TitsSpace.Represents.extended_independent_of_ne"
+      ],
+      "proof_steps": 6,
+      "revised_proof_words": 443,
+      "proof_sha256": "126e50d2c05a3fbf48ef0867e6639250bff983f3fa6ae77ffb00fe4124525ef3",
+      "review": "Read the non-head kernel proof, transformed representing-root construction and norm-two independence lemmas. Expanded the two tail applications, exact scalar transformation, prime nondivisibility via c^2=1, and saturation descent."
     },
     {
       "node": "kl.word.pair_lattice_exact_sequences",
@@ -2926,6 +3010,19 @@
       "revised_proof_words": 267,
       "proof_sha256": "a6622d85e6da18da358b3008e53e76eed32ce8ba55896a7268423478c279a368",
       "review": "Read tensor difference divisibility, both evaluation-flip cases, projection vanishing and the generic upper-kernel criterion. Kept the first-letter hypothesis and proved each kernel containment with its distinct input."
+    },
+    {
+      "node": "kl.word.stalk_freeness_step",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottStalk_smul_injective",
+        "OAI.KLInvariance.TitsSpace.bottStalkFinite",
+        "OAI.KLInvariance.TitsSpace.bottStalk_free_cons"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 357,
+      "proof_sha256": "7b41c89182143f3b90e18f65db1a7019609fb76c42b90ace37b496b03dae318a",
+      "review": "Read both branches of bottStalk_free_cons, the coordinate-domain scalar-injectivity fact and the finite-image instance. Used the previously proved explicit split sequences and kept all old-word assumptions."
     },
     {
       "node": "kl.word.support_duality",
