@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 87081,
-  "theorem_walkthroughs": 299,
+  "revised_proof_words": 88955,
+  "theorem_walkthroughs": 305,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -2115,6 +2115,53 @@
       "review": "Read the full interpolation_exists construction: finite parity injection, the reflection-inverse identity for x*y^-1, the unique paired vertex, both factor cases, quotient-ring product congruence and both parity zero cases. Added a hand-derived A2 example as an illustration of the same construction."
     },
     {
+      "node": "kl.local.edge_factor_action_properties",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.rootRef_root",
+        "OAI.KLInvariance.BruhatGraph.root_not_inverted",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorDegree_edge",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorMap_graded",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorLift_regular"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 289,
+      "proof_sha256": "2cc824c91df6f12cbdbfb0dd32cbe82e06b9bc1b5767328b59d63aac422a750c",
+      "review": "Read the root-reflection identification, source noninversion contradiction, exact edge degree, graded scalar action and edgeFactorLift_regular. Verified the actual finite free upper stalk, upper quotient, prime root and nondivisibility hypotheses, and expanded the coordinate cancellation."
+    },
+    {
+      "node": "kl.local.edge_factor_lift_properties",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.polynomialRoot_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.polynomialRoot_prime",
+        "OAI.KLInvariance.BruhatGraph.polynomialRoot_not_dvd",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorLift_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorLift_not_dvd",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorLift_reduction"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 301,
+      "proof_sha256": "bc78f03c2d83952b9aacdbf4bf6e825a7255064cacc8fc746f5e93f23ae2f3fb",
+      "review": "Read the exact graded-product proof, polynomialRoot primality and linear-generator divisibility argument, prime divisibility of a finite product and powers, and the reduction identity. Preserved actual equality in the symmetric quotient and all zero-exponent/empty-product cases."
+    },
+    {
+      "node": "kl.local.edge_factor_properties",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeWeight_nonneg",
+        "OAI.KLInvariance.TitsSpace.embed_not_rootLine",
+        "OAI.KLInvariance.TitsSpace.reducedPlaneRoot_ne_zero",
+        "OAI.KLInvariance.TitsSpace.edgeFactor_nonzero",
+        "OAI.KLInvariance.TitsSpace.edgeFactor_homogeneous",
+        "OAI.KLInvariance.TitsSpace.edgeFactor_totalDegree"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 316,
+      "proof_sha256": "c2a861fa880ed79e52691f218cc7669d0d98b3e7b98ca444a3e3ee25ae332c13",
+      "review": "Read the sum-of-indicators proof of planeWeight_nonneg, the embedded-root line exclusion, and all three factor property proofs. Checked nonzero quotient vectors, the polynomial domain argument, nonnegative powers, the empty support and the use of nonzero homogeneity for total degree."
+    },
+    {
       "node": "kl.local.edge_inclusion",
       "source_declarations": [
         "OAI.KLInvariance.BruhatGraph.schedule_edge_image_le"
@@ -2124,6 +2171,33 @@
       "revised_proof_words": 571,
       "proof_sha256": "a99a02557d0cc0720abaf3bdad12c9d769260cc8096b6e0cc32d0a5f075afff1",
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+    },
+    {
+      "node": "kl.local.factor_plane_reduction",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeRoot_outside",
+        "OAI.KLInvariance.TitsSpace.reduced_planeRoot_other_isUnit",
+        "OAI.KLInvariance.TitsSpace.edgeFactor_local_associated"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 333,
+      "proof_sha256": "780260a3b90ad39819686c9780c84d59df66bff7f320d65e208fca6fb4f161b4",
+      "review": "Read planeRoot_outside, reduced_planeRoot_other_isUnit and all branches of edgeFactor_local_associated. Expanded the equal-dimension plane argument, unit preservation through the quotient, nonzero transverse real coefficient, finite product of associations and absent-plane exponent zero case."
+    },
+    {
+      "node": "kl.local.factor_relative_degree",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_plane",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_coset",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.planeWeight_coset_edge"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 333,
+      "proof_sha256": "986fbb775f4a439792fd26977d24646512e37a654e9bf5f59a0681671fb7fd7d",
+      "review": "Read edgeRoot and its plane membership and coset equality, then the complete planeWeight_coset_edge proof. Verified the second-root choice, plane equality, ambient noninversion, reflection endpoint identity, both coset inversion-count substitutions and the natural-number division."
     },
     {
       "node": "kl.local.flow_down_flabbiness",
@@ -2348,6 +2422,21 @@
       "revised_proof_words": 275,
       "proof_sha256": "640d4fd8639531946431a243660267b5b716e64a409c70a464d6411eff7850f8",
       "review": "Rechecked mapped ideal membership and the unit/maximal-ideal criteria, then expanded planePrime_span into both ideal containments for any pair of positive roots."
+    },
+    {
+      "node": "kl.local.product_image_scaling",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.LocalProducts.smul_top_le_of_map_dvd",
+        "OAI.KLInvariance.LocalProducts.smul_top_eq_of_map_associated",
+        "OAI.KLInvariance.LocalProducts.associated_prod_power",
+        "OAI.KLInvariance.LocalProducts.associated_prod_scale",
+        "OAI.KLInvariance.LocalProducts.product_image_scale"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 246,
+      "proof_sha256": "9113d996c55f2c90a306370f1441ee8a49821c029d507904498d98a739e49be4",
+      "review": "Read all five LocalProducts lemmas with their arbitrary commutative scalar rings and compatible module actions. Expanded divisibility-to-image inclusion, both association containments, products of units, the exact cardinality/power identity and the final scalar-tower calculation. Kept the count as a hypothesis for the later dihedral application."
     },
     {
       "node": "kl.local.stalk_splitting",
@@ -2675,16 +2764,14 @@
     {
       "node": "kl.paths.plane_degree",
       "source_declarations": [
-        "OAI.KLInvariance.TitsSpace.edgeFactor_homogeneous",
-        "OAI.KLInvariance.TitsSpace.edgeFactor_totalDegree",
         "OAI.KLInvariance.TitsSpace.edgeFactorDegree_cast",
         "OAI.KLInvariance.TitsSpace.edgeFactor_degree_formula"
       ],
-      "proof_steps": 4,
+      "proof_steps": 5,
       "previous_proof_words": 0,
-      "revised_proof_words": 207,
-      "proof_sha256": "3d5588ed32d34b07a54af5eada0aadd15f8a12c36a1cfcaa335ceb99cfecaf62",
-      "review": "Read the root partner/sign proof, finite-support grouping, and the separate homogeneous-degree calculation. Every inversion-sign case and the exclusion of fixed negative partners are spelled out."
+      "revised_proof_words": 263,
+      "proof_sha256": "6eed02bd397f2eaf9afec158d23f14c0959d6907c135e4c2d151ebb68d9e9b3c",
+      "review": "Read the exact natural-to-integer conversion in edgeFactorDegree_cast and the noninversion hypothesis of edgeFactor_degree_formula. Reused the separate nonzero/homogeneity theorem and expanded the cover and A2 long-edge examples while retaining the noncanonical representative choice."
     },
     {
       "node": "kl.realization.alternating_root_formula",

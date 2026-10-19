@@ -556,10 +556,17 @@
         "ra",
         "l0"
       ],
-      "output": "Nonzero homogeneous edge factor, its degree, and local associations.",
+      "output": "The fixed reduced-root product, its exact polynomial lift, homogeneous injective action on the edge module, degree and single-plane exponent.",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.edgeFactor_degree_formula",
-        "OAI.KLInvariance.TitsSpace.edgeFactor_local_associated"
+        "OAI.KLInvariance.TitsSpace.edgeFactor_local_associated",
+        "OAI.KLInvariance.TitsSpace.planeRoot",
+        "OAI.KLInvariance.TitsSpace.edgeFactorDegree_cast",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorLift",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorLift_reduction",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorMap",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorLift_regular",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.planeWeight_coset_edge"
       ]
     },
     {
@@ -576,7 +583,9 @@
       "output": "Equality of scaled model images, transported to localized boundary images.",
       "lean_declarations": [
         "OAI.KLInvariance.MomentGraph.Sheaf.ScaledImages",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.localized_boundary_scaledImages"
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localized_boundary_scaledImages",
+        "OAI.KLInvariance.LocalProducts.associated_prod_scale",
+        "OAI.KLInvariance.LocalProducts.product_image_scale"
       ]
     },
     {
@@ -1223,6 +1232,23 @@
         "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.extend_stalk",
         "OAI.KLInvariance.MomentGraph.Sheaf.extend_modelSum",
         "OAI.KLInvariance.MomentGraph.Sheaf.exists_modelSumIso"
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "scope": "Polynomial correction factors and their local powers",
+      "change": "Separated representative choices, symmetric quotient products, polynomial lifts and actual edge multiplication. Verified nonzero homogeneity, the conditional global degree, intrinsic coset weight, exact quotient identity and whole-edge injectivity. Recorded the single-plane association and the general cardinality-to-product-image lemma.",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeRoot",
+        "OAI.KLInvariance.TitsSpace.edgeFactorDegree_cast",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorLift",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorLift_reduction",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorMap",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorLift_regular",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.planeWeight_coset_edge",
+        "OAI.KLInvariance.TitsSpace.edgeFactor_local_associated",
+        "OAI.KLInvariance.LocalProducts.associated_prod_scale",
+        "OAI.KLInvariance.LocalProducts.product_image_scale"
       ]
     }
   ]

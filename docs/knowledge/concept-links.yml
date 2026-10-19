@@ -1350,3 +1350,34 @@ concepts:
   - local minimal cover
   - local minimal covers
   - local-ring minimal-cover condition
+- node: kl.local.factor_roots
+  terms:
+  - factor representative root
+  - factor representative roots
+  - reduced plane root
+  - reduced plane roots
+  topics:
+  - kl.localization
+  - kl.reflection_combinatorics
+- node: kl.local.edge_factor_lift
+  terms:
+  - polynomial lift of the edge factor
+  - polynomial lift of its correction factor
+  - edge-factor lift
+  - polynomial edge-factor lift
+  topics:
+  - kl.localization
+  - kl.invariance
+- node: kl.local.edge_factor_action
+  terms:
+  - edge-factor multiplication map
+  - edge-factor map
+  topics:
+  - kl.localization
+  - kl.invariance
+- node: kl.local.edge_factor_lift
+  terms:
+  - polynomial lift
+  - polynomial lifts
+  topics:
+  - kl.localization

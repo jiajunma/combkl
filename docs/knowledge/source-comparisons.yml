@@ -953,3 +953,80 @@ comparisons:
     when its lower endpoint is processed. The notes describe incoming-edge identifications
     later in the descent. The generic Lean theorem uses a finite vertex set; the final
     application supplies the actual localized coset modules.'
+- id: actual-correction-factor
+  kind: The same root product with explicit weight and coordinate constructions
+  nodes:
+  - kl.local.factor_roots
+  - kl.detail.edge_factor
+  - kl.local.edge_factor_properties
+  - kl.paths.plane_degree
+  - kl.local.edge_factor_lift
+  - kl.local.edge_factor_lift_properties
+  - kl.local.factor_relative_degree
+  paper_labels:
+  - edge:bound
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.planeRoot
+  - OAI.KLInvariance.TitsSpace.edgeFactor
+  - OAI.KLInvariance.TitsSpace.edgeFactorDegree_cast
+  - OAI.KLInvariance.TitsSpace.edgeFactor_degree_formula
+  - OAI.KLInvariance.BruhatGraph.edgeFactorLift
+  - OAI.KLInvariance.BruhatGraph.edgeFactorLift_reduction
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.planeWeight_coset_edge
+  paper: The notes assign each plane its half-excess relative dihedral length, choose
+    an independent root whenever that weight is positive, and multiply its reduced
+    linear form to that power in the edge quotient.
+  lean: The weights are first constructed by grouping half-root indicators. planeWeight_coset_edge
+    identifies them with the relative dihedral length formula. planeRoot chooses a
+    positive root with the required plane, edgeFactor is a product in the symmetric
+    quotient, and edgeFactorLift is its explicit product before the polynomial quotient.
+    The definitions and nonvanishing hold for every x; noninversion is used for the
+    length-degree formula.
+  consequence: The Blueprint keeps the chosen representatives, all scalar maps and
+    the natural/integer exponent conversion explicit. The quotient of the polynomial
+    lift is exactly the constructed edge factor.
+- id: correction-factor-edge-action
+  kind: The quotient factor through an explicit polynomial scalar
+  nodes:
+  - kl.local.edge_factor_action
+  - kl.local.edge_factor_action_properties
+  paper_labels:
+  - edge:bound
+  lean_declarations:
+  - OAI.KLInvariance.BruhatGraph.edgeFactorMap
+  - OAI.KLInvariance.BruhatGraph.edgeFactorDegree_edge
+  - OAI.KLInvariance.BruhatGraph.edgeFactorMap_graded
+  - OAI.KLInvariance.BruhatGraph.edgeFactorLift_regular
+  paper: The edge factor is an element of the edge coefficient ring and scales the
+    upper image inside the edge module. Its degree supplies the comparison shift,
+    and its nonzero scalar action retains freeness of the scaled free target.
+  lean: Multiplication is defined on the actual edge module using edgeFactorLift in
+    the original coefficient algebra. The source identifies the edge root, proves
+    the grading shift and proves injectivity on the whole edge module from the free
+    upper stalk, scalar quotient kernel and prime-root nondivisibility.
+  consequence: The polynomial lift, its quotient class and the module endomorphism
+    have separate definitions. The actual scalar action carries the degree shift used
+    later in Hilbert comparison.
+- id: localized-factor-and-product-images
+  kind: Associated products give the local scalar-image calculation
+  nodes:
+  - kl.local.factor_plane_reduction
+  - kl.local.product_image_scaling
+  paper_labels:
+  - edge:bound
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.planeRoot_outside
+  - OAI.KLInvariance.TitsSpace.reduced_planeRoot_other_isUnit
+  - OAI.KLInvariance.TitsSpace.edgeFactor_local_associated
+  - OAI.KLInvariance.LocalProducts.associated_prod_scale
+  - OAI.KLInvariance.LocalProducts.product_image_scale
+  paper: In a localized edge quotient viewed as a discrete valuation ring, the notes
+    compare valuations of later-label products. The current plane contributes its
+    exponent to the correction factor, and all other plane factors are units.
+  lean: 'The factor proof directly establishes association with the power of a chosen
+    reduced plane root, checking the same-plane and other-plane factors and the absent-plane
+    case. LocalProducts then works over arbitrary compatible commutative scalar rings:
+    a cardinality equation and associated factors give equality of scalar-image submodules.'
+  consequence: The Blueprint explains the unit and power calculations explicitly.
+    The later-edge count remains the stated hypothesis of the product-image lemma
+    until the dihedral transport argument supplies it.

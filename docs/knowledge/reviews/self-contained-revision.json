@@ -107,12 +107,6 @@
       "pending": []
     },
     {
-      "node": "kl.paths.plane_degree",
-      "file": "docs/knowledge/nodes/kl.localization/plane_degree.md",
-      "review": "Separated the polynomial degree proof from the geometric plane-weight identity; checked nonzero reduced factors, homogeneity, and the final integer equality.",
-      "pending": []
-    },
-    {
       "node": "kl.detail.compatible_sections",
       "file": "docs/knowledge/nodes/kl.sheaves/compatible_sections.md",
       "review": "Aligned the primary section module with Sheaves.sections as a submodule of full ambient assignments. Explained projection to restricted tuples, its kernel and zero-extension splitting, compatibility monotonicity, and the one-edge example.",
@@ -5082,6 +5076,136 @@
       ],
       "review": "Re-read the ungraded finite-product source lemmas and pi_mem_ideal_smul. Made the arbitrary commutative ring and ideal J explicit, retaining the graded positive-ideal and shift statements as specializations; separated freeness from finite freeness.",
       "pending": []
+    },
+    {
+      "node": "kl.local.factor_roots",
+      "file": "docs/knowledge/nodes/kl.localization/factor_roots.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeWeight_support_root",
+        "OAI.KLInvariance.TitsSpace.planeRoot",
+        "OAI.KLInvariance.TitsSpace.planeRoot_ne",
+        "OAI.KLInvariance.TitsSpace.planeRoot_plane",
+        "OAI.KLInvariance.TitsSpace.reducedPlaneRoot"
+      ],
+      "review": "Read planeWeight_support_root and the exact existential properties retained by planeRoot, then reducedPlaneRoot. Distinguished the chosen positive root from a claim of a canonical representative or a retained half-root property, and kept the original-root embedding and symmetric quotient map explicit.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.edge_factor",
+      "file": "docs/knowledge/nodes/kl.localization/edge_factor.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.edgeFactor",
+        "OAI.KLInvariance.TitsSpace.edgeFactorDegree",
+        "OAI.KLInvariance.TitsSpace.edgePolynomial"
+      ],
+      "review": "Replaced the upward-edge-only setup by the exact all-x definition. Read edgeFactor, edgeFactorDegree and edgePolynomial, explained the finite support, toNat exponents, quotient basis and empty product, and separated the conditional length formula from unconditional construction.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.edge_factor_properties",
+      "file": "docs/knowledge/nodes/kl.localization/edge_factor_properties.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeWeight_nonneg",
+        "OAI.KLInvariance.TitsSpace.embed_not_rootLine",
+        "OAI.KLInvariance.TitsSpace.reducedPlaneRoot_ne_zero",
+        "OAI.KLInvariance.TitsSpace.edgeFactor_nonzero",
+        "OAI.KLInvariance.TitsSpace.edgeFactor_homogeneous",
+        "OAI.KLInvariance.TitsSpace.edgeFactor_totalDegree"
+      ],
+      "review": "Read the sum-of-indicators proof of planeWeight_nonneg, the embedded-root line exclusion, and all three factor property proofs. Checked nonzero quotient vectors, the polynomial domain argument, nonnegative powers, the empty support and the use of nonzero homogeneity for total degree.",
+      "pending": []
+    },
+    {
+      "node": "kl.paths.plane_degree",
+      "file": "docs/knowledge/nodes/kl.localization/plane_degree.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.edgeFactorDegree_cast",
+        "OAI.KLInvariance.TitsSpace.edgeFactor_degree_formula"
+      ],
+      "review": "Read the exact natural-to-integer conversion in edgeFactorDegree_cast and the noninversion hypothesis of edgeFactor_degree_formula. Reused the separate nonzero/homogeneity theorem and expanded the cover and A2 long-edge examples while retaining the noncanonical representative choice.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.edge_factor_lift",
+      "file": "docs/knowledge/nodes/kl.localization/edge_factor_lift.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.polynomialRoot",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorLift"
+      ],
+      "review": "Read polynomialRoot and edgeFactorLift in the BruhatGraph namespace. Defined the unreduced polynomial product and both quotient presentations; fixed the direction of the coordinate map and the induced quotient isomorphism before stating its relation to the actual edge-module scalar.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.edge_factor_lift_properties",
+      "file": "docs/knowledge/nodes/kl.localization/edge_factor_lift_properties.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.polynomialRoot_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.polynomialRoot_prime",
+        "OAI.KLInvariance.BruhatGraph.polynomialRoot_not_dvd",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorLift_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorLift_not_dvd",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorLift_reduction"
+      ],
+      "review": "Read the exact graded-product proof, polynomialRoot primality and linear-generator divisibility argument, prime divisibility of a finite product and powers, and the reduction identity. Preserved actual equality in the symmetric quotient and all zero-exponent/empty-product cases.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.edge_factor_action",
+      "file": "docs/knowledge/nodes/kl.localization/edge_factor_action.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.edgeFactorMap"
+      ],
+      "review": "Read edgeFactorMap with its BoundarySheaf, interval and coefficient context. Defined the actual scalar endomorphism, explained the quotient coefficient action from the upper-quotient kernel, and identified its scalar with the symmetric edge factor through the exact reduction map.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.edge_factor_action_properties",
+      "file": "docs/knowledge/nodes/kl.localization/edge_factor_action_properties.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.rootRef_root",
+        "OAI.KLInvariance.BruhatGraph.root_not_inverted",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorDegree_edge",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorMap_graded",
+        "OAI.KLInvariance.BruhatGraph.edgeFactorLift_regular"
+      ],
+      "review": "Read the root-reflection identification, source noninversion contradiction, exact edge degree, graded scalar action and edgeFactorLift_regular. Verified the actual finite free upper stalk, upper quotient, prime root and nondivisibility hypotheses, and expanded the coordinate cancellation.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.factor_relative_degree",
+      "file": "docs/knowledge/nodes/kl.localization/factor_relative_degree.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_plane",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_coset",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.planeWeight_coset_edge"
+      ],
+      "review": "Read edgeRoot and its plane membership and coset equality, then the complete planeWeight_coset_edge proof. Verified the second-root choice, plane equality, ambient noninversion, reflection endpoint identity, both coset inversion-count substitutions and the natural-number division.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.factor_plane_reduction",
+      "file": "docs/knowledge/nodes/kl.localization/factor_plane_reduction.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeRoot_outside",
+        "OAI.KLInvariance.TitsSpace.reduced_planeRoot_other_isUnit",
+        "OAI.KLInvariance.TitsSpace.edgeFactor_local_associated"
+      ],
+      "review": "Read planeRoot_outside, reduced_planeRoot_other_isUnit and all branches of edgeFactor_local_associated. Expanded the equal-dimension plane argument, unit preservation through the quotient, nonzero transverse real coefficient, finite product of associations and absent-plane exponent zero case.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.product_image_scaling",
+      "file": "docs/knowledge/nodes/kl.localization/product_image_scaling.md",
+      "source_declarations": [
+        "OAI.KLInvariance.LocalProducts.smul_top_le_of_map_dvd",
+        "OAI.KLInvariance.LocalProducts.smul_top_eq_of_map_associated",
+        "OAI.KLInvariance.LocalProducts.associated_prod_power",
+        "OAI.KLInvariance.LocalProducts.associated_prod_scale",
+        "OAI.KLInvariance.LocalProducts.product_image_scale"
+      ],
+      "review": "Read all five LocalProducts lemmas with their arbitrary commutative scalar rings and compatible module actions. Expanded divisibility-to-image inclusion, both association containments, products of units, the exact cardinality/power identity and the final scalar-tower calculation. Kept the count as a hypothesis for the later dihedral application.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -5931,14 +6055,33 @@
     {
       "code": "L5",
       "title": "Polynomial correction factors",
-      "status": "in_progress",
-      "completion_evidence": []
+      "status": "exposition_reviewed",
+      "completion_evidence": [
+        "kl.local.factor_roots",
+        "kl.detail.edge_factor",
+        "kl.local.edge_factor_properties",
+        "kl.paths.plane_degree",
+        "kl.local.edge_factor_lift",
+        "kl.local.edge_factor_lift_properties",
+        "kl.local.edge_factor_action",
+        "kl.local.edge_factor_action_properties",
+        "kl.local.factor_relative_degree",
+        "kl.local.factor_plane_reduction"
+      ],
+      "pending": [],
+      "review": "Reviewed supported-plane representative existence and reduction, the all-x edge product and natural exponent sum, nonzero/homogeneous properties, the conditional length formula, the exact intrinsic coset weight formula, the polynomial lift and quotient identity, prime-root nondivisibility, the actual graded injective edge action and the full single-plane association including weight zero."
     },
     {
       "code": "L6",
       "title": "Embedded lower and upper images",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.local.product_image_scaling"
+      ],
+      "pending": [
+        "Expand actual lower/upper-image and scalar-image definitions, transport through sheaf isomorphisms and finite model sums, and the actual local comparison using transported later-edge counts."
+      ],
+      "review": "Added the general compatible-scalar-ring product-image theorem, with explicit unit products and the exact cardinality hypothesis. The actual edge selections, transported count and sheaf-image equality remain to be developed."
     },
     {
       "code": "L7",
@@ -6007,7 +6150,7 @@
     }
   ],
   "next_steps": [
-    "Expand correction factors, their root-plane multiplicities and the embedded local edge-image comparison, then the local-to-global inclusion.",
+    "Expand actual selected edge images and their transport under sheaf isomorphisms/model sums, then supply the transported dihedral later-edge count and prove the local image equality.",
     "Complete the remaining Coxeter/parabolic, root-space and sheaf-operation exposition.",
     "Expand adapted orders, chamber changes, dihedral interval transport, schedules and the path-polynomial proof.",
     "Complete localization, local image comparison, edge inequalities and the simultaneous invariance induction.",
@@ -6480,7 +6623,16 @@
       "kl.local.stalk_splitting": "L4",
       "kl.local.model_sum_properties": "L4",
       "kl.local.model_sum_step": "L4",
-      "kl.local.model_decomposition": "L4"
+      "kl.local.model_decomposition": "L4",
+      "kl.local.factor_roots": "L5",
+      "kl.local.edge_factor_properties": "L5",
+      "kl.local.edge_factor_lift": "L5",
+      "kl.local.edge_factor_lift_properties": "L5",
+      "kl.local.edge_factor_action": "L5",
+      "kl.local.edge_factor_action_properties": "L5",
+      "kl.local.factor_relative_degree": "L5",
+      "kl.local.factor_plane_reduction": "L5",
+      "kl.local.product_image_scaling": "L6"
     },
     "moved_nodes": [
       {
@@ -7314,7 +7466,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 454
+    "current_node_count": 463
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -7345,7 +7497,8 @@
     "Completed L1: separated edge coefficient rings, the plane local ring and the localized edge quotient; wrote the scalar maps and tensor-quotient inverse explicitly. Added coordinate-basis descent and the actual edge-module action/freeness, expanded polynomial edge-ring coordinates and plane-prime generators, and proved root association via a nonzero transverse real coefficient.",
     "Expanded the native dihedral model construction into its full dependency chain: general Coxeter parity matching, independent normal-value prescription, single- and double-zero orbit factors, product interpolation, supported outgoing products and the finite upper-set flabbiness induction. Added an explicit A2 section calculation. L3 remains in progress for localized coset-model transport and product/image formulas.",
     "Completed L3: transported native structure models through scalar extension and the finite relative coset embedding, checked exact canonical root labels and all local-model fields, and proved the arbitrary selected-kernel and both edge-image product formulas. Explained prime-label relative primality after localization. Began L4 by separating local-model data from finite ungraded sums.",
-    "Completed L4: expanded the single-lift local-ring splitting and finite free remainder, the actual common outgoing image, model-sum properties, one-vertex extension and full finite descent. Corrected the old localized-decomposition prose from a graded-style two-lift route to the source single-lift proof. Generalized the reusable partial-isomorphism and finite-sum statements to their ungraded source forms and separated local/graded cover links."
+    "Completed L4: expanded the single-lift local-ring splitting and finite free remainder, the actual common outgoing image, model-sum properties, one-vertex extension and full finite descent. Corrected the old localized-decomposition prose from a graded-style two-lift route to the source single-lift proof. Generalized the reusable partial-isomorphism and finite-sum statements to their ungraded source forms and separated local/graded cover links.",
+    "Completed L5: separated representative roots, the symmetric edge factor, its polynomial lift and actual edge endomorphism; proved nonvanishing, homogeneity, natural/integer degree conversion, prime-root nondivisibility and injectivity. Explained the individual intrinsic plane exponent and the localized association with its exact power, including absent support. Began L6 with the generic associated-product image calculation."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -7593,6 +7746,29 @@
         "kl.localization"
       ],
       "review": "Separated local-ring and graded covers. Bare cover aliases in localization resolve to the new maximal-ideal definition; their graded-algebra/sheaf/word-module scopes keep the graded definition. Explicit local-cover phrases have a global local-ring target."
+    },
+    {
+      "term": "factor representative root",
+      "target": "kl.local.factor_roots",
+      "review": "Linked chosen supported-plane representatives and their reduced roots to the exact choice and quotient construction, distinct from the canonical root of an actual edge."
+    },
+    {
+      "term": "polynomial lift of the edge factor",
+      "target": "kl.local.edge_factor_lift",
+      "review": "Linked the pre-quotient product separately from the symmetric edge factor and explained both quotient presentations."
+    },
+    {
+      "term": "edge-factor multiplication map",
+      "target": "kl.local.edge_factor_action",
+      "review": "Linked the actual module endomorphism separately from its scalar and degree properties."
+    },
+    {
+      "term": "polynomial lift",
+      "target": "kl.local.edge_factor_lift",
+      "topics": [
+        "kl.localization"
+      ],
+      "review": "Inspected all current occurrences in localization; they refer to the pre-quotient correction-factor product. Added the short phrase only in this topic so it does not capture unrelated lifting constructions."
     }
   ],
   "corrections": [
@@ -7612,20 +7788,20 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-19T16:24:45.413644+00:00",
+    "created_at": "2026-10-19T23:59:36.911571+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 454,
-    "html_pages_checked": 724,
-    "generated_definition_links_checked": 6735,
+    "node_count": 463,
+    "html_pages_checked": 734,
+    "generated_definition_links_checked": 6973,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks local minimal covers, the single-lift Nakayama argument, explicit splitting, boundary-image transport, model-sum properties, partial-isomorphism extension and full local descent. Documentation checks only.",
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks supported-plane root choices, edge factors, polynomial lifts, the actual graded injective edge action, intrinsic plane degrees and local associated-product image calculations. Documentation checks only.",
     "focused_page_review": {
       "entries": 11,
-      "source_anchors": 35,
-      "cover_definition_links": 19,
-      "scope": "Read saved statements and proofs, including every cover map and splitting inverse, the finite kernel argument, boundary-image containments, zero model block and both endpoint squares. Checked local versus graded cover destinations, the maximal-unprocessed induction, the explicit two-vertex example and every hypothesis of the localized application."
+      "source_anchors": 42,
+      "factor_definition_links": 45,
+      "scope": "Read all saved statements and proof steps; verified representative choices, original/extended root maps, symmetric and polynomial quotients, natural/integer exponents, prime-power nondivisibility, actual quotient-module cancellation, intrinsic coset lengths and the absent-plane branch. Checked definition destinations, source anchors, both guide routes and the generic scalar-product hypotheses."
     }
   },
   "structure_coverage_scan": {
@@ -8040,6 +8216,42 @@
         "kl.sheaves.finite_sum_properties"
       ],
       "review": "The source lemmas already include ungraded statements. Their expositions now state arbitrary commutative coefficients and, for finite-sum minimality, an arbitrary ideal. Grading and positive-ideal specializations remain explicit later clauses rather than implicit restrictions on local-ring uses."
+    },
+    {
+      "entries": [
+        "kl.local.factor_roots",
+        "kl.detail.edge_factor",
+        "kl.local.edge_factor_properties",
+        "kl.paths.plane_degree"
+      ],
+      "review": "The product and its nonzero/homogeneous properties are defined for every x and positive root a. Noninversion is used only for the length-degree formula. planeRoot is a chosen witness of distinctness and plane equality; the definition does not retain a half-root or canonical-choice condition."
+    },
+    {
+      "entries": [
+        "kl.local.edge_factor_lift",
+        "kl.local.edge_factor_lift_properties",
+        "kl.local.edge_factor_action"
+      ],
+      "review": "Separated S=Sym(V), its polynomial coordinates A, the symmetric quotient E_a and polynomial quotient C_a. The inverse coordinate map induces C_a -> E_a, and the lift reduces to the exact fixed factor. The actual edge map uses multiplication by the lift through the A-action, which factors through C_a."
+    },
+    {
+      "entries": [
+        "kl.local.edge_factor_action_properties"
+      ],
+      "review": "The actual edge root is a noninversion at its source. Regularity uses only the prime-label scalar quotient of the finite free upper stalk and nondivisibility of the polynomial lift; no selected upper-kernel freeness hypothesis is inserted."
+    },
+    {
+      "entries": [
+        "kl.local.factor_relative_degree",
+        "kl.local.factor_plane_reduction"
+      ],
+      "review": "The individual weight agrees with the intrinsic coset length formula after checking the least representative, ambient root and plane inversion counts. Local reduction handles the current plane through a nonzero transverse real coefficient and every other plane through a unit criterion, with a separate absent-plane/zero-exponent case."
+    },
+    {
+      "entries": [
+        "kl.local.product_image_scaling"
+      ],
+      "review": "The product-image theorem is over arbitrary compatible commutative scalar rings and modules. Its cardinality equation is a hypothesis. Application references to structure models and the correction factor are navigation, not prerequisites of this general scalar-image result."
     }
   ],
   "relationship_map_revision": {
@@ -8047,6 +8259,6 @@
     "edge_count": 92,
     "route": "Top splitting and primitive recognition feed the boundary-pairing route; full model decomposition feeds simultaneous character formulas.",
     "evidence": "BoundarySheaf.splitIn_of_top_split, iso_of_primitive_top_split, GradedSheaf.exists_modelSumIso and bottCharacter_decomposition_both.",
-    "latest_anchor_refinement": "Completed the local descent interfaces: actual boundary-image transport, one-lift local cover splitting, model-sum extension and full finite-vertex induction. The 38-stage, 92-edge graph remains acyclic; node-level links distinguish the generic ungraded construction from graded variants and from the actual localized boundary-sheaf application."
+    "latest_anchor_refinement": "Completed the correction factor interfaces from chosen roots to the actual edge action and local power, with the individual coset weight identity. The 38-stage, 92-edge graph remains acyclic. The generic associated-product image lemma starts L6 with the later-edge count retained as a hypothesis."
   }
 }

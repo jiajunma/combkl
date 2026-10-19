@@ -394,15 +394,100 @@ The initial processed set is empty, with the zero model sum and vacuous partial 
 
 For the actual localized boundary sheaf, the coset vertex set is finite, its stalks are finite free tensors over \(R_P\), and the localized-coset properties supply the upper quotients, generation and flabbiness. The coset models supply every local-model field. The [[node:kl.local.localized_decomposition|localized decomposition theorem]] applies the generic finite descent to exactly these objects.
 
-## Root-plane counts and the scalar correction
+## The finite root-plane product
 
-Now reduce the illustrative localized ring modulo the current edge label \(\alpha\). A plane label \(\beta+c\alpha\) becomes \(\beta\). More generally, any nonparallel plane root has a nonzero real multiple of \(\beta\) as its reduction. Such factors differ by units.
+Fix an upward edge \(e:x\to y\) and its canonical positive root \(a\), so \(r_ax=y\). The geometric plane weights \(k_P(x,a)\) are nonnegative integers with finite support. They count the half-root representatives of contributing root pairs grouped by the plane they span with \(a\).
 
-Labels outside the plane become units. Therefore a product of relevant reduced labels is, up to a unit, a power of \(\beta\). Comparing the two model images reduces to comparing these exponents.
+For each supported plane choose the source's factor representative root \(b_P\ne a\), with \(P=\operatorname{span}\{a,b_P\}\). Let
+\[
+S=\operatorname{Sym}_{\mathbb R}(V),\qquad
+E_a=S/(\iota(i_0a)),
+\]
+and let \(r_P\) be the class of \(\iota(i_0b_P)\). The roots \(a,b_P\) are independent, so the quotient vector \([i_0b_P]\) is nonzero. Its symmetric generator \(r_P\) is a nonzero linear factor.
 
-The transported later-edge count theorem supplies the difference of exponents. The factor \(f_e\) was constructed to account for that difference. This yields the required image comparison after localization at each relevant root-plane prime. The proof also treats the primes at which the relevant root factors are units.
+The edge factor is
+\[
+f_{x,a}=\prod_{P:k_P\ne0}r_P^{k_P}.
+\]
+The [[node:kl.local.edge_factor_properties|edge-factor properties theorem]] proves nonvanishing in the quotient polynomial domain and homogeneity of degree \(d_{x,a}=\sum_Pk_P\). These construction properties hold for all \(x\) and positive \(a\).
 
-This computation uses the actual labels and maps. Its conclusion concerns where the lower image sits in the common edge module.
+## Global degree and the individual plane degree
+
+For an ascent root, the geometric weight-sum formula gives
+\[
+2d_{x,a}=\ell(r_ax)-\ell(x)-1.
+\]
+The natural-number exponents used by Lean have the same values as the nonnegative integer weights.
+
+There is also an individual-plane identity. Choose a least representative \(a_0\) of a plane-subgroup coset and an intrinsic edge \(z\to_Dw\). If \(a\) is its actual ambient positive root, then
+\[
+2k_P(za_0,a)=\ell_D(w)-\ell_D(z)-1.
+\]
+The [[node:kl.local.factor_relative_degree|relative edge-degree theorem]] proves this by identifying the coset edge root, applying the plane inversion-change formula, and replacing the two plane inversion counts by intrinsic lengths. It identifies the code's half-root weights with the relative length formula in the notes.
+
+For a cover, the global degree is zero, every weight is zero, and the factor is the empty product \(1\). For the long edge \(1\to sts\) in type \(A_2\), with simple roots \(a,b\) and edge root \(c=a+b\), the single plane has weight one. Its representative is one of \(a,b\). In the quotient by \(\alpha+\beta\), the factor is correspondingly \(\overline\alpha\) or \(\overline\beta=-\overline\alpha\), both of degree one.
+
+## The same factor in polynomial and module coordinates
+
+A basis of the extended realization gives \(\Phi:S\simeq A\), with root polynomials
+\[
+\lambda(b)=\Phi(\iota(i_0b)).
+\]
+The polynomial lift is
+\[
+F_{x,a}=\prod_P\lambda(b_P)^{k_P}\in A.
+\]
+If \(\pi_a:A\to C_a=A/(\lambda(a))\) is the polynomial quotient and \(\chi_a:C_a\simeq E_a\) is induced by \(\Phi^{-1}\), then
+\[
+\chi_a(\pi_a(F_{x,a}))=f_{x,a}.
+\]
+The [[node:kl.local.edge_factor_lift_properties|polynomial-lift properties theorem]] checks this exact equality by reducing every factor.
+
+| Object | Module or ring | Role |
+|---|---|---|
+| \(f_{x,a}\) | \(E_a\), the symmetric edge quotient | The product of reduced plane roots. |
+| \(F_{x,a}\) | \(A\), before quotienting | The scalar product used by the implementation. |
+| \(\mu_e(v)=F_{x,a}v\) | An \(A\)-linear map on \(B^e\) | The correction action on actual edge images. |
+
+The upper-quotient rule annihilates \(B^e\) by \(\lambda(a)\), so this action factors through \(C_a\). The [[node:kl.local.edge_factor_action_properties|edge-factor action theorem]] gives
+\[
+\mu_e(B^e_n)\subseteq B^e_{n+d_{x,a}}
+\]
+and injectivity. For the latter, lift a vector to the free upper stalk. If the factor kills its edge value, each stalk coordinate has product divisible by the prime \(\lambda(a)\). That prime divides none of the representative-root factors, so it divides every lifted coordinate. The original edge value is zero.
+
+## One plane remains after local reduction
+
+Fix a second positive root \(b\ne a\), put \(P=\operatorname{span}\{a,b\}\), and work in
+\[
+E_{P,a}=A_{\mathfrak p_P}/(\eta_P(\lambda(a))).
+\]
+Write \(p=r_{P,a}(b)\) for the reduced root.
+
+For a different supported plane \(Q\), its representative \(b_Q\) lies outside \(P\). Otherwise the independent roots \(a,b_Q\) would span a two-dimensional subspace of \(P\), forcing \(Q=P\). Its localized label is consequently a unit and stays a unit in the edge quotient.
+
+For the representative from \(P\), write \(b_P=sa+tb\), with \(t\ne0\). Reduction kills \(a\), giving
+\[
+r_{P,a}(b_P)=tp.
+\]
+The real scalar \(t\) is a unit. The [[node:kl.local.factor_plane_reduction|localized-factor theorem]] therefore gives
+\[
+q_{P,a}(\eta_P(F_{x,a}))\sim p^{k_P}.
+\]
+If \(P\) is absent from the weight support, then \(k_P=0\); all factors are units and their product is associated to \(1\).
+
+## Converting the later-edge count into equality of images
+
+In a supported rank-one model, the lower and upper selected images are products of their selected supported labels times the same edge module. Let the two index sets have sizes \(h_x,h_y\), and suppose the reduced labels are each associated to \(p\).
+
+Their products are then associated to \(p^{h_x}\) and \(p^{h_y}\). The factor contributes \(p^{k_P}\). When the later-edge count gives
+\[
+h_x=h_y+k_P,
+\]
+the two scalar products are associated after including the correction factor.
+
+The [[node:kl.local.product_image_scaling|product-image scaling theorem]] converts this into equality of submodules. If two scalars differ by a unit acting on the module, their scalar images coincide; multiplication by the unit and its inverse prove the two containments. Its general formulation uses compatible scalar actions \(R\to S\), so it applies to a plane-ring module carrying the quotient coefficient action.
+
+The remaining local comparison verifies the actual selected edge sets, their reduced labels and this count. The resulting equality is then transported through the single edge component of the model decomposition.
 
 ## Recover global membership using the free target
 
@@ -502,13 +587,22 @@ The logical order to retain is: free upper kernel, free edge target, local model
 
 ### Polynomial correction factors
 
+- [[node:kl.local.factor_roots]]
 - [[node:kl.detail.edge_factor]]
+- [[node:kl.local.edge_factor_properties]]
 - [[node:kl.paths.plane_degree]]
+- [[node:kl.local.factor_relative_degree]]
+- [[node:kl.local.edge_factor_lift]]
+- [[node:kl.local.edge_factor_lift_properties]]
+- [[node:kl.local.edge_factor_action]]
+- [[node:kl.local.edge_factor_action_properties]]
+- [[node:kl.local.factor_plane_reduction]]
 
 ### Embedded lower and upper images
 
 - [[node:kl.detail.edge_images]]
 - [[node:kl.detail.scaled_images]]
+- [[node:kl.local.product_image_scaling]]
 - [[node:kl.notes.upper_image_free]]
 - [[node:kl.detail.quotient_image_free]]
 

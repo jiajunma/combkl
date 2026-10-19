@@ -152,6 +152,12 @@ The nonzero reduced linear factors make this product nonzero in the quotient dom
 \]
 For a cover this is zero. For the long edge \(1\to w_0\) in the example it is one, so the correction has degree one.
 
+The [[node:kl.local.factor_relative_degree|relative edge-degree theorem]] identifies each individual weight with the intrinsic dihedral formula on the least-representative coset:
+\[
+2k_P(za_0,a)=\ell_D(w)-\ell_D(z)-1
+\]
+for the intrinsic edge \(z\to_Dw\) with ambient root \(a\). This follows by applying the plane inversion-change formula and replacing the two plane inversion counts by intrinsic lengths. It is the bridge from half-root counting to the exponent used in the local product comparison.
+
 Localization and edge-image comparison use this factor to compare embedded edge images. Hilbert comparison uses its degree to normalize the comparison, and uses the path matrix to recognize the accumulated result as a target R-matrix.
 
 The topic supplies the connections used later: order data can transport the edge schedule, and the schedule has both an algebraic path interpretation and controlled local correction factors.
