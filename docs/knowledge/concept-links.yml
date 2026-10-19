@@ -493,3 +493,38 @@ concepts:
   terms:
   - cotangent action
   - coordinate-dual action
+- node: kl.coxeter.parabolic_subgroups
+  terms:
+  - parabolic subgroup
+  - parabolic subgroups
+- node: kl.coxeter.alternating_words
+  terms:
+  - alternating word
+  - alternating words
+  - alternating expression
+  - braid relation
+- node: kl.realization.dominant_functional
+  terms:
+  - strictly dominant functional
+  - dominant functional
+  - strictly dominant linear form
+  - dominant linear form
+- node: kl.realization.signed_root_representation
+  terms:
+  - signed root representation
+  - signed representing pair
+  - signed root
+- node: kl.coxeter.parabolic_subgroups
+  terms: &id001
+  - minimal coset representative
+  - minimal coset representatives
+  - minimal representative
+  - minimal representatives
+  topics:
+  - kl.coxeter
+  - kl.realizations
+- node: kl.notes.relative_dihedral_intervals
+  terms: *id001
+  topics:
+  - kl.reflection_combinatorics
+  - kl.localization

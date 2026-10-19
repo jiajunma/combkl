@@ -60,6 +60,18 @@ Then
 \]
 For symmetric \(B\), the dual extension \(V_0\oplus K^*\) attains this bound.
 
+<!-- source-comparison:start -->
+## Relation to the OpenAI notes
+
+**Formulation of dimension minimality.**
+
+**OpenAI notes:** The realization lemma gives the lower bound for a nondegenerate extension and also discusses minimal dimension under independent-root and independent-coroot conditions. [bg:realization](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L34).
+
+**Lean (primary):** The local dimension theorem assumes an injective form-preserving map into a finite-dimensional space with a nondegenerate bilinear form. It proves that the ambient dimension is at least the original dimension plus its radical dimension. [Tits:522](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean#L522).
+
+**Role in the proof:** The theorem here states this form-preserving extension bound. The constructed dual extension attains it and supplies independent embedded roots and normals.
+<!-- source-comparison:end -->
+
 *Proof.*
 
 ### Step 1. Locate the embedded subspaces

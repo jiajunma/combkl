@@ -205,3 +205,38 @@ comparisons:
   consequence: The displayed matrix recurrence expands the power calculation. Its
     even and odd vanishings match the local helper lemmas, and the common fixed space
     gives the identity on the entire ambient vector space.
+- id: root-sign-construction
+  kind: Explicit root-sign proof
+  nodes:
+  - kl.realization.simple_root_sign
+  - kl.realization.faithful_actions
+  paper_labels:
+  - bg:realization
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.action_root_nonneg_of_ascent
+  - OAI.KLInvariance.TitsSpace.action_injective
+  paper: The realization discussion invokes the geometric representation theorem and
+    its root-sign property from the cited Coxeter theory.
+  lean: The root-sign implication is proved by strong length induction. A minimal
+    two-generator parabolic decomposition supplies a shorter prefix, and the alternating-root
+    formula supplies nonnegative coefficients. Faithfulness follows by applying the
+    descent sign to an element in the kernel.
+  consequence: The entries develop the coset decomposition, coefficient formula, and
+    induction before applying faithfulness. This gives the stated geometric facts
+    from the local word calculations.
+- id: minimal-extension-formulation
+  kind: Formulation of dimension minimality
+  nodes:
+  - kl.realization.extension_minimality
+  paper_labels:
+  - bg:realization
+  lean_declarations:
+  - OAI.KLInvariance.Realization.extension_dimension_minimal
+  paper: The realization lemma gives the lower bound for a nondegenerate extension
+    and also discusses minimal dimension under independent-root and independent-coroot
+    conditions.
+  lean: The local dimension theorem assumes an injective form-preserving map into
+    a finite-dimensional space with a nondegenerate bilinear form. It proves that
+    the ambient dimension is at least the original dimension plus its radical dimension.
+  consequence: The theorem here states this form-preserving extension bound. The constructed
+    dual extension attains it and supplies independent embedded roots and normals.

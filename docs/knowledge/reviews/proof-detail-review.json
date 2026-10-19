@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 28804,
-  "theorem_walkthroughs": 89,
+  "revised_proof_words": 30903,
+  "theorem_walkthroughs": 98,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -117,6 +117,32 @@
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
     },
     {
+      "node": "kl.coxeter.parabolic_decomposition",
+      "source_declarations": [
+        "OAI.KLInvariance.ParabolicSupport.reduced_append_of_minimal",
+        "OAI.KLInvariance.ParabolicSupport.length_mul_of_minimal",
+        "OAI.KLInvariance.ParabolicSupport.minimal_simple_ascent",
+        "OAI.KLInvariance.ParabolicSupport.exists_length_additive_decomposition"
+      ],
+      "proof_steps": 4,
+      "previous_proof_words": 0,
+      "revised_proof_words": 242,
+      "proof_sha256": "f7830366ae989e7d2b102e5f3368bfedabc74fc2f68f1fb09609998f9c6e77c6",
+      "review": "Read the local proof. Expanded reduced-subword selection, the two length sandwiches, alternating-tail cancellation, or the transported-edge length cases as applicable."
+    },
+    {
+      "node": "kl.coxeter.reduced_alternating_tail",
+      "source_declarations": [
+        "OAI.KLInvariance.ParabolicSupport.reduced_pair_eq_alternating",
+        "OAI.KLInvariance.ParabolicSupport.alternating_length_bound"
+      ],
+      "proof_steps": 2,
+      "previous_proof_words": 0,
+      "revised_proof_words": 166,
+      "proof_sha256": "36512611186f0a836b4901dba06b6f43f2de3bb750db1466edd79a4baf1dc400",
+      "review": "Read the local proof. Expanded reduced-subword selection, the two length sandwiches, alternating-tail cancellation, or the transported-edge length cases as applicable."
+    },
+    {
       "node": "kl.coxeter.reflection_sign_flip",
       "source_declarations": [
         "OAI.KLInvariance.CoxeterSupport.reflectionAction_reflection"
@@ -140,6 +166,31 @@
       "revised_proof_words": 220,
       "proof_sha256": "ea5999ef066096f6b7e3b97e0a03b67bc42bc4efda28a1fbcb27e37c75e6c161",
       "review": "Compared the source induction and group calculations. Expanded the appended-word conjugation, doubled inversion list, and cancellation of inverse sign translations."
+    },
+    {
+      "node": "kl.coxeter.simple_edge_transport",
+      "source_declarations": [
+        "OAI.KLInvariance.bruhatStep_simple_mul",
+        "OAI.KLInvariance.bruhatStep_inv",
+        "OAI.KLInvariance.bruhatStep_mul_simple",
+        "OAI.KLInvariance.right_descent_simple_mul_iff"
+      ],
+      "proof_steps": 5,
+      "previous_proof_words": 0,
+      "revised_proof_words": 275,
+      "proof_sha256": "6fd34dd1da75842ce50bdb33759312f3637f7d53a6faa062c8a8143658af99f0",
+      "review": "Read the local proof. Expanded reduced-subword selection, the two length sandwiches, alternating-tail cancellation, or the transported-edge length cases as applicable."
+    },
+    {
+      "node": "kl.coxeter.word_reduction",
+      "source_declarations": [
+        "OAI.KLInvariance.exists_reduced_subword"
+      ],
+      "proof_steps": 3,
+      "previous_proof_words": 0,
+      "revised_proof_words": 153,
+      "proof_sha256": "75524c49af3e905e14fe474e9e6c87bffbec779b120a07db9ebf019d15470a47",
+      "review": "Read the local proof. Expanded reduced-subword selection, the two length sandwiches, alternating-tail cancellation, or the transported-edge length cases as applicable."
     },
     {
       "node": "kl.coxeter.word_sign_record",
@@ -445,29 +496,32 @@
       "node": "kl.detail.root_inversion_count",
       "source_declarations": [
         "OAI.KLInvariance.TitsSpace.Represents.inversion_iff",
+        "OAI.KLInvariance.TitsSpace.rootInversionEquiv",
         "OAI.KLInvariance.TitsSpace.rootInversions_finite",
         "OAI.KLInvariance.TitsSpace.card_rootInversions"
       ],
-      "proof_steps": 3,
+      "proof_steps": 4,
       "previous_proof_words": 0,
-      "revised_proof_words": 343,
-      "proof_sha256": "b450b25def198d1bb1d21d5ee9368978e86a86fa3a1902f5e4cbc9e88c089fb4",
-      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness.",
+      "revised_proof_words": 393,
+      "proof_sha256": "c5596e9f5b7a64480e4d0ea3c8e23c3bc05f9fdf5c0d5a48c4859b82665f23d5",
+      "review": "Re-read the exact local proof. Expanded the rank-one descent cases, conjugated reflection formula, or inverse signed-action and reduced-word counting argument. Prerequisites now point to their separate detailed entries.",
       "format_correction": "2026-10-18: restored missing backslashes in qquad spacing commands; mathematical assertions unchanged."
     },
     {
       "node": "kl.detail.root_reflection_correspondence",
       "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.Represents.formula",
+        "OAI.KLInvariance.TitsSpace.Represents.action_formula",
         "OAI.KLInvariance.TitsSpace.Represents.unique_up_to_sign",
         "OAI.KLInvariance.TitsSpace.Represents.reflection_unique",
         "OAI.KLInvariance.TitsSpace.exists_positive_root",
         "OAI.KLInvariance.TitsSpace.positiveRootEquiv"
       ],
-      "proof_steps": 4,
+      "proof_steps": 5,
       "previous_proof_words": 0,
-      "revised_proof_words": 290,
-      "proof_sha256": "9a2cc5e8dd46a0fcd9e65dfff14cde3aac32906e9baaf133ed80e203a562b1d1",
-      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness.",
+      "revised_proof_words": 340,
+      "proof_sha256": "a0091172e8179b93d6c93fed4bc23738217135691c0a53584c4f87805ee042ed",
+      "review": "Re-read the exact local proof. Expanded the rank-one descent cases, conjugated reflection formula, or inverse signed-action and reduced-word counting argument. Prerequisites now point to their separate detailed entries.",
       "format_correction": "2026-10-18: restored missing backslashes in qquad spacing commands; mathematical assertions unchanged."
     },
     {
@@ -878,13 +932,15 @@
       "node": "kl.notes.reflection_faithfulness",
       "source_declarations": [
         "OAI.KLInvariance.TitsSpace.extendedAction_injective",
+        "OAI.KLInvariance.TitsSpace.involution_of_moving_rank_one",
+        "OAI.KLInvariance.TitsSpace.isReflection_of_moving_rank_one",
         "OAI.KLInvariance.TitsSpace.reflectionFaithful"
       ],
-      "proof_steps": 5,
+      "proof_steps": 7,
       "previous_proof_words": 150,
-      "revised_proof_words": 368,
-      "proof_sha256": "c56d024a8a7a0cb61b4a22349870d7dea32ee4f5bd0a317ef476838ae6dfadfe",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 438,
+      "proof_sha256": "73273fe2f8dd603de8f132edc0e84be1649ecfa4e528dd02e57200819cae8b86",
+      "review": "Re-read the exact local proof. Expanded the rank-one descent cases, conjugated reflection formula, or inverse signed-action and reduced-word counting argument. Prerequisites now point to their separate detailed entries."
     },
     {
       "node": "kl.notes.reflection_frobenius",
@@ -996,6 +1052,30 @@
       "review": "Read the root partner/sign proof, finite-support grouping, and the separate homogeneous-degree calculation. Every inversion-sign case and the exclusion of fixed negative partners are spelled out."
     },
     {
+      "node": "kl.realization.alternating_root_formula",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.alternating_root",
+        "OAI.KLInvariance.TitsSpace.pair_image_nonneg"
+      ],
+      "proof_steps": 5,
+      "previous_proof_words": 0,
+      "revised_proof_words": 211,
+      "proof_sha256": "cf4a1cd0027020006f791cbe8acd77c8c4dc1e5cdf0ddcbf45de736a7ec3a5fb",
+      "review": "Read the local source proof and expanded the exact induction, coefficient, and sign cases. The parabolic prefix is strictly shorter; the dual action uses the inverse; the signed action tracks both coordinates."
+    },
+    {
+      "node": "kl.realization.dominant_signs",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.dominant_pos_iff_ascent",
+        "OAI.KLInvariance.TitsSpace.dominant_dual_pos_iff_left_ascent"
+      ],
+      "proof_steps": 3,
+      "previous_proof_words": 0,
+      "revised_proof_words": 132,
+      "proof_sha256": "80db2d61310ff81b87dcc63a675fcd6a786463e4d5f3cdb14c14cfdcb026a554",
+      "review": "Read the local source proof and expanded the exact induction, coefficient, and sign cases. The parabolic prefix is strictly shorter; the dual action uses the inverse; the signed action tracks both coordinates."
+    },
+    {
       "node": "kl.realization.extension_minimality",
       "source_declarations": [
         "OAI.KLInvariance.Realization.extension_dimension_minimal",
@@ -1006,6 +1086,19 @@
       "revised_proof_words": 205,
       "proof_sha256": "e47db058120ad6b68cf305ddbf7ea7b4fbe8d873faaf527042026b283517ed8b",
       "review": "Read extension_dimension_minimal; expanded its orthogonal-complement dimension argument through restriction of dual functionals and rank-nullity, and checked the attaining extension."
+    },
+    {
+      "node": "kl.realization.faithful_actions",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.action_injective",
+        "OAI.KLInvariance.TitsSpace.extendedAction_injective",
+        "OAI.KLInvariance.Cotangent.action_injective"
+      ],
+      "proof_steps": 3,
+      "previous_proof_words": 0,
+      "revised_proof_words": 167,
+      "proof_sha256": "344b4bd986b2cfc99287e88fab386d0cae8c0414e7e317e5631f616ac862028a",
+      "review": "Read the local source proof and expanded the exact induction, coefficient, and sign cases. The parabolic prefix is strictly shorter; the dual action uses the inverse; the signed action tracks both coordinates."
     },
     {
       "node": "kl.realization.finite_reflection_relations",
@@ -1044,6 +1137,33 @@
       "proof_sha256": "678c326b8aa8bfd812b724c90d8892d874019625882a4141c7468f380a0b2903",
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test.",
       "heading_revision": "Replaced the question-style step heading with its mathematical statement; verified the non-heading proof text is unchanged."
+    },
+    {
+      "node": "kl.realization.signed_root_action",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.IsRoot.eq_simple_of_nonpos",
+        "OAI.KLInvariance.TitsSpace.Represents.simple_sign",
+        "OAI.KLInvariance.TitsSpace.SignedRepresents.simple",
+        "OAI.KLInvariance.TitsSpace.SignedRepresents.act"
+      ],
+      "proof_steps": 3,
+      "previous_proof_words": 0,
+      "revised_proof_words": 260,
+      "proof_sha256": "c8daafa78b6336c7d8139d1cdb0dad49945aef7d60a981ffd3ef9f46e399d9e1",
+      "review": "Read the local source proof and expanded the exact induction, coefficient, and sign cases. The parabolic prefix is strictly shorter; the dual action uses the inverse; the signed action tracks both coordinates."
+    },
+    {
+      "node": "kl.realization.simple_root_sign",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.action_root_nonneg_of_ascent",
+        "OAI.KLInvariance.TitsSpace.action_root_nonpos_of_descent",
+        "OAI.KLInvariance.TitsSpace.IsRoot.sign"
+      ],
+      "proof_steps": 5,
+      "previous_proof_words": 0,
+      "revised_proof_words": 323,
+      "proof_sha256": "005653554e0fb647c22baf99df6641d73eba47d56b2dfc3f293ffef811fe2f07",
+      "review": "Read the local source proof and expanded the exact induction, coefficient, and sign cases. The parabolic prefix is strictly shorter; the dual action uses the inverse; the signed action tracks both coordinates."
     },
     {
       "node": "kl.sheaves.boundary_existence",

@@ -12,6 +12,8 @@ uses:
 - kl.foundations.canonical_kl
 - kl.foundations.subword
 - kl.realization.cotangent_action
+- kl.realization.faithful_actions
+- kl.coxeter.parabolic_subgroups
 lean:
   repository: openai-kl
   modules:

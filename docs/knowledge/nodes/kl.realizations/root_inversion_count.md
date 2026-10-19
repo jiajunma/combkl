@@ -9,15 +9,16 @@ topics:
 uses:
 - kl.detail.root_inversions
 - kl.detail.root_reflection_correspondence
-- kl.detail.strong_exchange
+- kl.realization.signed_root_action
 - kl.coxeter.word_sign_record
-- kl.coxeter.signed_reflection_action
+- kl.detail.strong_exchange
 lean:
   repository: openai-kl
   modules:
   - Tits
   declarations:
   - OAI.KLInvariance.TitsSpace.Represents.inversion_iff
+  - OAI.KLInvariance.TitsSpace.rootInversionEquiv
   - OAI.KLInvariance.TitsSpace.rootInversions_finite
   - OAI.KLInvariance.TitsSpace.card_rootInversions
 source:
@@ -26,6 +27,10 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.Tits:1928
     format: lean-location
     note: OAI.KLInvariance.TitsSpace.Represents.inversion_iff
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Tits:2042
+    format: lean-location
+    note: OAI.KLInvariance.TitsSpace.rootInversionEquiv
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.Tits:2065
     format: lean-location
@@ -49,44 +54,81 @@ tags:
 
 # The root-sign criterion and the inversion count
 
-If a positive root \(a\) represents \(t\), then
+Let \(W\) be a finite-generator Coxeter system, and let a positive real root \(a\) represent the reflection \(t\). Then
 \[
-w^{-1}a\in-\Phi^+\quad\Longleftrightarrow\quad\ell(tw)<\ell(w).
+\rho_0(w^{-1})a\text{ is negative}
+\quad\Longleftrightarrow\quad
+\ell(tw)<\ell(w).
 \]
-Consequently \(\operatorname{Inv}_{\Phi}(w)\) is finite with cardinality \(\ell(w)\).
+Consequently the root-inversion set of \(w\) is finite and has cardinality \(\ell(w)\).
 
 *Proof.*
 
-### Step 1. Record sign changes along a word
+### Step 1. Compute the signed inverse action
 
-A simple reflection changes only the coordinate along its own simple root. If it sent a positive root to a negative root, every other coordinate would therefore be zero. The original root would be a positive scalar multiple of that simple root; their squared norms are both two, so the scalar would be one. Hence it sends every positive root except its own simple root to a positive root, and sends that simple root to its negative. The same assertion for negative roots follows by negating. Thus a root represented by a pair \((t,\varepsilon)\), with sign bit \(\varepsilon\in\mathbb Z/2\mathbb Z\), transforms under \(s_i\) by conjugating \(t\) and toggling the sign precisely when \(t=s_i\).
+Choose a reduced word \(\omega\) for \(w\). Let \(c\in\mathbb Z/2\mathbb Z\) be the multiplicity of \(t\) in its left inversion sequence, reduced modulo two.
 
-The formal signed action implements these two operations. Iterating along a word therefore tracks the actual sign of the root, not just a formal label.
-
-### Step 2. Use the reduced-word inversion record
-
-Choose a reduced word \(\omega\) for \(w\). Iterating the preceding sign rule gives
+Apply the word-record theorem with initial bit \(c\):
 \[
-w^{-1}\cdot(t,0)=(w^{-1}tw,\ c_t),\qquad
-c_t=\#\{t\text{ in the left inversion sequence of }\omega\}\pmod2.
+A_w(w^{-1}tw,c)=(t,c+c)=(t,0).
 \]
-Reducedness makes that sequence repetition-free. Hence \(c_t=1\) exactly when \(t\) occurs, and otherwise \(c_t=0\). The signed action then says that \(w^{-1}a\) is negative exactly when \(t\) occurs. A nonzero real root cannot be both positive and negative, so these alternatives are exclusive.
+Taking the inverse group action gives
+\[
+A_{w^{-1}}(t,0)=(w^{-1}tw,c).
+\]
 
-The strong-exchange inversion description identifies membership in this sequence with \(\ell(tw)<\ell(w)\). This proves the displayed sign criterion with the left-multiplication convention.
+The positive root \(a\) is represented by \((t,0)\). Compatibility of signed labels with root transformation therefore makes the last pair represent \(\rho_0(w^{-1})a\). Its bit \(c\) is exactly the coordinate sign of that root.
 
-### Step 3. Count by explicit bijections
+### Step 2. A reduced inversion sequence has no repetitions
 
-Restrict the positive-root/reflection bijection to the two inversion sets; Step 2 shows that both maps land in the required subsets. Next identify left inversions with the elements of the reduced-word inversion sequence. Since the sequence has no repetitions, taking its \(j\)-th entry is a bijection from its positions to its members.
+Suppose two positions \(j<k\) had the same inversion label. Write the supplied word as
+\[
+\omega=u\,s_j\,p\,s_k\,v,
+\]
+where \(u\) is the prefix before position \(j\), and \(p\) is the intervening word. Here \(s_j,s_k\) denote the letters at the chosen positions; in the group equations below, \(u,p,v\) denote the products of the corresponding word segments.
 
-There is one inversion-sequence entry for each letter of \(\omega\). Its number of positions is therefore \(|\omega|=\ell(w)\). Composing these three bijections proves finiteness and the cardinality assertion. No finiteness of the ambient group or of the entire positive root set was used.
+Equality of the two labels gives
+\[
+u s_j u^{-1}
+=u s_j p s_k p^{-1}s_j u^{-1}.
+\]
+Cancel the outer prefix and multiply by \(s_j\) to obtain
+\[
+s_j=p s_k p^{-1},\qquad s_jp=ps_k.
+\]
+The word product thus becomes
+\[
+u s_j p s_k v=u p s_k^2v=u p v.
+\]
+This deletes two positions, contradicting reducedness. Hence the inversion sequence is repetition-free.
+
+Therefore \(c=1\) exactly when \(t\) occurs in that sequence, and \(c=0\) otherwise. The transformed root is nonzero, so its positive and negative signs are exclusive. Step 1 consequently identifies negativity with occurrence of \(t\).
+
+### Step 3. Identify occurrence with a left inversion
+
+If \(t\) occurs at a position of the reduced word, the deletion identity expresses \(tw\) using \(|\omega|-1\) letters. Hence \(\ell(tw)<\ell(w)\).
+
+Conversely, if \(\ell(tw)<\ell(w)\), strong exchange deletes a position in the supplied word to give \(tw\). If the prefix, deleted letter, and tail are \(u,s_j,v\), then \(w=us_jv\) and \(tw=uv\). Multiplication by \(w^{-1}\) gives \(t=us_ju^{-1}\), the inversion label at that position.
+
+This proves the sign criterion.
+
+### Step 4. Count the roots through explicit bijections
+
+The positive-root/reflection correspondence restricts to a bijection from root inversions of \(w\) to its left-inversion reflections, by Step 3.
+
+Those reflections are exactly the labels in the reduced inversion sequence. Step 2 makes the map from positions to labels injective, and Step 3 makes it surjective onto the left inversions.
+
+There is one position per letter, and \(|\omega|=\ell(w)\). Composing these bijections gives finiteness and the stated cardinality.
 
 ## References
 
-The precise Lean sources are listed below.
+The local statements and proof steps are listed below.
 
 ## Lean formalization
 
 `OAI.KLInvariance.TitsSpace.Represents.inversion_iff`: [Tits.lean:1928](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean#L1928).
+
+`OAI.KLInvariance.TitsSpace.rootInversionEquiv`: [Tits.lean:2042](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean#L2042).
 
 `OAI.KLInvariance.TitsSpace.rootInversions_finite`: [Tits.lean:2065](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean#L2065).
 

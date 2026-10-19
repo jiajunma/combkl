@@ -22,11 +22,17 @@
       "kl.notes.hecke_action"
     ],
     "kl.coxeter": [
+      "kl.coxeter.alternating_words",
+      "kl.coxeter.parabolic_decomposition",
+      "kl.coxeter.parabolic_subgroups",
+      "kl.coxeter.reduced_alternating_tail",
       "kl.coxeter.reflection_sign_flip",
       "kl.coxeter.signed_coxeter_relations",
       "kl.coxeter.signed_reflection_action",
       "kl.coxeter.signed_word_action",
+      "kl.coxeter.simple_edge_transport",
       "kl.coxeter.word_data",
+      "kl.coxeter.word_reduction",
       "kl.coxeter.word_sign_record",
       "kl.detail.bruhat_lifting",
       "kl.detail.simple_envelopes",
@@ -107,9 +113,13 @@
       "kl.detail.root_reflection_correspondence",
       "kl.notes.extended_realization",
       "kl.notes.reflection_faithfulness",
+      "kl.realization.alternating_root_formula",
       "kl.realization.cotangent_action",
+      "kl.realization.dominant_functional",
+      "kl.realization.dominant_signs",
       "kl.realization.extended_action",
       "kl.realization.extension_minimality",
+      "kl.realization.faithful_actions",
       "kl.realization.finite_reflection_relations",
       "kl.realization.geometric_action",
       "kl.realization.linear_reflection",
@@ -118,6 +128,9 @@
       "kl.realization.radical_extension",
       "kl.realization.rank_two_coefficients",
       "kl.realization.reflection_plane",
+      "kl.realization.signed_root_action",
+      "kl.realization.signed_root_representation",
+      "kl.realization.simple_root_sign",
       "kl.realization.tits_form"
     ],
     "kl.reflection_combinatorics": [
@@ -609,6 +622,47 @@
       ]
     },
     {
+      "id": "kl.coxeter.alternating_words",
+      "chapter": "kl.coxeter",
+      "lean_declarations": [
+        "OAI.KLInvariance.ParabolicSupport.reduced_pair_eq_alternating",
+        "OAI.KLInvariance.CoxeterSupport.wordAction_alternating"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.coxeter.parabolic_decomposition",
+      "chapter": "kl.coxeter",
+      "lean_declarations": [
+        "OAI.KLInvariance.ParabolicSupport.reduced_append_of_minimal",
+        "OAI.KLInvariance.ParabolicSupport.length_mul_of_minimal",
+        "OAI.KLInvariance.ParabolicSupport.minimal_simple_ascent",
+        "OAI.KLInvariance.ParabolicSupport.exists_length_additive_decomposition"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.coxeter.parabolic_subgroups",
+      "chapter": "kl.coxeter",
+      "lean_declarations": [
+        "OAI.KLInvariance.ParabolicSupport.subgroup",
+        "OAI.KLInvariance.ParabolicSupport.word_mem",
+        "OAI.KLInvariance.ParabolicSupport.exists_word",
+        "OAI.KLInvariance.ParabolicSupport.exists_reduced_word",
+        "OAI.KLInvariance.ParabolicSupport.exists_minimal"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.coxeter.reduced_alternating_tail",
+      "chapter": "kl.coxeter",
+      "lean_declarations": [
+        "OAI.KLInvariance.ParabolicSupport.reduced_pair_eq_alternating",
+        "OAI.KLInvariance.ParabolicSupport.alternating_length_bound"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.coxeter.reflection_sign_flip",
       "chapter": "kl.coxeter",
       "lean_declarations": [
@@ -648,11 +702,30 @@
       "paper_locations": []
     },
     {
+      "id": "kl.coxeter.simple_edge_transport",
+      "chapter": "kl.coxeter",
+      "lean_declarations": [
+        "OAI.KLInvariance.bruhatStep_simple_mul",
+        "OAI.KLInvariance.bruhatStep_inv",
+        "OAI.KLInvariance.bruhatStep_mul_simple",
+        "OAI.KLInvariance.right_descent_simple_mul_iff"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.coxeter.word_data",
       "chapter": "kl.coxeter",
       "lean_declarations": [
         "OAI.KLInvariance.CoxeterSupport.leftInvSeq_alternating_formula",
         "OAI.KLInvariance.CoxeterSupport.wordAction_record"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.coxeter.word_reduction",
+      "chapter": "kl.coxeter",
+      "lean_declarations": [
+        "OAI.KLInvariance.exists_reduced_subword"
       ],
       "paper_locations": []
     },
@@ -1152,8 +1225,7 @@
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.IsRoot",
         "OAI.KLInvariance.TitsSpace.Represents",
-        "OAI.KLInvariance.TitsSpace.PositiveRoot",
-        "OAI.KLInvariance.TitsSpace.positiveRootEquiv"
+        "OAI.KLInvariance.TitsSpace.PositiveRoot"
       ],
       "paper_locations": []
     },
@@ -1209,6 +1281,7 @@
       "chapter": "kl.realizations",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.Represents.inversion_iff",
+        "OAI.KLInvariance.TitsSpace.rootInversionEquiv",
         "OAI.KLInvariance.TitsSpace.rootInversions_finite",
         "OAI.KLInvariance.TitsSpace.card_rootInversions"
       ],
@@ -1218,8 +1291,7 @@
       "id": "kl.detail.root_inversions",
       "chapter": "kl.realizations",
       "lean_declarations": [
-        "OAI.KLInvariance.TitsSpace.RootInversions",
-        "OAI.KLInvariance.TitsSpace.rootInversionEquiv"
+        "OAI.KLInvariance.TitsSpace.RootInversions"
       ],
       "paper_locations": []
     },
@@ -1227,6 +1299,8 @@
       "id": "kl.detail.root_reflection_correspondence",
       "chapter": "kl.realizations",
       "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.Represents.formula",
+        "OAI.KLInvariance.TitsSpace.Represents.action_formula",
         "OAI.KLInvariance.TitsSpace.Represents.unique_up_to_sign",
         "OAI.KLInvariance.TitsSpace.Represents.reflection_unique",
         "OAI.KLInvariance.TitsSpace.exists_positive_root",
@@ -1883,6 +1957,8 @@
       "chapter": "kl.realizations",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.extendedAction_injective",
+        "OAI.KLInvariance.TitsSpace.involution_of_moving_rank_one",
+        "OAI.KLInvariance.TitsSpace.isReflection_of_moving_rank_one",
         "OAI.KLInvariance.TitsSpace.reflectionFaithful"
       ],
       "paper_locations": [
@@ -2030,6 +2106,15 @@
       "paper_locations": []
     },
     {
+      "id": "kl.realization.alternating_root_formula",
+      "chapter": "kl.realizations",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.alternating_root",
+        "OAI.KLInvariance.TitsSpace.pair_image_nonneg"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.realization.cotangent_action",
       "chapter": "kl.realizations",
       "lean_declarations": [
@@ -2038,6 +2123,25 @@
         "OAI.KLInvariance.Cotangent.action",
         "OAI.KLInvariance.Cotangent.action_simple",
         "OAI.KLInvariance.Cotangent.pairing"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.realization.dominant_functional",
+      "chapter": "kl.realizations",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.dominant",
+        "OAI.KLInvariance.TitsSpace.dominant_root",
+        "OAI.KLInvariance.TitsSpace.dominant_action_root"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.realization.dominant_signs",
+      "chapter": "kl.realizations",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.dominant_pos_iff_ascent",
+        "OAI.KLInvariance.TitsSpace.dominant_dual_pos_iff_left_ascent"
       ],
       "paper_locations": []
     },
@@ -2065,6 +2169,16 @@
       "paper_locations": [
         "Real realizations; bg:realization"
       ]
+    },
+    {
+      "id": "kl.realization.faithful_actions",
+      "chapter": "kl.realizations",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.action_injective",
+        "OAI.KLInvariance.TitsSpace.extendedAction_injective",
+        "OAI.KLInvariance.Cotangent.action_injective"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.realization.finite_reflection_relations",
@@ -2159,6 +2273,35 @@
       "paper_locations": [
         "2. Real realizations and moment-graph sheaves; sec:background"
       ]
+    },
+    {
+      "id": "kl.realization.signed_root_action",
+      "chapter": "kl.realizations",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.IsRoot.eq_simple_of_nonpos",
+        "OAI.KLInvariance.TitsSpace.Represents.simple_sign",
+        "OAI.KLInvariance.TitsSpace.SignedRepresents.simple",
+        "OAI.KLInvariance.TitsSpace.SignedRepresents.act"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.realization.signed_root_representation",
+      "chapter": "kl.realizations",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.SignedRepresents"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.realization.simple_root_sign",
+      "chapter": "kl.realizations",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.action_root_nonneg_of_ascent",
+        "OAI.KLInvariance.TitsSpace.action_root_nonpos_of_descent",
+        "OAI.KLInvariance.TitsSpace.IsRoot.sign"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.realization.tits_form",

@@ -8,23 +8,19 @@ topics:
 - kl.realizations
 uses:
 - kl.detail.positive_roots
+- kl.realization.signed_root_action
 lean:
   repository: openai-kl
   modules:
   - Tits
   declarations:
   - OAI.KLInvariance.TitsSpace.RootInversions
-  - OAI.KLInvariance.TitsSpace.rootInversionEquiv
 source:
   spans:
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.Tits:2039
     format: lean-location
     note: OAI.KLInvariance.TitsSpace.RootInversions
-  - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.Tits:2042
-    format: lean-location
-    note: OAI.KLInvariance.TitsSpace.rootInversionEquiv
 verification:
   definition: accepted
   proof: not_applicable
@@ -40,29 +36,31 @@ tags:
 
 # Positive-root inversion sets
 
-For \(w\in W\), define its left root-inversion set by
+For \(w\in W\), its root-inversion set is
 \[
-\operatorname{Inv}_{\Phi}(w)=\{a\in\Phi^+:w^{-1}a\in-\Phi^+\}.
+\operatorname{Inv}_{\Phi}(w)
+=\{a\in\Phi^+:\rho_0(w^{-1})a\text{ is coordinatewise nonpositive}\}.
 \]
-The inverse on \(w\) is essential: this is the convention corresponding to left reflection multiplication. A reflection \(t\) is a left inversion of \(w\) when \(\ell(tw)<\ell(w)\). Under the root–reflection correspondence,
-\[
-a\in\operatorname{Inv}_{\Phi}(w)\quad\Longleftrightarrow\quad
-\ell(r_a w)<\ell(w).
-\]
-The sign criterion and the equality \(|\operatorname{Inv}_{\Phi}(w)|=\ell(w)\) are proved in the inversion-count theorem. An infinite ambient root system therefore still gives a finite inversion set for each element.
+The inverse in this definition matches left multiplication by the represented reflection.
 
-For a reduced word \(w=s_{i_1}\cdots s_{i_m}\), its left inversion sequence consists of the reflections
+For the identity, the set is empty: a positive real root is nonzero and cannot also be nonpositive. For a simple reflection \(s_i\), the set is \(\{\alpha_i\}\), because \(s_i\) makes precisely its own positive root negative.
+
+For each positive root \(a\), its root-inversion indicator is one when \(a\) belongs to this set and zero otherwise. The sign-and-count theorem [[node:kl.detail.root_inversion_count]] establishes
 \[
-t_j=(s_{i_1}\cdots s_{i_{j-1}})s_{i_j}(s_{i_1}\cdots s_{i_{j-1}})^{-1}.
+a\in\operatorname{Inv}_{\Phi}(w)
+\quad\Longleftrightarrow\quad
+\ell(r_aw)<\ell(w),
+\qquad
+|\operatorname{Inv}_{\Phi}(w)|=\ell(w).
 \]
-The corresponding positive roots are the distinct roots inverted by \(w^{-1}\).
+It constructs the bijection to left-inversion reflections through the signed action and a reduced word.
+
+The geometric plane weights use the change of these indicators when \(w\) is multiplied by a reflection. Their finite support follows from this inversion-count result.
 
 ## References
 
-The precise Lean sources are listed below.
+The local definitions are listed below.
 
 ## Lean formalization
 
 `OAI.KLInvariance.TitsSpace.RootInversions`: [Tits.lean:2039](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean#L2039).
-
-`OAI.KLInvariance.TitsSpace.rootInversionEquiv`: [Tits.lean:2042](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean#L2042).

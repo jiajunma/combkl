@@ -108,3 +108,17 @@ The moving-space definition separates the linear-algebra statement from the grou
 - [[node:kl.realization.moving_spaces]]
 - [[node:kl.realization.orthogonal_rank_one]]
 - [[node:kl.realization.cotangent_action]]
+
+## Root signs, faithfulness, and signed labels
+
+Minimal parabolic representatives separate a shorter prefix from a two-generator tail. The alternating-root formula expresses that tail using nonnegative coefficients. Strong induction on length therefore proves the sign of a simple-root image. A right descent then detects every nonidentity element, proving faithfulness of the geometric action and its extensions.
+
+The same sign theorem makes every real root positive or negative. A simple reflection changes the sign precisely at its own positive root. This identifies the earlier combinatorial sign bit with the coordinate sign of an actual root and leads to the inversion count.
+
+- [[node:kl.realization.alternating_root_formula]]
+- [[node:kl.realization.simple_root_sign]]
+- [[node:kl.realization.faithful_actions]]
+- [[node:kl.realization.dominant_functional]]
+- [[node:kl.realization.dominant_signs]]
+- [[node:kl.realization.signed_root_representation]]
+- [[node:kl.realization.signed_root_action]]

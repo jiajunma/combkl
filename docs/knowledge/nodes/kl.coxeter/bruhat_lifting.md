@@ -9,6 +9,7 @@ topics:
 uses:
 - kl.detail.simple_envelopes
 - kl.detail.strong_exchange
+- kl.coxeter.simple_edge_transport
 lean:
   repository: openai-kl
   modules:

@@ -110,6 +110,22 @@ Its determinant is \(-8\). The simple normals now have rows \((2,-2,1)\) and \((
 
 The extra coordinate supplies values that separate the two normals while retaining the original independent roots. This illustrates [[node:kl.notes.extended_realization]].
 
+## The quotient by the radical in the infinite dihedral example
+
+In \(V_0/K\), the equation \(\alpha_s+\alpha_t\in K\) gives
+\[
+\overline\alpha_t=-\overline\alpha_s.
+\]
+The quotient is one-dimensional. The first simple reflection negates \(\overline\alpha_s\). The second acts by
+\[
+s_t\overline\alpha_s
+=\overline{\alpha_s+2\alpha_t}
+=-\overline\alpha_s.
+\]
+Their product therefore acts as the identity on the quotient, although \(s_ss_t\) has infinite order in the infinite dihedral group.
+
+The dual extension has dimension three and retains \(V_0\) as an embedded subspace. Its two original roots remain independent, and the additional dual direction supplies their independent normal functionals.
+
 ## The extended Tits space
 
 Apply the construction to the Tits form on \(\mathbb R^I\). The extended root is \(\widetilde\alpha_i=(\alpha_i,0)\). The development chooses a symmetric nondegenerate form supplied by the extension theorem. Its root pairings remain \(g_{ij}\).

@@ -339,6 +339,184 @@
       ],
       "review": "Read the local declarations and proof bodies; expanded the displayed linear algebra and coefficient recurrences.",
       "pending": []
+    },
+    {
+      "node": "kl.coxeter.word_reduction",
+      "file": "docs/knowledge/nodes/kl.coxeter/word_reduction.md",
+      "source_declarations": [
+        "OAI.KLInvariance.exists_reduced_subword"
+      ],
+      "review": "The definitions and length calculations follow the local ParabolicSupport and Bruhat proofs.",
+      "pending": []
+    },
+    {
+      "node": "kl.coxeter.parabolic_subgroups",
+      "file": "docs/knowledge/nodes/kl.coxeter/parabolic_subgroups.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ParabolicSupport.subgroup",
+        "OAI.KLInvariance.ParabolicSupport.word_mem",
+        "OAI.KLInvariance.ParabolicSupport.exists_word",
+        "OAI.KLInvariance.ParabolicSupport.exists_reduced_word",
+        "OAI.KLInvariance.ParabolicSupport.exists_minimal"
+      ],
+      "review": "The definitions and length calculations follow the local ParabolicSupport and Bruhat proofs.",
+      "pending": []
+    },
+    {
+      "node": "kl.coxeter.parabolic_decomposition",
+      "file": "docs/knowledge/nodes/kl.coxeter/parabolic_decomposition.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ParabolicSupport.reduced_append_of_minimal",
+        "OAI.KLInvariance.ParabolicSupport.length_mul_of_minimal",
+        "OAI.KLInvariance.ParabolicSupport.minimal_simple_ascent",
+        "OAI.KLInvariance.ParabolicSupport.exists_length_additive_decomposition"
+      ],
+      "review": "The definitions and length calculations follow the local ParabolicSupport and Bruhat proofs.",
+      "pending": []
+    },
+    {
+      "node": "kl.coxeter.alternating_words",
+      "file": "docs/knowledge/nodes/kl.coxeter/alternating_words.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ParabolicSupport.reduced_pair_eq_alternating",
+        "OAI.KLInvariance.CoxeterSupport.wordAction_alternating"
+      ],
+      "review": "The definitions and length calculations follow the local ParabolicSupport and Bruhat proofs.",
+      "pending": []
+    },
+    {
+      "node": "kl.coxeter.reduced_alternating_tail",
+      "file": "docs/knowledge/nodes/kl.coxeter/reduced_alternating_tail.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ParabolicSupport.reduced_pair_eq_alternating",
+        "OAI.KLInvariance.ParabolicSupport.alternating_length_bound"
+      ],
+      "review": "The definitions and length calculations follow the local ParabolicSupport and Bruhat proofs.",
+      "pending": []
+    },
+    {
+      "node": "kl.coxeter.simple_edge_transport",
+      "file": "docs/knowledge/nodes/kl.coxeter/simple_edge_transport.md",
+      "source_declarations": [
+        "OAI.KLInvariance.bruhatStep_simple_mul",
+        "OAI.KLInvariance.bruhatStep_inv",
+        "OAI.KLInvariance.bruhatStep_mul_simple",
+        "OAI.KLInvariance.right_descent_simple_mul_iff"
+      ],
+      "review": "The definitions and length calculations follow the local ParabolicSupport and Bruhat proofs.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.alternating_root_formula",
+      "file": "docs/knowledge/nodes/kl.realizations/alternating_root_formula.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.alternating_root",
+        "OAI.KLInvariance.TitsSpace.pair_image_nonneg"
+      ],
+      "review": "Compared the displayed formulas and induction steps with the local Tits proof bodies.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.simple_root_sign",
+      "file": "docs/knowledge/nodes/kl.realizations/simple_root_sign.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.action_root_nonneg_of_ascent",
+        "OAI.KLInvariance.TitsSpace.action_root_nonpos_of_descent",
+        "OAI.KLInvariance.TitsSpace.IsRoot.sign"
+      ],
+      "review": "Compared the displayed formulas and induction steps with the local Tits proof bodies.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.faithful_actions",
+      "file": "docs/knowledge/nodes/kl.realizations/faithful_actions.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.action_injective",
+        "OAI.KLInvariance.TitsSpace.extendedAction_injective",
+        "OAI.KLInvariance.Cotangent.action_injective"
+      ],
+      "review": "Compared the displayed formulas and induction steps with the local Tits proof bodies.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.dominant_functional",
+      "file": "docs/knowledge/nodes/kl.realizations/dominant_functional.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.dominant",
+        "OAI.KLInvariance.TitsSpace.dominant_root",
+        "OAI.KLInvariance.TitsSpace.dominant_action_root"
+      ],
+      "review": "Compared the displayed formulas and induction steps with the local Tits proof bodies.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.dominant_signs",
+      "file": "docs/knowledge/nodes/kl.realizations/dominant_signs.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.dominant_pos_iff_ascent",
+        "OAI.KLInvariance.TitsSpace.dominant_dual_pos_iff_left_ascent"
+      ],
+      "review": "Compared the displayed formulas and induction steps with the local Tits proof bodies.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.signed_root_representation",
+      "file": "docs/knowledge/nodes/kl.realizations/signed_root_representation.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.SignedRepresents"
+      ],
+      "review": "Compared the displayed formulas and induction steps with the local Tits proof bodies.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.signed_root_action",
+      "file": "docs/knowledge/nodes/kl.realizations/signed_root_action.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.IsRoot.eq_simple_of_nonpos",
+        "OAI.KLInvariance.TitsSpace.Represents.simple_sign",
+        "OAI.KLInvariance.TitsSpace.SignedRepresents.simple",
+        "OAI.KLInvariance.TitsSpace.SignedRepresents.act"
+      ],
+      "review": "Compared the displayed formulas and induction steps with the local Tits proof bodies.",
+      "pending": []
+    },
+    {
+      "node": "kl.notes.reflection_faithfulness",
+      "file": "docs/knowledge/nodes/kl.realizations/reflection_faithfulness.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.extendedAction_injective",
+        "OAI.KLInvariance.TitsSpace.involution_of_moving_rank_one",
+        "OAI.KLInvariance.TitsSpace.isReflection_of_moving_rank_one",
+        "OAI.KLInvariance.TitsSpace.reflectionFaithful"
+      ],
+      "review": "Rewritten with explicit local notation, maps, inequalities, and all case calculations.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.root_reflection_correspondence",
+      "file": "docs/knowledge/nodes/kl.realizations/root_reflection_correspondence.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.Represents.formula",
+        "OAI.KLInvariance.TitsSpace.Represents.action_formula",
+        "OAI.KLInvariance.TitsSpace.Represents.unique_up_to_sign",
+        "OAI.KLInvariance.TitsSpace.Represents.reflection_unique",
+        "OAI.KLInvariance.TitsSpace.exists_positive_root",
+        "OAI.KLInvariance.TitsSpace.positiveRootEquiv"
+      ],
+      "review": "Rewritten with explicit local notation, maps, inequalities, and all case calculations.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.root_inversion_count",
+      "file": "docs/knowledge/nodes/kl.realizations/root_inversion_count.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.Represents.inversion_iff",
+        "OAI.KLInvariance.TitsSpace.rootInversionEquiv",
+        "OAI.KLInvariance.TitsSpace.rootInversions_finite",
+        "OAI.KLInvariance.TitsSpace.card_rootInversions"
+      ],
+      "review": "Rewritten with explicit local notation, maps, inequalities, and all case calculations.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -380,7 +558,7 @@
     {
       "code": "C5",
       "title": "Standard parabolics and finite support",
-      "status": "pending",
+      "status": "in_progress",
       "completion_evidence": []
     },
     {
@@ -404,20 +582,43 @@
     {
       "code": "R3",
       "title": "Degeneracy and the nondegenerate extension",
-      "status": "in_progress",
-      "completion_evidence": []
+      "status": "exposition_reviewed",
+      "completion_evidence": [
+        "kl.realization.radical_extension",
+        "kl.notes.extended_realization",
+        "kl.realization.extension_minimality"
+      ],
+      "review_scope": "Radical, dual extension, projection, nondegeneracy, independent roots/normals, minimal extension dimension, and the infinite-dihedral quotient calculation."
     },
     {
       "code": "R4",
       "title": "The extended action and reflection faithfulness",
-      "status": "in_progress",
-      "completion_evidence": []
+      "status": "exposition_reviewed",
+      "completion_evidence": [
+        "kl.realization.extended_action",
+        "kl.notes.reflection_faithfulness",
+        "kl.realization.reflection_plane",
+        "kl.realization.moving_spaces",
+        "kl.realization.orthogonal_rank_one",
+        "kl.realization.faithful_actions"
+      ],
+      "review_scope": "Extended action, moving spaces, rank-one orthogonal operators, ordinary/extended/coordinate-dual faithfulness, and both length-descent cases for reflection faithfulness."
     },
     {
       "code": "R5",
       "title": "Roots, positivity, and inversions",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "exposition_reviewed",
+      "completion_evidence": [
+        "kl.detail.positive_roots",
+        "kl.detail.root_reflection_correspondence",
+        "kl.detail.root_inversions",
+        "kl.detail.root_inversion_count",
+        "kl.realization.alternating_root_formula",
+        "kl.realization.simple_root_sign",
+        "kl.realization.signed_root_representation",
+        "kl.realization.signed_root_action"
+      ],
+      "review_scope": "Real roots, positivity, alternating-root coordinates, strong sign induction, represented reflections, signed roots, inversion criterion, and the finite inversion count."
     },
     {
       "code": "R6",
@@ -727,11 +928,11 @@
     }
   ],
   "next_steps": [
-    "Expand the minimal parabolic decomposition and alternating-root formulas used in the simple-root sign theorem; then complete the faithfulness proof chain.",
-    "Complete the root/reflection and signed-root correspondences and finite-support transport explanations.",
+    "Complete standard-parabolic inclusion and finite-support transport from the local coordinate-dual and word proofs.",
+    "Complete root-plane and moving-subgroup definitions and their induced dihedral structure.",
     "Expand word-module evaluation lattices and sheaf support/cut definitions, including every remaining unmapped structure.",
-    "Review every remaining proof and subtopic against the local Lean bodies and corresponding OpenAI notes; replace compressed inference steps.",
-    "Continue the direct mathematical prose and title pass, link coverage, document validation, and public deployment audit."
+    "Review the remaining Hecke, sheaf, localization, path, and comparison proofs against their source bodies, retaining direct mathematical titles and prose.",
+    "Complete the full source-to-KB coverage, linking, document, and public-deployment audit."
   ],
   "topic_migration": {
     "status": "applied",
@@ -921,7 +1122,20 @@
       "kl.realization.finite_reflection_relations": "R2",
       "kl.realization.moving_spaces": "R4",
       "kl.realization.orthogonal_rank_one": "R4",
-      "kl.realization.cotangent_action": "R6"
+      "kl.realization.cotangent_action": "R6",
+      "kl.coxeter.word_reduction": "C3",
+      "kl.coxeter.parabolic_subgroups": "C5",
+      "kl.coxeter.parabolic_decomposition": "C5",
+      "kl.coxeter.alternating_words": "C1",
+      "kl.coxeter.reduced_alternating_tail": "C5",
+      "kl.coxeter.simple_edge_transport": "C3",
+      "kl.realization.alternating_root_formula": "R5",
+      "kl.realization.simple_root_sign": "R5",
+      "kl.realization.faithful_actions": "R4",
+      "kl.realization.dominant_functional": "R6",
+      "kl.realization.dominant_signs": "R6",
+      "kl.realization.signed_root_representation": "R5",
+      "kl.realization.signed_root_action": "R5"
     },
     "moved_nodes": [
       {
@@ -1755,7 +1969,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 175
+    "current_node_count": 188
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -1794,5 +2008,25 @@
       "question_framed_headings": 0,
       "source_comparison_label": "Role in the proof"
     }
-  }
+  },
+  "definition_scope_review": [
+    {
+      "term": "minimal coset representative",
+      "topics": [
+        "kl.coxeter",
+        "kl.realizations"
+      ],
+      "target": "kl.coxeter.parabolic_subgroups",
+      "meaning": "Minimum ambient length in a standard-parabolic coset formed by right multiplication."
+    },
+    {
+      "term": "minimal coset representative",
+      "topics": [
+        "kl.reflection_combinatorics",
+        "kl.localization"
+      ],
+      "target": "kl.notes.relative_dihedral_intervals",
+      "meaning": "Minimum ambient length in the root-plane subgroup coset used for relative dihedral order."
+    }
+  ]
 }

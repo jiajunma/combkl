@@ -32,7 +32,7 @@ revision remains the provenance identifier. The link updater validates all
 
     python3 scripts/update_source_links.py 108243e05ed46235bf82dc30d4d90c794579776f
 
-The current build contains 89 proved theorem entries and 86 formalized definitions/concepts. There are no `admitted` entries. Worked
+The current build contains 98 proved theorem entries and 90 formalized definitions/concepts. There are no `admitted` entries. Worked
 teaching examples are explanatory prose unless linked to a separate theorem.
 
 Source inventories and imports are supporting data, not separate mathematical topics. The generated site provides declarations.json, module-imports.json, and unchanged files under _sources/. The dependency graph is the mathematical graph of the knowledge base.

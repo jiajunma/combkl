@@ -9,6 +9,8 @@ topics:
 uses:
 - kl.foundations.bruhat_order
 - kl.detail.strong_exchange
+- kl.coxeter.word_reduction
+- kl.coxeter.simple_edge_transport
 lean:
   repository: openai-kl
   modules:
