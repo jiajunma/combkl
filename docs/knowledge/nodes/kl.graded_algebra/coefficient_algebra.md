@@ -20,6 +20,8 @@ lean:
   - OAI.KLInvariance.TitsSpace.simpleRootPolynomial
   - OAI.KLInvariance.TitsSpace.symmetricGrading
   - OAI.KLInvariance.TitsSpace.mem_symmetricGrading
+  - OAI.KLInvariance.TitsSpace.coefficientAction_mul
+  - OAI.KLInvariance.TitsSpace.coefficientAction_simple
 source:
   spans:
   - artifact: openai-kl-source
@@ -46,6 +48,14 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.Frobenius:782
     format: lean-location
     note: OAI.KLInvariance.TitsSpace.mem_symmetricGrading
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Frobenius:33
+    format: lean-location
+    note: OAI.KLInvariance.TitsSpace.coefficientAction_mul
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Frobenius:28
+    format: lean-location
+    note: OAI.KLInvariance.TitsSpace.coefficientAction_simple
 verification:
   definition: accepted
   proof: not_applicable
@@ -133,3 +143,7 @@ The local source declarations below define the constructions and prove the state
 `OAI.KLInvariance.TitsSpace.symmetricGrading`: [Frobenius.lean:777](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L777).
 
 `OAI.KLInvariance.TitsSpace.mem_symmetricGrading`: [Frobenius.lean:782](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L782).
+
+`OAI.KLInvariance.TitsSpace.coefficientAction_mul`: [Frobenius.lean:33](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L33).
+
+`OAI.KLInvariance.TitsSpace.coefficientAction_simple`: [Frobenius.lean:28](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L28).

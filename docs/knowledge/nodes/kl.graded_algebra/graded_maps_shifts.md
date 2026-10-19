@@ -64,6 +64,8 @@ For graded \(A\)-modules \(M=\bigoplus_n M_n\) and \(N=\bigoplus_n N_n\), a homo
 
 ## Maps and functionals of an integer degree
 
+The dual module \(M^*=\operatorname{Hom}_A(M,A)\) consists of the \(A\)-linear functionals on \(M\), with addition and scalar multiplication defined pointwise.
+
 More generally, an \(A\)-linear map has degree \(r\in\mathbb Z\) when
 \[
 f(M_n)\subseteq N_{n+r}\qquad(n\in\mathbb Z).

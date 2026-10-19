@@ -100,6 +100,36 @@ A basis of \(V/P\) identifies the quotient with a polynomial ring, so it is a do
 
 The symmetric grading is transported from polynomial coordinates through the chosen algebra isomorphism. Linear coefficient actions preserve degree one and therefore every total degree.
 
+## Prime labels and cancellation in an edge ring
+
+For a vector subspace \(P\subseteq V\), the linear ideal \(I_P\) kills precisely the vector generators from \(P\), and
+\[
+\operatorname{Sym}(V)/I_P\simeq\operatorname{Sym}(V/P).
+\]
+The forward map sends \([\iota(v)]\) to \(\iota([v])\); the inverse reverses this rule on generators. A polynomial presentation of the right side proves that the quotient is a domain.
+
+For a nonzero vector \(a\), the generator \(\iota(a)\) is prime. Divisibility of \(\iota(v)\) by \(\iota(a)\) is equivalent to \(v\in ka\). A vector outside that line survives as a nonzero prime linear element in the quotient.
+
+Apply this to embedded positive roots. Distinct roots remain independent, so their labels do not divide one another. In particular, another incident root label survives nontrivially in an edge ring \(A/(\alpha)\). Since that ring is a polynomial domain, this reduced label acts injectively on every free edge module.
+
+## Changing coefficients and transporting duals
+
+For a \(k\)-algebra isomorphism \(e:A\to B\), the transported module has action
+\[
+b\star m=e^{-1}(b)m.
+\]
+The underlying vectors and \(k\)-linear structure stay the same. A homogeneous basis keeps its degrees, with old coefficient \(a_i\) replaced by the new coefficient \(e(a_i)\).
+
+A functional transports by
+\[
+\lambda^e(m)=e(\lambda(m)).
+\]
+It is \(B\)-linear because
+\(e(\lambda(e^{-1}(b)m))=b\,e(\lambda(m))\).
+Its inverse sends a new functional \(\mu\) to \(m\mapsto e^{-1}(\mu(m))\). These maps identify the transported old dual with the new dual and turn a perfect pairing into the pairing with values \(e(\langle m,n\rangle)\).
+
+The scalar twist by a ring automorphism \(\tau\) instead uses \(r\star y=\tau(r)y\). When it fixes the base field, it is coefficient transport with \(e=\tau^{-1}\). The two-stalk lattice uses an ordinary first coordinate and this twisted second coordinate. The divisibility of \(\tau(r)-r\) by the root label supplies the correcting vector that makes its scalar action preserve the pair relation.
+
 ## Homogeneous functionals and inverse degrees
 
 If a homogeneous basis vector has degree \(d_i\), its coordinate functional on \(M_n\) reads a coefficient in \(A_{n-d_i}\). The functional degree is therefore \(-d_i\).
@@ -249,6 +279,46 @@ A homogeneous image vector has a homogeneous preimage inside \(S\), by component
 
 In a sheaf, \(S\) is a partial outgoing kernel and \(f\) is one edge restriction. Adding that condition replaces \(S\) by \(S\cap\ker f\); its image term is exactly the Hilbert change.
 
+## Saturation and the reduced upper image
+
+Suppose \(f:M\to N\) is linear and multiplication by \(\alpha\) on \(N\) is injective. For \(K=\ker f\),
+\[
+\alpha m\in K\Longrightarrow \alpha f(m)=0
+\Longrightarrow f(m)=0.
+\]
+Thus \(K\) is saturated with respect to \(\alpha\).
+
+If a class from \(K/\alpha K\) maps to zero in \(M/\alpha M\), its representative is \(\alpha m\in K\). Saturation puts \(m\) in \(K\), [[node:kl.algebra.kernel_saturation|proving injectivity of the reduced inclusion]]. If \(K\) is free over \(A\), reducing its basis gives a basis of \(K/\alpha K\) over \(A/(\alpha)\). The injected image is therefore an actual free quotient-ring module.
+
+This is the algebra that identifies a free upper edge image from a free upper kernel and regularity on the remaining edge targets.
+
+## Projectivity from two presentations
+
+A module is projective when its maps lift through linear surjections. Free modules have this property by lifting basis vectors. Direct summands of projective modules inherit it by extending a map along the retraction, lifting, and restricting along the inclusion.
+
+Suppose \(f:F\to I\), \(g:E\to I\) are surjective, with \(F,E,\ker g\) projective. Choose lifts
+\[
+a:F\to E,\quad b:E\to F,\qquad ga=f,\quad fb=g.
+\]
+The new kernel is a retract of \(F\oplus\ker g\):
+\[
+i(x)=(x,a(x)),\qquad
+r(v,k)=v-ba(v)+b(k).
+\]
+The equation \(fr(v,k)=f(v)-ga(v)+g(k)=0\) puts the value in \(\ker f\), and \(ri(x)=x\). Therefore \(\ker f\) is projective.
+
+For a finite free module over \(A/(\alpha)\), coordinate reduction from \(A^r\) gives a presentation whose kernel is \(\alpha A^r\). Over a domain with \(\alpha\ne0\), multiplication by \(\alpha\) identifies this kernel with \(A^r\). This supplies a [[node:kl.algebra.scalar_free_presentation|concrete projective presentation]] for comparison.
+
+## Prime denominators and membership in a target module
+
+Let \(R\) be a UFD, let \(E\) be torsion-free, and let a vector \(x\in E\) have a nonzero multiplier \(c\) with \(cx\in M\). Prime-local membership supplies, for every prime element \(p\), a multiplier \(a\) with \(p\nmid a\) and \(ax\in M\).
+
+To remove a factor \(p\) from \(c=pc_1\), set \(m=pc_1x\), \(n=ax\). They satisfy \(am=pc_1n\). In free coordinates of \(M\), primality makes every coordinate of \(m\) divisible by \(p\); division gives \(m=pm'\) inside \(M\). Torsion-free cancellation in \(E\) gives \(c_1x=m'\in M\). Repeating removes all prime factors.
+
+For a projective \(M\), a section of its canonical free-module surjection supplies free coordinates and a retraction back to \(M\). The same argument divides there and then retracts, proving the [[node:kl.algebra.projective_local_membership|projective-target version]].
+
+At a height-one prime \(\mathfrak p\), membership \(x/1\in M_{\mathfrak p}\) is precisely the existence of a denominator \(a\notin\mathfrak p\) with \(ax\in M\). This connects [[node:kl.local.free_target_localization|the module theorem]] to the local edge-image comparisons.
+
 ## Defects and equality detection
 
 For \(S\subseteq T\), put \(S_n=S\cap M_n\), \(T_n=T\cap M_n\). The quotient defects \(D_n=T_n/S_n\) have
@@ -270,9 +340,13 @@ For \(S=(X,Y)\subset T=k[X,Y]\), the only missing component is the constant one.
 
 ### The realization coefficient algebra
 
+- [[node:kl.algebra.linear_ideals]]
 - [[node:kl.algebra.coefficient_algebra]]
 - [[node:kl.detail.polynomial_labels]]
 - [[node:kl.detail.linear_quotient]]
+- [[node:kl.algebra.root_quotient_coordinates]]
+- [[node:kl.algebra.linear_primes]]
+- [[node:kl.algebra.root_label_primes]]
 
 ### Grading and the positive ideal
 
@@ -296,9 +370,11 @@ For \(S=(X,Y)\subset T=k[X,Y]\), the only missing component is the constant one.
 
 - [[node:kl.detail.coefficient_change]]
 - [[node:kl.algebra.scalar_twist]]
+- [[node:kl.algebra.coefficient_duals]]
 
 ### Bases, minimal covers and projectivity
 
+- [[node:kl.algebra.projective_presentations]]
 - [[node:kl.algebra.minimal_cover_remainder]]
 - [[node:kl.algebra.identity_mod_positive]]
 - [[node:kl.notes.minimal_cover_existence]]
@@ -327,7 +403,11 @@ For \(S=(X,Y)\subset T=k[X,Y]\), the only missing component is the constant one.
 
 ### Algebra for support, quotients and comparison
 
+- [[node:kl.algebra.localized_membership]]
 - [[node:kl.algebra.quotient_endomorphism_descent]]
 - [[node:kl.algebra.kernel_saturation]]
 - [[node:kl.algebra.scalar_quotient]]
 - [[node:kl.algebra.pair_projection]]
+- [[node:kl.algebra.scalar_free_presentation]]
+- [[node:kl.algebra.kernel_projectivity]]
+- [[node:kl.algebra.projective_local_membership]]

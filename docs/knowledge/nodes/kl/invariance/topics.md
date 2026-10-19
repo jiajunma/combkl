@@ -1,6 +1,6 @@
 # Hilbert comparison and combinatorial invariance
 
-The question is: **how can an inclusion of edge images eventually prove that all the scheduled kernels are free?** The proof first converts the inclusion into an inequality of real numbers. It then forces equality, recovers equality of submodules, and only afterward proves freeness.
+The proof turns inclusions of edge images into numerical inequalities, then uses exact endpoints to recover image equality and projective kernels. It first converts each inclusion into an inequality of real numbers. It then forces equality, recovers equality of submodules, and only afterward proves freeness.
 
 We will calculate the whole process for the one-edge sheaf from moment-graph sheaves. The general argument uses the same operations at each edge, with the hypotheses supplied by the simultaneous invariance induction.
 
@@ -127,25 +127,26 @@ for the actual homogeneous inclusion \(I_e\subseteq f_eJ_e\). In each degree, th
 
 Thus equality of values forces \(I_e=f_eJ_e\). For comparison, the proper inclusion \((\beta,\gamma)\subset\mathbb R[\beta,\gamma]\) from localization and edge-image comparison has Hilbert deficit \(1\), despite equal rank and equal height-one localizations. This is the information the Hilbert step retains.
 
-## Recover freeness by reversing the schedule
+## Recovering freeness by reversing the schedule
 
-At the end of the forward process, no conditions remain and all kernels are the original free stalks. Traverse the edges backward, adding one condition at a time. Assume the kernels at the current suffix are free.
+At the end of the forward process, no conditions remain and the kernels are the original free stalks. Traverse the edges backward, adding one condition at a time. Assume the current lower and upper kernels \(M,N\) are free.
 
-Let \(M\) be the current lower kernel and \(N\) the current upper kernel. Image equality supplies two surjections onto the same module \(I\):
+Image equality gives surjections
 \[
-f:M\to I,\qquad g:N\to I.
+f:M\to I,\qquad g:N\to I
 \]
-The second map includes the regular correction factor. Its kernel is \(\alpha N\), by the upper quotient rule and saturation. Multiplication by \(\alpha\) identifies \(N\) with \(\alpha N\), so this kernel is free.
+onto the same embedded image. The second map includes the regular correction factor. The upper quotient rule and saturation identify its kernel with \(\alpha N\). Multiplication by \(\alpha\) is injective and identifies \(N\) with \(\ker g\), so this kernel is projective.
 
-We want to prove that \(\ker f\), the lower kernel with the extra condition imposed, is projective. Form
+Projectivity supplies lifts \(a:M\to N\), \(b:N\to M\) with \(ga=f\), \(fb=g\). The source constructs
 \[
-E=\{(m,n)\in M\oplus N:f(m)=g(n)\}.
+i:\ker f\to M\oplus\ker g,\quad i(x)=(x,a(x)),
 \]
-Projection onto \(M\) is surjective because \(g\) is. Its kernel is \(\ker g\), and the sequence splits since \(M\) is free. Thus \(E\simeq\ker g\oplus M\) is projective. Projection onto \(N\) is also surjective, with kernel \(\ker f\); it splits since \(N\) is free. Therefore \(\ker f\) is a direct summand of the projective module \(E\), hence is projective.
+\[
+r:M\oplus\ker g\to\ker f,\quad r(m,k)=m-ba(m)+b(k).
+\]
+The relation \(fr(m,k)=f(m)-ga(m)+g(k)=0\) verifies the codomain, and \(ri(x)=x\). Thus \(\ker f\) is a direct summand of a projective module and is projective.
 
-Now apply the graded projective-to-free theorem from realizations and graded algebra. This proves freeness after adding the condition. Repeating proves all suffix kernels free.
-
-The common image \(I\) was not assumed projective. The two-presentation construction is why the argument works without that additional assumption.
+The graded projective-to-free theorem applies with the polynomial coefficient ring, finite generation and homogeneous nonnegative pieces. It makes the new kernel free. Repeating the step proves all the suffix kernels free. The [[node:kl.detail.reverse_projectivity|image-equality theorem]] constructs the common-image maps and checks these hypotheses; the [[node:kl.algebra.kernel_projectivity|two-presentation theorem]] gives the explicit retraction.
 
 ## Inputs supplied by induction
 

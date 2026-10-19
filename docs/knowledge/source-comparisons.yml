@@ -474,3 +474,63 @@ comparisons:
     real value and the free-module basis-degree polynomial. The factor \((1-q)^N\)
     removes the coefficient-ring contribution; \(1-q\) records quotienting by a regular
     degree-one label.
+- id: prime-denominator-membership
+  kind: General module interface for the local membership test
+  nodes:
+  - kl.local.free_target_localization
+  - kl.algebra.projective_local_membership
+  paper_labels:
+  - edge:lattice
+  lean_declarations:
+  - OAI.KLInvariance.EdgeLattice.mem_of_prime_local_membership
+  - OAI.KLInvariance.EdgeLattice.mem_iff_localized_at_height_one
+  - OAI.KLInvariance.ProjectiveLattice.mem_of_prime_local_membership
+  paper: The free-target lemma uses a polynomial coefficient ring and a finite free
+    ambient module. Basis coordinates in the fraction field lie in every height-one
+    local ring, so their denominators are units.
+  lean: The free-target interface allows a torsion-free ambient module over a Noetherian
+    UFD and states generic span through nonzero scalar multipliers. Its proof removes
+    prime factors from those multipliers. A separate projective-target version obtains
+    finite-support coordinates through a free-module section and retraction.
+  consequence: The proofs below expose the exact generic-span and prime-denominator
+    witnesses used by local-to-global membership.
+- id: explicit-projective-kernel-retraction
+  kind: The kernel comparison through explicit splitting maps
+  nodes:
+  - kl.algebra.kernel_projectivity
+  - kl.algebra.scalar_free_presentation
+  - kl.detail.reverse_projectivity
+  paper_labels:
+  - eq:image-equality
+  - sec:induction
+  lean_declarations:
+  - OAI.KLInvariance.ReverseFiltration.kernel_projective_of_presentation
+  - OAI.KLInvariance.ReverseFiltration.exists_scalar_presentation
+  - OAI.KLInvariance.ReverseFiltration.inf_kernel_projective_of_image_eq
+  paper: After image equality, the notes use a length-one graded free resolution of
+    the edge image and graded Schanuel comparison to obtain a projective kernel.
+  lean: The module comparison lifts each presentation map through the other and writes
+    an explicit retraction from the sum of one source and the other kernel. The scalar-quotient
+    presentation and actual-image equality supply the required projective kernel.
+    The graded projective-to-free theorem is applied separately.
+  consequence: The KB follows the maps used by Lean, with the common image, its two
+    surjections, the regular scalar kernel and the retraction equation all displayed.
+- id: canonical-root-labels
+  kind: Canonical labels for the same principal ideals
+  nodes:
+  - kl.algebra.root_label_primes
+  - kl.algebra.root_quotient_coordinates
+  paper_labels:
+  - bg:realization
+  lean_declarations:
+  - OAI.KLInvariance.BruhatGraph.polynomialLabel
+  - OAI.KLInvariance.BruhatGraph.polynomialLabel_prime
+  - OAI.KLInvariance.EdgeAlgebra.rootQuotientEquiv
+  paper: The coefficient discussion uses degree-one linear root labels and permits
+    any nonzero real scalar multiple, because only the principal ideal matters.
+  lean: The label is the coordinate polynomial of the embedded canonical positive
+    root for the reflection. Its primality and quotient are proved for that actual
+    element.
+  consequence: Multiplying a label by a nonzero field scalar leaves its principal
+    ideal unchanged. The fixed label used by the code therefore presents the same
+    scalar quotient described in the notes.

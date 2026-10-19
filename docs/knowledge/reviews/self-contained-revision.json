@@ -90,42 +90,12 @@
       "review": "Rewritten as the projection-based proof used in Lean, with all three nondegeneracy tests and both independence arguments explicit."
     },
     {
-      "node": "kl.algebra.scalar_twist",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/scalar_twist.md",
-      "source_declarations": [
-        "OAI.KLInvariance.ReflectionPairTranslation.Twist",
-        "OAI.KLInvariance.ReflectionPairTranslation.Twist.equiv"
-      ],
-      "review": "Read source definitions, surrounding assumptions, and the computations used in the entry.",
-      "pending": []
-    },
-    {
       "node": "kl.algebra.homogeneous_basis",
       "file": "docs/knowledge/nodes/kl.graded_algebra/homogeneous_basis.md",
       "source_declarations": [
         "OAI.KLInvariance.Graded.NonnegativeBasis",
         "OAI.KLInvariance.Graded.NonnegativeBasis.polynomial",
         "OAI.KLInvariance.Graded.shiftedPiece"
-      ],
-      "review": "Read source definitions, surrounding assumptions, and the computations used in the entry.",
-      "pending": []
-    },
-    {
-      "node": "kl.algebra.scalar_quotient",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/scalar_quotient.md",
-      "source_declarations": [
-        "OAI.KLInvariance.Graded.ModuleData.scalarQuotient",
-        "OAI.KLInvariance.EdgeImage.reducedInclusion"
-      ],
-      "review": "Read source definitions, surrounding assumptions, and the computations used in the entry.",
-      "pending": []
-    },
-    {
-      "node": "kl.algebra.kernel_saturation",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/kernel_saturation.md",
-      "source_declarations": [
-        "OAI.KLInvariance.EdgeImage.kernel_saturated",
-        "OAI.KLInvariance.EdgeImage.reduced_kernel_injective"
       ],
       "review": "Read source definitions, surrounding assumptions, and the computations used in the entry.",
       "pending": []
@@ -671,44 +641,12 @@
       "pending": []
     },
     {
-      "node": "kl.algebra.pair_projection",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/pair_projection.md",
-      "source_declarations": [
-        "OAI.KLInvariance.PairProjection.relation",
-        "OAI.KLInvariance.PairProjection.Edge",
-        "OAI.KLInvariance.PairProjection.lower",
-        "OAI.KLInvariance.PairProjection.upper",
-        "OAI.KLInvariance.PairProjection.compatible_iff",
-        "OAI.KLInvariance.PairProjection.kernel_lower",
-        "OAI.KLInvariance.PairProjection.lower_surjective",
-        "OAI.KLInvariance.PairProjection.upper_surjective"
-      ],
-      "review": "Read the local construction and its maps; expanded the defining data, quotient signs, matrix conventions, and worked examples.",
-      "pending": []
-    },
-    {
       "node": "kl.algebra.perfect_inverse_degree",
       "file": "docs/knowledge/nodes/kl.graded_algebra/perfect_inverse_degree.md",
       "source_declarations": [
         "OAI.KLInvariance.Graded.perfect_inverse_of_homogeneous_functional"
       ],
       "review": "Compared perfect_inverse_of_homogeneous_functional. The saved proof selects the output component j+r, extends equality from homogeneous vectors by finite additivity, and uses injectivity of the pairing equivalence.",
-      "pending": []
-    },
-    {
-      "node": "kl.algebra.quotient_endomorphism_descent",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/quotient_endomorphism_descent.md",
-      "source_declarations": [
-        "OAI.LinearDescent.descend",
-        "OAI.LinearDescent.descend_apply",
-        "OAI.LinearDescent.descend_idempotent",
-        "OAI.KLInvariance.Graded.ModuleData.descended",
-        "OAI.KLInvariance.Graded.ModuleData.lower_kernel_preserved",
-        "OAI.KLInvariance.Graded.ModuleData.descendedEdge",
-        "OAI.KLInvariance.Graded.ModuleData.descendedEdge_lower",
-        "OAI.KLInvariance.Graded.ModuleData.descendedEdge_upper"
-      ],
-      "review": "Compared LinearDescent.descend and the graded descended/descendedEdge construction. Lift independence, homogeneous lifts, the lower quotient kernel, and both edge squares are explicit.",
       "pending": []
     },
     {
@@ -939,21 +877,6 @@
       "pending": []
     },
     {
-      "node": "kl.detail.coefficient_change",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/coefficient_change.md",
-      "source_declarations": [
-        "OAI.KLInvariance.CoefficientChange",
-        "OAI.KLInvariance.CoefficientChange.equiv",
-        "OAI.KLInvariance.CoefficientChange.kEquiv",
-        "OAI.KLInvariance.Graded.ModuleData.change",
-        "OAI.KLInvariance.Graded.ModuleData.changeHom",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChangeSections"
-      ],
-      "review": "Read the local defining data and maps; expanded connectedness, normalization, scalar direction, or the distinction between word-basis degrees and evaluation weights.",
-      "pending": []
-    },
-    {
       "node": "kl.detail.primitive_projectors",
       "file": "docs/knowledge/nodes/kl.sheaves/primitive_projectors.md",
       "source_declarations": [
@@ -1115,21 +1038,6 @@
         "OAI.KLInvariance.TitsSpace.bottCanonicalAdjointIso_vertex"
       ],
       "review": "Read comparison_bijective and bottCanonicalAdjointIso. The exact map qi has inverse pj at the top; the recognized-target top-detection theorem applies to that specified map.",
-      "pending": []
-    },
-    {
-      "node": "kl.sheaves.pairing_transport",
-      "file": "docs/knowledge/nodes/kl.sheaves/pairing_transport.md",
-      "source_declarations": [
-        "OAI.KLInvariance.CoefficientChange.dualEquiv",
-        "OAI.KLInvariance.CoefficientChange.pairingEquiv",
-        "OAI.KLInvariance.CoefficientChange.pairingEquiv_apply",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.PerfectPairing.pullback",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.PerfectPairing.coefficientChange",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.SymmetricPerfectPairing.pullback",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.SymmetricPerfectPairing.coefficientChange"
-      ],
-      "review": "Read dualEquiv, pairingEquiv, PerfectPairing transport/pullback, and symmetric variants. Constructed the functional representative in both transports and checked each orthogonality condition and grading.",
       "pending": []
     },
     {
@@ -1622,20 +1530,6 @@
         "OAI.KLInvariance.MomentGraph.OrderedGraph"
       ],
       "review": "Checked OrderedGraph fields; kept the generic ordered graph independent of the realization and moved the Bruhat specialization to the label definition.",
-      "pending": []
-    },
-    {
-      "node": "kl.detail.polynomial_labels",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/polynomial_labels.md",
-      "source_declarations": [
-        "OAI.KLInvariance.BruhatGraph.Edge",
-        "OAI.KLInvariance.BruhatGraph.source",
-        "OAI.KLInvariance.BruhatGraph.target",
-        "OAI.KLInvariance.BruhatGraph.graph",
-        "OAI.KLInvariance.BruhatGraph.root",
-        "OAI.KLInvariance.BruhatGraph.polynomialLabel"
-      ],
-      "review": "Checked the Bruhat edge pair definition and polynomial root map. Distinguished the original root space, its embedding in the extension, and the symmetric-algebra inclusion.",
       "pending": []
     },
     {
@@ -2832,34 +2726,6 @@
       "pending": []
     },
     {
-      "node": "kl.algebra.coefficient_algebra",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/coefficient_algebra.md",
-      "source_declarations": [
-        "OAI.KLInvariance.TitsSpace.SymmetricCoefficient",
-        "OAI.KLInvariance.TitsSpace.coefficientAction",
-        "OAI.KLInvariance.TitsSpace.coefficientAction_ι",
-        "OAI.KLInvariance.TitsSpace.simpleRootPolynomial",
-        "OAI.KLInvariance.TitsSpace.symmetricGrading",
-        "OAI.KLInvariance.TitsSpace.mem_symmetricGrading"
-      ],
-      "review": "Read symmetricGrading/mem_symmetricGrading and the finite-generator coefficient-algebra context. Added the exact pullback/image construction and finite homogeneous decomposition.",
-      "pending": []
-    },
-    {
-      "node": "kl.detail.graded_maps_shifts",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/graded_maps_shifts.md",
-      "source_declarations": [
-        "OAI.KLInvariance.Graded.ModuleData.Hom",
-        "OAI.KLInvariance.Graded.ModuleData.shift",
-        "OAI.KLInvariance.Graded.ModuleData.Hom.shift",
-        "OAI.KLInvariance.Graded.ModuleData.Hom.id",
-        "OAI.KLInvariance.Graded.ModuleData.Hom.comp",
-        "OAI.KLInvariance.Graded.shift_isInternal"
-      ],
-      "review": "Read Hom, Hom.id/comp, shift_isInternal and Hom.shift. Added shifted component supports, scalar degree arithmetic and the exact natural shift parameter.",
-      "pending": []
-    },
-    {
       "node": "kl.algebra.homogeneous_subquotients",
       "file": "docs/knowledge/nodes/kl.graded_algebra/homogeneous_subquotients.md",
       "source_declarations": [
@@ -2884,6 +2750,356 @@
         "OAI.KLInvariance.Hilbert.value_exact"
       ],
       "review": "Read degreeMap_surjective, degreeKernelEquiv, finrank_exact and both value_exact statements. Retained degreewise exactness, source-piece finiteness and convergence by domination.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.linear_ideals",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/linear_ideals.md",
+      "source_declarations": [
+        "OAI.KLInvariance.SymmetricPlaneIdeal.ideal",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.quotientMap",
+        "OAI.KLInvariance.EdgeAlgebra.rootLine",
+        "OAI.KLInvariance.EdgeAlgebra.rootIdeal",
+        "OAI.KLInvariance.EdgeAlgebra.symQuotientMap"
+      ],
+      "review": "Read the generic linear ideal, root line/root ideal and symmetric quotient maps. Defined the universal algebra maps and exact finite-sum ideal membership independently of the realization.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.linear_quotient",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/linear_quotient.md",
+      "source_declarations": [
+        "OAI.KLInvariance.SymmetricPlaneIdeal.ideal_le_ker",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.forward",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.linearQuotient",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.backward",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.quotientEquiv",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.quotientEquiv_mk_ι",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.ι_mem_iff",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.ideal_eq_ker",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.ideal_isPrime",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.ideal_span_eq"
+      ],
+      "review": "Read quotientEquiv and both inverse identities, the functional argument for degree-one membership, primality and ideal_span_eq. Kept the theorem generic and separated localization from this algebraic quotient.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.linear_primes",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/linear_primes.md",
+      "source_declarations": [
+        "OAI.KLInvariance.EdgeAlgebra.symmetric_ι_injective",
+        "OAI.KLInvariance.EdgeAlgebra.rootIdeal_eq_ker",
+        "OAI.KLInvariance.EdgeAlgebra.rootIdeal_isPrime",
+        "OAI.KLInvariance.EdgeAlgebra.symmetric_ι_prime",
+        "OAI.KLInvariance.EdgeAlgebra.symmetric_ι_dvd_iff",
+        "OAI.KLInvariance.EdgeAlgebra.reducedRoot_ne_zero",
+        "OAI.KLInvariance.EdgeAlgebra.reducedRoot_prime"
+      ],
+      "review": "Read the actual root-quotient kernel, symmetric generator injectivity/primality, divisibility iff line membership and reducedRoot_prime. Explained the zero-vector divisibility case and the quotient-space proof.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.root_quotient_coordinates",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/root_quotient_coordinates.md",
+      "source_declarations": [
+        "OAI.KLInvariance.EdgeAlgebra.rootQuotientEquiv",
+        "OAI.KLInvariance.EdgeAlgebra.rootQuotientEquiv_mk_ι",
+        "OAI.KLInvariance.EdgeAlgebra.rootQuotientPolynomial",
+        "OAI.KLInvariance.EdgeAlgebra.linear_homogeneous",
+        "OAI.KLInvariance.EdgeAlgebra.reducedRoot_homogeneous",
+        "OAI.KLInvariance.TitsSpace.EdgeCoefficient",
+        "OAI.KLInvariance.TitsSpace.edgePolynomial"
+      ],
+      "review": "Read rootQuotientEquiv, its generator formula, rootQuotientPolynomial and reduced-root homogeneity, plus the actual EdgeCoefficient/edgePolynomial definitions.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.root_label_primes",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/root_label_primes.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.polynomialRoot_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.polynomialRoot_prime",
+        "OAI.KLInvariance.BruhatGraph.polynomialRoot_not_dvd",
+        "OAI.KLInvariance.BruhatGraph.root_injective_on_labels",
+        "OAI.KLInvariance.BruhatGraph.polynomialLabel_prime",
+        "OAI.KLInvariance.BruhatGraph.label_eq_of_polynomialLabel_dvd",
+        "OAI.KLInvariance.BruhatGraph.incoming_pairwise_relPrime",
+        "OAI.KLInvariance.BruhatGraph.outgoing_incoming_not_dvd"
+      ],
+      "review": "Read the polynomial-root and edge-label divisibility proofs in PlaneLocalization and Support. Expanded the embedding step, reflection equality at an endpoint, prime relative primality and cancellation on a free quotient module.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.projective_presentations",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/projective_presentations.md",
+      "source_declarations": [
+        "OAI.KLInvariance.LocalCover.splitEquiv",
+        "OAI.KLInvariance.ReverseFiltration.kernel_projective_of_presentation"
+      ],
+      "review": "Read splitEquiv and kernel_projective_of_presentation. Defined the lifting property, free-module lifts, split summands, exact presentations and the explicit splitting formulas used in the local source.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.kernel_projectivity",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/kernel_projectivity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ReverseFiltration.kernel_projective_of_presentation"
+      ],
+      "review": "Read the complete explicit retraction proof in ModuleAlgebra. Preserved the three projectivity hypotheses and both surjections, and checked the kernel equation and retraction componentwise.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.scalar_free_presentation",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/scalar_free_presentation.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ReverseFiltration.scalarQuotientMap",
+        "OAI.KLInvariance.ReverseFiltration.scalarQuotientMap_surjective",
+        "OAI.KLInvariance.ReverseFiltration.scalarKernelMap",
+        "OAI.KLInvariance.ReverseFiltration.scalarKernelMap_bijective",
+        "OAI.KLInvariance.ReverseFiltration.scalarKernel_projective",
+        "OAI.KLInvariance.ReverseFiltration.exists_scalar_presentation",
+        "OAI.KLInvariance.ReverseFiltration.kernel_projective_of_free_scalar_quotient"
+      ],
+      "review": "Read every scalarQuotientMap/scalarKernelMap declaration and both presentation theorems. Kept the domain and nonzero-label assumptions, induced A-action on P, finite quotient basis and explicit regular-scalar kernel.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.localized_membership",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/localized_membership.md",
+      "source_declarations": [
+        "OAI.KLInvariance.EdgeLattice.exists_denominator_of_localized_mem",
+        "OAI.KLInvariance.EdgeLattice.mem_iff_localized_at_height_one"
+      ],
+      "review": "Read the localized-membership denominator proof and height-one interface. Defined module fractions, generic-span witnesses and regular cancellation, with the principal-prime height and local-unit calculations made explicit.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.projective_local_membership",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/projective_local_membership.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ProjectiveLattice.finsupp_divide",
+        "OAI.KLInvariance.ProjectiveLattice.prime_divide_of_relation",
+        "OAI.KLInvariance.ProjectiveLattice.mem_of_prime_local_membership",
+        "OAI.KLInvariance.EdgeLattice.mem_of_prime_local_membership"
+      ],
+      "review": "Read the free and projective prime-removal arguments. Used the source canonical free-module section and evaluation retraction, finite-support division, ambient torsion-free cancellation and UFD induction.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.free_target_localization",
+      "file": "docs/knowledge/nodes/kl.localization/free_target_localization.md",
+      "source_declarations": [
+        "OAI.KLInvariance.EdgeLattice.exists_denominator_of_localized_mem",
+        "OAI.KLInvariance.EdgeLattice.mem_iff_localized_at_height_one",
+        "OAI.KLInvariance.EdgeLattice.eq_iInf_height_one_localizations"
+      ],
+      "review": "Read the exact Noetherian-UFD height-one equivalence and intersection theorem. Retained global scalar generic span and free target, and linked the fully expanded prime-removal proof.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.coefficient_duals",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/coefficient_duals.md",
+      "source_declarations": [
+        "OAI.KLInvariance.CoefficientChange.mapEquiv",
+        "OAI.KLInvariance.CoefficientChange.dualTo",
+        "OAI.KLInvariance.CoefficientChange.dualFrom",
+        "OAI.KLInvariance.CoefficientChange.dualEquiv",
+        "OAI.KLInvariance.CoefficientChange.pairingEquiv",
+        "OAI.KLInvariance.CoefficientChange.pairingEquiv_apply"
+      ],
+      "review": "Read dualTo, dualFrom, dualEquiv, mapEquiv and pairingEquiv. Verified both scalar directions, inverses, linearity on the dual space and the evaluation formula; grading consequences follow from the exact transported pieces.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.twisted_pair_lattice",
+      "file": "docs/knowledge/nodes/kl.word_modules/twisted_pair_lattice.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionPairTranslation.lattice",
+        "OAI.KLInvariance.ReflectionPairTranslation.left",
+        "OAI.KLInvariance.ReflectionPairTranslation.left_surjective"
+      ],
+      "review": "Read lattice and its scalar-closure witness, plus left/left_surjective. Kept both hdiv and hinc hypotheses and wrote the correcting vector rn+m explicitly.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.twisted_lattice_saturation",
+      "file": "docs/knowledge/nodes/kl.word_modules/twisted_lattice_saturation.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionPairTranslation.lattice_saturated"
+      ],
+      "review": "Read lattice_saturated and PairProjection.compatible_iff. Expanded the twisted scalar equation, annihilation of the scalar difference, cancellation on the quotient and reconstruction of a common preimage.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.plane_prime_membership",
+      "file": "docs/knowledge/nodes/kl.localization/plane_prime_membership.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.embedLinear",
+        "OAI.KLInvariance.TitsSpace.embedLinear_injective",
+        "OAI.KLInvariance.TitsSpace.planePrime",
+        "OAI.KLInvariance.TitsSpace.planePrime_isPrime",
+        "OAI.KLInvariance.TitsSpace.linear_mem_planePrime_iff",
+        "OAI.KLInvariance.TitsSpace.linear_mem_maximal_iff",
+        "OAI.KLInvariance.TitsSpace.linear_isUnit_iff"
+      ],
+      "review": "Read the actual planePrime map, embedding injectivity and all three membership/unit lemmas. Preserved the original-root-space domain and the distinction between embedding and polynomial-coordinate transport.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.kernel_saturation",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/kernel_saturation.md",
+      "source_declarations": [
+        "OAI.KLInvariance.EdgeImage.kernel_saturated",
+        "OAI.KLInvariance.EdgeImage.reduced_kernel_injective",
+        "OAI.KLInvariance.EdgeImage.reducedInclusion",
+        "OAI.KLInvariance.EdgeImage.range_reducedInclusion_free"
+      ],
+      "review": "Read kernel_saturated, reduced_kernel_injective and range_reducedInclusion_free. Preserved regularity on the constraint target, proved the quotient-basis assertion and transferred it through the actual reduced inclusion.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.reverse_projectivity",
+      "file": "docs/knowledge/nodes/kl.invariance/reverse_projectivity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ReverseFiltration.scalarKernelEquiv",
+        "OAI.KLInvariance.ReverseFiltration.projective_kernel_of_scalar_presentation",
+        "OAI.KLInvariance.ReverseFiltration.imageMapKernelEquiv",
+        "OAI.KLInvariance.ReverseFiltration.inf_kernel_projective_of_image_eq"
+      ],
+      "review": "Read scalarKernelEquiv, projective_kernel_of_scalar_presentation and the actual imageMapKernelEquiv proof. Replaced the earlier pullback presentation by the source explicit two-lift retraction, checking every supplied hypothesis.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.scalar_quotient",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/scalar_quotient.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.scalarQuotient",
+        "OAI.KLInvariance.EdgeImage.reducedInclusion"
+      ],
+      "review": "Rechecked scalar quotient and reduced inclusion definitions. Added module-specific regularity and retained the saturation criterion and quotient-ring action.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.coefficient_change",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/coefficient_change.md",
+      "source_declarations": [
+        "OAI.KLInvariance.CoefficientChange",
+        "OAI.KLInvariance.CoefficientChange.equiv",
+        "OAI.KLInvariance.CoefficientChange.kEquiv",
+        "OAI.KLInvariance.Graded.ModuleData.change",
+        "OAI.KLInvariance.Graded.ModuleData.changeHom",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChangeSections",
+        "OAI.KLInvariance.CoefficientChange.map",
+        "OAI.KLInvariance.CoefficientChange.map_injective",
+        "OAI.KLInvariance.CoefficientChange.map_surjective",
+        "OAI.KLInvariance.Graded.ModuleData.changePiece",
+        "OAI.KLInvariance.Graded.ModuleData.mem_changePiece",
+        "OAI.KLInvariance.Graded.ModuleData.change_free"
+      ],
+      "review": "Read the wrapper, semilinear/k-linear equivalences, map operations, changePiece/changeHom and sheaf section transport. Checked the explicit field setup, injected scalar direction and transported map properties.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.scalar_twist",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/scalar_twist.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionPairTranslation.Twist",
+        "OAI.KLInvariance.ReflectionPairTranslation.Twist.equiv",
+        "OAI.KLInvariance.ReflectionPairTranslation.Twist.equivVal"
+      ],
+      "review": "Read Twist and its inverse-direction semilinear equivalence. Retained arbitrary ring automorphisms, and imposed the base-field-fixing condition exactly where identifying it with CoefficientChange.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.pairing_transport",
+      "file": "docs/knowledge/nodes/kl.sheaves/pairing_transport.md",
+      "source_declarations": [
+        "OAI.KLInvariance.CoefficientChange.dualEquiv",
+        "OAI.KLInvariance.CoefficientChange.pairingEquiv",
+        "OAI.KLInvariance.CoefficientChange.pairingEquiv_apply",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.PerfectPairing.pullback",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.PerfectPairing.coefficientChange",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SymmetricPerfectPairing.pullback",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SymmetricPerfectPairing.coefficientChange"
+      ],
+      "review": "Rechecked the existing section pairing proof against the generic dual correspondence. Linked the coefficient-level theorem while retaining the explicit functional representative, support and degree checks.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.coefficient_algebra",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/coefficient_algebra.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.SymmetricCoefficient",
+        "OAI.KLInvariance.TitsSpace.coefficientAction",
+        "OAI.KLInvariance.TitsSpace.coefficientAction_ι",
+        "OAI.KLInvariance.TitsSpace.simpleRootPolynomial",
+        "OAI.KLInvariance.TitsSpace.symmetricGrading",
+        "OAI.KLInvariance.TitsSpace.mem_symmetricGrading",
+        "OAI.KLInvariance.TitsSpace.coefficientAction_mul",
+        "OAI.KLInvariance.TitsSpace.coefficientAction_simple"
+      ],
+      "review": "Read the coefficient action on generators, its multiplication law and simple-reflection formula. The symmetric grading and polynomial coordinates were reviewed in the preceding pass.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.polynomial_labels",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/polynomial_labels.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.Edge",
+        "OAI.KLInvariance.BruhatGraph.source",
+        "OAI.KLInvariance.BruhatGraph.target",
+        "OAI.KLInvariance.BruhatGraph.graph",
+        "OAI.KLInvariance.BruhatGraph.root",
+        "OAI.KLInvariance.BruhatGraph.polynomialLabel"
+      ],
+      "review": "Rechecked the canonical positive-root label and nonzero embedded linear polynomial. Added links to the prime/divisibility and actual quotient results.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.pair_projection",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/pair_projection.md",
+      "source_declarations": [
+        "OAI.KLInvariance.PairProjection.relation",
+        "OAI.KLInvariance.PairProjection.Edge",
+        "OAI.KLInvariance.PairProjection.lower",
+        "OAI.KLInvariance.PairProjection.upper",
+        "OAI.KLInvariance.PairProjection.compatible_iff",
+        "OAI.KLInvariance.PairProjection.kernel_lower",
+        "OAI.KLInvariance.PairProjection.lower_surjective",
+        "OAI.KLInvariance.PairProjection.upper_surjective"
+      ],
+      "review": "Read relation/Edge, the signed upper map, compatible_iff, kernel_lower and both conditional surjectivity proofs. The existing definition explains the simultaneous lift and one-edge quotient signs.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.quotient_endomorphism_descent",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/quotient_endomorphism_descent.md",
+      "source_declarations": [
+        "OAI.LinearDescent.descend",
+        "OAI.LinearDescent.descend_apply",
+        "OAI.LinearDescent.descend_idempotent",
+        "OAI.KLInvariance.Graded.ModuleData.descended",
+        "OAI.KLInvariance.Graded.ModuleData.lower_kernel_preserved",
+        "OAI.KLInvariance.Graded.ModuleData.descendedEdge",
+        "OAI.KLInvariance.Graded.ModuleData.descendedEdge_lower",
+        "OAI.KLInvariance.Graded.ModuleData.descendedEdge_upper"
+      ],
+      "review": "Read LinearDescent and the graded descended/descendedEdge bodies. Retained lift independence, idempotence, homogeneous lifts and both quotient squares.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.graded_maps_shifts",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/graded_maps_shifts.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.Hom",
+        "OAI.KLInvariance.Graded.ModuleData.shift",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.shift",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.id",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.comp",
+        "OAI.KLInvariance.Graded.shift_isInternal"
+      ],
+      "review": "Added the underlying dual-module definition before homogeneous functionals, to support the coefficient-dual correspondence; the map and shift arguments are unchanged.",
       "pending": []
     }
   ],
@@ -3114,10 +3330,18 @@
     {
       "code": "A1",
       "title": "The realization coefficient algebra",
-      "status": "in_progress",
+      "status": "exposition_reviewed",
       "completion_evidence": [
-        "kl.algebra.coefficient_algebra"
-      ]
+        "kl.algebra.coefficient_algebra",
+        "kl.algebra.linear_ideals",
+        "kl.algebra.linear_primes",
+        "kl.algebra.root_label_primes",
+        "kl.algebra.root_quotient_coordinates",
+        "kl.detail.linear_quotient",
+        "kl.detail.polynomial_labels"
+      ],
+      "pending": [],
+      "review": "Reviewed symmetric/polynomial coordinates and actions, actual labels, generic linear ideals/quotients, prime and reduced linear generators, endpoint-label relative primality and regularity on free quotient modules."
     },
     {
       "code": "A2",
@@ -3152,10 +3376,14 @@
     {
       "code": "A4",
       "title": "Changing coefficients and twisting",
-      "status": "in_progress",
+      "status": "exposition_reviewed",
       "completion_evidence": [
+        "kl.algebra.coefficient_duals",
+        "kl.algebra.scalar_twist",
         "kl.detail.coefficient_change"
-      ]
+      ],
+      "pending": [],
+      "review": "Reviewed the CoefficientChange and Twist fields/directions, maps and homogeneous pieces, basis transport, the dual-module equivalence, pairing transport and the hypotheses connecting the scalar twist to a pair lattice."
     },
     {
       "code": "A5",
@@ -3171,7 +3399,8 @@
         "kl.notes.graded_projective_free",
         "kl.notes.minimal_cover_existence",
         "kl.sheaves.minimal_cover",
-        "kl.algebra.minimal_cover_remainder"
+        "kl.algebra.minimal_cover_remainder",
+        "kl.algebra.projective_presentations"
       ],
       "pending": [],
       "review": "Reviewed basis data, graded Nakayama, minimal covers and their construction, homogeneous lifts, uniqueness of covers, and the connected-domain projective-to-free proof."
@@ -3200,11 +3429,19 @@
     {
       "code": "A7",
       "title": "Algebra for support, quotients, and comparison",
-      "status": "in_progress",
+      "status": "exposition_reviewed",
       "completion_evidence": [
+        "kl.algebra.kernel_projectivity",
+        "kl.algebra.kernel_saturation",
+        "kl.algebra.localized_membership",
         "kl.algebra.pair_projection",
-        "kl.algebra.quotient_endomorphism_descent"
-      ]
+        "kl.algebra.projective_local_membership",
+        "kl.algebra.quotient_endomorphism_descent",
+        "kl.algebra.scalar_free_presentation",
+        "kl.algebra.scalar_quotient"
+      ],
+      "pending": [],
+      "review": "Reviewed quotient and pair-projection descent, saturation and free reduced images, finite free scalar-quotient presentations, the explicit projective-kernel retraction, and free/projective target prime-denominator membership."
     },
     {
       "code": "W1",
@@ -3246,8 +3483,14 @@
     {
       "code": "W5",
       "title": "Two-stalk lattices and their kernels",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.word.twisted_pair_lattice",
+        "kl.word.twisted_lattice_saturation"
+      ],
+      "pending": [
+        "Expand the full pair-translation projection/kernel sequence, polynomial-coordinate transport and the word-induction freeness arguments."
+      ]
     },
     {
       "code": "W6",
@@ -3496,8 +3739,13 @@
     {
       "code": "L1",
       "title": "Plane and edge localizations",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.local.plane_prime_membership"
+      ],
+      "pending": [
+        "Expand compatibility of scalar quotients and localization maps, including the localized edge-ring comparison interfaces."
+      ]
     },
     {
       "code": "L2",
@@ -3537,8 +3785,13 @@
     {
       "code": "L7",
       "title": "From local comparison to the global edge inclusion",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.local.free_target_localization"
+      ],
+      "pending": [
+        "Expand the complete assembly of local image comparisons into the global edge inclusion; the free/projective membership algebra is now explicit."
+      ]
     },
     {
       "code": "I1",
@@ -3561,8 +3814,10 @@
     {
       "code": "I4",
       "title": "Equality and reverse reconstruction of freeness",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.detail.reverse_projectivity"
+      ]
     },
     {
       "code": "I5",
@@ -3584,7 +3839,7 @@
     }
   ],
   "next_steps": [
-    "Complete coefficient algebras, coefficient changes and scalar-quotient comparison algebra, then expand reflection Frobenius data and word-module character inputs.",
+    "Expand reflection Frobenius data, paired tensor induction and the remaining word-module evaluation/character constructions.",
     "Complete standard-parabolic inclusion and finite-support transport; finish word wall maps, pair kernels, and character recursions.",
     "Expand adapted-order/chamber changes, dihedral interval transport, and the path-polynomial proof.",
     "Review the remaining Hecke, localization, and simultaneous-comparison arguments against their local source bodies.",
@@ -3911,7 +4166,20 @@
       "kl.algebra.character_operations": "A6",
       "kl.algebra.hilbert_defect": "A6",
       "kl.algebra.hilbert_image_exactness": "A6",
-      "kl.algebra.hilbert_scalar_quotient": "A6"
+      "kl.algebra.hilbert_scalar_quotient": "A6",
+      "kl.algebra.linear_ideals": "A1",
+      "kl.algebra.linear_primes": "A1",
+      "kl.algebra.root_quotient_coordinates": "A1",
+      "kl.algebra.root_label_primes": "A1",
+      "kl.algebra.projective_presentations": "A5",
+      "kl.algebra.kernel_projectivity": "A7",
+      "kl.algebra.scalar_free_presentation": "A7",
+      "kl.algebra.localized_membership": "A7",
+      "kl.algebra.projective_local_membership": "A7",
+      "kl.algebra.coefficient_duals": "A4",
+      "kl.word.twisted_pair_lattice": "W5",
+      "kl.word.twisted_lattice_saturation": "W5",
+      "kl.local.plane_prime_membership": "L1"
     },
     "moved_nodes": [
       {
@@ -4745,7 +5013,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 308
+    "current_node_count": 321
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -4761,7 +5029,8 @@
     "Expanded the operator-to-R construction: both Hecke conventions, cyclic reduced-word independence, bar intertwining and triangularity, polynomiality and degree, signed parameter reciprocity, inverse coefficients, and positive-word convolution. Added a bounded polynomial-reflection definition and rebuilt the topic guide around these dependencies.",
     "Expanded the full canonical KL construction from the negative lower half: degree control, proper R-kernel, anti-reciprocal defect, rank induction, seven normalization fields and selected-family identification. Added explicit integral and scaled reciprocal rigidity and the square-parameter calculation.",
     "Expanded the complete dihedral constant-P calculation and interval-rank prerequisites. Separated first/final alternating-word conventions, proved the double-string correction and linear-bar cancellation, and removed the polynomial calculation from the direct induced-label model dependencies.",
-    "Expanded graded module data and Hilbert foundations: exact augmentation, homogeneous maps and subquotients, finite shifted free covers, monomial-series convergence, basis-independent characters, scalar quotient normalization and equality detection through degreewise defects. Reorganized the graded-algebra guide into its seven approved subtopics."
+    "Expanded graded module data and Hilbert foundations: exact augmentation, homogeneous maps and subquotients, finite shifted free covers, monomial-series convergence, basis-independent characters, scalar quotient normalization and equality detection through degreewise defects. Reorganized the graded-algebra guide into its seven approved subtopics.",
+    "Completed the coefficient/comparison algebra exposition: generic linear quotients and root-label primality, coefficient-dual transport and scalar twists, projective presentations and explicit retractions, saturation and free reduced images, and prime-denominator membership. Added the twisted pair-lattice construction and plane-prime unit criterion at their mathematical homes."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -4861,15 +5130,15 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-19T07:28:22.896127+00:00",
+    "created_at": "2026-10-19T08:20:13.186189+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 308,
-    "html_pages_checked": 570,
-    "generated_definition_links_checked": 3855,
+    "node_count": 321,
+    "html_pages_checked": 584,
+    "generated_definition_links_checked": 4225,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage, including all eight ModuleData fields and both Hom fields; documentation checks only."
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage, including the CoefficientChange and Twist underlying-value fields; documentation checks only."
   },
   "structure_coverage_scan": {
     "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
@@ -4930,6 +5199,27 @@
         "kl.algebra.hilbert_scalar_quotient"
       ],
       "review": "Finite graded covers allow integer generator degrees and prove convergence for arbitrary ambient k-subspaces. The factor (1-q)^N removes the polynomial coefficient series, whereas (1-q) is the quotient factor for one regular degree-one scalar."
+    },
+    {
+      "entries": [
+        "kl.detail.reverse_projectivity",
+        "kl.algebra.kernel_projectivity"
+      ],
+      "review": "The reverse-projectivity application now follows the source explicit lifts and retraction, with the common image and regular scalar kernel constructed first."
+    },
+    {
+      "entries": [
+        "kl.algebra.scalar_twist",
+        "kl.detail.coefficient_change"
+      ],
+      "review": "Twist uses a general ring automorphism directly in the scalar action; identifying it with CoefficientChange for the inverse automorphism additionally uses preservation of the chosen base-field scalars."
+    },
+    {
+      "entries": [
+        "kl.detail.linear_quotient",
+        "kl.local.plane_prime_membership"
+      ],
+      "review": "The generic symmetric-algebra quotient and primality proof is separated from polynomial-coordinate transport and unit detection at a plane prime."
     }
   ],
   "relationship_map_revision": {
@@ -4937,6 +5227,6 @@
     "edge_count": 92,
     "route": "Top splitting and primitive recognition feed the boundary-pairing route; full model decomposition feeds simultaneous character formulas.",
     "evidence": "BoundarySheaf.splitIn_of_top_split, iso_of_primitive_top_split, GradedSheaf.exists_modelSumIso and bottCharacter_decomposition_both.",
-    "latest_anchor_refinement": "Added the abstract dihedral P=1 output to the canonical-polynomial stage and explicit subinterval/rank anchors to the Coxeter stage; the 38-stage/92-edge logical graph is unchanged."
+    "latest_anchor_refinement": "Added explicit coefficient-dual, projective-presentation and projective-denominator anchors to the general algebra stage, and linear-quotient anchors to the coefficient stage; the stage graph edges are unchanged."
   }
 }

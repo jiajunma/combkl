@@ -871,3 +871,62 @@ concepts:
   terms:
   - graded rank
   - graded ranks
+- node: kl.algebra.linear_ideals
+  terms:
+  - linear ideal
+  - linear ideals
+  - root ideal
+  - root ideals
+  - root line
+  - root lines
+  - prime ideal
+  - prime ideals
+  - prime element
+  - prime elements
+  - relatively prime
+  - relative primality
+  - associated scalars
+- node: kl.algebra.linear_ideals
+  terms:
+  - unit
+  - units
+  topics:
+  - kl.graded_algebra
+  - kl.02_hecke_polynomials
+  - kl.localization
+  - kl.invariance
+- node: kl.algebra.projective_presentations
+  terms:
+  - projective module
+  - projective modules
+  - projectivity
+  - projective presentation
+  - projective presentations
+  - linear section
+  - split surjection
+  - split surjections
+  - retraction
+  - retractions
+- node: kl.algebra.localized_membership
+  terms:
+  - prime localization
+  - prime localizations
+  - localized membership
+  - generic span
+  - torsion-free
+  - height-one prime
+  - height-one primes
+  - scalar denominator
+  - scalar denominators
+- node: kl.algebra.scalar_quotient
+  terms:
+  - regular scalar
+  - regular scalars
+  - scalar regularity
+  - saturation
+  - saturated submodule
+  - saturated submodules
+- node: kl.word.twisted_pair_lattice
+  terms:
+  - twisted pair lattice
+  - twisted pair lattices

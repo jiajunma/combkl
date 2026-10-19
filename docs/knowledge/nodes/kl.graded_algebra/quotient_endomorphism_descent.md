@@ -10,6 +10,7 @@ uses:
 - kl.algebra.pair_projection
 - kl.detail.graded_maps_shifts
 - kl.algebra.homogeneous_subquotients
+- kl.algebra.component_transport
 lean:
   repository: openai-kl
   modules:

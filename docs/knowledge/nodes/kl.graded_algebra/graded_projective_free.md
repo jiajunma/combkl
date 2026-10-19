@@ -9,6 +9,7 @@ topics:
 uses:
 - kl.notes.graded_nakayama
 - kl.sheaves.minimal_cover
+- kl.algebra.projective_presentations
 lean:
   repository: openai-kl
   modules:

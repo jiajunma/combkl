@@ -11,6 +11,7 @@ uses:
 - kl.algebra.homogeneous_lifts
 - kl.algebra.identity_mod_positive
 - kl.notes.graded_projective_free
+- kl.algebra.projective_presentations
 lean:
   repository: openai-kl
   modules:

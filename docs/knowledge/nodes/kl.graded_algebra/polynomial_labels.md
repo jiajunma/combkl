@@ -119,6 +119,8 @@ For a sheaf satisfying the upper-quotient rule, the upper stalk modulo multiplic
 
 The reflection \(t\), its positive root \(a_e\), the embedded vector \(\iota(a_e)\), and the polynomial \(\alpha_e\) are linked by these explicit maps.
 
+The [[node:kl.algebra.root_label_primes|root-label primality theorem]] proves divisibility and regularity properties of these labels. The [[node:kl.algebra.root_quotient_coordinates|edge-quotient presentation]] gives their coefficient ring after reduction.
+
 ## References
 
 The source declarations below define the interval graph and polynomial label map.

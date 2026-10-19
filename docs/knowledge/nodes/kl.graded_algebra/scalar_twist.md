@@ -15,6 +15,7 @@ lean:
   declarations:
   - OAI.KLInvariance.ReflectionPairTranslation.Twist
   - OAI.KLInvariance.ReflectionPairTranslation.Twist.equiv
+  - OAI.KLInvariance.ReflectionPairTranslation.Twist.equivVal
 source:
   spans:
   - artifact: openai-kl-source
@@ -25,6 +26,10 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.Frobenius:2063
     format: lean-location
     note: OAI.KLInvariance.ReflectionPairTranslation.Twist.equiv
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Frobenius:2053
+    format: lean-location
+    note: OAI.KLInvariance.ReflectionPairTranslation.Twist.equivVal
 verification:
   definition: accepted
   proof: not_applicable
@@ -68,7 +73,7 @@ This proves spanning, and applying \(\tau\) to a vanishing twisted coefficient c
 
 ## Reflection example
 
-Let \(R=k[\alpha]\), with \(\tau(\alpha)=-\alpha\). In the twisted copy of \(R\),
+Let \(R=\mathbb R[\alpha]\), with \(\tau(\alpha)=-\alpha\). In the twisted copy of \(R\),
 \[
 \alpha\star1=-\alpha.
 \]
@@ -80,7 +85,11 @@ r\cdot(x,y)=(rx,\tau(r)y).
 \]
 This is the scalar action that must preserve the relation defining the two-stalk image.
 
-Coefficient transport along an algebra isomorphism \(e:A\to B\) uses \(b\cdot m=e^{-1}(b)m\). The twist above is that construction with \(e=\tau^{-1}\).
+When \(R\) is a \(k\)-algebra and \(\tau\) fixes its base-field scalars, it is a \(k\)-algebra automorphism. In that setting the twist is coefficient transport with \(e=\tau^{-1}\), since the transported action uses \(e^{-1}=\tau\).
+
+If \(\tau\) preserves the coefficient grading, the same homogeneous pieces grade the twist: for \(r\in R_i\) and \(y\in Y_j\), \(\tau(r)y\in Y_{i+j}\).
+
+The [[node:kl.word.twisted_pair_lattice|twisted pair-lattice definition]] states the divisibility and lifting hypotheses that make the two-coordinate relation closed under this action. Its explicit correction vector supplies the closure calculation.
 
 ## References
 
@@ -88,8 +97,10 @@ The local source declarations below define the constructions and prove the state
 
 ## Lean formalization
 
+The field `val` is the underlying element; the new scalar action is composed with the ring automorphism.
+
 `OAI.KLInvariance.ReflectionPairTranslation.Twist`: [Frobenius.lean:2045](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L2045).
 
 `OAI.KLInvariance.ReflectionPairTranslation.Twist.equiv`: [Frobenius.lean:2063](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L2063).
 
-The field `val` is the underlying element of the original module. Scalar multiplication on that element is composed with the automorphism.
+`OAI.KLInvariance.ReflectionPairTranslation.Twist.equivVal`: [Frobenius.lean:2053](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L2053).

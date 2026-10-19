@@ -92,6 +92,18 @@ The scaled expansion then proves that a vector supported at \(x\) annihilates th
 
 This description is the input to adjoint descent in the sheaf topic. A sheaf endomorphism preserves supported coordinates. Symmetry of the word pairing then makes its adjoint preserve every stalk-projection kernel, allowing the adjoint to descend to the stalks and pair-projection edge quotients.
 
+## Twisted coordinates in a two-stalk lattice
+
+A reflection translation compares two stalk projections \(f:N\to X\), \(g:N\to Y\). Its second coordinate carries the twisted action \(r\star y=\tau(r)y\), so the pair action is
+\[
+r\cdot(x,y)=(rx,\tau(r)y).
+\]
+The underlying compatible pairs are those with one common preimage in \(N\).
+
+The source supplies two conditions: \(\alpha\mid\tau(r)-r\) for every scalar \(r\), and every pair \((0,\alpha y)\) has a common preimage. If \(n\) represents \((x,y)\), choose \(c\) with \(\tau(r)-r=\alpha c\), and a lift \(m\) of \((0,\alpha cy)\). Then \(rn+m\) represents \((rx,\tau(r)y)\). This proves closure under the twisted action.
+
+In the pair-projection quotient \(Q\), the two coordinates are compared by \(\ell(x)=u(y)\). If \(\alpha Q=0\), the actions of \(\tau(\beta)\) and \(\beta\) agree on \(Q\). When \(\beta\) acts injectively there, compatibility of the multiplied pair implies compatibility of the original pair. This is the saturation step for the twisted lattice.
+
 ## The word character formula from a short exact sequence
 
 Let \(C_x^{\mathbf t}(q)\) be the stalk character of an old word \(\mathbf t\), and prepend a simple reflection \(s\). If \(x<sx\), the head projection is surjective onto the old stalk at \(x\), with kernel the old stalk at \(sx\) shifted upward by one degree. Degreewise exactness therefore gives
@@ -139,6 +151,8 @@ For the single letter \(s\), the positive Hecke word is \(1+T_s\), and both stal
 ### Two-stalk lattices and their kernels
 
 - [[node:kl.detail.word_standard_stalks]]
+- [[node:kl.word.twisted_pair_lattice]]
+- [[node:kl.word.twisted_lattice_saturation]]
 
 ### Word characters
 

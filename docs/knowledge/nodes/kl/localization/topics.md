@@ -96,7 +96,7 @@ Apply this argument to each element of \(I_e\), using the local comparisons from
 
 Consider \(C=\mathbb R[\beta,\gamma]\) and \(I=(\beta,\gamma)\subset C\). At every height-one prime, at least one of \(\beta,\gamma\) is invertible, so \(I\) localizes to the whole ring. Nevertheless \(I\ne C\), since \(1\notin I\).
 
-This does not contradict the membership argument: it tests membership in a specified free target. It does not claim that arbitrary submodules with the same localizations are equal.
+The free-target membership theorem supplies the inclusion used in comparison. The quotient in this example is the constant component, which the Hilbert value measures.
 
 The example also shows why equal rank is insufficient. Both \(I\) and \(C\) have rank one, but their quotient is the one-dimensional space of constants. Their Hilbert values differ:
 \[
@@ -110,6 +110,8 @@ The logical order to retain is: free upper kernel, free edge target, local model
 ## Definitions and proofs by construction
 
 ### Plane and edge localizations
+
+- [[node:kl.local.plane_prime_membership]]
 
 - [[node:kl.detail.localization_rings]]
 

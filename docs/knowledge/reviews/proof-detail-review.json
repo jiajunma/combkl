@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 55798,
-  "theorem_walkthroughs": 192,
+  "revised_proof_words": 58043,
+  "theorem_walkthroughs": 201,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -63,6 +63,22 @@
       "revised_proof_words": 285,
       "proof_sha256": "46509e353bea225933b570aa592a043f420bbf5db7ee69e686b2e3203257b2af",
       "review": "Read map/shift/product/pi bases and all character identities; the coefficient-transport consequence follows from the explicit semilinear equivalence and changePiece membership formula."
+    },
+    {
+      "node": "kl.algebra.coefficient_duals",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.CoefficientChange.mapEquiv",
+        "OAI.KLInvariance.CoefficientChange.dualTo",
+        "OAI.KLInvariance.CoefficientChange.dualFrom",
+        "OAI.KLInvariance.CoefficientChange.dualEquiv",
+        "OAI.KLInvariance.CoefficientChange.pairingEquiv",
+        "OAI.KLInvariance.CoefficientChange.pairingEquiv_apply"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 261,
+      "proof_sha256": "0c6d7e7c6232cd78d84eb572a4c9d31b70697c4e6a101df2b08168e6c454f9ed",
+      "review": "Read dualTo, dualFrom, dualEquiv, mapEquiv and pairingEquiv. Verified both scalar directions, inverses, linearity on the dual space and the evaluation formula; grading consequences follow from the exact transported pieces."
     },
     {
       "node": "kl.algebra.component_transport",
@@ -176,16 +192,46 @@
       "review": "Read Hom.bijective_of_mod_positive: homogeneous range plus graded Nakayama gives surjectivity; the stabilized kernel-chain argument explains Noetherian injectivity for a surjective endomorphism."
     },
     {
+      "node": "kl.algebra.kernel_projectivity",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.ReverseFiltration.kernel_projective_of_presentation"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 204,
+      "proof_sha256": "a243681e4020a24fa2584082043ac2e71aa419a3cfbb34606d4fd63aa5db7640",
+      "review": "Read the complete explicit retraction proof in ModuleAlgebra. Preserved the three projectivity hypotheses and both surjections, and checked the kernel equation and retraction componentwise."
+    },
+    {
       "node": "kl.algebra.kernel_saturation",
       "source_declarations": [
         "OAI.KLInvariance.EdgeImage.kernel_saturated",
-        "OAI.KLInvariance.EdgeImage.reduced_kernel_injective"
+        "OAI.KLInvariance.EdgeImage.reduced_kernel_injective",
+        "OAI.KLInvariance.EdgeImage.reducedInclusion",
+        "OAI.KLInvariance.EdgeImage.range_reducedInclusion_free"
       ],
-      "proof_steps": 3,
+      "proof_steps": 5,
       "previous_proof_words": 0,
-      "revised_proof_words": 179,
-      "proof_sha256": "371cc8fb94c3dc1ff0baadbb92fe262241a19dbc70e20c6d0bd55210b7fc5425",
-      "review": "Compared kernel_saturated and reduced_kernel_injective: scalar injectivity cancels a in the target, and every zero reduced class is represented by a multiple within the original kernel."
+      "revised_proof_words": 304,
+      "proof_sha256": "f2c1d15fc06c642d7ed020a742495b31be6bd0c68cfcfe1a54623416b270238f",
+      "review": "Read kernel_saturated, reduced_kernel_injective and range_reducedInclusion_free. Preserved regularity on the constraint target, proved the quotient-basis assertion and transferred it through the actual reduced inclusion."
+    },
+    {
+      "node": "kl.algebra.linear_primes",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.EdgeAlgebra.symmetric_ι_injective",
+        "OAI.KLInvariance.EdgeAlgebra.rootIdeal_eq_ker",
+        "OAI.KLInvariance.EdgeAlgebra.rootIdeal_isPrime",
+        "OAI.KLInvariance.EdgeAlgebra.symmetric_ι_prime",
+        "OAI.KLInvariance.EdgeAlgebra.symmetric_ι_dvd_iff",
+        "OAI.KLInvariance.EdgeAlgebra.reducedRoot_ne_zero",
+        "OAI.KLInvariance.EdgeAlgebra.reducedRoot_prime"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 198,
+      "proof_sha256": "9b09d63c43413182344ab70b71f190a5d2080c4b6f39144f946dc953d8b94b43",
+      "review": "Read the actual root-quotient kernel, symmetric generator injectivity/primality, divisibility iff line membership and reducedRoot_prime. Explained the zero-vector divisibility case and the quotient-space proof."
     },
     {
       "node": "kl.algebra.minimal_cover_maps",
@@ -241,6 +287,20 @@
       "review": "Read the monomial sum, degree-fiber and polynomial HasSum proofs. Expanded the empty-variable base, one-variable product induction, finite degree fibers and integer-index extension."
     },
     {
+      "node": "kl.algebra.projective_local_membership",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.ProjectiveLattice.finsupp_divide",
+        "OAI.KLInvariance.ProjectiveLattice.prime_divide_of_relation",
+        "OAI.KLInvariance.ProjectiveLattice.mem_of_prime_local_membership",
+        "OAI.KLInvariance.EdgeLattice.mem_of_prime_local_membership"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 337,
+      "proof_sha256": "7537a9f09e4f359e83d18193360c7c409e68b3cca4e3d9dd2b3244dcc65b69d7",
+      "review": "Read the free and projective prime-removal arguments. Used the source canonical free-module section and evaluation retraction, finite-support division, ambient torsion-free cancellation and UFD induction."
+    },
+    {
       "node": "kl.algebra.quotient_endomorphism_descent",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -256,7 +316,59 @@
       "proof_steps": 5,
       "revised_proof_words": 261,
       "proof_sha256": "8a2f622bf91d06f59590eec044cbae14de0d7a08f5d659ddcb2f1ee872004b24",
-      "review": "Compared LinearDescent.descend and the graded descended/descendedEdge construction. Lift independence, homogeneous lifts, the lower quotient kernel, and both edge squares are explicit."
+      "review": "Read LinearDescent and the graded descended/descendedEdge bodies. Retained lift independence, idempotence, homogeneous lifts and both quotient squares."
+    },
+    {
+      "node": "kl.algebra.root_label_primes",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.polynomialRoot_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.polynomialRoot_prime",
+        "OAI.KLInvariance.BruhatGraph.polynomialRoot_not_dvd",
+        "OAI.KLInvariance.BruhatGraph.root_injective_on_labels",
+        "OAI.KLInvariance.BruhatGraph.polynomialLabel_prime",
+        "OAI.KLInvariance.BruhatGraph.label_eq_of_polynomialLabel_dvd",
+        "OAI.KLInvariance.BruhatGraph.incoming_pairwise_relPrime",
+        "OAI.KLInvariance.BruhatGraph.outgoing_incoming_not_dvd"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 372,
+      "proof_sha256": "ba56aa53812868d61f54a64e46fc62afea031c4eb36dd4d9bc541971651869eb",
+      "review": "Read the polynomial-root and edge-label divisibility proofs in PlaneLocalization and Support. Expanded the embedding step, reflection equality at an endpoint, prime relative primality and cancellation on a free quotient module."
+    },
+    {
+      "node": "kl.algebra.root_quotient_coordinates",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.EdgeAlgebra.rootQuotientEquiv",
+        "OAI.KLInvariance.EdgeAlgebra.rootQuotientEquiv_mk_ι",
+        "OAI.KLInvariance.EdgeAlgebra.rootQuotientPolynomial",
+        "OAI.KLInvariance.EdgeAlgebra.linear_homogeneous",
+        "OAI.KLInvariance.EdgeAlgebra.reducedRoot_homogeneous",
+        "OAI.KLInvariance.TitsSpace.EdgeCoefficient",
+        "OAI.KLInvariance.TitsSpace.edgePolynomial"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 209,
+      "proof_sha256": "aa1ba2521cc97941ac1e58243920f286a9f706003a1fe14bb5f6183789fd1e11",
+      "review": "Read rootQuotientEquiv, its generator formula, rootQuotientPolynomial and reduced-root homogeneity, plus the actual EdgeCoefficient/edgePolynomial definitions."
+    },
+    {
+      "node": "kl.algebra.scalar_free_presentation",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.ReverseFiltration.scalarQuotientMap",
+        "OAI.KLInvariance.ReverseFiltration.scalarQuotientMap_surjective",
+        "OAI.KLInvariance.ReverseFiltration.scalarKernelMap",
+        "OAI.KLInvariance.ReverseFiltration.scalarKernelMap_bijective",
+        "OAI.KLInvariance.ReverseFiltration.scalarKernel_projective",
+        "OAI.KLInvariance.ReverseFiltration.exists_scalar_presentation",
+        "OAI.KLInvariance.ReverseFiltration.kernel_projective_of_free_scalar_quotient"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 230,
+      "proof_sha256": "d1f9d81764170df49b0e1e97314630c3fc2227ec26ce9441533f23facf9d4d83",
+      "review": "Read every scalarQuotientMap/scalarKernelMap declaration and both presentation theorems. Kept the domain and nonzero-label assumptions, induced A-action on P, finite quotient basis and explicit regular-scalar kernel."
     },
     {
       "node": "kl.algebra.scalar_inverse_degree",
@@ -752,17 +864,22 @@
     {
       "node": "kl.detail.linear_quotient",
       "source_declarations": [
+        "OAI.KLInvariance.SymmetricPlaneIdeal.ideal_le_ker",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.forward",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.linearQuotient",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.backward",
         "OAI.KLInvariance.SymmetricPlaneIdeal.quotientEquiv",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.quotientEquiv_mk_ι",
         "OAI.KLInvariance.SymmetricPlaneIdeal.ι_mem_iff",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.ideal_eq_ker",
         "OAI.KLInvariance.SymmetricPlaneIdeal.ideal_isPrime",
-        "OAI.KLInvariance.EdgeAlgebra.rootQuotientEquiv",
-        "OAI.KLInvariance.TitsSpace.linear_isUnit_iff"
+        "OAI.KLInvariance.SymmetricPlaneIdeal.ideal_span_eq"
       ],
-      "proof_steps": 4,
+      "proof_steps": 6,
       "previous_proof_words": 0,
-      "revised_proof_words": 283,
-      "proof_sha256": "97d422582f2d0dc4109b6106e8f58c918be29e0618bbfb622fe0b0dd9e1cbc00",
-      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
+      "revised_proof_words": 327,
+      "proof_sha256": "7f89a3c456e6f9d23ad14a41850a80b5e0397c91f04b4d8f1987327f0f8e30ee",
+      "review": "Read quotientEquiv and both inverse identities, the functional argument for degree-one membership, primality and ideal_span_eq. Kept the theorem generic and separated localization from this algebraic quotient."
     },
     {
       "node": "kl.detail.local_diagonal_degree",
@@ -836,13 +953,16 @@
     {
       "node": "kl.detail.reverse_projectivity",
       "source_declarations": [
+        "OAI.KLInvariance.ReverseFiltration.scalarKernelEquiv",
+        "OAI.KLInvariance.ReverseFiltration.projective_kernel_of_scalar_presentation",
+        "OAI.KLInvariance.ReverseFiltration.imageMapKernelEquiv",
         "OAI.KLInvariance.ReverseFiltration.inf_kernel_projective_of_image_eq"
       ],
-      "proof_steps": 4,
+      "proof_steps": 5,
       "previous_proof_words": 109,
-      "revised_proof_words": 298,
-      "proof_sha256": "5bc0c36ab433b70744cf3dcb0c54305183ef61921eb06ed35384d99e36fb6f8f",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 296,
+      "proof_sha256": "537626f1a843a4cf3ad586945aa321ea9512b708bfd13e694c620bf9f8e29ab6",
+      "review": "Read scalarKernelEquiv, projective_kernel_of_scalar_presentation and the actual imageMapKernelEquiv proof. Replaced the earlier pullback presentation by the source explicit two-lift retraction, checking every supplied hypothesis."
     },
     {
       "node": "kl.detail.root_inversion_count",
@@ -1606,13 +1726,15 @@
     {
       "node": "kl.local.free_target_localization",
       "source_declarations": [
-        "OAI.KLInvariance.EdgeLattice.mem_iff_localized_at_height_one"
+        "OAI.KLInvariance.EdgeLattice.exists_denominator_of_localized_mem",
+        "OAI.KLInvariance.EdgeLattice.mem_iff_localized_at_height_one",
+        "OAI.KLInvariance.EdgeLattice.eq_iInf_height_one_localizations"
       ],
-      "proof_steps": 5,
+      "proof_steps": 4,
       "previous_proof_words": 194,
-      "revised_proof_words": 318,
-      "proof_sha256": "aebcc7691efeaeef0bdf6fca6238af00348ff0f1395b43f393ae07dfdb393b24",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 237,
+      "proof_sha256": "3aea43d1e6b6b5ef4a47caf46fa7a82b312ffdbcd9dab3bba34ee7f0dfbf08ac",
+      "review": "Read the exact Noetherian-UFD height-one equivalence and intersection theorem. Retained global scalar generic span and free target, and linked the fully expanded prime-removal proof."
     },
     {
       "node": "kl.local.localized_decomposition",
@@ -1624,6 +1746,23 @@
       "revised_proof_words": 524,
       "proof_sha256": "1835bde804b5902f7066c0afd5aae803173215a8662e343007f056622411689e",
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+    },
+    {
+      "node": "kl.local.plane_prime_membership",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.embedLinear",
+        "OAI.KLInvariance.TitsSpace.embedLinear_injective",
+        "OAI.KLInvariance.TitsSpace.planePrime",
+        "OAI.KLInvariance.TitsSpace.planePrime_isPrime",
+        "OAI.KLInvariance.TitsSpace.linear_mem_planePrime_iff",
+        "OAI.KLInvariance.TitsSpace.linear_mem_maximal_iff",
+        "OAI.KLInvariance.TitsSpace.linear_isUnit_iff"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 193,
+      "proof_sha256": "809f5e935b1f126ad55a43a7bae816696929c24af0aaf7cd167d08965751ddb2",
+      "review": "Read the actual planePrime map, embedding injectivity and all three membership/unit lemmas. Preserved the original-root-space domain and the distinction between embedding and polynomial-coordinate transport."
     },
     {
       "node": "kl.main.combinatorial_invariance",
@@ -2425,9 +2564,9 @@
         "OAI.KLInvariance.MomentGraph.GradedSheaf.SymmetricPerfectPairing.coefficientChange"
       ],
       "proof_steps": 5,
-      "revised_proof_words": 381,
-      "proof_sha256": "9e928d3fccfbedbecbe5ea04b7cb7b38d34ef46407aa314c9a21fae3e4d16226",
-      "review": "Read dualEquiv, pairingEquiv, PerfectPairing transport/pullback, and symmetric variants. Constructed the functional representative in both transports and checked each orthogonality condition and grading."
+      "revised_proof_words": 391,
+      "proof_sha256": "2d94558f661c14e79db3bf02026573f66136c520bf4a29a7ff02bd03d7f824b4",
+      "review": "Rechecked the existing section pairing proof against the generic dual correspondence. Linked the coefficient-level theorem while retaining the explicit functional representative, support and degree checks."
     },
     {
       "node": "kl.sheaves.partial_iso_extension",
@@ -2617,6 +2756,17 @@
       "revised_proof_words": 332,
       "proof_sha256": "e0425e9692af39121c4fe186d918a87b7cc433cfb76584a4a4caced4c2349f9a",
       "review": "Read bottWeight_eq_top, unit evaluation, top-coordinate bijectivity, and both homogeneous directions. The retained-letter length inequalities force the unique top coordinate."
+    },
+    {
+      "node": "kl.word.twisted_lattice_saturation",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionPairTranslation.lattice_saturated"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 145,
+      "proof_sha256": "f5a7e372eb41115d641a6559757d0dc23f934021247646197f2965635dafdb12",
+      "review": "Read lattice_saturated and PairProjection.compatible_iff. Expanded the twisted scalar equation, annihilation of the scalar difference, cancellation on the quotient and reconstruction of a common preimage."
     }
   ]
 }

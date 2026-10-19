@@ -61,12 +61,15 @@
         "A7"
       ],
       "requires": [],
-      "output": "Graded modules, covers, homogeneous bases, Hilbert identities, and kernel-presentation tools.",
+      "output": "Graded modules, covers, homogeneous bases, coefficient/dual transport, Hilbert identities, projective presentations and scalar-denominator membership.",
       "lean_declarations": [
         "OAI.KLInvariance.Graded.ModuleData",
         "OAI.KLInvariance.Graded.ModuleData.MinimalCover",
         "OAI.KLInvariance.Hilbert.hasSum_homogeneous_basis",
-        "OAI.KLInvariance.Hilbert.eq_of_value_eq"
+        "OAI.KLInvariance.Hilbert.eq_of_value_eq",
+        "OAI.KLInvariance.CoefficientChange.dualEquiv",
+        "OAI.KLInvariance.ReverseFiltration.kernel_projective_of_presentation",
+        "OAI.KLInvariance.ProjectiveLattice.mem_of_prime_local_membership"
       ]
     },
     {
@@ -82,7 +85,9 @@
       "output": "Symmetric/polynomial coefficients and linear root quotients.",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.symmetricLabel",
-        "OAI.KLInvariance.BruhatGraph.polynomialRoot_prime"
+        "OAI.KLInvariance.BruhatGraph.polynomialRoot_prime",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.quotientEquiv",
+        "OAI.KLInvariance.EdgeAlgebra.rootQuotientPolynomial"
       ]
     },
     {
@@ -1025,6 +1030,16 @@
         "OAI.KLInvariance.Dihedral.klPolynomial_eq_one",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.model_flabby",
         "OAI.KLInvariance.intervalIso_rankDifference"
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "scope": "Coefficient and comparison algebra",
+      "change": "Separated generic linear quotients from plane-prime localization; exposed coefficient-dual transport, the two-lift projective-kernel retraction and projective prime-denominator membership.",
+      "source_declarations": [
+        "OAI.KLInvariance.CoefficientChange.dualEquiv",
+        "OAI.KLInvariance.ReverseFiltration.kernel_projective_of_presentation",
+        "OAI.KLInvariance.ProjectiveLattice.mem_of_prime_local_membership"
       ]
     }
   ]

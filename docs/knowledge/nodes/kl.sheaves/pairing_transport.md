@@ -10,6 +10,7 @@ uses:
 - kl.notes.supported_pairings
 - kl.detail.coefficient_change
 - kl.detail.sheaf_isomorphisms
+- kl.algebra.coefficient_duals
 lean:
   repository: openai-kl
   modules:
@@ -99,6 +100,8 @@ For \(a'\in A'\), the transported scalar action is multiplication by \(e^{-1}(a'
 The same calculation applies in the second argument, and additivity follows from additivity of \(e\) and the original form. Thus the new pairing is \(A'\)-bilinear.
 
 ### Step 2. Construct the representative of every new functional
+
+The [[node:kl.algebra.coefficient_duals|coefficient-dual transport theorem]] supplies the following correspondence of functionals.
 
 Let \(\lambda'\) be an \(A'\)-linear functional on the transported section module. On the underlying old module define
 \[

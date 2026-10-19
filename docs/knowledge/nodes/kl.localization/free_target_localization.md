@@ -6,19 +6,31 @@ status: proved
 primary_topic: kl.localization
 topics:
 - kl.localization
-uses: []
+uses:
+- kl.algebra.localized_membership
+- kl.algebra.projective_local_membership
 lean:
   repository: openai-kl
   modules:
   - ModuleAlgebra
   declarations:
+  - OAI.KLInvariance.EdgeLattice.exists_denominator_of_localized_mem
   - OAI.KLInvariance.EdgeLattice.mem_iff_localized_at_height_one
+  - OAI.KLInvariance.EdgeLattice.eq_iInf_height_one_localizations
 source:
   spans:
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.ModuleAlgebra:89
+    format: lean-location
+    note: OAI.KLInvariance.EdgeLattice.exists_denominator_of_localized_mem
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.ModuleAlgebra:106
     format: lean-location
     note: OAI.KLInvariance.EdgeLattice.mem_iff_localized_at_height_one
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.ModuleAlgebra:129
+    format: lean-location
+    note: OAI.KLInvariance.EdgeLattice.eq_iInf_height_one_localizations
   - artifact: openai-kl-paper
     locator: 5. Comparison of edge images; sec:edge
     format: section
@@ -30,62 +42,75 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Does the exposition preserve the mathematical scope of its Lean declarations?
-  verdict: The stated hypotheses and conclusion follow the fixed source; explanatory
-    derivations retain the original proof route.
+  prompt: Are the coefficient rings, module properties and actual maps explicit?
+  verdict: Read the exact Noetherian-UFD height-one equivalence and intersection theorem.
+    Retained global scalar generic span and free target, and linked the fully expanded
+    prime-removal proof.
 tags:
 - Kazhdan-Lusztig
-- edge_images
+- module-algebra
 ---
 
 # Height-one membership in a free target
 
-Let \(R\) be a Noetherian unique factorization domain, let \(E\) be a torsion-free \(R\)-module, and let \(M\subseteq E\) be a free submodule that spans \(E\) over the fraction field. Then
+Let \(R\) be a Noetherian unique factorization domain, let \(E\) be torsion-free, and let \(M\subseteq E\) be free. Assume full generic span in the scalar form
 \[
-x\in M
-\quad\Longleftrightarrow\quad
-x/1\in M_{\mathfrak p}
-\quad\text{for every height-one prime }\mathfrak p.
+\forall x\in E,\quad\exists c\ne0,\quad cx\in M.
 \]
+Then
+\[
+x\in M\quad\Longleftrightarrow\quad
+x/1\in M_{\mathfrak p}
+\text{ for every prime ideal }\mathfrak p\text{ of height one}.
+\]
+Equivalently, \(M\) is the intersection of the preimages of those localized submodules in \(E\).
+
+<!-- source-comparison:start -->
+## Relation to the OpenAI notes
+
+**General module interface for the local membership test.**
+
+**OpenAI notes:** The free-target lemma uses a polynomial coefficient ring and a finite free ambient module. Basis coordinates in the fraction field lie in every height-one local ring, so their denominators are units. [edge:lattice](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/05-comparison.tex#L26).
+
+**Lean (primary):** The free-target interface allows a torsion-free ambient module over a Noetherian UFD and states generic span through nonzero scalar multipliers. Its proof removes prime factors from those multipliers. A separate projective-target version obtains finite-support coordinates through a free-module section and retraction. [ModuleAlgebra:45](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ModuleAlgebra.lean#L45), [ModuleAlgebra:106](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ModuleAlgebra.lean#L106), [IntegralPairings:1904](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L1904).
+
+**Role in the proof:** The proofs below expose the exact generic-span and prime-denominator witnesses used by local-to-global membership.
+<!-- source-comparison:end -->
 
 *Proof.*
 
-### Step 1. Translate localized membership into denominators
+### Step 1. Localize an existing member
 
-The implication \(x\in M\Rightarrow x/1\in M_{\mathfrak p}\) is immediate.
-For the converse, the generic-span hypothesis provides \(c\ne0\) with \(cx\in M\).
+If \(x\in M\), the fraction \(x/1\) has a numerator in \(M\), so it belongs to every \(M_{\mathfrak p}\).
 
-For an irreducible element \(p\), the ideal \((p)\) is prime of height one in the stated Noetherian UFD. The localized membership assumption gives a denominator \(a\notin(p)\) with \(ax\in M\). Equivalently \(p\nmid a\). If equality in the localization initially uses two denominators, multiply them; both lie outside the prime, so their product still does.
+### Step 2. Obtain scalar witnesses at the principal prime ideals
 
-### Step 2. Remove one prime factor from c
+Assume all the localized membership conditions. Let \(p\) be any prime element. Its ideal \((p)\) is a prime of height one.
 
-Suppose \(c=pc_1\). In the free module \(M\), let \(m=pc_1x\) and \(n=ax\). They satisfy
-\(am=pc_1n\).
-Choose a free basis \((e_i)\) of \(M\) and expand both vectors in their finitely supported coordinates:
-\[
-a\,m_i=pc_1n_i\quad\text{for every }i.
-\]
-Since \(p\) is prime and does not divide \(a\), it divides every \(m_i\). Write \(m_i=pu_i\), retaining finite support, and put \(m'=\sum_i u_ie_i\in M\). Then \(m=pm'\).
+The hypothesis at \((p)\), followed by the denominator-clearing calculation, gives \(a\notin(p)\) with \(ax\in M\). Equivalently \(p\nmid a\).
 
-### Step 3. Cancel in the ambient module
+### Step 3. Apply prime-denominator membership
 
-The two expressions for \(m\) give
-\(p(c_1x-m')=0\) in \(E\). The ambient module is torsion-free and \(p\ne0\), so \(c_1x=m'\in M\). Thus one prime factor of the denominator has been removed.
+The generic-span assumption gives a nonzero \(c\) with \(cx\in M\). Step 2 gives the required witness for every prime element.
 
-### Step 4. Finish by unique factorization
+The [[node:kl.algebra.projective_local_membership|prime-denominator theorem]] applies to the free target \(M\), which is projective, inside the torsion-free ambient module \(E\). It yields \(x\in M\).
 
-Factor the original nonzero \(c\) into a unit times finitely many irreducibles, counted with multiplicity. Repeat Steps 1–3 for every factor. When only a unit \(u\) remains, \(ux\in M\) implies \(x=u^{-1}(ux)\in M\).
+### Step 4. Express the result as an intersection
 
-This proves the equivalence. If the ring is a field, every nonzero denominator is already a unit, so the same argument covers the empty family of height-one primes.
+A vector lies in the preimage of \(M_{\mathfrak p}\) exactly when its localized image \(x/1\) lies in that submodule. Membership in the intersection means that this holds for every height-one prime. The equivalence just proved identifies the intersection with \(M\).
 
-### Step 5. Keep the direction of application straight
+If \(R\) is a field, every nonzero generic denominator is a unit. The generic-span condition then gives \(M=E\), agreeing with the intersection over the empty family of height-one primes.
 
-The free module is the target in which membership is being tested. The theorem does not say that two arbitrary submodules with equal height-one localizations are equal. For example \((s,t)\subsetneq k[s,t]\) has the same localization as the whole ring at every height-one prime. The later Hilbert comparison, not localization alone, detects that possible remaining quotient.
+For \(R=k[X,Y]\) and \(M=XR\subseteq R\), the prime \((X)\) tests divisibility by \(X\): \(ax\in XR\) with \(X\nmid a\) implies \(X\mid x\). At a different height-one prime, \(X\) is a unit and the localized ideal fills the localized ring.
 
 ## References
 
-[5. Comparison of edge images](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/05-comparison.tex#L1).
+The local source declarations below give the construction and proof.
 
 ## Lean formalization
 
+`OAI.KLInvariance.EdgeLattice.exists_denominator_of_localized_mem`: [ModuleAlgebra.lean:89](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ModuleAlgebra.lean#L89).
+
 `OAI.KLInvariance.EdgeLattice.mem_iff_localized_at_height_one`: [ModuleAlgebra.lean:106](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ModuleAlgebra.lean#L106).
+
+`OAI.KLInvariance.EdgeLattice.eq_iInf_height_one_localizations`: [ModuleAlgebra.lean:129](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ModuleAlgebra.lean#L129).

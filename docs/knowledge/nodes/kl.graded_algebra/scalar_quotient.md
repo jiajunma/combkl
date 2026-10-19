@@ -54,6 +54,8 @@ Multiplication by \(a\) acts as zero on this quotient. Therefore its scalar acti
 \]
 Changing \(r\) by a multiple of \(a\), or \(m\) by an element of \(aM\), leaves the class unchanged.
 
+A scalar \(a\) is regular on \(M\) when multiplication \(m\mapsto am\) is injective. Equivalently, \(am=0\) implies \(m=0\). This property specifies the module on which cancellation is valid.
+
 ## Reduction of an inclusion
 
 For \(S\subseteq M\), inclusion induces

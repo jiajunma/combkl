@@ -22,6 +22,12 @@ lean:
   - OAI.KLInvariance.Graded.ModuleData.changeHom
   - OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange
   - OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChangeSections
+  - OAI.KLInvariance.CoefficientChange.map
+  - OAI.KLInvariance.CoefficientChange.map_injective
+  - OAI.KLInvariance.CoefficientChange.map_surjective
+  - OAI.KLInvariance.Graded.ModuleData.changePiece
+  - OAI.KLInvariance.Graded.ModuleData.mem_changePiece
+  - OAI.KLInvariance.Graded.ModuleData.change_free
 source:
   spans:
   - artifact: openai-kl-source
@@ -52,6 +58,30 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.Support:388
     format: lean-location
     note: OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChangeSections
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.BottSamelson:1829
+    format: lean-location
+    note: OAI.KLInvariance.CoefficientChange.map
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.BottSamelson:1835
+    format: lean-location
+    note: OAI.KLInvariance.CoefficientChange.map_injective
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.BottSamelson:1838
+    format: lean-location
+    note: OAI.KLInvariance.CoefficientChange.map_surjective
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.BottSamelson:1861
+    format: lean-location
+    note: OAI.KLInvariance.Graded.ModuleData.changePiece
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.BottSamelson:1864
+    format: lean-location
+    note: OAI.KLInvariance.Graded.ModuleData.mem_changePiece
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.BottSamelson:1902
+    format: lean-location
+    note: OAI.KLInvariance.Graded.ModuleData.change_free
 verification:
   definition: accepted
   proof: not_applicable
@@ -67,7 +97,7 @@ tags:
 
 # Transport of coefficients along an algebra isomorphism
 
-Let \(e:A\xrightarrow{\sim}A'\) be an isomorphism of commutative \(k\)-algebras, and let \(M\) be an \(A\)-module. Its transported module \({}^eM\) has the same additive group, with \(A'\)-action
+Let \(k\) be a field and \(e:A\xrightarrow{\sim}A'\) an isomorphism of commutative \(k\)-algebras, and let \(M\) be an \(A\)-module with compatible \(k\)-scalar action. Its transported module \({}^eM\) has the same additive group, with \(A'\)-action
 \[
 a'\cdot_{{}^eM}m=e^{-1}(a')\cdot_Mm.
 \]
@@ -98,6 +128,16 @@ Suppose \(e(A_n)=A'_n\) for every degree. Define
 \]
 under the underlying \(k\)-linear identification. The finite homogeneous decompositions stay the same. If \(a'\in A'_i\) and \(m\in M_j\), then \(e^{-1}(a')\in A_i\), so their new product lies in \(M_{i+j}\). Nonnegative support is preserved as well.
 
+Injectivity and surjectivity are transported by the underlying-value map. Equality of two new images gives equality of the old images and hence of the old inputs when the map is injective. A preimage of an old target vector, wrapped in the new scalar structure, is a preimage of the new target vector.
+
+The [[node:kl.algebra.coefficient_duals|coefficient-dual transport theorem]] gives
+\[
+{}^e\operatorname{Hom}_A(M,A)
+\simeq\operatorname{Hom}_{A'}({}^eM,A'),\qquad
+\lambda\longmapsto(m\mapsto e(\lambda(m))).
+\]
+It also transports a perfect pairing by applying \(e\) to each value, preserving its degree shift.
+
 ## Sheaves and sections
 
 Transport every vertex and edge module of a graded sheaf, keeping the same underlying restriction maps. Their linearity and grading follow from the preceding calculation. The edge labels become \(e(\alpha_e)\).
@@ -126,7 +166,7 @@ The source declarations below give the constructions and proofs.
 
 ## Lean formalization
 
-The wrapper field `val` records the underlying vector. The new scalar action uses the inverse algebra isomorphism; all transported maps act on that underlying value.
+The wrapper field `val` records the underlying vector. Scalar multiplication uses the inverse coefficient isomorphism.
 
 `OAI.KLInvariance.CoefficientChange`: [BottSamelson.lean:1777](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L1777).
 
@@ -141,3 +181,15 @@ The wrapper field `val` records the underlying vector. The new scalar action use
 `OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange`: [Support.lean:329](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean#L329).
 
 `OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChangeSections`: [Support.lean:388](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean#L388).
+
+`OAI.KLInvariance.CoefficientChange.map`: [BottSamelson.lean:1829](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L1829).
+
+`OAI.KLInvariance.CoefficientChange.map_injective`: [BottSamelson.lean:1835](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L1835).
+
+`OAI.KLInvariance.CoefficientChange.map_surjective`: [BottSamelson.lean:1838](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L1838).
+
+`OAI.KLInvariance.Graded.ModuleData.changePiece`: [BottSamelson.lean:1861](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L1861).
+
+`OAI.KLInvariance.Graded.ModuleData.mem_changePiece`: [BottSamelson.lean:1864](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L1864).
+
+`OAI.KLInvariance.Graded.ModuleData.change_free`: [BottSamelson.lean:1902](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L1902).
