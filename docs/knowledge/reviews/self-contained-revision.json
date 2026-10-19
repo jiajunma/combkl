@@ -187,18 +187,6 @@
       "pending": []
     },
     {
-      "node": "kl.geometry.plane_weights",
-      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/plane_weights.md",
-      "review": "Expanded the partner construction, the two sign cases, nonnegative finite plane weights, and their exact sum.",
-      "pending": []
-    },
-    {
-      "node": "kl.geometry.plane_weight_sum",
-      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/plane_weight_sum.md",
-      "review": "Expanded the partner construction, the two sign cases, nonnegative finite plane weights, and their exact sum.",
-      "pending": []
-    },
-    {
       "node": "kl.paths.plane_degree",
       "file": "docs/knowledge/nodes/kl.localization/plane_degree.md",
       "review": "Separated the polynomial degree proof from the geometric plane-weight identity; checked nonzero reduced factors, homogeneity, and the final integer equality.",
@@ -1290,6 +1278,351 @@
       ],
       "review": "Read bottWeight_eq_top, unit evaluation, top-coordinate bijectivity, and both homogeneous directions. The retained-letter length inequalities force the unique top coordinate.",
       "pending": []
+    },
+    {
+      "node": "kl.detail.geometric_functional",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/geometric_functional.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.exists_geometric_functional",
+        "OAI.KLInvariance.TitsSpace.functionalRatio_between"
+      ],
+      "review": "Rechecked moment-curve generic-functional existence against the local source; its inputs now link to the independent height/normalized-root definitions.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.plane_basis",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/plane_basis.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.left_mem",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.right_mem",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.positive_cone"
+      ],
+      "review": "Read the local definitions and structure fields. Explained the original root-space domain, slope or length convention, subgroup construction, and sign data; worked examples are exposition.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.angular_extremes_simple",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/angular_extremes_simple.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeSimple_of_extreme"
+      ],
+      "review": "Read planeSimple_of_extreme. The positive partner sum places an extreme strictly between two distinct partners unless the inverted root is the extreme itself.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.induced_inversions",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/induced_inversions.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.inversion_iff"
+      ],
+      "review": "Read PlaneBasis.inversion_iff and the general word-record formula. The inverse signed action uses parity of the reduced inversion sequence, and occurrence gives both intrinsic reflection status and the length inequality.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.induced_reflections_length",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/induced_reflections_length.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.reflection_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.inversionEquiv",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.length_eq",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.leftInversion_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.bruhatStep_iff"
+      ],
+      "review": "Read reflection_iff, inversionEquiv, length_eq, leftInversion_iff, and bruhatStep_iff. The converse reflection argument uses inversion_iff at w=t; the bijection and both edge orientations are explicit.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.induced_signed",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/induced_signed.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.InducedSigned"
+      ],
+      "review": "Read the local definitions and structure fields. Explained the original root-space domain, slope or length convention, subgroup construction, and sign data; worked examples are exposition.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.induced_signed_action",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/induced_signed_action.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.simple_sign",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.InducedSigned.simple",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.InducedSigned.act"
+      ],
+      "review": "Read simple_sign and InducedSigned.simple/act. Checked representation, plane membership, all four sign cases, and the order of actions in word induction.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.induced_system",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/induced_system.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.matrix",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.system",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.simpleRoot",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.system_simple"
+      ],
+      "review": "Read the local definitions and structure fields. Explained the original root-space domain, slope or length convention, subgroup construction, and sign data; worked examples are exposition.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.minimal_plane_cosets",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/minimal_plane_cosets.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeCoset_exists_minimal",
+        "OAI.KLInvariance.TitsSpace.root_nonneg_of_coset_minimal",
+        "OAI.KLInvariance.TitsSpace.root_nonpos_coset_minimal_iff",
+        "OAI.KLInvariance.TitsSpace.root_inversion_coset_iff",
+        "OAI.KLInvariance.TitsSpace.leftInversion_coset_iff"
+      ],
+      "review": "Read least coset existence and all root-sign transport lemmas in Tits. Kept the least ambient-length hypothesis, preserved both signs, and applied it after the subgroup inverse action.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.plane_basis_existence",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/plane_basis_existence.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.exists_plane_extreme_inverted",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.exists_nonpositive_pair",
+        "OAI.KLInvariance.TitsSpace.noninverted_ref_of_pairing_nonpos",
+        "OAI.KLInvariance.TitsSpace.exists_opposite_plane_extreme",
+        "OAI.KLInvariance.TitsSpace.nonempty_planeBasis"
+      ],
+      "review": "Read finite-inversion extrema and the opposite-extreme construction. Recorded nonemptiness, both failed-global-extreme cases, the nonpositive-pairing root, and injectivity forcing opposite endpoints.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.plane_coset_graph",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/plane_coset_graph.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bruhatStep_coset_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_step_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_bruhat",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_length_eq",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.intervalToAmbient",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.intervalToAmbient_injective"
+      ],
+      "review": "Read coset_step_iff, coset_length_eq, coset_bruhat, and intervalToAmbient. The prose gives a monotone injection of relative intervals; uniqueness of the minimum is explicitly derived from the exported count/sign identities.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.plane_generation",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/plane_generation.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.positive_cone",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.reflection_inverts_endpoint",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.inverted_after_mul",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.planeLength_conj_drop",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.rootRef_mem_pairClosure",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.pairClosure_eq_planeSubgroup"
+      ],
+      "review": "Read reflection_inverts_endpoint, inverted_after_mul, planeLength_conj_drop and rootRef_mem_pairClosure. Expanded the second inversion, count drop by two, nonnegative induction, and both subgroup containments.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.plane_length",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/plane_length.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeLength",
+        "OAI.KLInvariance.TitsSpace.planeLength_nonneg"
+      ],
+      "review": "Read the local definitions and structure fields. Explained the original root-space domain, slope or length convention, subgroup construction, and sign data; worked examples are exposition.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.plane_simple",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/plane_simple.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneSimple",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.partner_val"
+      ],
+      "review": "Read the local definitions and structure fields. Explained the original root-space domain, slope or length convention, subgroup construction, and sign data; worked examples are exposition.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.plane_simple_steps",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/plane_simple_steps.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeLength_inv",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.planeWeight_eq_zero",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.planeLength_step",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.planeLength_step_down"
+      ],
+      "review": "Read inverse root action and planeLength_inv, plus both simple-step theorems. Explicit finite inversion bijection and zero half-root contribution precede the upward/downward substitutions. Inverse symmetry retains the source generality of an arbitrary root subspace; the simple-step statement specifies the root-plane hypothesis.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.two_involutions",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/two_involutions.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.pairMatrix",
+        "OAI.KLInvariance.Dihedral.wordProd_alt_even",
+        "OAI.KLInvariance.Dihedral.injective_of_simple_order",
+        "OAI.KLInvariance.Dihedral.pairLift",
+        "OAI.KLInvariance.Dihedral.pairLift_injective",
+        "OAI.KLInvariance.Dihedral.pairLift_range",
+        "OAI.KLInvariance.Dihedral.pairSystem",
+        "OAI.KLInvariance.Dihedral.pairSystem_simple"
+      ],
+      "review": "Read pairMatrix, pairLift, injective_of_simple_order, pairLift_range and pairSystem. Alternating even and odd reduced words prove injectivity in finite and infinite product-order cases.",
+      "pending": []
+    },
+    {
+      "node": "kl.geometry.plane_inversion_change",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/plane_inversion_change.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.rootPlane_grouped_erase",
+        "OAI.KLInvariance.TitsSpace.planeDefect_eq_relative_difference",
+        "OAI.KLInvariance.TitsSpace.planeWeight_relative_degree"
+      ],
+      "review": "Read planeDefect_eq_relative_difference and planeWeight_relative_degree. The distinguished root contributes one; the root-span criterion identifies the remaining sum with the plane defect.",
+      "pending": []
+    },
+    {
+      "node": "kl.geometry.plane_weight_sum",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/plane_weight_sum.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.negative_pair_not_both",
+        "OAI.KLInvariance.TitsSpace.rootChange_pair",
+        "OAI.KLInvariance.TitsSpace.planeDefect_eq_double_weight",
+        "OAI.KLInvariance.TitsSpace.sum_planeWeight"
+      ],
+      "review": "Rechecked partner-orbit sign changes, finiteness, the distinguished root, and the plane-by-plane doubling identity now used by induced-system construction.",
+      "pending": []
+    },
+    {
+      "node": "kl.geometry.plane_weights",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/plane_weights.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.partner",
+        "OAI.KLInvariance.TitsSpace.goodPairRoot",
+        "OAI.KLInvariance.TitsSpace.extraRoot",
+        "OAI.KLInvariance.TitsSpace.halfRoot",
+        "OAI.KLInvariance.TitsSpace.planeDefect",
+        "OAI.KLInvariance.TitsSpace.planeWeight",
+        "OAI.KLInvariance.TitsSpace.inversionVector",
+        "OAI.KLInvariance.TitsSpace.rootChange"
+      ],
+      "review": "Read the local definitions and structure fields. Explained the original root-space domain, slope or length convention, subgroup construction, and sign data; worked examples are exposition.",
+      "pending": []
+    },
+    {
+      "node": "kl.notes.reflection_order",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/reflection_order.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.RatioOrder",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.slope",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.denominator_pos",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.Adapted",
+        "OAI.KLInvariance.TitsSpace.geometricFunctional",
+        "OAI.KLInvariance.TitsSpace.geometricSlope",
+        "OAI.KLInvariance.TitsSpace.geometricSlope_injective"
+      ],
+      "review": "Read the local definitions and structure fields. Explained the original root-space domain, slope or length convention, subgroup construction, and sign data; worked examples are exposition.",
+      "pending": []
+    },
+    {
+      "node": "kl.notes.relative_dihedral_intervals",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/relative_dihedral_intervals.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.system",
+        "OAI.KLInvariance.TitsSpace.planeCoset_exists_minimal",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.intervalToAmbient",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_length_eq"
+      ],
+      "review": "Read the local definitions and structure fields. Explained the original root-space domain, slope or length convention, subgroup construction, and sign data; worked examples are exposition.",
+      "pending": []
+    },
+    {
+      "node": "kl.order.root_slopes",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/root_slopes.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.height",
+        "OAI.KLInvariance.TitsSpace.PositiveRoot.height_pos",
+        "OAI.KLInvariance.TitsSpace.normalizedRoot",
+        "OAI.KLInvariance.TitsSpace.normalizedRoot_injective"
+      ],
+      "review": "Read the local definitions and structure fields. Explained the original root-space domain, slope or length convention, subgroup construction, and sign data; worked examples are exposition.",
+      "pending": []
+    },
+    {
+      "node": "kl.order.slope_cone",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/slope_cone.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.functionalRatio_between",
+        "OAI.KLInvariance.TitsSpace.positive_combination_of_slope_between",
+        "OAI.KLInvariance.TitsSpace.noninverted_of_positive_combination"
+      ],
+      "review": "Read positive_combination_of_slope_between, functionalRatio_between, and convex noninversion. Solved the two height/slope equations explicitly and retained strict positivity of both coefficients.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.common_reflection_plane",
+      "file": "docs/knowledge/nodes/kl.realizations/common_reflection_plane.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionPlane.range_reflection_product_sub_id",
+        "OAI.KLInvariance.ReflectionPlane.plane_eq_of_reflection_product_eq"
+      ],
+      "review": "Read both ReflectionPlane range/equal-product results. Independent roots give independent normals by nondegeneracy; equality is recovered in the extension and pulled back through the injective original embedding.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.plane_reflection_membership",
+      "file": "docs/knowledge/nodes/kl.realizations/plane_reflection_membership.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeSubgroup_le_moving",
+        "OAI.KLInvariance.TitsSpace.Represents.mem_of_moving",
+        "OAI.KLInvariance.TitsSpace.Represents.planeSubgroup_mem_iff",
+        "OAI.KLInvariance.TitsSpace.planeSubgroup_preserves",
+        "OAI.KLInvariance.TitsSpace.reflection_between_coset_mem"
+      ],
+      "review": "Read planeSubgroup_le_moving, mem_of_moving, planeSubgroup_mem_iff, preservation, and coset-label membership. The displacement subgroup uses the original action; applying it to the represented root gives -2a.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.positive_root_action",
+      "file": "docs/knowledge/nodes/kl.realizations/positive_root_action.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.positiveAction",
+        "OAI.KLInvariance.TitsSpace.positiveAction_represents",
+        "OAI.KLInvariance.TitsSpace.positiveAction_eq_of_nonneg",
+        "OAI.KLInvariance.TitsSpace.positiveAction_eq_of_nonpos",
+        "OAI.KLInvariance.TitsSpace.rootReflection_positiveAction",
+        "OAI.KLInvariance.TitsSpace.positiveAction_mul",
+        "OAI.KLInvariance.TitsSpace.positiveActionEquiv"
+      ],
+      "review": "Read the local definitions and structure fields. Explained the original root-space domain, slope or length convention, subgroup construction, and sign data; worked examples are exposition.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.reflection_plane",
+      "file": "docs/knowledge/nodes/kl.realizations/reflection_plane.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionPlane.range_preReflection_product_sub_id"
+      ],
+      "review": "Rechecked the existing coefficient formula and independent-functional surjectivity proof; removed precautionary closing prose.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.root_planes",
+      "file": "docs/knowledge/nodes/kl.realizations/root_planes.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.rootPlane",
+        "OAI.KLInvariance.TitsSpace.positiveRoots_independent",
+        "OAI.KLInvariance.TitsSpace.rootPlane_finrank",
+        "OAI.KLInvariance.TitsSpace.rootPlane_eq_iff"
+      ],
+      "review": "Read the local definitions and structure fields. Explained the original root-space domain, slope or length convention, subgroup construction, and sign data; worked examples are exposition.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.root_subgroups",
+      "file": "docs/knowledge/nodes/kl.realizations/root_subgroups.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.movingSubgroup",
+        "OAI.KLInvariance.TitsSpace.planeSubgroup"
+      ],
+      "review": "Read the local definitions and structure fields. Explained the original root-space domain, slope or length convention, subgroup construction, and sign data; worked examples are exposition.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -1389,15 +1722,26 @@
         "kl.realization.alternating_root_formula",
         "kl.realization.simple_root_sign",
         "kl.realization.signed_root_representation",
-        "kl.realization.signed_root_action"
+        "kl.realization.signed_root_action",
+        "kl.realization.positive_root_action"
       ],
       "review_scope": "Real roots, positivity, alternating-root coordinates, strong sign induction, represented reflections, signed roots, inversion criterion, and the finite inversion count."
     },
     {
       "code": "R6",
       "title": "Dual geometry and root planes",
-      "status": "in_progress",
-      "completion_evidence": []
+      "status": "exposition_reviewed",
+      "completion_evidence": [
+        "kl.realization.common_reflection_plane",
+        "kl.realization.cotangent_action",
+        "kl.realization.dominant_functional",
+        "kl.realization.dominant_signs",
+        "kl.realization.plane_reflection_membership",
+        "kl.realization.root_planes",
+        "kl.realization.root_subgroups"
+      ],
+      "pending": [],
+      "review": "The earlier dominant-functional and cotangent entries are now joined by explicit root spans, displacement/generated subgroups, reflection membership, and the common-plane argument in the nondegenerate extension."
     },
     {
       "code": "H1",
@@ -1673,14 +2017,39 @@
     {
       "code": "O1",
       "title": "Geometric orders on roots",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.order.root_slopes",
+        "kl.order.slope_cone"
+      ],
+      "pending": [
+        "Expand the adapted-order existence, chamber moves, rotations, and generic-pencil/root-plane-block comparison arguments."
+      ]
     },
     {
       "code": "O2",
       "title": "Dihedral systems inside a root plane",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "exposition_reviewed",
+      "completion_evidence": [
+        "kl.detail.plane_basis",
+        "kl.dihedral.angular_extremes_simple",
+        "kl.dihedral.induced_inversions",
+        "kl.dihedral.induced_reflections_length",
+        "kl.dihedral.induced_signed",
+        "kl.dihedral.induced_signed_action",
+        "kl.dihedral.induced_system",
+        "kl.dihedral.minimal_plane_cosets",
+        "kl.dihedral.plane_basis_existence",
+        "kl.dihedral.plane_coset_graph",
+        "kl.dihedral.plane_generation",
+        "kl.dihedral.plane_length",
+        "kl.dihedral.plane_simple",
+        "kl.dihedral.plane_simple_steps",
+        "kl.dihedral.two_involutions",
+        "kl.notes.relative_dihedral_intervals"
+      ],
+      "pending": [],
+      "review": "Reviewed all PlaneBasis and InducedSigned fields, endpoint existence, the inversion-count generation argument, the two-involution Coxeter construction, signs, intrinsic reflections/length, least coset representatives, and relative interval maps."
     },
     {
       "code": "O3",
@@ -1691,8 +2060,14 @@
     {
       "code": "O4",
       "title": "Inversion changes and geometric plane weights",
-      "status": "in_progress",
-      "completion_evidence": []
+      "status": "exposition_reviewed",
+      "completion_evidence": [
+        "kl.geometry.plane_inversion_change",
+        "kl.geometry.plane_weight_sum",
+        "kl.geometry.plane_weights"
+      ],
+      "pending": [],
+      "review": "Reviewed the inversion vector/change, partner pairs, half-roots, plane defects, nonnegative finite weights, the total excess-length identity, and its relative plane-count version."
     },
     {
       "code": "O5",
@@ -1798,10 +2173,10 @@
     }
   ],
   "next_steps": [
-    "Complete root-plane/moving-subgroup definitions and the remaining PlaneBasis.InducedSigned structure.",
-    "Expand normalized boundary models, ModelSum, decomposition and multiplicities, and finish boundary existence/uniqueness.",
+    "Expand normalized boundary models, ModelSum, decomposition and multiplicity polynomials; finish boundary existence/uniqueness and restrictions.",
     "Complete standard-parabolic inclusion and finite-support transport; finish word wall maps, pair kernels, and character recursions.",
-    "Review the remaining Hecke, localization, path, and simultaneous-comparison arguments against their local source bodies.",
+    "Expand adapted-order/chamber changes, dihedral interval transport, and the path-polynomial proof.",
+    "Review the remaining Hecke, localization, and simultaneous-comparison arguments against their local source bodies.",
     "Complete the full source-to-KB coverage, linking, document, and public-deployment audit."
   ],
   "topic_migration": {
@@ -2040,7 +2415,29 @@
       "kl.sheaves.canonical_adjoint_comparison": "S8",
       "kl.word.pairing_degree": "W3",
       "kl.sheaves.boundary_coefficient_transport": "S4",
-      "kl.sheaves.pairing_transport": "S8"
+      "kl.sheaves.pairing_transport": "S8",
+      "kl.realization.root_planes": "R6",
+      "kl.realization.root_subgroups": "R6",
+      "kl.realization.plane_reflection_membership": "R6",
+      "kl.realization.common_reflection_plane": "R6",
+      "kl.order.root_slopes": "O1",
+      "kl.order.slope_cone": "O1",
+      "kl.dihedral.plane_simple": "O2",
+      "kl.dihedral.angular_extremes_simple": "O2",
+      "kl.dihedral.plane_basis_existence": "O2",
+      "kl.dihedral.plane_length": "O2",
+      "kl.geometry.plane_inversion_change": "O4",
+      "kl.realization.positive_root_action": "R5",
+      "kl.dihedral.plane_simple_steps": "O2",
+      "kl.dihedral.plane_generation": "O2",
+      "kl.dihedral.two_involutions": "O2",
+      "kl.dihedral.induced_system": "O2",
+      "kl.dihedral.induced_signed": "O2",
+      "kl.dihedral.induced_signed_action": "O2",
+      "kl.dihedral.induced_inversions": "O2",
+      "kl.dihedral.induced_reflections_length": "O2",
+      "kl.dihedral.minimal_plane_cosets": "O2",
+      "kl.dihedral.plane_coset_graph": "O2"
     },
     "moved_nodes": [
       {
@@ -2874,7 +3271,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 223
+    "current_node_count": 245
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -2884,7 +3281,8 @@
     "Applied direct mathematical titles across all rendered pages and recorded the authoring requirement.",
     "Expanded sheaf structures and the complete integral support-to-costalk duality chain, with a linked one-edge example and explicit Lean/notes correspondence.",
     "Expanded homogeneous inverse duality, scalar degree cancellation, costalk Hilbert reciprocity, scaled word coordinates, integral adjoint descent, and image-section duality.",
-    "Completed the detailed minimal-cover/top-detection and adjoint-boundary recognition chain, the word pairing degree, and transport to the chosen polynomial-coordinate boundary sheaf."
+    "Completed the detailed minimal-cover/top-detection and adjoint-boundary recognition chain, the word pairing degree, and transport to the chosen polynomial-coordinate boundary sheaf.",
+    "Expanded the complete root-plane-to-induced-dihedral construction and least-coset graph comparison, mapped InducedSigned, and refined the topic-stage relationship map to place plane inversion changes before the induced system."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -2954,24 +3352,22 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-19T04:00:10.531355+00:00",
+    "created_at": "2026-10-19T04:38:46.172973+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 223,
-    "html_pages_checked": 483,
-    "generated_definition_links_checked": 2477,
+    "node_count": 245,
+    "html_pages_checked": 505,
+    "generated_definition_links_checked": 2947,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "Fields of declarations explicitly linked from current nodes; full structure inventory recorded separately."
+    "field_audit_scope": "Mapped declarations; the fresh inventory separately confirms mappings for all 35 local structures."
   },
   "structure_coverage_scan": {
     "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
     "structures_in_local_source": 35,
-    "structures_with_direct_node_mapping": 34,
-    "remaining_structures": [
-      "OAI.KLInvariance.TitsSpace.PlaneBasis.InducedSigned"
-    ],
-    "review": "Read and explained the newly mapped free-sheaf, partial morphism/isomorphism, endomorphism, symmetric pairing, and free-sheaf section-duality structures. Direct mappings support navigation and field review; complete exposition of all definitions and theorems remains in progress."
+    "structures_with_direct_node_mapping": 35,
+    "remaining_structures": [],
+    "review": "All 35 local structures now have direct KB mappings. The final previously unmapped structure, PlaneBasis.InducedSigned, has all three fields explained and linked to its action/inversion proofs. This structural mapping is separate from completion of the remaining theorem and topic exposition."
   },
   "tooling_repairs": [
     {
@@ -2989,6 +3385,20 @@
         "kl.sheaves.boundary_sheaf"
       ],
       "review": "Used the general connected graded Noetherian-domain basis theorem; distinguished basis degrees from evaluation-index group weights; preserved the BoundarySheaf structure with a distinguished normalized vertex, with a greatest-vertex hypothesis added where the recognition theorems require it."
+    },
+    {
+      "entries": [
+        "kl.realization.root_subgroups",
+        "kl.dihedral.plane_length",
+        "kl.notes.relative_dihedral_intervals"
+      ],
+      "review": "The displacement subgroup uses the original geometric action. The finite plane inversion count is defined before the induced Coxeter system and is later proved to equal intrinsic length. Relative intervals map monotonically and injectively into ambient intervals."
     }
-  ]
+  ],
+  "relationship_map_revision": {
+    "stage_count": 37,
+    "edge_count": 89,
+    "route": "Geometric root orders → plane inversion changes → induced dihedral systems and cosets.",
+    "evidence": "PlaneSimple.planeLength_step and planeLength_conj_drop specialize the geometric plane-weight formula in the source."
+  }
 }

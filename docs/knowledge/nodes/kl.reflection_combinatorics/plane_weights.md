@@ -10,6 +10,8 @@ uses:
 - kl.detail.positive_roots
 - kl.detail.root_inversions
 - kl.notes.reflection_order
+- kl.realization.root_planes
+- kl.realization.positive_root_action
 verification:
   definition: accepted
   proof: not_applicable
@@ -33,6 +35,8 @@ lean:
   - OAI.KLInvariance.TitsSpace.halfRoot
   - OAI.KLInvariance.TitsSpace.planeDefect
   - OAI.KLInvariance.TitsSpace.planeWeight
+  - OAI.KLInvariance.TitsSpace.inversionVector
+  - OAI.KLInvariance.TitsSpace.rootChange
 source:
   spans:
   - artifact: openai-kl-source
@@ -59,6 +63,14 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.ReflectionSchedules:592
     format: lean-location
     note: OAI.KLInvariance.TitsSpace.planeWeight
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.ReflectionSchedules:301
+    format: lean-location
+    note: OAI.KLInvariance.TitsSpace.inversionVector
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.ReflectionSchedules:333
+    format: lean-location
+    note: OAI.KLInvariance.TitsSpace.rootChange
 ---
 
 # Root partners and geometric plane weights
@@ -70,7 +82,11 @@ For \(\beta\in\Phi^+\), define the inversion indicator
 n_x(\beta)=
 \begin{cases}1,&x^{-1}\beta\text{ is negative},\\0,&x^{-1}\beta\text{ is positive}.\end{cases}
 \]
-It has finite support, of size \(\ell(x)\).
+It has finite support, of size \(\ell(x)\). As an integer-valued finitely supported function it is the inversion vector. For two group elements \(x,y\), the inversion-change vector is
+\[
+\Delta_{x,y}(\beta)=n_y(\beta)-n_x(\beta).
+\]
+Its support lies in the union of the two finite inversion sets.
 
 ## The partner of a positive root
 
@@ -154,3 +170,7 @@ The local root-sign and plane-weight calculations are listed below.
 `OAI.KLInvariance.TitsSpace.planeDefect`: [ReflectionSchedules.lean:340](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L340).
 
 `OAI.KLInvariance.TitsSpace.planeWeight`: [ReflectionSchedules.lean:592](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L592).
+
+`OAI.KLInvariance.TitsSpace.inversionVector`: [ReflectionSchedules.lean:301](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L301).
+
+`OAI.KLInvariance.TitsSpace.rootChange`: [ReflectionSchedules.lean:333](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L333).

@@ -287,3 +287,43 @@ comparisons:
     recognition, and canonical-comparison maps. The trace lowers degree once per word
     letter. Coefficient transport and a boundary-recognition isomorphism deliver the
     pairing on the chosen polynomial-coordinate sheaf.
+- id: plane-subgroup-construction
+  kind: Same plane subgroup, different construction
+  nodes:
+  - kl.dihedral.plane_basis_existence
+  - kl.dihedral.plane_generation
+  - kl.dihedral.induced_system
+  paper_labels:
+  - dih:plane
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.nonempty_planeBasis
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.pairClosure_eq_planeSubgroup
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.system
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.inversion_iff
+  paper: The plane lemma invokes the reflection-subgroup theorem to obtain a canonical
+    Coxeter system, then uses positivity in the plane to show that its rank is two.
+  lean: Finite ambient inversion sets produce angular endpoints. Their plane-simple
+    sign criterion and the plane inversion count prove generation by two endpoint
+    reflections through a count-decreasing conjugation. A two-involution presentation
+    constructs the Coxeter system; the induced signed relation then identifies its
+    inversions.
+  consequence: The Blueprint follows the endpoint-existence, generation, presentation,
+    and signed-inversion proofs in that order.
+- id: plane-coset-identification
+  kind: The graph and count statements are separated in Lean
+  nodes:
+  - kl.dihedral.plane_coset_graph
+  paper_labels:
+  - dih:plane
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.planeCoset_exists_minimal
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.coset_step_iff
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.coset_length_eq
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.coset_bruhat
+  paper: One lemma states the unique least ambient-length representative, the coset
+    reflection-graph identification, the relative inversion count, and the implication
+    from relative to ambient order.
+  lean: The source first proves existence of a least representative and sign preservation,
+    then exports the graph, count, and path statements under that least-length hypothesis.
+  consequence: The proof below uses those exported statements and derives uniqueness
+    explicitly from the plane count and the length-zero characterization of the identity.

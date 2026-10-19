@@ -281,36 +281,60 @@
       ]
     },
     {
-      "id": "og",
-      "title": "Root orders and dihedral geometry",
+      "id": "oo",
+      "title": "Geometric root orders",
       "topics": [
-        "O1",
-        "O2",
-        "O3"
+        "O1"
       ],
       "requires": [
         "r",
         "c"
       ],
-      "output": "Ratio orders, induced dihedral systems, and relative interval combinatorics.",
+      "output": "Positive heights, normalized roots, generic slope orders, and root partners used to choose half-pairs.",
       "lean_declarations": [
-        "OAI.KLInvariance.TitsSpace.PlaneBasis",
-        "OAI.KLInvariance.TitsSpace.RatioOrder"
+        "OAI.KLInvariance.TitsSpace.exists_geometric_functional",
+        "OAI.KLInvariance.TitsSpace.geometricSlope",
+        "OAI.KLInvariance.TitsSpace.partner"
       ]
     },
     {
       "id": "ow",
-      "title": "Geometric plane weights",
+      "title": "Plane inversion changes",
       "topics": [
+        "O2",
         "O4"
       ],
       "requires": [
-        "og",
+        "oo",
         "r"
       ],
-      "output": "Finite nonnegative plane weights and their length-sum identity.",
+      "output": "Finite ambient plane inversion counts, nonnegative geometric plane weights, and their relative-difference formula.",
       "lean_declarations": [
-        "OAI.KLInvariance.TitsSpace.sum_planeWeight"
+        "OAI.KLInvariance.TitsSpace.planeLength",
+        "OAI.KLInvariance.TitsSpace.sum_planeWeight",
+        "OAI.KLInvariance.TitsSpace.planeWeight_relative_degree"
+      ]
+    },
+    {
+      "id": "og",
+      "title": "Induced dihedral systems and cosets",
+      "topics": [
+        "O2",
+        "O3"
+      ],
+      "requires": [
+        "oo",
+        "ow",
+        "r",
+        "c"
+      ],
+      "output": "Angular endpoints, generation by a decreasing plane count, the induced Coxeter system, signed inversions, and relative coset graphs.",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.nonempty_planeBasis",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.pairClosure_eq_planeSubgroup",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.system",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.inversion_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_step_iff"
       ]
     },
     {
@@ -907,40 +931,41 @@
     "structures": 35,
     "inductives": 3,
     "topic_count": 61,
-    "stage_count": 36,
-    "edge_count": 85,
+    "stage_count": 37,
+    "edge_count": 89,
     "topological_order": [
-      "a",
       "c",
-      "h",
+      "a",
       "r",
+      "h",
       "s",
-      "og",
-      "p",
       "ra",
-      "cf",
-      "l0",
-      "os",
-      "ow",
+      "oo",
+      "p",
       "sb",
       "w",
-      "lf",
-      "lm",
-      "oe",
-      "op",
+      "ow",
+      "cf",
       "sd",
       "we",
-      "ot",
+      "og",
       "wc",
       "ws",
-      "li",
-      "om",
+      "oe",
+      "os",
+      "l0",
       "sp",
-      "lg",
-      "s10",
+      "op",
+      "ot",
+      "lm",
+      "lf",
       "sc",
-      "i1",
+      "s10",
+      "om",
+      "li",
       "i3",
+      "lg",
+      "i1",
       "i2",
       "i4",
       "i5",
@@ -948,5 +973,17 @@
       "i7"
     ]
   },
-  "approved": "2026-10-18"
+  "approved": "2026-10-18",
+  "implementation_refinements": [
+    {
+      "date": "2026-10-19",
+      "scope": "Root-plane construction",
+      "change": "Separated geometric root orders from the induced dihedral system. Plane-weight relative differences are an input to the simple-step and conjugation-descent arguments constructing that system.",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.planeLength_step",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.planeLength_conj_drop",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.rootRef_mem_pairClosure"
+      ]
+    }
+  ]
 }

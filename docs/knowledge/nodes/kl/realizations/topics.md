@@ -26,7 +26,7 @@ The simple roots remain independent, while their normals satisfy \(\nu_t=-\nu_s\
 
 The later moving-plane calculation needs independent normal functionals: it solves for prescribed values of two normals and uses those values to recover the span of the two roots as the image of a reflection product minus the identity. Enlarging the ambient space supplies the required independent normals while retaining the original root vectors and their action.
 
-## Pair the radical with its dual
+## The radical paired with its dual
 
 Let \(K=\ker B^\flat\), and choose a projection \(p:V_0\to K\) fixing \(K\). On \(E=V_0\oplus K^*\), put
 \[
@@ -43,7 +43,7 @@ For the infinite dihedral example, choose \(p(x\alpha_s+y\alpha_t)=(x+y)k/2\) an
 \]
 Its determinant is \(-8\), and the two simple normals have independent rows \((2,-2,1)\) and \((-2,2,1)\).
 
-## Extend the action and measure moving spaces
+## The extended action and moving spaces
 
 The extended action uses the same reflection formula with the extended form and embedded roots. For a simple generator it restricts to the original action because the original form is preserved on \(V_0\oplus0\). Induction on a word proves the restriction identity for every group element.
 
@@ -61,6 +61,26 @@ Thus equal products of two reflections identify the same root plane. This is the
 Real roots are translates of the simple roots under the geometric action. A positive root has nonnegative simple-root coordinates. The root-sign theorem proves that every real root has one sign, and each reflection has a unique positive representing root.
 
 The positive roots sent negative by the inverse action of \(w\) form its root-inversion set. Their number is \(\ell(w)\). Accordingly a root-sign change detects whether left multiplication by its reflection increases or decreases length. The geometric plane-weight identity later groups these inversion changes plane by plane.
+
+## Root subspaces and their reflection subgroups
+
+For positive roots \(a,b\), the root span is \(P(a,b)=\operatorname{span}\{a,b\}\). Distinct positive roots are independent: a positive proportionality factor must equal one by the root norm \(2\). Thus distinct roots define a two-dimensional plane, even when its restricted Tits form is degenerate.
+
+For a subspace \(P\) of the original root space, define
+\[
+G_P=\{w:\rho_0(w)v-v\in P\text{ for every }v\},
+\qquad
+D_P=\langle r_a:a\text{ is a root in }P\rangle.
+\]
+The reflection formula puts every generator of \(D_P\) in \(G_P\), and the displacement condition is closed under products and inverses. Hence \(D_P\subseteq G_P\).
+
+If a reflection represented by \(a\) belongs to \(G_P\), applying its displacement condition to \(a\) gives \(-2a\in P\), hence \(a\in P\). This proves the exact membership criterion
+\[
+r_a\in D_P\quad\Longleftrightarrow\quad a\in P.
+\]
+The same displacement condition proves that \(D_P\) preserves \(P\).
+
+These facts prepare the induced dihedral construction. The reflection-order topic finds two angular endpoint roots in each plane and proves their reflections generate all of \(D_P\). The common-plane theorem uses the extended nondegenerate form to recover this plane from a two-reflection product, which links two-edge paths with the same endpoints.
 
 ## The outputs used elsewhere
 
@@ -122,3 +142,11 @@ The same sign theorem makes every real root positive or negative. A simple refle
 - [[node:kl.realization.dominant_signs]]
 - [[node:kl.realization.signed_root_representation]]
 - [[node:kl.realization.signed_root_action]]
+- [[node:kl.realization.positive_root_action]]
+
+## Root planes and subgroup membership
+
+- [[node:kl.realization.root_planes]]
+- [[node:kl.realization.root_subgroups]]
+- [[node:kl.realization.plane_reflection_membership]]
+- [[node:kl.realization.common_reflection_plane]]

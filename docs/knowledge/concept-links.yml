@@ -139,13 +139,19 @@ concepts:
   - reflection orders
   - reflection order
   - geometric reflection order
+  - geometric slope
+  - geometric slopes
+  - ratio order
+  - ratio-order datum
+  - adapted order
 - node: kl.notes.relative_dihedral_intervals
   terms:
   - relative Bruhat order
   - relative dihedral intervals
   - relative dihedral interval
-  - root-plane subgroup
-  - root-plane subgroups
+  - relative length
+  - relative interval
+  - relative intervals
 - node: kl.notes.dihedral_models
   terms:
   - dihedral models
@@ -358,6 +364,9 @@ concepts:
   terms:
   - plane basis
   - angular boundary roots
+  - angular endpoint
+  - angular endpoints
+  - angular boundary root
 - node: kl.detail.word_characters
   terms:
   - word-stalk character
@@ -473,6 +482,9 @@ concepts:
   - root partner
   - root partners
   - plane defect
+  - inversion vector
+  - inversion indicator
+  - inversion-change vector
 - node: kl.coxeter.word_data
   terms:
   - reduced word
@@ -540,16 +552,24 @@ concepts:
   - signed representing pair
   - signed root
 - node: kl.coxeter.parabolic_subgroups
-  terms: &id001
+  terms:
   - minimal coset representative
   - minimal coset representatives
   - minimal representative
   - minimal representatives
+  - least coset representative
+  - least coset representatives
   topics:
   - kl.coxeter
   - kl.realizations
 - node: kl.notes.relative_dihedral_intervals
-  terms: *id001
+  terms:
+  - minimal coset representative
+  - minimal coset representatives
+  - minimal representative
+  - minimal representatives
+  - least coset representative
+  - least coset representatives
   topics:
   - kl.reflection_combinatorics
   - kl.localization
@@ -590,3 +610,47 @@ concepts:
   terms:
   - image sheaf
   - image sheaves
+- node: kl.realization.root_planes
+  terms:
+  - root plane
+  - root planes
+  - root-plane
+- node: kl.realization.root_subgroups
+  terms:
+  - root-plane subgroup
+  - root-plane subgroups
+  - plane subgroup
+  - plane subgroups
+  - displacement subgroup
+  - moving subgroup
+  - reflection-generated subgroup
+- node: kl.realization.positive_root_action
+  terms:
+  - positive-root action
+  - positive root action
+- node: kl.order.root_slopes
+  terms:
+  - height functional
+  - root height
+  - normalized root
+  - normalized roots
+- node: kl.dihedral.plane_simple
+  terms:
+  - plane-simple
+  - plane simplicity
+  - plane-simple root
+  - plane-simple roots
+- node: kl.dihedral.plane_length
+  terms:
+  - plane inversion count
+  - ambient plane inversion count
+- node: kl.dihedral.induced_system
+  terms:
+  - induced Coxeter system
+  - induced dihedral system
+  - intrinsic Coxeter length
+- node: kl.dihedral.induced_signed
+  terms:
+  - induced signed relation
+  - induced signed datum
+  - induced signed data

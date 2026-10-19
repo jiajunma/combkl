@@ -122,6 +122,7 @@
       "kl.notes.extended_realization",
       "kl.notes.reflection_faithfulness",
       "kl.realization.alternating_root_formula",
+      "kl.realization.common_reflection_plane",
       "kl.realization.cotangent_action",
       "kl.realization.dominant_functional",
       "kl.realization.dominant_signs",
@@ -133,9 +134,13 @@
       "kl.realization.linear_reflection",
       "kl.realization.moving_spaces",
       "kl.realization.orthogonal_rank_one",
+      "kl.realization.plane_reflection_membership",
+      "kl.realization.positive_root_action",
       "kl.realization.radical_extension",
       "kl.realization.rank_two_coefficients",
       "kl.realization.reflection_plane",
+      "kl.realization.root_planes",
+      "kl.realization.root_subgroups",
       "kl.realization.signed_root_action",
       "kl.realization.signed_root_representation",
       "kl.realization.simple_root_sign",
@@ -149,12 +154,29 @@
       "kl.detail.plane_basis",
       "kl.detail.transfer_properties",
       "kl.detail.transported_schedule",
+      "kl.dihedral.angular_extremes_simple",
+      "kl.dihedral.induced_inversions",
+      "kl.dihedral.induced_reflections_length",
+      "kl.dihedral.induced_signed",
+      "kl.dihedral.induced_signed_action",
+      "kl.dihedral.induced_system",
+      "kl.dihedral.minimal_plane_cosets",
+      "kl.dihedral.plane_basis_existence",
+      "kl.dihedral.plane_coset_graph",
+      "kl.dihedral.plane_generation",
+      "kl.dihedral.plane_length",
+      "kl.dihedral.plane_simple",
+      "kl.dihedral.plane_simple_steps",
+      "kl.dihedral.two_involutions",
+      "kl.geometry.plane_inversion_change",
       "kl.geometry.plane_weight_sum",
       "kl.geometry.plane_weights",
       "kl.notes.path_product",
       "kl.notes.reflection_order",
       "kl.notes.relative_dihedral_intervals",
       "kl.notes.relative_dihedral_transport",
+      "kl.order.root_slopes",
+      "kl.order.slope_cone",
       "kl.paths.dyer_paths",
       "kl.paths.graph_invariance",
       "kl.paths.later_count"
@@ -1331,7 +1353,10 @@
       "id": "kl.detail.plane_basis",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
-        "OAI.KLInvariance.TitsSpace.PlaneBasis"
+        "OAI.KLInvariance.TitsSpace.PlaneBasis",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.left_mem",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.right_mem",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.positive_cone"
       ],
       "paper_locations": []
     },
@@ -1685,6 +1710,157 @@
       "paper_locations": []
     },
     {
+      "id": "kl.dihedral.angular_extremes_simple",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeSimple_of_extreme"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.induced_inversions",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.inversion_iff"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.induced_reflections_length",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.reflection_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.inversionEquiv",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.length_eq",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.leftInversion_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.bruhatStep_iff"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.induced_signed",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.InducedSigned"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.induced_signed_action",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.simple_sign",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.InducedSigned.simple",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.InducedSigned.act"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.induced_system",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.matrix",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.system",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.simpleRoot",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.system_simple"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.minimal_plane_cosets",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeCoset_exists_minimal",
+        "OAI.KLInvariance.TitsSpace.root_nonneg_of_coset_minimal",
+        "OAI.KLInvariance.TitsSpace.root_nonpos_coset_minimal_iff",
+        "OAI.KLInvariance.TitsSpace.root_inversion_coset_iff",
+        "OAI.KLInvariance.TitsSpace.leftInversion_coset_iff"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.plane_basis_existence",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.exists_plane_extreme_inverted",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.exists_nonpositive_pair",
+        "OAI.KLInvariance.TitsSpace.noninverted_ref_of_pairing_nonpos",
+        "OAI.KLInvariance.TitsSpace.exists_opposite_plane_extreme",
+        "OAI.KLInvariance.TitsSpace.nonempty_planeBasis"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.plane_coset_graph",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bruhatStep_coset_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_step_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_bruhat",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_length_eq",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.intervalToAmbient",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.intervalToAmbient_injective"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.plane_generation",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.positive_cone",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.reflection_inverts_endpoint",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.inverted_after_mul",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.planeLength_conj_drop",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.rootRef_mem_pairClosure",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.pairClosure_eq_planeSubgroup"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.plane_length",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeLength",
+        "OAI.KLInvariance.TitsSpace.planeLength_nonneg"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.plane_simple",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneSimple",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.partner_val"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.plane_simple_steps",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeLength_inv",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.planeWeight_eq_zero",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.planeLength_step",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.planeLength_step_down"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.two_involutions",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.pairMatrix",
+        "OAI.KLInvariance.Dihedral.wordProd_alt_even",
+        "OAI.KLInvariance.Dihedral.injective_of_simple_order",
+        "OAI.KLInvariance.Dihedral.pairLift",
+        "OAI.KLInvariance.Dihedral.pairLift_injective",
+        "OAI.KLInvariance.Dihedral.pairLift_range",
+        "OAI.KLInvariance.Dihedral.pairSystem",
+        "OAI.KLInvariance.Dihedral.pairSystem_simple"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.duality.actual_character_reciprocity",
       "chapter": "kl.sheaves",
       "lean_declarations": [
@@ -1854,6 +2030,16 @@
       ]
     },
     {
+      "id": "kl.geometry.plane_inversion_change",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.rootPlane_grouped_erase",
+        "OAI.KLInvariance.TitsSpace.planeDefect_eq_relative_difference",
+        "OAI.KLInvariance.TitsSpace.planeWeight_relative_degree"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.geometry.plane_weight_sum",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
@@ -1873,7 +2059,9 @@
         "OAI.KLInvariance.TitsSpace.extraRoot",
         "OAI.KLInvariance.TitsSpace.halfRoot",
         "OAI.KLInvariance.TitsSpace.planeDefect",
-        "OAI.KLInvariance.TitsSpace.planeWeight"
+        "OAI.KLInvariance.TitsSpace.planeWeight",
+        "OAI.KLInvariance.TitsSpace.inversionVector",
+        "OAI.KLInvariance.TitsSpace.rootChange"
       ],
       "paper_locations": []
     },
@@ -2126,21 +2314,26 @@
       "id": "kl.notes.reflection_order",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
-        "OAI.KLInvariance.TitsSpace.RatioOrder"
+        "OAI.KLInvariance.TitsSpace.RatioOrder",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.slope",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.denominator_pos",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.Adapted",
+        "OAI.KLInvariance.TitsSpace.geometricFunctional",
+        "OAI.KLInvariance.TitsSpace.geometricSlope",
+        "OAI.KLInvariance.TitsSpace.geometricSlope_injective"
       ],
-      "paper_locations": [
-        "2. Real realizations and moment-graph sheaves; bg:paths"
-      ]
+      "paper_locations": []
     },
     {
       "id": "kl.notes.relative_dihedral_intervals",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
-        "OAI.KLInvariance.TitsSpace.planeSubgroup"
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.system",
+        "OAI.KLInvariance.TitsSpace.planeCoset_exists_minimal",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.intervalToAmbient",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_length_eq"
       ],
-      "paper_locations": [
-        "3. Dihedral intervals and transported reflection orders; dih:plane"
-      ]
+      "paper_locations": []
     },
     {
       "id": "kl.notes.relative_dihedral_transport",
@@ -2213,6 +2406,27 @@
       "paper_locations": []
     },
     {
+      "id": "kl.order.root_slopes",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.height",
+        "OAI.KLInvariance.TitsSpace.PositiveRoot.height_pos",
+        "OAI.KLInvariance.TitsSpace.normalizedRoot",
+        "OAI.KLInvariance.TitsSpace.normalizedRoot_injective"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.order.slope_cone",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.functionalRatio_between",
+        "OAI.KLInvariance.TitsSpace.positive_combination_of_slope_between",
+        "OAI.KLInvariance.TitsSpace.noninverted_of_positive_combination"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.paths.dyer_paths",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
@@ -2259,6 +2473,15 @@
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.alternating_root",
         "OAI.KLInvariance.TitsSpace.pair_image_nonneg"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.realization.common_reflection_plane",
+      "chapter": "kl.realizations",
+      "lean_declarations": [
+        "OAI.KLInvariance.ReflectionPlane.range_reflection_product_sub_id",
+        "OAI.KLInvariance.ReflectionPlane.plane_eq_of_reflection_product_eq"
       ],
       "paper_locations": []
     },
@@ -2386,6 +2609,32 @@
       "paper_locations": []
     },
     {
+      "id": "kl.realization.plane_reflection_membership",
+      "chapter": "kl.realizations",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeSubgroup_le_moving",
+        "OAI.KLInvariance.TitsSpace.Represents.mem_of_moving",
+        "OAI.KLInvariance.TitsSpace.Represents.planeSubgroup_mem_iff",
+        "OAI.KLInvariance.TitsSpace.planeSubgroup_preserves",
+        "OAI.KLInvariance.TitsSpace.reflection_between_coset_mem"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.realization.positive_root_action",
+      "chapter": "kl.realizations",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.positiveAction",
+        "OAI.KLInvariance.TitsSpace.positiveAction_represents",
+        "OAI.KLInvariance.TitsSpace.positiveAction_eq_of_nonneg",
+        "OAI.KLInvariance.TitsSpace.positiveAction_eq_of_nonpos",
+        "OAI.KLInvariance.TitsSpace.rootReflection_positiveAction",
+        "OAI.KLInvariance.TitsSpace.positiveAction_mul",
+        "OAI.KLInvariance.TitsSpace.positiveActionEquiv"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.realization.radical_extension",
       "chapter": "kl.realizations",
       "lean_declarations": [
@@ -2421,6 +2670,26 @@
       "paper_locations": [
         "2. Real realizations and moment-graph sheaves; sec:background"
       ]
+    },
+    {
+      "id": "kl.realization.root_planes",
+      "chapter": "kl.realizations",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.rootPlane",
+        "OAI.KLInvariance.TitsSpace.positiveRoots_independent",
+        "OAI.KLInvariance.TitsSpace.rootPlane_finrank",
+        "OAI.KLInvariance.TitsSpace.rootPlane_eq_iff"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.realization.root_subgroups",
+      "chapter": "kl.realizations",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.movingSubgroup",
+        "OAI.KLInvariance.TitsSpace.planeSubgroup"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.realization.signed_root_action",

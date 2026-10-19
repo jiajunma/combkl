@@ -85,8 +85,9 @@ Write the resulting character as \(C\). It records homogeneous basis degrees of 
 flowchart TD
   r["Realizations and roots"]
   ra["Root-labelled coefficient algebra"]
-  og["Root orders and dihedral geometry"]
-  ow["Geometric plane weights"]
+  oo["Geometric root orders"]
+  ow["Plane inversion changes"]
+  og["Induced dihedral systems and cosets"]
   oe["Reflection-edge reconstruction"]
   os["Schedules and elementary transfers"]
   ot["Transported chronological schedule"]
@@ -96,9 +97,12 @@ flowchart TD
   li["Localized embedded-image equality"]
   lg["Conditional global edge inclusion"]
   r --> ra
-  r --> og
-  og --> ow
+  r --> oo
+  oo --> ow
   r --> ow
+  oo --> og
+  ow --> og
+  r --> og
   ow --> oe
   og --> oe
   og --> os
@@ -118,6 +122,8 @@ flowchart TD
 ```
 <!-- /generated-local-diagram -->
 
+The geometric construction has an internal order: generic slopes choose partner representatives; geometric plane weights measure changes of the ambient plane inversion count; plane-simple roots make that extra contribution vanish; conjugation then decreases the count and proves generation of the induced dihedral subgroup. The source steps are [TitsSpace.PlaneSimple.planeLength_step · Decomposition.lean:691](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean#L691), [TitsSpace.PlaneSimple.planeLength_conj_drop · Decomposition.lean:807](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean#L807), [TitsSpace.PlaneBasis.rootRef_mem_pairClosure · Decomposition.lean:833](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean#L833).
+
 The same root-plane geometry has three outputs:
 
 1. It reconstructs reflection edges from the interval order, making edge transport possible.
@@ -130,7 +136,7 @@ The edge factor matches the difference of these products. Local equality of scal
 
 ## The interfaces that topic pages should explain
 
-| Passage | What passes between the topics | Why it is needed |
+| Passage | Mathematical input | Role in the proof |
 |---|---|---|
 | C → R | Simple generators, relations, reflections, and length | Construct the representation and interpret root signs in group-theoretic terms. |
 | C → H | Reduced words and Bruhat recursion | Construct Hecke operators and the canonical polynomial families. |
@@ -140,7 +146,8 @@ The edge factor matches the difference of these products. Local equality of scal
 | W4–W6 + S1–S3 → S7 | Evaluation images and pair-projection maps | Turn a word module into a sheaf with explicit stalk and edge maps. |
 | W2–W3 + S5–S7 → S8 | Perfect word pairings, integral support, and split maps | Construct pairings on boundary summands and identify costalk duals. |
 | H5 + W7 + S5 + S8 → S9 | Word R-convolution and simultaneous character decomposition | Prove actual-character reciprocity by finite cancellation. |
-| R5–R6 → O1–O4 | Root signs, planes, and inversion changes | Construct orders, induced dihedral systems, and plane weights. |
+| R5–R6 → O1 and O4 | Root signs, planes, and finite inversion sets | Construct slope orders and geometric plane-weight formulas. |
+| O1 + O4 + R6 → O2 | Angular extremes, plane inversion changes, and root-subgroup membership | Prove generation by endpoint reflections and identify the induced Coxeter system and coset graph. |
 | C4 + O4–O5 → O6 | Reconstructed reflection edges and rank-preserving order isomorphisms | Transport an edge schedule using interval order data. |
 | H3 + O1–O3 + O7 → transported matrix | R-recursion and ordered path expansions | Identify transfer entries with normalized R-polynomials. |
 | A1 + R6 + S2–S4 → L1–L4 | Plane ideals, labelled sheaves, and boundary properties | Reduce a localized sheaf to dihedral structure models. |
@@ -208,7 +215,7 @@ The graph is acyclic when ranks are shown: smaller-rank freeness enables the cur
 
 ### Geometric plane weights and polynomial degrees have different consumers
 
-The current entry `kl.paths.plane_degree` combines two results:
+The implemented hierarchy places the following results in separate entries:
 
 - [TitsSpace.sum_planeWeight · ReflectionSchedules.lean:621](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L621) counts geometric inversion changes:
   \[
@@ -218,7 +225,7 @@ The current entry `kl.paths.plane_degree` combines two results:
 
 The first belongs in O4. It uses inversion roots, the partner construction, and plane weights, and supplies the edge-reconstruction argument. The second belongs in L5. It additionally uses the coefficient quotient, reduced roots, nonvanishing, and homogeneity.
 
-The proposed split lets O5 use the geometric identity directly. It also explains the extra algebra required before a weight sum can be used as a polynomial degree.
+The geometric identity is recorded in `kl.geometry.plane_weight_sum`, and the polynomial degree calculation in `kl.paths.plane_degree`. O2 also uses the relative plane-count formula before the induced system is constructed.
 
 ### Sheaf construction, word realization, and duality are successive stages
 
@@ -279,8 +286,9 @@ Each row identifies a coherent construction or result, its immediate explanatory
 | **ws — Word sheaves and boundary summands** (S7) | we, s, sd | Word sheaves with generation, flabbiness, and boundary splitting. [TitsSpace.bottPolynomialSheaf · Support.lean:417](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean#L417); [TitsSpace.bottBoundarySheaf_splitIn · Support.lean:293](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean#L293) |
 | **sp — Integral support and boundary duality** (S6, S8) | ws, sd, w, a | Integral cuts, adjoints, boundary perfect pairings, and costalk duality. [IntegralSupport.cut · Support.lean:488](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean#L488); [BruhatGraph.boundarySheaf_perfectPairing · CharacterReciprocity.lean:1740](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L1740); [BruhatGraph.boundaryKernelFree · CharacterReciprocity.lean:1799](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L1799) |
 | **sc — Actual-character reciprocity** (S9) | wc, sp, sd, h | The reciprocal identity for actual boundary character C. [TitsSpace.bottCharacter_decomposition_both · CharacterReciprocity.lean:2019](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L2019); [finite_character_cancellation · DyerPaths.lean:15](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L15); [BruhatGraph.stalkCharacter_reciprocity · DyerPaths.lean:62](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L62) |
-| **og — Root orders and dihedral geometry** (O1, O2, O3) | r, c | Ratio orders, induced dihedral systems, and relative interval combinatorics. [TitsSpace.PlaneBasis · Decomposition.lean:619](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean#L619); [TitsSpace.RatioOrder · DyerPaths.lean:1181](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L1181) |
-| **ow — Geometric plane weights** (O4) | og, r | Finite nonnegative plane weights and their length-sum identity. [TitsSpace.sum_planeWeight · ReflectionSchedules.lean:621](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L621) |
+| **oo — Geometric root orders** (O1) | r, c | Positive heights, normalized roots, generic slope orders, and root partners used to choose half-pairs. [TitsSpace.exists_geometric_functional · ReflectionSchedules.lean:126](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L126); [TitsSpace.geometricSlope · ReflectionSchedules.lean:505](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L505); [TitsSpace.partner · ReflectionSchedules.lean:376](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L376) |
+| **ow — Plane inversion changes** (O2, O4) | oo, r | Finite ambient plane inversion counts, nonnegative geometric plane weights, and their relative-difference formula. [TitsSpace.planeLength · ReflectionSchedules.lean:705](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L705); [TitsSpace.sum_planeWeight · ReflectionSchedules.lean:621](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L621); [TitsSpace.planeWeight_relative_degree · ReflectionSchedules.lean:742](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L742) |
+| **og — Induced dihedral systems and cosets** (O2, O3) | oo, ow, r, c | Angular endpoints, generation by a decreasing plane count, the induced Coxeter system, signed inversions, and relative coset graphs. [TitsSpace.nonempty_planeBasis · Decomposition.lean:627](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean#L627); [TitsSpace.PlaneBasis.pairClosure_eq_planeSubgroup · Decomposition.lean:869](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean#L869); [TitsSpace.PlaneBasis.system · Decomposition.lean:906](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean#L906); [TitsSpace.PlaneBasis.inversion_iff · Decomposition.lean:1010](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean#L1010); [TitsSpace.PlaneBasis.coset_step_iff · Decomposition.lean:1178](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean#L1178) |
 | **oe — Reflection-edge reconstruction** (O5) | ow, og, c | Reflection edges recovered from interval order and transported under isomorphism. [diamondEdges_of_bruhatStep · Decomposition.lean:1347](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean#L1347); [intervalIso_bruhatStep_iff_general · DyerPaths.lean:234](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L234) |
 | **os — Schedules and elementary transfers** (O6, O7) | og, c | Sorted edge lists, cutoffs, paths, and elementary dispatch operators. [SchedulePaths.step · ReflectionSchedules.lean:1172](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L1172); [SchedulePaths.sortedSchedule · ReflectionOrders.lean:582](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionOrders.lean#L582) |
 | **op — Dyer path identity** (O7) | os, og, h | Identification of geometric-order path sums with normalized R-polynomials. [AdaptedDyer.polynomial_eq_rTilde · DyerPaths.lean:2462](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L2462); [WallDyer.geometric_entry_eq_rTilde · ReflectionOrders.lean:1229](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionOrders.lean#L1229) |
@@ -305,11 +313,11 @@ Each row identifies a coherent construction or result, its immediate explanatory
 ## Validation of this planning record
 
 <!-- generated-validation -->
-- The local index accounts for all **34 modules**, **35 structures**, and **3 inductive declarations**; each structure/inductive declaration has one proposed home.
-- The register contains **36 stages** and **85 prerequisite relationships**. Python checked their identifiers and found a topological order.
-- Python resolved every recorded Lean anchor to the fixed source snapshot and checked that its file and declaration line exist locally.
-- Source reading checked the central interfaces: actual-character cancellation, local-to-global edge inclusion with upper-kernel freeness, geometric weight versus polynomial degree, and the rank-induction/reverse-traversal sequence.
-- These are documentation and source-alignment checks. The proposal has not yet been applied to KB entries.
+- The local index accounts for all **34 modules**, **35 structures**, and **3 inductive declarations**; every structure and inductive declaration has a home in the approved hierarchy.
+- The refined register contains **37 stages** and **89 prerequisite relationships**. Python checked the identifiers and found a topological order.
+- Python resolved every recorded Lean anchor to the fixed source snapshot and checked that its source file and declaration line exist.
+- Source reading established the order from generic slopes through plane inversion changes to induced dihedral systems, alongside the character, localization, and rank-induction interfaces recorded above.
+- The nine mathematical homes have been applied to the KB. Detailed exposition progress is tracked in docs/knowledge/reviews/self-contained-revision.json.
 <!-- /generated-validation -->
 
 The hierarchy and relationship maps were approved on 2026-10-18. Implementation is tracked in docs/knowledge/reviews/self-contained-revision.json.

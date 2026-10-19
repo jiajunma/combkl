@@ -83,7 +83,7 @@ g(v)=-b,\qquad f(v)=-a-bf(\beta).
 Substitution into the expression in Step 1 gives coefficient
 \(-f(v)+f(\beta)g(v)=a\) at \(\alpha\), and coefficient \(-g(v)=b\) at \(\beta\). Therefore the chosen plane vector lies in the image.
 
-The two containments prove equality. Independence of \(\alpha,\beta\) is not needed for this abstract formula; independence of the functionals is the hypothesis that supplies the chosen values in Step 3.
+The two containments prove equality.
 
 ## References
 

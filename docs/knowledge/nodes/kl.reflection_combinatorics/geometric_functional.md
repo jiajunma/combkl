@@ -7,7 +7,9 @@ primary_topic: kl.reflection_combinatorics
 topics:
 - kl.reflection_combinatorics
 uses:
-- kl.notes.extended_realization
+- kl.order.root_slopes
+- kl.detail.positive_roots
+- kl.realization.tits_form
 lean:
   repository: openai-kl
   modules:

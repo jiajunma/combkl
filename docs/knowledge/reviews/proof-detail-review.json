@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 39179,
-  "theorem_walkthroughs": 128,
+  "revised_proof_words": 42920,
+  "theorem_walkthroughs": 142,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -433,7 +433,7 @@
       "previous_proof_words": 103,
       "revised_proof_words": 264,
       "proof_sha256": "547b888a25f1d0b7dda51795fd80189ff79ac6a40fe69ed34fb7d6204c6c210c",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "review": "Rechecked moment-curve generic-functional existence against the local source; its inputs now link to the independent height/normalized-root definitions."
     },
     {
       "node": "kl.detail.hecke_quadratic_identity",
@@ -748,6 +748,150 @@
       "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
     },
     {
+      "node": "kl.dihedral.angular_extremes_simple",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeSimple_of_extreme"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 194,
+      "proof_sha256": "b6bc728f68d08bccb7a940d62d9ba227eb13b19a7bd30c1daa40ba2502eb0396",
+      "review": "Read planeSimple_of_extreme. The positive partner sum places an extreme strictly between two distinct partners unless the inverted root is the extreme itself."
+    },
+    {
+      "node": "kl.dihedral.induced_inversions",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.inversion_iff"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 263,
+      "proof_sha256": "fb8282f7c8d2d635da4e5dfeeba5f25b5fcaa06c638a88607228de32c549427d",
+      "review": "Read PlaneBasis.inversion_iff and the general word-record formula. The inverse signed action uses parity of the reduced inversion sequence, and occurrence gives both intrinsic reflection status and the length inequality."
+    },
+    {
+      "node": "kl.dihedral.induced_reflections_length",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.reflection_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.inversionEquiv",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.length_eq",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.leftInversion_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.bruhatStep_iff"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 410,
+      "proof_sha256": "4a238fe4532227b60daa6ee96f382897b2efb9ff87ac90de0452a8286e9f739b",
+      "review": "Read reflection_iff, inversionEquiv, length_eq, leftInversion_iff, and bruhatStep_iff. The converse reflection argument uses inversion_iff at w=t; the bijection and both edge orientations are explicit."
+    },
+    {
+      "node": "kl.dihedral.induced_signed_action",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.simple_sign",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.InducedSigned.simple",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.InducedSigned.act"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 278,
+      "proof_sha256": "4553809c8e766e0972c86a2e6e0eadf219534d7d6b1d6780bcda2f0bd8d64296",
+      "review": "Read simple_sign and InducedSigned.simple/act. Checked representation, plane membership, all four sign cases, and the order of actions in word induction."
+    },
+    {
+      "node": "kl.dihedral.minimal_plane_cosets",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeCoset_exists_minimal",
+        "OAI.KLInvariance.TitsSpace.root_nonneg_of_coset_minimal",
+        "OAI.KLInvariance.TitsSpace.root_nonpos_coset_minimal_iff",
+        "OAI.KLInvariance.TitsSpace.root_inversion_coset_iff",
+        "OAI.KLInvariance.TitsSpace.leftInversion_coset_iff"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 237,
+      "proof_sha256": "43e358ba50287de6702613ce296095c8a25a86eccf9bfce15590107bbdf3b379",
+      "review": "Read least coset existence and all root-sign transport lemmas in Tits. Kept the least ambient-length hypothesis, preserved both signs, and applied it after the subgroup inverse action."
+    },
+    {
+      "node": "kl.dihedral.plane_basis_existence",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.exists_plane_extreme_inverted",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.exists_nonpositive_pair",
+        "OAI.KLInvariance.TitsSpace.noninverted_ref_of_pairing_nonpos",
+        "OAI.KLInvariance.TitsSpace.exists_opposite_plane_extreme",
+        "OAI.KLInvariance.TitsSpace.nonempty_planeBasis"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 404,
+      "proof_sha256": "1929a9623252d3a36cb9f9a13c7b81c1a7699307e2dcbe9c00f1233a2ce5eadf",
+      "review": "Read finite-inversion extrema and the opposite-extreme construction. Recorded nonemptiness, both failed-global-extreme cases, the nonpositive-pairing root, and injectivity forcing opposite endpoints."
+    },
+    {
+      "node": "kl.dihedral.plane_coset_graph",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bruhatStep_coset_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_step_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_bruhat",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_length_eq",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.intervalToAmbient",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.intervalToAmbient_injective"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 344,
+      "proof_sha256": "714f8818f15e94c5ec6498ab1e69701ed870124c0cfb56900574177115abf803",
+      "review": "Read coset_step_iff, coset_length_eq, coset_bruhat, and intervalToAmbient. The prose gives a monotone injection of relative intervals; uniqueness of the minimum is explicitly derived from the exported count/sign identities."
+    },
+    {
+      "node": "kl.dihedral.plane_generation",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.positive_cone",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.reflection_inverts_endpoint",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.inverted_after_mul",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.planeLength_conj_drop",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.rootRef_mem_pairClosure",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.pairClosure_eq_planeSubgroup"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 356,
+      "proof_sha256": "93056bf5fbbadb3b5bbbbf5d6f0970618bdd57644bcaf8fe0d95e42a6cc186ce",
+      "review": "Read reflection_inverts_endpoint, inverted_after_mul, planeLength_conj_drop and rootRef_mem_pairClosure. Expanded the second inversion, count drop by two, nonnegative induction, and both subgroup containments."
+    },
+    {
+      "node": "kl.dihedral.plane_simple_steps",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeLength_inv",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.planeWeight_eq_zero",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.planeLength_step",
+        "OAI.KLInvariance.TitsSpace.PlaneSimple.planeLength_step_down"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 236,
+      "proof_sha256": "bf9fa62eebc5b7f9fad5927bcded4094635a3ea556194263b83a07a56f767c0f",
+      "review": "Read inverse root action and planeLength_inv, plus both simple-step theorems. Explicit finite inversion bijection and zero half-root contribution precede the upward/downward substitutions."
+    },
+    {
+      "node": "kl.dihedral.two_involutions",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.pairMatrix",
+        "OAI.KLInvariance.Dihedral.wordProd_alt_even",
+        "OAI.KLInvariance.Dihedral.injective_of_simple_order",
+        "OAI.KLInvariance.Dihedral.pairLift",
+        "OAI.KLInvariance.Dihedral.pairLift_injective",
+        "OAI.KLInvariance.Dihedral.pairLift_range",
+        "OAI.KLInvariance.Dihedral.pairSystem",
+        "OAI.KLInvariance.Dihedral.pairSystem_simple"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 327,
+      "proof_sha256": "f850017655f723c42d6e6d20e0b33984cce8cfc59b24b48bab810513b1b3d107",
+      "review": "Read pairMatrix, pairLift, injective_of_simple_order, pairLift_range and pairSystem. Alternating even and odd reduced words prove injectivity in finite and infinite product-order cases."
+    },
+    {
       "node": "kl.duality.actual_character_reciprocity",
       "source_declarations": [
         "OAI.KLInvariance.BruhatGraph.stalkCharacter_reciprocity",
@@ -854,6 +998,19 @@
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
     },
     {
+      "node": "kl.geometry.plane_inversion_change",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.rootPlane_grouped_erase",
+        "OAI.KLInvariance.TitsSpace.planeDefect_eq_relative_difference",
+        "OAI.KLInvariance.TitsSpace.planeWeight_relative_degree"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 125,
+      "proof_sha256": "430ef8d78f62f300f1a116c89a5065232f2ddebdd4fcedf77e509cf5853a6f06",
+      "review": "Read planeDefect_eq_relative_difference and planeWeight_relative_degree. The distinguished root contributes one; the root-span criterion identifies the remaining sum with the plane defect."
+    },
+    {
       "node": "kl.geometry.plane_weight_sum",
       "source_declarations": [
         "OAI.KLInvariance.TitsSpace.negative_pair_not_both",
@@ -865,7 +1022,7 @@
       "previous_proof_words": 0,
       "revised_proof_words": 387,
       "proof_sha256": "81d3c0801c71d91230cb4bd1ad53386916dc28403e2ac486f6b9726db2f8f103",
-      "review": "Read the root partner/sign proof, finite-support grouping, and the separate homogeneous-degree calculation. Every inversion-sign case and the exclusion of fixed negative partners are spelled out."
+      "review": "Rechecked partner-orbit sign changes, finiteness, the distinguished root, and the plane-by-plane doubling identity now used by induced-system construction."
     },
     {
       "node": "kl.local.edge_inclusion",
@@ -1101,6 +1258,19 @@
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
     },
     {
+      "node": "kl.order.slope_cone",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.functionalRatio_between",
+        "OAI.KLInvariance.TitsSpace.positive_combination_of_slope_between",
+        "OAI.KLInvariance.TitsSpace.noninverted_of_positive_combination"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 167,
+      "proof_sha256": "7178f49cc6418b84cee5bfb255ab5e5462890649f40bba2110bf912d36f3f0d2",
+      "review": "Read positive_combination_of_slope_between, functionalRatio_between, and convex noninversion. Solved the two height/slope equations explicitly and retained strict positivity of both coefficients."
+    },
+    {
       "node": "kl.paths.dyer_paths",
       "source_declarations": [
         "OAI.KLInvariance.WallDyer.geometric_entry_eq_rTilde"
@@ -1158,6 +1328,18 @@
       "revised_proof_words": 211,
       "proof_sha256": "cf4a1cd0027020006f791cbe8acd77c8c4dc1e5cdf0ddcbf45de736a7ec3a5fb",
       "review": "Read the local source proof and expanded the exact induction, coefficient, and sign cases. The parabolic prefix is strictly shorter; the dual action uses the inverse; the signed action tracks both coordinates."
+    },
+    {
+      "node": "kl.realization.common_reflection_plane",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionPlane.range_reflection_product_sub_id",
+        "OAI.KLInvariance.ReflectionPlane.plane_eq_of_reflection_product_eq"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 233,
+      "proof_sha256": "4fb19561ed9b4e375856bc12a2fcd5f267dca0ee97112157957ee0de52d3457c",
+      "review": "Read both ReflectionPlane range/equal-product results. Independent roots give independent normals by nondegeneracy; equality is recovered in the extension and pulled back through the injective original embedding."
     },
     {
       "node": "kl.realization.dominant_signs",
@@ -1223,15 +1405,30 @@
       "review": "Followed the rank-one functional construction and the source orthogonality proof; verified f(u)=-2, the nonzero norm, and the final reflection formula."
     },
     {
+      "node": "kl.realization.plane_reflection_membership",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.planeSubgroup_le_moving",
+        "OAI.KLInvariance.TitsSpace.Represents.mem_of_moving",
+        "OAI.KLInvariance.TitsSpace.Represents.planeSubgroup_mem_iff",
+        "OAI.KLInvariance.TitsSpace.planeSubgroup_preserves",
+        "OAI.KLInvariance.TitsSpace.reflection_between_coset_mem"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 192,
+      "proof_sha256": "d034192b4f7251048bd90f7f0489d5ce5e8a66b501aa8885d785106ba2da7162",
+      "review": "Read planeSubgroup_le_moving, mem_of_moving, planeSubgroup_mem_iff, preservation, and coset-label membership. The displacement subgroup uses the original action; applying it to the represented root gives -2a."
+    },
+    {
       "node": "kl.realization.reflection_plane",
       "source_declarations": [
         "OAI.KLInvariance.ReflectionPlane.range_preReflection_product_sub_id"
       ],
       "proof_steps": 3,
       "previous_proof_words": 45,
-      "revised_proof_words": 172,
-      "proof_sha256": "678c326b8aa8bfd812b724c90d8892d874019625882a4141c7468f380a0b2903",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test.",
+      "revised_proof_words": 147,
+      "proof_sha256": "d9c586cd95427445452099d52436ad184b8e0f67dfefd6498fc060c9c64917dc",
+      "review": "Rechecked the existing coefficient formula and independent-functional surjectivity proof; removed precautionary closing prose.",
       "heading_revision": "Replaced the question-style step heading with its mathematical statement; verified the non-heading proof text is unchanged."
     },
     {
