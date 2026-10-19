@@ -172,8 +172,13 @@
       "kl.detail.quotient_image_free",
       "kl.detail.scaled_images",
       "kl.detail.structure_sheaves",
+      "kl.local.coset_graph",
+      "kl.local.coset_outgoing_lifts",
       "kl.local.edge_inclusion",
       "kl.local.free_target_localization",
+      "kl.local.localized_coset",
+      "kl.local.localized_coset_kernels",
+      "kl.local.localized_coset_properties",
       "kl.local.localized_decomposition",
       "kl.local.plane_prime_membership",
       "kl.notes.dihedral_models",
@@ -337,6 +342,8 @@
       "kl.sheaves.partial_iso_extension",
       "kl.sheaves.primitive_image",
       "kl.sheaves.projector_image",
+      "kl.sheaves.pullback_live_flabbiness",
+      "kl.sheaves.pullback_selected_kernels",
       "kl.sheaves.relative_flabbiness",
       "kl.sheaves.section_constraints",
       "kl.sheaves.split_sheaf_properties",
@@ -3185,6 +3192,32 @@
       "paper_locations": []
     },
     {
+      "id": "kl.local.coset_graph",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.CosetVertex",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetOrder",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.CosetEdge",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetGraph",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetAmbient",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetEdgeAmbient",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetGraphMap"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.local.coset_outgoing_lifts",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetAmbient_injective",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetFinite",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_lower",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_outgoing_below",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_lift_live"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.local.edge_inclusion",
       "chapter": "kl.localization",
       "lean_declarations": [
@@ -3205,6 +3238,40 @@
       "paper_locations": [
         "5. Comparison of edge images; sec:edge"
       ]
+    },
+    {
+      "id": "kl.local.localized_coset",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset",
+        "OAI.KLInvariance.TitsSpace.localizedLinear"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.local.localized_coset_kernels",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_kernel",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upwardKernel",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_lowerImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upperImage"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.local.localized_coset_properties",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.polynomialLabel_unit_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_quotient",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_generated",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_flabby",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetRoot_eq",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel_eq_root"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.local.localized_decomposition",
@@ -4445,6 +4512,29 @@
         "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageInclusion",
         "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageProjection",
         "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageSplit"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.sheaves.pullback_live_flabbiness",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.pullAssignment",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pull_global",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pullback_generated",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pushAssignment",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pull_push",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pullback_flabby_live",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pullback_quotient"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.sheaves.pullback_selected_kernels",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.stalkMap_assignment",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pullback_kernel"
       ],
       "paper_locations": []
     },

@@ -42,7 +42,7 @@ Localizing at \(\mathfrak p\) means allowing denominators outside that ideal:
 \[
 A_{\mathfrak p}=\{a/d:d\notin\mathfrak p\}.
 \]
-Thus \(\gamma\) becomes a unit, while \(\alpha\) and \(\beta\) remain nonunits. We have not inverted every nonzero polynomial, so this ring is not the full fraction field.
+Thus \(\gamma\) becomes a unit, while \(\alpha\) and \(\beta\) remain in the maximal ideal.
 
 An edge labelled by \(\gamma\) now has zero edge quotient: every element is a multiple of a unit, so
 \[
@@ -60,9 +60,61 @@ with flatness required for the kernel identity. Applying these equations to the 
 
 Generation, free stalks, finite generation, the upper-quotient rule and flabbiness transfer with the hypotheses stated in the [[node:kl.sheaves.base_change_properties|scalar-extension property theorem]]. Restriction to a surviving coset adds the graph-pullback conditions developed next.
 
+## The finite relative coset graph
+
+Fix the induced plane subgroup \(D_P\), a representative \(a_0\) of least ambient length in \(D_Pa_0\), and the ambient top \(b\). The vertices are
+\[
+K=\{d\in D_P:1\le_D d,\ da_0\le_W b\},
+\]
+ordered by the induced Bruhat order. The map \(j_V(d)=da_0\) is injective by right cancellation, so the finite ambient interval makes \(K\) finite.
+
+If \(z\le_D d\) and \(d\in K\), the coset comparison gives
+\(za_0\le_W da_0\le_W b\), hence \(z\in K\). Thus \(K\) is a finite relative lower ideal. A relative reflection edge maps to the ambient edge with endpoints multiplied on the right by \(a_0\).
+
+For an ambient edge starting at \(da_0\), with reflection label \(\tau\in D_P\), its target is
+\[
+\tau da_0=(\tau d)a_0.
+\]
+That target lies below \(b\), so \(\tau d\) is another vertex of \(K\). The [[node:kl.dihedral.plane_coset_graph|coset reflection-step equivalence]] gives the edge \(d\to_D\tau d\). This constructs every required outgoing lift.
+
+## The localized coset sheaf and relative flabbiness
+
+Write \(R_P=A_{\mathfrak p_P}\). For an ambient sheaf \(C\), the localized coset sheaf is
+\[
+\mathcal C=j^*(R_P\otimes_A C),
+\qquad
+\mathcal C^d=R_P\otimes_A C^{da_0}.
+\]
+Its edge labels are the ambient polynomial root labels mapped into \(R_P\). The induced and ambient positive roots agree because both correspond to the reflection
+\[
+(ca_0)(da_0)^{-1}=cd^{-1}.
+\]
+
+The [[node:kl.local.plane_prime_membership|plane-prime unit criterion]] identifies the surviving label set as
+\[
+L=\{e:\tau_e\in D_P\}.
+\]
+Outside \(L\), the localized upper quotient has a unit label and is zero. The coset graph map is injective on vertices and has the outgoing lifts constructed above.
+
+The [[node:kl.sheaves.base_change_properties|scalar-extension property theorem]] gives ambient flabbiness after localization. The [[node:kl.sheaves.pullback_live_flabbiness|surviving-edge pullback theorem]] then gives flabbiness for relative upper subsets of \(K\): their images are closed under \(L\), their sections push compatibly to those images, and relative extension supplies the global section to pull back.
+
+Generation follows by restricting tensor-extended generating sections. Free stalks, finite generation and upper quotients follow from the displayed tensor stalks and the pullback restrictions. The [[node:kl.local.localized_coset_properties|localized coset properties theorem]] checks each of these inputs.
+
+## Selected conditions through both operations
+
+Let \(T\) be any set of ambient edges. At a relative vertex \(d\),
+\[
+K_d^{\mathcal C}(j_E^{-1}(T))
+=K_{da_0}^{C_{R_P}}(T)
+=\bigl(K_{da_0}^C(T)\bigr)_{R_P}.
+\]
+The first equality uses outgoing lifts and zero edge modules; the second uses flat extension of the selected constraint kernel.
+
+Applying either endpoint restriction of a relative edge carries this equality into the same edge module \(R_P\otimes_A C^{j_E(a)}\). The [[node:kl.algebra.flat_embedded_modules|embedded-image identity]] identifies its image with the scalar extension of the original edge image. The [[node:kl.local.localized_coset_kernels|localized coset kernel-and-image theorem]] therefore places the actual comparison submodules in the coordinates used by the later model decomposition.
+
 ## Reduce the local calculation to a dihedral model
 
-The surviving reflection edges lie in cosets of the plane reflection subgroup. Its relative graph is dihedral. The localized sheaf on such a piece is flabby and globally generated, with free stalks and the upper quotient rule.
+The finite relative coset graph now carries the localized boundary sheaf with its established free stalks, generation, flabbiness and upper quotients.
 
 The local model-decomposition theorem identifies it with a finite sum of dihedral structure models. In a structure model the supported stalks are copies of the local ring and restrictions are quotient maps. The interpolation theorem proves the required extension properties for the actual induced labels.
 
@@ -131,6 +183,13 @@ The logical order to retain is: free upper kernel, free edge target, local model
 - [[node:kl.sheaves.base_change_properties]]
 - [[node:kl.algebra.flat_embedded_modules]]
 - [[node:kl.notes.sheaf_localization]]
+- [[node:kl.sheaves.pullback_live_flabbiness]]
+- [[node:kl.sheaves.pullback_selected_kernels]]
+- [[node:kl.local.coset_graph]]
+- [[node:kl.local.coset_outgoing_lifts]]
+- [[node:kl.local.localized_coset]]
+- [[node:kl.local.localized_coset_properties]]
+- [[node:kl.local.localized_coset_kernels]]
 
 ### Dihedral structure models
 

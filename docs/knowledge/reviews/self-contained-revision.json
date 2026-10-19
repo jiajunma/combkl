@@ -615,12 +615,6 @@
       "pending": []
     },
     {
-      "node": "kl.sheaves.relative_flabbiness",
-      "file": "docs/knowledge/nodes/kl.sheaves/relative_flabbiness.md",
-      "review": "Rechecked extend_one, closedUnder_insert and extend_closedUnder. Expanded the standalone hypotheses and explicit update of ambient assignments; completed the finite-complement induction.",
-      "pending": []
-    },
-    {
       "node": "kl.algebra.dual_basis_degrees",
       "file": "docs/knowledge/nodes/kl.graded_algebra/dual_basis_degrees.md",
       "source_declarations": [
@@ -4486,6 +4480,105 @@
       ],
       "review": "Read the outgoing-constraint tensor identity, embedded kernel equality and both edge-image substitutions. Kept finite edges but no finite-vertex hypothesis, separated the extra upper-quotient/unit-label claim, and removed dihedral models as a prerequisite of this general flat-algebra theorem.",
       "pending": []
+    },
+    {
+      "node": "kl.sheaves.pullback_live_flabbiness",
+      "file": "docs/knowledge/nodes/kl.sheaves/pullback_live_flabbiness.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.pullAssignment",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pull_global",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pullback_generated",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pushAssignment",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pull_push",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pullback_flabby_live",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pullback_quotient"
+      ],
+      "review": "Read pull/push assignments, both basic property transfers and the complete live-edge flabbiness proof. Preserved finite target vertices, vertex injectivity, zero modules outside the selected live set and outgoing lifts; generation and quotient transport use no such extra hypotheses.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.pullback_selected_kernels",
+      "file": "docs/knowledge/nodes/kl.sheaves/pullback_selected_kernels.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.stalkMap_assignment",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pullback_kernel"
+      ],
+      "review": "Read both containments of pullback_kernel and its stalkMap_assignment transport. Retained outgoing lifting only at the fixed vertex, arbitrary selected ambient edges and zero outside modules; no vertex injectivity, finiteness or flabbiness hypothesis is used.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.coset_graph",
+      "file": "docs/knowledge/nodes/kl.localization/coset_graph.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.CosetVertex",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetOrder",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.CosetEdge",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetGraph",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetAmbient",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetEdgeAmbient",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetGraphMap"
+      ],
+      "review": "Read all finite coset graph definitions and incidence fields. Kept the induced order, the ambient cutoff, the precise least-coset hypothesis for the edge map and the actual left-reflection label.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.coset_outgoing_lifts",
+      "file": "docs/knowledge/nodes/kl.localization/coset_outgoing_lifts.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetAmbient_injective",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetFinite",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_lower",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_outgoing_below",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_lift_live"
+      ],
+      "review": "Read the injectivity/finite instance, lower-closure argument, explicit t*x target in coset_lift_live and the first-step extraction in coset_outgoing_below. All ambient/relative order and label directions are explicit.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.localized_coset",
+      "file": "docs/knowledge/nodes/kl.localization/localized_coset.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset",
+        "OAI.KLInvariance.TitsSpace.localizedLinear"
+      ],
+      "review": "Read cosetLabel, localizedCoset and localizedLinear. Defined the coefficient maps and prime before the sheaf, recorded the exact extend-then-pullback order, and kept the coefficient-ring illustration separate from the formal construction.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.localized_coset_properties",
+      "file": "docs/knowledge/nodes/kl.localization/localized_coset_properties.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.polynomialLabel_unit_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_quotient",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_generated",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_flabby",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetRoot_eq",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel_eq_root"
+      ],
+      "review": "Read the root/unit criterion, all three localizedCoset property proofs and both root-label identities. Expanded the finite ambient graph, zero outside edge modules, injective coset map and outgoing lifts before invoking relative flabbiness; free/finite stalk transfer follows from the explicit tensor stalks.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.localized_coset_kernels",
+      "file": "docs/knowledge/nodes/kl.localization/localized_coset_kernels.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_kernel",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upwardKernel",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_lowerImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upperImage"
+      ],
+      "review": "Read localizedCoset_kernel and verified its live-edge inputs. Combined it with the already reviewed flat kernel and lower/upper image theorems, preserving arbitrary independently selected edge sets and equality inside the fixed ambient stalk and edge tensor modules.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.relative_flabbiness",
+      "file": "docs/knowledge/nodes/kl.sheaves/relative_flabbiness.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.extend_closedUnder"
+      ],
+      "review": "Re-read extend_one, closedUnder_insert and the complete finite-complement induction in extend_closedUnder against the existing proof. Its closure and zero-edge hypotheses are exactly those used by the new pullback proof.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -4999,8 +5092,7 @@
         "kl.detail.upper_quotient",
         "kl.sheaves.upward_kernel",
         "kl.sheaves.free_quotient_sheaf",
-        "kl.sheaves.boundary_image_identity",
-        "kl.sheaves.relative_flabbiness"
+        "kl.sheaves.boundary_image_identity"
       ],
       "review": "Reviewed all Sheaf/GradedSheaf/FreeSheaf fields, ambient section convention, global generation, flabbiness and relative extension, upper quotients, boundary maps/images, and selected kernels with their grading. The boundary-image theorem explains the two hypotheses separately."
     },
@@ -5022,7 +5114,9 @@
         "kl.sheaves.base_change_properties",
         "kl.sheaves.boundary_morphism_lift",
         "kl.sheaves.morphism_extension_step",
-        "kl.detail.morphism_extension"
+        "kl.detail.morphism_extension",
+        "kl.sheaves.pullback_live_flabbiness",
+        "kl.sheaves.pullback_selected_kernels"
       ],
       "pending": [],
       "review": "The existing finite operations, lower extensions, morphism/isomorphism data and partial-isomorphism extension are joined by explicit tensor base change, both constraint maps, the finite-flat section isomorphism, property transport, graded boundary lifting, one-vertex quotient descent and finite-complement morphism extension."
@@ -5253,13 +5347,17 @@
     {
       "code": "L2",
       "title": "Localizing graph sheaves",
-      "status": "in_progress",
+      "status": "exposition_reviewed",
       "completion_evidence": [
-        "kl.notes.sheaf_localization"
+        "kl.notes.sheaf_localization",
+        "kl.local.coset_graph",
+        "kl.local.coset_outgoing_lifts",
+        "kl.local.localized_coset",
+        "kl.local.localized_coset_properties",
+        "kl.local.localized_coset_kernels"
       ],
-      "pending": [
-        "Expand live-edge pullback, induced localized labels and restriction to the surviving plane-coset graph; finite-flat section, selected-kernel and edge-image transport are now detailed."
-      ]
+      "pending": [],
+      "review": "Joined the reviewed finite-flat section/kernel/image transport to general surviving-edge pullback, the finite relative coset graph and explicit outgoing lifts, localized linear/root labels, the unit criterion, relative flabbiness and generation, and selected-kernel/edge-image equalities inside the actual tensor modules."
     },
     {
       "code": "L3",
@@ -5357,7 +5455,7 @@
     }
   ],
   "next_steps": [
-    "Expand live-edge graph pullback, induced localized labels and the actual plane-localized coset sheaf, then continue the local comparison arguments.",
+    "Complete the root quotient/localization-ring interfaces and label-reduction calculations in L1, then expand the local dihedral models and their decomposition.",
     "Complete the remaining Coxeter/parabolic, root-space and sheaf-operation exposition.",
     "Expand adapted orders, chamber changes, dihedral interval transport, schedules and the path-polynomial proof.",
     "Complete localization, local image comparison, edge inequalities and the simultaneous invariance induction.",
@@ -5785,7 +5883,14 @@
       "kl.sheaves.base_change_properties": "S3",
       "kl.sheaves.boundary_morphism_lift": "S3",
       "kl.sheaves.morphism_extension_step": "S3",
-      "kl.algebra.flat_embedded_modules": "A7"
+      "kl.algebra.flat_embedded_modules": "A7",
+      "kl.sheaves.pullback_live_flabbiness": "S3",
+      "kl.sheaves.pullback_selected_kernels": "S3",
+      "kl.local.coset_graph": "L2",
+      "kl.local.coset_outgoing_lifts": "L2",
+      "kl.local.localized_coset": "L2",
+      "kl.local.localized_coset_properties": "L2",
+      "kl.local.localized_coset_kernels": "L2"
     },
     "moved_nodes": [
       {
@@ -6619,7 +6724,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 409
+    "current_node_count": 416
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -6645,7 +6750,8 @@
     "Completed W7: separated coefficient variables, the formal character variable and real evaluations; expanded the two head kernel maps and their grading, degreewise exact sequences, Hilbert numerator uniqueness/shift, and character base values. Rewrote the Hecke-word equality as the exact source induction, and linked the source/paper shift conventions. Added the inverse-degree piece isomorphisms to the general component theorem.",
     "Completed S9: added the homogeneous dual-character reflection, reduced-word section pairing, both actual kernel characters, lower-character convolution, scaled actual character and reciprocity, and unconditional normalized endpoints. Rewrote word R-convolution and actual-character cancellation with explicit hypotheses, degree bounds, finite sums and parameter substitutions.",
     "Completed S10: expanded the local intersection map into construction, properties and the exact strict diagonal-degree implication; exposed the generic positive-ideal coordinate argument and supported-section symmetry calculation. Defined full outgoing-kernel freeness and expanded the character-identification condition and both KL endpoint substitutions. Added explicit boundary-model character transport to the upper-restriction proof.",
-    "Completed S3: expanded tensor base change and its section map, separated section/outgoing constraints, proved finite-flat section transport and sheaf-property transfer, and developed graded boundary lifting, quotient edge descent and finite-complement morphism extension. Added the generic embedded kernel/image theorem and rewrote the localization node at its actual flat-algebra generality."
+    "Completed S3: expanded tensor base change and its section map, separated section/outgoing constraints, proved finite-flat section transport and sheaf-property transfer, and developed graded boundary lifting, quotient edge descent and finite-complement morphism extension. Added the generic embedded kernel/image theorem and rewrote the localization node at its actual flat-algebra generality.",
+    "Completed L2: defined the finite relative coset graph and localized coset sheaf, proved the outgoing lifts and lower-ideal properties, separated general surviving-edge flabbiness from fixed-vertex kernel pullback, and checked all inputs for the actual plane localization. Added the induced/ambient root-label identification and preserved both selected edge images in the common ambient tensor module."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -6798,6 +6904,22 @@
       ],
       "target": "kl.detail.sheaf_morphism",
       "review": "The existing OnHom definition explains maps on vertices in U and on every edge whose target lies in U. Scoped aliases connect the new lifting and extension proofs to that exact data."
+    },
+    {
+      "term": "finite relative coset graph",
+      "topics": [
+        "kl.localization"
+      ],
+      "target": "kl.local.coset_graph",
+      "review": "Scoped aliases name the actual finite ambient-cutoff graph, whose order is induced Bruhat order and whose edge map uses a least coset representative."
+    },
+    {
+      "term": "localized coset sheaf",
+      "topics": [
+        "kl.localization"
+      ],
+      "target": "kl.local.localized_coset",
+      "review": "Scoped aliases distinguish the scalar-extended-and-pulled-back coset object and its localized labels from general scalar extension."
     }
   ],
   "corrections": [
@@ -6817,20 +6939,20 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-19T14:01:55.868932+00:00",
+    "created_at": "2026-10-19T14:22:53.767394+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 409,
-    "html_pages_checked": 675,
-    "generated_definition_links_checked": 5772,
+    "node_count": 416,
+    "html_pages_checked": 682,
+    "generated_definition_links_checked": 5966,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks tensor sheaf extension, both constraint maps, finite-flat section transport, property transfer, graded boundary lifting and quotient descent, finite morphism extension, and embedded kernel/image identities. Documentation checks only.",
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks general surviving-edge pullback, finite coset vertices and outgoing lifts, localized label/root correspondence, relative flabbiness and generation, and selected-kernel/edge-image transport. Documentation checks only.",
     "focused_page_review": {
-      "entries": 9,
-      "source_anchors": 43,
-      "partial_morphism_links": 10,
-      "scope": "Read saved statements and full proofs, checked formula and source-link payloads and guide reachability, verified constraint and partial-morphism destinations, and checked the general kernel/image theorem has no dihedral-model prerequisite."
+      "entries": 8,
+      "source_anchors": 35,
+      "coset_definition_links": 17,
+      "scope": "Read the saved theorem statements and detailed proofs, checked the distinct property hypotheses, inspected formula/source payloads and guide reachability, and verified generated coset-graph, localized-sheaf and plane-basis definition links."
     }
   },
   "structure_coverage_scan": {
@@ -7086,6 +7208,28 @@
         "kl.detail.morphism_extension"
       ],
       "review": "The graded stalk lift uses a free source stalk and both sheaves’ generation/flabbiness. Gluing one vertex uses upper quotients and the outgoing equations. The full theorem uses finite-complement strong induction, and agreement on old edge maps follows from upper surjectivity."
+    },
+    {
+      "entries": [
+        "kl.sheaves.pullback_live_flabbiness",
+        "kl.sheaves.pullback_selected_kernels"
+      ],
+      "review": "Flabbiness uses finite target vertices, an injective vertex map, zero modules outside a selected surviving-edge set and outgoing lifts. Selected-kernel equality uses the zero-module condition and outgoing lifts only at the fixed source vertex."
+    },
+    {
+      "entries": [
+        "kl.local.coset_graph",
+        "kl.local.coset_outgoing_lifts"
+      ],
+      "review": "The coset vertex set is the induced-order lower ideal cut out by the ambient bound d*a0<=b. A least ambient-length representative supplies reflection-step comparison and the explicit target tau*d for each lifted edge."
+    },
+    {
+      "entries": [
+        "kl.local.localized_coset",
+        "kl.local.localized_coset_properties",
+        "kl.local.localized_coset_kernels"
+      ],
+      "review": "The localized coset sheaf is scalar extension followed by graph pullback. Induced and ambient edge roots agree by cancellation of a0 in the reflection label; the plane-prime unit criterion identifies the zero outside edge modules. Kernel and image statements retain their ambient embeddings."
     }
   ],
   "relationship_map_revision": {
@@ -7093,6 +7237,6 @@
     "edge_count": 92,
     "route": "Top splitting and primitive recognition feed the boundary-pairing route; full model decomposition feeds simultaneous character formulas.",
     "evidence": "BoundarySheaf.splitIn_of_top_split, iso_of_primitive_top_split, GradedSheaf.exists_modelSumIso and bottCharacter_decomposition_both.",
-    "latest_anchor_refinement": "Added section-constraint, finite-flat section, graded-morphism extension and embedded-image transport anchors. Removed the generic selected-kernel theorem’s dihedral-model edge. The 38-stage, 92-edge graph retains geometry at the later surviving-coset stage."
+    "latest_anchor_refinement": "Expanded the general pullback and localized-coset anchors: finite relative cutoff graph, explicit surviving outgoing lifts, relative flabbiness and selected-kernel equality. The 38-stage, 92-edge prerequisite graph is unchanged."
   }
 }

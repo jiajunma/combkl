@@ -744,3 +744,33 @@ comparisons:
   consequence: This graded extension is used in boundary recognition and splitting.
     The ungraded local-ring decomposition is a later construction with its own local-ring
     and model hypotheses.
+- id: surviving-coset-pullback
+  kind: Relative extension through an explicit graph map
+  nodes:
+  - kl.sheaves.pullback_live_flabbiness
+  - kl.sheaves.pullback_selected_kernels
+  - kl.local.coset_graph
+  - kl.local.coset_outgoing_lifts
+  - kl.local.localized_coset
+  - kl.local.localized_coset_properties
+  - kl.local.localized_coset_kernels
+  - kl.sheaves.relative_flabbiness
+  paper_labels:
+  - loc:relative-flabbiness
+  lean_declarations:
+  - OAI.KLInvariance.MomentGraph.Sheaf.extend_closedUnder
+  - OAI.KLInvariance.MomentGraph.Sheaf.pullback_flabby_live
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.coset_lift_live
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_flabby
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_kernel
+  paper: The coset intersection is a finite relative lower ideal. A relative upper
+    subset is closed under the surviving plane-labelled edges. Descending ambient
+    extension gives relative flabbiness after localization.
+  lean: The same descending extension is factored into extend_closedUnder and a graph-pullback
+    theorem. The coset map supplies vertex injectivity and explicit outgoing lifts;
+    the root/unit criterion makes all outside edge modules zero. A separate theorem
+    records selected-kernel equality under that pullback.
+  consequence: Relative order determines the upper subsets on the coset, while the
+    ambient graph supplies the extension. The localized stalks and edge maps remain
+    the actual tensor-extended ambient modules, so selected kernels and their edge
+    images retain their embeddings.

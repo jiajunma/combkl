@@ -1222,3 +1222,30 @@ concepts:
   topics:
   - kl.sheaves
   - kl.localization
+- node: kl.local.coset_graph
+  terms:
+  - finite relative coset graph
+  - finite coset graph
+  - coset vertex set
+  - coset graph map
+  - coset edge map
+  topics:
+  - kl.localization
+- node: kl.local.localized_coset
+  terms:
+  - localized coset sheaf
+  - localized coset sheaves
+  - coset label
+  - coset labels
+  - localized linear-label map
+  - localized coset construction
+  topics:
+  - kl.localization
+  - kl.sheaves
+- node: kl.sheaves.flabbiness
+  terms:
+  - closed under surviving edges
+  - closure under surviving edges
+  topics:
+  - kl.sheaves
+  - kl.localization

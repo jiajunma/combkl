@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 75717,
-  "theorem_walkthroughs": 264,
+  "revised_proof_words": 77482,
+  "theorem_walkthroughs": 269,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -1947,6 +1947,21 @@
       "review": "Read the parallel normalized/unnormalized cyclic-action proofs. Expanded reduced-tail induction, inversion in the right action, commuting-map extensionality and the standard ascent products."
     },
     {
+      "node": "kl.local.coset_outgoing_lifts",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetAmbient_injective",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetFinite",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_lower",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_outgoing_below",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_lift_live"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 290,
+      "proof_sha256": "a7b9337f508c6e50cd408331d7e99e9e5b0acfed2ec97c471e3b5eff9dee79fa",
+      "review": "Read the injectivity/finite instance, lower-closure argument, explicit t*x target in coset_lift_live and the first-step extraction in coset_outgoing_below. All ambient/relative order and label directions are explicit."
+    },
+    {
       "node": "kl.local.edge_inclusion",
       "source_declarations": [
         "OAI.KLInvariance.BruhatGraph.schedule_edge_image_le"
@@ -1969,6 +1984,36 @@
       "revised_proof_words": 237,
       "proof_sha256": "3aea43d1e6b6b5ef4a47caf46fa7a82b312ffdbcd9dab3bba34ee7f0dfbf08ac",
       "review": "Read the exact Noetherian-UFD height-one equivalence and intersection theorem. Retained global scalar generic span and free target, and linked the fully expanded prime-removal proof."
+    },
+    {
+      "node": "kl.local.localized_coset_kernels",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_kernel",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upwardKernel",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_lowerImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upperImage"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 295,
+      "proof_sha256": "5e419aed4d5b5842561ed6c68901fe4d39ffcc300723d9ed6e2cd7f84fb9ec21",
+      "review": "Read localizedCoset_kernel and verified its live-edge inputs. Combined it with the already reviewed flat kernel and lower/upper image theorems, preserving arbitrary independently selected edge sets and equality inside the fixed ambient stalk and edge tensor modules."
+    },
+    {
+      "node": "kl.local.localized_coset_properties",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.polynomialLabel_unit_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_quotient",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_generated",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_flabby",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetRoot_eq",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel_eq_root"
+      ],
+      "proof_steps": 6,
+      "revised_proof_words": 468,
+      "proof_sha256": "04eaeaecb7d71ba375eafe18fef9f95ce0e57d391d36590a8cdcc865cfb6cf99",
+      "review": "Read the root/unit criterion, all three localizedCoset property proofs and both root-label identities. Expanded the finite ambient graph, zero outside edge modules, injective coset map and outgoing lifts before invoking relative flabbiness; free/finite stalk transfer follows from the explicit tensor stalks."
     },
     {
       "node": "kl.local.localized_decomposition",
@@ -2920,6 +2965,35 @@
       "review": "Read primitive_id_of_projector, primitive_projector_of_id, and primitive_image; all lifted/descended idempotent equations and the image splitting are explicit."
     },
     {
+      "node": "kl.sheaves.pullback_live_flabbiness",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.pullAssignment",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pull_global",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pullback_generated",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pushAssignment",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pull_push",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pullback_flabby_live",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pullback_quotient"
+      ],
+      "proof_steps": 6,
+      "revised_proof_words": 483,
+      "proof_sha256": "574f8a48b4dd5128b2dd54bd81aa8295ecb57f1cfc2b7aee33c4ddb3f24446ba",
+      "review": "Read pull/push assignments, both basic property transfers and the complete live-edge flabbiness proof. Preserved finite target vertices, vertex injectivity, zero modules outside the selected live set and outgoing lifts; generation and quotient transport use no such extra hypotheses."
+    },
+    {
+      "node": "kl.sheaves.pullback_selected_kernels",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.stalkMap_assignment",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pullback_kernel"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 229,
+      "proof_sha256": "2c8bcd6deb41e1e4d4b4de98480820ac4862c5158f0cc3a676d4296cbd6a8bfd",
+      "review": "Read both containments of pullback_kernel and its stalkMap_assignment transport. Retained outgoing lifting only at the fixed vertex, arbitrary selected ambient edges and zero outside modules; no vertex injectivity, finiteness or flabbiness hypothesis is used."
+    },
+    {
       "node": "kl.sheaves.relative_flabbiness",
       "source_declarations": [
         "OAI.KLInvariance.MomentGraph.Sheaf.extend_closedUnder"
@@ -2928,7 +3002,7 @@
       "previous_proof_words": 69,
       "revised_proof_words": 328,
       "proof_sha256": "fc45e39268e6a589e0fb15ce608bb89a70bd14dd65a3f685af02b3747a90d8ed",
-      "review": "Read extend_one, closedUnder_insert, and extend_closedUnder. The ambient assignment update, maximal missing vertex, zero incoming-edge cases, and induction on a strictly smaller complement are explicit."
+      "review": "Re-read extend_one, closedUnder_insert and the complete finite-complement induction in extend_closedUnder against the existing proof. Its closure and zero-edge hypotheses are exactly those used by the new pullback proof."
     },
     {
       "node": "kl.sheaves.split_sheaf_properties",

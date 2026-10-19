@@ -146,6 +146,18 @@ A tensor stalk value is a finite sum of pure tensors, so global sections generat
 
 The selected outgoing constraint map applies the same construction at one stalk. It identifies \(K_x(F)\) with a kernel, giving the [[node:kl.notes.sheaf_localization|flat kernel-and-image theorem]] used in localization. That theorem preserves the embeddings of both edge images into the same extended edge module.
 
+## Pullback through the surviving edges
+
+Let \(f:G\to H\) be a graph map. Pullback copies the modules at \(f_V(x)\) and \(f_E(a)\), with restrictions identified through the two endpoint equations. A global section pulls back coordinatewise, so generation passes to the pullback. Upper quotients pass through the same endpoint identifications.
+
+For flabbiness, take a set \(L\) of target edges whose complement has zero edge modules. Assume \(f_V\) is injective and every edge in \(L\) starting at an image vertex \(f_V(x)\) has an outgoing lift starting at \(x\). If \(\Omega\) is upper in \(G\), then \(f_V(\Omega)\) is closed under \(L\): lift a surviving edge, use the upper-set property at its source, and map its target back to \(H\).
+
+A section on \(\Omega\) pushes to an assignment on \(f_V(\Omega)\). On a surviving edge, its compatibility equation is the equation on the lifted edge; on any other edge it takes values in the zero module. When \(H\) has finitely many vertices and its sheaf is flabby, the [[node:kl.sheaves.relative_flabbiness|relative extension theorem]] extends this assignment globally. Pullback then gives the desired extension on \(G\).
+
+The [[node:kl.sheaves.pullback_selected_kernels|selected-kernel pullback theorem]] uses the same outgoing lifts at one fixed vertex. Every selected ambient equation either comes from a selected source edge or vanishes in a zero module. Consequently it gives equality of the two kernels inside the identical stalk. This kernel statement applies using just those local lift and zero-module hypotheses.
+
+The localized coset construction supplies this setup with \(L\) equal to the ambient edges whose reflection labels lie in the plane subgroup.
+
 ## Minimal covers detect a boundary-sheaf isomorphism
 
 Consider a graded morphism between two normalized boundary sheaves, bijective at the distinguished stalk. Suppose its stalk maps are already bijective strictly above \(x\). Upper quotient maps then make the relevant edge maps bijective.
@@ -525,6 +537,8 @@ The OpenAI notes obtain the equality of \(C\) and \(P\) through their cited char
 - [[node:kl.sheaves.section_constraints]]
 - [[node:kl.sheaves.flat_section_base_change]]
 - [[node:kl.sheaves.base_change_properties]]
+- [[node:kl.sheaves.pullback_live_flabbiness]]
+- [[node:kl.sheaves.pullback_selected_kernels]]
 - [[node:kl.sheaves.finite_operations]]
 - [[node:kl.sheaves.finite_sum_properties]]
 - [[node:kl.sheaves.lower_extension]]

@@ -150,7 +150,9 @@
         "OAI.KLInvariance.MomentGraph.GradedSheaf",
         "OAI.KLInvariance.MomentGraph.Sheaf.constraint",
         "OAI.KLInvariance.MomentGraph.Sheaf.tensorSectionsEquiv",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.exists_extension"
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.exists_extension",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pullback_flabby_live",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pullback_kernel"
       ]
     },
     {
@@ -484,11 +486,15 @@
         "s",
         "og"
       ],
-      "output": "Plane localization and the surviving labelled coset graph.",
+      "output": "Plane localization, the finite relative coset graph with outgoing lifts, and the actual localized sheaf with relative flabbiness and selected-kernel transport.",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.planePrime",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset",
-        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upwardKernel"
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upwardKernel",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.CosetVertex",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_lift_live",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_flabby",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_kernel"
       ]
     },
     {
@@ -1116,6 +1122,19 @@
         "OAI.KLInvariance.FlatSubmodule.baseChange_ker",
         "OAI.KLInvariance.FlatSubmodule.baseChange_map",
         "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upwardKernel"
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "scope": "Surviving-edge pullback and localized coset sheaves",
+      "change": "Recorded the general live-edge flabbiness and fixed-vertex kernel pullback, then the finite relative cutoff graph, explicit outgoing lifts and actual localized-coset property/kernel interfaces. Relative order supplies upper subsets, and ambient extension is applied after proving surviving-edge closure.",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.pullback_flabby_live",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pullback_kernel",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.CosetVertex",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_lift_live",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_flabby",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_kernel"
       ]
     }
   ]
