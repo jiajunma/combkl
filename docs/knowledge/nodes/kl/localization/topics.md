@@ -60,6 +60,38 @@ with flatness required for the kernel identity. Applying these equations to the 
 
 Generation, free stalks, finite generation, the upper-quotient rule and flabbiness transfer with the hypotheses stated in the [[node:kl.sheaves.base_change_properties|scalar-extension property theorem]]. Restriction to a surviving coset adds the graph-pullback conditions developed next.
 
+## Root quotients and localized reduction
+
+Let \(a\) be a positive root with polynomial label \(r_a=\lambda(a)\). Its original edge coefficient ring is \(E_a=A/(r_a)\). For a subspace \(P\), localization gives \(R_P=A_{\mathfrak p_P}\), and the localized edge ring is
+\[
+E_{P,a}=R_P/(\lambda_P(a)),
+\qquad \lambda_P=\eta_P\lambda.
+\]
+Write \(q_{P,a}:R_P\to E_{P,a}\). The localized reduction map is
+\[
+r_{P,a}(v)=q_{P,a}(\eta_P(\lambda(v))).
+\]
+In particular it kills \(a\).
+
+The [[node:kl.algebra.tensor_scalar_quotient|tensor-quotient theorem]] identifies
+\[
+R_P\otimes_A E_a\simeq E_{P,a},
+\qquad
+s\otimes[f]\longmapsto q_{P,a}(s\eta_P(f)).
+\]
+The induced map from \(E_a\) sends \([f]\) to \(q_{P,a}(\eta_P(f))\). Thus the quotient and localization routes give the same actual reduced label.
+
+For \(P=P(a,b)\), the [[node:kl.local.plane_prime_membership|plane-prime membership theorem]] gives
+\(\mathfrak p_P=(\lambda(a),\lambda(b))\). If a positive root \(c\ne a\) lies in this span, write
+\[
+c=sa+rb.
+\]
+[[node:kl.realization.root_planes|Independence of distinct positive roots]] forces \(r\ne0\), and reduction gives
+\[
+r_{P,a}(c)=r\,r_{P,a}(b).
+\]
+The image of \(r\) is a unit, so the two labels are associated scalars. The [[node:kl.local.localized_root_reduction|localized root-reduction theorem]] proves this identity and traces it to the source's polynomialRoot values. Its linear-algebra assertion also holds when the localization subspace is chosen independently of \(P(a,b)\).
+
 ## The finite relative coset graph
 
 Fix the induced plane subgroup \(D_P\), a representative \(a_0\) of least ambient length in \(D_Pa_0\), and the ambient top \(b\). The vertices are
@@ -171,9 +203,14 @@ The logical order to retain is: free upper kernel, free edge target, local model
 
 ### Plane and edge localizations
 
-- [[node:kl.local.plane_prime_membership]]
-
+- [[node:kl.algebra.edge_coefficient_ring]]
+- [[node:kl.algebra.root_quotient_coordinates]]
 - [[node:kl.detail.localization_rings]]
+- [[node:kl.local.plane_prime_membership]]
+- [[node:kl.algebra.tensor_scalar_quotient]]
+- [[node:kl.local.localized_edge_ring]]
+- [[node:kl.algebra.plane_reduction]]
+- [[node:kl.local.localized_root_reduction]]
 
 ### Localizing graph sheaves
 

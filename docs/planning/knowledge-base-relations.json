@@ -75,7 +75,10 @@
         "OAI.KLInvariance.ProjectiveRange.projective_of_two_stage",
         "OAI.KLInvariance.Graded.ModuleData.char_of_dual_equiv",
         "OAI.KLInvariance.FlatSubmodule.baseChange_ker",
-        "OAI.KLInvariance.FlatSubmodule.baseChange_map"
+        "OAI.KLInvariance.FlatSubmodule.baseChange_map",
+        "OAI.KLInvariance.ScalarQuotient.free_of_scalar_presentation",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangeQuotient",
+        "OAI.KLInvariance.PlaneReduction.associated_reduction"
       ]
     },
     {
@@ -486,7 +489,7 @@
         "s",
         "og"
       ],
-      "output": "Plane localization, the finite relative coset graph with outgoing lifts, and the actual localized sheaf with relative flabbiness and selected-kernel transport.",
+      "output": "Plane and edge coefficient rings, explicit root-reduction maps, and the localized relative coset sheaf with its selected kernels and edge images.",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.planePrime",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset",
@@ -494,7 +497,10 @@
         "OAI.KLInvariance.TitsSpace.PlaneBasis.CosetVertex",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_lift_live",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_flabby",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_kernel"
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_kernel",
+        "OAI.KLInvariance.BruhatGraph.EdgeRing",
+        "OAI.KLInvariance.TitsSpace.LocalizedEdgeRing",
+        "OAI.KLInvariance.TitsSpace.localizedReduction_associated"
       ]
     },
     {
@@ -1135,6 +1141,19 @@
         "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_lift_live",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_flabby",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_kernel"
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "scope": "Coefficient quotients and localized root reductions",
+      "change": "Separated the edge coefficient ring, the plane local ring and the localized edge quotient. Recorded coordinate-basis descent, the tensor/principal-quotient equivalence and the nonzero transverse coefficient that gives associated reduced roots.",
+      "source_declarations": [
+        "OAI.KLInvariance.ScalarQuotient.free_of_scalar_presentation",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangeQuotient",
+        "OAI.KLInvariance.PlaneReduction.associated_reduction",
+        "OAI.KLInvariance.BruhatGraph.EdgeRing",
+        "OAI.KLInvariance.TitsSpace.LocalizedEdgeRing",
+        "OAI.KLInvariance.TitsSpace.localizedReduction_associated"
       ]
     }
   ]

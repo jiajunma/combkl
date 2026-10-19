@@ -90,6 +90,7 @@
       "kl.algebra.coefficient_duals",
       "kl.algebra.component_transport",
       "kl.algebra.dual_basis_degrees",
+      "kl.algebra.edge_coefficient_ring",
       "kl.algebra.eigenvalue_difference",
       "kl.algebra.finite_graded_cover",
       "kl.algebra.flat_embedded_modules",
@@ -114,6 +115,7 @@
       "kl.algebra.module_operations",
       "kl.algebra.pair_projection",
       "kl.algebra.perfect_inverse_degree",
+      "kl.algebra.plane_reduction",
       "kl.algebra.polynomial_hilbert",
       "kl.algebra.positive_ideal",
       "kl.algebra.projective_local_membership",
@@ -126,9 +128,11 @@
       "kl.algebra.scalar_free_presentation",
       "kl.algebra.scalar_inverse_degree",
       "kl.algebra.scalar_quotient",
+      "kl.algebra.scalar_quotient_basis",
       "kl.algebra.scalar_quotient_regular",
       "kl.algebra.scalar_twist",
       "kl.algebra.subquotient_gradings",
+      "kl.algebra.tensor_scalar_quotient",
       "kl.algebra.two_stage_projectivity",
       "kl.detail.coefficient_change",
       "kl.detail.graded_character",
@@ -180,6 +184,8 @@
       "kl.local.localized_coset_kernels",
       "kl.local.localized_coset_properties",
       "kl.local.localized_decomposition",
+      "kl.local.localized_edge_ring",
+      "kl.local.localized_root_reduction",
       "kl.local.plane_prime_membership",
       "kl.notes.dihedral_models",
       "kl.notes.sheaf_localization",
@@ -320,6 +326,7 @@
       "kl.sheaves.costalk_pairing_symmetry",
       "kl.sheaves.costalk_support",
       "kl.sheaves.cut_balance",
+      "kl.sheaves.edge_coefficient_module",
       "kl.sheaves.finite_operations",
       "kl.sheaves.finite_sum_properties",
       "kl.sheaves.flabbiness",
@@ -751,6 +758,18 @@
       "paper_locations": []
     },
     {
+      "id": "kl.algebra.edge_coefficient_ring",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.EdgeAlgebra.rootIdeal",
+        "OAI.KLInvariance.EdgeAlgebra.rootLine",
+        "OAI.KLInvariance.TitsSpace.EdgeCoefficient",
+        "OAI.KLInvariance.BruhatGraph.polynomialRoot",
+        "OAI.KLInvariance.BruhatGraph.EdgeRing"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.algebra.eigenvalue_difference",
       "chapter": "kl.graded_algebra",
       "lean_declarations": [
@@ -1011,6 +1030,15 @@
       "paper_locations": []
     },
     {
+      "id": "kl.algebra.plane_reduction",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.PlaneReduction.scalar_reduction",
+        "OAI.KLInvariance.PlaneReduction.associated_reduction"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.algebra.polynomial_hilbert",
       "chapter": "kl.graded_algebra",
       "lean_declarations": [
@@ -1116,7 +1144,12 @@
         "OAI.KLInvariance.EdgeAlgebra.linear_homogeneous",
         "OAI.KLInvariance.EdgeAlgebra.reducedRoot_homogeneous",
         "OAI.KLInvariance.TitsSpace.EdgeCoefficient",
-        "OAI.KLInvariance.TitsSpace.edgePolynomial"
+        "OAI.KLInvariance.TitsSpace.edgePolynomial",
+        "OAI.KLInvariance.BruhatGraph.edgeRingEquiv",
+        "OAI.KLInvariance.BruhatGraph.edgeRingEquiv_root",
+        "OAI.KLInvariance.BruhatGraph.edgeRing_isDomain",
+        "OAI.KLInvariance.BruhatGraph.edgeRing_ufm",
+        "OAI.KLInvariance.BruhatGraph.reducedPolynomialRoot_prime"
       ],
       "paper_locations": []
     },
@@ -1148,6 +1181,17 @@
       "lean_declarations": [
         "OAI.KLInvariance.Graded.ModuleData.scalarQuotient",
         "OAI.KLInvariance.EdgeImage.reducedInclusion"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.algebra.scalar_quotient_basis",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.ScalarQuotient.coordinateReduction",
+        "OAI.KLInvariance.ScalarQuotient.coordinateReduction_surjective",
+        "OAI.KLInvariance.ScalarQuotient.coordinateReduction_kernel",
+        "OAI.KLInvariance.ScalarQuotient.free_of_scalar_presentation"
       ],
       "paper_locations": []
     },
@@ -1185,6 +1229,18 @@
         "OAI.KLInvariance.Graded.ModuleData.quotient",
         "OAI.KLInvariance.Graded.ModuleData.subtype",
         "OAI.KLInvariance.Graded.ModuleData.quotientMap"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.algebra.tensor_scalar_quotient",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangeScalar",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangeScalar_tmul",
+        "OAI.KLInvariance.MomentGraph.Sheaf.span_map",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangeQuotient",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangeQuotient_tmul"
       ],
       "paper_locations": []
     },
@@ -1944,12 +2000,12 @@
       "id": "kl.detail.localization_rings",
       "chapter": "kl.localization",
       "lean_declarations": [
-        "OAI.KLInvariance.EdgeAlgebra.rootIdeal",
-        "OAI.KLInvariance.EdgeAlgebra.rootLine",
         "OAI.KLInvariance.SymmetricPlaneIdeal.ideal",
+        "OAI.KLInvariance.TitsSpace.embedLinear",
         "OAI.KLInvariance.TitsSpace.planePrime",
+        "OAI.KLInvariance.TitsSpace.planePrime_isPrime",
         "OAI.KLInvariance.TitsSpace.PlaneRing",
-        "OAI.KLInvariance.TitsSpace.LocalizedEdgeRing"
+        "OAI.KLInvariance.TitsSpace.localizedLinear"
       ],
       "paper_locations": []
     },
@@ -3244,8 +3300,7 @@
       "chapter": "kl.localization",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset",
-        "OAI.KLInvariance.TitsSpace.localizedLinear"
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset"
       ],
       "paper_locations": []
     },
@@ -3284,6 +3339,29 @@
       ]
     },
     {
+      "id": "kl.local.localized_edge_ring",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.localizedEdgeIdeal",
+        "OAI.KLInvariance.TitsSpace.LocalizedEdgeRing",
+        "OAI.KLInvariance.TitsSpace.localizedReduction",
+        "OAI.KLInvariance.TitsSpace.localizedReduction_self"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.local.localized_root_reduction",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.localizedReduction_self",
+        "OAI.KLInvariance.TitsSpace.positiveRoot_not_line",
+        "OAI.KLInvariance.TitsSpace.localizedReduction_associated",
+        "OAI.KLInvariance.TitsSpace.polynomialRoot_localized",
+        "OAI.KLInvariance.TitsSpace.polynomialRoot_reduced"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.local.plane_prime_membership",
       "chapter": "kl.localization",
       "lean_declarations": [
@@ -3293,7 +3371,8 @@
         "OAI.KLInvariance.TitsSpace.planePrime_isPrime",
         "OAI.KLInvariance.TitsSpace.linear_mem_planePrime_iff",
         "OAI.KLInvariance.TitsSpace.linear_mem_maximal_iff",
-        "OAI.KLInvariance.TitsSpace.linear_isUnit_iff"
+        "OAI.KLInvariance.TitsSpace.linear_isUnit_iff",
+        "OAI.KLInvariance.BruhatGraph.planePrime_span"
       ],
       "paper_locations": []
     },
@@ -4183,6 +4262,17 @@
       "paper_locations": [
         "Moment-graph background; bg:normalization"
       ]
+    },
+    {
+      "id": "kl.sheaves.edge_coefficient_module",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.edgeTorsion",
+        "OAI.KLInvariance.BruhatGraph.edgeModule",
+        "OAI.KLInvariance.BruhatGraph.edgeModule_tower",
+        "OAI.KLInvariance.BruhatGraph.edgeModule_free"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.sheaves.finite_operations",

@@ -370,10 +370,10 @@ concepts:
   - structure sheaves
 - node: kl.detail.base_change
   terms:
-  - base change
-  - scalar extension
   - tensor base change
   - sheaf scalar extension
+  - sheaf base change
+  - base change of a graph sheaf
   topics:
   - kl.sheaves
   - kl.localization
@@ -384,8 +384,9 @@ concepts:
   - root-plane rings
   - root-plane localization ring
   - root-plane localization rings
-  - edge coefficient ring
-  - localized edge ring
+  - plane prime
+  - plane primes
+  - localized linear-label map
 - node: kl.detail.plane_basis
   terms:
   - plane basis
@@ -907,6 +908,10 @@ concepts:
   - relatively prime
   - relative primality
   - associated scalars
+  - associated elements
+  - associated labels
+  - unit multiple
+  - unit multiples
 - node: kl.algebra.linear_ideals
   terms:
   - unit
@@ -1237,7 +1242,6 @@ concepts:
   - localized coset sheaves
   - coset label
   - coset labels
-  - localized linear-label map
   - localized coset construction
   topics:
   - kl.localization
@@ -1249,3 +1253,26 @@ concepts:
   topics:
   - kl.sheaves
   - kl.localization
+- node: kl.algebra.edge_coefficient_ring
+  terms:
+  - edge coefficient ring
+  - edge coefficient rings
+  - polynomial edge coefficient ring
+  - symmetric edge coefficient ring
+- node: kl.local.localized_edge_ring
+  terms:
+  - localized edge ring
+  - localized edge rings
+  - localized edge ideal
+  - localized reduction map
+  - localized root reduction
+  topics:
+  - kl.localization
+  - kl.sheaves
+  - kl.graded_algebra
+- node: kl.detail.base_change
+  terms:
+  - base change
+  - scalar extension
+  topics:
+  - kl.sheaves

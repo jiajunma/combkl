@@ -22,6 +22,16 @@ The direction \(x\to y\) specifies which endpoint is lower and which is upper. B
 
 On a general graph the definition supplies this data for every vertex and edge. A graded sheaf also requires compatible gradings and degree-zero restriction maps.
 
+## The coefficient action on an actual edge
+
+For a root label \(r_a\in A\), the upper-quotient rule makes \(r_a\) annihilate the edge module. The action therefore factors through the edge coefficient ring \(E_a=A/(r_a)\):
+\[
+[f]\cdot v=fv.
+\]
+If two representatives differ by \(r_ag\), their actions differ by \(g(r_av)=0\).
+
+A basis \(m_i\) of the upper stalk descends to the vectors \(\rho^+_e(m_i)\) in the edge module. They form an \(E_a\)-basis by the [[node:kl.algebra.scalar_quotient_basis|scalar-kernel basis theorem]]: both the upper restriction and coordinate reduction have kernel \(r_aB^y\). This is the [[node:kl.sheaves.edge_coefficient_module|actual edge-module theorem]], which fixes the coefficient action used when comparing submodules inside an edge.
+
 ## Section equations and a homogeneous basis
 
 An assignment chooses one stalk vector at every vertex. For the example it is a pair \((f,g)\in A^2\). It is a compatible section when the two values agree after restriction:
@@ -524,6 +534,7 @@ The OpenAI notes obtain the equality of \(C\) and \(P\) through their cited char
 - [[node:kl.notes.boundary_image]]
 - [[node:kl.sheaves.boundary_image_identity]]
 - [[node:kl.detail.upper_quotient]]
+- [[node:kl.sheaves.edge_coefficient_module]]
 - [[node:kl.sheaves.upward_kernel]]
 
 ### Operations and morphisms

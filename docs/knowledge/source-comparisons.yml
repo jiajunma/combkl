@@ -774,3 +774,53 @@ comparisons:
     ambient graph supplies the extension. The localized stalks and edge maps remain
     the actual tensor-extended ambient modules, so selected kernels and their edge
     images retain their embeddings.
+- id: localized-coefficient-reduction
+  kind: Explicit coefficient maps and scalar reduction
+  nodes:
+  - kl.local.localized_edge_ring
+  - kl.local.localized_root_reduction
+  - kl.algebra.plane_reduction
+  - kl.algebra.tensor_scalar_quotient
+  paper_labels:
+  - edge:bound
+  lean_declarations:
+  - OAI.KLInvariance.MomentGraph.Sheaf.baseChangeQuotient
+  - OAI.KLInvariance.TitsSpace.localizedReduction
+  - OAI.KLInvariance.PlaneReduction.scalar_reduction
+  - OAI.KLInvariance.TitsSpace.localizedReduction_associated
+  - OAI.KLInvariance.TitsSpace.polynomialRoot_reduced
+  paper: The edge-image proof localizes at the plane prime, passes to the quotient
+    by the current root label, and expresses the remaining plane labels as uniformizers
+    times units in the resulting localized edge ring.
+  lean: The coefficient operations are explicit tensor and quotient maps. A real-linear
+    reduction kills the current root; writing another root as s*a+r*b gives a nonzero
+    field coefficient r and therefore a unit multiple after reduction. The root-label
+    compatibility formulas identify these elements with the actual polynomial labels.
+  consequence: The reduced-label comparison is an equality up to an explicitly obtained
+    unit. Later product arguments use associated elements in the localized quotient
+    ring to compare actual scalar-image submodules.
+- id: edge-coefficient-bases
+  kind: Coordinate construction of the edge coefficient module
+  nodes:
+  - kl.algebra.edge_coefficient_ring
+  - kl.algebra.scalar_quotient_basis
+  - kl.sheaves.edge_coefficient_module
+  paper_labels:
+  - bg:bmp
+  - edge:bound
+  lean_declarations:
+  - OAI.KLInvariance.BruhatGraph.EdgeRing
+  - OAI.KLInvariance.ScalarQuotient.coordinateReduction
+  - OAI.KLInvariance.ScalarQuotient.free_of_scalar_presentation
+  - OAI.KLInvariance.BruhatGraph.edgeModule
+  - OAI.KLInvariance.BruhatGraph.edgeModule_free
+  paper: The upper-end quotient rule presents the edge module as the upper stalk modulo
+    its root label. The edge comparison regards it as a free module over the corresponding
+    coefficient quotient.
+  lean: The root label first annihilates the edge module, defining its quotient-ring
+    action and scalar compatibility. Coordinate reduction of a finite upper-stalk
+    basis has the same scalar kernel as the upper restriction, and the quotient comparison
+    gives a basis of the actual edge module.
+  consequence: Both the coefficient ring and its module action are fixed before comparing
+    lower and upper images. Their elements remain in the original edge module with
+    its induced quotient-ring scalars.

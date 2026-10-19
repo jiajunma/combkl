@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 77482,
-  "theorem_walkthroughs": 269,
+  "revised_proof_words": 78878,
+  "theorem_walkthroughs": 274,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -324,6 +324,18 @@
       "review": "Compared perfect_inverse_of_homogeneous_functional. The saved proof selects the output component j+r, extends equality from homogeneous vectors by finite additivity, and uses injectivity of the pairing equivalence."
     },
     {
+      "node": "kl.algebra.plane_reduction",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.PlaneReduction.scalar_reduction",
+        "OAI.KLInvariance.PlaneReduction.associated_reduction"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 151,
+      "proof_sha256": "4a191fc4dedecb5c3852b7346a0c6774ba35b39f660a53b479b49c5cea86e194",
+      "review": "Read the two PlaneReduction lemmas. Retained arbitrary vector spaces and commutative target algebras, extracted the nonzero transverse coefficient and exhibited its inverse in the target; the scalar-image consequence is derived explicitly."
+    },
+    {
       "node": "kl.algebra.polynomial_hilbert",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -429,12 +441,17 @@
         "OAI.KLInvariance.EdgeAlgebra.linear_homogeneous",
         "OAI.KLInvariance.EdgeAlgebra.reducedRoot_homogeneous",
         "OAI.KLInvariance.TitsSpace.EdgeCoefficient",
-        "OAI.KLInvariance.TitsSpace.edgePolynomial"
+        "OAI.KLInvariance.TitsSpace.edgePolynomial",
+        "OAI.KLInvariance.BruhatGraph.edgeRingEquiv",
+        "OAI.KLInvariance.BruhatGraph.edgeRingEquiv_root",
+        "OAI.KLInvariance.BruhatGraph.edgeRing_isDomain",
+        "OAI.KLInvariance.BruhatGraph.edgeRing_ufm",
+        "OAI.KLInvariance.BruhatGraph.reducedPolynomialRoot_prime"
       ],
-      "proof_steps": 4,
-      "revised_proof_words": 209,
-      "proof_sha256": "aa1ba2521cc97941ac1e58243920f286a9f706003a1fe14bb5f6183789fd1e11",
-      "review": "Read rootQuotientEquiv, its generator formula, rootQuotientPolynomial and reduced-root homogeneity, plus the actual EdgeCoefficient/edgePolynomial definitions."
+      "proof_steps": 6,
+      "revised_proof_words": 373,
+      "proof_sha256": "06196de487e4a799d545ef527008a2ae36083a1dc109b3c4eeac4f2042268be0",
+      "review": "Re-read the symmetric quotient coordinates and added the actual polynomial EdgeRing equivalence, its generator formula, domain/UFD transport and prime reduced-positive-root argument from TerminalKernels."
     },
     {
       "node": "kl.algebra.scalar_free_presentation",
@@ -463,6 +480,20 @@
       "revised_proof_words": 108,
       "proof_sha256": "d6f28f600ba620db80bda7c8951b6c56e4ab16d4e9a9a63d21acb7de17cfcfa8",
       "review": "Compared mem_of_homogeneous_smul. The component identity and injectivity of scalar multiplication recover degree n-d without a division operation."
+    },
+    {
+      "node": "kl.algebra.scalar_quotient_basis",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.ScalarQuotient.coordinateReduction",
+        "OAI.KLInvariance.ScalarQuotient.coordinateReduction_surjective",
+        "OAI.KLInvariance.ScalarQuotient.coordinateReduction_kernel",
+        "OAI.KLInvariance.ScalarQuotient.free_of_scalar_presentation"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 297,
+      "proof_sha256": "b49edfb1a15cc913f10e9cf43226703e67ac7b9293c5572229c4926ecd74c7a0",
+      "review": "Read coordinateReduction, its surjectivity and exact scalar kernel, and the quotient comparison in free_of_scalar_presentation. Retained arbitrary commutative R and scalar a, a finite source basis, surjectivity, the exact kernel and the compatible quotient-ring action."
     },
     {
       "node": "kl.algebra.scalar_quotient_regular",
@@ -495,6 +526,21 @@
       "revised_proof_words": 304,
       "proof_sha256": "77db6d4f34e8765aa8241580fa98b0ccb0b5e16033aeffa80dae0bb5b542b06d",
       "review": "Read sub_isInternal and quotient_isInternal via image_isInternal. Included well-defined quotient components, finite-sum independence, scalar compatibility and the precise finiteness assumptions."
+    },
+    {
+      "node": "kl.algebra.tensor_scalar_quotient",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangeScalar",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangeScalar_tmul",
+        "OAI.KLInvariance.MomentGraph.Sheaf.span_map",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangeQuotient",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangeQuotient_tmul"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 293,
+      "proof_sha256": "fc700bf69d13c9c256bd23008561754849f491151c50cb4e75ee0b572d9970f3",
+      "review": "Read baseChangeScalar, span_map and the exact S-linear baseChangeQuotient construction/formula. Expanded the balanced forward map, inverse quotient map and both inverse identities for an arbitrary commutative scalar extension."
     },
     {
       "node": "kl.algebra.two_stage_projectivity",
@@ -2027,6 +2073,21 @@
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
     },
     {
+      "node": "kl.local.localized_root_reduction",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.localizedReduction_self",
+        "OAI.KLInvariance.TitsSpace.positiveRoot_not_line",
+        "OAI.KLInvariance.TitsSpace.localizedReduction_associated",
+        "OAI.KLInvariance.TitsSpace.polynomialRoot_localized",
+        "OAI.KLInvariance.TitsSpace.polynomialRoot_reduced"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 204,
+      "proof_sha256": "6ee3f25d30342e2d90b10d17eeff3164ea523d593ecfc03efa088778f8b3ca7b",
+      "review": "Read localizedReduction_associated with its arbitrary localization subspace P, the distinct-positive-root line exclusion, and both definitional polynomial-root compatibility formulas. Kept the span P(a,b) separate from P and derived the explicit nonzero real coefficient through the generic lemma."
+    },
+    {
       "node": "kl.local.plane_prime_membership",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2036,12 +2097,13 @@
         "OAI.KLInvariance.TitsSpace.planePrime_isPrime",
         "OAI.KLInvariance.TitsSpace.linear_mem_planePrime_iff",
         "OAI.KLInvariance.TitsSpace.linear_mem_maximal_iff",
-        "OAI.KLInvariance.TitsSpace.linear_isUnit_iff"
+        "OAI.KLInvariance.TitsSpace.linear_isUnit_iff",
+        "OAI.KLInvariance.BruhatGraph.planePrime_span"
       ],
-      "proof_steps": 4,
-      "revised_proof_words": 193,
-      "proof_sha256": "809f5e935b1f126ad55a43a7bae816696929c24af0aaf7cd167d08965751ddb2",
-      "review": "Read the actual planePrime map, embedding injectivity and all three membership/unit lemmas. Preserved the original-root-space domain and the distinction between embedding and polynomial-coordinate transport."
+      "proof_steps": 5,
+      "revised_proof_words": 275,
+      "proof_sha256": "640d4fd8639531946431a243660267b5b716e64a409c70a464d6411eff7850f8",
+      "review": "Rechecked mapped ideal membership and the unit/maximal-ideal criteria, then expanded planePrime_span into both ideal containments for any pair of positive roots."
     },
     {
       "node": "kl.main.combinatorial_invariance",
@@ -2726,6 +2788,20 @@
       "revised_proof_words": 163,
       "proof_sha256": "1706aa7c45a7274bd16e89861da8647fee6149cfa568421080100efdcd58c104",
       "review": "Checked the two kernel vectors and both bilinear expansions against BalancedCuts.balanced_two; the generic argument uses a bilinear map, and the specialization checks both support conditions."
+    },
+    {
+      "node": "kl.sheaves.edge_coefficient_module",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.edgeTorsion",
+        "OAI.KLInvariance.BruhatGraph.edgeModule",
+        "OAI.KLInvariance.BruhatGraph.edgeModule_tower",
+        "OAI.KLInvariance.BruhatGraph.edgeModule_free"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 205,
+      "proof_sha256": "eec087185998dcce6e85fddbcd7a6730e96c283b954aa544d0fed5a085ddf441",
+      "review": "Read edge annihilation, the quotient-module instance, scalar-tower compatibility and the free-of-presentation application. Explained the action on representatives and the actual descended basis, using only the constructed upper stalk and quotient rule."
     },
     {
       "node": "kl.sheaves.finite_sum_properties",

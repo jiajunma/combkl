@@ -82,7 +82,7 @@ Every generator from \(P\) goes to zero. Thus this map factors through the quoti
 
 A unit is an element with a two-sided multiplicative inverse. A prime ideal is a proper ideal \(J\) such that \(xy\in J\) implies \(x\in J\) or \(y\in J\).
 
-In a domain, a prime element is a nonzero nonunit \(p\) such that \(p\mid xy\) implies \(p\mid x\) or \(p\mid y\). Its principal ideal is prime. Two scalars are relatively prime when every common divisor is a unit. They are associated when one is a unit multiple of the other.
+In a domain, a prime element is a nonzero nonunit \(p\) such that \(p\mid xy\) implies \(p\mid x\) or \(p\mid y\). Its principal ideal is prime. Two scalars are relatively prime when every common divisor is a unit. In any commutative ring, two scalars are associated when one is a unit multiple of the other.
 
 These notions describe linear root labels: the quotient theorem gives prime linear ideals, and divisibility between degree-one generators is determined by their vector lines.
 

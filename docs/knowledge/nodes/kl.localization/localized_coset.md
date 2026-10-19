@@ -20,7 +20,6 @@ lean:
   declarations:
   - OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel
   - OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset
-  - OAI.KLInvariance.TitsSpace.localizedLinear
 source:
   spans:
   - artifact: openai-kl-source
@@ -31,10 +30,6 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.PlaneLocalization:562
     format: lean-location
     note: OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset
-  - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.PlaneLocalization:1305
-    format: lean-location
-    note: OAI.KLInvariance.TitsSpace.localizedLinear
 verification:
   definition: accepted
   proof: not_applicable
@@ -123,5 +118,3 @@ The local source declarations below give the construction and proof.
 `OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel`: [PlaneLocalization.lean:558](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PlaneLocalization.lean#L558).
 
 `OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset`: [PlaneLocalization.lean:562](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PlaneLocalization.lean#L562).
-
-`OAI.KLInvariance.TitsSpace.localizedLinear`: [PlaneLocalization.lean:1305](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PlaneLocalization.lean#L1305).

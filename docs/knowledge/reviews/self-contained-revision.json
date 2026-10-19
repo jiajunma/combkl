@@ -2558,19 +2558,6 @@
       "pending": []
     },
     {
-      "node": "kl.algebra.linear_ideals",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/linear_ideals.md",
-      "source_declarations": [
-        "OAI.KLInvariance.SymmetricPlaneIdeal.ideal",
-        "OAI.KLInvariance.SymmetricPlaneIdeal.quotientMap",
-        "OAI.KLInvariance.EdgeAlgebra.rootLine",
-        "OAI.KLInvariance.EdgeAlgebra.rootIdeal",
-        "OAI.KLInvariance.EdgeAlgebra.symQuotientMap"
-      ],
-      "review": "Read the generic linear ideal, root line/root ideal and symmetric quotient maps. Defined the universal algebra maps and exact finite-sum ideal membership independently of the realization.",
-      "pending": []
-    },
-    {
       "node": "kl.detail.linear_quotient",
       "file": "docs/knowledge/nodes/kl.graded_algebra/linear_quotient.md",
       "source_declarations": [
@@ -2601,21 +2588,6 @@
         "OAI.KLInvariance.EdgeAlgebra.reducedRoot_prime"
       ],
       "review": "Read the actual root-quotient kernel, symmetric generator injectivity/primality, divisibility iff line membership and reducedRoot_prime. Explained the zero-vector divisibility case and the quotient-space proof.",
-      "pending": []
-    },
-    {
-      "node": "kl.algebra.root_quotient_coordinates",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/root_quotient_coordinates.md",
-      "source_declarations": [
-        "OAI.KLInvariance.EdgeAlgebra.rootQuotientEquiv",
-        "OAI.KLInvariance.EdgeAlgebra.rootQuotientEquiv_mk_ι",
-        "OAI.KLInvariance.EdgeAlgebra.rootQuotientPolynomial",
-        "OAI.KLInvariance.EdgeAlgebra.linear_homogeneous",
-        "OAI.KLInvariance.EdgeAlgebra.reducedRoot_homogeneous",
-        "OAI.KLInvariance.TitsSpace.EdgeCoefficient",
-        "OAI.KLInvariance.TitsSpace.edgePolynomial"
-      ],
-      "review": "Read rootQuotientEquiv, its generator formula, rootQuotientPolynomial and reduced-root homogeneity, plus the actual EdgeCoefficient/edgePolynomial definitions.",
       "pending": []
     },
     {
@@ -2733,21 +2705,6 @@
         "OAI.KLInvariance.ReflectionPairTranslation.lattice_saturated"
       ],
       "review": "Read lattice_saturated and PairProjection.compatible_iff. Expanded the twisted scalar equation, annihilation of the scalar difference, cancellation on the quotient and reconstruction of a common preimage.",
-      "pending": []
-    },
-    {
-      "node": "kl.local.plane_prime_membership",
-      "file": "docs/knowledge/nodes/kl.localization/plane_prime_membership.md",
-      "source_declarations": [
-        "OAI.KLInvariance.TitsSpace.embedLinear",
-        "OAI.KLInvariance.TitsSpace.embedLinear_injective",
-        "OAI.KLInvariance.TitsSpace.planePrime",
-        "OAI.KLInvariance.TitsSpace.planePrime_isPrime",
-        "OAI.KLInvariance.TitsSpace.linear_mem_planePrime_iff",
-        "OAI.KLInvariance.TitsSpace.linear_mem_maximal_iff",
-        "OAI.KLInvariance.TitsSpace.linear_isUnit_iff"
-      ],
-      "review": "Read the actual planePrime map, embedding injectivity and all three membership/unit lemmas. Preserved the original-root-space domain and the distinction between embedding and polynomial-coordinate transport.",
       "pending": []
     },
     {
@@ -4535,17 +4492,6 @@
       "pending": []
     },
     {
-      "node": "kl.local.localized_coset",
-      "file": "docs/knowledge/nodes/kl.localization/localized_coset.md",
-      "source_declarations": [
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset",
-        "OAI.KLInvariance.TitsSpace.localizedLinear"
-      ],
-      "review": "Read cosetLabel, localizedCoset and localizedLinear. Defined the coefficient maps and prime before the sheaf, recorded the exact extend-then-pullback order, and kept the coefficient-ring illustration separate from the formal construction.",
-      "pending": []
-    },
-    {
       "node": "kl.local.localized_coset_properties",
       "file": "docs/knowledge/nodes/kl.localization/localized_coset_properties.md",
       "source_declarations": [
@@ -4578,6 +4524,164 @@
         "OAI.KLInvariance.MomentGraph.Sheaf.extend_closedUnder"
       ],
       "review": "Re-read extend_one, closedUnder_insert and the complete finite-complement induction in extend_closedUnder against the existing proof. Its closure and zero-edge hypotheses are exactly those used by the new pullback proof.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.edge_coefficient_ring",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/edge_coefficient_ring.md",
+      "source_declarations": [
+        "OAI.KLInvariance.EdgeAlgebra.rootIdeal",
+        "OAI.KLInvariance.EdgeAlgebra.rootLine",
+        "OAI.KLInvariance.TitsSpace.EdgeCoefficient",
+        "OAI.KLInvariance.BruhatGraph.polynomialRoot",
+        "OAI.KLInvariance.BruhatGraph.EdgeRing"
+      ],
+      "review": "Read both actual quotient-ring abbreviations and polynomialRoot. Separated the generic symmetric quotient, its actual embedded-root specialization and the chosen polynomial presentation; stated the direction of edgeRingEquiv and the scalar meaning of reduction.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.localization_rings",
+      "file": "docs/knowledge/nodes/kl.localization/localization_rings.md",
+      "source_declarations": [
+        "OAI.KLInvariance.SymmetricPlaneIdeal.ideal",
+        "OAI.KLInvariance.TitsSpace.embedLinear",
+        "OAI.KLInvariance.TitsSpace.planePrime",
+        "OAI.KLInvariance.TitsSpace.planePrime_isPrime",
+        "OAI.KLInvariance.TitsSpace.PlaneRing",
+        "OAI.KLInvariance.TitsSpace.localizedLinear"
+      ],
+      "review": "Read the mapped subspace ideal, its primality, PlaneRing and localizedLinear. Kept arbitrary subspaces P, distinguished the original-space embedding from polynomial coordinates, and explained fractions, units and the maximal ideal before the root-plane specialization.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.scalar_quotient_basis",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/scalar_quotient_basis.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ScalarQuotient.coordinateReduction",
+        "OAI.KLInvariance.ScalarQuotient.coordinateReduction_surjective",
+        "OAI.KLInvariance.ScalarQuotient.coordinateReduction_kernel",
+        "OAI.KLInvariance.ScalarQuotient.free_of_scalar_presentation"
+      ],
+      "review": "Read coordinateReduction, its surjectivity and exact scalar kernel, and the quotient comparison in free_of_scalar_presentation. Retained arbitrary commutative R and scalar a, a finite source basis, surjectivity, the exact kernel and the compatible quotient-ring action.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.edge_coefficient_module",
+      "file": "docs/knowledge/nodes/kl.sheaves/edge_coefficient_module.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.edgeTorsion",
+        "OAI.KLInvariance.BruhatGraph.edgeModule",
+        "OAI.KLInvariance.BruhatGraph.edgeModule_tower",
+        "OAI.KLInvariance.BruhatGraph.edgeModule_free"
+      ],
+      "review": "Read edge annihilation, the quotient-module instance, scalar-tower compatibility and the free-of-presentation application. Explained the action on representatives and the actual descended basis, using only the constructed upper stalk and quotient rule.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.tensor_scalar_quotient",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/tensor_scalar_quotient.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangeScalar",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangeScalar_tmul",
+        "OAI.KLInvariance.MomentGraph.Sheaf.span_map",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangeQuotient",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangeQuotient_tmul"
+      ],
+      "review": "Read baseChangeScalar, span_map and the exact S-linear baseChangeQuotient construction/formula. Expanded the balanced forward map, inverse quotient map and both inverse identities for an arbitrary commutative scalar extension.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.localized_edge_ring",
+      "file": "docs/knowledge/nodes/kl.localization/localized_edge_ring.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.localizedEdgeIdeal",
+        "OAI.KLInvariance.TitsSpace.LocalizedEdgeRing",
+        "OAI.KLInvariance.TitsSpace.localizedReduction",
+        "OAI.KLInvariance.TitsSpace.localizedReduction_self"
+      ],
+      "review": "Read localizedEdgeIdeal, LocalizedEdgeRing, localizedReduction and its self-vanishing. Defined all maps and their domains, retained independent P and a, and explained the induced original-quotient map and the exact tensor formula.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.plane_reduction",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/plane_reduction.md",
+      "source_declarations": [
+        "OAI.KLInvariance.PlaneReduction.scalar_reduction",
+        "OAI.KLInvariance.PlaneReduction.associated_reduction"
+      ],
+      "review": "Read the two PlaneReduction lemmas. Retained arbitrary vector spaces and commutative target algebras, extracted the nonzero transverse coefficient and exhibited its inverse in the target; the scalar-image consequence is derived explicitly.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.localized_root_reduction",
+      "file": "docs/knowledge/nodes/kl.localization/localized_root_reduction.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.localizedReduction_self",
+        "OAI.KLInvariance.TitsSpace.positiveRoot_not_line",
+        "OAI.KLInvariance.TitsSpace.localizedReduction_associated",
+        "OAI.KLInvariance.TitsSpace.polynomialRoot_localized",
+        "OAI.KLInvariance.TitsSpace.polynomialRoot_reduced"
+      ],
+      "review": "Read localizedReduction_associated with its arbitrary localization subspace P, the distinct-positive-root line exclusion, and both definitional polynomial-root compatibility formulas. Kept the span P(a,b) separate from P and derived the explicit nonzero real coefficient through the generic lemma.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.root_quotient_coordinates",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/root_quotient_coordinates.md",
+      "source_declarations": [
+        "OAI.KLInvariance.EdgeAlgebra.rootQuotientEquiv",
+        "OAI.KLInvariance.EdgeAlgebra.rootQuotientEquiv_mk_ι",
+        "OAI.KLInvariance.EdgeAlgebra.rootQuotientPolynomial",
+        "OAI.KLInvariance.EdgeAlgebra.linear_homogeneous",
+        "OAI.KLInvariance.EdgeAlgebra.reducedRoot_homogeneous",
+        "OAI.KLInvariance.TitsSpace.EdgeCoefficient",
+        "OAI.KLInvariance.TitsSpace.edgePolynomial",
+        "OAI.KLInvariance.BruhatGraph.edgeRingEquiv",
+        "OAI.KLInvariance.BruhatGraph.edgeRingEquiv_root",
+        "OAI.KLInvariance.BruhatGraph.edgeRing_isDomain",
+        "OAI.KLInvariance.BruhatGraph.edgeRing_ufm",
+        "OAI.KLInvariance.BruhatGraph.reducedPolynomialRoot_prime"
+      ],
+      "review": "Re-read the symmetric quotient coordinates and added the actual polynomial EdgeRing equivalence, its generator formula, domain/UFD transport and prime reduced-positive-root argument from TerminalKernels.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.plane_prime_membership",
+      "file": "docs/knowledge/nodes/kl.localization/plane_prime_membership.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.embedLinear",
+        "OAI.KLInvariance.TitsSpace.embedLinear_injective",
+        "OAI.KLInvariance.TitsSpace.planePrime",
+        "OAI.KLInvariance.TitsSpace.planePrime_isPrime",
+        "OAI.KLInvariance.TitsSpace.linear_mem_planePrime_iff",
+        "OAI.KLInvariance.TitsSpace.linear_mem_maximal_iff",
+        "OAI.KLInvariance.TitsSpace.linear_isUnit_iff",
+        "OAI.KLInvariance.BruhatGraph.planePrime_span"
+      ],
+      "review": "Rechecked mapped ideal membership and the unit/maximal-ideal criteria, then expanded planePrime_span into both ideal containments for any pair of positive roots.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.localized_coset",
+      "file": "docs/knowledge/nodes/kl.localization/localized_coset.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset"
+      ],
+      "review": "Kept the local notation and extend-then-pullback construction; moved the primary localizedLinear source mapping and term alias to the coefficient-ring definition on which this entry already depends.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.linear_ideals",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/linear_ideals.md",
+      "source_declarations": [
+        "OAI.KLInvariance.SymmetricPlaneIdeal.ideal",
+        "OAI.KLInvariance.SymmetricPlaneIdeal.quotientMap",
+        "OAI.KLInvariance.EdgeAlgebra.rootLine",
+        "OAI.KLInvariance.EdgeAlgebra.rootIdeal",
+        "OAI.KLInvariance.EdgeAlgebra.symQuotientMap"
+      ],
+      "review": "Clarified that the unit-multiple definition of associated scalars applies to any commutative ring, matching the general target algebra in PlaneReduction; the linear-ideal and quotient definitions are unchanged.",
       "pending": []
     }
   ],
@@ -4817,7 +4921,9 @@
         "kl.algebra.root_label_primes",
         "kl.algebra.root_quotient_coordinates",
         "kl.detail.linear_quotient",
-        "kl.detail.polynomial_labels"
+        "kl.detail.polynomial_labels",
+        "kl.algebra.edge_coefficient_ring",
+        "kl.algebra.plane_reduction"
       ],
       "pending": [],
       "review": "Reviewed symmetric/polynomial coordinates and actions, actual labels, generic linear ideals/quotients, prime and reduced linear generators, endpoint-label relative primality and regularity on free quotient modules."
@@ -4859,7 +4965,8 @@
       "completion_evidence": [
         "kl.algebra.coefficient_duals",
         "kl.algebra.scalar_twist",
-        "kl.detail.coefficient_change"
+        "kl.detail.coefficient_change",
+        "kl.algebra.tensor_scalar_quotient"
       ],
       "pending": [],
       "review": "Reviewed the CoefficientChange and Twist fields/directions, maps and homogeneous pieces, basis transport, the dual-module equivalence, pairing transport and the hypotheses connecting the scalar twist to a pair lattice."
@@ -4925,7 +5032,8 @@
         "kl.algebra.scalar_quotient_regular",
         "kl.algebra.projective_range_splittings",
         "kl.algebra.two_stage_projectivity",
-        "kl.algebra.flat_embedded_modules"
+        "kl.algebra.flat_embedded_modules",
+        "kl.algebra.scalar_quotient_basis"
       ],
       "pending": [],
       "review": "Reviewed quotient and pair-projection descent, saturation and free reduced images, finite free scalar-quotient presentations, the explicit projective-kernel retraction, and free/projective target prime-denominator membership."
@@ -5092,7 +5200,8 @@
         "kl.detail.upper_quotient",
         "kl.sheaves.upward_kernel",
         "kl.sheaves.free_quotient_sheaf",
-        "kl.sheaves.boundary_image_identity"
+        "kl.sheaves.boundary_image_identity",
+        "kl.sheaves.edge_coefficient_module"
       ],
       "review": "Reviewed all Sheaf/GradedSheaf/FreeSheaf fields, ambient section convention, global generation, flabbiness and relative extension, upper quotients, boundary maps/images, and selected kernels with their grading. The boundary-image theorem explains the two hypotheses separately."
     },
@@ -5336,13 +5445,15 @@
     {
       "code": "L1",
       "title": "Plane and edge localizations",
-      "status": "in_progress",
+      "status": "exposition_reviewed",
       "completion_evidence": [
-        "kl.local.plane_prime_membership"
+        "kl.local.plane_prime_membership",
+        "kl.detail.localization_rings",
+        "kl.local.localized_edge_ring",
+        "kl.local.localized_root_reduction"
       ],
-      "pending": [
-        "Expand compatibility of scalar quotients and localization maps, including the localized edge-ring comparison interfaces."
-      ]
+      "pending": [],
+      "review": "Reviewed the plane prime and local coefficient ring, its two-root generators and unit criterion, the symmetric/polynomial edge quotient presentations, quotient module actions and bases, the localized edge ideal/ring/reduction maps, tensor-quotient compatibility and the general scalar proof of associated root reductions."
     },
     {
       "code": "L2",
@@ -5455,7 +5566,7 @@
     }
   ],
   "next_steps": [
-    "Complete the root quotient/localization-ring interfaces and label-reduction calculations in L1, then expand the local dihedral models and their decomposition.",
+    "Expand the actual dihedral structure models, their interpolation and flow-down arguments, then the ungraded local-ring decomposition.",
     "Complete the remaining Coxeter/parabolic, root-space and sheaf-operation exposition.",
     "Expand adapted orders, chamber changes, dihedral interval transport, schedules and the path-polynomial proof.",
     "Complete localization, local image comparison, edge inequalities and the simultaneous invariance induction.",
@@ -5890,7 +6001,14 @@
       "kl.local.coset_outgoing_lifts": "L2",
       "kl.local.localized_coset": "L2",
       "kl.local.localized_coset_properties": "L2",
-      "kl.local.localized_coset_kernels": "L2"
+      "kl.local.localized_coset_kernels": "L2",
+      "kl.algebra.edge_coefficient_ring": "A1",
+      "kl.algebra.scalar_quotient_basis": "A7",
+      "kl.sheaves.edge_coefficient_module": "S2",
+      "kl.algebra.tensor_scalar_quotient": "A4",
+      "kl.local.localized_edge_ring": "L1",
+      "kl.algebra.plane_reduction": "A1",
+      "kl.local.localized_root_reduction": "L1"
     },
     "moved_nodes": [
       {
@@ -6724,7 +6842,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 416
+    "current_node_count": 423
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -6751,7 +6869,8 @@
     "Completed S9: added the homogeneous dual-character reflection, reduced-word section pairing, both actual kernel characters, lower-character convolution, scaled actual character and reciprocity, and unconditional normalized endpoints. Rewrote word R-convolution and actual-character cancellation with explicit hypotheses, degree bounds, finite sums and parameter substitutions.",
     "Completed S10: expanded the local intersection map into construction, properties and the exact strict diagonal-degree implication; exposed the generic positive-ideal coordinate argument and supported-section symmetry calculation. Defined full outgoing-kernel freeness and expanded the character-identification condition and both KL endpoint substitutions. Added explicit boundary-model character transport to the upper-restriction proof.",
     "Completed S3: expanded tensor base change and its section map, separated section/outgoing constraints, proved finite-flat section transport and sheaf-property transfer, and developed graded boundary lifting, quotient edge descent and finite-complement morphism extension. Added the generic embedded kernel/image theorem and rewrote the localization node at its actual flat-algebra generality.",
-    "Completed L2: defined the finite relative coset graph and localized coset sheaf, proved the outgoing lifts and lower-ideal properties, separated general surviving-edge flabbiness from fixed-vertex kernel pullback, and checked all inputs for the actual plane localization. Added the induced/ambient root-label identification and preserved both selected edge images in the common ambient tensor module."
+    "Completed L2: defined the finite relative coset graph and localized coset sheaf, proved the outgoing lifts and lower-ideal properties, separated general surviving-edge flabbiness from fixed-vertex kernel pullback, and checked all inputs for the actual plane localization. Added the induced/ambient root-label identification and preserved both selected edge images in the common ambient tensor module.",
+    "Completed L1: separated edge coefficient rings, the plane local ring and the localized edge quotient; wrote the scalar maps and tensor-quotient inverse explicitly. Added coordinate-basis descent and the actual edge-module action/freeness, expanded polynomial edge-ring coordinates and plane-prime generators, and proved root association via a nonzero transverse real coefficient."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -6920,6 +7039,24 @@
       ],
       "target": "kl.local.localized_coset",
       "review": "Scoped aliases distinguish the scalar-extended-and-pulled-back coset object and its localized labels from general scalar extension."
+    },
+    {
+      "term": "edge coefficient ring",
+      "target": "kl.algebra.edge_coefficient_ring",
+      "review": "Moved the generic edge-quotient aliases to the new symmetric/polynomial coefficient definition, which defines the generic quotient before specializing to actual roots."
+    },
+    {
+      "term": "localized edge ring",
+      "target": "kl.local.localized_edge_ring",
+      "review": "Separated localized edge ideals, quotients and reduction maps from the plane local ring. The localized linear-label map now points to the plane-ring definition used before both edge quotients and coset sheaves."
+    },
+    {
+      "term": "scalar extension",
+      "topics": [
+        "kl.sheaves"
+      ],
+      "target": "kl.detail.base_change",
+      "review": "Restricted the bare phrase to the sheaf topic. Specific sheaf-base-change phrases remain available in applications; coefficient-ring tensor extensions in localization are no longer automatically assigned to the sheaf construction."
     }
   ],
   "corrections": [
@@ -6939,20 +7076,20 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-19T14:22:53.767394+00:00",
+    "created_at": "2026-10-19T14:52:29.220534+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 416,
-    "html_pages_checked": 682,
-    "generated_definition_links_checked": 5966,
+    "node_count": 423,
+    "html_pages_checked": 690,
+    "generated_definition_links_checked": 6126,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks general surviving-edge pullback, finite coset vertices and outgoing lifts, localized label/root correspondence, relative flabbiness and generation, and selected-kernel/edge-image transport. Documentation checks only.",
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks symmetric/polynomial edge rings, quotient-module bases and scalar actions, plane-prime generators and units, localized edge reduction, tensor/quotient compatibility and associated root labels. Documentation checks only.",
     "focused_page_review": {
-      "entries": 8,
-      "source_anchors": 35,
-      "coset_definition_links": 17,
-      "scope": "Read the saved theorem statements and detailed proofs, checked the distinct property hypotheses, inspected formula/source payloads and guide reachability, and verified generated coset-graph, localized-sheaf and plane-basis definition links."
+      "entries": 12,
+      "source_anchors": 62,
+      "coefficient_definition_links": 30,
+      "scope": "Read saved statements and detailed proofs, checked the quotient-map directions and distinct scalar-ring types, inspected source/formula payloads and guide reachability, and verified separate destinations for edge coefficient rings, plane rings and localized edge quotients."
     }
   },
   "structure_coverage_scan": {
@@ -7230,6 +7367,34 @@
         "kl.local.localized_coset_kernels"
       ],
       "review": "The localized coset sheaf is scalar extension followed by graph pullback. Induced and ambient edge roots agree by cancellation of a0 in the reflection label; the plane-prime unit criterion identifies the zero outside edge modules. Kernel and image statements retain their ambient embeddings."
+    },
+    {
+      "entries": [
+        "kl.algebra.edge_coefficient_ring",
+        "kl.algebra.root_quotient_coordinates"
+      ],
+      "review": "The polynomial EdgeRing is identified with the symmetric EdgeCoefficient by the inverse coordinate isomorphism. Generator formulas fix the reduced-root identification before domain, UFD and prime-element properties are transported."
+    },
+    {
+      "entries": [
+        "kl.algebra.scalar_quotient_basis",
+        "kl.sheaves.edge_coefficient_module"
+      ],
+      "review": "The quotient action is induced by root-label annihilation. A finite coordinate-reduction map has the same scalar kernel as the surjection, and quotient-scalar representatives upgrade the resulting R-linear equivalence to an R/(a)-linear one."
+    },
+    {
+      "entries": [
+        "kl.algebra.tensor_scalar_quotient",
+        "kl.local.localized_edge_ring"
+      ],
+      "review": "The tensor/principal-quotient equivalence holds for arbitrary commutative scalar extension and is exported as an S-linear equivalence. The inverse is [s] mapped to s tensor [1]; the localized edge ring is its specialization."
+    },
+    {
+      "entries": [
+        "kl.algebra.plane_reduction",
+        "kl.local.localized_root_reduction"
+      ],
+      "review": "The localization subspace P is independent of the span of a and b in the actual source theorem. The nonzero transverse coefficient comes from c outside the killed line, and its image is a unit by mapping the field inverse."
     }
   ],
   "relationship_map_revision": {
@@ -7237,6 +7402,6 @@
     "edge_count": 92,
     "route": "Top splitting and primitive recognition feed the boundary-pairing route; full model decomposition feeds simultaneous character formulas.",
     "evidence": "BoundarySheaf.splitIn_of_top_split, iso_of_primitive_top_split, GradedSheaf.exists_modelSumIso and bottCharacter_decomposition_both.",
-    "latest_anchor_refinement": "Expanded the general pullback and localized-coset anchors: finite relative cutoff graph, explicit surviving outgoing lifts, relative flabbiness and selected-kernel equality. The 38-stage, 92-edge prerequisite graph is unchanged."
+    "latest_anchor_refinement": "Recorded the three coefficient-ring presentations, tensor/principal-quotient compatibility, scalar-kernel basis descent and associated root reduction. The 38-stage, 92-edge graph is unchanged; these algebraic inputs feed the local product comparison."
   }
 }
