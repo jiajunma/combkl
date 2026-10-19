@@ -4852,6 +4852,138 @@
       ],
       "review": "Kept the composite pre-reflection calculation and target coefficient solution; extracted the independent-form surjectivity argument into its own reusable theorem and linked the exact source declaration.",
       "pending": []
+    },
+    {
+      "node": "kl.local.structure_model_transport",
+      "file": "docs/knowledge/nodes/kl.localization/structure_model_transport.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangeScalar",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangeScalar_tmul",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangePiScalar",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangePiQuotient",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangePi_natural",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureBaseChangeIso",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_flat_flabby",
+        "OAI.KLInvariance.MomentGraph.Sheaf.propPiEquiv",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structurePullbackIso"
+      ],
+      "review": "Read the scalar tensor and quotient coordinate maps, baseChangePi_natural, structureBaseChangeIso, its separate flat finite-graph flabbiness consequence, and structurePullbackIso. Preserved the order-reflection hypothesis and checked both endpoint squares on supported and zero coordinates.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.finite_common_upper",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/finite_common_upper.md",
+      "source_declarations": [
+        "OAI.KLInvariance.bruhat_top_of_all_descents",
+        "OAI.KLInvariance.Dihedral.exists_common_upper"
+      ],
+      "review": "Read bruhat_top_of_all_descents and both branches of exists_common_upper. Expanded the word induction with the exact upper-envelope inequality, the bounded natural-length maximum, the unbounded finite-set length bound, and the empty-set case.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.local_structure_models",
+      "file": "docs/knowledge/nodes/kl.localization/local_structure_models.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureLocalModels",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localModels",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.modelLabel_mem_maximal",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedModels"
+      ],
+      "review": "Read structureLocalModels field by field, the general flat local-algebra hypotheses of localModels, and modelLabel_mem_maximal/localizedModels. Explained the outgoing-below path and kept the general local-ring label condition separate from its plane-ring verification.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.local_models",
+      "file": "docs/knowledge/nodes/kl.localization/local_models.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.LocalModels"
+      ],
+      "review": "Expanded every LocalModels field and the exact x!=c minimality condition. Derived the residue-field minimal-cover interpretation through the preimage equality and illustrated it on a single edge. Kept the chosen top isomorphism as data, not merely a rank assertion.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.model_sums",
+      "file": "docs/knowledge/nodes/kl.localization/local_model_sums.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.mono",
+        "OAI.KLInvariance.MomentGraph.Sheaf.zero",
+        "OAI.KLInvariance.MomentGraph.Sheaf.prod",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pi",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pi_compatible"
+      ],
+      "review": "Read the ungraded ModelSum zero/add constructors and mono. Kept the definition general for a family over a commutative ring, explained finite products and both restrictions, distinguished the inductive construction from a later isomorphism, and used an explicit rank calculation on a one-edge graph.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.coset_structure_models",
+      "file": "docs/knowledge/nodes/kl.localization/coset_structure_models.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetInto",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetIntoEdge",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetIntoGraph",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetInto_injective",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_label_eq",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_modelLabel_eq",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_model_flabby",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetModels"
+      ],
+      "review": "Read the common-upper embedding, injectivity, coset_label_eq and canonical-root label equality, and every hypothesis in coset_model_flabby and cosetModels. Kept intrinsic order distinct from ambient order, lifted only model-supported edges, and verified maximal-ideal labels and outgoing-below conditions.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.selected_model_product",
+      "file": "docs/knowledge/nodes/kl.localization/selected_model_product.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.supportedOutgoing",
+        "OAI.KLInvariance.MomentGraph.Sheaf.kernelProduct"
+      ],
+      "review": "Read supportedOutgoing as a finite set of outgoing subtype edges, and kernelProduct as its exact label product. Explained the selected-set and support conditions, the empty product, its relation to modelProduct, and arbitrary selections independent of an edge order.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.structure_kernel_products",
+      "file": "docs/knowledge/nodes/kl.localization/structure_kernel_products.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.structure_kernel_iff_dvd",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structure_kernel_product"
+      ],
+      "review": "Read both directions of structure_kernel_iff_dvd and both support branches of structure_kernel_product. Kept relative primality restricted to the selected supported labels and the general DecompositionMonoid ring hypothesis; explained the submodule equality through actual scalar coordinates.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.structure_edge_images",
+      "file": "docs/knowledge/nodes/kl.localization/structure_edge_images.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.lower_surjective_of_generated",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structure_lower_image",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structure_upper_image"
+      ],
+      "review": "Read lower_surjective_of_generated and both structure edge-image theorems. Expanded the global-section preimage, both containments for mapping a scalar-multiple submodule, and the two endpoint substitutions; illustrated the quotient action in a one-edge example.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.localized_relative_primality",
+      "file": "docs/knowledge/nodes/kl.localization/localized_relative_primality.md",
+      "source_declarations": [
+        "OAI.KLInvariance.LocalizationRelativePrime.not_dvd_map",
+        "OAI.KLInvariance.LocalizationRelativePrime.map_prime",
+        "OAI.KLInvariance.LocalizationRelativePrime.map_relPrime"
+      ],
+      "review": "Read not_dvd_map, map_prime and map_relPrime with the omitted domain hypothesis on the first lemma. Expanded denominator clearing, the prime-element alternatives, nonzero/nonunit of the surviving prime, and the unit case. Explained relative primality by common divisors in the local ring.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.coset_kernel_products",
+      "file": "docs/knowledge/nodes/kl.localization/coset_kernel_products.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetEdgeAmbient_injective",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel_relPrime",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_supported_pairwise",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_kernel_product"
+      ],
+      "review": "Read injectivity of the ambient coset-edge map, the distinct same-source label argument, coset_supported_pairwise and coset_kernel_product. Traced primality and nondivisibility before localization, verified the local product-divisibility hypotheses, and derived both edge-image formulas through the previously proved generic theorem.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -5583,7 +5715,8 @@
       "title": "Dihedral interval combinatorics",
       "status": "in_progress",
       "completion_evidence": [
-        "kl.dihedral.odd_reflection_edges"
+        "kl.dihedral.odd_reflection_edges",
+        "kl.dihedral.finite_common_upper"
       ],
       "pending": [
         "Expand signed dihedral indices and flip identities, relative interval transport and the later-edge counts used in local comparison."
@@ -5628,7 +5761,8 @@
         "kl.local.plane_prime_membership",
         "kl.detail.localization_rings",
         "kl.local.localized_edge_ring",
-        "kl.local.localized_root_reduction"
+        "kl.local.localized_root_reduction",
+        "kl.local.localized_relative_primality"
       ],
       "pending": [],
       "review": "Reviewed the plane prime and local coefficient ring, its two-root generators and unit criterion, the symmetric/polynomial edge quotient presentations, quotient module actions and bases, the localized edge ideal/ring/reduction maps, tensor-quotient compatibility and the general scalar proof of associated root reductions."
@@ -5651,7 +5785,7 @@
     {
       "code": "L3",
       "title": "Dihedral structure models",
-      "status": "in_progress",
+      "status": "exposition_reviewed",
       "completion_evidence": [
         "kl.notes.dihedral_models",
         "kl.local.orbit_splines",
@@ -5664,18 +5798,30 @@
         "kl.local.dihedral_interpolation",
         "kl.local.induced_flow_down",
         "kl.local.induced_label_primes",
-        "kl.detail.dihedral_model_properties"
+        "kl.detail.dihedral_model_properties",
+        "kl.local.structure_model_transport",
+        "kl.local.local_structure_models",
+        "kl.local.coset_structure_models",
+        "kl.local.selected_model_product",
+        "kl.local.structure_kernel_products",
+        "kl.local.structure_edge_images",
+        "kl.local.coset_kernel_products"
       ],
-      "pending": [
-        "Expand scalar extension and transport of the native models to finite relative coset graphs, then the exact selected-kernel and edge-image product formulas."
-      ],
-      "review": "Reviewed the generic structure sheaf and its basic/local-minimality properties, general lower-interval parity matching, orbit splines and prescribed normal values, dihedral interpolation, supported outgoing-product reindexing, prime induced labels and the full upper-set induction proving native model flabbiness."
+      "pending": [],
+      "review": "Reviewed the native structure models and full interpolation/flabbiness route, then scalar-extension and order-reflecting pullback isomorphisms, the finite common-upper interval, exact coset-label identification, local-model fields, selected products, relative primality after localization and both actual edge images."
     },
     {
       "code": "L4",
       "title": "Local model decomposition",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.detail.local_models",
+        "kl.local.model_sums"
+      ],
+      "pending": [
+        "Expand the local-ring splitting lemmas, inheritance of model-sum properties, partial-isomorphism extension at a minimal vertex and the complete descending local decomposition."
+      ],
+      "review": "Expanded all nine local-model fields and the residue-field meaning of minimality; separated the ungraded finite model-sum definition, coordinates and example. The local decomposition proof remains."
     },
     {
       "code": "L5",
@@ -5756,7 +5902,7 @@
     }
   ],
   "next_steps": [
-    "Complete the localized finite-coset structure-model transport and selected kernel/image products, then expand the ungraded local-ring decomposition.",
+    "Expand local-ring minimal-cover splitting, model-sum properties, partial-isomorphism extension and the full descending local decomposition.",
     "Complete the remaining Coxeter/parabolic, root-space and sheaf-operation exposition.",
     "Expand adapted orders, chamber changes, dihedral interval transport, schedules and the path-polynomial proof.",
     "Complete localization, local image comparison, edge inequalities and the simultaneous invariance induction.",
@@ -6211,7 +6357,17 @@
       "kl.local.flow_down_flabbiness": "L3",
       "kl.local.dihedral_interpolation": "L3",
       "kl.local.induced_flow_down": "L3",
-      "kl.local.induced_label_primes": "L3"
+      "kl.local.induced_label_primes": "L3",
+      "kl.local.structure_model_transport": "L3",
+      "kl.dihedral.finite_common_upper": "O3",
+      "kl.local.local_structure_models": "L3",
+      "kl.local.model_sums": "L4",
+      "kl.local.coset_structure_models": "L3",
+      "kl.local.selected_model_product": "L3",
+      "kl.local.structure_kernel_products": "L3",
+      "kl.local.structure_edge_images": "L3",
+      "kl.local.localized_relative_primality": "L1",
+      "kl.local.coset_kernel_products": "L3"
     },
     "moved_nodes": [
       {
@@ -7045,7 +7201,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 436
+    "current_node_count": 446
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -7074,7 +7230,8 @@
     "Completed S3: expanded tensor base change and its section map, separated section/outgoing constraints, proved finite-flat section transport and sheaf-property transfer, and developed graded boundary lifting, quotient edge descent and finite-complement morphism extension. Added the generic embedded kernel/image theorem and rewrote the localization node at its actual flat-algebra generality.",
     "Completed L2: defined the finite relative coset graph and localized coset sheaf, proved the outgoing lifts and lower-ideal properties, separated general surviving-edge flabbiness from fixed-vertex kernel pullback, and checked all inputs for the actual plane localization. Added the induced/ambient root-label identification and preserved both selected edge images in the common ambient tensor module.",
     "Completed L1: separated edge coefficient rings, the plane local ring and the localized edge quotient; wrote the scalar maps and tensor-quotient inverse explicitly. Added coordinate-basis descent and the actual edge-module action/freeness, expanded polynomial edge-ring coordinates and plane-prime generators, and proved root association via a nonzero transverse real coefficient.",
-    "Expanded the native dihedral model construction into its full dependency chain: general Coxeter parity matching, independent normal-value prescription, single- and double-zero orbit factors, product interpolation, supported outgoing products and the finite upper-set flabbiness induction. Added an explicit A2 section calculation. L3 remains in progress for localized coset-model transport and product/image formulas."
+    "Expanded the native dihedral model construction into its full dependency chain: general Coxeter parity matching, independent normal-value prescription, single- and double-zero orbit factors, product interpolation, supported outgoing products and the finite upper-set flabbiness induction. Added an explicit A2 section calculation. L3 remains in progress for localized coset-model transport and product/image formulas.",
+    "Completed L3: transported native structure models through scalar extension and the finite relative coset embedding, checked exact canonical root labels and all local-model fields, and proved the arbitrary selected-kernel and both edge-image product formulas. Explained prime-label relative primality after localization. Began L4 by separating local-model data from finite ungraded sums."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -7296,6 +7453,24 @@
       ],
       "target": "kl.notes.dihedral_models",
       "review": "The definition uses the ambient canonical positive root under a reflection-preserving homomorphism, and does not assume injectivity until the later theorem."
+    },
+    {
+      "term": "ungraded model sum",
+      "target": "kl.local.model_sums",
+      "review": "Moved ungraded/local model-sum aliases and the localization-scoped bare model-sum aliases from the family-of-models entry to the separate inductive construction. Graded model-sum aliases retain their existing graded destination."
+    },
+    {
+      "term": "supported selected edge set",
+      "topics": [
+        "kl.localization"
+      ],
+      "target": "kl.local.selected_model_product",
+      "review": "Added a definition for arbitrary selected outgoing edges after intersecting with model support, and the corresponding selected product. Full flow-down outgoing products keep their existing definition."
+    },
+    {
+      "term": "local boundary models",
+      "target": "kl.detail.local_models",
+      "review": "Linked the family terminology to the nine-field LocalModels definition, including its top coordinate and local minimality condition."
     }
   ],
   "corrections": [
@@ -7315,20 +7490,21 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-19T15:42:47.604434+00:00",
+    "created_at": "2026-10-19T16:03:23.713124+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 436,
-    "html_pages_checked": 704,
-    "generated_definition_links_checked": 6368,
+    "node_count": 446,
+    "html_pages_checked": 715,
+    "generated_definition_links_checked": 6623,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks external parity classes, orbit splines, induced labels, structure models, prescribed normal values, interpolation and the finite upper-set flabbiness argument. Documentation checks only.",
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision expands all nine LocalModels fields and separates the ungraded ModelSum definition. It checks model transport, finite coset construction, selected kernel/image products and relative primality after localization. Documentation checks only.",
     "focused_page_review": {
-      "entries": 17,
-      "source_anchors": 58,
-      "definition_links": 44,
-      "scope": "Read the saved statements and proof steps, checked the arbitrary-Coxeter parity scope and injectivity hypotheses, the action order and normal-value signs, the supported-product indexing and minimal-assigned-vertex induction. Inspected both A2 tables, formula/source payloads, guide reachability and the distinct new definition destinations."
+      "entries": 11,
+      "source_anchors": 44,
+      "definition_links": 10,
+      "scoped_model_sum_links": 13,
+      "scope": "Read all saved definitions and proofs; checked scalar and quotient maps, both endpoint squares, intrinsic order and common-upper hypotheses, selected-set indexing, supported/zero cases and denominator clearing. Verified all nine model-field cells, distinct graded/ungraded sum targets, guide reachability and forward-application navigation without a dependency edge."
     }
   },
   "structure_coverage_scan": {
@@ -7671,6 +7847,42 @@
         "kl.notes.dihedral_models"
       ],
       "review": "The construction prerequisites remain separate from forward property references. Generic structure sheaves need neither upper-quotient nor flabbiness assertions as input, and induced labels are defined before orbit interpolation is proved."
+    },
+    {
+      "entries": [
+        "kl.local.structure_model_transport"
+      ],
+      "review": "The scalar-extension isomorphism holds for arbitrary commutative scalar extension; flatness and finite graph hypotheses enter the flabbiness consequence. The graph-pullback isomorphism requires order reflection and checks both endpoint squares."
+    },
+    {
+      "entries": [
+        "kl.dihedral.finite_common_upper",
+        "kl.local.coset_structure_models"
+      ],
+      "review": "The finite relative coset ideal is embedded in a principal intrinsic interval using a common upper bound, without assuming it has a greatest vertex. Only edges supported by the chosen model need outgoing lifts. Cancelling the right coset representative identifies the left reflection and hence the canonical root label."
+    },
+    {
+      "entries": [
+        "kl.detail.local_models",
+        "kl.local.model_sums",
+        "kl.local.local_structure_models"
+      ],
+      "review": "LocalModels includes a chosen top coordinate and minimality only away from the center. ModelSum is a separate inductive finite construction over a commutative ring; a later decomposition supplies an actual isomorphism to that constructed sheaf."
+    },
+    {
+      "entries": [
+        "kl.local.selected_model_product",
+        "kl.local.structure_kernel_products",
+        "kl.local.structure_edge_images"
+      ],
+      "review": "Products range over selected outgoing subtype edges whose targets lie below the model center. Pairwise relative primality is assumed only on this set. Kernel products are stalk submodules; their images use the quotient action in the actual edge module, with surjectivity verified at both endpoints."
+    },
+    {
+      "entries": [
+        "kl.local.localized_relative_primality",
+        "kl.local.coset_kernel_products"
+      ],
+      "review": "Denominator clearing proves nondivisibility without a domain assumption. The domain condition retains nonzero primality after localization; the unit case handles labels outside the prime. The coset application verifies nondivisibility by identifying positive roots, reflections and fixed-source edges."
     }
   ],
   "relationship_map_revision": {
@@ -7678,6 +7890,6 @@
     "edge_count": 92,
     "route": "Top splitting and primitive recognition feed the boundary-pairing route; full model decomposition feeds simultaneous character formulas.",
     "evidence": "BoundarySheaf.splitIn_of_top_split, iso_of_primitive_top_split, GradedSheaf.exists_modelSumIso and bottCharacter_decomposition_both.",
-    "latest_anchor_refinement": "Recorded general lower-interval parity, independent normal-value prescription, orbit-spline interpolation, supported outgoing products and the upper-set flow-down induction. The 38-stage, 92-edge graph is unchanged; node-level dependencies separate model definitions from the later flabbiness construction."
+    "latest_anchor_refinement": "Recorded finite common-upper embeddings, structure-model scalar extension and pullback, the actual coset local-model package, selected kernel/edge-image products and localized relative primality. The 38-stage, 92-edge graph remains acyclic. The forward application link from the common-upper theorem to coset-model transport is navigation, not a prerequisite."
   }
 }

@@ -394,7 +394,8 @@
         "OAI.KLInvariance.TitsSpace.PlaneBasis.pairClosure_eq_planeSubgroup",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.system",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.inversion_iff",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_step_iff"
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_step_iff",
+        "OAI.KLInvariance.Dihedral.exists_common_upper"
       ]
     },
     {
@@ -504,7 +505,8 @@
         "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset_kernel",
         "OAI.KLInvariance.BruhatGraph.EdgeRing",
         "OAI.KLInvariance.TitsSpace.LocalizedEdgeRing",
-        "OAI.KLInvariance.TitsSpace.localizedReduction_associated"
+        "OAI.KLInvariance.TitsSpace.localizedReduction_associated",
+        "OAI.KLInvariance.LocalizationRelativePrime.map_relPrime"
       ]
     },
     {
@@ -519,14 +521,22 @@
         "sb",
         "og"
       ],
-      "output": "Induced structure models, explicit interpolation and flow-down flabbiness, followed by model products and decomposition of the localized boundary sheaf.",
+      "output": "Native and localized relative structure models, their selected kernels and embedded edge images, followed by ungraded model sums and local decomposition.",
       "lean_declarations": [
         "OAI.KLInvariance.MomentGraph.Sheaf.LocalModels",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.localized_boundary_decomposition",
         "OAI.KLInvariance.Dihedral.interpolation_exists",
         "OAI.KLInvariance.Dihedral.hasFlowDown",
         "OAI.KLInvariance.MomentGraph.Sheaf.flowDown_flabby",
-        "OAI.KLInvariance.Dihedral.model_flabby"
+        "OAI.KLInvariance.Dihedral.model_flabby",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureBaseChangeIso",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structurePullbackIso",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetModels",
+        "OAI.KLInvariance.MomentGraph.Sheaf.kernelProduct",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structure_lower_image",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structure_upper_image",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_kernel_product",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum"
       ]
     },
     {
@@ -1177,6 +1187,23 @@
         "OAI.KLInvariance.Dihedral.hasFlowDown",
         "OAI.KLInvariance.MomentGraph.Sheaf.flowDown_flabby",
         "OAI.KLInvariance.Dihedral.model_flabby"
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "scope": "Localized relative structure models and selected products",
+      "change": "Completed the scalar-extension and order-reflecting pullback maps, finite common-upper embedding, canonical-label equality and local-model data on the actual relative coset graph. Recorded selected product kernels, lower/upper images and prime-label relative primality after localization. Separated the ungraded model-sum definition.",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.exists_common_upper",
+        "OAI.KLInvariance.LocalizationRelativePrime.map_relPrime",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureBaseChangeIso",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structurePullbackIso",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetModels",
+        "OAI.KLInvariance.MomentGraph.Sheaf.kernelProduct",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structure_lower_image",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structure_upper_image",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_kernel_product",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum"
       ]
     }
   ]

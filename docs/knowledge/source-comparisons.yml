@@ -841,3 +841,61 @@ comparisons:
   consequence: Both the coefficient ring and its module action are fixed before comparing
     lower and upper images. Their elements remain in the original edge module with
     its induced quotient-ring scalars.
+- id: localized-structure-model-transport
+  kind: Finite-interval construction of the relative models
+  nodes:
+  - kl.local.structure_model_transport
+  - kl.dihedral.finite_common_upper
+  - kl.local.local_structure_models
+  - kl.local.coset_structure_models
+  paper_labels:
+  - loc:models
+  - loc:relative-flabbiness
+  lean_declarations:
+  - OAI.KLInvariance.MomentGraph.Sheaf.structureBaseChangeIso
+  - OAI.KLInvariance.Dihedral.exists_common_upper
+  - OAI.KLInvariance.MomentGraph.Sheaf.structurePullbackIso
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.coset_model_flabby
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.cosetModels
+  paper: After the relative-flabbiness lemma, the notes restrict the localized model
+    from the full coset to its finite relative lower ideal. They extend a section
+    by zero outside the model support inside an upward closure, then use model flabbiness.
+    Flat localization preserves the finite-support section conditions.
+  lean: The finite relative ideal is embedded in a principal dihedral interval using
+    a common upper bound. Explicit scalar-extension and pullback isomorphisms identify
+    the structure models. The outgoing-lift theorem is applied to edges whose targets
+    lie below the chosen model center; canonical positive-root equality identifies
+    the actual labels.
+  consequence: The Blueprint follows the finite-interval construction and verifies
+    the support, outgoing lifts, scalar maps and label equality before assembling
+    the local-model fields.
+- id: selected-structure-model-products
+  kind: Selected products and actual edge-image maps
+  nodes:
+  - kl.local.selected_model_product
+  - kl.local.structure_kernel_products
+  - kl.local.structure_edge_images
+  - kl.local.localized_relative_primality
+  - kl.local.coset_kernel_products
+  paper_labels:
+  - loc:boundary-product
+  - loc:arbitrary-edge-subsets
+  lean_declarations:
+  - OAI.KLInvariance.MomentGraph.Sheaf.supportedOutgoing
+  - OAI.KLInvariance.MomentGraph.Sheaf.kernelProduct
+  - OAI.KLInvariance.MomentGraph.Sheaf.structure_kernel_product
+  - OAI.KLInvariance.MomentGraph.Sheaf.structure_lower_image
+  - OAI.KLInvariance.MomentGraph.Sheaf.structure_upper_image
+  - OAI.KLInvariance.LocalizationRelativePrime.map_relPrime
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.coset_kernel_product
+  paper: The notes express the outgoing kernel as the product of the supported labels
+    in the local unique factorization domain, and extend this formula to arbitrary
+    subsets of outgoing edges. Unsupported edges impose no condition.
+  lean: The general kernel theorem assumes the DecompositionMonoid product-divisibility
+    structure and pairwise relative primality only for the supported selected labels.
+    Separate lower- and upper-image theorems use restriction surjectivity to identify
+    the scalar-image submodules. Prime-label relative primality is proved after localization
+    before specialization to the actual coset graph.
+  consequence: The Blueprint retains the selected-set indexing and writes both image
+    equalities inside the same model edge module. The polynomial-domain specialization
+    supplies every relative-primality and product-divisibility hypothesis.

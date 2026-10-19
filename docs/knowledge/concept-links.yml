@@ -417,8 +417,6 @@ concepts:
   terms:
   - local models
   - local model
-  - ungraded model sum
-  - ungraded model sums
 - node: kl.sheaves.upward_kernel
   terms:
   - costalk
@@ -715,13 +713,13 @@ concepts:
   - kl.sheaves
   - kl.graded_algebra
   - kl.word_modules
-- node: kl.detail.local_models
+- node: kl.local.model_sums
   terms:
   - model sum
   - model sums
   topics:
   - kl.localization
-- node: kl.detail.local_models
+- node: kl.local.model_sums
   terms:
   - local model sum
   - local model sums
@@ -1317,5 +1315,21 @@ concepts:
   - induced labels
   - interpolation root
   - interpolation roots
+  topics:
+  - kl.localization
+- node: kl.local.model_sums
+  terms:
+  - ungraded model sum
+  - ungraded model sums
+- node: kl.detail.local_models
+  terms:
+  - family of local boundary models
+  - local boundary models
+- node: kl.local.selected_model_product
+  terms:
+  - supported selected edge set
+  - supported selected edge sets
+  - selected model product
+  - selected model products
   topics:
   - kl.localization

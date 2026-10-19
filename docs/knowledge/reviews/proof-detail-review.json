@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 81541,
-  "theorem_walkthroughs": 284,
+  "revised_proof_words": 84429,
+  "theorem_walkthroughs": 292,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -1321,6 +1321,18 @@
       "review": "Read planeSimple_of_extreme. The positive partner sum places an extreme strictly between two distinct partners unless the inverted root is the extreme itself."
     },
     {
+      "node": "kl.dihedral.finite_common_upper",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.bruhat_top_of_all_descents",
+        "OAI.KLInvariance.Dihedral.exists_common_upper"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 237,
+      "proof_sha256": "e20bad3f048ac42dc3ae541aef7168a7a8bc632289e688e46adb2f1d5c1cde73",
+      "review": "Read bruhat_top_of_all_descents and both branches of exists_common_upper. Expanded the word induction with the exact upper-envelope inequality, the bounded natural-length maximum, the unbounded finite-set length bound, and the empty-set case."
+    },
+    {
       "node": "kl.dihedral.induced_inversions",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2022,6 +2034,20 @@
       "review": "Read the parallel normalized/unnormalized cyclic-action proofs. Expanded reduced-tail induction, inversion in the right action, commuting-map extensionality and the standard ascent products."
     },
     {
+      "node": "kl.local.coset_kernel_products",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetEdgeAmbient_injective",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel_relPrime",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_supported_pairwise",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_kernel_product"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 370,
+      "proof_sha256": "2c360c8bfa729a18af538c31236a367a31646d145e4cc48409edde8d9768f837",
+      "review": "Read injectivity of the ambient coset-edge map, the distinct same-source label argument, coset_supported_pairwise and coset_kernel_product. Traced primality and nondivisibility before localization, verified the local product-divisibility hypotheses, and derived both edge-image formulas through the previously proved generic theorem."
+    },
+    {
       "node": "kl.local.coset_outgoing_lifts",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2035,6 +2061,24 @@
       "revised_proof_words": 290,
       "proof_sha256": "a7b9337f508c6e50cd408331d7e99e9e5b0acfed2ec97c471e3b5eff9dee79fa",
       "review": "Read the injectivity/finite instance, lower-closure argument, explicit t*x target in coset_lift_live and the first-step extraction in coset_outgoing_below. All ambient/relative order and label directions are explicit."
+    },
+    {
+      "node": "kl.local.coset_structure_models",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetInto",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetIntoEdge",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetIntoGraph",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetInto_injective",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_label_eq",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_modelLabel_eq",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_model_flabby",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetModels"
+      ],
+      "proof_steps": 7,
+      "revised_proof_words": 508,
+      "proof_sha256": "2d73cced2f464ba971fa30dc8a599ea42f53cea57f490359e39fa583f0f1f26d",
+      "review": "Read the common-upper embedding, injectivity, coset_label_eq and canonical-root label equality, and every hypothesis in coset_model_flabby and cosetModels. Kept intrinsic order distinct from ambient order, lifted only model-supported edges, and verified maximal-ideal labels and outgoing-below conditions."
     },
     {
       "node": "kl.local.dihedral_interpolation",
@@ -2114,6 +2158,20 @@
       "review": "Read inducedLabel_prime and the complete divisibility-to-reflection argument, then the fixed-source edge identification used inside model_flabby. Kept injectivity only for label identification and relative primality, and restricted the distinct-edge conclusion to a common source."
     },
     {
+      "node": "kl.local.local_structure_models",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureLocalModels",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localModels",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.modelLabel_mem_maximal",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedModels"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 336,
+      "proof_sha256": "51ec3f756ecd7e8910c01b7bf4f29c2250c0462c9fdfd9f67ba4052321090297",
+      "review": "Read structureLocalModels field by field, the general flat local-algebra hypotheses of localModels, and modelLabel_mem_maximal/localizedModels. Explained the outgoing-below path and kept the general local-ring label condition separate from its plane-ring verification."
+    },
+    {
       "node": "kl.local.localized_coset_kernels",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2153,6 +2211,19 @@
       "revised_proof_words": 524,
       "proof_sha256": "1835bde804b5902f7066c0afd5aae803173215a8662e343007f056622411689e",
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+    },
+    {
+      "node": "kl.local.localized_relative_primality",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.LocalizationRelativePrime.not_dvd_map",
+        "OAI.KLInvariance.LocalizationRelativePrime.map_prime",
+        "OAI.KLInvariance.LocalizationRelativePrime.map_relPrime"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 391,
+      "proof_sha256": "53cb40d51e570e75f5dd949ac3ea64140e215c04dcb00adf8c090525a40e82ab",
+      "review": "Read not_dvd_map, map_prime and map_relPrime with the omitted domain hypothesis on the first lemma. Expanded denominator clearing, the prime-element alternatives, nonzero/nonunit of the surviving prime, and the unit case. Explained relative primality by common divisors in the local ring."
     },
     {
       "node": "kl.local.localized_root_reduction",
@@ -2213,6 +2284,50 @@
       "revised_proof_words": 275,
       "proof_sha256": "640d4fd8639531946431a243660267b5b716e64a409c70a464d6411eff7850f8",
       "review": "Rechecked mapped ideal membership and the unit/maximal-ideal criteria, then expanded planePrime_span into both ideal containments for any pair of positive roots."
+    },
+    {
+      "node": "kl.local.structure_edge_images",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.lower_surjective_of_generated",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structure_lower_image",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structure_upper_image"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 295,
+      "proof_sha256": "c951f94fe7d07d47051c2ee5a39fa3e7b5018d09914803f1f1dcfd3ae1d2cea1",
+      "review": "Read lower_surjective_of_generated and both structure edge-image theorems. Expanded the global-section preimage, both containments for mapping a scalar-multiple submodule, and the two endpoint substitutions; illustrated the quotient action in a one-edge example."
+    },
+    {
+      "node": "kl.local.structure_kernel_products",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.structure_kernel_iff_dvd",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structure_kernel_product"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 253,
+      "proof_sha256": "3a562b0e16f4729fa4d2017cc134955ea5f49dd127206e9f2d1e07f96433bf49",
+      "review": "Read both directions of structure_kernel_iff_dvd and both support branches of structure_kernel_product. Kept relative primality restricted to the selected supported labels and the general DecompositionMonoid ring hypothesis; explained the submodule equality through actual scalar coordinates."
+    },
+    {
+      "node": "kl.local.structure_model_transport",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangeScalar",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangeScalar_tmul",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangePiScalar",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangePiQuotient",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChangePi_natural",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureBaseChangeIso",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_flat_flabby",
+        "OAI.KLInvariance.MomentGraph.Sheaf.propPiEquiv",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structurePullbackIso"
+      ],
+      "proof_steps": 6,
+      "revised_proof_words": 498,
+      "proof_sha256": "54030988e799163fac06f93985034ea85226b68e120daefc90a188c77c1e00c1",
+      "review": "Read the scalar tensor and quotient coordinate maps, baseChangePi_natural, structureBaseChangeIso, its separate flat finite-graph flabbiness consequence, and structurePullbackIso. Preserved the order-reflection hypothesis and checked both endpoint squares on supported and zero coordinates."
     },
     {
       "node": "kl.local.structure_sheaf_properties",

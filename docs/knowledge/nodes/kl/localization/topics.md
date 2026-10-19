@@ -225,15 +225,87 @@ In the \(A_2\) example, an error \(r(\alpha+\beta)\) at \(s\) is corrected by ad
 
 For the actual plane subgroup, its inclusion into \(W\) is injective and sends intrinsic reflections to ambient reflections. The [[node:kl.detail.dihedral_model_properties|dihedral model theorem]] therefore supplies the required model flabbiness, generation and upper quotients.
 
-## Model kernels and the next local comparison
+## Scalar extension retains the model maps
 
-At a supported rank-one stalk, selected outgoing conditions say that its scalar belongs to each ideal \((\alpha_e)\) for a supported selected edge. Pairwise relative primality makes this intersection the product ideal:
+Let \(A\to R_P\) be the localization map \(\eta_P\). At a supported model stalk, the scalar-extension coordinate is
 \[
-K_x(F)=\left(\prod_{e\in F,\ t(e)\le c}\alpha_e\right)A.
+R_P\otimes_AA\longrightarrow R_P,\qquad
+r\otimes f\longmapsto r\eta_P(f).
 \]
-An unsupported edge has zero module and contributes no equation.
+At a supported edge it is
+\[
+R_P\otimes_AA/(\alpha_e)\longrightarrow R_P/(\eta_P(\alpha_e)),
+\qquad r\otimes[f]\longmapsto[r\eta_P(f)].
+\]
+For either endpoint restriction, both routes send \(r\otimes f\) to the same quotient class. Outside the support the edge modules are zero. The [[node:kl.local.structure_model_transport|structure-model transport theorem]] therefore identifies the tensor-extended sheaf with the structure sheaf using the localized labels.
 
-After scalar extension and restriction to a finite coset graph, the local model construction supplies the corresponding sheaf isomorphism over the local ring. Its commuting edge maps carry both selected kernel images into the same model edge modules. Those product and transport identities are the inputs to the local comparison.
+Flatness transfers flabbiness on the finite graph. Each localized interval-model label belongs to the maximal ideal because its representing root lies in the plane. The [[node:kl.local.local_structure_models|local structure-model theorem]] packages these facts with the finite free stalks, quotient maps, generation and local minimality.
+
+## A principal interval containing the relative coset graph
+
+The finite relative lower ideal \(K\) may have several maximal vertices. The [[node:kl.dihedral.finite_common_upper|finite-common-upper-bound theorem]] supplies \(d_0\in D\) above every element of \(K\), giving an inclusion
+\[
+f:K\hookrightarrow[1,d_0]_D.
+\]
+This inclusion uses the same intrinsic order on both sides.
+
+For a fixed center \(c\in K\), consider the localized interval structure model centered at \(f(c)\). Its supported edges have target below \(c\). If such an edge starts at a vertex of \(K\), its target also belongs to \(K\), because \(K\) is a relative lower ideal. This gives every supported outgoing lift needed for the [[node:kl.sheaves.pullback_live_flabbiness|surviving-edge pullback theorem]].
+
+The label comparison is exact. An edge with relative endpoints \(x,y\) has ambient endpoints \(xa_0,ya_0\), and
+\[
+(ya_0)(xa_0)^{-1}=yx^{-1}.
+\]
+Both constructions therefore choose the same canonical positive ambient root. The [[node:kl.local.structure_model_transport|structure-model transport theorem]] identifies the pulled-back interval model with the actual structure model on \(K\). The [[node:kl.local.coset_structure_models|coset structure-model theorem]] proves its flabbiness and assembles the local-model data.
+
+## Selected products describe the stalk kernels
+
+Choose a model center \(c\), a vertex \(x\), and a subset \(F\) of its outgoing edges. The supported selected edge set and selected model product are
+\[
+F_c(x)=\{e\in F:t(e)\le_Dc\},\qquad
+p_{c,x}(F)=\prod_{e\in F_c(x)}\gamma_e.
+\]
+For \(x\le_Dc\), the stalk is \(R_P\), and the selected equations are
+\[
+[v]=0\text{ in }R_P/(\gamma_e)
+\quad(e\in F_c(x)).
+\]
+Equivalently each \(\gamma_e\) divides \(v\). Unsupported edge modules contribute no equation.
+
+Distinct labels at a fixed source are relatively prime. To see this, first work in the polynomial ring: divisibility between two prime linear labels identifies their positive roots, then their reflections, then their edges at the fixed source. Localization preserves their relative primality. If a prime factor is outside the localization prime it becomes a unit; if it lies inside, clearing a denominator preserves the nondivisibility.
+
+The [[node:kl.local.structure_kernel_products|structure-kernel product theorem]] combines the individual divisibilities:
+\[
+K_x^{\mathcal O_c}(F)=p_{c,x}(F)\mathcal O_c^x.
+\]
+For two supported selected labels \(a,b\), this is the elementary calculation
+\((a)\cap(b)=(ab)\) under relative primality. For an empty supported selection the product is \(1\), so the kernel is the whole stalk. Outside the model support both sides are zero.
+
+## The products inside the edge module
+
+Now fix an edge \(e:x\to y\). The [[node:kl.local.structure_edge_images|structure edge-image theorem]] gives
+\[
+\rho^-_e(K_x(F))=p_{c,x}(F)\mathcal O_c^e,\qquad
+\rho^+_e(K_y(H))=p_{c,y}(H)\mathcal O_c^e.
+\]
+The proof uses \(f(pM)=p\,f(M)\) for a linear map \(f\), together with surjectivity of each endpoint restriction. Upper surjectivity is the quotient rule. For lower surjectivity, lift an edge value at its upper endpoint and extend that stalk value to a global section; compatibility supplies its lower preimage.
+
+In a single supported edge \(x\to c\) labelled by \(\alpha\), selecting that edge gives stalk kernel \(\alpha R_P\). Its image in the edge quotient is
+\[
+\alpha\bigl(R_P/(\alpha)\bigr)=0.
+\]
+At the upper endpoint an empty outgoing selection gives the full edge image. The [[node:kl.local.coset_kernel_products|coset kernel-product theorem]] proves the general formulas for arbitrary selections in the actual localized graph.
+
+## Local model data and finite sums
+
+A family of local boundary models has finite free stalks, upper quotient maps, generation, flabbiness and support below its center. Its top stalk comes with a chosen coordinate \(O_c^c\simeq R_P\). At a proper supported vertex \(x\ne c\), local minimality says
+\[
+\ker d_x\subseteq\mathfrak m_P O_c^x,
+\]
+where \(d_x\) collects all outgoing restrictions. Thus the surjection from the stalk onto its outgoing image becomes an isomorphism after reduction modulo \(\mathfrak m_P\).
+
+An ungraded model sum adds finitely many copies of these models. For a one-edge graph \(x<c\), the sum \(O_c^2\oplus O_x^3\) has stalk ranks \(5\) at \(x\) and \(2\) at \(c\), with edge module \((R_P/(\alpha))^2\). Adding the three \(O_x\)-copies changes the lower stalk while preserving the data above it.
+
+The local decomposition produces an actual sheaf isomorphism to such a sum. The selected kernel and edge-image formulas then apply componentwise. They turn the comparison into scalar products in each common model edge module; the root-plane count determines the correction between those products.
 
 ## Root-plane counts and the scalar correction
 
@@ -288,6 +360,7 @@ The logical order to retain is: free upper kernel, free edge target, local model
 - [[node:kl.local.localized_edge_ring]]
 - [[node:kl.algebra.plane_reduction]]
 - [[node:kl.local.localized_root_reduction]]
+- [[node:kl.local.localized_relative_primality]]
 
 ### Localizing graph sheaves
 
@@ -319,10 +392,18 @@ The logical order to retain is: free upper kernel, free edge target, local model
 - [[node:kl.local.induced_label_primes]]
 - [[node:kl.local.flow_down_flabbiness]]
 - [[node:kl.detail.dihedral_model_properties]]
+- [[node:kl.local.structure_model_transport]]
+- [[node:kl.local.local_structure_models]]
+- [[node:kl.local.coset_structure_models]]
+- [[node:kl.local.selected_model_product]]
+- [[node:kl.local.structure_kernel_products]]
+- [[node:kl.local.structure_edge_images]]
+- [[node:kl.local.coset_kernel_products]]
 
 ### Local model decomposition
 
 - [[node:kl.detail.local_models]]
+- [[node:kl.local.model_sums]]
 - [[node:kl.local.localized_decomposition]]
 
 ### Polynomial correction factors

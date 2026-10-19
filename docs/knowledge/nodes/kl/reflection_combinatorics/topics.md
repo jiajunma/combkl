@@ -75,6 +75,12 @@ The [[node:kl.dihedral.odd_reflection_edges|odd-gap edge theorem]] records both 
 
 For interpolation, an opposite-parity external vertex \(y\le c\), \(y\not\le x\), has length greater than \(x\): a shorter vertex would lie below \(x\) by the dihedral Bruhat comparison. Thus these vertices are precisely the supported outgoing neighbors of \(x\).
 
+## Finite subsets inside a principal dihedral interval
+
+To transport a model from an interval to a finite relative lower ideal \(K\), choose a common upper bound for its vertices. If dihedral lengths are bounded, an element of maximal length has both simple generators as descents; induction on generator words shows that every element lies below it. If lengths are unbounded, choose an element longer than every vertex of \(K\), and use the dihedral comparison of strictly different lengths.
+
+The [[node:kl.dihedral.finite_common_upper|finite-common-upper-bound theorem]] therefore places \(K\) inside an intrinsic interval \([1,d_0]_D\). The inclusion preserves and reflects the intrinsic order. This gives a finite interval model whose supported edges can be pulled back to the coset graph.
+
 ## Edge-transfer matrices and path composition
 
 For an edge \(x\to y\), let \(E_{xy}\) be the matrix with a single \(1\) in row \(x\), column \(y\). On a column vector it copies coordinate \(y\) into coordinate \(x\). Define
@@ -182,6 +188,7 @@ The topic supplies the connections used later: order data can transport the edge
 ### Dihedral interval combinatorics
 
 - [[node:kl.dihedral.odd_reflection_edges]]
+- [[node:kl.dihedral.finite_common_upper]]
 - [[node:kl.notes.relative_dihedral_transport]]
 - [[node:kl.paths.later_count]]
 
