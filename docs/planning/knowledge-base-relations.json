@@ -71,7 +71,8 @@
         "OAI.KLInvariance.ReverseFiltration.kernel_projective_of_presentation",
         "OAI.KLInvariance.ProjectiveLattice.mem_of_prime_local_membership",
         "OAI.KLInvariance.PairProjection.difference_annihilates",
-        "OAI.KLInvariance.FiniteFreeScalar.scalar_quotient_regular"
+        "OAI.KLInvariance.FiniteFreeScalar.scalar_quotient_regular",
+        "OAI.KLInvariance.ProjectiveRange.projective_of_two_stage"
       ]
     },
     {
@@ -240,7 +241,8 @@
         "OAI.KLInvariance.ReflectionFrobenius.wallCoordinate",
         "OAI.KLInvariance.TitsSpace.bottHeadPairEquiv",
         "OAI.KLInvariance.TitsSpace.BottKernelExact",
-        "OAI.KLInvariance.TitsSpace.bottStandardStalks"
+        "OAI.KLInvariance.TitsSpace.bottStandardStalks",
+        "OAI.KLInvariance.TitsSpace.bottProjectiveUpper_cons"
       ]
     },
     {

@@ -15,6 +15,12 @@ uses:
 - kl.detail.bruhat_lifting
 - kl.detail.word_evaluation_injective
 - kl.detail.word_standard_stalks
+- kl.word.upper_image_properties
+- kl.word.upper_projectivity_step
+- kl.word.common_kernel_equivalence
+- kl.word.stable_image_projectivity
+- kl.word.head_patch_lifting
+- kl.algebra.projective_local_membership
 lean:
   repository: openai-kl
   modules:
@@ -53,7 +59,8 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Does the entry preserve the source hypotheses, construction, and conclusion?
+  prompt: Are the scalar actions, coordinate sets, kernel maps and induction hypotheses
+    explicit?
   verdict: Read against the named Lean declarations and surrounding variable context;
     explanatory examples are distinguished from the formal statement.
 tags:
@@ -65,35 +72,65 @@ tags:
 
 For a reduced word \(\mathbf s\) with product \(b\), its pair-projection sheaf on \([1,b]\) is flabby. Thus every compatible section on an upper subset extends to a global section.
 
+<!-- source-comparison:start -->
+## Relation to the OpenAI notes
+
+**Explicit word-image construction of the extension property.**
+
+**OpenAI notes:** The moment-graph sheaf theorem gives extension of compatible sections on upper sets for the normalized boundary sheaf through the cited Braden–MacPherson and Soergel bridges. [bg:bmp](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L225).
+
+**Lean (primary):** The word module first gives image modules on arbitrary weight sets. On upper sets, the word induction proves projectivity using a tensor endomorphism and two kernel sequences; the common-kernel comparison uses compatible-tuple lifting for the shorter word. A fixed-word prime-denominator argument derives that lifting property from projectivity. [IntegralPairings:470](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L470), [IntegralPairings:467](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L467), [IntegralPairings:1299](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L1299), [IntegralPairings:1408](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L1408), [IntegralPairings:2057](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L2057).
+
+**Role in the proof:** The Blueprint follows the image maps, patched tails and split sequences. This preserves both hypotheses of the induction step and explains the word-module input used to construct the interval sheaf extension property.
+<!-- source-comparison:end -->
+
 *Proof.*
 
-### Step 1. Separate the two assertions proved by word induction
+### Step 1. Use projectivity and its lifting consequence at the shorter word
 
-For a word \(\mathbf s\) and an upper set \(U\), let \(L_{\mathbf s}(U)\) be the image of the word module in its collection of stalks over \(U\). The induction proves that this image is projective. Once projectivity is available, the argument in Steps 4–6 proves that every pairwise compatible tuple belongs to that image.
+For each fixed word \(\mathbf t\), the prime-denominator argument in Steps 4–5 proves the implication
+\[
+\text{upper-image projectivity for }\mathbf t
+\Longrightarrow
+\text{compatible-tuple lifting for }\mathbf t.
+\]
+The word induction proves upper-image projectivity. At its induction step, apply this implication to the shorter word to obtain the lifting hypothesis required by the [[node:kl.word.upper_projectivity_step|conditional projectivity step]].
 
-For the empty word, only weight \(1\) has a nonzero stalk. The image on \(U\) is either the coefficient ring or zero, hence projective, and compatibility is immediate.
+For the empty word, the only nonzero stalk is \(A\) at weight \(1\). Its image on a set \(U\) is \(A\) when \(1\in U\), and zero otherwise. Both are projective, establishing the induction base.
 
-### Step 2. Set up the two-stage projection for a longer word
+### Step 2. Use the two-stage image coordinates
 
-Write the new word as \(s\mathbf t\). Set \(J=U\cap sU\) and \(K=U\cup sU\). Both are upper, and \(J\) is stable under \(s\), by the simple-reflection lifting property.
+Fix an upper set \(U\), and put \(J=U\cup sU\), \(K=U\cap sU\).
+Both are upper and reflection-stable. The two-stage kernel data consist of
+\[
+r:L_{s\mathbf t}(U)\twoheadrightarrow L_{s\mathbf t}(K),\quad
+F_U:L_{s\mathbf t}(U)\to L_{\mathbf t}(U),\quad
+k:L_{\mathbf t}(U)\twoheadrightarrow L_{\mathbf t}(K).
+\]
+The first image map commutes with restriction, so it induces
+\(\bar F:\ker r\to\ker k\).
+This induced map is surjective: lift \(z\in\ker k\) to an old word vector \(n\), then use the new projection of \(1\otimes n\). It vanishes on the stable set \(K\) and has first image \(z\).
 
-The rank-two tensor coordinates give a restriction map
-\(r:L_{s\mathbf t}(U)\twoheadrightarrow L_{s\mathbf t}(J)\)
-and a first-coordinate map to \(L_{\mathbf t}(U)\). On \(\ker r\), the first-coordinate map surjects onto
-\(\ker(L_{\mathbf t}(U)\to L_{\mathbf t}(J))\).
-A preimage is obtained by choosing an old word lift \(m\) and using the tensor \(1\otimes m\); its first coordinate is \(m\), and vanishing on the stable set \(J\) makes its new projection vanish there.
+The [[node:kl.word.common_kernel_equivalence|common-kernel theorem]] identifies
+\[
+D=\ker r\cap\ker F_U
+\simeq{}^\tau\ker(L_{\mathbf t}(J)\to L_{\mathbf t}(U)).
+\]
+Its forward construction patches the reflected tail on \(sU\) with the ordinary tail on \(U\). The overlap values are zero. The [[node:kl.word.head_patch_lifting|patched-tail theorem]] verifies every crossing edge and applies the shorter word's compatible-tuple lifting property. The reverse construction inserts an old lift as \(1\otimes n\). Injective second-coordinate maps turn these two image containments into a linear isomorphism.
 
-The common kernel of restriction and first coordinate is identified by its second coordinate with the scalar twist of
-\(\ker(L_{\mathbf t}(K)\to L_{\mathbf t}(U))\).
-For the forward map, patch the second-coordinate assignment on \(sU\) with zero on \(U\); they agree on \(J\). The old-word compatibility equations give a compatible assignment on \(K\), so old-word flabbiness lifts it. Conversely a lift vanishing on \(U\), inserted as \(1\otimes m\), produces the required common-kernel vector. The two coordinate maps are injective on these kernels, so these constructions are inverse.
+### Step 3. Deduce projectivity using the actual tensor splitting
 
-### Step 3. Deduce projectivity through the exact sequences
+By the induction hypothesis, the old images on \(U,J,K\) are projective.
+Surjective restrictions between them have projective kernels. Twisting preserves projectivity, so the identified common kernel \(D\) is projective.
 
-By induction, \(L_{\mathbf t}(U)\), \(L_{\mathbf t}(J)\), and \(L_{\mathbf t}(K)\) are projective. Their restriction maps are surjective by the definition of projected images, so the two kernels in Step 2 are projective: the exact sequences split over their projective targets.
+On the stable set \(K\), split the old image projection and form its endomorphism \(e=\sigma p_K\). Tensoring \(e\) gives the endomorphism \(a\otimes n\mapsto a\otimes e(n)\) of the new word. Stability of \(K\) makes it preserve the new coordinates on \(K\) and kill their projection kernel. It therefore descends to a section, proving projectivity of \(L_{s\mathbf t}(K)\).
 
-On the reflection-stable set \(J\), the new image is obtained by the actual rank-two tensor extension of the old image; the old projective splitting extends through this free tensor construction, so \(L_{s\mathbf t}(J)\) is projective.
-
-The exact sequence for the first-coordinate map on \(\ker r\) has projective kernel and projective target, hence splits and makes \(\ker r\) projective. The sequence for \(r\) now also splits, proving \(L_{s\mathbf t}(U)\) projective.
+The [[node:kl.word.upper_projectivity_step|conditional projectivity step]] now applies to
+\[
+0\to D\to\ker r\to\ker k\to0,\qquad
+0\to\ker r\to L_{s\mathbf t}(U)\to L_{s\mathbf t}(K)\to0.
+\]
+Both sequences split over their projective targets. This proves projectivity of \(L_{s\mathbf t}(U)\), and completes the word induction. The fixed-word implication in Steps 4–5 then supplies compatible-tuple lifting for every word.
 
 ### Step 4. Construct a denominator away from each prime
 

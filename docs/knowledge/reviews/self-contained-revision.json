@@ -2965,17 +2965,6 @@
       "pending": []
     },
     {
-      "node": "kl.algebra.scalar_twist",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/scalar_twist.md",
-      "source_declarations": [
-        "OAI.KLInvariance.ReflectionPairTranslation.Twist",
-        "OAI.KLInvariance.ReflectionPairTranslation.Twist.equiv",
-        "OAI.KLInvariance.ReflectionPairTranslation.Twist.equivVal"
-      ],
-      "review": "Read Twist and its inverse-direction semilinear equivalence. Retained arbitrary ring automorphisms, and imposed the base-field-fixing condition exactly where identifying it with CoefficientChange.",
-      "pending": []
-    },
-    {
       "node": "kl.sheaves.pairing_transport",
       "file": "docs/knowledge/nodes/kl.sheaves/pairing_transport.md",
       "source_declarations": [
@@ -3639,6 +3628,230 @@
       ],
       "review": "Added the finite-generator/interval context, actual graded word/stalk/edge module packages with finite and nonnegative grading arguments, and the precise polynomial coefficient transport.",
       "pending": []
+    },
+    {
+      "node": "kl.word.coordinate_images",
+      "file": "docs/knowledge/nodes/kl.word_modules/coordinate_images.md",
+      "source_declarations": [
+        "OAI.KLInvariance.CoordinateProjection.eval",
+        "OAI.KLInvariance.CoordinateProjection.image",
+        "OAI.KLInvariance.CoordinateProjection.project",
+        "OAI.KLInvariance.CoordinateProjection.project_surjective",
+        "OAI.KLInvariance.CoordinateProjection.project_apply",
+        "OAI.KLInvariance.CoordinateProjection.project_zero_iff",
+        "OAI.KLInvariance.CoordinateProjection.restrict",
+        "OAI.KLInvariance.CoordinateProjection.restrict_project",
+        "OAI.KLInvariance.CoordinateProjection.restrict_surjective",
+        "OAI.KLInvariance.CoordinateProjection.restrict_zero_iff",
+        "OAI.KLInvariance.CoordinateProjection.restrict_joint_injective",
+        "OAI.KLInvariance.TitsSpace.bottSetImage",
+        "OAI.KLInvariance.TitsSpace.bottSetProjection",
+        "OAI.KLInvariance.TitsSpace.bottSetRestrict"
+      ],
+      "review": "Read generic coordinate eval/image/project/restrict, kernel criteria and joint injectivity, then the word instances. Defined actual common-preimage images for arbitrary coordinate sets and included the one-edge example.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.reflected_sets",
+      "file": "docs/knowledge/nodes/kl.word_modules/reflected_sets.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.BruhatUpper",
+        "OAI.KLInvariance.TitsSpace.simplePull",
+        "OAI.KLInvariance.TitsSpace.simpleUnion",
+        "OAI.KLInvariance.TitsSpace.simpleInter"
+      ],
+      "review": "Read BruhatUpper/simplePull/simpleUnion/simpleInter. Defined ambient upper sets, the preimage convention and the union/intersection names used uniformly in the new proof chain.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.upper_set_reflection",
+      "file": "docs/knowledge/nodes/kl.word_modules/upper_set_reflection.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.BruhatUpper.mem_simpleUnion",
+        "OAI.KLInvariance.TitsSpace.BruhatUpper.mem_simpleInter",
+        "OAI.KLInvariance.TitsSpace.BruhatUpper.simpleUnion",
+        "OAI.KLInvariance.TitsSpace.BruhatUpper.simpleInter",
+        "OAI.KLInvariance.TitsSpace.simpleUnion_stable",
+        "OAI.KLInvariance.TitsSpace.simpleInter_stable",
+        "OAI.KLInvariance.TitsSpace.cross_edge_is_simple"
+      ],
+      "review": "Read both envelope membership equivalences, monotonicity applications, stability identities and cross_edge_is_simple. Preserved the upward edge and excluded-endpoint conditions.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.upper_image_properties",
+      "file": "docs/knowledge/nodes/kl.word_modules/upper_image_properties.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.BottCompatible",
+        "OAI.KLInvariance.TitsSpace.BottFlabby",
+        "OAI.KLInvariance.TitsSpace.BottProjectiveUpper"
+      ],
+      "review": "Read the three predicates and their actual quantifiers. Distinguished edge witnesses from a common word lift, defined the projective-image section, and recorded both inputs of bottProjectiveUpper_cons.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.projective_range_splittings",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/projective_range_splittings.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ProjectiveRange.descend",
+        "OAI.KLInvariance.ProjectiveRange.descend_apply",
+        "OAI.KLInvariance.ProjectiveRange.projective_of_end",
+        "OAI.KLInvariance.ProjectiveRange.kernelRetraction",
+        "OAI.KLInvariance.ProjectiveRange.kernel_projective",
+        "OAI.KLInvariance.ProjectiveRange.splitEquiv",
+        "OAI.KLInvariance.ProjectiveRange.projective_of_kernel"
+      ],
+      "review": "Read the general kernel descent, projective image criterion and both kernel/splitting arguments. Expanded lift independence and the actual section and retraction formulas.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.two_stage_projectivity",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/two_stage_projectivity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ProjectiveRange.onKernel",
+        "OAI.KLInvariance.ProjectiveRange.kernelOnKernelEquiv",
+        "OAI.KLInvariance.ProjectiveRange.projective_of_two_stage"
+      ],
+      "review": "Read onKernel, the underlying-vector kernel equivalence and both uses of projective_of_kernel. Stated every map, kernel and surjectivity hypothesis explicitly.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.set_tail_maps",
+      "file": "docs/knowledge/nodes/kl.word_modules/set_tail_maps.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottSetFirst",
+        "OAI.KLInvariance.TitsSpace.bottSetSecond",
+        "OAI.KLInvariance.TitsSpace.bottSetFirst_project",
+        "OAI.KLInvariance.TitsSpace.bottSetSecond_project",
+        "OAI.KLInvariance.TitsSpace.bottSeed",
+        "OAI.KLInvariance.TitsSpace.bottSeed_first",
+        "OAI.KLInvariance.TitsSpace.bottSeed_second",
+        "OAI.KLInvariance.TitsSpace.bottSetFirst_seed",
+        "OAI.KLInvariance.TitsSpace.bottSetSecond_seed",
+        "OAI.KLInvariance.TitsSpace.bottSetFirst_restrict"
+      ],
+      "review": "Read both descended maps, seed identities and restriction commutation. Kept the second target twisted and the reflected set sU explicit, with well-definedness tied to the precise kernel criterion.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.set_tail_detection",
+      "file": "docs/knowledge/nodes/kl.word_modules/set_tail_detection.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottHeadSet_zero_iff",
+        "OAI.KLInvariance.TitsSpace.bottSetComponents_injective",
+        "OAI.KLInvariance.TitsSpace.bottHead_components_injective",
+        "OAI.KLInvariance.TitsSpace.bottSeed_zero_stable",
+        "OAI.KLInvariance.TitsSpace.bottSeed_zero_inter"
+      ],
+      "review": "Read the pointwise-to-set zero equivalence and both directions of the sU reindexing. Expanded descent, joint injectivity, whole-word tail detection and the two seed-vanishing consequences.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.head_patch",
+      "file": "docs/knowledge/nodes/kl.word_modules/head_patch.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionPairTranslation.tensor_difference",
+        "OAI.KLInvariance.TitsSpace.bottHead_difference",
+        "OAI.KLInvariance.TitsSpace.bottHeadPatch"
+      ],
+      "review": "Read tensor_difference, the actual branch definition of bottHeadPatch and its zero-overlap specialization. Defined the patch as a coordinate assignment and proved the underlying root-divisible tail difference.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.head_patch_lifting",
+      "file": "docs/knowledge/nodes/kl.word_modules/head_patch_lifting.md",
+      "source_declarations": [
+        "OAI.KLInvariance.PairProjection.cross_lift",
+        "OAI.KLInvariance.TitsSpace.bottHeadPatch_compatible",
+        "OAI.KLInvariance.TitsSpace.bottHeadPatch_lift",
+        "OAI.KLInvariance.TitsSpace.bottHeadPatch_lift_of_zero_inter"
+      ],
+      "review": "Read all branch cases of bottHeadPatch_compatible, the quotient cross_lift argument, the upper-union lift and the zero-intersection specialization. Included the full crossing-edge calculation and both output restrictions.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.stable_image_projectivity",
+      "file": "docs/knowledge/nodes/kl.word_modules/stable_image_projectivity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottTensorEnd",
+        "OAI.KLInvariance.TitsSpace.bottTensorEnd_first",
+        "OAI.KLInvariance.TitsSpace.bottTensorEnd_second",
+        "OAI.KLInvariance.TitsSpace.bottTensorEnd_set_preserve",
+        "OAI.KLInvariance.TitsSpace.bottTensorEnd_set_kills",
+        "OAI.KLInvariance.TitsSpace.bottStableUpper_projective"
+      ],
+      "review": "Read the actual tensor endomorphism, coordinate preservation, kernel killing and projective_of_end application. Retained only reflection stability of U, without an extra upper-set hypothesis.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.set_kernel_data",
+      "file": "docs/knowledge/nodes/kl.word_modules/set_kernel_data.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottInterRestriction",
+        "OAI.KLInvariance.TitsSpace.bottUnionRestriction",
+        "OAI.KLInvariance.TitsSpace.bottUnionPullRestriction",
+        "OAI.KLInvariance.TitsSpace.bottCommonKernel",
+        "OAI.KLInvariance.TitsSpace.bottCommonSecond",
+        "OAI.KLInvariance.TitsSpace.bottCommonSecond_injective",
+        "OAI.KLInvariance.TitsSpace.bottUnionKernelSecond",
+        "OAI.KLInvariance.TitsSpace.bottUnionKernelSecond_injective",
+        "OAI.KLInvariance.TitsSpace.bottInter_first_zero"
+      ],
+      "review": "Read the three restrictions, common kernel, both second-coordinate maps and their injectivity proofs. Defined all domains and the two exact-sequence roles before the projectivity application.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.common_kernel_equivalence",
+      "file": "docs/knowledge/nodes/kl.word_modules/common_kernel_equivalence.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottCommon_lift",
+        "OAI.KLInvariance.TitsSpace.bottCommon_patch_lift",
+        "OAI.KLInvariance.TitsSpace.bottCommon_range_of_patch",
+        "OAI.KLInvariance.TitsSpace.bottCommon_range_forward",
+        "OAI.KLInvariance.TitsSpace.bottCommon_range_backward",
+        "OAI.KLInvariance.projective_of_same_range",
+        "OAI.KLInvariance.projective_of_coordinates"
+      ],
+      "review": "Read the common lift, patch lift and both coordinate-range containments. Constructed the isomorphism through unique matching coordinates and proved linearity there, without assuming a linear choice of patch lifts.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.upper_projectivity_step",
+      "file": "docs/knowledge/nodes/kl.word_modules/upper_projectivity_step.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottInter_first_zero",
+        "OAI.KLInvariance.TitsSpace.bottInterKernelFirst_surjective",
+        "OAI.KLInvariance.TitsSpace.bottCommon_projective",
+        "OAI.KLInvariance.TitsSpace.bottProjectiveUpper_cons"
+      ],
+      "review": "Read bottInterKernelFirst_surjective, bottCommon_projective and bottProjectiveUpper_cons. Checked all three projective modules, both surjections and the old-word lifting input in the exact source construction order.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.scalar_twist",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/scalar_twist.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionPairTranslation.Twist",
+        "OAI.KLInvariance.ReflectionPairTranslation.Twist.equiv",
+        "OAI.KLInvariance.ReflectionPairTranslation.Twist.equivVal",
+        "OAI.KLInvariance.ReflectionPairTranslation.Twist.projective"
+      ],
+      "review": "Expanded the projectivity transport used by Twist.projective as an explicit inverse-twist lifting problem, retaining the existing scalar action and underlying-value field.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.word_flabbiness",
+      "file": "docs/knowledge/nodes/kl.sheaves/word_flabbiness.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottProjectiveUpper",
+        "OAI.KLInvariance.TitsSpace.bottFlabby",
+        "OAI.KLInvariance.TitsSpace.bottProjectionSheaf_flabby",
+        "OAI.KLInvariance.TitsSpace.bottProjectiveUpper_cons"
+      ],
+      "review": "Rewrote the projectivity assembly to retain the old-word lifting input and the actual tensor-endomorphism splitting. Linked each two-stage argument to its detailed node. The later prime-class and local-projector parts remain scheduled for the W6 expansion.",
+      "pending": [
+        "Expand prime-character classes, diagonal local projectors and the complete denominator-lifting proof."
+      ]
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -3978,7 +4191,9 @@
         "kl.algebra.scalar_free_presentation",
         "kl.algebra.scalar_quotient",
         "kl.algebra.eigenvalue_difference",
-        "kl.algebra.scalar_quotient_regular"
+        "kl.algebra.scalar_quotient_regular",
+        "kl.algebra.projective_range_splittings",
+        "kl.algebra.two_stage_projectivity"
       ],
       "pending": [],
       "review": "Reviewed quotient and pair-projection descent, saturation and free reduced images, finite free scalar-quotient presentations, the explicit projective-kernel retraction, and free/projective target prime-denominator membership."
@@ -4074,8 +4289,24 @@
     {
       "code": "W6",
       "title": "Images over sets of weights",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.word.coordinate_images",
+        "kl.word.reflected_sets",
+        "kl.word.upper_set_reflection",
+        "kl.word.upper_image_properties",
+        "kl.word.set_tail_maps",
+        "kl.word.set_tail_detection",
+        "kl.word.head_patch",
+        "kl.word.head_patch_lifting",
+        "kl.word.stable_image_projectivity",
+        "kl.word.set_kernel_data",
+        "kl.word.common_kernel_equivalence",
+        "kl.word.upper_projectivity_step"
+      ],
+      "pending": [
+        "Expand prime coefficient-character classes and the geometric two-character theorem, diagonal stabilizers/local projectors, and assembly/removal of local denominators. Then complete the unconditional upper-image projectivity and compatible-tuple lifting induction."
+      ]
     },
     {
       "code": "W7",
@@ -4194,10 +4425,11 @@
       "status": "in_progress",
       "completion_evidence": [
         "kl.sheaves.word_polynomial_stalks",
-        "kl.detail.word_sheaf"
+        "kl.detail.word_sheaf",
+        "kl.detail.word_flabbiness"
       ],
       "pending": [
-        "Expand the coordinate-image/upper-set lifting argument and its global section isomorphism and flabbiness applications, then integrate the full word-sheaf route with the boundary-summand construction."
+        "Complete the prime-local lifting route in W6, then expand the ambient-to-interval extension and global section isomorphism, connecting the word sheaf to its boundary summand."
       ]
     },
     {
@@ -4424,7 +4656,7 @@
     }
   ],
   "next_steps": [
-    "Expand images over weight sets, upper-set lifting and global section realization; then complete the word-sheaf and graded character-recursion routes.",
+    "Expand prime-character classes, geometric two-character separation, diagonal local projectors and local denominators; assemble unconditional upper-image projectivity and compatible-tuple lifting, then the interval section isomorphism.",
     "Complete standard-parabolic inclusion and finite-support transport; finish word wall maps, pair kernels, and character recursions.",
     "Expand adapted-order/chamber changes, dihedral interval transport, and the path-polynomial proof.",
     "Review the remaining Hecke, localization, and simultaneous-comparison arguments against their local source bodies.",
@@ -4797,7 +5029,21 @@
       "kl.word.head_pair_saturation": "W5",
       "kl.word.nonhead_kernel_step": "W5",
       "kl.word.stalk_freeness_step": "W5",
-      "kl.sheaves.word_polynomial_stalks": "S7"
+      "kl.sheaves.word_polynomial_stalks": "S7",
+      "kl.word.coordinate_images": "W6",
+      "kl.word.reflected_sets": "W6",
+      "kl.word.upper_set_reflection": "W6",
+      "kl.word.upper_image_properties": "W6",
+      "kl.algebra.projective_range_splittings": "A7",
+      "kl.algebra.two_stage_projectivity": "A7",
+      "kl.word.set_tail_maps": "W6",
+      "kl.word.set_tail_detection": "W6",
+      "kl.word.head_patch": "W6",
+      "kl.word.head_patch_lifting": "W6",
+      "kl.word.stable_image_projectivity": "W6",
+      "kl.word.set_kernel_data": "W6",
+      "kl.word.common_kernel_equivalence": "W6",
+      "kl.word.upper_projectivity_step": "W6"
     },
     "moved_nodes": [
       {
@@ -5631,7 +5877,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 354
+    "current_node_count": 368
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -5651,7 +5897,8 @@
     "Completed the coefficient/comparison algebra exposition: generic linear quotients and root-label primality, coefficient-dual transport and scalar twists, projective presentations and explicit retractions, saturation and free reduced images, and prime-denominator membership. Added the twisted pair-lattice construction and plane-prime unit criterion at their mathematical homes.",
     "Completed the reflection Frobenius and paired tensor-induction exposition: explicit invariant coordinates, normalized trace and inverse duality, symmetric-algebra reflection hypotheses and actual simple data, functional recovery and finite free dual base change, induced right actions and one-step pairing degree. Linked the constructions to word bases and expanded the shared one-variable example in the topic guide.",
     "Expanded subexpression evaluations, coefficient characters, generic wall-matrix injectivity, homogeneous stalk lifting and exact Bruhat support. Added the scalar-difference edge argument, first-factor reflection and exact first-wall kernel, reflected head-pair equivalence, both pair-lattice kernel sequences and the BottKernelExact definition. Completed the W4 exposition review and refined the remaining W5 induction work.",
-    "Completed the W5 simultaneous word induction with explicit tail maps, local-pair recovery, prime-scalar quotient regularity, both saturation orientations, transformed reflection roots and the non-head kernel step. Proved new stalk freeness by both split sequences, and rewrote the induction assembly including root signs, finite generation and free edge kernels. Added polynomial-coordinate transport of the word sheaf and a worked rank-two stalk for the word (s,s)."
+    "Completed the W5 simultaneous word induction with explicit tail maps, local-pair recovery, prime-scalar quotient regularity, both saturation orientations, transformed reflection roots and the non-head kernel step. Proved new stalk freeness by both split sequences, and rewrote the induction assembly including root signs, finite generation and free edge kernels. Added polynomial-coordinate transport of the word sheaf and a worked rank-two stalk for the word (s,s).",
+    "Expanded the W6 coordinate-image foundation and full conditional projectivity step: upper reflected sets, the two descended tail maps, patched-tail compatibility, common-kernel coordinate equivalence, stable-set tensor endomorphisms and two-stage split sequences. Added general projective image/kernel splittings and explained projectivity of a scalar twist. Corrected the word-flabbiness assembly to retain its shorter-word lifting hypothesis."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -5764,15 +6011,15 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-19T09:28:19.208780+00:00",
+    "created_at": "2026-10-19T09:51:06.908720+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 354,
-    "html_pages_checked": 618,
-    "generated_definition_links_checked": 4782,
+    "node_count": 368,
+    "html_pages_checked": 632,
+    "generated_definition_links_checked": 4976,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. The current review checks the two tail maps, simultaneous induction, and actual graded/polynomial word-sheaf packages. Documentation checks only."
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks coordinate-image definitions, the two-stage projectivity arguments, and source links for the explicit word predicates. Documentation checks only."
   },
   "structure_coverage_scan": {
     "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
@@ -5891,6 +6138,20 @@
         "kl.detail.word_sheaf"
       ],
       "review": "The polynomial model uses the inverse algebra isomorphism in its scalar action. This sends the old upper kernel alpha M exactly to the new upper kernel e(alpha) M; freeness and finite generation transport with the same underlying basis vectors."
+    },
+    {
+      "entries": [
+        "kl.word.stable_image_projectivity",
+        "kl.word.upper_projectivity_step"
+      ],
+      "review": "The stable-set theorem requires only sU=U and projectivity of the old image. The general upper-set induction step additionally uses compatible-tuple lifting for the shorter word through the common-kernel patch."
+    },
+    {
+      "entries": [
+        "kl.word.common_kernel_equivalence",
+        "kl.word.head_patch_lifting"
+      ],
+      "review": "Patch lifts are existential. The common-kernel isomorphism is linear because it is uniquely determined by two injective coordinate maps with the same image."
     }
   ],
   "relationship_map_revision": {
@@ -5898,6 +6159,6 @@
     "edge_count": 92,
     "route": "Top splitting and primitive recognition feed the boundary-pairing route; full model decomposition feeds simultaneous character formulas.",
     "evidence": "BoundarySheaf.splitIn_of_top_split, iso_of_primitive_top_split, GradedSheaf.exists_modelSumIso and bottCharacter_decomposition_both.",
-    "latest_anchor_refinement": "Added scalar-quotient regularity, the unconditional simultaneous word-stalk theorem, and polynomial upper-quotient transport to their existing algebra, word-coordinate and word-sheaf stages. The word-coordinate output now explicitly includes free stalks and exact reflection kernels."
+    "latest_anchor_refinement": "Added two-stage projectivity and the conditional word upper-image induction step to the existing algebra and word-coordinate stages. The topic guide records its dependence on both projectivity and compatible-tuple lifting for the shorter word."
   }
 }

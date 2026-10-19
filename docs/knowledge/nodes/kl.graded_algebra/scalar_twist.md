@@ -8,14 +8,17 @@ topics:
 - kl.graded_algebra
 uses:
 - kl.detail.coefficient_change
+- kl.algebra.projective_presentations
 lean:
   repository: openai-kl
   modules:
   - Frobenius
+  - IntegralPairings
   declarations:
   - OAI.KLInvariance.ReflectionPairTranslation.Twist
   - OAI.KLInvariance.ReflectionPairTranslation.Twist.equiv
   - OAI.KLInvariance.ReflectionPairTranslation.Twist.equivVal
+  - OAI.KLInvariance.ReflectionPairTranslation.Twist.projective
 source:
   spans:
   - artifact: openai-kl-source
@@ -30,13 +33,18 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.Frobenius:2053
     format: lean-location
     note: OAI.KLInvariance.ReflectionPairTranslation.Twist.equivVal
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.IntegralPairings:1001
+    format: lean-location
+    note: OAI.KLInvariance.ReflectionPairTranslation.Twist.projective
 verification:
   definition: accepted
   proof: not_applicable
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Does the entry preserve the source assumptions and maps?
+  prompt: Are the scalar actions, coordinate sets, kernel maps and induction hypotheses
+    explicit?
   verdict: Read the local definitions and supporting proof bodies; stated the scalar
     direction, degree convention, and finite-generation hypotheses explicitly.
 tags:
@@ -71,6 +79,29 @@ y=\sum_i\tau^{-1}(a_i)\star b_i.
 \]
 This proves spanning, and applying \(\tau\) to a vanishing twisted coefficient combination proves independence.
 
+## Projectivity under a scalar twist
+
+A scalar twist also preserves projectivity. One way to expand the source's semilinear transport is to transport the lifting problem itself.
+
+Let \(Y\) be projective, let \(q:E\to F\) be a surjective \(R\)-linear map, and let \(h:{}^\tau Y\to F\) be \(R\)-linear. Apply the inverse twist to the two targets. The underlying function \(h\) becomes an \(R\)-linear map
+\[
+h':Y\to{}^{\tau^{-1}}F,
+\]
+because
+\(h(ry)=h(\tau^{-1}(r)\star y)=\tau^{-1}(r)h(y)\).
+The same underlying \(q\) is a surjection
+\({}^{\tau^{-1}}E\to{}^{\tau^{-1}}F\).
+
+Projectivity of \(Y\) gives a lift \(\ell:Y\to{}^{\tau^{-1}}E\).
+Its underlying function, viewed as \(\widetilde\ell:{}^\tau Y\to E\), is linear:
+\[
+\widetilde\ell(r\star y)
+=\ell(\tau(r)y)
+=\tau^{-1}(\tau(r))\ell(y)
+=r\widetilde\ell(y).
+\]
+It satisfies \(q\widetilde\ell=h\), proving the projectivity of the twist.
+
 ## Reflection example
 
 Let \(R=\mathbb R[\alpha]\), with \(\tau(\alpha)=-\alpha\). In the twisted copy of \(R\),
@@ -104,3 +135,5 @@ The field `val` is the underlying element; the new scalar action is composed wit
 `OAI.KLInvariance.ReflectionPairTranslation.Twist.equiv`: [Frobenius.lean:2063](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L2063).
 
 `OAI.KLInvariance.ReflectionPairTranslation.Twist.equivVal`: [Frobenius.lean:2053](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L2053).
+
+`OAI.KLInvariance.ReflectionPairTranslation.Twist.projective`: [IntegralPairings.lean:1001](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L1001).

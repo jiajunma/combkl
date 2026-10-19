@@ -1042,3 +1042,60 @@ concepts:
   - polynomial word sheaves
   - graded word sheaf
   - graded word sheaves
+- node: kl.word.coordinate_images
+  terms:
+  - coordinate image
+  - coordinate images
+  - coordinate-image module
+  - coordinate-image modules
+  - set image
+  - set images
+  topics:
+  - kl.word_modules
+  - kl.sheaves
+- node: kl.word.reflected_sets
+  terms:
+  - Bruhat upper set
+  - Bruhat upper sets
+  - reflected union
+  - reflected intersection
+  - reflected preimage
+  - reflection-stable set
+  - reflection-stable sets
+  topics:
+  - kl.word_modules
+  - kl.sheaves
+- node: kl.word.upper_image_properties
+  terms:
+  - upper-image projectivity
+  - compatible-tuple lifting
+  - compatible upper tuple
+  - compatible upper tuples
+  topics:
+  - kl.word_modules
+  - kl.sheaves
+- node: kl.word.set_tail_maps
+  terms:
+  - image tail map
+  - image tail maps
+  - first image map
+  - second image map
+  topics:
+  - kl.word_modules
+  - kl.sheaves
+- node: kl.word.head_patch
+  terms:
+  - head patch
+  - patched assignment
+  - patched tail assignment
+  topics:
+  - kl.word_modules
+  - kl.sheaves
+- node: kl.word.set_kernel_data
+  terms:
+  - two-stage kernel data
+  - two-stage projection data
+  - common kernel
+  topics:
+  - kl.word_modules
+  - kl.sheaves

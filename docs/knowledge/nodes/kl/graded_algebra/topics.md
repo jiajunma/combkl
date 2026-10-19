@@ -377,6 +377,8 @@ For two surjective projections, a common endomorphism may act through different 
 ### Bases, minimal covers and projectivity
 
 - [[node:kl.algebra.projective_presentations]]
+- [[node:kl.algebra.projective_range_splittings]]
+- [[node:kl.algebra.two_stage_projectivity]]
 - [[node:kl.algebra.minimal_cover_remainder]]
 - [[node:kl.algebra.identity_mod_positive]]
 - [[node:kl.notes.minimal_cover_existence]]

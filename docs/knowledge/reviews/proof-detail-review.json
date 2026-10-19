@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 64530,
-  "theorem_walkthroughs": 223,
+  "revised_proof_words": 66786,
+  "theorem_walkthroughs": 231,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -312,6 +312,23 @@
       "review": "Read the free and projective prime-removal arguments. Used the source canonical free-module section and evaluation retraction, finite-support division, ambient torsion-free cancellation and UFD induction."
     },
     {
+      "node": "kl.algebra.projective_range_splittings",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.ProjectiveRange.descend",
+        "OAI.KLInvariance.ProjectiveRange.descend_apply",
+        "OAI.KLInvariance.ProjectiveRange.projective_of_end",
+        "OAI.KLInvariance.ProjectiveRange.kernelRetraction",
+        "OAI.KLInvariance.ProjectiveRange.kernel_projective",
+        "OAI.KLInvariance.ProjectiveRange.splitEquiv",
+        "OAI.KLInvariance.ProjectiveRange.projective_of_kernel"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 270,
+      "proof_sha256": "bc3afcf5e80a75058009b75e3a8dcf341cad9efe542e87a43070e846cb2e7c16",
+      "review": "Read the general kernel descent, projective image criterion and both kernel/splitting arguments. Expanded lift independence and the actual section and retraction formulas."
+    },
+    {
       "node": "kl.algebra.quotient_endomorphism_descent",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -423,6 +440,19 @@
       "revised_proof_words": 304,
       "proof_sha256": "77db6d4f34e8765aa8241580fa98b0ccb0b5e16033aeffa80dae0bb5b542b06d",
       "review": "Read sub_isInternal and quotient_isInternal via image_isInternal. Included well-defined quotient components, finite-sum independence, scalar compatibility and the precise finiteness assumptions."
+    },
+    {
+      "node": "kl.algebra.two_stage_projectivity",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.ProjectiveRange.onKernel",
+        "OAI.KLInvariance.ProjectiveRange.kernelOnKernelEquiv",
+        "OAI.KLInvariance.ProjectiveRange.projective_of_two_stage"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 197,
+      "proof_sha256": "8f8ee7fc88a9be037c46006e0be66ba6034fc63018bb8a000f0bc459696878b2",
+      "review": "Read onKernel, the underlying-vector kernel equivalence and both uses of projective_of_kernel. Stated every map, kernel and surjectivity hypothesis explicitly."
     },
     {
       "node": "kl.comparison.edge_increment",
@@ -1133,9 +1163,9 @@
       ],
       "proof_steps": 6,
       "previous_proof_words": 148,
-      "revised_proof_words": 785,
-      "proof_sha256": "b549e368adb020731bd25137c97b71878689a28a2cdd942e0756dbb99cefa139",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 795,
+      "proof_sha256": "f5bf3d5040a2e1bd0a57f7a0721c6f930cedf32bf2b373b3d4a7fcb31b8ff2c5",
+      "review": "Rewrote the projectivity assembly to retain the old-word lifting input and the actual tensor-endomorphism splitting. Linked each two-stage argument to its detailed node. The later prime-class and local-projector parts remain scheduled for the W6 expansion."
     },
     {
       "node": "kl.detail.word_standard_stalks",
@@ -2739,6 +2769,23 @@
       "review": "Read symmetricLabel, the actual upper-quotient package and coefficientChange_upperQuotient, then bottPolynomialSheaf/free/quotient. Expanded both kernel directions and basis transport; preserved the arbitrary word and interval."
     },
     {
+      "node": "kl.word.common_kernel_equivalence",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottCommon_lift",
+        "OAI.KLInvariance.TitsSpace.bottCommon_patch_lift",
+        "OAI.KLInvariance.TitsSpace.bottCommon_range_of_patch",
+        "OAI.KLInvariance.TitsSpace.bottCommon_range_forward",
+        "OAI.KLInvariance.TitsSpace.bottCommon_range_backward",
+        "OAI.KLInvariance.projective_of_same_range",
+        "OAI.KLInvariance.projective_of_coordinates"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 277,
+      "proof_sha256": "81638f91d5d0c4f797e23f9f5a7e22612e5f879cb2ef0fd0727debfddc73d8a2",
+      "review": "Read the common lift, patch lift and both coordinate-range containments. Constructed the isomorphism through unique matching coordinates and proved linearity there, without assuming a linear choice of patch lifts. Checked the separate roles of vanishing on K and vanishing of the first tail on U in the forward patch construction."
+    },
+    {
       "node": "kl.word.edge_annihilation",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2823,6 +2870,20 @@
       "revised_proof_words": 381,
       "proof_sha256": "aadedccf78974622da288554cd51f17eca96548c1f9925ef3d47ba181f82c945",
       "review": "Read both ascent/descent quotient-regularity applications and their finite-basis input, then the lattice saturation and stalk descent. Preserved both old-word induction hypotheses and the nondivisibility condition."
+    },
+    {
+      "node": "kl.word.head_patch_lifting",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.PairProjection.cross_lift",
+        "OAI.KLInvariance.TitsSpace.bottHeadPatch_compatible",
+        "OAI.KLInvariance.TitsSpace.bottHeadPatch_lift",
+        "OAI.KLInvariance.TitsSpace.bottHeadPatch_lift_of_zero_inter"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 345,
+      "proof_sha256": "6ce2f1fafde886d2f3ede2c6b1243428bf2f4746a341676e719947a781dee078",
+      "review": "Read all branch cases of bottHeadPatch_compatible, the quotient cross_lift argument, the upper-union lift and the zero-intersection specialization. Included the full crossing-edge calculation and both output restrictions."
     },
     {
       "node": "kl.word.induced_bimodule",
@@ -2994,6 +3055,21 @@
       "review": "Compared the determinant, adjugate construction, coordinate lifts, and expansion in Frobenius. Explained why matrix injectivity implies nonzero determinant and verified the one-letter calculation."
     },
     {
+      "node": "kl.word.set_tail_detection",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottHeadSet_zero_iff",
+        "OAI.KLInvariance.TitsSpace.bottSetComponents_injective",
+        "OAI.KLInvariance.TitsSpace.bottHead_components_injective",
+        "OAI.KLInvariance.TitsSpace.bottSeed_zero_stable",
+        "OAI.KLInvariance.TitsSpace.bottSeed_zero_inter"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 309,
+      "proof_sha256": "4aa8c8b63a46f5e3095054fdee4fd988451a0f88280c89a396586afe043c89cf",
+      "review": "Read the pointwise-to-set zero equivalence and both directions of the sU reindexing. Expanded descent, joint injectivity, whole-word tail detection and the two seed-vanishing consequences."
+    },
+    {
       "node": "kl.word.simple_wall_kernel",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -3010,6 +3086,22 @@
       "revised_proof_words": 267,
       "proof_sha256": "a6622d85e6da18da358b3008e53e76eed32ce8ba55896a7268423478c279a368",
       "review": "Read tensor difference divisibility, both evaluation-flip cases, projection vanishing and the generic upper-kernel criterion. Kept the first-letter hypothesis and proved each kernel containment with its distinct input."
+    },
+    {
+      "node": "kl.word.stable_image_projectivity",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottTensorEnd",
+        "OAI.KLInvariance.TitsSpace.bottTensorEnd_first",
+        "OAI.KLInvariance.TitsSpace.bottTensorEnd_second",
+        "OAI.KLInvariance.TitsSpace.bottTensorEnd_set_preserve",
+        "OAI.KLInvariance.TitsSpace.bottTensorEnd_set_kills",
+        "OAI.KLInvariance.TitsSpace.bottStableUpper_projective"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 293,
+      "proof_sha256": "46440ef327d1516e475995c387d65ab63ccd2d03393aa2d026352b5fdbcb33d8",
+      "review": "Read the actual tensor endomorphism, coordinate preservation, kernel killing and projective_of_end application. Retained only reflection stability of U, without an extra upper-set hypothesis."
     },
     {
       "node": "kl.word.stalk_freeness_step",
@@ -3104,6 +3196,37 @@
       "revised_proof_words": 145,
       "proof_sha256": "f5a7e372eb41115d641a6559757d0dc23f934021247646197f2965635dafdb12",
       "review": "Read lattice_saturated and PairProjection.compatible_iff. Expanded the twisted scalar equation, annihilation of the scalar difference, cancellation on the quotient and reconstruction of a common preimage."
+    },
+    {
+      "node": "kl.word.upper_projectivity_step",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottInter_first_zero",
+        "OAI.KLInvariance.TitsSpace.bottInterKernelFirst_surjective",
+        "OAI.KLInvariance.TitsSpace.bottCommon_projective",
+        "OAI.KLInvariance.TitsSpace.bottProjectiveUpper_cons"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 325,
+      "proof_sha256": "2d4561927fd19efe40593a1309514bdd8a140870c98d989cbda469b3801ec55f",
+      "review": "Read bottInterKernelFirst_surjective, bottCommon_projective and bottProjectiveUpper_cons. Checked all three projective modules, both surjections and the old-word lifting input in the exact source construction order."
+    },
+    {
+      "node": "kl.word.upper_set_reflection",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.BruhatUpper.mem_simpleUnion",
+        "OAI.KLInvariance.TitsSpace.BruhatUpper.mem_simpleInter",
+        "OAI.KLInvariance.TitsSpace.BruhatUpper.simpleUnion",
+        "OAI.KLInvariance.TitsSpace.BruhatUpper.simpleInter",
+        "OAI.KLInvariance.TitsSpace.simpleUnion_stable",
+        "OAI.KLInvariance.TitsSpace.simpleInter_stable",
+        "OAI.KLInvariance.TitsSpace.cross_edge_is_simple"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 230,
+      "proof_sha256": "d99cb94a66b591e5bcfa1b09ab491087be2b82a09eaf20a92bc019beb678cbe3",
+      "review": "Read both envelope membership equivalences, monotonicity applications, stability identities and cross_edge_is_simple. Preserved the upward edge and excluded-endpoint conditions."
     },
     {
       "node": "kl.word.wall_injectivity",
