@@ -41,7 +41,7 @@ tags:
 
 # Extension from subsets closed under surviving edges
 
-Let the vertex set be finite and let \(B\) be flabby. Choose a set \(E_0\) of surviving edges, and assume that every edge module outside \(E_0\) is zero. If
+Let \(B\) be a sheaf over a commutative ring on an ordered graph with a finite vertex set. Write \(s(e),t(e)\) for the endpoints of an edge. Suppose \(B\) is flabby. Choose a set \(E_0\) of surviving edges, and assume that every edge module outside \(E_0\) is zero. If a vertex subset \(\Omega\) satisfies
 \[
 e\in E_0,\ s(e)\in\Omega\Longrightarrow t(e)\in\Omega,
 \]
@@ -60,7 +60,7 @@ We extend it one vertex at a time, retaining both this edge-closure property and
 
 If no vertex remains, the assignment is global. Otherwise choose a maximal vertex \(a\) outside \(\Omega\). Every \(y>a\) lies in \(\Omega\), so the prescribed assignment restricts to a compatible section on the upper set \(\{y:y>a\}\).
 
-Ordinary flabbiness supplies a global section \(h\) agreeing with those values. Define a new assignment by retaining every old value on \(\Omega\) and assigning \(h_a\) at \(a\).
+Ordinary flabbiness supplies a global section \(h\) agreeing with those values. Define an ambient assignment \(g\) by \(g_a=h_a\) and \(g_y=f_y\) for \(y\ne a\), where \(f\) is the original assignment. Thus every value on \(\Omega\) is retained.
 
 ### Step 3. Check every possible new edge condition
 
@@ -76,7 +76,7 @@ These exhaust all edges whose endpoints lie in \(\Omega\cup\{a\}\).
 
 For a surviving edge with source in the old \(\Omega\), its target was already in \(\Omega\). For one with source \(a\), its target is above \(a\), hence belongs to \(\Omega\) by maximality. Thus \(\Omega\cup\{a\}\) remains closed under surviving edges.
 
-Exactly one missing vertex has been added, and all prescribed values were retained. Apply induction to finish the extension. This proves extension from the larger class of edge-closed sets, not merely from order-theoretic upper sets.
+Exactly one missing vertex has been added, and all prescribed values were retained. Apply the induction hypothesis to this enlarged set and its compatible assignment. The resulting global section agrees with the new assignment on the enlarged set, and hence with the original assignment on \(\Omega\).
 
 ## References
 

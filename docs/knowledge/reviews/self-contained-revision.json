@@ -517,6 +517,241 @@
       ],
       "review": "Rewritten with explicit local notation, maps, inequalities, and all case calculations.",
       "pending": []
+    },
+    {
+      "node": "kl.sheaves.graph_sheaf",
+      "file": "docs/knowledge/nodes/kl.sheaves/graph_sheaf.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf"
+      ],
+      "review": "Expanded the mathematical data and domains of every structure field. Checked finite-set hypotheses for graded sections, partial maps at upper endpoints, inverse grading, and the positive shift convention.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.graded_sheaf",
+      "file": "docs/knowledge/nodes/kl.sheaves/graded_sheaf.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.sections_homogeneous",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.sections"
+      ],
+      "review": "Expanded the mathematical data and domains of every structure field. Checked finite-set hypotheses for graded sections, partial maps at upper endpoints, inverse grading, and the positive shift convention.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.upper_quotient",
+      "file": "docs/knowledge/nodes/kl.sheaves/upper_quotient.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.UpperQuotient",
+        "OAI.KLInvariance.MomentGraph.Sheaf.UpperQuotient",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.UpperQuotient.annihilates"
+      ],
+      "review": "Expanded the mathematical data and domains of every structure field. Checked finite-set hypotheses for graded sections, partial maps at upper endpoints, inverse grading, and the positive shift convention.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.flabbiness",
+      "file": "docs/knowledge/nodes/kl.sheaves/flabbiness.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.Flabby",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ClosedUnder",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.EdgeFlabby",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.EdgeFlabby.flabby"
+      ],
+      "review": "Expanded the mathematical data and domains of every structure field. Checked finite-set hypotheses for graded sections, partial maps at upper endpoints, inverse grading, and the positive shift convention.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.sheaf_morphism",
+      "file": "docs/knowledge/nodes/kl.sheaves/sheaf_morphism.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Endomorphism",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.comp"
+      ],
+      "review": "Expanded the mathematical data and domains of every structure field. Checked finite-set hypotheses for graded sections, partial maps at upper endpoints, inverse grading, and the positive shift convention.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.sheaf_isomorphisms",
+      "file": "docs/knowledge/nodes/kl.sheaves/sheaf_isomorphisms.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso",
+        "OAI.KLInvariance.MomentGraph.Sheaf.OnIso",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Iso",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnIso"
+      ],
+      "review": "Expanded the mathematical data and domains of every structure field. Checked finite-set hypotheses for graded sections, partial maps at upper endpoints, inverse grading, and the positive shift convention.",
+      "pending": []
+    },
+    {
+      "node": "kl.notes.boundary_image",
+      "file": "docs/knowledge/nodes/kl.sheaves/boundary_image.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.Boundary",
+        "OAI.KLInvariance.MomentGraph.Sheaf.stalkMap",
+        "OAI.KLInvariance.MomentGraph.Sheaf.boundaryMap",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.boundaryHom",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.boundaryImage"
+      ],
+      "review": "Expanded the mathematical data and domains of every structure field. Checked finite-set hypotheses for graded sections, partial maps at upper endpoints, inverse grading, and the positive shift convention.",
+      "pending": []
+    },
+    {
+      "node": "kl.notes.perfect_pairings",
+      "file": "docs/knowledge/nodes/kl.word_modules/perfect_pairings.md",
+      "source_declarations": [
+        "OAI.KLInvariance.FrobeniusDuality.PairedModule",
+        "OAI.KLInvariance.FrobeniusDuality.PairedBimodule"
+      ],
+      "review": "Expanded the mathematical data and domains of every structure field. Checked finite-set hypotheses for graded sections, partial maps at upper endpoints, inverse grading, and the positive shift convention.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.free_quotient_sheaf",
+      "file": "docs/knowledge/nodes/kl.sheaves/free_quotient_sheaf.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf"
+      ],
+      "review": "Read the local definitions and structure fields, retained the exact domains, explained each coordinate map, and checked the one-edge calculations.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.supported_sections",
+      "file": "docs/knowledge/nodes/kl.sheaves/supported_sections.md",
+      "source_declarations": [
+        "OAI.KLInvariance.IntegralSupport.projection",
+        "OAI.KLInvariance.IntegralSupport.supported",
+        "OAI.KLInvariance.MomentGraph.Sheaf.singleStalk",
+        "OAI.KLInvariance.MomentGraph.Sheaf.singleStalkEquivSupport",
+        "OAI.KLInvariance.MomentGraph.Sheaf.single_section_iff"
+      ],
+      "review": "Read the local definitions and structure fields, retained the exact domains, explained each coordinate map, and checked the one-edge calculations.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.integral_cuts",
+      "file": "docs/knowledge/nodes/kl.sheaves/integral_cuts.md",
+      "source_declarations": [
+        "OAI.KLInvariance.IntegralSupport.cut",
+        "OAI.KLInvariance.IntegralSupport.cut_self",
+        "OAI.KLInvariance.IntegralSupport.cut_other",
+        "OAI.KLInvariance.IntegralSupport.cut_of_supported",
+        "OAI.KLInvariance.IntegralSupport.cut_eq_zero",
+        "OAI.KLInvariance.MomentGraph.Sheaf.labelProduct",
+        "OAI.KLInvariance.MomentGraph.Sheaf.scaled_single_section",
+        "OAI.KLInvariance.MomentGraph.Sheaf.labelProduct_annihilates",
+        "OAI.KLInvariance.MomentGraph.Sheaf.labelProduct_ne_zero",
+        "OAI.KLInvariance.MomentGraph.Sheaf.incoming",
+        "OAI.KLInvariance.MomentGraph.Sheaf.incomingProduct"
+      ],
+      "review": "Read the local definitions and structure fields, retained the exact domains, explained each coordinate map, and checked the one-edge calculations.",
+      "pending": []
+    },
+    {
+      "node": "kl.notes.supported_pairings",
+      "file": "docs/knowledge/nodes/kl.sheaves/supported_pairings.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.PerfectPairing",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SymmetricPerfectPairing"
+      ],
+      "review": "Read the local definitions and structure fields, retained the exact domains, explained each coordinate map, and checked the one-edge calculations.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.section_duality",
+      "file": "docs/knowledge/nodes/kl.sheaves/section_duality.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.SectionDuality",
+        "OAI.KLInvariance.BruhatGraph.SectionDuality"
+      ],
+      "review": "Read the local definitions and structure fields, retained the exact domains, explained each coordinate map, and checked the one-edge calculations.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.cut_balance",
+      "file": "docs/knowledge/nodes/kl.sheaves/cut_balance.md",
+      "source_declarations": [
+        "OAI.BalancedCuts.balanced_two",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.PerfectPairing.cut_balanced"
+      ],
+      "review": "Checked the two kernel vectors and both bilinear expansions against BalancedCuts.balanced_two; the generic argument uses a bilinear map, and the specialization checks both support conditions.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.support_annihilator",
+      "file": "docs/knowledge/nodes/kl.sheaves/support_annihilator.md",
+      "source_declarations": [
+        "OAI.KLInvariance.IntegralSupport.supported_iff_annihilates"
+      ],
+      "review": "Compared both directions with supported_iff_annihilates, including the separate uses of scalar cancellation in R, injectivity of the pairing equivalence, and torsion-free coordinate modules. No finite-vertex assumption is introduced.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.supported_stalk_duality",
+      "file": "docs/knowledge/nodes/kl.sheaves/supported_stalk_duality.md",
+      "source_declarations": [
+        "OAI.KLInvariance.IntegralSupport.dualToSupport",
+        "OAI.KLInvariance.IntegralSupport.dualToSupport_bijective",
+        "OAI.KLInvariance.IntegralSupport.supportEquivDual",
+        "OAI.KLInvariance.MomentGraph.Sheaf.singleSupportEquivDual"
+      ],
+      "review": "Expanded dualToSupport and supportEquivDual into lift-independent descent, linearity, and both inverse identities. Global generation supplies exactly the required surjective evaluation.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.costalk_support",
+      "file": "docs/knowledge/nodes/kl.sheaves/costalk_support.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.outgoing_product_regular",
+        "OAI.KLInvariance.MomentGraph.Sheaf.single_section_iff_prod",
+        "OAI.KLInvariance.MomentGraph.Sheaf.kernelEquivSingleStalk",
+        "OAI.KLInvariance.BruhatGraph.incoming_pairwise_relPrime",
+        "OAI.KLInvariance.BruhatGraph.outgoing_incoming_not_dvd",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.kernelEquivSingleSupport"
+      ],
+      "review": "Compared single_section_iff_prod, outgoing_product_regular, and FreeSheaf.kernelEquivSingleSupport. Detailed prime-product induction in free coordinates, label separation at a vertex, cancellation in each quotient edge module, and both bijectivity directions.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.costalk_duality",
+      "file": "docs/knowledge/nodes/kl.sheaves/costalk_duality.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.costalkEquivDual",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.costalk_free_of_duality",
+        "OAI.KLInvariance.BruhatGraph.costalkEquivDual",
+        "OAI.KLInvariance.BruhatGraph.costalk_free_of_duality"
+      ],
+      "review": "Compared the exact composite in both FreeSheaf.costalkEquivDual and the boundary specialization. Stated every hypothesis of the two constituent equivalences, constructed the inverse, transported the finite dual basis, and checked the one-edge factors 2 and -2.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.boundary_image_identity",
+      "file": "docs/knowledge/nodes/kl.sheaves/boundary_image_identity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.range_stalkMap_eq_boundaryImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.stalkCover",
+        "OAI.KLInvariance.MomentGraph.Sheaf.stalkCover_surjective"
+      ],
+      "review": "Compared both range containments with range_stalkMap_eq_boundaryImage. Generation lifts a stalk vector; flabbiness extends from the strict upper set; equality is checked at each outgoing edge coordinate.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.upward_kernel",
+      "file": "docs/knowledge/nodes/kl.sheaves/upward_kernel.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.upwardKernel"
+      ],
+      "review": "Read the local definitions and structure fields, retained the exact domains, explained each coordinate map, and checked the one-edge calculations.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.relative_flabbiness",
+      "file": "docs/knowledge/nodes/kl.sheaves/relative_flabbiness.md",
+      "review": "Rechecked extend_one, closedUnder_insert and extend_closedUnder. Expanded the standalone hypotheses and explicit update of ambient assignments; completed the finite-complement induction.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -749,14 +984,33 @@
     {
       "code": "S2",
       "title": "Sheaves, sections, and boundary data",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "exposition_reviewed",
+      "completion_evidence": [
+        "kl.sheaves.graph_sheaf",
+        "kl.detail.graded_sheaf",
+        "kl.detail.compatible_sections",
+        "kl.sheaves.flabbiness",
+        "kl.sheaves.relative_flabbiness",
+        "kl.notes.boundary_image",
+        "kl.detail.upper_quotient",
+        "kl.sheaves.upward_kernel",
+        "kl.sheaves.free_quotient_sheaf",
+        "kl.sheaves.boundary_image_identity",
+        "kl.sheaves.relative_flabbiness"
+      ],
+      "review": "Reviewed all Sheaf/GradedSheaf/FreeSheaf fields, ambient section convention, global generation, flabbiness and relative extension, upper quotients, boundary maps/images, and selected kernels with their grading. The boundary-image theorem explains the two hypotheses separately."
     },
     {
       "code": "S3",
       "title": "Operations and morphisms",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.detail.sheaf_morphism",
+        "kl.detail.sheaf_isomorphisms"
+      ],
+      "pending": [
+        "Expand operations, lower extension and reindexing, tensor base change, and the morphism-extension proof."
+      ]
     },
     {
       "code": "S4",
@@ -773,8 +1027,16 @@
     {
       "code": "S6",
       "title": "Integral support and cut operators",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "exposition_reviewed",
+      "completion_evidence": [
+        "kl.sheaves.supported_sections",
+        "kl.sheaves.integral_cuts",
+        "kl.sheaves.support_annihilator",
+        "kl.sheaves.costalk_support",
+        "kl.sheaves.cut_balance",
+        "kl.sheaves.supported_stalk_duality"
+      ],
+      "review": "Introduced projections, supported sections/stalks, annihilators, label products and cuts. Expanded cut balance, the support-annihilator equivalence, incoming-product divisibility and cancellation, and the supported-stalk duality maps."
     },
     {
       "code": "S7",
@@ -785,8 +1047,17 @@
     {
       "code": "S8",
       "title": "Perfect pairings and adjoints",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.notes.supported_pairings",
+        "kl.detail.section_duality",
+        "kl.sheaves.cut_balance",
+        "kl.sheaves.supported_stalk_duality",
+        "kl.detail.costalk_duality"
+      ],
+      "pending": [
+        "Expand the homogeneous inverse calculation, integral adjoint descent and image sheaves, primitive recognition, and construction of the canonical boundary pairing."
+      ]
     },
     {
       "code": "S9",
@@ -928,10 +1199,10 @@
     }
   ],
   "next_steps": [
-    "Complete standard-parabolic inclusion and finite-support transport from the local coordinate-dual and word proofs.",
-    "Complete root-plane and moving-subgroup definitions and their induced dihedral structure.",
-    "Expand word-module evaluation lattices and sheaf support/cut definitions, including every remaining unmapped structure.",
-    "Review the remaining Hecke, sheaf, localization, path, and comparison proofs against their source bodies, retaining direct mathematical titles and prose.",
+    "Expand the homogeneous support-duality inverse and the integral-adjoint/boundary-pairing construction.",
+    "Complete word-module evaluation lattices and the remaining induced signed-plane structure.",
+    "Complete standard-parabolic inclusion, finite-support transport, and root-plane/moving-subgroup definitions.",
+    "Review remaining Hecke, localization, path, and comparison proofs against their local source bodies.",
     "Complete the full source-to-KB coverage, linking, document, and public-deployment audit."
   ],
   "topic_migration": {
@@ -1135,7 +1406,15 @@
       "kl.realization.dominant_functional": "R6",
       "kl.realization.dominant_signs": "R6",
       "kl.realization.signed_root_representation": "R5",
-      "kl.realization.signed_root_action": "R5"
+      "kl.realization.signed_root_action": "R5",
+      "kl.sheaves.free_quotient_sheaf": "S2",
+      "kl.sheaves.supported_sections": "S6",
+      "kl.sheaves.integral_cuts": "S6",
+      "kl.sheaves.cut_balance": "S8",
+      "kl.sheaves.support_annihilator": "S6",
+      "kl.sheaves.supported_stalk_duality": "S8",
+      "kl.sheaves.costalk_support": "S6",
+      "kl.sheaves.boundary_image_identity": "S2"
     },
     "moved_nodes": [
       {
@@ -1969,14 +2248,15 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 188
+    "current_node_count": 196
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
     "Preserved the stable node IDs and generated redirects for the moved published pages.",
     "Expanded realization and graded-algebra definitions and separated the plane-weight identity from polynomial degree.",
     "Expanded the signed Coxeter-action proof chain and the finite geometric reflection relations.",
-    "Applied direct mathematical titles across all rendered pages and recorded the authoring requirement."
+    "Applied direct mathematical titles across all rendered pages and recorded the authoring requirement.",
+    "Expanded sheaf structures and the complete integral support-to-costalk duality chain, with a linked one-edge example and explicit Lean/notes correspondence."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -2027,6 +2307,43 @@
       ],
       "target": "kl.notes.relative_dihedral_intervals",
       "meaning": "Minimum ambient length in the root-plane subgroup coset used for relative dihedral order."
+    }
+  ],
+  "corrections": [
+    {
+      "node": "kl.detail.upper_quotient",
+      "issue": "The former sequence used the opposite grading-shift convention.",
+      "source": "GradedModules.lean:1244, ModuleData.shift, piece n = M.piece (n-d)",
+      "correction": "Multiplication by a degree-one label is a degree-zero map M(1) to M; the corrected sequence gives the Hilbert factor 1-q.",
+      "scan": "Searched negative-one shift notation and degree-shift descriptions across the KB; the inconsistent negative-one expression occurred in this entry."
+    }
+  ],
+  "last_document_validation": {
+    "created_at": "2026-10-19T03:17:21.793792+00:00",
+    "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
+    "node_count": 196,
+    "html_pages_checked": 456,
+    "generated_definition_links_checked": 2021,
+    "snapshot_files_verified": 81,
+    "broken_links": [],
+    "tests_passed": 20,
+    "field_audit_scope": "Fields of declarations explicitly linked from current nodes; separate full structure inventory below."
+  },
+  "structure_coverage_scan": {
+    "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+    "structures_in_local_source": 35,
+    "structures_with_direct_node_mapping": 34,
+    "remaining_structures": [
+      "OAI.KLInvariance.TitsSpace.PlaneBasis.InducedSigned"
+    ],
+    "review": "Read and explained the newly mapped free-sheaf, partial morphism/isomorphism, endomorphism, symmetric pairing, and free-sheaf section-duality structures. Direct mappings support navigation and field review; complete exposition of all definitions and theorems remains in progress."
+  },
+  "tooling_repairs": [
+    {
+      "repository": "gametheoryinlean/mdblueprint",
+      "commit": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
+      "issue": "The structure field audit parsed indented membership expressions and nested type/default continuations as extra fields.",
+      "verification": "Three regression tests failed before the fix; 83 focused parser/index/check/publish tests pass after the fix. The complete combkl document build now passes."
     }
   ]
 }

@@ -190,10 +190,18 @@
       "kl.notes.character_cancellation",
       "kl.notes.supported_pairings",
       "kl.sheaves.boundary_existence",
+      "kl.sheaves.boundary_image_identity",
       "kl.sheaves.boundary_sheaf",
+      "kl.sheaves.costalk_support",
+      "kl.sheaves.cut_balance",
       "kl.sheaves.flabbiness",
+      "kl.sheaves.free_quotient_sheaf",
       "kl.sheaves.graph_sheaf",
+      "kl.sheaves.integral_cuts",
       "kl.sheaves.relative_flabbiness",
+      "kl.sheaves.support_annihilator",
+      "kl.sheaves.supported_sections",
+      "kl.sheaves.supported_stalk_duality",
       "kl.sheaves.upward_kernel"
     ],
     "kl.word_modules": [
@@ -874,11 +882,13 @@
       "id": "kl.detail.costalk_duality",
       "chapter": "kl.sheaves",
       "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.costalkEquivDual",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.costalk_free_of_duality",
         "OAI.KLInvariance.BruhatGraph.costalkEquivDual",
         "OAI.KLInvariance.BruhatGraph.costalk_free_of_duality"
       ],
       "paper_locations": [
-        "Related paper context; bg:normalization"
+        "Moment-graph background; bg:normalization"
       ]
     },
     {
@@ -993,7 +1003,9 @@
       "id": "kl.detail.graded_sheaf",
       "chapter": "kl.sheaves",
       "lean_declarations": [
-        "OAI.KLInvariance.MomentGraph.GradedSheaf"
+        "OAI.KLInvariance.MomentGraph.GradedSheaf",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.sections_homogeneous",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.sections"
       ],
       "paper_locations": [
         "Related paper context; bg:bmp"
@@ -1366,10 +1378,11 @@
       "id": "kl.detail.section_duality",
       "chapter": "kl.sheaves",
       "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.SectionDuality",
         "OAI.KLInvariance.BruhatGraph.SectionDuality"
       ],
       "paper_locations": [
-        "Related paper context; bg:normalization"
+        "Moment-graph background; bg:normalization"
       ]
     },
     {
@@ -1377,8 +1390,10 @@
       "chapter": "kl.sheaves",
       "lean_declarations": [
         "OAI.KLInvariance.MomentGraph.Sheaf.Iso",
+        "OAI.KLInvariance.MomentGraph.Sheaf.OnIso",
         "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.Iso"
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Iso",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnIso"
       ],
       "paper_locations": []
     },
@@ -1386,7 +1401,10 @@
       "id": "kl.detail.sheaf_morphism",
       "chapter": "kl.sheaves",
       "lean_declarations": [
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom"
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Endomorphism",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.comp"
       ],
       "paper_locations": [
         "Related paper context; bg:bmp"
@@ -1464,7 +1482,9 @@
       "id": "kl.detail.upper_quotient",
       "chapter": "kl.sheaves",
       "lean_declarations": [
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.UpperQuotient"
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.UpperQuotient",
+        "OAI.KLInvariance.MomentGraph.Sheaf.UpperQuotient",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.UpperQuotient.annihilates"
       ],
       "paper_locations": [
         "Related paper context; bg:bmp"
@@ -1833,6 +1853,9 @@
       "id": "kl.notes.boundary_image",
       "chapter": "kl.sheaves",
       "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.Boundary",
+        "OAI.KLInvariance.MomentGraph.Sheaf.stalkMap",
+        "OAI.KLInvariance.MomentGraph.Sheaf.boundaryMap",
         "OAI.KLInvariance.MomentGraph.GradedSheaf.boundaryHom",
         "OAI.KLInvariance.MomentGraph.GradedSheaf.boundaryImage"
       ],
@@ -2023,10 +2046,11 @@
       "id": "kl.notes.supported_pairings",
       "chapter": "kl.sheaves",
       "lean_declarations": [
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.PerfectPairing"
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.PerfectPairing",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SymmetricPerfectPairing"
       ],
       "paper_locations": [
-        "2. Real realizations and moment-graph sheaves; bg:normalization"
+        "Moment-graph background; bg:normalization"
       ]
     },
     {
@@ -2329,6 +2353,18 @@
       ]
     },
     {
+      "id": "kl.sheaves.boundary_image_identity",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.range_stalkMap_eq_boundaryImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.stalkCover",
+        "OAI.KLInvariance.MomentGraph.Sheaf.stalkCover_surjective"
+      ],
+      "paper_locations": [
+        "Moment-graph background; bg:normalization"
+      ]
+    },
+    {
       "id": "kl.sheaves.boundary_sheaf",
       "chapter": "kl.sheaves",
       "lean_declarations": [
@@ -2339,13 +2375,52 @@
       ]
     },
     {
+      "id": "kl.sheaves.costalk_support",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.outgoing_product_regular",
+        "OAI.KLInvariance.MomentGraph.Sheaf.single_section_iff_prod",
+        "OAI.KLInvariance.MomentGraph.Sheaf.kernelEquivSingleStalk",
+        "OAI.KLInvariance.BruhatGraph.incoming_pairwise_relPrime",
+        "OAI.KLInvariance.BruhatGraph.outgoing_incoming_not_dvd",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.kernelEquivSingleSupport"
+      ],
+      "paper_locations": [
+        "Moment-graph background; bg:normalization"
+      ]
+    },
+    {
+      "id": "kl.sheaves.cut_balance",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.BalancedCuts.balanced_two",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.PerfectPairing.cut_balanced"
+      ],
+      "paper_locations": [
+        "Moment-graph background; bg:normalization"
+      ]
+    },
+    {
       "id": "kl.sheaves.flabbiness",
       "chapter": "kl.sheaves",
       "lean_declarations": [
-        "OAI.KLInvariance.MomentGraph.Sheaf.Flabby"
+        "OAI.KLInvariance.MomentGraph.Sheaf.Flabby",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ClosedUnder",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.EdgeFlabby",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.EdgeFlabby.flabby"
       ],
       "paper_locations": [
         "2. Real realizations and moment-graph sheaves; sec:background"
+      ]
+    },
+    {
+      "id": "kl.sheaves.free_quotient_sheaf",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf"
+      ],
+      "paper_locations": [
+        "Moment-graph background; bg:bmp"
       ]
     },
     {
@@ -2389,6 +2464,26 @@
       ]
     },
     {
+      "id": "kl.sheaves.integral_cuts",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.IntegralSupport.cut",
+        "OAI.KLInvariance.IntegralSupport.cut_self",
+        "OAI.KLInvariance.IntegralSupport.cut_other",
+        "OAI.KLInvariance.IntegralSupport.cut_of_supported",
+        "OAI.KLInvariance.IntegralSupport.cut_eq_zero",
+        "OAI.KLInvariance.MomentGraph.Sheaf.labelProduct",
+        "OAI.KLInvariance.MomentGraph.Sheaf.scaled_single_section",
+        "OAI.KLInvariance.MomentGraph.Sheaf.labelProduct_annihilates",
+        "OAI.KLInvariance.MomentGraph.Sheaf.labelProduct_ne_zero",
+        "OAI.KLInvariance.MomentGraph.Sheaf.incoming",
+        "OAI.KLInvariance.MomentGraph.Sheaf.incomingProduct"
+      ],
+      "paper_locations": [
+        "Moment-graph background; bg:normalization"
+      ]
+    },
+    {
       "id": "kl.sheaves.minimal_cover",
       "chapter": "kl.graded_algebra",
       "lean_declarations": [
@@ -2409,13 +2504,50 @@
       ]
     },
     {
+      "id": "kl.sheaves.support_annihilator",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.IntegralSupport.supported_iff_annihilates"
+      ],
+      "paper_locations": [
+        "Moment-graph background; bg:normalization"
+      ]
+    },
+    {
+      "id": "kl.sheaves.supported_sections",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.IntegralSupport.projection",
+        "OAI.KLInvariance.IntegralSupport.supported",
+        "OAI.KLInvariance.MomentGraph.Sheaf.singleStalk",
+        "OAI.KLInvariance.MomentGraph.Sheaf.singleStalkEquivSupport",
+        "OAI.KLInvariance.MomentGraph.Sheaf.single_section_iff"
+      ],
+      "paper_locations": [
+        "Moment-graph background; bg:normalization"
+      ]
+    },
+    {
+      "id": "kl.sheaves.supported_stalk_duality",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.IntegralSupport.dualToSupport",
+        "OAI.KLInvariance.IntegralSupport.dualToSupport_bijective",
+        "OAI.KLInvariance.IntegralSupport.supportEquivDual",
+        "OAI.KLInvariance.MomentGraph.Sheaf.singleSupportEquivDual"
+      ],
+      "paper_locations": [
+        "Moment-graph background; bg:normalization"
+      ]
+    },
+    {
       "id": "kl.sheaves.upward_kernel",
       "chapter": "kl.sheaves",
       "lean_declarations": [
         "OAI.KLInvariance.MomentGraph.Sheaf.upwardKernel"
       ],
       "paper_locations": [
-        "2. Real realizations and moment-graph sheaves; sec:background"
+        "Moment-graph background; bg:normalization"
       ]
     }
   ]

@@ -215,7 +215,6 @@ concepts:
 - node: kl.detail.section_duality
   terms:
   - section duality
-  - integral vertex cut
   - cut balance
 - node: kl.detail.local_intersection
   terms:
@@ -528,3 +527,31 @@ concepts:
   topics:
   - kl.reflection_combinatorics
   - kl.localization
+- node: kl.sheaves.free_quotient_sheaf
+  terms:
+  - free sheaf
+  - free sheaves
+  - free-sheaf datum
+- node: kl.sheaves.supported_sections
+  terms:
+  - supported section
+  - supported sections
+  - supported stalk
+  - dual annihilator
+- node: kl.sheaves.integral_cuts
+  terms:
+  - integral vertex cut
+  - integral vertex cuts
+  - integral cut
+  - integral cuts
+  - incoming label product
+  - incoming label factors
+  - label product
+  - incoming edge set
+- node: kl.notes.supported_pairings
+  terms:
+  - perfect graded section pairing
+  - perfect graded section pairings
+  - symmetric perfect section pairing
+  - support orthogonality
+  - support-orthogonality

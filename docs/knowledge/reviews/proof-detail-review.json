@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 30903,
-  "theorem_walkthroughs": 98,
+  "revised_proof_words": 32356,
+  "theorem_walkthroughs": 103,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -272,14 +272,16 @@
     {
       "node": "kl.detail.costalk_duality",
       "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.costalkEquivDual",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.costalk_free_of_duality",
         "OAI.KLInvariance.BruhatGraph.costalkEquivDual",
         "OAI.KLInvariance.BruhatGraph.costalk_free_of_duality"
       ],
-      "proof_steps": 3,
+      "proof_steps": 5,
       "previous_proof_words": 93,
-      "revised_proof_words": 372,
-      "proof_sha256": "d1ba0cb777e3ed9303256b65547facbb31d436e910d8014adc4bf04f0cf51848",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 383,
+      "proof_sha256": "028be1662045ae0a0855da237854becf4bd1433776659a0768c7532e83e961aa",
+      "review": "Compared the exact composite in both FreeSheaf.costalkEquivDual and the boundary specialization. Stated every hypothesis of the two constituent equivalences, constructed the inverse, transported the finite dual basis, and checked the one-edge factors 2 and -2."
     },
     {
       "node": "kl.detail.costalk_reciprocity",
@@ -1177,6 +1179,47 @@
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
     },
     {
+      "node": "kl.sheaves.boundary_image_identity",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.range_stalkMap_eq_boundaryImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.stalkCover",
+        "OAI.KLInvariance.MomentGraph.Sheaf.stalkCover_surjective"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 201,
+      "proof_sha256": "0a1e0e8aa7a74e1a33be6bbf04c95360a3bc943e4964117fd6a653a080d5cd53",
+      "review": "Compared both range containments with range_stalkMap_eq_boundaryImage. Generation lifts a stalk vector; flabbiness extends from the strict upper set; equality is checked at each outgoing edge coordinate."
+    },
+    {
+      "node": "kl.sheaves.costalk_support",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.outgoing_product_regular",
+        "OAI.KLInvariance.MomentGraph.Sheaf.single_section_iff_prod",
+        "OAI.KLInvariance.MomentGraph.Sheaf.kernelEquivSingleStalk",
+        "OAI.KLInvariance.BruhatGraph.incoming_pairwise_relPrime",
+        "OAI.KLInvariance.BruhatGraph.outgoing_incoming_not_dvd",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.kernelEquivSingleSupport"
+      ],
+      "proof_steps": 6,
+      "revised_proof_words": 598,
+      "proof_sha256": "88cfa69644f203081a61756957dd4650027c34fad0438ce331b12a3cc5584a5a",
+      "review": "Compared single_section_iff_prod, outgoing_product_regular, and FreeSheaf.kernelEquivSingleSupport. Detailed prime-product induction in free coordinates, label separation at a vertex, cancellation in each quotient edge module, and both bijectivity directions."
+    },
+    {
+      "node": "kl.sheaves.cut_balance",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.BalancedCuts.balanced_two",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.PerfectPairing.cut_balanced"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 163,
+      "proof_sha256": "1706aa7c45a7274bd16e89861da8647fee6149cfa568421080100efdcd58c104",
+      "review": "Checked the two kernel vectors and both bilinear expansions against BalancedCuts.balanced_two; the generic argument uses a bilinear map, and the specialization checks both support conditions."
+    },
+    {
       "node": "kl.sheaves.hilbert_detection",
       "source_declarations": [
         "OAI.KLInvariance.Hilbert.polynomial_eq_of_value_eq"
@@ -1205,9 +1248,34 @@
       ],
       "proof_steps": 4,
       "previous_proof_words": 69,
-      "revised_proof_words": 308,
-      "proof_sha256": "a1b3501167af9261d205078c09adf03c50c4e2c5bc2ccdbe5de43ad6b989594b",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 328,
+      "proof_sha256": "fc45e39268e6a589e0fb15ce608bb89a70bd14dd65a3f685af02b3747a90d8ed",
+      "review": "Read extend_one, closedUnder_insert, and extend_closedUnder. The ambient assignment update, maximal missing vertex, zero incoming-edge cases, and induction on a strictly smaller complement are explicit."
+    },
+    {
+      "node": "kl.sheaves.support_annihilator",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.IntegralSupport.supported_iff_annihilates"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 179,
+      "proof_sha256": "a0f3e77a70725e20ac1dc67cd31394adae343862325f2b7416e953c5061447ce",
+      "review": "Compared both directions with supported_iff_annihilates, including the separate uses of scalar cancellation in R, injectivity of the pairing equivalence, and torsion-free coordinate modules. No finite-vertex assumption is introduced."
+    },
+    {
+      "node": "kl.sheaves.supported_stalk_duality",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.IntegralSupport.dualToSupport",
+        "OAI.KLInvariance.IntegralSupport.dualToSupport_bijective",
+        "OAI.KLInvariance.IntegralSupport.supportEquivDual",
+        "OAI.KLInvariance.MomentGraph.Sheaf.singleSupportEquivDual"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 281,
+      "proof_sha256": "646046250c58b0c81e45df3425e12282ca62ace731b72ac3597ef7ce79fe7165",
+      "review": "Expanded dualToSupport and supportEquivDual into lift-independent descent, linearity, and both inverse identities. Global generation supplies exactly the required surjective evaluation."
     }
   ]
 }

@@ -43,11 +43,11 @@ In an environment authorized to run documentation tools:
 
     python3 scripts/build_knowledge.py --mdblueprint /path/to/mdblueprint
 
-Use [mdblueprint commit dd0743a](https://github.com/gametheoryinlean/mdblueprint/commit/dd0743a94b709220f9411964a781da6b2fc61d5b)
+Use [mdblueprint commit 5a0878c](https://github.com/gametheoryinlean/mdblueprint/commit/5a0878ca0c0d9e0d3904c4bd134b6613b023b449)
 or a compatible later version. To reproduce the documented build:
 
     git clone https://github.com/gametheoryinlean/mdblueprint ../mdblueprint
-    git -C ../mdblueprint checkout dd0743a94b709220f9411964a781da6b2fc61d5b
+    git -C ../mdblueprint checkout 5a0878ca0c0d9e0d3904c4bd134b6613b023b449
     python3 -m venv build/docs-venv
     build/docs-venv/bin/python -m pip install ../mdblueprint
     build/docs-venv/bin/python scripts/build_knowledge.py --mdblueprint ../mdblueprint

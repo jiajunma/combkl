@@ -8,18 +8,31 @@ topics:
 - kl.sheaves
 uses:
 - kl.detail.graded_sheaf
+- kl.algebra.scalar_quotient
+- kl.detail.graded_maps_shifts
 lean:
   repository: openai-kl
   modules:
   - GradedSheaves
+  - Support
   declarations:
   - OAI.KLInvariance.MomentGraph.GradedSheaf.UpperQuotient
+  - OAI.KLInvariance.MomentGraph.Sheaf.UpperQuotient
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.UpperQuotient.annihilates
 source:
   spans:
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.GradedSheaves:401
     format: lean-location
     note: OAI.KLInvariance.MomentGraph.GradedSheaf.UpperQuotient
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.GradedSheaves:963
+    format: lean-location
+    note: OAI.KLInvariance.MomentGraph.Sheaf.UpperQuotient
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Support:871
+    format: lean-location
+    note: OAI.KLInvariance.MomentGraph.GradedSheaf.UpperQuotient.annihilates
   - artifact: openai-kl-paper
     locator: Related paper context; bg:bmp
     format: section
@@ -41,31 +54,61 @@ tags:
 
 # The upper-end edge quotient rule
 
-Let \(\alpha_e\in A_1\) label an edge \(e:x\to y\). The upper-end quotient rule requires that
+For a labelled edge \(e:x\to y\), with label \(\alpha_e\in A\), the upper-quotient condition says that
 \[
-\rho_{y,e}:B^y\longrightarrow B^e
+\rho^+_e:B^y\longrightarrow B^e
 \]
-be surjective and have kernel exactly \(\alpha_e B^y\). Equivalently,
+is surjective and
 \[
-B^e\simeq B^y/\alpha_e B^y.
+\ker\rho^+_e=\alpha_e B^y.
 \]
-This describes both the edge module and its distinguished map from the upper stalk. An abstract module isomorphism alone would not specify that map.
+The induced isomorphism \(B^y/\alpha_eB^y\simeq B^e\) sends the class of \(v\) to \(\rho^+_e(v)\). This identifies the edge module together with its map from the upper stalk.
 
-If multiplication by \(\alpha_e\) is injective on \(B^y\), the associated graded exact sequence is
+The label annihilates the edge module. Indeed, write an edge vector as \(\rho^+_e(v)\); then
 \[
-0\longrightarrow B^y(-1)\xrightarrow{\alpha_e}B^y
-\longrightarrow B^e\longrightarrow0.
+\alpha_e\rho^+_e(v)=\rho^+_e(\alpha_ev)=0.
 \]
-The degree convention here is that multiplication by a linear label raises degree by one. It yields the factor \(1-q\) in the edge Hilbert series.
+Thus \(B^e\) is naturally a module over \(A/(\alpha_e)\).
 
-The quotient rule makes no corresponding assertion that the lower stalk is quotiented by the same principal submodule. The lower restriction and its images retain the boundary information that the comparison proof needs.
+If \(B^y\) has a finite free basis over \(A\), its basis classes give a basis of \(B^e\) over \(A/(\alpha_e)\).
+
+## The degree-one exact sequence
+
+Suppose \(\alpha_e\) is homogeneous of degree one and multiplication by it on \(B^y\) is injective. The shift convention is
+\[
+M(d)_n=M_{n-d}.
+\]
+Hence multiplication gives a degree-zero map \(B^y(1)\to B^y\): a degree-\(n\) source vector is originally in \(B^y_{n-1}\), and its product with \(\alpha_e\) lies in \(B^y_n\).
+
+The exact sequence is therefore
+\[
+0\longrightarrow B^y(1)
+ \xrightarrow{\ \alpha_e\ }B^y
+ \xrightarrow{\ \rho^+_e\ }B^e
+ \longrightarrow0.
+\]
+Its image and kernel agree by the quotient condition. Suppose the graded pieces are finite-dimensional over \(k\). Write
+\[
+H_M(q)=\sum_{n\ge0}\dim_k(M_n)q^n
+\]
+for the Hilbert series, or its value at a positive \(q\) where the sum converges. In each degree, exactness makes dimensions add, so
+\[
+H_{B^e}(q)=H_{B^y}(q)-qH_{B^y}(q)
+=(1-q)H_{B^y}(q).
+\]
+
+For \(A=k[\alpha]\) and \(B^y=A\), the quotient is \(k\), concentrated in degree zero. The identity reads \(1=(1-q)/(1-q)\).
+
+The lower restriction \(\rho^-_e\) describes how values at \(x\) enter this quotient. Its restrictions to outgoing kernels give the lower images used in the comparison.
 
 ## References
 
-[Related paper context](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L225).
+The local definitions and constructions are listed below.
 
 ## Lean formalization
 
-
-
 `OAI.KLInvariance.MomentGraph.GradedSheaf.UpperQuotient`: [GradedSheaves.lean:401](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L401).
+
+`OAI.KLInvariance.MomentGraph.Sheaf.UpperQuotient`: [GradedSheaves.lean:963](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L963).
+
+`OAI.KLInvariance.MomentGraph.GradedSheaf.UpperQuotient.annihilates`: [Support.lean:871](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean#L871).

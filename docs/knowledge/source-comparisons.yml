@@ -240,3 +240,28 @@ comparisons:
     the ambient dimension is at least the original dimension plus its radical dimension.
   consequence: The theorem here states this form-preserving extension bound. The constructed
     dual extension attains it and supplies independent embedded roots and normals.
+- id: integral-support-duality
+  kind: Different construction of the stalk–costalk relation
+  nodes:
+  - kl.detail.section_duality
+  - kl.detail.costalk_duality
+  - kl.sheaves.costalk_support
+  - kl.sheaves.supported_stalk_duality
+  paper_labels:
+  - bg:normalization
+  - eq:bg-upward-rank
+  lean_declarations:
+  - OAI.KLInvariance.IntegralSupport.supported_iff_annihilates
+  - OAI.KLInvariance.BruhatGraph.FreeSheaf.kernelEquivSingleSupport
+  - OAI.KLInvariance.BruhatGraph.FreeSheaf.costalkEquivDual
+  paper: The normalization proof describes a lower-support layer, relates it to the
+    outgoing kernel using flabbiness, and obtains its graded rank through the cited
+    moment-graph and Soergel-module results. It temporarily doubles degrees and uses
+    the shift convention M(k)^j = M^{j+k}.
+  lean: The local construction starts with a free sheaf and a specified balanced perfect
+    section pairing. Integral cuts identify vertex support with an evaluation-kernel
+    annihilator. The incoming label product identifies that support module with the
+    outgoing kernel, giving an explicit linear equivalence with the stalk dual.
+  consequence: The Blueprint follows these integral maps. The pairing construction
+    and its homogeneity equation supply the later graded reciprocity statement. Degree
+    shifts use the Lean convention M(d)_n = M_{n-d}.

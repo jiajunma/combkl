@@ -1,14 +1,15 @@
 ---
 id: kl.detail.sheaf_isomorphisms
-title: Sheaf isomorphisms and isomorphisms above a vertex
+title: Sheaf isomorphisms and their partial forms
 kind: definition
 status: formalized
 primary_topic: kl.sheaves
 topics:
 - kl.sheaves
 uses:
-- kl.sheaves.graph_sheaf
+- kl.detail.sheaf_morphism
 - kl.detail.compatible_sections
+- kl.algebra.grading_components
 lean:
   repository: openai-kl
   modules:
@@ -16,14 +17,20 @@ lean:
   - MinimalExtensions
   declarations:
   - OAI.KLInvariance.MomentGraph.Sheaf.Iso
+  - OAI.KLInvariance.MomentGraph.Sheaf.OnIso
   - OAI.KLInvariance.MomentGraph.Sheaf.AboveIso
   - OAI.KLInvariance.MomentGraph.GradedSheaf.Iso
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.OnIso
 source:
   spans:
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.GradedSheaves:521
     format: lean-location
     note: OAI.KLInvariance.MomentGraph.Sheaf.Iso
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.GradedSheaves:970
+    format: lean-location
+    note: OAI.KLInvariance.MomentGraph.Sheaf.OnIso
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.GradedSheaves:692
     format: lean-location
@@ -32,6 +39,10 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.MinimalExtensions:210
     format: lean-location
     note: OAI.KLInvariance.MomentGraph.GradedSheaf.Iso
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.MinimalExtensions:214
+    format: lean-location
+    note: OAI.KLInvariance.MomentGraph.GradedSheaf.OnIso
 verification:
   definition: accepted
   proof: not_applicable
@@ -45,31 +56,60 @@ tags:
 - Kazhdan-Lusztig
 ---
 
-# Sheaf isomorphisms and isomorphisms above a vertex
+# Sheaf isomorphisms and their partial forms
 
-An isomorphism \(j:B\xrightarrow{\sim}C\) of sheaves on the same graph consists of linear isomorphisms \(j_x:B^x\to C^x\) and \(j_e:B^e\to C^e\) satisfying
+An isomorphism \(j:B\to C\) of sheaves on the same graph consists of linear isomorphisms on all stalks and edge modules such that
 \[
-j_e\rho^B_{e,s}=\rho^C_{e,s}j_{s(e)},\qquad
-j_e\rho^B_{e,t}=\rho^C_{e,t}j_{t(e)}.
+j_e\rho^{B,-}_e=\rho^{C,-}_ej_{s(e)},\qquad
+j_e\rho^{B,+}_e=\rho^{C,+}_ej_{t(e)}.
 \]
-Thus it identifies the actual restriction maps, as well as the modules. Applying \(j_x\) componentwise gives an isomorphism of assignments and compatible sections. The equations also identify the boundary images and the kernels of corresponding outgoing conditions.
+Applying inverses to these equalities gives the commuting equations for \(j^{-1}\).
 
-An isomorphism above \(x\) specifies \(j_y\) only for \(y>x\), but specifies \(j_e\) for every edge with \(t(e)>x\). Its lower compatibility equation is required when \(s(e)>x\), and its upper equation whenever \(t(e)>x\). In particular, edge modules of arrows starting at \(x\) are already available even though a map on the stalk at \(x\) has not yet been constructed. This is the exact data needed in a descending extension argument.
+The component maps identify full assignments. The equations identify compatible assignments on every subset, so they give isomorphisms of the corresponding ambient section modules. They also identify the images and kernels formed from the restriction maps.
 
-A graded isomorphism adds preservation of the homogeneous pieces. An abstract isomorphism of two free stalks is insufficient to identify their images inside an edge module: the commuting equations above are needed.
+## Isomorphisms on a subset
+
+An isomorphism on \(U\subseteq V\) supplies \(j_x\) for \(x\in U\) and \(j_e\) for \(t(e)\in U\). Its upper commuting equation holds whenever \(t(e)\in U\), and its lower equation holds when both endpoints belong to \(U\).
+
+It therefore identifies compatible tuples indexed on \(U\). In the ambient-assignment convention, this is the identification of the coordinates belonging to \(U\).
+
+For \(U=V\), the data give a full isomorphism. For \(U=\{y:x<y\}\), they give an isomorphism above \(x\). Edges starting at \(x\) already have their edge isomorphisms because their targets lie above \(x\). The stalk isomorphism at \(x\) is the next object constructed in a descending extension.
+
+## Graded isomorphisms
+
+A graded isomorphism requires
+\[
+j_x(B^x_n)\subseteq C^x_n,\qquad
+j_e(B^e_n)\subseteq C^e_n
+\]
+for every degree and every component on which the maps are defined.
+
+The inverse maps preserve degree as well. For a homogeneous \(c\in C_n\), write \(j^{-1}c=\sum_m b_m\) in homogeneous components. Then \(c=\sum_mj(b_m)\), with \(j(b_m)\in C_m\). Uniqueness of the homogeneous decomposition gives \(j(b_m)=0\) for \(m\ne n\). Injectivity of \(j\) gives \(b_m=0\) in those degrees, so \(j^{-1}c=b_n\).
+
+This argument applies separately at each vertex and edge. Hence the stored forward grading conditions provide degree-preserving isomorphisms in both directions.
+
+## A one-edge partial isomorphism
+
+For \(x\to y\), an isomorphism on \(\{y\}\) consists of \(j_y,j_e\) and the upper square. To extend it to the whole graph, choose \(j_x\) satisfying
+\[
+j_e\rho^{B,-}_e=\rho^{C,-}_ej_x.
+\]
+The partial edge map makes this a specified equation for \(j_x\), which is solved by the boundary-cover argument.
 
 ## References
 
-The precise Lean sources are listed below.
+The local definitions and constructions are listed below.
 
 ## Lean formalization
 
-The fields `vertex`, `edge`, `lower`, and `upper` are respectively the local isomorphisms and the two commuting-square conditions, with the stated domains in `AboveIso`.
+The fields `vertex`, `edge`, `lower`, and `upper` describe the local isomorphisms and squares. The inherited `toIso` and `toOnIso` fields hold the ungraded data; `vertex_graded` and `edge_graded` assert the forward degree conditions.
 
 `OAI.KLInvariance.MomentGraph.Sheaf.Iso`: [GradedSheaves.lean:521](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L521).
 
+`OAI.KLInvariance.MomentGraph.Sheaf.OnIso`: [GradedSheaves.lean:970](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L970).
+
 `OAI.KLInvariance.MomentGraph.Sheaf.AboveIso`: [GradedSheaves.lean:692](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L692).
 
-The additional fields `vertex_graded` and `edge_graded` preserve the homogeneous pieces; `toIso` contains the underlying ungraded isomorphism.
-
 `OAI.KLInvariance.MomentGraph.GradedSheaf.Iso`: [MinimalExtensions.lean:210](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/MinimalExtensions.lean#L210).
+
+`OAI.KLInvariance.MomentGraph.GradedSheaf.OnIso`: [MinimalExtensions.lean:214](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/MinimalExtensions.lean#L214).

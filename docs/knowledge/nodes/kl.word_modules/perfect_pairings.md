@@ -44,30 +44,51 @@ tags:
 
 # Perfect pairings and balanced bimodules
 
-A perfect pairing on a finite free \(A\)-module \(M\) is an \(A\)-linear isomorphism
+For a module \(M\) over a commutative ring \(A\), write
 \[
-M\longrightarrow\operatorname{Hom}_A(M,A),\qquad
-m\longmapsto\langle m,-\rangle.
+M^*=\operatorname{Hom}_A(M,A)
 \]
-Perfectness means that every linear functional is represented by a unique element of \(M\). Over a ring, mere nondegeneracy is weaker: multiplication by a nonunit can define an injective pairing map without making it surjective.
+for its \(A\)-linear dual. A perfect pairing is specified by an \(A\)-linear isomorphism
+\[
+d:M\xrightarrow{\sim}M^*,\qquad
+\langle m,n\rangle=d(m)(n).
+\]
+The two linearities make this an \(A\)-bilinear pairing. Perfection says that every functional on \(M\) has a unique representative in the first argument.
 
-A paired bimodule additionally has a commuting right \(A\)-action and a symmetric pairing satisfying
+## Finite free paired modules
+
+The paired-module data used in tensor induction consist of an underlying additive group with its \(A\)-module structure, finite freeness over \(A\), and the isomorphism \(d\).
+
+For a basis \(b_1,\ldots,b_r\), the pairing is represented by the matrix \(G_{ij}=\langle b_i,b_j\rangle\). It is perfect exactly when this matrix is invertible over \(A\).
+
+For \(M=A\) with \(\langle a,b\rangle=cab\), the adjoint map is multiplication by \(c\) after identifying \(A^*\) with \(A\) by evaluation at one. Thus the pairing is perfect exactly when \(c\) is a unit. In particular, multiplication pairing with \(c=1\) is perfect.
+
+## A commuting right action
+
+A paired bimodule also has a right \(A\)-action commuting with the left action. Equivalently, each \(a\in A\) acts by an \(A\)-linear endomorphism \(R_a\), and the assignment \(a\mapsto R_a\) is a unital ring homomorphism. Write \(m\cdot a=R_a(m)\).
+
+Since \(A\) is commutative, the right operators commute with each other and satisfy the usual right-module laws. Their \(A\)-linearity gives
+\[
+b(m\cdot a)=(bm)\cdot a.
+\]
+
+The pairing satisfies balance and symmetry:
 \[
 \langle m\cdot a,n\rangle=\langle m,n\cdot a\rangle,
 \qquad
 \langle m,n\rangle=\langle n,m\rangle.
 \]
-The first identity is balance. It permits scalar action on one argument to be moved to the other argument. The unit example is \(M=A\), with multiplication pairing \(\langle a,b\rangle=ab\).
+Balance moves the right action from one argument to the other. Symmetry exchanges the two arguments.
 
-These properties are retained through the tensor construction of word objects. Their later use is concrete: a perfect global pairing identifies supported sections with duals of stalk quotients, while balance ensures that support-cutting maps can be moved across the pairing without changing the value.
+For \(M=A\), the usual right multiplication and \(\langle m,n\rangle=mn\) satisfy both equations. Tensor induction extends this datum through a reflection's Frobenius extension.
 
 ## References
 
-[2. Real realizations and moment-graph sheaves](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L253).
+The local definitions and constructions are listed below.
 
 ## Lean formalization
 
-`PairedModule` has fields `carrier`, `add`, `module`, `free`, `finite`, and `pairing`. `PairedBimodule` has fields `obj`, `right`, `balanced`, and `symmetric`. The `add` and `module` fields supply the additive and scalar structures, rather than additional mathematical hypotheses.
+PairedModule fields `carrier`, `add`, `module`, `free`, `finite`, `pairing` record the module and perfect pairing. PairedBimodule adds `obj`, `right`, `balanced`, `symmetric` for the underlying paired module, commuting right action, balance, and symmetry.
 
 `OAI.KLInvariance.FrobeniusDuality.PairedModule`: [Frobenius.lean:226](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L226).
 

@@ -41,37 +41,47 @@ tags:
 
 # Module-valued sheaves on an ordered graph
 
-Fix an ordered graph \(G\) and a commutative coefficient ring \(A\).
-A module-valued graph sheaf consists of vertex modules \(B^x\), edge modules \(B^e\),
-and two \(A\)-linear restriction maps at each edge \(e:x\to y\):
+Fix an ordered graph \(G\), with source and target maps \(s,t\), and a commutative coefficient ring \(A\). A module-valued graph sheaf \(B\) consists of:
+
+- an \(A\)-module \(B^x\) at every vertex \(x\);
+- an \(A\)-module \(B^e\) at every edge \(e\);
+- a lower restriction \(\rho^-_e:B^{s(e)}\to B^e\);
+- an upper restriction \(\rho^+_e:B^{t(e)}\to B^e\).
+
+Both restriction maps are \(A\)-linear. A vertex module is also called a stalk.
+
+The edge module is a common target for comparing two endpoint values. For a tuple \(m=(m_x)\), compatibility on the edge means
 \[
-\rho_{x,e}:B^x\longrightarrow B^e,\qquad
-\rho_{y,e}:B^y\longrightarrow B^e.
+\rho^-_e(m_{s(e)})=\rho^+_e(m_{t(e)}).
 \]
-No injectivity, surjectivity, freeness, or quotient presentation is included in
-this definition. Each is an additional property to be established when needed.
+A global section is an assignment satisfying this equality on every edge.
 
-The edge module is a common target in which the two stalk values can be
-compared. A compatible section requires their images to agree. Flabbiness
-concerns extending these compatible assignments, while global generation
-concerns surjectivity of evaluation at a single stalk.
+## A sheaf of congruences on one edge
 
-For a one-edge example with label \(\alpha\), take both stalks equal to \(A\),
-the edge module equal to \(A/(\alpha)\), and both restrictions to be quotient
-maps. Compatibility says that the stalk values differ by a multiple of
-\(\alpha\). More complicated sheaves retain this same incidence pattern,
-with higher-rank vertex modules and coupled boundary conditions.
+Take one edge \(x\to y\), a ring \(A=k[\alpha]\), and modules
+\[
+B^x=B^y=A,\qquad B^e=A/(\alpha).
+\]
+Let both restrictions be quotient maps. A section is a pair \((f,g)\) with \(f-g\in\alpha A\).
+
+Every such pair has a unique expression
+\[
+(f,g)=g(1,1)+h(\alpha,0),\qquad f-g=\alpha h.
+\]
+Thus, over this polynomial ring, its global section module is free with basis \((1,1),(\alpha,0)\).
+
+The stalk \(A\), edge module \(A/(\alpha)\), and section module of pairs have different roles. The restrictions turn the divisibility equation into the compatibility condition.
+
+## Properties used in later constructions
+
+The upper-quotient property specifies the kernel and surjectivity of \(\rho^+_e\). Global generation specifies the images of the evaluation maps from global sections to individual stalks. Flabbiness specifies extension of compatible values on upper sets. Each property is stated for these same modules and restriction maps.
 
 ## References
 
-[2. Real realizations and moment-graph sheaves](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L2).
+The local definitions and constructions are listed below.
 
 ## Lean formalization
 
-The graph fields are `source`, `target`, and `increasing`. The sheaf fields are `vertex`, `edge`, `lower`, and `upper`. `CompatibleOn` tests edges with both endpoints in the specified subset.
-
-`OAI.KLInvariance.MomentGraph.OrderedGraph`: [Sheaves.lean:21](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Sheaves.lean#L21).
+The fields `vertex`, `edge`, `lower`, and `upper` are the modules and restriction maps.
 
 `OAI.KLInvariance.MomentGraph.Sheaf`: [Sheaves.lean:28](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Sheaves.lean#L28).
-
-`OAI.KLInvariance.MomentGraph.Sheaf.CompatibleOn`: [Sheaves.lean:41](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Sheaves.lean#L41).
