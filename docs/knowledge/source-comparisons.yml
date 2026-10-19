@@ -534,3 +534,27 @@ comparisons:
   consequence: Multiplying a label by a nonzero field scalar leaves its principal
     ideal unchanged. The fixed label used by the code therefore presents the same
     scalar quotient described in the notes.
+- id: reflection-tensor-duality
+  kind: Explicit tensor construction underlying the duality
+  nodes:
+  - kl.notes.reflection_frobenius
+  - kl.notes.tensor_pairing
+  - kl.word.induced_pairing_degree
+  paper_labels:
+  - bg:normalization
+  lean_declarations:
+  - OAI.KLInvariance.ReflectionFrobenius.duality_apply
+  - OAI.KLInvariance.FrobeniusDuality.restrictionEquiv
+  - OAI.KLInvariance.FrobeniusDuality.inducedModule
+  - OAI.KLInvariance.FrobeniusDuality.inducedPairing_basis_homogeneous
+  paper: The grading-normalization proof starts from a normalized self-dual projective,
+    uses the cited moment-graph/Soergel equivalence and character theorem, and translates
+    doubled degrees back to the degree-one convention.
+  lean: The local construction begins with the simple reflection fixed algebra and
+    the trace extracting the root coefficient, normalized by t(alpha)=1. It recovers
+    linear functionals through the trace, extends the resulting duality by tensor
+    product, and proves a one-degree pairing shift for each letter.
+  consequence: These nodes supply the actual word-module pairing and its homogeneous
+    basis calculation. The boundary-pairing construction subsequently transports this
+    pairing to a boundary summand. The source uses roots of degree one throughout
+    this tensor calculation.

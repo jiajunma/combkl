@@ -22,9 +22,33 @@ The pairing \((f,g)\mapsto\operatorname{tr}(fg)\) has matrix
 \]
 on the \(R\)-basis \(1,\alpha\): the trace of \(1\) and \(\alpha^2\) is zero, and the trace of \(\alpha\) is one. The matrix is invertible over \(R\), so this pairing is perfect.
 
-“Perfect” means that each linear functional is represented by a unique element through the pairing. Over a ring this is stronger than injectivity: multiplication by \(\alpha\) is injective on \(A\) but cannot represent the functional corresponding to \(1\) by division inside \(A\).
+“Perfect” means that each linear functional has a unique representative through the pairing. In this example, a functional \(f:A\to R\) is represented by \(f(\alpha)+\alpha f(1)\). Its products with \(1\) and \(\alpha\) have traces \(f(1)\) and \(f(\alpha)\), which determine \(f\) on the whole basis.
 
-The general reflection Frobenius theorem proves this even/odd decomposition and trace pairing for the actual coefficient ring and reflection.
+The general [[node:kl.word.reflection_coordinates|reflection coordinate theorem]] obtains the decomposition from four hypotheses: the automorphism \(\tau\) is an involution, \(\alpha\ne0\), \(\tau(\alpha)=-\alpha\), and every \(a-\tau(a)\) is divisible by \(\alpha\). Applying \(\tau\) to \(a-\tau(a)=\alpha d\) and cancelling \(\alpha\) proves that \(d\) is invariant. The coordinates are then
+\[
+a_0=\frac{a+\tau(a)}2,\qquad a_1=\frac d2.
+\]
+Uniqueness follows by applying \(\tau\) to two candidate expansions and cancelling \(2\alpha\). This gives the basis \(1,\alpha\) over the fixed subalgebra.
+
+Let \(V\) be the real extended realization, \(B\) its bilinear form, \(r_s\) a simple root, and \(\iota:V\to A=\operatorname{Sym}_{\mathbb R}(V)\) the generator map. The extended simple reflection is \(v\mapsto v-B(r_s,v)r_s\), with \(B(r_s,r_s)=2\). It induces the algebra action on vector generators. The difference of a generator and its reflection is a multiple of \(\alpha_s=\iota(r_s)\); addition and multiplication preserve that divisibility. This verifies the hypotheses and constructs the simple-reflection Frobenius data used by every word step.
+
+## Restricting the pairing and extending the module
+
+Suppose the old module \(N\) is finite free over \(A\), with a perfect \(A\)-valued pairing \(B_N\). Prepending a reflection first regards \(N\) as a module over \(R=A^s\). The trace then gives the \(R\)-valued pairing
+\[
+b_R(m,n)=t_s(B_N(m,n)).
+\]
+To prove it perfect, start with an arbitrary \(R\)-linear functional \(f:N\to R\). At each \(m\), the map \(a\mapsto f(am)\) is a functional on \(A\). Trace duality represents it by a unique element \(c_f(m)\) satisfying
+\[
+t_s(c_f(m)a)=f(am).
+\]
+Testing this equation against arbitrary scalars proves that \(m\mapsto c_f(m)\) is \(A\)-linear. The original perfect pairing represents that functional by a vector of \(N\). This vector represents \(f\) for the restricted pairing \(b_R\).
+
+The next operation extends scalars to \(A\otimes_R N\). Since \(N\) is finite free over \(A\), and \(A\) has the two-element \(R\)-basis, the vectors \(n_j,\alpha_s n_j\) form a finite \(R\)-basis. The dual base-change isomorphism now extends \(b_R\) to the perfect pairing
+\[
+B'(a\otimes m,b\otimes n)=ab\,t_s(B_N(m,n)).
+\]
+A right coefficient action acts on the second tensor factor. Its commutation with the old left action makes it well defined. If the old pairing is balanced for that action and is symmetric, the formula for \(B'\) proves those identities for the induced pairing. These constructions explain every field of the induced paired bimodule.
 
 ## The one-letter word module and its evaluations
 
@@ -33,6 +57,12 @@ For the word consisting of \(s\), tensor induction gives
 B_s=A\otimes_R A.
 \]
 The tensor product identifies \((ar)\otimes b\) with \(a\otimes(rb)\) for \(r\in R\). Since \(A\) has \(R\)-basis \(1,\alpha\), the left \(A\)-module \(B_s\) has basis \(1\otimes1,1\otimes\alpha\).
+
+Start the induction with \(N=A\) and multiplication pairing. On \(u=1\otimes1\) and \(v=1\otimes\alpha\), the induced pairing gives
+\[
+B'(u,u)=B'(v,v)=0,\qquad B'(u,v)=B'(v,u)=1.
+\]
+Thus \(B'(au+bv,cu+dv)=ad+bc\). This pairing and the evaluations below are two constructions on the same tensor module: one represents linear functionals, while the other records its values at subexpressions.
 
 There are two subexpressions: omit \(s\), giving weight \(1\), or retain it, giving weight \(s\). Their evaluations are
 \[
@@ -61,7 +91,11 @@ At each tensor step, the reflection trace satisfies
 \[
 2\alpha_s\operatorname{tr}_s(a)=a-s(a).
 \]
-The coefficient action preserves degree and \(\alpha_s\) has degree one, so the trace lowers degree by one. On the recursively constructed tensor basis, the pairing formula applies one such trace for every letter. Bilinear expansion then gives
+The coefficient action preserves degree and \(\alpha_s\) has degree one, so the trace lowers degree by one. The [[node:kl.word.induced_pairing_degree|one-step basis-pairing theorem]] gives the precise induction: if the old pairing of basis vectors of degrees \(d_j,d_k\) lies in \(A_{d_j+d_k-L}\), the new vectors \(1\otimes\alpha_s^\varepsilon b_j\) have assigned degrees \(\varepsilon+d_j\), and their pairing lies in degree
+\[
+(\varepsilon+d_j)+(\delta+d_k)-(L+1).
+\]
+Starting at shift zero for the empty word, each letter therefore increases the shift by one. Bilinear expansion then gives
 \[
 \langle(M_{\mathbf s})_i,(M_{\mathbf s})_j\rangle
 \subseteq A_{i+j-|\mathbf s|}.
@@ -128,12 +162,24 @@ For the single letter \(s\), the positive Hecke word is \(1+T_s\), and both stal
 
 ### A reflection Frobenius extension
 
+- [[node:kl.word.frobenius_data]]
+- [[node:kl.word.invariant_subalgebra]]
+- [[node:kl.word.reflection_coordinates]]
+- [[node:kl.word.reflection_trace]]
 - [[node:kl.notes.reflection_frobenius]]
+- [[node:kl.word.reflection_algebra_action]]
+- [[node:kl.word.reflection_trace_degree]]
+- [[node:kl.word.simple_frobenius_data]]
 
 ### Paired modules and tensor induction
 
 - [[node:kl.notes.perfect_pairings]]
+- [[node:kl.word.trace_restriction_duality]]
+- [[node:kl.word.tensor_dual_base_change]]
+- [[node:kl.word.tensor_induction]]
 - [[node:kl.notes.tensor_pairing]]
+- [[node:kl.word.induced_bimodule]]
+- [[node:kl.word.induced_pairing_degree]]
 
 ### Word modules and homogeneous bases
 

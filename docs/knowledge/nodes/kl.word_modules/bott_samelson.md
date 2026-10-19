@@ -10,6 +10,8 @@ uses:
 - kl.notes.tensor_pairing
 - kl.notes.extended_realization
 - kl.notes.reflection_frobenius
+- kl.word.simple_frobenius_data
+- kl.word.induced_bimodule
 lean:
   repository: openai-kl
   modules:

@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 58043,
-  "theorem_walkthroughs": 201,
+  "revised_proof_words": 60047,
+  "theorem_walkthroughs": 208,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -1907,15 +1907,18 @@
     {
       "node": "kl.notes.reflection_frobenius",
       "source_declarations": [
-        "OAI.KLInvariance.ReflectionFrobenius.coordinates",
-        "OAI.KLInvariance.ReflectionFrobenius.trace",
-        "OAI.KLInvariance.ReflectionFrobenius.trace_mul"
+        "OAI.KLInvariance.ReflectionFrobenius.crossPair",
+        "OAI.KLInvariance.ReflectionFrobenius.crossPair_bijective",
+        "OAI.KLInvariance.ReflectionFrobenius.crossPairEquiv",
+        "OAI.KLInvariance.ReflectionFrobenius.duality",
+        "OAI.KLInvariance.ReflectionFrobenius.duality_apply",
+        "OAI.KLInvariance.ReflectionFrobenius.duality_balanced"
       ],
       "proof_steps": 4,
       "previous_proof_words": 117,
-      "revised_proof_words": 238,
-      "proof_sha256": "0b61e12eb06cc6f027015ae19b08a4cc57d9755aebbf701712bfeff79e6436ac",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 239,
+      "proof_sha256": "67315f109a6d7870c16934c2cf8617188fd3b6ac0e9a669c452e4368187f991d",
+      "review": "Replaced the former combined summary with the actual coordinate/crossPair/dualMap composite. Checked its explicit inverse, finite basis and balance equation in the local proof."
     },
     {
       "node": "kl.notes.relative_dihedral_transport",
@@ -1944,16 +1947,15 @@
     {
       "node": "kl.notes.tensor_pairing",
       "source_declarations": [
+        "OAI.KLInvariance.FrobeniusDuality.restrictionBasis",
         "OAI.KLInvariance.FrobeniusDuality.inducedModule",
-        "OAI.KLInvariance.FrobeniusDuality.inducedModule_pairing_tmul",
-        "OAI.KLInvariance.FrobeniusDuality.inducedPairing_balanced",
-        "OAI.KLInvariance.FrobeniusDuality.inducedPairing_symmetric"
+        "OAI.KLInvariance.FrobeniusDuality.inducedModule_pairing_tmul"
       ],
       "proof_steps": 4,
       "previous_proof_words": 122,
-      "revised_proof_words": 262,
-      "proof_sha256": "cf0e77eccdec62d8366870836959d7a2b7c871f83534716350cece015c9c58d2",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 315,
+      "proof_sha256": "60fc9fde527edcc5ab29a280f37818855618bbf4afd14438d76b5aebebc70553",
+      "review": "Replaced the old basis-dual shortcut by the exact restrictPairing then extendPairing route. Checked the product-basis argument, inverse functional reconstruction, algebraMap in the formula and explicit one-letter pairing."
     },
     {
       "node": "kl.notes.upper_image_free",
@@ -2688,6 +2690,36 @@
       "review": "Compared bott_projection_zero_iff_annihilates_support, bottAdjoint_preserves_kernel, bottEndOfSheaf_preserves_support, bottAdjointSheaf, and bottEndOfAdjointSheaf. The proof follows integral annihilators and quotient descent."
     },
     {
+      "node": "kl.word.induced_bimodule",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.FrobeniusDuality.restrictedRight",
+        "OAI.KLInvariance.FrobeniusDuality.inducedRight",
+        "OAI.KLInvariance.FrobeniusDuality.inducedRight_tmul",
+        "OAI.KLInvariance.FrobeniusDuality.inducedPairing_balanced",
+        "OAI.KLInvariance.FrobeniusDuality.inducedPairing_symmetric",
+        "OAI.KLInvariance.FrobeniusDuality.inducedBimodule"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 315,
+      "proof_sha256": "f9de775223b5d47288ba6243496fc5a7e5c7cf080d99acabbcd2153df8c752e5",
+      "review": "Read restrictedRight/inducedRight and both tensor-induction proofs. Expanded well-definedness, ring-homomorphism laws and the finite bilinear extension, with symmetry and balance hypotheses explicit."
+    },
+    {
+      "node": "kl.word.induced_pairing_degree",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.FrobeniusDuality.inducedBasis",
+        "OAI.KLInvariance.FrobeniusDuality.inducedBasis_apply",
+        "OAI.KLInvariance.FrobeniusDuality.inducedPairing_basis",
+        "OAI.KLInvariance.FrobeniusDuality.inducedPairing_basis_homogeneous"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 228,
+      "proof_sha256": "98c589368fdc2b91af9618f7b63a4282d3952dadcb9dab80fc8a524378873c1c",
+      "review": "Read inducedBasis, its pure-tensor formula, basis pairing and homogeneous degree statement. Preserved the generic basis-degree hypothesis and separated it from a pre-existing grading on N."
+    },
+    {
       "node": "kl.word.pairing_degree",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2702,6 +2734,58 @@
       "revised_proof_words": 375,
       "proof_sha256": "ebeff1bb8ed01a01185ff9928e7e733235380143a7412e78b2d51bc7bcdae27d",
       "review": "Read trace_difference, trace_homogeneous, inducedPairing_basis_homogeneous, and bottDuality_homogeneous. Trace cancellation lowers degree by one; basis induction and coefficient expansion prove the full word-length shift."
+    },
+    {
+      "node": "kl.word.reflection_algebra_action",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionFrobenius.symmetricMap",
+        "OAI.KLInvariance.ReflectionFrobenius.symmetricAction",
+        "OAI.KLInvariance.ReflectionFrobenius.symmetricAction_ι",
+        "OAI.KLInvariance.ReflectionFrobenius.reflectionAction",
+        "OAI.KLInvariance.ReflectionFrobenius.reflectionAction_involutive",
+        "OAI.KLInvariance.ReflectionFrobenius.reflectionAction_anti",
+        "OAI.KLInvariance.ReflectionFrobenius.reflectionRoot_ne_zero",
+        "OAI.KLInvariance.ReflectionFrobenius.reflectionAction_divisible",
+        "OAI.KLInvariance.ReflectionFrobenius.reflectionDuality"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 263,
+      "proof_sha256": "08763835462c06e3c6cfc0e5b749901a16803ef800647e4e22d23ed21c23424d",
+      "review": "Read the symmetric-algebra lift and all four divisibility induction cases. Verified the root-coroot normalization, nonzero generator via the lifted functional, and the absence of a finite-dimensional hypothesis."
+    },
+    {
+      "node": "kl.word.reflection_coordinates",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionFrobenius.quotient_fixed",
+        "OAI.KLInvariance.ReflectionFrobenius.expand_injective",
+        "OAI.KLInvariance.ReflectionFrobenius.expand_surjective",
+        "OAI.KLInvariance.ReflectionFrobenius.coordinates",
+        "OAI.KLInvariance.ReflectionFrobenius.expand_coordinates",
+        "OAI.KLInvariance.ReflectionFrobenius.coordinates_expand",
+        "OAI.KLInvariance.ReflectionFrobenius.reflectionBasis",
+        "OAI.KLInvariance.ReflectionFrobenius.reflectionBasis_zero",
+        "OAI.KLInvariance.ReflectionFrobenius.reflectionBasis_one"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 281,
+      "proof_sha256": "af7e588eb1f4bfa2be98d0587089d472c537c0bc381ea2e4b150d31b96827856",
+      "review": "Checked the quotient_fixed cancellation, explicit half-sum coordinates, injectivity and transported two-element basis against Decomposition and Frobenius. Included the eigenspace calculation as a consequence of the proved coordinates."
+    },
+    {
+      "node": "kl.word.reflection_trace_degree",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionFrobenius.trace_difference",
+        "OAI.KLInvariance.ReflectionFrobenius.trace_homogeneous",
+        "OAI.KLInvariance.ReflectionFrobenius.coordinates_homogeneous",
+        "OAI.KLInvariance.ReflectionFrobenius.reflectionBasis_homogeneous"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 214,
+      "proof_sha256": "e8aa1dd18d65fc439a6835913b7e07c2ea62625f15476dbdf1c54f670a3ab65f",
+      "review": "Read trace_difference, trace_homogeneous and coordinates_homogeneous. Expanded homogeneous component cancellation and separated the extra unit-degree condition for reflectionBasis_homogeneous."
     },
     {
       "node": "kl.word.scaled_coordinate_lifts",
@@ -2739,6 +2823,18 @@
       "review": "Compared the right-action eigenvalue criterion, separation, distinct-weight orthogonality, scaled-coordinate expansion, both annihilator implications, and the stalk-duality inverse maps in Frobenius."
     },
     {
+      "node": "kl.word.tensor_dual_base_change",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.FrobeniusDuality.extendPairing",
+        "OAI.KLInvariance.FrobeniusDuality.extendPairing_tmul"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 337,
+      "proof_sha256": "a7ff67e6ed75c5d34e3d9e57024c1c2e8fbc3d078b75e351a5f09d35afeceda1",
+      "review": "Read the extendPairing composite and tmul proof. Expanded the canonical dual base-change isomorphism by finite basis and coordinate inverse, preserving the arbitrary algebra map and first-argument pairing convention."
+    },
+    {
       "node": "kl.word.top_stalk",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2756,6 +2852,27 @@
       "revised_proof_words": 332,
       "proof_sha256": "e0425e9692af39121c4fe186d918a87b7cc433cfb76584a4a4caced4c2349f9a",
       "review": "Read bottWeight_eq_top, unit evaluation, top-coordinate bijectivity, and both homogeneous directions. The retained-letter length inequalities force the unique top coordinate."
+    },
+    {
+      "node": "kl.word.trace_restriction_duality",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.FrobeniusDuality.restrictDual",
+        "OAI.KLInvariance.FrobeniusDuality.fiber",
+        "OAI.KLInvariance.FrobeniusDuality.trace_recover_fiber",
+        "OAI.KLInvariance.FrobeniusDuality.recover_fiber_smul",
+        "OAI.KLInvariance.FrobeniusDuality.recoverDual",
+        "OAI.KLInvariance.FrobeniusDuality.restrict_recover",
+        "OAI.KLInvariance.FrobeniusDuality.recover_restrict",
+        "OAI.KLInvariance.FrobeniusDuality.restrictionEquiv",
+        "OAI.KLInvariance.FrobeniusDuality.restrictionEquiv_apply",
+        "OAI.KLInvariance.FrobeniusDuality.restrictPairing",
+        "OAI.KLInvariance.FrobeniusDuality.restrictPairing_apply"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 312,
+      "proof_sha256": "34b92a8c3ba570e7093db87f5e142cf73268dc9619fe97a235b5baef48cc314d",
+      "review": "Followed restrictDual/fiber/recoverDual and both inverse identities line by line. Included the A-linearity proof by evaluation through D and retained the theorem for arbitrary M without finite-free assumptions."
     },
     {
       "node": "kl.word.twisted_lattice_saturation",

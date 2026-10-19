@@ -111,6 +111,11 @@ concepts:
   - paired bimodules
   - paired bimodule
   - balance
+  - paired module
+  - paired modules
+  - linear dual
+  - paired-module structure
+  - paired-bimodule structure
 - node: kl.notes.bott_samelson
   terms:
   - Bott–Samelson word objects
@@ -930,3 +935,42 @@ concepts:
   terms:
   - twisted pair lattice
   - twisted pair lattices
+- node: kl.word.frobenius_data
+  terms:
+  - Frobenius extension
+  - Frobenius extensions
+  - finite free Frobenius extension
+  - trace-duality data
+  - trace duality
+  - trace pairing
+- node: kl.word.invariant_subalgebra
+  terms:
+  - fixed subalgebra
+  - fixed algebra
+  - invariant subalgebra
+  - invariant subring
+  - reflection data
+  - anti-invariant
+  - invariant coordinates
+  - anti-invariant coordinates
+- node: kl.word.reflection_trace
+  terms:
+  - reflection trace
+  - reflection traces
+  - coordinate trace
+- node: kl.word.simple_frobenius_data
+  terms:
+  - simple-reflection Frobenius data
+- node: kl.word.tensor_induction
+  terms:
+  - tensor induction
+  - tensor-induced module
+  - induced module
+  - induced modules
+  - tensor relation
+  - tensor relations
+- node: kl.word.frobenius_data
+  terms:
+  - trace
+  topics:
+  - kl.word_modules

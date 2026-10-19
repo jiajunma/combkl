@@ -209,6 +209,9 @@
       ],
       "output": "Iterated tensor modules, homogeneous bases, and perfect word pairings.",
       "lean_declarations": [
+        "OAI.KLInvariance.ReflectionFrobenius.coordinates",
+        "OAI.KLInvariance.FrobeniusDuality.restrictionEquiv",
+        "OAI.KLInvariance.FrobeniusDuality.inducedBimodule",
         "OAI.KLInvariance.FrobeniusDuality.PairedBimodule",
         "OAI.KLInvariance.TitsSpace.bottSamelson",
         "OAI.KLInvariance.TitsSpace.bottBasis"

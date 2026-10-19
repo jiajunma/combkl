@@ -12,6 +12,8 @@ uses:
 - kl.notes.tensor_pairing
 - kl.algebra.scalar_inverse_degree
 - kl.algebra.dual_basis_degrees
+- kl.word.reflection_trace_degree
+- kl.word.induced_pairing_degree
 lean:
   repository: openai-kl
   modules:

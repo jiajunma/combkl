@@ -7,18 +7,23 @@ primary_topic: kl.word_modules
 topics:
 - kl.word_modules
 uses:
-- kl.notes.perfect_pairings
+- kl.word.tensor_induction
+- kl.word.trace_restriction_duality
+- kl.word.tensor_dual_base_change
 lean:
   repository: openai-kl
   modules:
   - Frobenius
   declarations:
+  - OAI.KLInvariance.FrobeniusDuality.restrictionBasis
   - OAI.KLInvariance.FrobeniusDuality.inducedModule
   - OAI.KLInvariance.FrobeniusDuality.inducedModule_pairing_tmul
-  - OAI.KLInvariance.FrobeniusDuality.inducedPairing_balanced
-  - OAI.KLInvariance.FrobeniusDuality.inducedPairing_symmetric
 source:
   spans:
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Frobenius:263
+    format: lean-location
+    note: OAI.KLInvariance.FrobeniusDuality.restrictionBasis
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.Frobenius:270
     format: lean-location
@@ -27,14 +32,6 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.Frobenius:276
     format: lean-location
     note: OAI.KLInvariance.FrobeniusDuality.inducedModule_pairing_tmul
-  - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.Frobenius:336
-    format: lean-location
-    note: OAI.KLInvariance.FrobeniusDuality.inducedPairing_balanced
-  - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.Frobenius:355
-    format: lean-location
-    note: OAI.KLInvariance.FrobeniusDuality.inducedPairing_symmetric
   - artifact: openai-kl-paper
     locator: 2. Real realizations and moment-graph sheaves; bg:normalization
     format: section
@@ -45,85 +42,107 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Are the mathematical hypotheses and scope retained from the referenced declarations?
-  verdict: The exposition follows the fixed Lean source; worked calculations explain
-    the constructions.
+  prompt: Are the rings, scalar maps, finiteness hypotheses, pairing orientation and
+    degree conventions explicit?
+  verdict: Replaced the old basis-dual shortcut by the exact restrictPairing then
+    extendPairing route. Checked the product-basis argument, inverse functional reconstruction,
+    algebraMap in the formula and explicit one-letter pairing.
 tags:
 - Kazhdan-Lusztig
-- background
+- Frobenius-duality
 ---
 
 # Transporting a perfect pairing through tensor induction
 
-Let \(R\subseteq A\) be a finite free Frobenius extension with trace \(\operatorname{tr}:A\to R\). If \(N\) is a finite free paired \(A\)-module, tensor induction produces a paired \(A\)-module \(A\otimes_R N\). Its pairing on pure tensors is
+Let \(\eta:R\to A\) be an algebra map between commutative rings, with \(A\) finite free over \(R\). Suppose \(t:A\to R\) is \(R\)-linear and
 \[
-\langle a\otimes m,b\otimes n\rangle
-=ab\,\operatorname{tr}(\langle m,n\rangle),
+D:A\xrightarrow{\sim}\operatorname{Hom}_R(A,R),
+\qquad D(a)(b)=t(ab).
 \]
-with the trace value included back into \(A\).
+Let \(N\) be a finite free paired \(A\)-module with perfect pairing \(B_N\). Then \(A\otimes_R N\) is finite free over \(A\) and carries the perfect pairing
+\[
+B'(a\otimes m,b\otimes n)=ab\,\eta(t(B_N(m,n))).
+\]
+
+<!-- source-comparison:start -->
+## Relation to the OpenAI notes
+
+**Explicit tensor construction underlying the duality.**
+
+**OpenAI notes:** The grading-normalization proof starts from a normalized self-dual projective, uses the cited moment-graph/Soergel equivalence and character theorem, and translates doubled degrees back to the degree-one convention. [bg:normalization](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L253).
+
+**Lean (primary):** The local construction begins with the simple reflection fixed algebra and the trace extracting the root coefficient, normalized by t(alpha)=1. It recovers linear functionals through the trace, extends the resulting duality by tensor product, and proves a one-degree pairing shift for each letter. [Decomposition:1588](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean#L1588), [Frobenius:168](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L168), [Frobenius:270](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L270), [Frobenius:602](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L602).
+
+**Role in the proof:** These nodes supply the actual word-module pairing and its homogeneous basis calculation. The boundary-pairing construction subsequently transports this pairing to a boundary summand. The source uses roots of degree one throughout this tensor calculation.
+<!-- source-comparison:end -->
 
 *Proof.*
 
-### Step 1. Restrict the original pairing through the Frobenius trace
+### Step 1. Construct a finite basis over the smaller ring
 
-Let \(B_N:N\times N\to A\) be the perfect pairing, and define the \(R\)-valued pairing
-\(b(m,n)=\operatorname{tr}(B_N(m,n))\).
-The trace is \(R\)-linear, so \(b\) is \(R\)-bilinear.
-
-Choose an \(R\)-basis \(a_i\) of the finite free Frobenius extension and its trace-dual basis \(a_i^\vee\):
-\(\operatorname{tr}(a_ia_j^\vee)=\delta_{ij}\).
-Choose an \(A\)-basis \(n_j\) of \(N\) and its pairing-dual basis \(n_j^\vee\). Then
+Choose a finite \(R\)-basis \((a_i)\) of \(A\) and a finite \(A\)-basis \((n_j)\) of \(N\). Every vector of \(N\) has a unique expression
 \[
-b(a_in_j,a_h^\vee n_k^\vee)
-=\operatorname{tr}(a_ia_h^\vee\delta_{jk})
-=\delta_{ih}\delta_{jk}.
+m=\sum_j c_j n_j,\qquad c_j=\sum_i r_{ij}a_i,\quad r_{ij}\in R.
 \]
-Thus the restricted pairing is perfect; its two dual bases have been exhibited.
+Substitution gives \(m=\sum_{i,j}r_{ij}a_i n_j\), proving spanning over \(R\).
 
-### Step 2. Extend scalars and derive the formula
+If this sum vanishes, independence of the \(n_j\) over \(A\) first gives \(\sum_i r_{ij}a_i=0\) for each \(j\). Independence of the \(a_i\) over \(R\) then gives every \(r_{ij}=0\). Thus \((a_i n_j)\) is an \(R\)-basis, and it is finite.
 
-On \(A\otimes_RN\), define
+### Step 2. Restrict the perfect pairing through the trace
+
+The [[node:kl.word.trace_restriction_duality|trace-restriction theorem]] gives an \(R\)-linear isomorphism
 \[
-B(a\otimes m,b\otimes n)=ab\,\operatorname{tr}(B_N(m,n)).
+\operatorname{Hom}_A(N,A)\xrightarrow{\sim}
+\operatorname{Hom}_R(N,R),\qquad \lambda\mapsto t\circ\lambda.
 \]
-This respects the tensor relation: for \(r\in R\), moving \(r\) from the first scalar factor to \(m\) gives the same value by \(R\)-linearity of the trace. The same verification works in the second argument. Bilinearity therefore extends the formula to arbitrary tensors.
-
-The bases from Step 1 extend to the \(A\)-bases \(1\otimes a_in_j\) and \(1\otimes a_i^\vee n_j^\vee\), with the same identity pairing matrix. Hence the induced pairing is perfect.
-
-### Step 3. Check symmetry
-
-If \(B_N(m,n)=B_N(n,m)\), then on pure tensors
+Compose it with the original pairing map \(p_N\), viewed over \(R\). The resulting perfect \(R\)-pairing has value
 \[
-ab\,\operatorname{tr}(B_N(m,n))
-=ba\,\operatorname{tr}(B_N(n,m)).
+b_R(m,n)=t(B_N(m,n)).
 \]
-The coefficient algebra is commutative. Every tensor is a finite sum of pure tensors, so bilinearity proves symmetry for arbitrary arguments.
 
-### Step 4. Check balance of the induced right action
+To locate the representing vector of an arbitrary \(R\)-functional \(f\), form the \(A\)-functional
+\(c_f(m)=D^{-1}(a\mapsto f(am))\), as proved in the restriction theorem. Then \(p_N^{-1}(c_f)\) represents \(f\) for \(b_R\). This identifies the inverse used in the composition.
 
-Let the original right action satisfy
-\(B_N(mr,n)=B_N(m,nr)\).
-The induced action changes only the second tensor factor:
-\((a\otimes m)r=a\otimes(mr)\).
-Consequently
+### Step 3. Extend the restricted pairing
+
+Step 1 supplies the finite freeness required by the [[node:kl.word.tensor_dual_base_change|tensor-dual base-change theorem]]. Apply that theorem to the perfect \(R\)-pairing \(b_R\). Its composite isomorphism is
 \[
-B((a\otimes m)r,b\otimes n)
-=ab\,\operatorname{tr}(B_N(mr,n))
-=ab\,\operatorname{tr}(B_N(m,nr))
-=B(a\otimes m,(b\otimes n)r).
+A\otimes_R N
+\longrightarrow A\otimes_R\operatorname{Hom}_R(N,R)
+\longrightarrow\operatorname{Hom}_A(A\otimes_R N,A).
 \]
-Again finite bilinear expansion gives the statement for arbitrary tensors. These calculations establish the properties preserved at each Bott–Samelson induction step.
+It sends the first tensor \(a\otimes m\), evaluated on \(b\otimes n\), to
+\[
+ab\,\eta(b_R(m,n))=ab\,\eta(t(B_N(m,n))).
+\]
+This proves both the formula and perfection. The same base-change theorem transports the finite basis from Step 1 to \(1\otimes a_i n_j\), proving finite freeness over \(A\).
+
+### Step 4. Calculate the first reflection step
+
+Take \(A=k[X]\), \(R=k[X^2]\), the reflection trace \(t\), and \(N=A\) with multiplication pairing. The induced module has basis
+\[
+u=1\otimes1,\qquad v=1\otimes X.
+\]
+The formula gives
+\[
+B'(u,u)=t(1)=0,\quad
+B'(u,v)=B'(v,u)=t(X)=1,\quad
+B'(v,v)=t(X^2)=0.
+\]
+Thus for \(a,b,c,d\in A\),
+\[
+B'(au+bv,cu+dv)=ad+bc.
+\]
+The pairing matrix is the same invertible cross matrix as the trace pairing. This calculation gives the one-letter word pairing before iterating the construction.
 
 ## References
 
-[2. Real realizations and moment-graph sheaves](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L253).
+The local source declarations below give the construction and proof.
 
 ## Lean formalization
+
+`OAI.KLInvariance.FrobeniusDuality.restrictionBasis`: [Frobenius.lean:263](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L263).
 
 `OAI.KLInvariance.FrobeniusDuality.inducedModule`: [Frobenius.lean:270](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L270).
 
 `OAI.KLInvariance.FrobeniusDuality.inducedModule_pairing_tmul`: [Frobenius.lean:276](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L276).
-
-`OAI.KLInvariance.FrobeniusDuality.inducedPairing_balanced`: [Frobenius.lean:336](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L336).
-
-`OAI.KLInvariance.FrobeniusDuality.inducedPairing_symmetric`: [Frobenius.lean:355](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L355).

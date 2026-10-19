@@ -333,10 +333,22 @@
       "kl.notes.reflection_frobenius",
       "kl.notes.tensor_pairing",
       "kl.notes.word_stalks",
+      "kl.word.frobenius_data",
+      "kl.word.induced_bimodule",
+      "kl.word.induced_pairing_degree",
+      "kl.word.invariant_subalgebra",
       "kl.word.pairing_degree",
+      "kl.word.reflection_algebra_action",
+      "kl.word.reflection_coordinates",
+      "kl.word.reflection_trace",
+      "kl.word.reflection_trace_degree",
       "kl.word.scaled_coordinate_lifts",
+      "kl.word.simple_frobenius_data",
       "kl.word.support_duality",
+      "kl.word.tensor_dual_base_change",
+      "kl.word.tensor_induction",
       "kl.word.top_stalk",
+      "kl.word.trace_restriction_duality",
       "kl.word.twisted_lattice_saturation",
       "kl.word.twisted_pair_lattice"
     ]
@@ -3108,7 +3120,10 @@
       "chapter": "kl.word_modules",
       "lean_declarations": [
         "OAI.KLInvariance.FrobeniusDuality.PairedModule",
-        "OAI.KLInvariance.FrobeniusDuality.PairedBimodule"
+        "OAI.KLInvariance.FrobeniusDuality.unitPairing",
+        "OAI.KLInvariance.FrobeniusDuality.unitModule",
+        "OAI.KLInvariance.FrobeniusDuality.PairedBimodule",
+        "OAI.KLInvariance.FrobeniusDuality.unitBimodule"
       ],
       "paper_locations": [
         "2. Real realizations and moment-graph sheaves; bg:normalization"
@@ -3131,9 +3146,12 @@
       "id": "kl.notes.reflection_frobenius",
       "chapter": "kl.word_modules",
       "lean_declarations": [
-        "OAI.KLInvariance.ReflectionFrobenius.coordinates",
-        "OAI.KLInvariance.ReflectionFrobenius.trace",
-        "OAI.KLInvariance.ReflectionFrobenius.trace_mul"
+        "OAI.KLInvariance.ReflectionFrobenius.crossPair",
+        "OAI.KLInvariance.ReflectionFrobenius.crossPair_bijective",
+        "OAI.KLInvariance.ReflectionFrobenius.crossPairEquiv",
+        "OAI.KLInvariance.ReflectionFrobenius.duality",
+        "OAI.KLInvariance.ReflectionFrobenius.duality_apply",
+        "OAI.KLInvariance.ReflectionFrobenius.duality_balanced"
       ],
       "paper_locations": [
         "2. Real realizations and moment-graph sheaves; bg:normalization"
@@ -3201,10 +3219,9 @@
       "id": "kl.notes.tensor_pairing",
       "chapter": "kl.word_modules",
       "lean_declarations": [
+        "OAI.KLInvariance.FrobeniusDuality.restrictionBasis",
         "OAI.KLInvariance.FrobeniusDuality.inducedModule",
-        "OAI.KLInvariance.FrobeniusDuality.inducedModule_pairing_tmul",
-        "OAI.KLInvariance.FrobeniusDuality.inducedPairing_balanced",
-        "OAI.KLInvariance.FrobeniusDuality.inducedPairing_symmetric"
+        "OAI.KLInvariance.FrobeniusDuality.inducedModule_pairing_tmul"
       ],
       "paper_locations": [
         "2. Real realizations and moment-graph sheaves; bg:normalization"
@@ -4150,6 +4167,51 @@
       "paper_locations": []
     },
     {
+      "id": "kl.word.frobenius_data",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.FrobeniusDuality.restrictPairing",
+        "OAI.KLInvariance.FrobeniusDuality.inducedModule"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.induced_bimodule",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.FrobeniusDuality.restrictedRight",
+        "OAI.KLInvariance.FrobeniusDuality.inducedRight",
+        "OAI.KLInvariance.FrobeniusDuality.inducedRight_tmul",
+        "OAI.KLInvariance.FrobeniusDuality.inducedPairing_balanced",
+        "OAI.KLInvariance.FrobeniusDuality.inducedPairing_symmetric",
+        "OAI.KLInvariance.FrobeniusDuality.inducedBimodule"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.induced_pairing_degree",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.FrobeniusDuality.inducedBasis",
+        "OAI.KLInvariance.FrobeniusDuality.inducedBasis_apply",
+        "OAI.KLInvariance.FrobeniusDuality.inducedPairing_basis",
+        "OAI.KLInvariance.FrobeniusDuality.inducedPairing_basis_homogeneous"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.invariant_subalgebra",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.ReflectionFrobenius.fixed",
+        "OAI.KLInvariance.ReflectionFrobenius.mem_fixed",
+        "OAI.KLInvariance.ReflectionFrobenius.fixed_val",
+        "OAI.KLInvariance.ReflectionFrobenius.expand",
+        "OAI.KLInvariance.ReflectionFrobenius.expand_apply"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.word.pairing_degree",
       "chapter": "kl.word_modules",
       "lean_declarations": [
@@ -4159,6 +4221,60 @@
         "OAI.KLInvariance.FrobeniusDuality.inducedPairing_basis_homogeneous",
         "OAI.KLInvariance.TitsSpace.bottBasis_pairing_homogeneous",
         "OAI.KLInvariance.TitsSpace.bottDuality_homogeneous"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.reflection_algebra_action",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.ReflectionFrobenius.symmetricMap",
+        "OAI.KLInvariance.ReflectionFrobenius.symmetricAction",
+        "OAI.KLInvariance.ReflectionFrobenius.symmetricAction_ι",
+        "OAI.KLInvariance.ReflectionFrobenius.reflectionAction",
+        "OAI.KLInvariance.ReflectionFrobenius.reflectionAction_involutive",
+        "OAI.KLInvariance.ReflectionFrobenius.reflectionAction_anti",
+        "OAI.KLInvariance.ReflectionFrobenius.reflectionRoot_ne_zero",
+        "OAI.KLInvariance.ReflectionFrobenius.reflectionAction_divisible",
+        "OAI.KLInvariance.ReflectionFrobenius.reflectionDuality"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.reflection_coordinates",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.ReflectionFrobenius.quotient_fixed",
+        "OAI.KLInvariance.ReflectionFrobenius.expand_injective",
+        "OAI.KLInvariance.ReflectionFrobenius.expand_surjective",
+        "OAI.KLInvariance.ReflectionFrobenius.coordinates",
+        "OAI.KLInvariance.ReflectionFrobenius.expand_coordinates",
+        "OAI.KLInvariance.ReflectionFrobenius.coordinates_expand",
+        "OAI.KLInvariance.ReflectionFrobenius.reflectionBasis",
+        "OAI.KLInvariance.ReflectionFrobenius.reflectionBasis_zero",
+        "OAI.KLInvariance.ReflectionFrobenius.reflectionBasis_one"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.reflection_trace",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.ReflectionFrobenius.trace",
+        "OAI.KLInvariance.ReflectionFrobenius.trace_expand",
+        "OAI.KLInvariance.ReflectionFrobenius.square_fixed",
+        "OAI.KLInvariance.ReflectionFrobenius.trace_mul"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.reflection_trace_degree",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.ReflectionFrobenius.trace_difference",
+        "OAI.KLInvariance.ReflectionFrobenius.trace_homogeneous",
+        "OAI.KLInvariance.ReflectionFrobenius.coordinates_homogeneous",
+        "OAI.KLInvariance.ReflectionFrobenius.reflectionBasis_homogeneous"
       ],
       "paper_locations": []
     },
@@ -4173,6 +4289,26 @@
         "OAI.KLInvariance.TitsSpace.bottCoordinateLift_eval",
         "OAI.KLInvariance.TitsSpace.bottCoordinateLift_supported",
         "OAI.KLInvariance.TitsSpace.bottCoordinateExpansion"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.simple_frobenius_data",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.coefficientAction_simple",
+        "OAI.KLInvariance.TitsSpace.simpleFixed",
+        "OAI.KLInvariance.TitsSpace.simpleRootPolynomial",
+        "OAI.KLInvariance.TitsSpace.simple_involutive",
+        "OAI.KLInvariance.TitsSpace.simpleRootPolynomial_ne_zero",
+        "OAI.KLInvariance.TitsSpace.simple_anti",
+        "OAI.KLInvariance.TitsSpace.simple_divisible",
+        "OAI.KLInvariance.TitsSpace.simpleCoordinates",
+        "OAI.KLInvariance.TitsSpace.simpleTrace",
+        "OAI.KLInvariance.TitsSpace.simpleDuality",
+        "OAI.KLInvariance.TitsSpace.simpleDuality_apply",
+        "OAI.KLInvariance.TitsSpace.simpleRoot_homogeneous",
+        "OAI.KLInvariance.TitsSpace.coefficientAction_homogeneous"
       ],
       "paper_locations": []
     },
@@ -4192,6 +4328,25 @@
       "paper_locations": []
     },
     {
+      "id": "kl.word.tensor_dual_base_change",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.FrobeniusDuality.extendPairing",
+        "OAI.KLInvariance.FrobeniusDuality.extendPairing_tmul"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.tensor_induction",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.FrobeniusDuality.restrictionBasis",
+        "OAI.KLInvariance.FrobeniusDuality.inducedModule",
+        "OAI.KLInvariance.FrobeniusDuality.inducedModule_pairing_tmul"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.word.top_stalk",
       "chapter": "kl.word_modules",
       "lean_declarations": [
@@ -4204,6 +4359,24 @@
         "OAI.KLInvariance.TitsSpace.bottTopStalkEquiv_homogeneous",
         "OAI.KLInvariance.TitsSpace.bottTopHom",
         "OAI.KLInvariance.TitsSpace.bottTopInvHom"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.trace_restriction_duality",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.FrobeniusDuality.restrictDual",
+        "OAI.KLInvariance.FrobeniusDuality.fiber",
+        "OAI.KLInvariance.FrobeniusDuality.trace_recover_fiber",
+        "OAI.KLInvariance.FrobeniusDuality.recover_fiber_smul",
+        "OAI.KLInvariance.FrobeniusDuality.recoverDual",
+        "OAI.KLInvariance.FrobeniusDuality.restrict_recover",
+        "OAI.KLInvariance.FrobeniusDuality.recover_restrict",
+        "OAI.KLInvariance.FrobeniusDuality.restrictionEquiv",
+        "OAI.KLInvariance.FrobeniusDuality.restrictionEquiv_apply",
+        "OAI.KLInvariance.FrobeniusDuality.restrictPairing",
+        "OAI.KLInvariance.FrobeniusDuality.restrictPairing_apply"
       ],
       "paper_locations": []
     },
