@@ -700,10 +700,13 @@
         "sp",
         "p"
       ],
-      "output": "Conditional character recognition and local-degree statements, with their stated hypotheses.",
+      "output": "Full-kernel freeness, the local intersection matrix and its strict diagonal-degree implication, and KL endpoint substitution under the stated character equality.",
       "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.CostalkFreeObligation",
+        "OAI.KLInvariance.BruhatGraph.localIntersection",
+        "OAI.KLInvariance.BruhatGraph.localIntersection_diagonal_strict_degree",
         "OAI.KLInvariance.BruhatGraph.StalkCharacterObligation",
-        "OAI.KLInvariance.BruhatGraph.localIntersection_diagonal_strict_degree"
+        "OAI.KLInvariance.BruhatGraph.normalized_fullKernel_of_duality_character"
       ]
     }
   ],
@@ -1080,6 +1083,20 @@
         "OAI.KLInvariance.BruhatGraph.normalized_emptyKernel_scaledStalk",
         "OAI.KLInvariance.BruhatGraph.normalized_fullKernel_scaledStalk",
         "OAI.KLInvariance.BruhatGraph.actual_endpoint_of_rTilde_eq"
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "scope": "Local intersection and character-identification conditions",
+      "change": "Expanded the S10 interfaces into the full-kernel freeness condition, local intersection matrix and properties, the nonzero-diagonal degree implication, and conditional KL endpoint substitutions. The generic positive-ideal coordinate lemma belongs with the graded algebra.",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.CostalkFreeObligation",
+        "OAI.KLInvariance.BruhatGraph.localIntersection",
+        "OAI.KLInvariance.BruhatGraph.localIntersection_diagonal_strict_degree",
+        "OAI.KLInvariance.BruhatGraph.StalkCharacterObligation",
+        "OAI.KLInvariance.BruhatGraph.normalized_fullKernel_of_duality_character",
+        "OAI.KLInvariance.Graded.local_diagonal_strict_degree",
+        "OAI.KLInvariance.BruhatGraph.costalkEquivDual_symmetric"
       ]
     }
   ]

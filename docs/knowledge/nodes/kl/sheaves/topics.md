@@ -410,12 +410,51 @@ The polynomial coefficient factors cancel, and the full-kernel power is
 
 These are the actual-character vectors used in the schedule comparison. The scaled reciprocity identity identifies their relation to the normalized R matrix.
 
-## Local intersection and character identification
+## Local intersection maps and positive-ideal coordinates
 
-The boundary pairing also defines a local intersection map from the dual of a stalk into that stalk. Its image is the full outgoing kernel. The local degree theorem applies to a specified nonzero diagonal coefficient.
+For the actual boundary sheaf, write \(M=B(b)^x\), \(K_x=\ker\partial_x\), and \(\kappa_x:K_x\to M^*\) for the stalk–costalk isomorphism. The local intersection map is
+\[
+I_x:M^*\longrightarrow M,\qquad I_x=\iota_x\kappa_x^{-1}.
+\]
+Its image is exactly \(K_x\): one inclusion comes from \(\iota_x\), and any \(k\in K_x\) is the image of \(\kappa_x(k)\).
 
-The actual boundary character \(C\) satisfies the reciprocal identity developed here. The canonical family \(P\) is characterized by reciprocity together with its strict degree bound. Their identification is the separate condition in [[node:kl.duality.character_identity_condition]]. The invariance argument uses the proved identity for \(C\) to establish R-invariance, then applies the canonical characterization to \(P\).
+The symmetry statement is an identity of coefficient-valued pairings,
+\(\lambda(I_x\mu)=\mu(I_x\lambda)\). It follows by multiplying the kernel pairing by the incoming label product \(\beta_x\), expressing that product as the pairing of two supported global sections, using global symmetry, and cancelling the nonzero \(\beta_x\).
 
+Let \(m_i\) be a homogeneous stalk basis of degree \(d_i\), with dual basis \(\lambda_i\). If \(d=\ell(b)-\ell(x)\), inverse duality gives
+\(I_x\lambda_j\in M_{d-d_j}\), so the matrix entry
+\[
+a_{ij}=\lambda_i(I_x\lambda_j)
+\]
+lies in \(A_{d-d_i-d_j}\). At \(x<b\), boundary minimality puts the entire image in \(A_+M\), hence every \(a_{ij}\) belongs to \(A_+\).
+
+A specified nonzero diagonal entry \(a_{ii}\) therefore has strictly positive degree: negative graded pieces vanish, and augmentation kills \(A_+\) while fixing degree-zero elements. Thus
+\[
+d-2d_i>0.
+\]
+The [[node:kl.algebra.local_diagonal_bound|positive-ideal diagonal-degree theorem]] develops this argument for a general graded algebra, and the [[node:kl.detail.local_diagonal_degree|local diagonal-degree theorem]] applies it to the actual boundary stalk.
+
+## Boundary conditions and KL endpoint substitution
+
+The section-duality structure packages a perfect pairing balanced under the cut operators. For the actual boundary family, the constructed symmetric pairing supplies that structure. Its stalk–costalk isomorphisms prove the full outgoing-kernel freeness condition, because the dual of a finite free stalk is finite free.
+
+The stalk-character identification condition is the polynomial equality
+\[
+C_x^{[u,b]}(q)=P_{x,b}(q)\qquad(x\in[u,b]).
+\]
+Here \(C\) counts homogeneous basis degrees of the chosen boundary stalks, while \(P\) is the canonical family defined by its R-recurrence and strict degree normalization. Boundary uniqueness makes \(C\) independent of the chosen normalized model, and upper restriction identifies it with the corresponding character on \([1,b]\).
+
+Under the equality at \(x\), the [[node:kl.duality.character_endpoint_substitution|KL endpoint substitution theorem]] gives
+\[
+D_x(t,\varnothing)=t^{\ell(x)-\ell(b)}P_{x,b}(t^2)
+\]
+for \(0<t<1\). On \([1,b]\), a section duality with shift \(\ell(b)\) also gives
+\[
+D_x(t,U_x)=t^{\ell(b)-\ell(x)}P_{x,b}(t^{-2}).
+\]
+The first identity substitutes the character into the free-stalk Hilbert formula; the second uses the full-kernel Hilbert formula and the same substitution.
+
+The OpenAI notes obtain the equality of \(C\) and \(P\) through their cited character theorem and grading conversion. The Lean comparison route uses the proved reciprocity of \(C\) at its endpoints, then treats canonical \(P\) through polynomial rigidity. The character-identification condition and the KL-labelled endpoint lemmas record the additional identification explicitly.
 
 ## Definitions and proofs by construction
 
@@ -501,6 +540,7 @@ The actual boundary character \(C\) satisfies the reciprocal identity developed 
 
 - [[node:kl.detail.section_duality]]
 - [[node:kl.sheaves.word_section_pairing]]
+- [[node:kl.sheaves.costalk_pairing_symmetry]]
 - [[node:kl.notes.supported_pairings]]
 - [[node:kl.sheaves.cut_balance]]
 - [[node:kl.sheaves.supported_stalk_duality]]
@@ -537,6 +577,11 @@ The actual boundary character \(C\) satisfies the reciprocal identity developed 
 
 ### Related character-identification conditions
 
-- [[node:kl.duality.character_identity_condition]]
+- [[node:kl.detail.section_duality]]
+- [[node:kl.duality.costalk_freeness_condition]]
 - [[node:kl.detail.local_intersection]]
+- [[node:kl.duality.local_intersection_properties]]
+- [[node:kl.algebra.local_diagonal_bound]]
 - [[node:kl.detail.local_diagonal_degree]]
+- [[node:kl.duality.character_identity_condition]]
+- [[node:kl.duality.character_endpoint_substitution]]

@@ -238,6 +238,16 @@ The kernel is a graded projective summand and therefore graded free under the co
 
 For \(T=A/(\alpha)\), \(P=A\), and \(F=A\oplus A(2)\), with both covers given by the first coordinate modulo \(\alpha\), the remainder is \(A(2)\). This is the algebraic step behind the sheaf example \(O_y\oplus O_x(2)\).
 
+## Positive-ideal matrices and homogeneous degree
+
+Let \(M\) have a homogeneous basis \(m_i\) of degrees \(d_i\), with coordinate functionals \(\lambda_i\). Suppose \(Q:M^*\to M\) maps \(\lambda_j\) into degree \(D-d_j\) and has image in \(A_+M\). Then
+\[
+a_{ij}=\lambda_i(Q\lambda_j)\in A_{D-d_i-d_j}\cap A_+.
+\]
+The degree comes from applying a functional of degree \(-d_i\). Membership in \(A_+\) follows because an \(A\)-linear functional sends a sum of positive-ideal multiples to an element of that ideal.
+
+If \(a_{ii}\ne0\), its degree is positive. Indeed negative pieces vanish, and a degree-zero element in \(A_+=\ker\epsilon\) equals its own zero augmentation. Therefore \(2d_i<D\). This is the [[node:kl.algebra.local_diagonal_bound|positive-ideal diagonal-degree theorem]]. The local intersection map of a boundary stalk supplies its geometric application: boundary minimality gives the image containment and inverse duality gives \(D=\ell(b)-\ell(x)\).
+
 ## Degreewise exactness and scalar quotients
 
 Let \(f:M\to N\) be a surjective degree-zero map, with kernel \(K\). Homogeneous preimages make
@@ -402,6 +412,7 @@ This [[node:kl.algebra.hilbert_numerators|numerator theorem]] is the bridge from
 - [[node:kl.algebra.identity_mod_positive]]
 - [[node:kl.notes.minimal_cover_existence]]
 - [[node:kl.algebra.dual_basis_degrees]]
+- [[node:kl.algebra.local_diagonal_bound]]
 - [[node:kl.algebra.homogeneous_basis]]
 - [[node:kl.notes.graded_projective_free]]
 - [[node:kl.notes.graded_nakayama]]

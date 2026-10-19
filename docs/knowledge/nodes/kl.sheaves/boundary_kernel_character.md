@@ -17,6 +17,7 @@ lean:
   modules:
   - CharacterReciprocity
   - EdgeLocalization
+  - PositiveTransfer
   declarations:
   - OAI.KLInvariance.BruhatGraph.boundaryFreeSheaf
   - OAI.KLInvariance.BruhatGraph.boundaryPerfectPairing
@@ -26,6 +27,7 @@ lean:
   - OAI.KLInvariance.BruhatGraph.costalkCharacter_reflect
   - OAI.KLInvariance.BruhatGraph.stalkBasis_degree_le
   - OAI.KLInvariance.BruhatGraph.stalkCharacter_natDegree_le
+  - OAI.KLInvariance.BruhatGraph.costalkFreeObligation
 source:
   spans:
   - artifact: openai-kl-source
@@ -60,6 +62,10 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.EdgeLocalization:364
     format: lean-location
     note: OAI.KLInvariance.BruhatGraph.stalkCharacter_natDegree_le
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.PositiveTransfer:129
+    format: lean-location
+    note: OAI.KLInvariance.BruhatGraph.costalkFreeObligation
 verification:
   statement: accepted
   proof: accepted
@@ -118,7 +124,7 @@ Stalk–costalk duality yields
 \[
 \Phi_x:(B(b)^x)^*\xrightarrow{\sim}K_x(B(b)).
 \]
-The dual of a finite free stalk has its finite dual basis, so the kernel is finite free. This supplies boundaryKernelFree and makes its character well defined.
+The dual of a finite free stalk has its finite dual basis, so the kernel is finite free. This supplies boundaryKernelFree and makes its character well defined. Quantifying over the interval vertices gives the full outgoing-kernel freeness condition. This is the proposition proved by costalkFreeObligation.
 
 For a homogeneous functional of degree \(r\), the inverse-duality degree theorem gives
 \[
@@ -170,3 +176,5 @@ The local source declarations below give the construction and proof.
 `OAI.KLInvariance.BruhatGraph.stalkBasis_degree_le`: [CharacterReciprocity.lean:1815](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L1815).
 
 `OAI.KLInvariance.BruhatGraph.stalkCharacter_natDegree_le`: [EdgeLocalization.lean:364](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean#L364).
+
+`OAI.KLInvariance.BruhatGraph.costalkFreeObligation`: [PositiveTransfer.lean:129](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean#L129).

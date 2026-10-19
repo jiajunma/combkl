@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 73068,
-  "theorem_walkthroughs": 255,
+  "revised_proof_words": 74136,
+  "theorem_walkthroughs": 259,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -259,6 +259,19 @@
       "revised_proof_words": 198,
       "proof_sha256": "9b09d63c43413182344ab70b71f190a5d2080c4b6f39144f946dc953d8b94b43",
       "review": "Read the actual root-quotient kernel, symmetric generator injectivity/primality, divisibility iff line membership and reducedRoot_prime. Explained the zero-vector divisibility case and the quotient-space proof."
+    },
+    {
+      "node": "kl.algebra.local_diagonal_bound",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.homogeneous_positive_nonzero",
+        "OAI.KLInvariance.Graded.dual_mem_ideal",
+        "OAI.KLInvariance.Graded.local_diagonal_strict_degree"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 262,
+      "proof_sha256": "80bd16197ea3347c5bc77baa6aebeb1d6bf682a5a27ab43e7c3b5f00ad69c2d5",
+      "review": "Read all three generic EdgeLocalization lemmas. Kept integer basis degrees, a nonnegative coefficient grading, the finite homogeneous basis and the exact range/nonzero hypotheses; no domain, symmetry or polynomial-ring hypothesis is added."
     },
     {
       "node": "kl.algebra.minimal_cover_maps",
@@ -976,9 +989,9 @@
       ],
       "proof_steps": 4,
       "previous_proof_words": 89,
-      "revised_proof_words": 215,
-      "proof_sha256": "77dad576e04e6da6e39d5607efd847dcc88886e087131eb3741abfc089d0bc47",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 198,
+      "proof_sha256": "8cc019a9a185686bbd6b4868de92efac2d656ec6bb1b8493193548755d71a312",
+      "review": "Read the exact actual-stalk theorem and its generic algebra invocation. Made the finite-generator setting, actual sheaf, proper vertex, homogeneous nonnegative basis and single-index nonzero hypothesis explicit; replaced the former scope-warning paragraph by the natural/integer rank conversion."
     },
     {
       "node": "kl.detail.model_decomposition",
@@ -1401,12 +1414,40 @@
         "OAI.KLInvariance.BruhatGraph.costalkCharacter",
         "OAI.KLInvariance.BruhatGraph.costalkCharacter_reflect",
         "OAI.KLInvariance.BruhatGraph.stalkBasis_degree_le",
-        "OAI.KLInvariance.BruhatGraph.stalkCharacter_natDegree_le"
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_natDegree_le",
+        "OAI.KLInvariance.BruhatGraph.costalkFreeObligation"
       ],
       "proof_steps": 4,
-      "revised_proof_words": 257,
-      "proof_sha256": "cce32cd97d5d85909e286081a47bb351f896463ab15f3bde2ff1f4ceec4a3cb1",
-      "review": "Read the actual boundary FreeSheaf/perfect-pairing/duality packages, kernel character and basis-degree/natDegree bounds. Kept the exact nonnegative degree bound and full outgoing-kernel meaning."
+      "revised_proof_words": 275,
+      "proof_sha256": "c14262513fee9e77edcdc9331fdc74598ae645109ba6b872822f27bea845c2c4",
+      "review": "Added the exact costalkFreeObligation declaration and quantified consequence of the already reviewed stalk-dual equivalences; the full-kernel degree and character proof remains unchanged."
+    },
+    {
+      "node": "kl.duality.character_endpoint_substitution",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.normalized_emptyKernel_of_character",
+        "OAI.KLInvariance.BruhatGraph.normalized_fullKernel_of_duality_character"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 197,
+      "proof_sha256": "c25f0025248630cc2a3538e07c409b91474aa499ecd18bf80527dff8712148f0",
+      "review": "Read both PositiveTransfer endpoint lemmas and their surrounding parameters. Preserved arbitrary bottom for the empty endpoint, lower-interval/degree-shift duality for the full endpoint, pointwise character equality and the positive real parameter range."
+    },
+    {
+      "node": "kl.duality.local_intersection_properties",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.localIntersection_injective",
+        "OAI.KLInvariance.BruhatGraph.localIntersection_range",
+        "OAI.KLInvariance.BruhatGraph.localIntersection_minimal",
+        "OAI.KLInvariance.BruhatGraph.localIntersection_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.localIntersection_symmetric"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 315,
+      "proof_sha256": "9115145018427135e75cdf914f9153a22db0dfa8ad2ec1a6a802376111e390c7",
+      "review": "Read all five actual localIntersection properties and kernelMinimal_iff. Expanded both image containments, the assignment-to-kernel conversion, the incoming-edge shift, inverse symmetry and the matrix-coordinate calculation."
     },
     {
       "node": "kl.duality.lower_character_convolution",
@@ -2555,6 +2596,19 @@
       "review": "Compared dualToSupport_homogeneous and FreeSheaf.costalkEquivDual_inverse_homogeneous, including finite section grading, the exact incoming-product coordinate equation, and torsion-free scalar cancellation."
     },
     {
+      "node": "kl.sheaves.costalk_pairing_symmetry",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.costalkEquivDual_pairing",
+        "OAI.KLInvariance.BruhatGraph.costalkEquivDual_symmetric",
+        "OAI.KLInvariance.BruhatGraph.costalkEquivDual_inverse_symmetric"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 225,
+      "proof_sha256": "c39fd64ee4f9bd38fa4d584bf805e50daf9687ee86bf943be95aa694b60c2720",
+      "review": "Read the pairing-evaluation identity, the incoming-product calculation and cancellation, and the inverse-functional substitution in PositiveTransfer. Preserved the boundary-sheaf and symmetric-section-duality hypotheses."
+    },
+    {
       "node": "kl.sheaves.costalk_support",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2854,12 +2908,14 @@
       "source_declarations": [
         "OAI.KLInvariance.BruhatGraph.stalkCharacter_upperRestriction",
         "OAI.KLInvariance.BruhatGraph.restrictBoundary_kernel",
-        "OAI.KLInvariance.BruhatGraph.intervalBoundary_upper_kernel"
+        "OAI.KLInvariance.BruhatGraph.intervalBoundary_upper_kernel",
+        "OAI.KLInvariance.BruhatGraph.boundarySheaf_gradedIso",
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_eq_character"
       ],
       "proof_steps": 3,
-      "revised_proof_words": 218,
-      "proof_sha256": "bddbf93212b68c9b058aa82b3c3a5d1a396fd607678f66ea95cbea157ec0e846",
-      "review": "Read restrictBoundary_kernel and intervalBoundary_upper_kernel. Compared the same selected equations on the same graded stalk, and used uniqueness only for independently chosen boundary objects."
+      "revised_proof_words": 286,
+      "proof_sha256": "1762dc233b124c724e154fb80288535c2e99641ff314f21115603f5fa156fb93",
+      "review": "Re-read boundarySheaf_gradedIso and stalkCharacter_eq_character and expanded basis transport in the existing character-restriction proof. The selected-kernel equation remains the same outgoing-complete restriction argument."
     },
     {
       "node": "kl.sheaves.word_adjoint_descent",

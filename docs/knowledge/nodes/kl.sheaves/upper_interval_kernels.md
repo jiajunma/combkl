@@ -22,6 +22,8 @@ lean:
   - OAI.KLInvariance.BruhatGraph.stalkCharacter_upperRestriction
   - OAI.KLInvariance.BruhatGraph.restrictBoundary_kernel
   - OAI.KLInvariance.BruhatGraph.intervalBoundary_upper_kernel
+  - OAI.KLInvariance.BruhatGraph.boundarySheaf_gradedIso
+  - OAI.KLInvariance.BruhatGraph.stalkCharacter_eq_character
 source:
   spans:
   - artifact: openai-kl-source
@@ -36,6 +38,14 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.SimultaneousInvariance:85
     format: lean-location
     note: OAI.KLInvariance.BruhatGraph.intervalBoundary_upper_kernel
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.EdgeLocalization:264
+    format: lean-location
+    note: OAI.KLInvariance.BruhatGraph.boundarySheaf_gradedIso
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.EdgeLocalization:273
+    format: lean-location
+    note: OAI.KLInvariance.BruhatGraph.stalkCharacter_eq_character
 verification:
   statement: accepted
   proof: accepted
@@ -83,7 +93,9 @@ Their gradings are also equal, being induced from the same stalk grading.
 
 The pullback construction makes \(\mathcal I_{u,b}\) a normalized boundary sheaf on \([u,b]\). By [[node:kl.detail.boundary_uniqueness|boundary uniqueness]] it is graded-isomorphic to the independently chosen normalized boundary sheaf there.
 
-The stalk isomorphism preserves homogeneous basis degrees, so the two stalk characters agree. Since \(\mathcal I_{u,b}^{\,z}=B(b)^z\), this is the asserted character equality.
+More generally, let \(C\) be any normalized boundary sheaf on \([u,b]\). Boundary uniqueness gives a graded sheaf isomorphism \(j:B_{u,b}\to C\), where \(B_{u,b}\) is the chosen model used in the definition of stalkCharacter. If \((m_i)\) is a homogeneous basis of \(B_{u,b}^z\), the vectors \(j_z(m_i)\) form a basis of \(C^z\) with the same degrees: invertibility gives a basis, and the graded stalk map preserves each homogeneous piece. The two basis-degree polynomials are therefore equal.
+
+Applying this to \(C=\mathcal I_{u,b}\) gives the asserted equality, since \(\mathcal I_{u,b}^{\,z}=B(b)^z\). This is stalkCharacter_eq_character followed by stalkCharacter_upperRestriction.
 
 The kernel equality in Step 2 similarly transports any established freeness property of the selected submodule. This is the restriction step used when an induction hypothesis concerns a smaller upper interval.
 
@@ -98,3 +110,7 @@ The local source declarations below give the constructions and proofs.
 `OAI.KLInvariance.BruhatGraph.restrictBoundary_kernel`: [PositiveTransfer.lean:776](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean#L776).
 
 `OAI.KLInvariance.BruhatGraph.intervalBoundary_upper_kernel`: [SimultaneousInvariance.lean:85](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SimultaneousInvariance.lean#L85).
+
+`OAI.KLInvariance.BruhatGraph.boundarySheaf_gradedIso`: [EdgeLocalization.lean:264](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean#L264).
+
+`OAI.KLInvariance.BruhatGraph.stalkCharacter_eq_character`: [EdgeLocalization.lean:273](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean#L273).

@@ -1619,17 +1619,6 @@
       "pending": []
     },
     {
-      "node": "kl.sheaves.upper_interval_kernels",
-      "file": "docs/knowledge/nodes/kl.sheaves/upper_interval_kernels.md",
-      "source_declarations": [
-        "OAI.KLInvariance.BruhatGraph.stalkCharacter_upperRestriction",
-        "OAI.KLInvariance.BruhatGraph.restrictBoundary_kernel",
-        "OAI.KLInvariance.BruhatGraph.intervalBoundary_upper_kernel"
-      ],
-      "review": "Read restrictBoundary_kernel and intervalBoundary_upper_kernel. Compared the same selected equations on the same graded stalk, and used uniqueness only for independently chosen boundary objects.",
-      "pending": []
-    },
-    {
       "node": "kl.definitions.hecke_operators",
       "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/hecke_operators.md",
       "source_declarations": [
@@ -4076,22 +4065,6 @@
       "pending": []
     },
     {
-      "node": "kl.duality.boundary_kernel_character",
-      "file": "docs/knowledge/nodes/kl.sheaves/boundary_kernel_character.md",
-      "source_declarations": [
-        "OAI.KLInvariance.BruhatGraph.boundaryFreeSheaf",
-        "OAI.KLInvariance.BruhatGraph.boundaryPerfectPairing",
-        "OAI.KLInvariance.BruhatGraph.boundaryFreeDuality",
-        "OAI.KLInvariance.BruhatGraph.boundaryKernelFree",
-        "OAI.KLInvariance.BruhatGraph.costalkCharacter",
-        "OAI.KLInvariance.BruhatGraph.costalkCharacter_reflect",
-        "OAI.KLInvariance.BruhatGraph.stalkBasis_degree_le",
-        "OAI.KLInvariance.BruhatGraph.stalkCharacter_natDegree_le"
-      ],
-      "review": "Read the actual boundary FreeSheaf/perfect-pairing/duality packages, kernel character and basis-degree/natDegree bounds. Kept the exact nonnegative degree bound and full outgoing-kernel meaning.",
-      "pending": []
-    },
-    {
       "node": "kl.detail.word_character_reciprocity",
       "file": "docs/knowledge/nodes/kl.sheaves/word_character_reciprocity.md",
       "source_declarations": [
@@ -4284,6 +4257,120 @@
       "pending": [
         "Complete the surrounding edge/schedule/path argument in the I-branch review."
       ]
+    },
+    {
+      "node": "kl.sheaves.costalk_pairing_symmetry",
+      "file": "docs/knowledge/nodes/kl.sheaves/costalk_pairing_symmetry.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.costalkEquivDual_pairing",
+        "OAI.KLInvariance.BruhatGraph.costalkEquivDual_symmetric",
+        "OAI.KLInvariance.BruhatGraph.costalkEquivDual_inverse_symmetric"
+      ],
+      "review": "Read the pairing-evaluation identity, the incoming-product calculation and cancellation, and the inverse-functional substitution in PositiveTransfer. Preserved the boundary-sheaf and symmetric-section-duality hypotheses.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.local_diagonal_bound",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/local_diagonal_bound.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.homogeneous_positive_nonzero",
+        "OAI.KLInvariance.Graded.dual_mem_ideal",
+        "OAI.KLInvariance.Graded.local_diagonal_strict_degree"
+      ],
+      "review": "Read all three generic EdgeLocalization lemmas. Kept integer basis degrees, a nonnegative coefficient grading, the finite homogeneous basis and the exact range/nonzero hypotheses; no domain, symmetry or polynomial-ring hypothesis is added.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.local_intersection",
+      "file": "docs/knowledge/nodes/kl.sheaves/local_intersection.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.ActualBoundary",
+        "OAI.KLInvariance.BruhatGraph.actualSymmetricPairing",
+        "OAI.KLInvariance.BruhatGraph.actualSectionDuality",
+        "OAI.KLInvariance.BruhatGraph.localIntersection"
+      ],
+      "review": "Separated the actual construction and its matrix notation from the property proofs. Read ActualBoundary, the chosen symmetric pairing, actualSectionDuality and localIntersection; defined the outgoing kernel and both dual-function arguments explicitly.",
+      "pending": []
+    },
+    {
+      "node": "kl.duality.local_intersection_properties",
+      "file": "docs/knowledge/nodes/kl.sheaves/local_intersection_properties.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.localIntersection_injective",
+        "OAI.KLInvariance.BruhatGraph.localIntersection_range",
+        "OAI.KLInvariance.BruhatGraph.localIntersection_minimal",
+        "OAI.KLInvariance.BruhatGraph.localIntersection_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.localIntersection_symmetric"
+      ],
+      "review": "Read all five actual localIntersection properties and kernelMinimal_iff. Expanded both image containments, the assignment-to-kernel conversion, the incoming-edge shift, inverse symmetry and the matrix-coordinate calculation.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.local_diagonal_degree",
+      "file": "docs/knowledge/nodes/kl.sheaves/local_diagonal_degree.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.localIntersection_diagonal_strict_degree"
+      ],
+      "review": "Read the exact actual-stalk theorem and its generic algebra invocation. Made the finite-generator setting, actual sheaf, proper vertex, homogeneous nonnegative basis and single-index nonzero hypothesis explicit; replaced the former scope-warning paragraph by the natural/integer rank conversion.",
+      "pending": []
+    },
+    {
+      "node": "kl.duality.costalk_freeness_condition",
+      "file": "docs/knowledge/nodes/kl.sheaves/costalk_freeness_condition.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.CostalkFreeObligation"
+      ],
+      "review": "Read the CostalkFreeObligation definition with its interval/basis parameters. Explained the exact full outgoing map and finite-generation consequence; connected the established lower-interval duality and upper-restriction transport through existing proofs.",
+      "pending": []
+    },
+    {
+      "node": "kl.duality.character_identity_condition",
+      "file": "docs/knowledge/nodes/kl.sheaves/character_identity_condition.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.StalkCharacterObligation"
+      ],
+      "review": "Read the complete quantified Prop definition and its chosen boundarySheaf/stalkCharacter parameters. Explained polynomial rather than single-evaluation equality, basis and boundary-model independence, top normalization and its exact endpoint-substitution role.",
+      "pending": []
+    },
+    {
+      "node": "kl.duality.character_endpoint_substitution",
+      "file": "docs/knowledge/nodes/kl.sheaves/character_endpoint_substitution.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.normalized_emptyKernel_of_character",
+        "OAI.KLInvariance.BruhatGraph.normalized_fullKernel_of_duality_character"
+      ],
+      "review": "Read both PositiveTransfer endpoint lemmas and their surrounding parameters. Preserved arbitrary bottom for the empty endpoint, lower-interval/degree-shift duality for the full endpoint, pointwise character equality and the positive real parameter range.",
+      "pending": []
+    },
+    {
+      "node": "kl.duality.boundary_kernel_character",
+      "file": "docs/knowledge/nodes/kl.sheaves/boundary_kernel_character.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.boundaryFreeSheaf",
+        "OAI.KLInvariance.BruhatGraph.boundaryPerfectPairing",
+        "OAI.KLInvariance.BruhatGraph.boundaryFreeDuality",
+        "OAI.KLInvariance.BruhatGraph.boundaryKernelFree",
+        "OAI.KLInvariance.BruhatGraph.costalkCharacter",
+        "OAI.KLInvariance.BruhatGraph.costalkCharacter_reflect",
+        "OAI.KLInvariance.BruhatGraph.stalkBasis_degree_le",
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_natDegree_le",
+        "OAI.KLInvariance.BruhatGraph.costalkFreeObligation"
+      ],
+      "review": "Added the exact costalkFreeObligation declaration and quantified consequence of the already reviewed stalk-dual equivalences; the full-kernel degree and character proof remains unchanged.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.upper_interval_kernels",
+      "file": "docs/knowledge/nodes/kl.sheaves/upper_interval_kernels.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_upperRestriction",
+        "OAI.KLInvariance.BruhatGraph.restrictBoundary_kernel",
+        "OAI.KLInvariance.BruhatGraph.intervalBoundary_upper_kernel",
+        "OAI.KLInvariance.BruhatGraph.boundarySheaf_gradedIso",
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_eq_character"
+      ],
+      "review": "Re-read boundarySheaf_gradedIso and stalkCharacter_eq_character and expanded basis transport in the existing character-restriction proof. The selected-kernel equation remains the same outgoing-complete restriction argument.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -4584,7 +4671,8 @@
         "kl.notes.minimal_cover_existence",
         "kl.sheaves.minimal_cover",
         "kl.algebra.minimal_cover_remainder",
-        "kl.algebra.projective_presentations"
+        "kl.algebra.projective_presentations",
+        "kl.algebra.local_diagonal_bound"
       ],
       "pending": [],
       "review": "Reviewed basis data, graded Nakayama, minimal covers and their construction, homogeneous lifts, uniqueness of covers, and the connected-domain projective-to-free proof."
@@ -4911,7 +4999,8 @@
         "kl.sheaves.pairing_transport",
         "kl.sheaves.supported_stalk_duality",
         "kl.sheaves.word_adjoint_descent",
-        "kl.sheaves.word_section_pairing"
+        "kl.sheaves.word_section_pairing",
+        "kl.sheaves.costalk_pairing_symmetry"
       ],
       "pending": [],
       "review": "Reviewed section-duality structures, adjoint identities/degree/support/kernel descent, image-section duality, costalk degree, primitive/top recognition, the specified canonical comparison, and the final symmetric boundary pairing with coefficient transport."
@@ -4943,8 +5032,17 @@
     {
       "code": "S10",
       "title": "Related character-identification conditions",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "exposition_reviewed",
+      "completion_evidence": [
+        "kl.detail.local_intersection",
+        "kl.duality.local_intersection_properties",
+        "kl.detail.local_diagonal_degree",
+        "kl.duality.costalk_freeness_condition",
+        "kl.duality.character_identity_condition",
+        "kl.duality.character_endpoint_substitution"
+      ],
+      "pending": [],
+      "review": "Reviewed the quantified full-kernel and character conditions, the local intersection construction and matrix, image/minimality/homogeneity/symmetry proofs, the generic positive-ideal diagonal degree argument, its actual-stalk specialization, and the KL endpoint substitutions with exact duality and character hypotheses. Section-duality data and their construction are developed in S8."
     },
     {
       "code": "O1",
@@ -5132,7 +5230,7 @@
     }
   ],
   "next_steps": [
-    "Expand the remaining local-intersection and character-identification conditions in S10, preserving their exact hypotheses.",
+    "Complete the remaining sheaf operations: tensor base change, constraint maps and morphism extension.",
     "Complete the remaining Coxeter/parabolic, root-space and sheaf-operation exposition.",
     "Expand adapted orders, chamber changes, dihedral interval transport, schedules and the path-polynomial proof.",
     "Complete localization, local image comparison, edge inequalities and the simultaneous invariance induction.",
@@ -5549,7 +5647,12 @@
       "kl.duality.lower_character_convolution": "S9",
       "kl.duality.scaled_stalk": "S9",
       "kl.duality.scaled_reciprocity": "S9",
-      "kl.duality.normalized_character_endpoints": "S9"
+      "kl.duality.normalized_character_endpoints": "S9",
+      "kl.sheaves.costalk_pairing_symmetry": "S8",
+      "kl.algebra.local_diagonal_bound": "A5",
+      "kl.duality.local_intersection_properties": "S10",
+      "kl.duality.costalk_freeness_condition": "S10",
+      "kl.duality.character_endpoint_substitution": "S10"
     },
     "moved_nodes": [
       {
@@ -6383,7 +6486,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 398
+    "current_node_count": 403
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -6407,7 +6510,8 @@
     "Expanded the W6 coordinate-image foundation and full conditional projectivity step: upper reflected sets, the two descended tail maps, patched-tail compatibility, common-kernel coordinate equivalence, stable-set tensor endomorphisms and two-stage split sequences. Added general projective image/kernel splittings and explained projectivity of a scalar twist. Corrected the word-flabbiness assembly to retain its shorter-word lifting hypothesis.",
     "Completed the W6 prime-class and global lifting route: root-line isometries, prime character classes, stable diagonal selectors and finite class-lift assembly, repeated-stalk subexpression presentations, denominator removal and unconditional upper-image induction. Completed S7 with the ambient interval extension, full-section isomorphism, polynomial generation/flabbiness transport and normalized boundary summand.",
     "Completed W7: separated coefficient variables, the formal character variable and real evaluations; expanded the two head kernel maps and their grading, degreewise exact sequences, Hilbert numerator uniqueness/shift, and character base values. Rewrote the Hecke-word equality as the exact source induction, and linked the source/paper shift conventions. Added the inverse-degree piece isomorphisms to the general component theorem.",
-    "Completed S9: added the homogeneous dual-character reflection, reduced-word section pairing, both actual kernel characters, lower-character convolution, scaled actual character and reciprocity, and unconditional normalized endpoints. Rewrote word R-convolution and actual-character cancellation with explicit hypotheses, degree bounds, finite sums and parameter substitutions."
+    "Completed S9: added the homogeneous dual-character reflection, reduced-word section pairing, both actual kernel characters, lower-character convolution, scaled actual character and reciprocity, and unconditional normalized endpoints. Rewrote word R-convolution and actual-character cancellation with explicit hypotheses, degree bounds, finite sums and parameter substitutions.",
+    "Completed S10: expanded the local intersection map into construction, properties and the exact strict diagonal-degree implication; exposed the generic positive-ideal coordinate argument and supported-section symmetry calculation. Defined full outgoing-kernel freeness and expanded the character-identification condition and both KL endpoint substitutions. Added explicit boundary-model character transport to the upper-restriction proof."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -6523,6 +6627,24 @@
       ],
       "target": "kl.duality.scaled_stalk",
       "review": "Scoped aliases resolve actual-character vectors to scaledStalk. The definition depends on the actual character, and the normalized-kernel definition depends on the Hilbert value; neither requires canonical P."
+    },
+    {
+      "term": "full outgoing-kernel freeness condition",
+      "topics": [
+        "kl.sheaves",
+        "kl.invariance"
+      ],
+      "target": "kl.duality.costalk_freeness_condition",
+      "review": "The scoped alias resolves the quantified freeness proposition for full outgoing restrictions, with the established lower-interval theorem linked separately."
+    },
+    {
+      "term": "stalk-character identification condition",
+      "topics": [
+        "kl.sheaves",
+        "kl.invariance"
+      ],
+      "target": "kl.duality.character_identity_condition",
+      "review": "The definition records equality in integer polynomials at every interval vertex; its generated aliases preserve that exact condition."
     }
   ],
   "corrections": [
@@ -6542,19 +6664,19 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-19T13:21:27.500790+00:00",
+    "created_at": "2026-10-19T13:36:32.870691+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 398,
-    "html_pages_checked": 662,
-    "generated_definition_links_checked": 5527,
+    "node_count": 403,
+    "html_pages_checked": 668,
+    "generated_definition_links_checked": 5673,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks dual-character reflection, actual kernel characters, R-convolution and cancellation, square-parameter reciprocity and unconditional endpoint identities. Documentation checks only.",
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks local intersection construction, range/minimality/degree/symmetry, generic positive-ideal coordinates, full-kernel freeness and character identification, and conditional KL endpoint substitutions. Documentation checks only.",
     "focused_page_review": {
-      "entries": 19,
-      "source_anchors": 96,
-      "scope": "Read theorem statements and proof HTML payloads, checked local notation and direct source anchors, inspected the generated actual-character definition destinations and chapter reading-list reachability."
+      "entries": 10,
+      "source_anchors": 34,
+      "scope": "Read saved statements and detailed proofs, checked source anchors and topic-guide reachability, and verified that the lower-case proof name costalkFreeObligation is not linked to the uppercase condition definition by case-folded aliases."
     }
   },
   "structure_coverage_scan": {
@@ -6767,6 +6889,27 @@
         "kl.duality.normalized_character_endpoints"
       ],
       "review": "The scaled vector uses the actual integer boundary character, evaluated at the square parameter. Both endpoint formulas are unconditional TerminalKernels lemmas; upper restriction preserves every outgoing edge condition."
+    },
+    {
+      "entries": [
+        "kl.algebra.local_diagonal_bound",
+        "kl.detail.local_diagonal_degree"
+      ],
+      "review": "The generic matrix argument uses integer basis degrees and a nonnegative coefficient algebra. The actual-stalk theorem additionally fixes a proper vertex, a nonnegative homogeneous basis and one specified nonzero diagonal coefficient."
+    },
+    {
+      "entries": [
+        "kl.sheaves.costalk_pairing_symmetry",
+        "kl.duality.local_intersection_properties"
+      ],
+      "review": "Symmetry descends through the incoming label product: multiply the kernel pairing, use the two supported global sections, apply global symmetry and cancel the nonzero scalar."
+    },
+    {
+      "entries": [
+        "kl.duality.character_identity_condition",
+        "kl.duality.character_endpoint_substitution"
+      ],
+      "review": "StalkCharacterObligation quantifies polynomial equalities for the chosen normalized boundary sheaf on its interval. Boundary uniqueness transports the character to other models. The empty KL endpoint works on an arbitrary interval; the full endpoint explicitly assumes lower-interval duality with shift length(b)."
     }
   ],
   "relationship_map_revision": {
@@ -6774,6 +6917,6 @@
     "edge_count": 92,
     "route": "Top splitting and primitive recognition feed the boundary-pairing route; full model decomposition feeds simultaneous character formulas.",
     "evidence": "BoundarySheaf.splitIn_of_top_split, iso_of_primitive_top_split, GradedSheaf.exists_modelSumIso and bottCharacter_decomposition_both.",
-    "latest_anchor_refinement": "Added the homogeneous dual-character bound, word R-convolution, ambient lower-character lifting, scaled reciprocity and unconditional actual-character endpoint anchors. The 38-stage, 92-edge prerequisite graph is unchanged."
+    "latest_anchor_refinement": "Expanded S10 anchors for full-kernel freeness, the local intersection matrix, strict diagonal degree and KL endpoint substitution. The generic degree calculation is linked to graded algebra. The 38-stage, 92-edge prerequisite graph is unchanged."
   }
 }

@@ -1181,3 +1181,18 @@ concepts:
   topics:
   - kl.sheaves
   - kl.invariance
+- node: kl.duality.costalk_freeness_condition
+  terms:
+  - full outgoing-kernel freeness condition
+  - costalk-freeness condition
+  topics:
+  - kl.sheaves
+  - kl.invariance
+- node: kl.duality.character_identity_condition
+  terms:
+  - stalk-character identification condition
+  - character-identification condition
+  - StalkCharacterObligation
+  topics:
+  - kl.sheaves
+  - kl.invariance

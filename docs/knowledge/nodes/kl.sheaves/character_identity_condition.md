@@ -9,6 +9,7 @@ topics:
 uses:
 - kl.duality.stalk_character
 - kl.foundations.canonical_kl
+- kl.sheaves.boundary_sheaf
 lean:
   repository: openai-kl
   modules:
@@ -32,21 +33,53 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Does the exposition preserve the mathematical scope of its Lean declarations?
-  verdict: The stated hypotheses and conclusion follow the fixed source; explanatory
-    derivations retain the original proof route.
+  prompt: Are the ambient modules, pairing orientation, scalar types, grading conventions
+    and quantified hypotheses explicit?
+  verdict: Read the complete quantified Prop definition and its chosen boundarySheaf/stalkCharacter
+    parameters. Explained polynomial rather than single-evaluation equality, basis
+    and boundary-model independence, top normalization and its exact endpoint-substitution
+    role.
 tags:
 - Kazhdan-Lusztig
-- background
+- graded-duality
 ---
 
 # The stalk-character identification condition
 
-For a fixed boundary sheaf on an interval, the stalk-character identification condition is
+Fix a finite-generator Coxeter system, \(u\le b\), and a finite real basis of its extended realization. Use the resulting degree-one polynomial coefficient algebra \(A\), and let \(B_{u,b}\) be the chosen normalized boundary sheaf on \([u,b]\).
+
+For \(x\in[u,b]\), its actual stalk character is
 \[
-\forall x\in[u,b],\qquad C_{x,b}(q)=P_{x,b}(q).
+C_x^{[u,b]}(q)=\operatorname{ch}(B_{u,b}^x;q)\in\mathbb Z[q].
 \]
-It relates the character defined by graded stalks to the KL polynomials defined by normalization and recursion.
+If a homogeneous free basis of the stalk has degrees \(d_i\), this character is \(\sum_iq^{d_i}\). Let \(P_{x,b}(q)\) denote the canonical KL polynomial defined by the R-recurrence and strict degree normalization.
+
+The **stalk-character identification condition** is the proposition
+\[
+\forall x\in[u,b],\qquad C_x^{[u,b]}(q)=P_{x,b}(q)
+\quad\text{in }\mathbb Z[q].
+\]
+This is the complete content of the Lean definition StalkCharacterObligation.
+
+## Polynomial equality and basis degrees
+
+The equality says, coefficient by coefficient, that the number of stalk basis generators in degree \(n\) is the coefficient of \(q^n\) in \(P_{x,b}\). Basis independence makes the count independent of the homogeneous basis used to compute it.
+
+The equality is an identity of integer polynomials. Applying a ring homomorphism to the coefficients and evaluating at a parameter preserves it. In particular it gives equality of the scaled actual-stalk character and scaled KL polynomial at a nonzero square parameter.
+
+At the top vertex, both sides equal \(1\): the boundary top is \(A\) with generator degree zero, and the canonical family has diagonal polynomial \(P_{b,b}=1\).
+
+## Independence of the chosen boundary model
+
+Two normalized boundary sheaves on the same interval are graded-isomorphic. Their stalk isomorphisms preserve the generator degrees, so they have the same character. Consequently the condition can be used with any normalized boundary model on \([u,b]\).
+
+The [[node:kl.sheaves.upper_interval_kernels|upper-interval kernel theorem]] also identifies \(C_x^{[u,b]}\) with the character of the original \(B(b)^x\) on \([1,b]\). This is the identification behind the shorter notation \(C_{x,b}\).
+
+## Use in endpoint formulas
+
+The [[node:kl.duality.character_endpoint_substitution|KL endpoint substitution theorem]] takes this equality at a vertex as an explicit hypothesis. It replaces \(C_{x,b}(t^2)\) by \(P_{x,b}(t^2)\) in the empty-condition state, and \(C_{x,b}(t^{-2})\) by \(P_{x,b}(t^{-2})\) in the full-kernel state.
+
+The [[node:kl.duality.actual_character_reciprocity|actual-character reciprocity theorem]] supplies the identity for \(C\) used in the simultaneous comparison proof. The canonical family \(P\) enters the later polynomial-rigidity argument through its own recurrence and degree bound.
 
 <!-- source-comparison:start -->
 ## Relation to the OpenAI notes
@@ -62,10 +95,8 @@ It relates the character defined by graded stalks to the KL polynomials defined 
 
 ## References
 
-[2. Real realizations and moment-graph sheaves](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L2).
+The local source declarations below give the construction and proof.
 
 ## Lean formalization
-
-`StalkCharacterObligation` defines this proposition. Interfaces taking it as an argument retain that argument. The main proof instead uses the actual character's R-reciprocity to establish R-tilde invariance before treating the canonical KL polynomials.
 
 `OAI.KLInvariance.BruhatGraph.StalkCharacterObligation`: [SheafMorphisms.lean:219](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L219).

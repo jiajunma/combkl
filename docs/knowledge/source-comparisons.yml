@@ -6,10 +6,9 @@ comparisons:
   - kl.duality.character_identity_condition
   - kl.duality.actual_character_reciprocity
   - kl.detail.costalk_reciprocity
-  - kl.detail.local_diagonal_degree
-  - kl.detail.local_intersection
   - kl.duality.boundary_kernel_character
   - kl.duality.normalized_character_endpoints
+  - kl.duality.character_endpoint_substitution
   paper_labels:
   - bg:normalization
   lean_declarations:
@@ -660,3 +659,43 @@ comparisons:
   consequence: The old degree-\((n-1)\) piece contributes to the new degree-\(n\)
     kernel. Reindexing its Hilbert sum gives the factor \(q\) in the word-character
     recurrence.
+- id: local-intersection-degree
+  kind: Different intermediate degree statement
+  nodes:
+  - kl.detail.local_intersection
+  - kl.duality.local_intersection_properties
+  - kl.detail.local_diagonal_degree
+  paper_labels:
+  - bg:normalization
+  - eq:bg-ranks
+  lean_declarations:
+  - OAI.KLInvariance.BruhatGraph.localIntersection
+  - OAI.KLInvariance.BruhatGraph.localIntersection_minimal
+  - OAI.KLInvariance.BruhatGraph.localIntersection_diagonal_strict_degree
+  paper: The normalization proposition identifies stalk graded ranks with canonical
+    KL polynomials using the cited character theorem and a conversion from degree-two
+    to degree-one labels.
+  lean: The actual local intersection map is constructed from integral stalk–costalk
+    duality. Boundary minimality puts its image in the positive ideal, and the strict
+    degree theorem assumes that the specified diagonal coefficient is nonzero.
+  consequence: The local calculation gives \(2d_i<\ell(b)-\ell(x)\) for the basis
+    generator named in that nonzero-diagonal hypothesis. Actual-character reciprocity
+    supplies the endpoint identity in the comparison route.
+- id: full-kernel-freeness-condition
+  kind: Construction of the stated freeness property
+  nodes:
+  - kl.duality.costalk_freeness_condition
+  paper_labels:
+  - bg:bmp
+  lean_declarations:
+  - OAI.KLInvariance.BruhatGraph.CostalkFreeObligation
+  - OAI.KLInvariance.BruhatGraph.costalkFreeObligation
+  - OAI.KLInvariance.BruhatGraph.localIntersection_range
+  paper: The moment-graph sheaf theorem includes graded freeness of the kernel obtained
+    by imposing all outgoing edge conditions.
+  lean: CostalkFreeObligation expresses this property for the chosen boundary sheaf.
+    On a lower interval, costalkFreeObligation proves it using the constructed actual
+    section duality and free stalks.
+  consequence: The full kernel is the image of the local intersection map and is linearly
+    equivalent to the finite free stalk dual. Its induced grading is the one used
+    in the kernel-character formula.

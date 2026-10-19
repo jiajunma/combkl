@@ -106,6 +106,7 @@
       "kl.algebra.kernel_saturation",
       "kl.algebra.linear_ideals",
       "kl.algebra.linear_primes",
+      "kl.algebra.local_diagonal_bound",
       "kl.algebra.localized_membership",
       "kl.algebra.minimal_cover_maps",
       "kl.algebra.minimal_cover_remainder",
@@ -281,7 +282,10 @@
       "kl.duality.actual_character_reciprocity",
       "kl.duality.bott_character_decomposition",
       "kl.duality.boundary_kernel_character",
+      "kl.duality.character_endpoint_substitution",
       "kl.duality.character_identity_condition",
+      "kl.duality.costalk_freeness_condition",
+      "kl.duality.local_intersection_properties",
       "kl.duality.lower_character_convolution",
       "kl.duality.normalized_character_endpoints",
       "kl.duality.scaled_reciprocity",
@@ -305,6 +309,7 @@
       "kl.sheaves.boundary_top_detection",
       "kl.sheaves.canonical_adjoint_comparison",
       "kl.sheaves.costalk_duality_degree",
+      "kl.sheaves.costalk_pairing_symmetry",
       "kl.sheaves.costalk_support",
       "kl.sheaves.cut_balance",
       "kl.sheaves.finite_operations",
@@ -899,6 +904,16 @@
         "OAI.KLInvariance.EdgeAlgebra.symmetric_ι_dvd_iff",
         "OAI.KLInvariance.EdgeAlgebra.reducedRoot_ne_zero",
         "OAI.KLInvariance.EdgeAlgebra.reducedRoot_prime"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.algebra.local_diagonal_bound",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.homogeneous_positive_nonzero",
+        "OAI.KLInvariance.Graded.dual_mem_ideal",
+        "OAI.KLInvariance.Graded.local_diagonal_strict_degree"
       ],
       "paper_locations": []
     },
@@ -1882,9 +1897,10 @@
       "id": "kl.detail.local_intersection",
       "chapter": "kl.sheaves",
       "lean_declarations": [
-        "OAI.KLInvariance.BruhatGraph.localIntersection",
-        "OAI.KLInvariance.BruhatGraph.localIntersection_range",
-        "OAI.KLInvariance.BruhatGraph.localIntersection_symmetric"
+        "OAI.KLInvariance.BruhatGraph.ActualBoundary",
+        "OAI.KLInvariance.BruhatGraph.actualSymmetricPairing",
+        "OAI.KLInvariance.BruhatGraph.actualSectionDuality",
+        "OAI.KLInvariance.BruhatGraph.localIntersection"
       ],
       "paper_locations": [
         "Related paper context; bg:normalization"
@@ -2527,7 +2543,17 @@
         "OAI.KLInvariance.BruhatGraph.costalkCharacter",
         "OAI.KLInvariance.BruhatGraph.costalkCharacter_reflect",
         "OAI.KLInvariance.BruhatGraph.stalkBasis_degree_le",
-        "OAI.KLInvariance.BruhatGraph.stalkCharacter_natDegree_le"
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_natDegree_le",
+        "OAI.KLInvariance.BruhatGraph.costalkFreeObligation"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.duality.character_endpoint_substitution",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.normalized_emptyKernel_of_character",
+        "OAI.KLInvariance.BruhatGraph.normalized_fullKernel_of_duality_character"
       ],
       "paper_locations": []
     },
@@ -2540,6 +2566,26 @@
       "paper_locations": [
         "2. Real realizations and moment-graph sheaves; sec:background"
       ]
+    },
+    {
+      "id": "kl.duality.costalk_freeness_condition",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.CostalkFreeObligation"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.duality.local_intersection_properties",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.localIntersection_injective",
+        "OAI.KLInvariance.BruhatGraph.localIntersection_range",
+        "OAI.KLInvariance.BruhatGraph.localIntersection_minimal",
+        "OAI.KLInvariance.BruhatGraph.localIntersection_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.localIntersection_symmetric"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.duality.lower_character_convolution",
@@ -3990,6 +4036,16 @@
       "paper_locations": []
     },
     {
+      "id": "kl.sheaves.costalk_pairing_symmetry",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.costalkEquivDual_pairing",
+        "OAI.KLInvariance.BruhatGraph.costalkEquivDual_symmetric",
+        "OAI.KLInvariance.BruhatGraph.costalkEquivDual_inverse_symmetric"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.sheaves.costalk_support",
       "chapter": "kl.sheaves",
       "lean_declarations": [
@@ -4392,7 +4448,9 @@
       "lean_declarations": [
         "OAI.KLInvariance.BruhatGraph.stalkCharacter_upperRestriction",
         "OAI.KLInvariance.BruhatGraph.restrictBoundary_kernel",
-        "OAI.KLInvariance.BruhatGraph.intervalBoundary_upper_kernel"
+        "OAI.KLInvariance.BruhatGraph.intervalBoundary_upper_kernel",
+        "OAI.KLInvariance.BruhatGraph.boundarySheaf_gradedIso",
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_eq_character"
       ],
       "paper_locations": []
     },
