@@ -96,6 +96,7 @@
       "kl.algebra.hilbert_convergence",
       "kl.algebra.hilbert_defect",
       "kl.algebra.hilbert_image_exactness",
+      "kl.algebra.hilbert_numerators",
       "kl.algebra.hilbert_scalar_quotient",
       "kl.algebra.homogeneous_basis",
       "kl.algebra.homogeneous_lifts",
@@ -343,6 +344,8 @@
       "kl.notes.tensor_pairing",
       "kl.notes.word_stalks",
       "kl.word.character_congruence",
+      "kl.word.character_normalization",
+      "kl.word.character_recursion",
       "kl.word.class_lift_assembly",
       "kl.word.common_kernel_equivalence",
       "kl.word.coordinate_images",
@@ -353,6 +356,8 @@
       "kl.word.evaluation_right_action",
       "kl.word.finite_stalk_coordinates",
       "kl.word.frobenius_data",
+      "kl.word.head_kernel_degree",
+      "kl.word.head_kernel_maps",
       "kl.word.head_pair_coordinates",
       "kl.word.head_pair_equivalence",
       "kl.word.head_pair_saturation",
@@ -382,7 +387,9 @@
       "kl.word.simple_frobenius_data",
       "kl.word.simple_wall_kernel",
       "kl.word.stable_image_projectivity",
+      "kl.word.stalk_degree_exactness",
       "kl.word.stalk_freeness_step",
+      "kl.word.stalk_hilbert_formula",
       "kl.word.support_duality",
       "kl.word.tail_maps",
       "kl.word.tensor_dual_base_change",
@@ -701,7 +708,10 @@
         "OAI.KLInvariance.Graded.scalar_range_homogeneous",
         "OAI.KLInvariance.Graded.ModuleData.Hom.component",
         "OAI.KLInvariance.Graded.ModuleData.Hom.mem_of_map_mem",
-        "OAI.KLInvariance.Graded.ModuleData.Hom.homogeneous_preimage"
+        "OAI.KLInvariance.Graded.ModuleData.Hom.homogeneous_preimage",
+        "OAI.KLInvariance.Graded.equiv_inverse_homogeneous",
+        "OAI.KLInvariance.Graded.homogeneousPieceEquiv",
+        "OAI.KLInvariance.Graded.finrank_homogeneousEquiv"
       ],
       "paper_locations": []
     },
@@ -773,6 +783,16 @@
         "OAI.KLInvariance.Hilbert.imageKernelEquiv",
         "OAI.KLInvariance.Hilbert.finrank_image_exact",
         "OAI.KLInvariance.Hilbert.value_image_exact"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.algebra.hilbert_numerators",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hilbert.hasSum_shift_coeff",
+        "OAI.KLInvariance.Hilbert.numerator_unique",
+        "OAI.KLInvariance.Hilbert.numerator_add_shift"
       ],
       "paper_locations": []
     },
@@ -2207,11 +2227,12 @@
       "id": "kl.detail.word_character_formula",
       "chapter": "kl.word_modules",
       "lean_declarations": [
-        "OAI.KLInvariance.TitsSpace.bottHeadKernelEquiv",
-        "OAI.KLInvariance.TitsSpace.bottHeadRightKernelEquiv",
-        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_ascent",
-        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_descent",
-        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_eq_heckeWord"
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_eq_heckeWord",
+        "OAI.KLInvariance.HeckeQ.positiveWord",
+        "OAI.KLInvariance.HeckeQ.positiveWord_nil",
+        "OAI.KLInvariance.HeckeQ.positiveWord_cons_coeff",
+        "OAI.KLInvariance.HeckeQ.left_coeff",
+        "OAI.KLInvariance.HeckeQ.left_plus_coeff"
       ],
       "paper_locations": []
     },
@@ -2232,8 +2253,10 @@
       "id": "kl.detail.word_characters",
       "chapter": "kl.word_modules",
       "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottPolynomialStalkData",
         "OAI.KLInvariance.TitsSpace.bottStalkCharacter",
-        "OAI.KLInvariance.HeckeQ.positiveWord"
+        "OAI.KLInvariance.TitsSpace.bottPolynomialStalk_finrank",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_hasSum"
       ],
       "paper_locations": []
     },
@@ -4357,6 +4380,27 @@
       "paper_locations": []
     },
     {
+      "id": "kl.word.character_normalization",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_zero",
+        "OAI.KLInvariance.TitsSpace.bottTopPolynomialEquiv",
+        "OAI.KLInvariance.TitsSpace.bottTopPolynomialEquiv_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_top",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_nil"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.character_recursion",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_ascent",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_descent"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.word.class_lift_assembly",
       "chapter": "kl.word_modules",
       "lean_declarations": [
@@ -4480,6 +4524,35 @@
       "lean_declarations": [
         "OAI.KLInvariance.FrobeniusDuality.restrictPairing",
         "OAI.KLInvariance.FrobeniusDuality.inducedModule"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.head_kernel_degree",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottHeadKernelEquiv_eval",
+        "OAI.KLInvariance.TitsSpace.bottHeadLeft_kernel_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottHeadKernelEquiv_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottHeadRightKernelEquiv_eval",
+        "OAI.KLInvariance.TitsSpace.bottHeadRight_kernel_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottHeadRightKernelEquiv_homogeneous"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.head_kernel_maps",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.kernelSourceEquiv",
+        "OAI.KLInvariance.kernelTargetEquiv",
+        "OAI.KLInvariance.kernelMixedEquiv",
+        "OAI.KLInvariance.TitsSpace.bottHeadKernelEquiv",
+        "OAI.KLInvariance.TitsSpace.bottHeadKernelPiece",
+        "OAI.KLInvariance.TitsSpace.bottHeadRight_surjective",
+        "OAI.KLInvariance.TitsSpace.bottDescentKernel",
+        "OAI.KLInvariance.TitsSpace.bottHeadRightKernelEquiv",
+        "OAI.KLInvariance.TitsSpace.bottHeadRightKernelPiece"
       ],
       "paper_locations": []
     },
@@ -4868,12 +4941,33 @@
       "paper_locations": []
     },
     {
+      "id": "kl.word.stalk_degree_exactness",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.symmetricGrading_finite",
+        "OAI.KLInvariance.TitsSpace.bottCoordinatePiece_finite",
+        "OAI.KLInvariance.TitsSpace.bottStalkPiece_finite",
+        "OAI.KLInvariance.TitsSpace.bottStalk_finrank_ascent",
+        "OAI.KLInvariance.TitsSpace.bottStalk_finrank_descent"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.word.stalk_freeness_step",
       "chapter": "kl.word_modules",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.bottStalk_smul_injective",
         "OAI.KLInvariance.TitsSpace.bottStalkFinite",
         "OAI.KLInvariance.TitsSpace.bottStalk_free_cons"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.stalk_hilbert_formula",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottPolynomialStalk_finrank",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_hasSum"
       ],
       "paper_locations": []
     },

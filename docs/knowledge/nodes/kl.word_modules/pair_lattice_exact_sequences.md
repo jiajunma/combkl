@@ -103,6 +103,12 @@ Let \(R\) be a commutative ring, \(f:N\to X\) and \(g:N\to Y\) linear maps, and 
 These data define the twisted pair lattice
 \(L\subseteq X\oplus{}^\tau Y\).
 
+In a pair \((x,y)\), the second displayed coordinate denotes the underlying vector \(y\in Y\). Thus
+\[
+r\cdot(x,y)=(rx,\tau(r)y),
+\]
+and \((0,\alpha y)\) uses the ordinary product in \(Y\) before viewing that coordinate in its twist.
+
 There are two projection-kernel statements.
 
 - Suppose \(f\) is surjective, multiplication by \(\alpha\) is injective on \(Y\), and

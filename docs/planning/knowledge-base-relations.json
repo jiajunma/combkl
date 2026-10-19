@@ -253,8 +253,13 @@
         "a",
         "h"
       ],
-      "output": "Ascent/descent recursion and equality with positive Hecke-word coefficients.",
+      "output": "Word-stalk characters from the graded W4–W5 kernel sequences, with positive Hecke-word coefficients and top normalization.",
       "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter",
+        "OAI.KLInvariance.TitsSpace.bottHeadKernelEquiv_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottHeadRightKernelEquiv_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_ascent",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_descent",
         "OAI.KLInvariance.TitsSpace.bottStalkCharacter_eq_heckeWord"
       ]
     },

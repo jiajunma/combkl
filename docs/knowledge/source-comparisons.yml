@@ -175,12 +175,18 @@ comparisons:
   - kl.detail.word_characters
   - kl.detail.word_character_formula
   - kl.detail.word_character_reciprocity
+  - kl.word.stalk_hilbert_formula
+  - kl.word.character_recursion
   paper_labels:
   - bg:normalization
   lean_declarations:
   - OAI.KLInvariance.TitsSpace.bottStalkCharacter_eq_heckeWord
   - OAI.KLInvariance.TitsSpace.bottKernelCharacter_rConvolution
   - OAI.KLInvariance.BruhatGraph.StalkCharacterObligation
+  - OAI.KLInvariance.TitsSpace.bottPolynomialStalkData
+  - OAI.KLInvariance.TitsSpace.bottStalkCharacter_hasSum
+  - OAI.KLInvariance.TitsSpace.bottStalkCharacter_ascent
+  - OAI.KLInvariance.TitsSpace.bottStalkCharacter_descent
   paper: The normalization discussion identifies indecomposable boundary-sheaf characters
     with KL polynomials by the cited character theorem.
   lean: The word-stalk character is proved to equal a positive Hecke-word coefficient.
@@ -623,3 +629,23 @@ comparisons:
     ambient upper closure. Full-interval section realization also has a direct free-image
     proof. Free stalks, root quotients, flabbiness, generation and the normalized
     word top then supply the graded boundary summand.
+- id: word-kernel-degree
+  kind: Degree-one kernels and shift conventions
+  nodes:
+  - kl.word.head_kernel_degree
+  - kl.word.stalk_degree_exactness
+  paper_labels:
+  - bg:normalization
+  lean_declarations:
+  - OAI.KLInvariance.Graded.ModuleData.shift
+  - OAI.KLInvariance.TitsSpace.bottHeadKernelEquiv_homogeneous
+  - OAI.KLInvariance.TitsSpace.bottHeadRightKernelEquiv_homogeneous
+  - OAI.KLInvariance.TitsSpace.bottStalk_finrank_ascent
+  paper: The normalization proof temporarily assigns degree two to linear forms and
+    uses \(M(k)^j=M^{j+k}\) for its shifted self-dual object.
+  lean: The word construction keeps linear forms in degree one. Each kernel equivalence
+    sends an old degree-\(n\) vector to degree \(n+1\). The local module-data convention
+    is \(M(1)_n=M_{n-1}\).
+  consequence: The old degree-\((n-1)\) piece contributes to the new degree-\(n\)
+    kernel. Reindexing its Hilbert sum gives the factor \(q\) in the word-character
+    recurrence.

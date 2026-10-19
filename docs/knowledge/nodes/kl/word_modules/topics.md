@@ -309,25 +309,70 @@ The evaluation determinant \(\Delta\ne0\) supplies a generic scalar lift of ever
 
 The unconditional word induction now closes: the empty-word image is \(A\) or zero; projectivity of the shorter word gives its lifting property; the two-stage step proves projectivity for the longer word. Applying the fixed-word lifting result gives compatible-tuple lifting for every word.
 
-## The word character formula from a short exact sequence
+## Polynomial characters of the word stalks
 
-Let \(C_x^{\mathbf t}(q)\) be the stalk character of an old word \(\mathbf t\), and prepend a simple reflection \(s\). If \(x<sx\), the head projection is surjective onto the old stalk at \(x\), with kernel the old stalk at \(sx\) shifted upward by one degree. Degreewise exactness therefore gives
+Choose a basis of the extended realization, giving the coefficient algebra a polynomial presentation \(\mathbb R[X_1,\ldots,X_N]\). Each word stalk is finite, nonnegative and free, so it has a finite homogeneous basis with degrees \(d_j\ge0\). Its character is
 \[
-C_x^{s\mathbf t}(q)=C_x^{\mathbf t}(q)+qC_{sx}^{\mathbf t}(q).
+C_x^{\mathbf t}(q)=\sum_jq^{d_j}.
 \]
-If \(sx<x\), the other projection gives
+The formal variable \(q\) records generator degrees. The variables \(X_i\) belong to the coefficient algebra.
+
+Coefficient transport preserves the real homogeneous pieces. For a real parameter \(0<t<1\), the Hilbert formula is
 \[
-C_x^{s\mathbf t}(q)=C_{sx}^{\mathbf t}(q)+qC_x^{\mathbf t}(q).
+\sum_n\dim_{\mathbb R}(M_{\mathbf t}^x)_n\,t^n
+=C_x^{\mathbf t}(t)(1-t)^{-N}.
 \]
-The factor \(q\) records the degree-one root multiplication in the kernel.
+The common factor counts the coefficient monomials multiplying each generator. It is the same for the old and new stalks, because prepending a letter keeps the realization coefficient algebra fixed.
 
-These are exactly the coefficient recurrences for multiplication by \(1+T_s\). The empty word has one stalk \(A\) at \(1\), so its character vector is the coefficient vector of \(T_1\). Induction on the word proves
+## Graded kernels and the factor q
+
+Let \(X=M_{\mathbf t}^x\), \(Y=M_{\mathbf t}^{sx}\), and \(Z=M_{s\mathbf t}^x\). The head pair gives projections \(h_0:Z\to X\) and \(h_1:Z\to Y\). The first is \(A\)-linear; the second is real-linear after the reflected scalar action is removed. Both preserve degree and are surjective.
+
+If \(x<sx\), the first kernel is parametrized by \(y\mapsto C_x(0,\alpha_s y)\). Here \(\alpha_s y\) is formed in the old stalk and then placed in the twisted second coordinate. Its zero-bit coordinates vanish, and its one-bit coordinates are \(\chi_s(\alpha_s y_\eta)\). The root raises degree by one and \(\chi_s\) preserves degree. Thus this kernel has degree-\(n\) piece isomorphic to \(Y_{n-1}\).
+
+If \(sx<x\), the second kernel is parametrized by \(z\mapsto C_x(\alpha_s z,0)\). Its nonzero coordinates are \(\alpha_s z_\eta\), so its degree-\(n\) piece is \(X_{n-1}\).
+
+Taking real dimensions in the two degreewise exact sequences gives
 \[
-C_x^{\mathbf s}(q)=[T_x](1+T_{s_1})\cdots(1+T_{s_m}).
+\dim Z_n=
+\begin{cases}
+\dim X_n+\dim Y_{n-1},&x<sx,\\
+\dim Y_n+\dim X_{n-1},&sx<x.
+\end{cases}
+\]
+For a homogeneous target vector, taking the matching component of any preimage proves surjectivity in each degree. These sequences therefore have the exactness needed for rank-nullity.
+
+Multiply by \(t^n\) and sum. Replacing \(n\) by \(n-1\) in the kernel contribution introduces a factor \(t\). Cancelling the common nonzero Hilbert factor gives the evaluated recurrence. A polynomial vanishing throughout \((0,1)\) has infinitely many roots and is zero, so the equality holds formally in \(\mathbb Z[q]\):
+\[
+C_x^{s\mathbf t}(q)=
+\begin{cases}
+C_x^{\mathbf t}(q)+qC_{sx}^{\mathbf t}(q),&x<sx,\\
+C_{sx}^{\mathbf t}(q)+qC_x^{\mathbf t}(q),&sx<x.
+\end{cases}
 \]
 
-For the single letter \(s\), the positive Hecke word is \(1+T_s\), and both stalk characters are one. Meanwhile its global section module has basis degrees zero and one, so its graded rank is \(1+q\). Stalk character and global-section character are different quantities.
+## Matching the Hecke word
 
+The empty word has character \(1\) at weight \(1\) and zero elsewhere. The unnormalized positive Hecke word begins at \(T_1\), and multiplication by \(I+L_s(q)\) has the same two coefficient recurrences. Induction on the word therefore gives
+\[
+C_x^{\mathbf t}(q)
+=[T_x](I+L_{s_1}(q))\cdots(I+L_{s_m}(q))T_1.
+\]
+For a reduced word with product \(b\), the graded top stalk is \(A\) with generator in degree zero, and its character is \(1\).
+
+This character argument uses the graded stalks and exact single-edge kernels. The upper-image lifting route supplies global sections and sheaf extension properties, which enter the later boundary-model and duality arguments.
+
+## The repeated-letter character
+
+In the two-element Coxeter group, both stalks of the one-letter word have character \(1\). For \((s,s)\), the recurrence gives
+\[
+C_1^{ss}(q)=C_s^{ss}(q)=1+q.
+\]
+The earlier pair-lattice basis has generator degrees zero and one, matching this polynomial. With one coefficient variable, its Hilbert series is
+\[
+\frac{1+t}{1-t}=1+2t+2t^2+2t^3+\cdots.
+\]
+Thus the two free generators produce one real basis vector in degree zero and two in every positive degree.
 
 ## Definitions and proofs by construction
 
@@ -418,4 +463,10 @@ For the single letter \(s\), the positive Hecke word is \(1+T_s\), and both stal
 ### Word characters
 
 - [[node:kl.detail.word_characters]]
+- [[node:kl.word.stalk_hilbert_formula]]
+- [[node:kl.word.head_kernel_maps]]
+- [[node:kl.word.head_kernel_degree]]
+- [[node:kl.word.stalk_degree_exactness]]
+- [[node:kl.word.character_normalization]]
+- [[node:kl.word.character_recursion]]
 - [[node:kl.detail.word_character_formula]]

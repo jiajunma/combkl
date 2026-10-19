@@ -2445,22 +2445,6 @@
       "pending": []
     },
     {
-      "node": "kl.algebra.component_transport",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/component_transport.md",
-      "source_declarations": [
-        "OAI.KLInvariance.Graded.map_component",
-        "OAI.KLInvariance.Graded.kernel_homogeneous",
-        "OAI.KLInvariance.Graded.range_homogeneous",
-        "OAI.KLInvariance.Graded.component_homogeneous_smul",
-        "OAI.KLInvariance.Graded.scalar_range_homogeneous",
-        "OAI.KLInvariance.Graded.ModuleData.Hom.component",
-        "OAI.KLInvariance.Graded.ModuleData.Hom.mem_of_map_mem",
-        "OAI.KLInvariance.Graded.ModuleData.Hom.homogeneous_preimage"
-      ],
-      "review": "Read map_component and the kernel/range/scalar consequences, plus Hom homogeneous preimages and injective degree detection. The argument uses only finite component decompositions and additive linearity.",
-      "pending": []
-    },
-    {
       "node": "kl.algebra.module_operations",
       "file": "docs/knowledge/nodes/kl.graded_algebra/module_operations.md",
       "source_declarations": [
@@ -3447,7 +3431,7 @@
         "OAI.KLInvariance.ReflectionPairTranslation.rightKernelEquiv",
         "OAI.KLInvariance.ReflectionPairTranslation.lattice_free_right"
       ],
-      "review": "Read left/right kernel maps and equivalences in Frobenius and BottSamelson. Preserved the separate kernel equality and regular-scalar hypotheses for each orientation, and expanded the source splitting isomorphism.",
+      "review": "Read left/right kernel maps and equivalences in Frobenius and BottSamelson. Preserved the separate kernel equality and regular-scalar hypotheses for each orientation, and expanded the source splitting isomorphism. Clarified the underlying-coordinate convention for scalar multiplication in the twisted kernel map.",
       "pending": []
     },
     {
@@ -4027,6 +4011,139 @@
       ],
       "review": "Extended the previously reviewed free-stalk/root-quotient transport by checking generation on every interval and flabbiness on a reduced word full interval, using unchanged underlying restriction equations.",
       "pending": []
+    },
+    {
+      "node": "kl.algebra.hilbert_numerators",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/hilbert_numerators.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hilbert.hasSum_shift_coeff",
+        "OAI.KLInvariance.Hilbert.numerator_unique",
+        "OAI.KLInvariance.Hilbert.numerator_add_shift"
+      ],
+      "review": "Read all three Hilbert numerator lemmas. Kept the arbitrary nonzero common factor, the integer shift and nonzero real parameter for reindexing, then the infinite-evaluation argument over the embedded integer coefficients.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.head_kernel_maps",
+      "file": "docs/knowledge/nodes/kl.word_modules/head_kernel_maps.md",
+      "source_declarations": [
+        "OAI.KLInvariance.kernelSourceEquiv",
+        "OAI.KLInvariance.kernelTargetEquiv",
+        "OAI.KLInvariance.kernelMixedEquiv",
+        "OAI.KLInvariance.TitsSpace.bottHeadKernelEquiv",
+        "OAI.KLInvariance.TitsSpace.bottHeadKernelPiece",
+        "OAI.KLInvariance.TitsSpace.bottHeadRight_surjective",
+        "OAI.KLInvariance.TitsSpace.bottDescentKernel",
+        "OAI.KLInvariance.TitsSpace.bottHeadRightKernelEquiv",
+        "OAI.KLInvariance.TitsSpace.bottHeadRightKernelPiece"
+      ],
+      "review": "Read both head kernel constructors, the descent orientation, right-head surjectivity and kernel grading definitions. Explained the source/codomain kernel transports and the precise real-linear type after untwisting.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.head_kernel_degree",
+      "file": "docs/knowledge/nodes/kl.word_modules/head_kernel_degree.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottHeadKernelEquiv_eval",
+        "OAI.KLInvariance.TitsSpace.bottHeadLeft_kernel_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottHeadKernelEquiv_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottHeadRightKernelEquiv_eval",
+        "OAI.KLInvariance.TitsSpace.bottHeadRight_kernel_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottHeadRightKernelEquiv_homogeneous"
+      ],
+      "review": "Read both evaluation formulas and homogeneous-degree proofs. Expanded the real-linear inverse-degree argument and identified the source positive shift M(1)_n=M_(n-1).",
+      "pending": []
+    },
+    {
+      "node": "kl.word.stalk_degree_exactness",
+      "file": "docs/knowledge/nodes/kl.word_modules/stalk_degree_exactness.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.symmetricGrading_finite",
+        "OAI.KLInvariance.TitsSpace.bottCoordinatePiece_finite",
+        "OAI.KLInvariance.TitsSpace.bottStalkPiece_finite",
+        "OAI.KLInvariance.TitsSpace.bottStalk_finrank_ascent",
+        "OAI.KLInvariance.TitsSpace.bottStalk_finrank_descent"
+      ],
+      "review": "Read the finite homogeneous-piece instances and both finrank recurrences. Followed the source coefficient-product-subspace finiteness route, degreewise surjectivity and kernel-piece equivalences before rank-nullity.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.word_characters",
+      "file": "docs/knowledge/nodes/kl.word_modules/word_characters.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottPolynomialStalkData",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter",
+        "OAI.KLInvariance.TitsSpace.bottPolynomialStalk_finrank",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_hasSum"
+      ],
+      "review": "Read the actual polynomial coefficient transport, Graded.character definition and Hilbert interpretation. Defined the coefficient variables, formal character variable and real evaluation parameter separately, with finite homogeneous bases belonging to the image stalk.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.stalk_hilbert_formula",
+      "file": "docs/knowledge/nodes/kl.word_modules/stalk_hilbert_formula.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottPolynomialStalk_finrank",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_hasSum"
+      ],
+      "review": "Read bottPolynomialStalk_finrank and bottStalkCharacter_hasSum. Expanded the real-linear degreewise transport, nonnegative basis and finite sum of shifted polynomial coefficient series.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.character_normalization",
+      "file": "docs/knowledge/nodes/kl.word_modules/character_normalization.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_zero",
+        "OAI.KLInvariance.TitsSpace.bottTopPolynomialEquiv",
+        "OAI.KLInvariance.TitsSpace.bottTopPolynomialEquiv_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_top",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_nil"
+      ],
+      "review": "Read the zero numerator, top polynomial equivalence, homogeneous dimensions and empty-word branch proof. Used Hilbert numerator uniqueness as in the source and stated the reducedness needed for top/support normalization.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.character_recursion",
+      "file": "docs/knowledge/nodes/kl.word_modules/character_recursion.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_ascent",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_descent"
+      ],
+      "review": "Read both numerator_add_shift applications and their common nonzero coefficient factor. Preserved the exact ascent/descent roles and obtained formal polynomial equalities from convergent real evaluations.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.word_character_formula",
+      "file": "docs/knowledge/nodes/kl.word_modules/word_character_formula.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_eq_heckeWord",
+        "OAI.KLInvariance.HeckeQ.positiveWord",
+        "OAI.KLInvariance.HeckeQ.positiveWord_nil",
+        "OAI.KLInvariance.HeckeQ.positiveWord_cons_coeff",
+        "OAI.KLInvariance.HeckeQ.left_coeff",
+        "OAI.KLInvariance.HeckeQ.left_plus_coeff"
+      ],
+      "review": "Rewrote the equality proof as the source induction on the whole coefficient family, with exact output-weight Hecke contributions, the empty-word base and both tail substitutions. The graded-kernel and numerator arguments now have their own detailed prerequisites.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.component_transport",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/component_transport.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.map_component",
+        "OAI.KLInvariance.Graded.kernel_homogeneous",
+        "OAI.KLInvariance.Graded.range_homogeneous",
+        "OAI.KLInvariance.Graded.component_homogeneous_smul",
+        "OAI.KLInvariance.Graded.scalar_range_homogeneous",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.component",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.mem_of_map_mem",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.homogeneous_preimage",
+        "OAI.KLInvariance.Graded.equiv_inverse_homogeneous",
+        "OAI.KLInvariance.Graded.homogeneousPieceEquiv",
+        "OAI.KLInvariance.Graded.finrank_homogeneousEquiv"
+      ],
+      "review": "Retained the existing component/kernel/image argument and added the explicit inverse degree and restricted piece isomorphisms for a k-linear equivalence, with the finite-dimensional character application.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -4348,7 +4465,8 @@
         "kl.detail.hilbert_exactness",
         "kl.detail.hilbert_values",
         "kl.sheaves.hilbert_detection",
-        "kl.sheaves.hilbert_free"
+        "kl.sheaves.hilbert_free",
+        "kl.algebra.hilbert_numerators"
       ],
       "pending": [],
       "review": "Reviewed piece/term/value and formal-series notation; monomial and homogeneous-free formulas; finite-cover convergence; intrinsic character and its operations; exactness for surjections/images; regular scalar quotient factors; and degreewise defect positivity/equality detection."
@@ -4497,8 +4615,19 @@
     {
       "code": "W7",
       "title": "Word characters",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "exposition_reviewed",
+      "completion_evidence": [
+        "kl.detail.word_character_formula",
+        "kl.detail.word_characters",
+        "kl.word.character_normalization",
+        "kl.word.character_recursion",
+        "kl.word.head_kernel_degree",
+        "kl.word.head_kernel_maps",
+        "kl.word.stalk_degree_exactness",
+        "kl.word.stalk_hilbert_formula"
+      ],
+      "pending": [],
+      "review": "Reviewed polynomial stalk transport and character definition, convergent Hilbert numerator formula, both real-linear head kernel equivalences and their degree-one shifts, finite-dimensional exact sequences, formal ascent/descent recursions, zero/top/empty normalizations and the full-family Hecke-word induction."
     },
     {
       "code": "S1",
@@ -4844,7 +4973,7 @@
     }
   ],
   "next_steps": [
-    "Expand the graded word-stalk character and kernel character constructions, prove their ascent/descent exact sequences and recursions, and complete the Hecke-word coefficient identification.",
+    "Expand word-kernel character data and the R-convolution identity, then complete the boundary-character decomposition/cancellation route and remaining character conditions.",
     "Complete standard-parabolic inclusion and finite-support transport; finish word wall maps, pair kernels, and character recursions.",
     "Expand adapted-order/chamber changes, dihedral interval transport, and the path-polynomial proof.",
     "Review the remaining Hecke, localization, and simultaneous-comparison arguments against their local source bodies.",
@@ -5246,7 +5375,14 @@
       "kl.word.upper_image_induction": "W6",
       "kl.sheaves.interval_word_extension": "S7",
       "kl.sheaves.word_section_equivalence": "S7",
-      "kl.sheaves.word_boundary_summand": "S7"
+      "kl.sheaves.word_boundary_summand": "S7",
+      "kl.algebra.hilbert_numerators": "A6",
+      "kl.word.head_kernel_maps": "W7",
+      "kl.word.head_kernel_degree": "W7",
+      "kl.word.stalk_degree_exactness": "W7",
+      "kl.word.stalk_hilbert_formula": "W7",
+      "kl.word.character_normalization": "W7",
+      "kl.word.character_recursion": "W7"
     },
     "moved_nodes": [
       {
@@ -6080,7 +6216,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 383
+    "current_node_count": 390
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -6102,7 +6238,8 @@
     "Expanded subexpression evaluations, coefficient characters, generic wall-matrix injectivity, homogeneous stalk lifting and exact Bruhat support. Added the scalar-difference edge argument, first-factor reflection and exact first-wall kernel, reflected head-pair equivalence, both pair-lattice kernel sequences and the BottKernelExact definition. Completed the W4 exposition review and refined the remaining W5 induction work.",
     "Completed the W5 simultaneous word induction with explicit tail maps, local-pair recovery, prime-scalar quotient regularity, both saturation orientations, transformed reflection roots and the non-head kernel step. Proved new stalk freeness by both split sequences, and rewrote the induction assembly including root signs, finite generation and free edge kernels. Added polynomial-coordinate transport of the word sheaf and a worked rank-two stalk for the word (s,s).",
     "Expanded the W6 coordinate-image foundation and full conditional projectivity step: upper reflected sets, the two descended tail maps, patched-tail compatibility, common-kernel coordinate equivalence, stable-set tensor endomorphisms and two-stage split sequences. Added general projective image/kernel splittings and explained projectivity of a scalar twist. Corrected the word-flabbiness assembly to retain its shorter-word lifting hypothesis.",
-    "Completed the W6 prime-class and global lifting route: root-line isometries, prime character classes, stable diagonal selectors and finite class-lift assembly, repeated-stalk subexpression presentations, denominator removal and unconditional upper-image induction. Completed S7 with the ambient interval extension, full-section isomorphism, polynomial generation/flabbiness transport and normalized boundary summand."
+    "Completed the W6 prime-class and global lifting route: root-line isometries, prime character classes, stable diagonal selectors and finite class-lift assembly, repeated-stalk subexpression presentations, denominator removal and unconditional upper-image induction. Completed S7 with the ambient interval extension, full-section isomorphism, polynomial generation/flabbiness transport and normalized boundary summand.",
+    "Completed W7: separated coefficient variables, the formal character variable and real evaluations; expanded the two head kernel maps and their grading, degreewise exact sequences, Hilbert numerator uniqueness/shift, and character base values. Rewrote the Hecke-word equality as the exact source induction, and linked the source/paper shift conventions. Added the inverse-degree piece isomorphisms to the general component theorem."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -6201,6 +6338,14 @@
       "term": "class projector",
       "target": "kl.word.diagonal_stabilizer",
       "review": "The definition states the common scalar profile and scaled projection identity. Scoped aliases resolve these class selectors to their diagonal definition rather than to a sheaf idempotent definition."
+    },
+    {
+      "term": "head projection",
+      "topics": [
+        "kl.word_modules"
+      ],
+      "target": "kl.word.head_kernel_maps",
+      "review": "The new definition records both head maps, their scalar types, their kernels and their real graded pieces; scoped head-projection/kernel terms resolve there."
     }
   ],
   "corrections": [
@@ -6220,15 +6365,15 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-19T10:30:39.158905+00:00",
+    "created_at": "2026-10-19T11:09:57.825113+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 383,
-    "html_pages_checked": 647,
-    "generated_definition_links_checked": 5287,
+    "node_count": 390,
+    "html_pages_checked": 654,
+    "generated_definition_links_checked": 5329,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. The current review includes residueSetoid, diagonal stabilizer construction, the repeated-stalk finite presentation, full interval assignments and the graded boundary-summand application. Documentation checks only."
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks the polynomial stalk presentation, both kernel scalar types, degreewise exactness and formal character identities. Documentation checks only."
   },
   "structure_coverage_scan": {
     "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
@@ -6388,6 +6533,36 @@
         "kl.algebra.projective_local_membership"
       ],
       "review": "Rechecked the generic free and projective membership declarations: the scalar-denominator interface requires a domain with unique factorization, without an additional Noetherian hypothesis. Corrected the source-comparison prose accordingly."
+    },
+    {
+      "entries": [
+        "kl.word.head_kernel_maps",
+        "kl.word.head_kernel_degree",
+        "kl.word.stalk_degree_exactness"
+      ],
+      "review": "The first head map is A-linear and the untwisted second head map is real-linear. The character argument uses real degreewise exact sequences; each kernel equivalence raises degree by one and its inverse lowers it by one."
+    },
+    {
+      "entries": [
+        "kl.detail.word_characters",
+        "kl.word.stalk_hilbert_formula",
+        "kl.word.character_recursion"
+      ],
+      "review": "The coefficient variables X_i belong to the real polynomial algebra; q is the formal integer character variable and t is a real evaluation parameter. All stalks in a one-letter recursion use the same coefficient denominator (1-t)^(-N)."
+    },
+    {
+      "entries": [
+        "kl.detail.word_characters",
+        "kl.detail.word_character_formula"
+      ],
+      "review": "The character definition depends on graded stalk data, while the equality theorem joins it to the independently defined positive Hecke word. Removed the Hecke-word construction as a prerequisite edge of the character definition."
+    },
+    {
+      "entries": [
+        "kl.word.head_kernel_maps",
+        "kl.word.pair_lattice_exact_sequences"
+      ],
+      "review": "The ascent kernel map sends the underlying y to the twisted vector [alpha*y]. Its stalk evaluation is tau(alpha*y). Explicit bracket notation separates this ordinary multiplication from the twisted scalar action a*[y]=[tau(a)*y]."
     }
   ],
   "relationship_map_revision": {
@@ -6395,6 +6570,6 @@
     "edge_count": 92,
     "route": "Top splitting and primitive recognition feed the boundary-pairing route; full model decomposition feeds simultaneous character formulas.",
     "evidence": "BoundarySheaf.splitIn_of_top_split, iso_of_primitive_top_split, GradedSheaf.exists_modelSumIso and bottCharacter_decomposition_both.",
-    "latest_anchor_refinement": "Consolidated the word-coordinate stage anchors around evaluation, pair lattices, standard stalks, prime classes and the unconditional projectivity/lifting endpoints. The word-sheaf stage now explicitly records section realization, interval flabbiness and the normalized boundary summand. Stage dependencies are unchanged."
+    "latest_anchor_refinement": "Expanded the word-character stage with its polynomial character, both graded kernel equivalences and both recursions. Its stated input is the W4–W5 graded stalk/kernel output; the W6 upper-image lifting route supplies the separate word-sheaf branch. Individual character-definition dependencies no longer include the independently defined Hecke word."
   }
 }

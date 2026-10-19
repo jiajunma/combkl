@@ -338,6 +338,14 @@ For \(S=(X,Y)\subset T=k[X,Y]\), the only missing component is the constant one.
 
 For two surjective projections, a common endomorphism may act through different scalars on the two targets. Their difference annihilates the pair-projection quotient: subtracting one scalar multiple of a lift produces a relation vector with zero second projection. The word-module construction uses this calculation to obtain its reflection-root edge labels.
 
+## Hilbert numerators from degree shifts
+
+If three dimension sequences satisfy \(f(n)=g(n)+h(n-1)\), their convergent sums satisfy \(H_f(t)=H_g(t)+tH_h(t)\). When the sums have polynomial numerators with a common nonzero factor, cancellation gives an equality of evaluations throughout \((0,1)\). The polynomial root bound then yields the formal identity
+\[
+F(q)=G(q)+qH(q).
+\]
+This [[node:kl.algebra.hilbert_numerators|numerator theorem]] is the bridge from the real degreewise exact sequences of word stalks to their Hecke coefficient recursions.
+
 ## Definitions and proofs by construction
 
 ### The realization coefficient algebra
@@ -398,6 +406,7 @@ For two surjective projections, a common endomorphism may act through different 
 - [[node:kl.algebra.hilbert_convergence]]
 - [[node:kl.detail.graded_character]]
 - [[node:kl.algebra.character_basis_independence]]
+- [[node:kl.algebra.hilbert_numerators]]
 - [[node:kl.algebra.character_operations]]
 - [[node:kl.detail.hilbert_exactness]]
 - [[node:kl.algebra.hilbert_image_exactness]]

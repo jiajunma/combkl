@@ -386,6 +386,11 @@ concepts:
   terms:
   - word-stalk character
   - word-stalk characters
+  - word character
+  - word characters
+  - word-character polynomial
+  - word-character polynomials
+  - polynomial stalk data
 - node: kl.detail.integral_adjoints
   terms:
   - integral adjoint
@@ -1145,3 +1150,17 @@ concepts:
   topics:
   - kl.word_modules
   - kl.sheaves
+- node: kl.word.head_kernel_maps
+  terms:
+  - head projection
+  - head projections
+  - left head projection
+  - right head projection
+  - head kernel
+  - head kernels
+  - head-kernel map
+  - head-kernel maps
+  - ascent kernel map
+  - descent kernel map
+  topics:
+  - kl.word_modules

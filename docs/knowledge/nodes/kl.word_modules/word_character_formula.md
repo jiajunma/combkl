@@ -8,63 +8,72 @@ topics:
 - kl.word_modules
 uses:
 - kl.detail.word_characters
-- kl.detail.word_standard_stalks
-- kl.detail.hilbert_exactness
-- kl.sheaves.hilbert_free
-- kl.notes.graded_projective_free
+- kl.word.character_recursion
+- kl.word.character_normalization
+- kl.hecke.positive_words
+- kl.definitions.hecke_operators
 lean:
   repository: openai-kl
   modules:
-  - BottSamelson
   - IntegralPairings
   declarations:
-  - OAI.KLInvariance.TitsSpace.bottHeadKernelEquiv
-  - OAI.KLInvariance.TitsSpace.bottHeadRightKernelEquiv
-  - OAI.KLInvariance.TitsSpace.bottStalkCharacter_ascent
-  - OAI.KLInvariance.TitsSpace.bottStalkCharacter_descent
   - OAI.KLInvariance.TitsSpace.bottStalkCharacter_eq_heckeWord
+  - OAI.KLInvariance.HeckeQ.positiveWord
+  - OAI.KLInvariance.HeckeQ.positiveWord_nil
+  - OAI.KLInvariance.HeckeQ.positiveWord_cons_coeff
+  - OAI.KLInvariance.HeckeQ.left_coeff
+  - OAI.KLInvariance.HeckeQ.left_plus_coeff
 source:
   spans:
-  - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.BottSamelson:1578
-    format: lean-location
-    note: OAI.KLInvariance.TitsSpace.bottHeadKernelEquiv
-  - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.BottSamelson:2045
-    format: lean-location
-    note: OAI.KLInvariance.TitsSpace.bottHeadRightKernelEquiv
-  - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.IntegralPairings:104
-    format: lean-location
-    note: OAI.KLInvariance.TitsSpace.bottStalkCharacter_ascent
-  - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.IntegralPairings:120
-    format: lean-location
-    note: OAI.KLInvariance.TitsSpace.bottStalkCharacter_descent
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.IntegralPairings:289
     format: lean-location
     note: OAI.KLInvariance.TitsSpace.bottStalkCharacter_eq_heckeWord
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.IntegralPairings:204
+    format: lean-location
+    note: OAI.KLInvariance.HeckeQ.positiveWord
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.IntegralPairings:208
+    format: lean-location
+    note: OAI.KLInvariance.HeckeQ.positiveWord_nil
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.IntegralPairings:211
+    format: lean-location
+    note: OAI.KLInvariance.HeckeQ.positiveWord_cons_coeff
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.IntegralPairings:152
+    format: lean-location
+    note: OAI.KLInvariance.HeckeQ.left_coeff
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.IntegralPairings:197
+    format: lean-location
+    note: OAI.KLInvariance.HeckeQ.left_plus_coeff
 verification:
   statement: accepted
   proof: accepted
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Are the actual Lean hypotheses, objects, and proof route retained?
-  verdict: Read against the fixed source declaration bodies and their surrounding
-    assumptions; the supplied formal proof is unchanged.
+  prompt: Are the gradings, scalar actions, coefficient variables and formal polynomial
+    conclusions explicit?
+  verdict: Rewrote the equality proof as the source induction on the whole coefficient
+    family, with exact output-weight Hecke contributions, the empty-word base and
+    both tail substitutions. The graded-kernel and numerator arguments now have their
+    own detailed prerequisites.
 tags:
 - Kazhdan-Lusztig
+- Frobenius-duality
 ---
 
 # Word-stalk characters equal positive Hecke-word coefficients
 
-For every word \(\mathbf s\) and every \(x\in W\), the actual word-stalk character is the coefficient of \(T_x\) in the positive Hecke word:
+Fix a finite-generator Coxeter system and a finite basis of its extended realization. For every word \(\mathbf t=(s_1,\ldots,s_m)\) and every \(x\in W\),
 \[
-C^{\mathbf s}_x(q)=[T_x]\prod_{s\text{ in }\mathbf s}(1+T_s).
+C_x^{\mathbf t}(q)
+=[T_x](I+L_{s_1}(q))\cdots(I+L_{s_m}(q))T_1.
 \]
-The product follows the written word order. Reducedness is not assumed.
+The Hecke module here has coefficient ring \(\mathbb Z[q]\). Here \(C_x^{\mathbf t}\in\mathbb Z[q]\) is the character of the actual word stalk, \(L_s(q)\) is the unnormalized left Hecke operator, and \([T_x]\) extracts the coefficient of the standard basis vector \(T_x\).
 
 <!-- source-comparison:start -->
 ## Relation to the OpenAI notes
@@ -73,71 +82,82 @@ The product follows the written word order. Reducedness is not assumed.
 
 **OpenAI notes:** The normalization discussion identifies indecomposable boundary-sheaf characters with KL polynomials by the cited character theorem. [bg:normalization](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L253).
 
-**Lean (primary):** The word-stalk character is proved to equal a positive Hecke-word coefficient. Its R-convolution is then proved before model decomposition and cancellation. The separate boundary-character identification is exposed as StalkCharacterObligation. [IntegralPairings:289](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L289), [CharacterReciprocity:1134](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L1134), [SheafMorphisms:219](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L219).
+**Lean (primary):** The word-stalk character is proved to equal a positive Hecke-word coefficient. Its R-convolution is then proved before model decomposition and cancellation. The separate boundary-character identification is exposed as StalkCharacterObligation. [IntegralPairings:289](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L289), [CharacterReciprocity:1134](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L1134), [SheafMorphisms:219](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L219), [BottSamelson:1924](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L1924), [BottSamelson:1945](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L1945), [IntegralPairings:104](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L104), [IntegralPairings:120](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L120).
 
 **Role in the proof:** The word formula and R-convolution describe the tensor word. A common decomposition into boundary models then supplies the character identities used in the cancellation argument.
 <!-- source-comparison:end -->
 
 *Proof.*
 
-### Step 1. Specify the two projections after adding a letter
+### Step 1. Name the positive-word coefficients
 
-Write the new word as \(s\mathbf t\). As in the free-stalk proof, its stalk at \(x\) is the two-stalk lattice in \(B^{\mathbf t}_x\oplus(B^{\mathbf t}_{sx})^\tau\). The first coordinate gives a surjective homogeneous map to \(B^{\mathbf t}_x\). The second gives a surjective homogeneous real-linear map to \(B^{\mathbf t}_{sx}\), after undoing the scalar twist. Surjectivity follows by projecting the old word elements in the defining pair lattice. The coefficient action \(\tau\) preserves polynomial degree, so undoing the twist preserves the real homogeneous pieces.
-
-### Step 2. Identify the kernels with their exact degree shift
-
-If \(x<s x\), the first projection has kernel \((0,\alpha y)\) with \(y\in(B^{\mathbf t}_{sx})^\tau\), by the proved edge-kernel equality. In new stalk coordinates the injection has zero zero-bit coordinates and one-bit coordinates \(\tau(\alpha y)\). It is injective because \(\alpha\ne0\) acts injectively on a stalk image, and surjective onto the kernel by that equality. Multiplication by the degree-one label raises degree by one; \(\tau\) preserves degree. Conversely, if the product has degree \(n\), decompose \(y\) into homogeneous pieces. Injectivity of multiplication by \(\alpha\) forces every piece except degree \(n-1\) to vanish.
-
-If \(sx<x\), use the second projection. Its kernel is \((\alpha y,0)\) with \(y\in B^{\mathbf t}_x\); the same injectivity and degree argument applies. Thus degreewise exactness gives
+Let
 \[
-\dim(B^{s\mathbf t}_x)_n=
-\begin{cases}
-\dim(B^{\mathbf t}_x)_n+\dim(B^{\mathbf t}_{sx})_{n-1},&x<s x,\\
-\dim(B^{\mathbf t}_{sx})_n+\dim(B^{\mathbf t}_x)_{n-1},&sx<x.
-\end{cases}
+H_\varnothing=T_1,\qquad
+H_{s\mathbf t}=H_{\mathbf t}+L_s(q)H_{\mathbf t},
+\qquad h_{\mathbf t}(x;q)=[T_x]H_{\mathbf t}.
 \]
-These are exact identities of finite-dimensional real vector spaces; no assertion about KL polynomials enters.
+This recursion gives the written factor order. We prove equality
+\(C_x^{\mathbf t}(q)=h_{\mathbf t}(x;q)\) for all \(x\), by induction on the word.
 
-### Step 3. Pass from dimensions to character polynomials
+### Step 2. Verify the empty-word values
 
-Word stalks are finite graded free, so their convergent Hilbert series have the common denominator \((1-q)^N\). Multiply the dimension identities by \(q^n\) and sum. Reindexing the shifted term by \(n-1\) contributes a factor \(q\). For every \(0<q<1\), cancellation of the nonzero common denominator gives
+The standard vector \(T_1\) has coefficient \(1\) at \(x=1\) and \(0\) elsewhere. The [[node:kl.word.character_normalization|empty-word character theorem]] gives exactly those same values. Thus the induction starts at the empty word.
+
+### Step 3. Read the positive Hecke recurrence at the output weight
+
+Only the standard input weights \(x\) and \(sx\) contribute to the coefficient at \(x\) after applying \(L_s(q)\).
+
+If \(\ell(sx)<\ell(x)\), the input \(sx\) contributes \(h_{\mathbf t}(sx;q)\), and the input \(x\) contributes \((q-1)h_{\mathbf t}(x;q)\). Adding the original vector changes the latter factor to \(q\). Hence
 \[
-C^{s\mathbf t}_x=
-\begin{cases}
-C^{\mathbf t}_x+qC^{\mathbf t}_{sx},&x<s x,\\
-C^{\mathbf t}_{sx}+qC^{\mathbf t}_x,&sx<x.
-\end{cases}
+h_{s\mathbf t}(x;q)
+=h_{\mathbf t}(sx;q)+q\,h_{\mathbf t}(x;q).
 \]
-An equality at all real parameters in \((0,1)\) is a polynomial equality, since a nonzero real polynomial has only finitely many roots. Injectivity of the coefficient map from integers to reals returns the equality in \(\mathbb Z[q]\).
 
-### Step 4. Match the Hecke recursion and its initial value
-
-For a coefficient vector \(v\), the unnormalized left Hecke operator satisfies
+If \(\ell(x)<\ell(sx)\), the operator contributes
+\(q\,h_{\mathbf t}(sx;q)\), and addition of the original vector gives
 \[
-[(1+T_s)v]_x=
-\begin{cases}
-v_x+qv_{sx},&x<s x,\\
-v_{sx}+qv_x,&sx<x.
-\end{cases}
+h_{s\mathbf t}(x;q)
+=h_{\mathbf t}(x;q)+q\,h_{\mathbf t}(sx;q).
 \]
-This follows by applying the operator to standard basis vectors and collecting the contributions to \(x\); the descent coefficient \(q-1\) becomes \(q\) after adding \(v\).
+These are the positive-word coefficient identities.
 
-The empty word has stalk \(A\) at \(1\) and zero stalks elsewhere. Its character vector is therefore the coefficient vector of \(T_1\). Induct on the word length: Step 3 and the displayed Hecke recursion apply the same rule to equal tail vectors, giving equality for the longer word. This proves the formula for all words.
+### Step 4. Substitute the induction hypothesis at both tail weights
 
-The theorem concerns tensor-word characters. The passage to boundary-sheaf characters uses the separate model decomposition and cancellation results; it does not assert the conditional boundary-character identification with KL polynomials.
+Assume \(C_y^{\mathbf t}=h_{\mathbf t}(y)\) for every \(y\in W\). Apply the [[node:kl.word.character_recursion|word-character recurrence]] at \(x\).
+
+In the descent case it gives
+\[
+C_x^{s\mathbf t}
+=C_{sx}^{\mathbf t}+qC_x^{\mathbf t}
+=h_{\mathbf t}(sx)+q h_{\mathbf t}(x)
+=h_{s\mathbf t}(x).
+\]
+In the ascent case it gives
+\[
+C_x^{s\mathbf t}
+=C_x^{\mathbf t}+qC_{sx}^{\mathbf t}
+=h_{\mathbf t}(x)+q h_{\mathbf t}(sx)
+=h_{s\mathbf t}(x).
+\]
+Both substituted tail weights are covered by the same induction hypothesis. This proves the equality for the longer word and completes the induction.
+
+The resulting coefficient identity is the word-character input to the later decomposition into shifted boundary models and actual-character reciprocity.
 
 ## References
 
-The precise Lean sources are listed below.
+The local source declarations below give the construction and proof.
 
 ## Lean formalization
 
-`OAI.KLInvariance.TitsSpace.bottHeadKernelEquiv`: [BottSamelson.lean:1578](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L1578).
-
-`OAI.KLInvariance.TitsSpace.bottHeadRightKernelEquiv`: [BottSamelson.lean:2045](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L2045).
-
-`OAI.KLInvariance.TitsSpace.bottStalkCharacter_ascent`: [IntegralPairings.lean:104](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L104).
-
-`OAI.KLInvariance.TitsSpace.bottStalkCharacter_descent`: [IntegralPairings.lean:120](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L120).
-
 `OAI.KLInvariance.TitsSpace.bottStalkCharacter_eq_heckeWord`: [IntegralPairings.lean:289](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L289).
+
+`OAI.KLInvariance.HeckeQ.positiveWord`: [IntegralPairings.lean:204](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L204).
+
+`OAI.KLInvariance.HeckeQ.positiveWord_nil`: [IntegralPairings.lean:208](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L208).
+
+`OAI.KLInvariance.HeckeQ.positiveWord_cons_coeff`: [IntegralPairings.lean:211](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L211).
+
+`OAI.KLInvariance.HeckeQ.left_coeff`: [IntegralPairings.lean:152](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L152).
+
+`OAI.KLInvariance.HeckeQ.left_plus_coeff`: [IntegralPairings.lean:197](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L197).

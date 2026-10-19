@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 69635,
-  "theorem_walkthroughs": 242,
+  "revised_proof_words": 71027,
+  "theorem_walkthroughs": 248,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -91,12 +91,15 @@
         "OAI.KLInvariance.Graded.scalar_range_homogeneous",
         "OAI.KLInvariance.Graded.ModuleData.Hom.component",
         "OAI.KLInvariance.Graded.ModuleData.Hom.mem_of_map_mem",
-        "OAI.KLInvariance.Graded.ModuleData.Hom.homogeneous_preimage"
+        "OAI.KLInvariance.Graded.ModuleData.Hom.homogeneous_preimage",
+        "OAI.KLInvariance.Graded.equiv_inverse_homogeneous",
+        "OAI.KLInvariance.Graded.homogeneousPieceEquiv",
+        "OAI.KLInvariance.Graded.finrank_homogeneousEquiv"
       ],
-      "proof_steps": 5,
-      "revised_proof_words": 218,
-      "proof_sha256": "42954028c4342d80128d0ba7ae9d36a61898db9142ecfa7d1f50750165e024ae",
-      "review": "Read map_component and the kernel/range/scalar consequences, plus Hom homogeneous preimages and injective degree detection. The argument uses only finite component decompositions and additive linearity."
+      "proof_steps": 6,
+      "revised_proof_words": 330,
+      "proof_sha256": "79c125e0f0f394791f3420c2e4f0d7f28b3673921027a00bb6a37e042b63379a",
+      "review": "Retained the existing component/kernel/image argument and added the explicit inverse degree and restricted piece isomorphisms for a k-linear equivalence, with the finite-dimensional character application."
     },
     {
       "node": "kl.algebra.dual_basis_degrees",
@@ -162,6 +165,19 @@
       "revised_proof_words": 229,
       "proof_sha256": "689ce0964cbca1ffc2b3bada6100687ef42a4ca7f1f182c214e381c6bb095770",
       "review": "Read imagePieceMap, its homogeneous lifting proof, the kernel equivalence and value_image_exact. Kept finiteness on the source pieces and derived image finiteness from the surjection."
+    },
+    {
+      "node": "kl.algebra.hilbert_numerators",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Hilbert.hasSum_shift_coeff",
+        "OAI.KLInvariance.Hilbert.numerator_unique",
+        "OAI.KLInvariance.Hilbert.numerator_add_shift"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 291,
+      "proof_sha256": "dfeb32278cbedffa4abd55a663d502afb853bf99a84c663cad4135de6fb8d7a7",
+      "review": "Read all three Hilbert numerator lemmas. Kept the arbitrary nonzero common factor, the integer shift and nonzero real parameter for reindexing, then the infinite-evaluation argument over the embedded integer coefficients."
     },
     {
       "node": "kl.algebra.hilbert_scalar_quotient",
@@ -1108,17 +1124,18 @@
     {
       "node": "kl.detail.word_character_formula",
       "source_declarations": [
-        "OAI.KLInvariance.TitsSpace.bottHeadKernelEquiv",
-        "OAI.KLInvariance.TitsSpace.bottHeadRightKernelEquiv",
-        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_ascent",
-        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_descent",
-        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_eq_heckeWord"
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_eq_heckeWord",
+        "OAI.KLInvariance.HeckeQ.positiveWord",
+        "OAI.KLInvariance.HeckeQ.positiveWord_nil",
+        "OAI.KLInvariance.HeckeQ.positiveWord_cons_coeff",
+        "OAI.KLInvariance.HeckeQ.left_coeff",
+        "OAI.KLInvariance.HeckeQ.left_plus_coeff"
       ],
       "proof_steps": 4,
       "previous_proof_words": 0,
-      "revised_proof_words": 487,
-      "proof_sha256": "6275af8d51cf8e6c89fb83217c5cf66b84d501a5168c03327ddd136d199fc41f",
-      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
+      "revised_proof_words": 270,
+      "proof_sha256": "0273591ab129f5556b2a33f5592288da5e425580ad6e5707d4db8e4509d32a28",
+      "review": "Rewrote the equality proof as the source induction on the whole coefficient family, with exact output-weight Hecke contributions, the empty-word base and both tail substitutions. The graded-kernel and numerator arguments now have their own detailed prerequisites."
     },
     {
       "node": "kl.detail.word_character_reciprocity",
@@ -2820,6 +2837,33 @@
       "review": "Read the BalancedPairings vertex image proof, including its free-image route, interval class lifting and free-target denominator removal. Kept the reduced word and full interval hypotheses, separate from upper-image projectivity."
     },
     {
+      "node": "kl.word.character_normalization",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_zero",
+        "OAI.KLInvariance.TitsSpace.bottTopPolynomialEquiv",
+        "OAI.KLInvariance.TitsSpace.bottTopPolynomialEquiv_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_top",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_nil"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 223,
+      "proof_sha256": "2016708419fb39f32a291793a07dc048eb68fd018d89e2411450889d3fba3d39",
+      "review": "Read the zero numerator, top polynomial equivalence, homogeneous dimensions and empty-word branch proof. Used Hilbert numerator uniqueness as in the source and stated the reducedness needed for top/support normalization."
+    },
+    {
+      "node": "kl.word.character_recursion",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_ascent",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_descent"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 237,
+      "proof_sha256": "331459de10769aea360defe4b7677f0df53a41e9a75f8d1093a1cf106cd2dca6",
+      "review": "Read both numerator_add_shift applications and their common nonzero coefficient factor. Preserved the exact ascent/descent roles and obtained formal polynomial equalities from convergent real evaluations."
+    },
+    {
       "node": "kl.word.class_lift_assembly",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2895,6 +2939,22 @@
       "revised_proof_words": 284,
       "proof_sha256": "f09ee511c04ba7b0871bb5cc933f95698af7ee955e6b6ed8b764715f6e0b8dba",
       "review": "Followed the word induction and both first-bit cases of bottEvaluation_right, then the coordinatewise stalk proof. Preserved the left multiplication s*w and the right coefficient action."
+    },
+    {
+      "node": "kl.word.head_kernel_degree",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottHeadKernelEquiv_eval",
+        "OAI.KLInvariance.TitsSpace.bottHeadLeft_kernel_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottHeadKernelEquiv_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottHeadRightKernelEquiv_eval",
+        "OAI.KLInvariance.TitsSpace.bottHeadRight_kernel_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottHeadRightKernelEquiv_homogeneous"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 236,
+      "proof_sha256": "8144c852f4808bb9011706ddd2da042d60a09720d6906a2968c0b526771df145",
+      "review": "Read both evaluation formulas and homogeneous-degree proofs. Expanded the real-linear inverse-degree argument and identified the source positive shift M(1)_n=M_(n-1)."
     },
     {
       "node": "kl.word.head_pair_equivalence",
@@ -3205,6 +3265,21 @@
       "review": "Read the actual tensor endomorphism, coordinate preservation, kernel killing and projective_of_end application. Retained only reflection stability of U, without an extra upper-set hypothesis."
     },
     {
+      "node": "kl.word.stalk_degree_exactness",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.symmetricGrading_finite",
+        "OAI.KLInvariance.TitsSpace.bottCoordinatePiece_finite",
+        "OAI.KLInvariance.TitsSpace.bottStalkPiece_finite",
+        "OAI.KLInvariance.TitsSpace.bottStalk_finrank_ascent",
+        "OAI.KLInvariance.TitsSpace.bottStalk_finrank_descent"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 286,
+      "proof_sha256": "548ae968a8bca00b1b7070ac32d0bdd54d15064f9e12e92f89ffe6d8929df458",
+      "review": "Read the finite homogeneous-piece instances and both finrank recurrences. Followed the source coefficient-product-subspace finiteness route, degreewise surjectivity and kernel-piece equivalences before rank-nullity."
+    },
+    {
       "node": "kl.word.stalk_freeness_step",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -3216,6 +3291,18 @@
       "revised_proof_words": 357,
       "proof_sha256": "7b41c89182143f3b90e18f65db1a7019609fb76c42b90ace37b496b03dae318a",
       "review": "Read both branches of bottStalk_free_cons, the coordinate-domain scalar-injectivity fact and the finite-image instance. Used the previously proved explicit split sequences and kept all old-word assumptions."
+    },
+    {
+      "node": "kl.word.stalk_hilbert_formula",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottPolynomialStalk_finrank",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_hasSum"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 224,
+      "proof_sha256": "1d93918bd4a3dad20bde56954b11ff24fd8c2ace0ef6703f34ec538a22cc8146",
+      "review": "Read bottPolynomialStalk_finrank and bottStalkCharacter_hasSum. Expanded the real-linear degreewise transport, nonnegative basis and finite sum of shifted polynomial coefficient series."
     },
     {
       "node": "kl.word.support_duality",

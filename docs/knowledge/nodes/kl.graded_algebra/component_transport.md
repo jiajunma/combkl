@@ -12,6 +12,7 @@ uses:
 lean:
   repository: openai-kl
   modules:
+  - BottSamelson
   - GradedModules
   declarations:
   - OAI.KLInvariance.Graded.map_component
@@ -22,6 +23,9 @@ lean:
   - OAI.KLInvariance.Graded.ModuleData.Hom.component
   - OAI.KLInvariance.Graded.ModuleData.Hom.mem_of_map_mem
   - OAI.KLInvariance.Graded.ModuleData.Hom.homogeneous_preimage
+  - OAI.KLInvariance.Graded.equiv_inverse_homogeneous
+  - OAI.KLInvariance.Graded.homogeneousPieceEquiv
+  - OAI.KLInvariance.Graded.finrank_homogeneousEquiv
 source:
   spans:
   - artifact: openai-kl-source
@@ -56,13 +60,26 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.GradedModules:1336
     format: lean-location
     note: OAI.KLInvariance.Graded.ModuleData.Hom.homogeneous_preimage
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.BottSamelson:567
+    format: lean-location
+    note: OAI.KLInvariance.Graded.equiv_inverse_homogeneous
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.BottSamelson:1654
+    format: lean-location
+    note: OAI.KLInvariance.Graded.homogeneousPieceEquiv
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.BottSamelson:1665
+    format: lean-location
+    note: OAI.KLInvariance.Graded.finrank_homogeneousEquiv
 verification:
   statement: accepted
   proof: accepted
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Are the grading, scalar, finiteness and convergence hypotheses retained?
+  prompt: Are the gradings, scalar actions, coefficient variables and formal polynomial
+    conclusions explicit?
   verdict: Read map_component and the kernel/range/scalar consequences, plus Hom homogeneous
     preimages and injective degree detection. The argument uses only finite component
     decompositions and additive linearity.
@@ -82,6 +99,13 @@ Then
 Both the kernel and the image are closed under all homogeneous component maps.
 
 For a degree-zero map, surjectivity gives homogeneous preimages in the same degree; injectivity implies that a vector whose image lies in \(N_n\) already lies in \(M_n\).
+
+For a \(k\)-linear equivalence \(e:M\to N\) of degree \(r\), its inverse has degree \(-r\), and restriction gives \(k\)-linear isomorphisms
+\[
+M_n\xrightarrow{\sim}N_{n+r}.
+\]
+In the finite-dimensional pieces used for characters, this gives
+\(\dim_k N_n=\dim_k M_{n-r}\).
 
 *Proof.*
 
@@ -130,6 +154,22 @@ Its image \(aM\) is homogeneous by Step 3. This supplies the grading used on sca
 For \(A=k[X]\), multiplication by \(X\) has degree one, and the formula reads
 \(\pi_n(Xf)=X\pi_{n-1}(f)\).
 
+### Step 6. Restrict a homogeneous equivalence to its pieces
+
+Let \(e:M\to N\) be a \(k\)-linear equivalence of degree \(r\). For \(y\in N_n\), put \(m=e^{-1}(y)\). The component identity from Step 1 gives
+\[
+e(\pi_{n-r}^M(m))=\pi_n^N(e(m))=\pi_n^N(y)=y=e(m).
+\]
+Injectivity of \(e\) gives \(m=\pi_{n-r}^M(m)\), so \(e^{-1}(y)\in M_{n-r}\).
+
+For each \(j\), the forward map therefore restricts to \(M_j\to N_{j+r}\), and its inverse restricts to \(N_{j+r}\to M_j\). Their two composite identities are inherited from \(e,e^{-1}\), and both restricted maps are \(k\)-linear. This constructs homogeneousPieceEquiv.
+
+Taking \(j=n-r\) and dimensions gives the finite-dimensional formula
+\[
+\dim_kN_n=\dim_kM_{n-r}.
+\]
+This is the finrank_homogeneousEquiv equality used in the word-character proof. The inverse-degree argument is the source's equiv_inverse_homogeneous, applied here with scalar ring \(k\).
+
 ## References
 
 The local source declarations below give the construction and proof.
@@ -151,3 +191,9 @@ The local source declarations below give the construction and proof.
 `OAI.KLInvariance.Graded.ModuleData.Hom.mem_of_map_mem`: [GradedModules.lean:1327](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedModules.lean#L1327).
 
 `OAI.KLInvariance.Graded.ModuleData.Hom.homogeneous_preimage`: [GradedModules.lean:1336](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedModules.lean#L1336).
+
+`OAI.KLInvariance.Graded.equiv_inverse_homogeneous`: [BottSamelson.lean:567](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L567).
+
+`OAI.KLInvariance.Graded.homogeneousPieceEquiv`: [BottSamelson.lean:1654](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L1654).
+
+`OAI.KLInvariance.Graded.finrank_homogeneousEquiv`: [BottSamelson.lean:1665](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L1665).
