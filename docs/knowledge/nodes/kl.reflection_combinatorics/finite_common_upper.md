@@ -56,6 +56,14 @@ The common upper bound need not belong to \(F\).
 
 The proof uses a general Coxeter fact: if every simple reflection is a left descent of \(w\), then every group element lies below \(w\).
 
+## Application to finite relative lower ideals
+
+For a finite relative coset vertex set \(K\), apply the theorem to its underlying elements of the induced dihedral group. The resulting \(d\) gives
+\[
+K\subseteq[1,d]_H.
+\]
+The inclusion preserves and reflects the intrinsic order because both use the same Bruhat relation on the same underlying elements. This is the interval used in the [[node:kl.local.coset_structure_models|coset-model transport proof]].
+
 <!-- source-comparison:start -->
 ## Relation to the OpenAI notes
 
@@ -67,14 +75,6 @@ The proof uses a general Coxeter fact: if every simple reflection is a left desc
 
 **Role in the proof:** The Blueprint follows the finite-interval construction and verifies the support, outgoing lifts, scalar maps and label equality before assembling the local-model fields.
 <!-- source-comparison:end -->
-
-## Application to finite relative lower ideals
-
-For a finite relative coset vertex set \(K\), apply the theorem to its underlying elements of the induced dihedral group. The resulting \(d\) gives
-\[
-K\subseteq[1,d]_H.
-\]
-The inclusion preserves and reflects the intrinsic order because both use the same Bruhat relation on the same underlying elements. This is the interval used in the [[node:kl.local.coset_structure_models|coset-model transport proof]].
 
 *Proof.*
 

@@ -7,6 +7,7 @@ primary_topic: kl.sheaves
 topics:
 - kl.sheaves
 uses:
+- kl.sheaves.graph_sheaf
 - kl.sheaves.finite_operations
 - kl.sheaves.flabbiness
 - kl.detail.upper_quotient
@@ -62,8 +63,10 @@ verification:
 generality:
   reviewed: true
   prompt: Does the entry preserve the source hypotheses, construction, and conclusion?
-  verdict: Read against the named Lean declarations and surrounding variable context;
-    explanatory examples are distinguished from the formal statement.
+  verdict: Re-read the ungraded finite-product source lemmas and pi_mem_ideal_smul.
+    Made the arbitrary commutative ring and ideal J explicit, retaining the graded
+    positive-ideal and shift statements as specializations; separated freeness from
+    finite freeness.
 tags:
 - Kazhdan-Lusztig
 - moment_graph_sheaves
@@ -71,13 +74,20 @@ tags:
 
 # Structural properties and kernels of finite sheaf sums
 
-Let \((B_i)\) be a finite family of graded sheaves on the same labelled ordered graph. Finite sums and nonnegative grading shifts preserve free stalks, global generation, flabbiness, and the upper-quotient rule whenever the summands have those properties.
+Let \(R\) be a commutative ring, \(G\) a labelled ordered graph, and \((B_i)\) a finite family of sheaves on \(G\). Their finite sum preserves free stalks, finite free stalks, global generation, flabbiness and the upper-quotient rule whenever the summands have those properties.
 
-At each vertex,
+For every vertex \(x\),
 \[
-K_x\!\left(\bigoplus_iB_i\right)=\prod_i K_x(B_i)
+K_x\!\left(\bigoplus_iB_i\right)=\prod_iK_x(B_i)
 \]
-under the componentwise stalk identification. If every \(K_x(B_i)\subseteq J B_i^x\), where \(J=A_{>0}\), then the sum is kernel-minimal at \(x\).
+under the componentwise stalk identification. For any ideal \(J\subseteq R\), the inclusions \(K_x(B_i)\subseteq JB_i^x\) imply
+\[
+K_x\!\left(\bigoplus_iB_i\right)
+\subseteq J\left(\bigoplus_iB_i^x\right).
+\]
+Thus the result applies both to a local maximal ideal and to the positive ideal of a graded coefficient algebra.
+
+For graded sheaves, finite graded sums and nonnegative grading shifts also preserve the corresponding degree conditions. The positive-ideal case gives graded kernel minimality.
 
 *Proof.*
 
@@ -119,11 +129,11 @@ Apply this to \(M_i=B_i^x\) and the kernel tuple from Step 3. The component mini
 
 ### Step 5. Check freeness and shifts
 
-Choose a free basis in each stalk summand. The coordinate insertions of these basis vectors form a basis of the finite product: coordinatewise expansions prove spanning, and coordinatewise independence proves independence.
+Choose a free basis in each stalk summand. The coordinate insertions of these basis vectors form a basis of the finite product: coordinatewise expansions prove spanning, and coordinatewise independence proves independence. If the stalk bases are finite, their finite union is finite, giving finite free stalks.
 
 A grading shift changes the degrees but leaves the underlying modules and restrictions unchanged. Therefore it preserves the section, quotient, and kernel conditions. Its nonnegative shift also retains the grading requirements.
 
-The compatibility, generation, flabbiness, quotient, and kernel arguments above apply to arbitrary products of ungraded sheaves as well. Finiteness supplies the finite graded module data, the finite free basis, and the ideal-multiple argument in Step 4.
+The compatibility, generation, flabbiness, quotient, and kernel arguments are componentwise even for arbitrary products of ungraded sheaves. The finite-family assumption supplies the ideal-coordinate sum in Step 4 and, with finite free inputs, the finite basis in Step 5.
 
 ## References
 

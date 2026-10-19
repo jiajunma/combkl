@@ -1504,21 +1504,6 @@
       "pending": []
     },
     {
-      "node": "kl.sheaves.finite_sum_properties",
-      "file": "docs/knowledge/nodes/kl.sheaves/finite_sum_properties.md",
-      "source_declarations": [
-        "OAI.KLInvariance.MomentGraph.Sheaf.pi_compatible",
-        "OAI.KLInvariance.MomentGraph.Sheaf.pi_generated",
-        "OAI.KLInvariance.MomentGraph.Sheaf.pi_flabby",
-        "OAI.KLInvariance.MomentGraph.Sheaf.pi_upperQuotient",
-        "OAI.KLInvariance.MomentGraph.Sheaf.pi_kernel_iff",
-        "OAI.KLInvariance.LocalCover.pi_mem_ideal_smul",
-        "OAI.KLInvariance.MomentGraph.Sheaf.pi_minimal"
-      ],
-      "review": "Checked componentwise generation/flabbiness/quotients/kernels and the finite coordinate-insertion proof for positive-ideal membership.",
-      "pending": []
-    },
-    {
       "node": "kl.sheaves.interval_boundary",
       "file": "docs/knowledge/nodes/kl.sheaves/interval_boundary.md",
       "source_declarations": [
@@ -1582,16 +1567,6 @@
         "OAI.KLInvariance.MomentGraph.GradedSheaf.extend_modelSum"
       ],
       "review": "Read extend_modelSum. The graded remainder becomes new centered shifted models; their support kills every old vertex and every edge with old upper endpoint; outgoing squares and incoming quotient maps complete the extension.",
-      "pending": []
-    },
-    {
-      "node": "kl.sheaves.partial_iso_extension",
-      "file": "docs/knowledge/nodes/kl.sheaves/partial_iso_extension.md",
-      "source_declarations": [
-        "OAI.KLInvariance.MomentGraph.Sheaf.OnIso.extend",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnIso.extend"
-      ],
-      "review": "Read OnIso.extend in GradedSheaves and MinimalExtensions. Edge maps belong to the domain whenever the upper endpoint does; incoming maps descend through quotients and homogeneous lifts prove grading.",
       "pending": []
     },
     {
@@ -4984,6 +4959,129 @@
       ],
       "review": "Read injectivity of the ambient coset-edge map, the distinct same-source label argument, coset_supported_pairwise and coset_kernel_product. Traced primality and nondivisibility before localization, verified the local product-divisibility hypotheses, and derived both edge-image formulas through the previously proved generic theorem.",
       "pending": []
+    },
+    {
+      "node": "kl.local.minimal_covers",
+      "file": "docs/knowledge/nodes/kl.localization/local_minimal_covers.md",
+      "source_declarations": [
+        "OAI.KLInvariance.LocalCover.lift_surjective",
+        "OAI.KLInvariance.LocalCover.exists_split_minimal_cover"
+      ],
+      "review": "Read the exact local-ring cover hypotheses of LocalCover.lift_surjective and exists_split_minimal_cover. Defined the residue module, proved the preimage identity and equivalence with residue-field minimality, and separated a minimal rank-one quotient from a free cover with an extra generator.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.cover_lift_surjectivity",
+      "file": "docs/knowledge/nodes/kl.localization/cover_lift_surjectivity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.LocalCover.lift_surjective"
+      ],
+      "review": "Read lift_surjective with only Module.Finite on P and no freeness assumptions. Expanded the source residue-class construction, the finite cokernel reduction, and the determinant form of the standard Nakayama implication invoked there.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.cover_splitting",
+      "file": "docs/knowledge/nodes/kl.localization/local_cover_splitting.md",
+      "source_declarations": [
+        "OAI.KLInvariance.LocalCover.splitEquiv",
+        "OAI.KLInvariance.LocalCover.exists_split_minimal_cover"
+      ],
+      "review": "Read the single projective lift, lift_surjective, chosen right inverse, explicit splitEquiv, finite kernel projection and split-projective kernel in exists_split_minimal_cover. Expanded the standard finite-projective-over-local-ring implication and checked the quotient triangle and a rank-two example.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.boundary_image_transport",
+      "file": "docs/knowledge/nodes/kl.sheaves/boundary_image_transport.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.symm",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.mapAssignment",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.mapAssignment_at",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.compatible",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.boundary",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.boundaryMap",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.map_boundaryImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.map_stalk_image"
+      ],
+      "review": "Read AboveIso.mapAssignment, compatible, boundary, boundaryMap, map_boundaryImage and map_stalk_image. Kept the zero extension outside the strict upper set and proved both image containments, without claiming an isomorphism of the full assignment modules.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.stalk_splitting",
+      "file": "docs/knowledge/nodes/kl.localization/local_stalk_splitting.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.extend_stalk"
+      ],
+      "review": "Read AboveIso.extend_stalk: constructed N as the actual outgoing image, verified both codomain-restricted surjections and equality of the cover kernel, applied the single-lift local splitting, and evaluated the resulting identity at each outgoing edge.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.model_sum_properties",
+      "file": "docs/knowledge/nodes/kl.localization/local_model_sum_properties.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.free",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.finite",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.quotient",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.generated",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.flabby",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.minimal"
+      ],
+      "review": "Read all six ungraded ModelSum property inductions. Expanded the zero case, finite bases, quotient kernels, section extension and ideal-coordinate insertion. Kept the minimality hypothesis x outside the allowed center set and required no upper-set condition on U.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.model_sum_step",
+      "file": "docs/knowledge/nodes/kl.localization/local_model_sum_step.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.OnIso.above",
+        "OAI.KLInvariance.MomentGraph.Sheaf.OnIso.prodZero",
+        "OAI.KLInvariance.MomentGraph.Sheaf.extend_modelSum"
+      ],
+      "review": "Read extend_modelSum and its AboveIso, basis-coordinate, prodZero, outgoing-compatibility and OnIso.extend constructions. Preserved the local finite-free hypothesis only at the new stalk, the upper-set conditions, the vanishing of all old-target edge modules, and the ModelSum constructor.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.model_decomposition",
+      "file": "docs/knowledge/nodes/kl.localization/local_model_decomposition.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.OnIso.ofUniv",
+        "OAI.KLInvariance.MomentGraph.Sheaf.exists_modelSumIso"
+      ],
+      "review": "Read the entire strong induction in exists_modelSumIso. Stated the complement-of-unprocessed-set invariant, zero initialization, maximal unprocessed choice, all-above condition, strict erasure step, upper closure of the enlarged processed set, and conversion of OnIso on all vertices to Iso. Retained finiteness of vertices without imposing a finite-edge hypothesis.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.localized_decomposition",
+      "file": "docs/knowledge/nodes/kl.localization/localized_decomposition.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localized_boundary_decomposition"
+      ],
+      "review": "Replaced the compressed application by all hypotheses of localized_boundary_decomposition and their exact generic sources. Corrected the previous two-lift narrative to the single projective lift, residue-surjectivity/Nakayama and right-inverse splitting used by LocalCover and the OpenAI notes. Kept the finite basis, minimal coset representative, actual localized stalks and both restriction maps explicit.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.partial_iso_extension",
+      "file": "docs/knowledge/nodes/kl.sheaves/partial_iso_extension.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.OnIso.extend",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnIso.extend"
+      ],
+      "review": "Re-read ungraded OnIso.extend and its graded refinement. Made the ungraded statement primary, preserved the upper-endpoint edge data and outgoing commuting hypothesis, and kept degree preservation as a separate final verification.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.finite_sum_properties",
+      "file": "docs/knowledge/nodes/kl.sheaves/finite_sum_properties.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.pi_compatible",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pi_generated",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pi_flabby",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pi_upperQuotient",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pi_kernel_iff",
+        "OAI.KLInvariance.LocalCover.pi_mem_ideal_smul",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pi_minimal"
+      ],
+      "review": "Re-read the ungraded finite-product source lemmas and pi_mem_ideal_smul. Made the arbitrary commutative ring and ideal J explicit, retaining the graded positive-ideal and shift statements as specializations; separated freeness from finite freeness.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -5529,7 +5627,8 @@
         "kl.sheaves.morphism_extension_step",
         "kl.detail.morphism_extension",
         "kl.sheaves.pullback_live_flabbiness",
-        "kl.sheaves.pullback_selected_kernels"
+        "kl.sheaves.pullback_selected_kernels",
+        "kl.sheaves.boundary_image_transport"
       ],
       "pending": [],
       "review": "The existing finite operations, lower extensions, morphism/isomorphism data and partial-isomorphism extension are joined by explicit tensor base change, both constraint maps, the finite-flat section isomorphism, property transport, graded boundary lifting, one-vertex quotient descent and finite-complement morphism extension."
@@ -5813,15 +5912,21 @@
     {
       "code": "L4",
       "title": "Local model decomposition",
-      "status": "in_progress",
+      "status": "exposition_reviewed",
       "completion_evidence": [
         "kl.detail.local_models",
-        "kl.local.model_sums"
+        "kl.local.model_sums",
+        "kl.local.minimal_covers",
+        "kl.local.cover_lift_surjectivity",
+        "kl.local.cover_splitting",
+        "kl.local.stalk_splitting",
+        "kl.local.model_sum_properties",
+        "kl.local.model_sum_step",
+        "kl.local.model_decomposition",
+        "kl.local.localized_decomposition"
       ],
-      "pending": [
-        "Expand the local-ring splitting lemmas, inheritance of model-sum properties, partial-isomorphism extension at a minimal vertex and the complete descending local decomposition."
-      ],
-      "review": "Expanded all nine local-model fields and the residue-field meaning of minimality; separated the ungraded finite model-sum definition, coordinates and example. The local decomposition proof remains."
+      "pending": [],
+      "review": "Reviewed local minimal-cover data, the exact single-lift surjectivity/Nakayama step, explicit splitting and finite free kernel, transport of the common boundary image, all model-sum properties, the one-vertex extension with both endpoint maps, maximal-unprocessed-vertex induction and every hypothesis of the actual localized boundary-sheaf application. Added a complete two-vertex coordinate example."
     },
     {
       "code": "L5",
@@ -5902,7 +6007,7 @@
     }
   ],
   "next_steps": [
-    "Expand local-ring minimal-cover splitting, model-sum properties, partial-isomorphism extension and the full descending local decomposition.",
+    "Expand correction factors, their root-plane multiplicities and the embedded local edge-image comparison, then the local-to-global inclusion.",
     "Complete the remaining Coxeter/parabolic, root-space and sheaf-operation exposition.",
     "Expand adapted orders, chamber changes, dihedral interval transport, schedules and the path-polynomial proof.",
     "Complete localization, local image comparison, edge inequalities and the simultaneous invariance induction.",
@@ -6367,7 +6472,15 @@
       "kl.local.structure_kernel_products": "L3",
       "kl.local.structure_edge_images": "L3",
       "kl.local.localized_relative_primality": "L1",
-      "kl.local.coset_kernel_products": "L3"
+      "kl.local.coset_kernel_products": "L3",
+      "kl.local.minimal_covers": "L4",
+      "kl.local.cover_lift_surjectivity": "L4",
+      "kl.local.cover_splitting": "L4",
+      "kl.sheaves.boundary_image_transport": "S3",
+      "kl.local.stalk_splitting": "L4",
+      "kl.local.model_sum_properties": "L4",
+      "kl.local.model_sum_step": "L4",
+      "kl.local.model_decomposition": "L4"
     },
     "moved_nodes": [
       {
@@ -7201,7 +7314,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 446
+    "current_node_count": 454
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -7231,7 +7344,8 @@
     "Completed L2: defined the finite relative coset graph and localized coset sheaf, proved the outgoing lifts and lower-ideal properties, separated general surviving-edge flabbiness from fixed-vertex kernel pullback, and checked all inputs for the actual plane localization. Added the induced/ambient root-label identification and preserved both selected edge images in the common ambient tensor module.",
     "Completed L1: separated edge coefficient rings, the plane local ring and the localized edge quotient; wrote the scalar maps and tensor-quotient inverse explicitly. Added coordinate-basis descent and the actual edge-module action/freeness, expanded polynomial edge-ring coordinates and plane-prime generators, and proved root association via a nonzero transverse real coefficient.",
     "Expanded the native dihedral model construction into its full dependency chain: general Coxeter parity matching, independent normal-value prescription, single- and double-zero orbit factors, product interpolation, supported outgoing products and the finite upper-set flabbiness induction. Added an explicit A2 section calculation. L3 remains in progress for localized coset-model transport and product/image formulas.",
-    "Completed L3: transported native structure models through scalar extension and the finite relative coset embedding, checked exact canonical root labels and all local-model fields, and proved the arbitrary selected-kernel and both edge-image product formulas. Explained prime-label relative primality after localization. Began L4 by separating local-model data from finite ungraded sums."
+    "Completed L3: transported native structure models through scalar extension and the finite relative coset embedding, checked exact canonical root labels and all local-model fields, and proved the arbitrary selected-kernel and both edge-image product formulas. Explained prime-label relative primality after localization. Began L4 by separating local-model data from finite ungraded sums.",
+    "Completed L4: expanded the single-lift local-ring splitting and finite free remainder, the actual common outgoing image, model-sum properties, one-vertex extension and full finite descent. Corrected the old localized-decomposition prose from a graded-style two-lift route to the source single-lift proof. Generalized the reusable partial-isomorphism and finite-sum statements to their ungraded source forms and separated local/graded cover links."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -7471,6 +7585,14 @@
       "term": "local boundary models",
       "target": "kl.detail.local_models",
       "review": "Linked the family terminology to the nine-field LocalModels definition, including its top coordinate and local minimality condition."
+    },
+    {
+      "term": "minimal free cover",
+      "target": "kl.local.minimal_covers",
+      "topics": [
+        "kl.localization"
+      ],
+      "review": "Separated local-ring and graded covers. Bare cover aliases in localization resolve to the new maximal-ideal definition; their graded-algebra/sheaf/word-module scopes keep the graded definition. Explicit local-cover phrases have a global local-ring target."
     }
   ],
   "corrections": [
@@ -7490,21 +7612,20 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-19T16:03:23.713124+00:00",
+    "created_at": "2026-10-19T16:24:45.413644+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 446,
-    "html_pages_checked": 715,
-    "generated_definition_links_checked": 6623,
+    "node_count": 454,
+    "html_pages_checked": 724,
+    "generated_definition_links_checked": 6735,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision expands all nine LocalModels fields and separates the ungraded ModelSum definition. It checks model transport, finite coset construction, selected kernel/image products and relative primality after localization. Documentation checks only.",
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks local minimal covers, the single-lift Nakayama argument, explicit splitting, boundary-image transport, model-sum properties, partial-isomorphism extension and full local descent. Documentation checks only.",
     "focused_page_review": {
       "entries": 11,
-      "source_anchors": 44,
-      "definition_links": 10,
-      "scoped_model_sum_links": 13,
-      "scope": "Read all saved definitions and proofs; checked scalar and quotient maps, both endpoint squares, intrinsic order and common-upper hypotheses, selected-set indexing, supported/zero cases and denominator clearing. Verified all nine model-field cells, distinct graded/ungraded sum targets, guide reachability and forward-application navigation without a dependency edge."
+      "source_anchors": 35,
+      "cover_definition_links": 19,
+      "scope": "Read saved statements and proofs, including every cover map and splitting inverse, the finite kernel argument, boundary-image containments, zero model block and both endpoint squares. Checked local versus graded cover destinations, the maximal-unprocessed induction, the explicit two-vertex example and every hypothesis of the localized application."
     }
   },
   "structure_coverage_scan": {
@@ -7883,6 +8004,42 @@
         "kl.local.coset_kernel_products"
       ],
       "review": "Denominator clearing proves nondivisibility without a domain assumption. The domain condition retains nonzero primality after localization; the unit case handles labels outside the prime. The coset application verifies nondivisibility by identifying positive roots, reflections and fixed-source edges."
+    },
+    {
+      "entries": [
+        "kl.local.cover_lift_surjectivity",
+        "kl.local.cover_splitting",
+        "kl.local.localized_decomposition"
+      ],
+      "review": "Lean and the notes use one lift through the model cover, followed by surjectivity modulo the maximal ideal, Nakayama and a right inverse. The former localized-decomposition prose incorrectly imported the graded two-lift/composite correction. The replacement follows the actual local source and explains the standard Nakayama and finite-projective-over-local-ring steps."
+    },
+    {
+      "entries": [
+        "kl.sheaves.boundary_image_transport",
+        "kl.local.stalk_splitting"
+      ],
+      "review": "AboveIso.mapAssignment sets values outside the strict upper set to zero. The proof transports boundary images, not the full assignment modules. The common target N is an actual range submodule, and evaluating the cover triangle gives each outgoing restriction square."
+    },
+    {
+      "entries": [
+        "kl.local.model_sum_properties",
+        "kl.local.model_sum_step"
+      ],
+      "review": "Model-sum minimality requires only that the new vertex is outside the center set. In the extension step, upper closure makes all new-model stalks on the processed set zero; upper quotient surjectivity makes all edge modules with processed targets zero. Basis coordinates and chosen top coordinates identify the kernel with the new model block."
+    },
+    {
+      "entries": [
+        "kl.local.model_decomposition",
+        "kl.local.localized_decomposition"
+      ],
+      "review": "The induction selects a maximal unprocessed vertex and shrinks the finite complement of an upper set. The generic theorem assumes only a finite vertex set, not a finite edge set. The actual application separately checks the local ring, finite coset vertices, finite free tensor stalks, quotient rule, generation, flabbiness and complete cosetModels data."
+    },
+    {
+      "entries": [
+        "kl.sheaves.partial_iso_extension",
+        "kl.sheaves.finite_sum_properties"
+      ],
+      "review": "The source lemmas already include ungraded statements. Their expositions now state arbitrary commutative coefficients and, for finite-sum minimality, an arbitrary ideal. Grading and positive-ideal specializations remain explicit later clauses rather than implicit restrictions on local-ring uses."
     }
   ],
   "relationship_map_revision": {
@@ -7890,6 +8047,6 @@
     "edge_count": 92,
     "route": "Top splitting and primitive recognition feed the boundary-pairing route; full model decomposition feeds simultaneous character formulas.",
     "evidence": "BoundarySheaf.splitIn_of_top_split, iso_of_primitive_top_split, GradedSheaf.exists_modelSumIso and bottCharacter_decomposition_both.",
-    "latest_anchor_refinement": "Recorded finite common-upper embeddings, structure-model scalar extension and pullback, the actual coset local-model package, selected kernel/edge-image products and localized relative primality. The 38-stage, 92-edge graph remains acyclic. The forward application link from the common-upper theorem to coset-model transport is navigation, not a prerequisite."
+    "latest_anchor_refinement": "Completed the local descent interfaces: actual boundary-image transport, one-lift local cover splitting, model-sum extension and full finite-vertex induction. The 38-stage, 92-edge graph remains acyclic; node-level links distinguish the generic ungraded construction from graded variants and from the actual localized boundary-sheaf application."
   }
 }

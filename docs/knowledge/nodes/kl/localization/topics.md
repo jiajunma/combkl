@@ -307,6 +307,93 @@ An ungraded model sum adds finitely many copies of these models. For a one-edge 
 
 The local decomposition produces an actual sheaf isomorphism to such a sum. The selected kernel and edge-image formulas then apply componentwise. They turn the comparison into scalar products in each common model edge module; the root-plane count determines the correction between those products.
 
+## The common outgoing image at the next vertex
+
+Let \(B\) be the sheaf being decomposed and \(C\) the sum of models already added. Suppose their partial isomorphism is defined on an upper set \(U\), and \(x\notin U\) has every vertex above it in \(U\).
+
+The old edge maps give an isomorphism \(J\) between the products of outgoing edge modules at \(x\). A section above \(x\) transports through the old vertex maps; the restriction squares show that its boundary value transports through \(J\). Applying the inverse maps proves the reverse containment of boundary images.
+
+Generation and flabbiness identify those boundary images with the images of the outgoing stalk maps. The [[node:kl.sheaves.boundary_image_transport|boundary-image transport theorem]] therefore gives
+\[
+J(\operatorname{im}d_x^B)=\operatorname{im}d_x^C=:N.
+\]
+There are now two actual surjections to the same module:
+\[
+\pi:C^x\to N,\quad c\mapsto d_x^C(c),\qquad
+\varphi:B^x\to N,\quad b\mapsto J(d_x^B(b)).
+\]
+
+Every center of \(C\) lies in \(U\), so none equals \(x\). The [[node:kl.local.model_sum_properties|model-sum properties theorem]] gives
+\[
+\ker\pi\subseteq\mathfrak m C^x.
+\]
+Thus \(\pi\) is a local minimal free cover of \(N\).
+
+## One lift, Nakayama and an explicit splitting
+
+Write \(P=C^x\). Freeness of \(B^x\) lets us choose preimages under \(\pi\) of the images of its basis vectors. Extending linearly gives
+\[
+g:B^x\to P,\qquad \pi g=\varphi.
+\]
+For any \(p\in P\), choose \(b\) with \(\varphi(b)=\pi(p)\). Then
+\(g(b)-p\in\ker\pi\subseteq\mathfrak mP\). Hence \(g\) is onto modulo \(\mathfrak m\).
+
+The finite cokernel \(Q_0=P/\operatorname{im}g\) satisfies \(Q_0=\mathfrak mQ_0\). The [[node:kl.local.cover_lift_surjectivity|local lift-surjectivity theorem]] gives the Nakayama calculation: on a finite generating family this becomes \((I-A)q=0\) with all entries of \(A\) in \(\mathfrak m\). The determinant is congruent to \(1\), hence a unit, so every generator vanishes. Thus \(g\) is onto.
+
+Because \(P\) is free, choose a section \(s:P\to B^x\) with \(gs=1\). The splitting is
+\[
+b\longmapsto(gb,b-sgb),\qquad
+(p,q)\longmapsto sp+q.
+\]
+The second factor is \(Q=\ker g\). It is finite as the image of the complementary projection and projective as a direct summand of \(B^x\). The [[node:kl.local.cover_splitting|local cover-splitting theorem]] explains its freeness over the local ring by lifting a residue-field basis and applying Nakayama to the complementary kernel.
+
+The [[node:kl.local.stalk_splitting|local stalk-splitting theorem]] then evaluates \(\pi((e_xb)_1)=\varphi(b)\) at each outgoing edge. This gives every required outgoing restriction equality.
+
+## Adding models without changing the processed data
+
+Choose a basis of \(Q\), of size \(n\). The top coordinate \(O_x^x\simeq R\) identifies \(Q\) with the stalk at \(x\) of \(n\) copies of \(O_x\).
+
+For \(y\in U\), the relation \(y\le x\) would imply \(x\in U\). Thus each added \(O_x\) has zero stalk at \(y\). An edge whose target is in \(U\) also has zero added edge module, because its upper quotient comes from a zero stalk. The old isomorphism therefore extends on \(U\) by adjoining zero components.
+
+At outgoing edges from \(x\), the old component commutes by the stalk-splitting equality, and the added component has zero edge module. At an incoming edge \(e:z\to x\), the new stalk isomorphism takes \(\alpha_eB^x\) onto \(\alpha_e(C\oplus O_x^n)^x\), so it induces the edge isomorphism on the upper quotients.
+
+The [[node:kl.local.model_sum_step|one-vertex model-sum extension theorem]] assembles these maps into a partial isomorphism on \(U\cup\{x\}\).
+
+## A two-vertex decomposition with explicit coordinates
+
+Let \(R=k[t]_{(t)}\) over a field \(k\), and use one edge \(x\to c\), labelled by \(t\). Take a sheaf with
+\[
+B^x=R^2,\qquad B^c=R,\qquad B^e=R/(t),
+\]
+and restrictions
+\[
+\rho^-_e(u,v)=[u],\qquad \rho^+_e(z)=[z].
+\]
+It is generated: any lower value \((u,v)\) extends by choosing \(z=u\), and any upper value \(z\) extends by choosing \((u,v)=(z,0)\). The latter also extends every section on the only nontrivial proper upper set \(\{c\}\), proving flabbiness. The upper quotient has kernel \(tR\).
+
+First process \(c\). Its rank-one stalk adds one copy of \(O_c\). At \(x\), the two covers of the outgoing image are
+\[
+\pi:R\to R/(t),\quad p\mapsto[p],\qquad
+\varphi:R^2\to R/(t),\quad(u,v)\mapsto[u].
+\]
+Choose \(g(u,v)=u+tv\) and \(s(p)=(p,0)\). The kernel has basis \((-t,1)\), so one copy of \(O_x\) fills it. The resulting lower-stalk isomorphism is
+\[
+(u,v)\longmapsto(u+tv,v).
+\]
+At the upper stalk and edge module use the identity maps. The lower square commutes because \([u+tv]=[u]\). Hence this construction gives
+\[
+B\simeq O_c\oplus O_x
+\]
+with the actual edge restrictions preserved.
+
+## Finite descent and the localized application
+
+The [[node:kl.local.model_decomposition|local model-decomposition theorem]] maintains the processed upper set \(U\) and chooses a maximal vertex \(x\) of its finite complement. Every vertex above \(x\) is already processed. The preceding step removes \(x\) from that complement, so induction terminates.
+
+The initial processed set is empty, with the zero model sum and vacuous partial isomorphism. At the end every vertex is processed; the partial isomorphism includes every edge and is a full sheaf isomorphism.
+
+For the actual localized boundary sheaf, the coset vertex set is finite, its stalks are finite free tensors over \(R_P\), and the localized-coset properties supply the upper quotients, generation and flabbiness. The coset models supply every local-model field. The [[node:kl.local.localized_decomposition|localized decomposition theorem]] applies the generic finite descent to exactly these objects.
+
 ## Root-plane counts and the scalar correction
 
 Now reduce the illustrative localized ring modulo the current edge label \(\alpha\). A plane label \(\beta+c\alpha\) becomes \(\beta\). More generally, any nonparallel plane root has a nonzero real multiple of \(\beta\) as its reduction. Such factors differ by units.
@@ -402,8 +489,15 @@ The logical order to retain is: free upper kernel, free edge target, local model
 
 ### Local model decomposition
 
+- [[node:kl.local.minimal_covers]]
+- [[node:kl.local.cover_lift_surjectivity]]
+- [[node:kl.local.cover_splitting]]
 - [[node:kl.detail.local_models]]
 - [[node:kl.local.model_sums]]
+- [[node:kl.local.model_sum_properties]]
+- [[node:kl.local.stalk_splitting]]
+- [[node:kl.local.model_sum_step]]
+- [[node:kl.local.model_decomposition]]
 - [[node:kl.local.localized_decomposition]]
 
 ### Polynomial correction factors

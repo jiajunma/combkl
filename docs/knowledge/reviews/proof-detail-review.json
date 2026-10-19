@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 84429,
-  "theorem_walkthroughs": 292,
+  "revised_proof_words": 87081,
+  "theorem_walkthroughs": 299,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -2081,6 +2081,29 @@
       "review": "Read the common-upper embedding, injectivity, coset_label_eq and canonical-root label equality, and every hypothesis in coset_model_flabby and cosetModels. Kept intrinsic order distinct from ambient order, lifted only model-supported edges, and verified maximal-ideal labels and outgoing-below conditions."
     },
     {
+      "node": "kl.local.cover_lift_surjectivity",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.LocalCover.lift_surjective"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 254,
+      "proof_sha256": "740801373ed74cf5e631c25e12d2e5ec6427253b854d8a6df5c31df9e7ada63f",
+      "review": "Read lift_surjective with only Module.Finite on P and no freeness assumptions. Expanded the source residue-class construction, the finite cokernel reduction, and the determinant form of the standard Nakayama implication invoked there."
+    },
+    {
+      "node": "kl.local.cover_splitting",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.LocalCover.splitEquiv",
+        "OAI.KLInvariance.LocalCover.exists_split_minimal_cover"
+      ],
+      "proof_steps": 7,
+      "revised_proof_words": 491,
+      "proof_sha256": "794c736bf94f97eb5a11180631f2fcbc6dceb79796e3dc02454cdc15cb8571be",
+      "review": "Read the single projective lift, lift_surjective, chosen right inverse, explicit splitEquiv, finite kernel projection and split-projective kernel in exists_split_minimal_cover. Expanded the standard finite-projective-over-local-ring implication and checked the quotient triangle and a rank-two example."
+    },
+    {
       "node": "kl.local.dihedral_interpolation",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2206,11 +2229,11 @@
       "source_declarations": [
         "OAI.KLInvariance.TitsSpace.PlaneBasis.localized_boundary_decomposition"
       ],
-      "proof_steps": 5,
+      "proof_steps": 6,
       "previous_proof_words": 69,
-      "revised_proof_words": 524,
-      "proof_sha256": "1835bde804b5902f7066c0afd5aae803173215a8662e343007f056622411689e",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 512,
+      "proof_sha256": "09082d523d2359a68f254979ea7c1dfe3b58970146d1f40bb34f45cad24b5c03",
+      "review": "Replaced the compressed application by all hypotheses of localized_boundary_decomposition and their exact generic sources. Corrected the previous two-lift narrative to the single projective lift, residue-surjectivity/Nakayama and right-inverse splitting used by LocalCover and the OpenAI notes. Kept the finite basis, minimal coset representative, actual localized stalks and both restriction maps explicit."
     },
     {
       "node": "kl.local.localized_relative_primality",
@@ -2239,6 +2262,47 @@
       "revised_proof_words": 204,
       "proof_sha256": "6ee3f25d30342e2d90b10d17eeff3164ea523d593ecfc03efa088778f8b3ca7b",
       "review": "Read localizedReduction_associated with its arbitrary localization subspace P, the distinct-positive-root line exclusion, and both definitional polynomial-root compatibility formulas. Kept the span P(a,b) separate from P and derived the explicit nonzero real coefficient through the generic lemma."
+    },
+    {
+      "node": "kl.local.model_decomposition",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.OnIso.ofUniv",
+        "OAI.KLInvariance.MomentGraph.Sheaf.exists_modelSumIso"
+      ],
+      "proof_steps": 7,
+      "revised_proof_words": 439,
+      "proof_sha256": "30449424e2cbc71e2cd5a35249a1dc1b1007e51cd38b3ee6498d247ebd6c1b13",
+      "review": "Read the entire strong induction in exists_modelSumIso. Stated the complement-of-unprocessed-set invariant, zero initialization, maximal unprocessed choice, all-above condition, strict erasure step, upper closure of the enlarged processed set, and conversion of OnIso on all vertices to Iso. Retained finiteness of vertices without imposing a finite-edge hypothesis."
+    },
+    {
+      "node": "kl.local.model_sum_properties",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.free",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.finite",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.quotient",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.generated",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.flabby",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.minimal"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 408,
+      "proof_sha256": "e9e102f3d69631afc9025e018160889f9a2217de38ab8ed33fc4c2e273f18449",
+      "review": "Read all six ungraded ModelSum property inductions. Expanded the zero case, finite bases, quotient kernels, section extension and ideal-coordinate insertion. Kept the minimality hypothesis x outside the allowed center set and required no upper-set condition on U."
+    },
+    {
+      "node": "kl.local.model_sum_step",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.OnIso.above",
+        "OAI.KLInvariance.MomentGraph.Sheaf.OnIso.prodZero",
+        "OAI.KLInvariance.MomentGraph.Sheaf.extend_modelSum"
+      ],
+      "proof_steps": 7,
+      "revised_proof_words": 493,
+      "proof_sha256": "f06ba6ef238029de1506f67a81baa1d5ef9df3600905bcb4422d59cc061dba8a",
+      "review": "Read extend_modelSum and its AboveIso, basis-coordinate, prodZero, outgoing-compatibility and OnIso.extend constructions. Preserved the local finite-free hypothesis only at the new stalk, the upper-set conditions, the vanishing of all old-target edge modules, and the ModelSum constructor."
     },
     {
       "node": "kl.local.orbit_spline_congruence",
@@ -2284,6 +2348,17 @@
       "revised_proof_words": 275,
       "proof_sha256": "640d4fd8639531946431a243660267b5b716e64a409c70a464d6411eff7850f8",
       "review": "Rechecked mapped ideal membership and the unit/maximal-ideal criteria, then expanded planePrime_span into both ideal containments for any pair of positive roots."
+    },
+    {
+      "node": "kl.local.stalk_splitting",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.extend_stalk"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 253,
+      "proof_sha256": "123638bd38cad244b426a8f5f7a830a87d90dac64b29f3339b2e7f6b03813f83",
+      "review": "Read AboveIso.extend_stalk: constructed N as the actual outgoing image, verified both codomain-restricted surjections and equality of the cover kernel, applied the single-lift local splitting, and evaluated the resulting identity at each outgoing edge."
     },
     {
       "node": "kl.local.structure_edge_images",
@@ -2900,6 +2975,24 @@
       "review": "Compared both range containments with range_stalkMap_eq_boundaryImage. Generation lifts a stalk vector; flabbiness extends from the strict upper set; equality is checked at each outgoing edge coordinate."
     },
     {
+      "node": "kl.sheaves.boundary_image_transport",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.symm",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.mapAssignment",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.mapAssignment_at",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.compatible",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.boundary",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.boundaryMap",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.map_boundaryImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.map_stalk_image"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 306,
+      "proof_sha256": "6c8e1f577981f5e334e1b34c91c74e1161a24cd1cbfab5028f3ccdd728fcb554",
+      "review": "Read AboveIso.mapAssignment, compatible, boundary, boundaryMap, map_boundaryImage and map_stalk_image. Kept the zero extension outside the strict upper set and proved both image containments, without claiming an isomorphism of the full assignment modules."
+    },
+    {
       "node": "kl.sheaves.boundary_models_exist",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -3068,9 +3161,9 @@
         "OAI.KLInvariance.MomentGraph.Sheaf.pi_minimal"
       ],
       "proof_steps": 5,
-      "revised_proof_words": 394,
-      "proof_sha256": "9200db1e805b297e8865fa1ead0971d7ce48791ca2202fa0a60182dc818fdd9e",
-      "review": "Checked componentwise generation/flabbiness/quotients/kernels and the finite coordinate-insertion proof for positive-ideal membership."
+      "revised_proof_words": 411,
+      "proof_sha256": "3706a79906d986efc893dcbda0746c0c542c756c710761d97b3d91f7d42b73ec",
+      "review": "Re-read the ungraded finite-product source lemmas and pi_mem_ideal_smul. Made the arbitrary commutative ring and ideal J explicit, retaining the graded positive-ideal and shift statements as specializations; separated freeness from finite freeness."
     },
     {
       "node": "kl.sheaves.flat_section_base_change",
@@ -3275,9 +3368,9 @@
         "OAI.KLInvariance.MomentGraph.GradedSheaf.OnIso.extend"
       ],
       "proof_steps": 4,
-      "revised_proof_words": 271,
-      "proof_sha256": "f425716d35165a147c0817c61e54d68d208b1129d0c2386062f99145c4fde41b",
-      "review": "Read OnIso.extend in GradedSheaves and MinimalExtensions. Edge maps belong to the domain whenever the upper endpoint does; incoming maps descend through quotients and homogeneous lifts prove grading."
+      "revised_proof_words": 274,
+      "proof_sha256": "68346569c3fbe77ea923c91fdcae6274a81ae9442e23addc9a8c12b03a1ed8ed",
+      "review": "Re-read ungraded OnIso.extend and its graded refinement. Made the ungraded statement primary, preserved the upper-endpoint edge data and outgoing commuting hypothesis, and kept degree preservation as a separate final verification."
     },
     {
       "node": "kl.sheaves.primitive_image",

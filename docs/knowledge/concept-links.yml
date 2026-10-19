@@ -70,10 +70,6 @@ concepts:
 - node: kl.sheaves.minimal_cover
   terms:
   - minimal graded free cover
-  - minimal free covers
-  - minimal free cover
-  - minimal covers
-  - minimal cover
 - node: kl.sheaves.graph_sheaf
   terms:
   - graph sheaves
@@ -1333,3 +1329,24 @@ concepts:
   - selected model products
   topics:
   - kl.localization
+- node: kl.sheaves.minimal_cover
+  terms: &id001
+  - minimal free covers
+  - minimal free cover
+  - minimal covers
+  - minimal cover
+  topics:
+  - kl.graded_algebra
+  - kl.sheaves
+  - kl.word_modules
+- node: kl.local.minimal_covers
+  terms: *id001
+  topics:
+  - kl.localization
+- node: kl.local.minimal_covers
+  terms:
+  - local minimal free cover
+  - local minimal free covers
+  - local minimal cover
+  - local minimal covers
+  - local-ring minimal-cover condition

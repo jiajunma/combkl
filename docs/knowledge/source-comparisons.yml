@@ -138,7 +138,6 @@ comparisons:
   nodes:
   - kl.notes.dihedral_models
   - kl.detail.dihedral_model_properties
-  - kl.local.localized_decomposition
   - kl.local.orbit_splines
   - kl.local.orbit_spline_congruence
   - kl.local.orbit_spline_factors
@@ -899,3 +898,58 @@ comparisons:
   consequence: The Blueprint retains the selected-set indexing and writes both image
     equalities inside the same model edge module. The polynomial-domain specialization
     supplies every relative-primality and product-divisibility hypothesis.
+- id: local-cover-splitting
+  kind: The same single-lift local-ring argument
+  nodes:
+  - kl.local.minimal_covers
+  - kl.local.cover_lift_surjectivity
+  - kl.local.cover_splitting
+  - kl.local.stalk_splitting
+  paper_labels:
+  - loc:decomposition
+  lean_declarations:
+  - OAI.KLInvariance.LocalCover.lift_surjective
+  - OAI.KLInvariance.LocalCover.exists_split_minimal_cover
+  - OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.extend_stalk
+  paper: The local decomposition lifts the given stalk map through the existing model
+    stalk cover. Minimality makes the lift surjective after reduction modulo the maximal
+    ideal; Nakayama gives surjectivity, the free target supplies a section, and the
+    finite projective kernel is free over the local ring.
+  lean: LocalCover first proves the surjectivity of a single lift with a finite target
+    and the displayed kernel condition. It then constructs the lift and right inverse,
+    gives the explicit splitting map and proves the kernel finite projective and free.
+    AboveIso.extend_stalk constructs the common outgoing image and applies this algebraic
+    theorem.
+  consequence: The Blueprint follows the single-lift proof and writes the cover triangle,
+    splitting inverse, kernel projection and each outgoing restriction equality. The
+    graded two-lift argument belongs to the separate graded construction.
+- id: local-model-descending-induction
+  kind: The same descent with explicit upper-endpoint edge data
+  nodes:
+  - kl.sheaves.boundary_image_transport
+  - kl.local.model_sum_properties
+  - kl.local.model_sum_step
+  - kl.local.model_decomposition
+  - kl.local.localized_decomposition
+  paper_labels:
+  - loc:decomposition
+  lean_declarations:
+  - OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.map_stalk_image
+  - OAI.KLInvariance.MomentGraph.Sheaf.extend_modelSum
+  - OAI.KLInvariance.MomentGraph.Sheaf.exists_modelSumIso
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.localized_boundary_decomposition
+  paper: The proof descends through the relative coset vertices, splits the current
+    stalk over the existing boundary image, adds copies of the model centered there
+    and retains both endpoint restrictions. Incoming edge identifications are supplied
+    when their lower vertices are processed, using the upper quotient rule.
+  lean: The generic local-ring theorem maintains an OnIso on the processed upper set,
+    already including all edges whose upper endpoints have been processed. A maximal
+    unprocessed vertex is added by a finite free kernel block. The new incoming edge
+    maps are induced from the new upper-stalk isomorphism, and strong induction on
+    the remaining finite vertex set gives a full Iso. The boundary-sheaf localization
+    theorem verifies the five sheaf hypotheses and supplies the actual cosetModels.
+  consequence: 'The Blueprint follows the Lean invariant: an edge isomorphism is supplied
+    when its upper endpoint is processed, and its lower restriction square is checked
+    when its lower endpoint is processed. The notes describe incoming-edge identifications
+    later in the descent. The generic Lean theorem uses a finite vertex set; the final
+    application supplies the actual localized coset modules.'

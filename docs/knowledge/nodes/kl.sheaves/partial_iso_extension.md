@@ -35,8 +35,9 @@ verification:
 generality:
   reviewed: true
   prompt: Does the entry preserve the source hypotheses, construction, and conclusion?
-  verdict: Read against the named Lean declarations and surrounding variable context;
-    explanatory examples are distinguished from the formal statement.
+  verdict: Re-read ungraded OnIso.extend and its graded refinement. Made the ungraded
+    statement primary, preserved the upper-endpoint edge data and outgoing commuting
+    hypothesis, and kept degree preservation as a separate final verification.
 tags:
 - Kazhdan-Lusztig
 - moment_graph_sheaves
@@ -44,9 +45,9 @@ tags:
 
 # Extending a partial sheaf isomorphism across one vertex
 
-Let \(B,C\) be graded sheaves on the same ordered graph, satisfying the upper-quotient rule for the same labels. Let \(U\) be upper, and let \(j\) be a graded isomorphism on \(U\): it supplies vertex maps at \(y\in U\), edge maps when \(t(e)\in U\), and the appropriate restriction squares.
+Let \(R\) be a commutative ring and \(B,C\) sheaves on the same ordered graph, satisfying the upper-quotient rule for the same labels \(\alpha_e\in R\). Let \(U\) be upper, and let \(j\) be a partial isomorphism on \(U\): it supplies vertex maps at \(y\in U\), edge maps when \(t(e)\in U\), and the corresponding restriction squares.
 
-Choose \(x\notin U\) with every \(y>x\) in \(U\). Suppose a degree-zero stalk isomorphism
+Choose \(x\notin U\) with every \(y>x\) in \(U\). Suppose a stalk isomorphism
 \[
 j_x:B^x\xrightarrow{\sim}C^x
 \]
@@ -54,7 +55,9 @@ satisfies the lower commuting square on every outgoing edge from \(x\):
 \[
 j_e\rho^{B,-}_e=\rho^{C,-}_e j_x.
 \]
-Then \(j\) extends to a graded isomorphism on \(U\cup\{x\}\).
+Then \(j\) extends to a partial sheaf isomorphism on \(U\cup\{x\}\).
+
+For graded sheaves with homogeneous labels and degree-zero restrictions, the extension is graded if the original partial isomorphism and \(j_x\) preserve degree. The first three steps construct the ungraded extension; the last step verifies this graded variant.
 
 *Proof.*
 
@@ -84,9 +87,9 @@ If the source is \(x\), its target is strictly above \(x\), hence belongs to \(U
 
 These cover all edges with both endpoints in \(U\cup\{x\}\). In particular, for an edge ending at \(x\), its source is outside \(U\), since otherwise upper closure would put \(x\) in \(U\).
 
-### Step 4. Verify grading of a new edge map
+### Step 4. Verify the graded variant
 
-Let \(z\in B^e_n\) on an incoming edge. Since the upper restriction \(B^x\to B^e\) is a surjective degree-zero map, \(z\) has a homogeneous lift \(v\in B^x_n\): take the degree-\(n\) component of any lift.
+Assume the additional graded hypotheses, and let \(z\in B^e_n\) on an incoming edge. Since the upper restriction \(B^x\to B^e\) is a surjective degree-zero map, \(z\) has a homogeneous lift \(v\in B^x_n\): take the degree-\(n\) component of any lift.
 
 The induced edge map sends \(z\) to
 \(\rho^{C,+}_e(j_x(v))\), which lies in \(C^e_n\). Thus the new edge map preserves degree. The old components and \(j_x\) already do, completing the graded partial isomorphism.

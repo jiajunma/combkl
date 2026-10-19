@@ -521,7 +521,7 @@
         "sb",
         "og"
       ],
-      "output": "Native and localized relative structure models, their selected kernels and embedded edge images, followed by ungraded model sums and local decomposition.",
+      "output": "Actual relative structure models and selected products, single-lift local stalk splitting, and the full descending sheaf isomorphism to a finite ungraded model sum.",
       "lean_declarations": [
         "OAI.KLInvariance.MomentGraph.Sheaf.LocalModels",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.localized_boundary_decomposition",
@@ -536,7 +536,13 @@
         "OAI.KLInvariance.MomentGraph.Sheaf.structure_lower_image",
         "OAI.KLInvariance.MomentGraph.Sheaf.structure_upper_image",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_kernel_product",
-        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum"
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum",
+        "OAI.KLInvariance.LocalCover.lift_surjective",
+        "OAI.KLInvariance.LocalCover.exists_split_minimal_cover",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.map_stalk_image",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.extend_stalk",
+        "OAI.KLInvariance.MomentGraph.Sheaf.extend_modelSum",
+        "OAI.KLInvariance.MomentGraph.Sheaf.exists_modelSumIso"
       ]
     },
     {
@@ -1204,6 +1210,19 @@
         "OAI.KLInvariance.MomentGraph.Sheaf.structure_upper_image",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_kernel_product",
         "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum"
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "scope": "Local minimal covers and complete descending decomposition",
+      "change": "Recorded the single projective lift, Nakayama surjectivity, explicit right-inverse splitting and finite free kernel; then boundary-image transport, outgoing stalk compatibility, finite model-sum properties and maximal-unprocessed-vertex induction. Incoming edge maps are constructed when their upper endpoint is processed.",
+      "source_declarations": [
+        "OAI.KLInvariance.LocalCover.lift_surjective",
+        "OAI.KLInvariance.LocalCover.exists_split_minimal_cover",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.map_stalk_image",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.extend_stalk",
+        "OAI.KLInvariance.MomentGraph.Sheaf.extend_modelSum",
+        "OAI.KLInvariance.MomentGraph.Sheaf.exists_modelSumIso"
       ]
     }
   ]

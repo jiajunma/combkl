@@ -118,6 +118,16 @@ This equation ensures that a kernel or image in \(B\) goes to the corresponding 
 
 In the free module \(A\), the submodules \(A\) and \(\alpha A\) both have rank one, and their inclusions have different images. A commuting sheaf isomorphism tracks those inclusions. Later comparisons use it to place the relevant edge images in a common module.
 
+## Boundary images under a partial isomorphism
+
+An isomorphism already constructed strictly above \(x\) gives an isomorphism \(J\) on the product of outgoing edge modules. Transporting a compatible upper assignment through its vertex maps commutes with the boundary map, coordinate by coordinate. Applying the inverse maps gives equality of the two boundary images.
+
+For generated, flabby sheaves, the boundary-image identity replaces these with the outgoing stalk images. The [[node:kl.sheaves.boundary_image_transport|boundary-image transport theorem]] therefore gives
+\[
+J(\operatorname{im}d_x^B)=\operatorname{im}d_x^C.
+\]
+This identifies the actual target module used in both graded stalk comparison and the local-ring stalk splitting. The ungraded partial-isomorphism extension then defines each incoming edge map from the new upper-stalk quotient; its graded variant also checks preservation of degrees.
+
 ## Extending a morphism through one stalk
 
 A partial morphism on an upper set \(U\) includes an edge map whenever the edge's target lies in \(U\). For a maximal vertex \(x\) outside \(U\), all outgoing targets of \(x\) are already present. Their edge maps give a degree-zero map between the boundary products
@@ -555,6 +565,7 @@ The OpenAI notes obtain the equality of \(C\) and \(P\) through their cited char
 - [[node:kl.sheaves.lower_extension]]
 - [[node:kl.sheaves.lower_extension_properties]]
 - [[node:kl.sheaves.partial_iso_extension]]
+- [[node:kl.sheaves.boundary_image_transport]]
 
 ### Boundary sheaves and minimal extension
 

@@ -182,6 +182,8 @@
       "kl.local.coset_kernel_products",
       "kl.local.coset_outgoing_lifts",
       "kl.local.coset_structure_models",
+      "kl.local.cover_lift_surjectivity",
+      "kl.local.cover_splitting",
       "kl.local.dihedral_interpolation",
       "kl.local.edge_inclusion",
       "kl.local.flow_down",
@@ -197,12 +199,17 @@
       "kl.local.localized_edge_ring",
       "kl.local.localized_relative_primality",
       "kl.local.localized_root_reduction",
+      "kl.local.minimal_covers",
+      "kl.local.model_decomposition",
+      "kl.local.model_sum_properties",
+      "kl.local.model_sum_step",
       "kl.local.model_sums",
       "kl.local.orbit_spline_congruence",
       "kl.local.orbit_spline_factors",
       "kl.local.orbit_splines",
       "kl.local.plane_prime_membership",
       "kl.local.selected_model_product",
+      "kl.local.stalk_splitting",
       "kl.local.structure_edge_images",
       "kl.local.structure_kernel_products",
       "kl.local.structure_model_transport",
@@ -338,6 +345,7 @@
       "kl.sheaves.boundary_coefficient_transport",
       "kl.sheaves.boundary_existence",
       "kl.sheaves.boundary_image_identity",
+      "kl.sheaves.boundary_image_transport",
       "kl.sheaves.boundary_models_exist",
       "kl.sheaves.boundary_morphism_lift",
       "kl.sheaves.boundary_pullback",
@@ -3367,6 +3375,23 @@
       "paper_locations": []
     },
     {
+      "id": "kl.local.cover_lift_surjectivity",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.LocalCover.lift_surjective"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.local.cover_splitting",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.LocalCover.splitEquiv",
+        "OAI.KLInvariance.LocalCover.exists_split_minimal_cover"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.local.dihedral_interpolation",
       "chapter": "kl.localization",
       "lean_declarations": [
@@ -3528,6 +3553,47 @@
       "paper_locations": []
     },
     {
+      "id": "kl.local.minimal_covers",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.LocalCover.lift_surjective",
+        "OAI.KLInvariance.LocalCover.exists_split_minimal_cover"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.local.model_decomposition",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.OnIso.ofUniv",
+        "OAI.KLInvariance.MomentGraph.Sheaf.exists_modelSumIso"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.local.model_sum_properties",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.free",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.finite",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.quotient",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.generated",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.flabby",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.minimal"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.local.model_sum_step",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.OnIso.above",
+        "OAI.KLInvariance.MomentGraph.Sheaf.OnIso.prodZero",
+        "OAI.KLInvariance.MomentGraph.Sheaf.extend_modelSum"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.local.model_sums",
       "chapter": "kl.localization",
       "lean_declarations": [
@@ -3591,6 +3657,14 @@
       "lean_declarations": [
         "OAI.KLInvariance.MomentGraph.Sheaf.supportedOutgoing",
         "OAI.KLInvariance.MomentGraph.Sheaf.kernelProduct"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.local.stalk_splitting",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.extend_stalk"
       ],
       "paper_locations": []
     },
@@ -4411,6 +4485,21 @@
       "paper_locations": [
         "Moment-graph background; bg:normalization"
       ]
+    },
+    {
+      "id": "kl.sheaves.boundary_image_transport",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.symm",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.mapAssignment",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.mapAssignment_at",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.compatible",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.boundary",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.boundaryMap",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.map_boundaryImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.map_stalk_image"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.sheaves.boundary_models_exist",

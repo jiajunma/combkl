@@ -7,14 +7,14 @@ primary_topic: kl.localization
 topics:
 - kl.localization
 uses:
+- kl.local.model_decomposition
+- kl.local.coset_structure_models
+- kl.local.localized_coset_properties
+- kl.local.coset_graph
+- kl.local.model_sums
 - kl.sheaves.boundary_sheaf
-- kl.sheaves.relative_flabbiness
-- kl.notes.dihedral_models
-- kl.notes.sheaf_localization
-- kl.detail.dihedral_model_properties
-- kl.detail.local_models
 - kl.detail.localization_rings
-- kl.detail.graph_transport
+- kl.local.model_sum_step
 lean:
   repository: openai-kl
   modules:
@@ -38,67 +38,110 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Does the exposition preserve the mathematical scope of its Lean declarations?
-  verdict: The stated hypotheses and conclusion follow the fixed source; explanatory
-    derivations retain the original proof route.
+  prompt: Are the ambient modules, pairing orientation, scalar types, grading conventions
+    and quantified hypotheses explicit?
+  verdict: Replaced the compressed application by all hypotheses of localized_boundary_decomposition
+    and their exact generic sources. Corrected the previous two-lift narrative to
+    the single projective lift, residue-surjectivity/Nakayama and right-inverse splitting
+    used by LocalCover and the OpenAI notes. Kept the finite basis, minimal coset
+    representative, actual localized stalks and both restriction maps explicit.
 tags:
 - Kazhdan-Lusztig
-- localization
+- local-decomposition
 ---
 
 # Decomposition of the sheaf after root-plane localization
 
-In a finite-generator real realization, localize at a root plane and restrict to its dihedral coset. The constructed boundary sheaf is isomorphic to a finite sum of local dihedral models with finite multiplicities. This is an isomorphism of sheaves preserving vertex modules, edge modules, and both endpoint restriction maps.
+Fix a finite-generator real Coxeter system \(W\), a finite basis of its extended realization, and the associated polynomial coefficient algebra \(A\). Let \(P\) be a root subspace with a plane basis, \(D\) its induced dihedral subgroup, and
+\[
+R_P=A_{\mathfrak p_P}.
+\]
+Choose \(a_0\in W\) with \(\ell(a_0)\le\ell(da_0)\) for every \(d\in D\), and let \(b\in W\).
+
+Let \(\mathcal B\) be the constructed boundary sheaf on \([1,b]_W\), with its grading forgotten. On the finite relative coset graph
+\[
+K=\{d\in D:da_0\le_W b\},
+\]
+write \(j:K\to[1,b]_W\) for the coset graph map with vertex map \(d\mapsto da_0\), and form the localized coset sheaf
+\[
+\mathcal L=j^*(R_P\otimes_A\mathcal B).
+\]
+Then \(\mathcal L\) is isomorphic to a finite ungraded sum of the actual structure models \(\mathcal O_c(K,\gamma)\), with centers \(c\in K\) and localized ambient root labels \(\gamma\).
 
 <!-- source-comparison:start -->
 ## Relation to the OpenAI notes
 
-**Same model properties, different justification.**
+**The same descent with explicit upper-endpoint edge data.**
 
-**OpenAI notes:** The induced-model lemma justifies applying the character theorem to the restricted reflection-faithful realization and uses the dihedral character calculation to identify the rank-one model. [loc:models](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/04-localization.tex#L125).
+**OpenAI notes:** The proof descends through the relative coset vertices, splits the current stalk over the existing boundary image, adds copies of the model centered there and retains both endpoint restrictions. Incoming edge identifications are supplied when their lower vertices are processed, using the upper quotient rule. [loc:decomposition](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/04-localization.tex#L285).
 
-**Lean (primary):** The direct construction first proves parity matching in arbitrary lower Bruhat intervals by a simple-reflection involution. In the dihedral application, orbit-spline factors supply the prescribed values and zeros; their product gives flow-down sections. A finite induction on prescribed upper sets proves flabbiness, while generation and quotient maps follow from the structure-sheaf construction. [DihedralIntervals:616](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L616), [DihedralIntervals:622](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L622), [DihedralIntervals:626](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L626), [SheafMorphisms:252](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L252), [SheafMorphisms:288](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L288), [DihedralIntervals:176](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L176), [DihedralIntervals:251](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L251), [DihedralIntervals:372](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L372).
+**Lean (primary):** The generic local-ring theorem maintains an OnIso on the processed upper set, already including all edges whose upper endpoints have been processed. A maximal unprocessed vertex is added by a finite free kernel block. The new incoming edge maps are induced from the new upper-stalk isomorphism, and strong induction on the remaining finite vertex set gives a full Iso. The boundary-sheaf localization theorem verifies the five sheaf hypotheses and supplies the actual cosetModels. [GradedSheaves:756](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L756), [PlaneLocalization:147](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PlaneLocalization.lean#L147), [PlaneLocalization:207](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PlaneLocalization.lean#L207), [TerminalKernels:200](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean#L200).
 
-**Role in the proof:** The Blueprint follows the parity, normal-form prescription, spline product and flow-down correction arguments. Injectivity of the reflection-preserving group map provides distinct factor data and pairwise relatively prime incident labels. These model properties feed the later local-ring decomposition.
+**Role in the proof:** The Blueprint follows the Lean invariant: an edge isomorphism is supplied when its upper endpoint is processed, and its lower restriction square is checked when its lower endpoint is processed. The notes describe incoming-edge identifications later in the descent. The generic Lean theorem uses a finite vertex set; the final application supplies the actual localized coset modules.
 <!-- source-comparison:end -->
 
 *Proof.*
 
-### Step 1. Determine which edges survive
+### Step 1. Identify the graph and the coefficient ring
 
-Localize \(A\) at the prime generated by the root plane \(P\), and write \(R=A_P\). A root label outside \(P\) becomes a unit; the corresponding edge quotient becomes zero. Labels in \(P\) remain nonunits. The surviving connected pieces lie in cosets of the plane reflection subgroup.
+The plane ideal \(\mathfrak p_P\) is prime, so \(R_P\) is a commutative local ring.
 
-Choose the minimal representative of the coset under consideration. Its relative graph uses exactly these surviving reflection edges, with their actual induced labels.
+The vertex map \(d\mapsto da_0\) embeds \(K\) into the finite ambient interval \([1,b]_W\), so \(K\) is finite. Its intrinsic order and edge labels are those specified by the coset graph construction.
 
-### Step 2. Verify the sheaf hypotheses over the local ring
+These give the finite-vertex graph and local coefficient ring required by the [[node:kl.local.model_decomposition|local model-decomposition theorem]].
 
-Each localized stalk is a finite free \(R\)-module because it is the localization of a finite free \(A\)-module. Flat localization preserves the quotient maps, partial kernels, and edge images as proved in [[node:kl.notes.sheaf_localization]].
+### Step 2. Verify finite free stalks
 
-The relative-upper subsets are closed under surviving edges. Relative flabbiness therefore extends their sections, and generation of stalks by sections survives localization and restriction. Thus the localized coset sheaf is finite free at stalks, flabby, generated, and satisfies the label quotient rule.
+At \(d\in K\), the localized stalk is
+\[
+\mathcal L^d=R_P\otimes_A\mathcal B^{da_0}.
+\]
+The boundary-sheaf construction makes \(\mathcal B^{da_0}\) finite free. For a basis \(v_1,\ldots,v_n\), the vectors \(1\otimes v_i\) form an \(R_P\)-basis: the original coordinate isomorphism with \(A^n\) tensors to the coordinate isomorphism with \(R_P^n\).
 
-### Step 3. Verify the local models, including minimality
+Thus each stalk of \(\mathcal L\) is finite free. These are the two stalk hypotheses checked separately in the source.
 
-The induced dihedral structure models are flabby and generated by [[node:kl.detail.dihedral_model_properties]]. Their stalks are \(R\) or zero, and their supported edge maps are the literal label quotients.
+### Step 3. Verify the quotient rule
 
-At a supported non-top vertex \(x\), at least one outgoing edge below the model top exists. Its label is a nonunit in the local ring. The full outgoing kernel is the product of the incident supported labels times \(R\), so it lies in the maximal ideal times the stalk. This is the local minimal-cover condition. It is a maximal-ideal condition over \(R\), not a grading condition after localization.
+The boundary sheaf satisfies the upper-quotient rule for the original polynomial labels. Flat scalar extension preserves that rule, with every label mapped into \(R_P\).
 
-### Step 4. Perform the local downward decomposition
+Pullback to the coset graph retains the corresponding upper maps and label values. Hence \(\mathcal L\) has surjective upper restrictions with kernels
+\[
+\gamma_e\,\mathcal L^{t(e)}.
+\]
+This is the localized-coset quotient property.
 
-Start with the zero model sum on the empty upper set. Suppose a sum \(C\) has been identified with the localized sheaf above the next vertex \(x\). Both stalk maps cover the same boundary image; the map from \(C^x\) is minimal.
+### Step 4. Verify generation and relative flabbiness
 
-Lift the two maps between their free covers. The composite on the minimal cover is the identity modulo the maximal ideal and is therefore invertible by local Nakayama. Correct one lift to obtain a split surjection from the new sheaf's stalk onto \(C^x\). Its kernel is finite projective. Over a local ring a finite projective module is free: lift a basis modulo the maximal ideal, split the resulting free cover, and use local Nakayama to kill its complementary kernel.
+The boundary sheaf is globally generated. Tensor-extended generating sections and their restrictions to \(K\) give generation of every stalk of \(\mathcal L\).
 
-If that kernel has rank \(r\), add \(r\) copies of the model with top \(x\). They vanish on the old upper set and have stalk \(R^r\) at \(x\), exactly filling the residual kernel.
+For flabbiness, localized labels outside the plane become units and their edge modules become zero. The coset graph map has injective vertex map and the required outgoing lifts along the surviving plane edges. The surviving-edge pullback argument therefore gives extension of sections on intrinsic upper subsets of \(K\).
 
-### Step 5. Preserve the actual edge maps and conclude
+The [[node:kl.local.localized_coset_properties|localized-coset properties theorem]] proves these assertions for the actual tensor stalks and restriction maps used here.
 
-At outgoing edges, the boundary equation makes the old-sum component commute, while the newly added model has zero edge value above its top. Incoming edge maps are induced by quotienting the new stalk isomorphism. Thus the extension is a sheaf isomorphism, not only a list of stalk isomorphisms.
+### Step 5. Supply the complete local-model family
 
-The vertex set is finite, so the process terminates with a finite model sum and an isomorphism on the entire coset graph. This is the local, ungraded model-decomposition theorem used in Lean; it does not assume that localization preserves indecomposability.
+The [[node:kl.local.coset_structure_models|coset structure-model theorem]] gives local boundary models
+\[
+c\longmapsto\mathcal O_c(K,\gamma).
+\]
+In particular it supplies their flabbiness, generation, finite free stalks, upper quotients, support, top coordinates and local minimality away from the center.
+
+The local minimality proof uses a supported outgoing edge at a proper supported vertex. Its label belongs to the maximal ideal, so vanishing under that quotient puts a kernel vector in the maximal-ideal multiple of its stalk.
+
+### Step 6. Apply the descending decomposition theorem
+
+Steps 1–5 verify every input of the [[node:kl.local.model_decomposition|local model-decomposition theorem]]. It produces a finite ungraded model sum \(C\), with centers in \(K\), and a sheaf isomorphism
+\[
+\mathcal L\xrightarrow{\sim}C.
+\]
+
+At each descending step, the model-sum stalk is a local minimal free cover of the common outgoing image. A single lift from the stalk of \(\mathcal L\) is surjective by Nakayama; a section splits it, and its finite free kernel determines the number of new models at that vertex. The [[node:kl.local.model_sum_step|one-vertex extension theorem]] retains every outgoing restriction and defines the incoming maps by the upper quotients.
+
+This is exactly the source's localized_boundary_decomposition. Its conclusion is the actual isomorphism of sheaves, including both endpoint maps on every edge, that is used to transport the later kernel-image comparisons.
 
 ## References
 
-[4. Localization at a root plane](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/04-localization.tex#L2).
+The local source declarations below give the construction and proof.
 
 ## Lean formalization
 
