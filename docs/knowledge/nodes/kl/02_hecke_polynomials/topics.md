@@ -268,6 +268,63 @@ The difference remains strictly below the midpoint. If its highest nonzero degre
 
 The constructed pair supplies all seven fields, and these two inductions prove uniqueness. The source's selected pair, klFamilies, is therefore the constructed pair. Its [[node:kl.hecke.selected_families|public components]] rPolynomial and klPolynomial agree with the explicit R and recursive P formulas.
 
+## Dihedral lower-interval sums
+
+In a Coxeter system with two simple generators, every reduced word alternates. A reduced word of strictly smaller length occurs in a longer alternating word either as a prefix or as a prefix after deleting the first letter. The subword criterion therefore gives
+\[
+x\le w\quad\Longleftrightarrow\quad \ell(x)<\ell(w)\ \text{or}\ x=w.
+\]
+
+In the unnormalized Hecke module put
+\[
+S_w=\sum_{z\le w}T_z.
+\]
+Fix a reduced alternating word for \(w\) of length \(n+2\), starting with \(s\). Let \(v=sw\) be its tail and \(p\) its prefix of length \(n\).
+
+Multiplication by \(s\) partitions the group into simple-reflection strings \(\{r,sr\}\), with \(r\) the shorter member. A lower ideal can meet such a pair only in the following ways:
+
+| Members below \(v\) | Contribution to \((I+L_s(q))S_v\) |
+|---|---|
+| Neither | \(0\) |
+| Only \(r\) | \(T_r+T_{sr}\) |
+| Both \(r,sr\) | \((1+q)(T_r+T_{sr})\) |
+
+The union of strings that meet \([1,v]\) is \([1,w]\). The [[node:kl.hecke.dihedral_strings|double-membership theorem]] proves that the elements in fully included strings form the empty set when \(n=0\), and \([1,p]\) when \(n>0\). Thus
+\[
+(I+L_s(q))S_v=S_w+qC,\qquad
+C=\begin{cases}0,&n=0,\\ S_p,&n>0.\end{cases}
+\]
+For a reduced word \(sts\), the extra string is \(\{1,s\}\), so the correction is \(q(T_1+T_s)\).
+
+## The dihedral bar calculation and constant P-family
+
+Apply the coefficient-linear bar transform \(B_q\) to the product equation at \(q^{-1}\). Intertwining and the smaller-word induction formulas give
+\[
+q^{-(n+2)}S_w+q^{-(n+1)}C
+=B_qS_w+q^{-(n+1)}C.
+\]
+Subtracting the common term proves \(B_qS_w=q^{-\ell(w)}S_w\). The length-zero and length-one sums give the induction bases, and \(C=0\) handles the length-two step.
+
+At the inverse parameter, the coefficient of \(T_x\) in this identity is
+\[
+\sum_{z\le y}b_z(q^{-1})(x)=q^{\ell(y)}
+\qquad(x\le y).
+\]
+The R-value identity \(r_q(x,z)=q^{-\ell(x)}b_z(q^{-1})(x)\) converts it to
+\[
+\sum_{x\le z\le y}R_{x,z}(q)=q^{d(x,y)}.
+\]
+The return to ordinary polynomials uses the injective polynomial inclusion in Laurent polynomials.
+
+Now take \(Q_{x,y}=1\) on comparable pairs and zero outside \(x\le y\). Its degree is zero on every strict interval. Its reciprocity equation is precisely
+\[
+\operatorname{reflect}_{d(x,y)}1=q^{d(x,y)}
+=\sum_{x\le z\le y}R_{x,z}Q_{z,y}.
+\]
+Thus \((R,Q)\) has all seven normalization fields. Uniqueness proves \(P_{x,y}=1\) throughout every dihedral interval.
+
+This polynomial calculation uses the abstract two-generator Coxeter system. In the sheaf development, the induced ambient labels enter a separate interpolation proof of the dihedral structure-model properties. The source correspondence explains how the notes relate the two descriptions.
+
 ## The square parameter and normalized reciprocity
 
 The normalized family is characterized by
@@ -380,3 +437,8 @@ The actual boundary character \(C\) has its own R-reciprocity, proved through sh
 - [[node:kl.hecke.positive_word_reciprocity]]
 - [[node:kl.hecke.scaled_polynomials]]
 - [[node:kl.hecke.scaled_difference_rigidity]]
+- [[node:kl.hecke.lower_interval_sums]]
+- [[node:kl.hecke.dihedral_strings]]
+- [[node:kl.hecke.dihedral_sum_product]]
+- [[node:kl.hecke.dihedral_bar_sum]]
+- [[node:kl.hecke.dihedral_r_sum]]

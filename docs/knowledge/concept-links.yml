@@ -790,3 +790,25 @@ concepts:
   - scaled polynomial evaluations
   - scaled KL vector
   - scaled KL vectors
+- node: kl.hecke.lower_interval_sums
+  terms:
+  - lower-interval Hecke sum
+  - lower-interval Hecke sums
+  - simple-reflection string
+  - simple-reflection strings
+- node: kl.hecke.lower_interval_sums
+  terms:
+  - correction vector
+  - correction vectors
+  topics:
+  - kl.02_hecke_polynomials
+- node: kl.foundations.interval
+  terms:
+  - interval bottom
+  - interval top
+  - interval order isomorphism
+  - interval order isomorphisms
+  - initial subinterval
+  - initial subintervals
+  - upper subinterval
+  - upper subintervals

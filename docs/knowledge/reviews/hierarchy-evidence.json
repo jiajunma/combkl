@@ -23,9 +23,14 @@
       "kl.hecke.bar_triangularity",
       "kl.hecke.commutation",
       "kl.hecke.defect_antireciprocity",
+      "kl.hecke.dihedral_bar_sum",
+      "kl.hecke.dihedral_r_sum",
+      "kl.hecke.dihedral_strings",
+      "kl.hecke.dihedral_sum_product",
       "kl.hecke.low_degree_rigidity",
       "kl.hecke.low_part_properties",
       "kl.hecke.low_part_solution",
+      "kl.hecke.lower_interval_sums",
       "kl.hecke.normalization_unique",
       "kl.hecke.ordinary_r_construction",
       "kl.hecke.ordinary_r_degree",
@@ -48,8 +53,13 @@
     ],
     "kl.coxeter": [
       "kl.coxeter.alternating_words",
+      "kl.coxeter.bruhat_successor",
+      "kl.coxeter.dihedral_bruhat_order",
+      "kl.coxeter.dihedral_reduced_words",
+      "kl.coxeter.interval_restriction",
       "kl.coxeter.parabolic_decomposition",
       "kl.coxeter.parabolic_subgroups",
+      "kl.coxeter.rank_embedding",
       "kl.coxeter.reduced_alternating_tail",
       "kl.coxeter.reflection_sign_flip",
       "kl.coxeter.signed_coxeter_relations",
@@ -817,7 +827,50 @@
       "chapter": "kl.coxeter",
       "lean_declarations": [
         "OAI.KLInvariance.ParabolicSupport.reduced_pair_eq_alternating",
-        "OAI.KLInvariance.CoxeterSupport.wordAction_alternating"
+        "OAI.KLInvariance.CoxeterSupport.wordAction_alternating",
+        "OAI.KLInvariance.Dihedral.alt",
+        "OAI.KLInvariance.Dihedral.length_alt",
+        "OAI.KLInvariance.Dihedral.take_alt",
+        "OAI.KLInvariance.Dihedral.alt_sublist"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.coxeter.bruhat_successor",
+      "chapter": "kl.coxeter",
+      "lean_declarations": [
+        "OAI.KLInvariance.exists_bruhat_successor"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.coxeter.dihedral_bruhat_order",
+      "chapter": "kl.coxeter",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.shorter_bruhat",
+        "OAI.KLInvariance.Dihedral.bruhat_iff_length_lt_or_eq"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.coxeter.dihedral_reduced_words",
+      "chapter": "kl.coxeter",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.reduced_cons_cons_ne",
+        "OAI.KLInvariance.Dihedral.reduced_cons_eq_alt",
+        "OAI.KLInvariance.Dihedral.reduced_eq_alt",
+        "OAI.KLInvariance.Dihedral.exists_alt",
+        "OAI.KLInvariance.Dihedral.reduced_alt_take",
+        "OAI.KLInvariance.Dihedral.eq_alt_of_descent"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.coxeter.interval_restriction",
+      "chapter": "kl.coxeter",
+      "lean_declarations": [
+        "OAI.KLInvariance.intervalIso_restrict",
+        "OAI.KLInvariance.intervalIso_restrict_val"
       ],
       "paper_locations": []
     },
@@ -841,6 +894,14 @@
         "OAI.KLInvariance.ParabolicSupport.exists_word",
         "OAI.KLInvariance.ParabolicSupport.exists_reduced_word",
         "OAI.KLInvariance.ParabolicSupport.exists_minimal"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.coxeter.rank_embedding",
+      "chapter": "kl.coxeter",
+      "lean_declarations": [
+        "OAI.KLInvariance.rankDifference_le_of_strictMono"
       ],
       "paper_locations": []
     },
@@ -2037,7 +2098,10 @@
       "chapter": "kl.coxeter",
       "lean_declarations": [
         "OAI.KLInvariance.Interval",
-        "OAI.KLInvariance.rankDifference"
+        "OAI.KLInvariance.rankDifference",
+        "OAI.KLInvariance.intervalBottom",
+        "OAI.KLInvariance.intervalTop",
+        "OAI.KLInvariance.rankDifference_add"
       ],
       "paper_locations": [
         "1. Introduction and conventions; sec:introduction"
@@ -2069,6 +2133,8 @@
       "chapter": "kl.coxeter",
       "lean_declarations": [
         "OAI.KLInvariance.intervalIso_rankDifference",
+        "OAI.KLInvariance.intervalIso_bottom",
+        "OAI.KLInvariance.intervalIso_top",
         "OAI.KLInvariance.intervalIso_full_rankDifference"
       ],
       "paper_locations": [
@@ -2206,6 +2272,43 @@
       "paper_locations": []
     },
     {
+      "id": "kl.hecke.dihedral_bar_sum",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.plus_leftInv",
+        "OAI.KLInvariance.Dihedral.bar_lowerSum_alt",
+        "OAI.KLInvariance.Dihedral.bar_lowerSum"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.dihedral_r_sum",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.rValue_sum",
+        "OAI.KLInvariance.Dihedral.rPolynomial_sum"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.dihedral_strings",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.union_string",
+        "OAI.KLInvariance.Dihedral.double_string"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.dihedral_sum_product",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.left_plus_coeff",
+        "OAI.KLInvariance.Dihedral.lowerSum_product"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.hecke.low_degree_rigidity",
       "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
@@ -2227,6 +2330,19 @@
       "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
         "OAI.KLInvariance.CanonicalP.lowPart_solution"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.lower_interval_sums",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.lowerSum",
+        "OAI.KLInvariance.Dihedral.lowerSum_coeff",
+        "OAI.KLInvariance.Dihedral.lowerSum_one",
+        "OAI.KLInvariance.Dihedral.lowerSum_simple",
+        "OAI.KLInvariance.Dihedral.correction",
+        "OAI.KLInvariance.Dihedral.correction_coeff"
       ],
       "paper_locations": []
     },
@@ -2543,6 +2659,8 @@
       "id": "kl.notes.dihedral_kl",
       "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.constantP",
+        "OAI.KLInvariance.Dihedral.constant_normalizedKL",
         "OAI.KLInvariance.Dihedral.klPolynomial_eq_one"
       ],
       "paper_locations": [
@@ -2553,7 +2671,9 @@
       "id": "kl.notes.dihedral_models",
       "chapter": "kl.localization",
       "lean_declarations": [
-        "OAI.KLInvariance.Dihedral.klPolynomial_eq_one",
+        "OAI.KLInvariance.Dihedral.inducedRoot",
+        "OAI.KLInvariance.Dihedral.inducedLabel",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.modelLabel",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.model_flabby",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.model_generated",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.model_quotient"

@@ -354,16 +354,6 @@
       "pending": []
     },
     {
-      "node": "kl.coxeter.alternating_words",
-      "file": "docs/knowledge/nodes/kl.coxeter/alternating_words.md",
-      "source_declarations": [
-        "OAI.KLInvariance.ParabolicSupport.reduced_pair_eq_alternating",
-        "OAI.KLInvariance.CoxeterSupport.wordAction_alternating"
-      ],
-      "review": "The definitions and length calculations follow the local ParabolicSupport and Bruhat proofs.",
-      "pending": []
-    },
-    {
       "node": "kl.coxeter.reduced_alternating_tail",
       "file": "docs/knowledge/nodes/kl.coxeter/reduced_alternating_tail.md",
       "source_declarations": [
@@ -2474,6 +2464,179 @@
       ],
       "review": "Read eq_of_scaled_difference_reciprocal in SimultaneousInvariance. Preserved quantification over all t in (0,1), the square-root substitution and the multiplication that converts scaled symmetry to ordinary reciprocal evaluation.",
       "pending": []
+    },
+    {
+      "node": "kl.coxeter.alternating_words",
+      "file": "docs/knowledge/nodes/kl.coxeter/alternating_words.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ParabolicSupport.reduced_pair_eq_alternating",
+        "OAI.KLInvariance.CoxeterSupport.wordAction_alternating",
+        "OAI.KLInvariance.Dihedral.alt",
+        "OAI.KLInvariance.Dihedral.length_alt",
+        "OAI.KLInvariance.Dihedral.take_alt",
+        "OAI.KLInvariance.Dihedral.alt_sublist"
+      ],
+      "review": "Retained the final-letter convention used in Tits and added the first-letter Dihedral.alt definition, parity conversion, length and prefix identities. Both conventions are explicit.",
+      "pending": []
+    },
+    {
+      "node": "kl.coxeter.dihedral_reduced_words",
+      "file": "docs/knowledge/nodes/kl.coxeter/dihedral_reduced_words.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.reduced_cons_cons_ne",
+        "OAI.KLInvariance.Dihedral.reduced_cons_eq_alt",
+        "OAI.KLInvariance.Dihedral.reduced_eq_alt",
+        "OAI.KLInvariance.Dihedral.exists_alt",
+        "OAI.KLInvariance.Dihedral.reduced_alt_take",
+        "OAI.KLInvariance.Dihedral.eq_alt_of_descent"
+      ],
+      "review": "Read the reduced-list and descent lemmas in Dihedral. Expanded adjacent cancellation, tail induction, element existence, reduced prefixes and the one-letter extension of a reduced descent word.",
+      "pending": []
+    },
+    {
+      "node": "kl.coxeter.dihedral_bruhat_order",
+      "file": "docs/knowledge/nodes/kl.coxeter/dihedral_bruhat_order.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.shorter_bruhat",
+        "OAI.KLInvariance.Dihedral.bruhat_iff_length_lt_or_eq"
+      ],
+      "review": "Read shorter_bruhat and bruhat_iff_length_lt_or_eq. Both first-letter cases are realized as explicit prefixes or tail-prefixes before invoking the fixed reduced-subword criterion.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.lower_interval_sums",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/lower_interval_sums.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.lowerSum",
+        "OAI.KLInvariance.Dihedral.lowerSum_coeff",
+        "OAI.KLInvariance.Dihedral.lowerSum_one",
+        "OAI.KLInvariance.Dihedral.lowerSum_simple",
+        "OAI.KLInvariance.Dihedral.correction",
+        "OAI.KLInvariance.Dihedral.correction_coeff"
+      ],
+      "review": "Read lowerSum and correction, including correction at n=0. Defined the parameter-independent coefficient vector and its exact reduced prefix/tail inputs.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.dihedral_strings",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/dihedral_strings.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.union_string",
+        "OAI.KLInvariance.Dihedral.double_string"
+      ],
+      "review": "Read union_string and double_string. Expanded both envelope implications, strict exclusion of the tail top, the n=0 obstruction, both length cases at the prefix and the prescribed-descent expression.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.dihedral_sum_product",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/dihedral_sum_product.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.left_plus_coeff",
+        "OAI.KLInvariance.Dihedral.lowerSum_product"
+      ],
+      "review": "Read lowerSum_product and its coefficient cases. Presented the same finite membership calculation as a string partition with explicit operator values, union and double-membership inputs.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.dihedral_bar_sum",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/dihedral_bar_sum.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.plus_leftInv",
+        "OAI.KLInvariance.Dihedral.bar_lowerSum_alt",
+        "OAI.KLInvariance.Dihedral.bar_lowerSum"
+      ],
+      "review": "Read bar_lowerSum_alt and bar_lowerSum. Kept the coefficient-linear transform and the product recurrence at q inverse, including the zero correction at length two and both smaller induction instances.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.dihedral_r_sum",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/dihedral_r_sum.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.rValue_sum",
+        "OAI.KLInvariance.Dihedral.rPolynomial_sum"
+      ],
+      "review": "Read rValue_sum and rPolynomial_sum. Expanded the inverse-parameter coefficient extraction, bottom-power factor, comparable-length cancellation and injective return from Laurent coefficients.",
+      "pending": []
+    },
+    {
+      "node": "kl.notes.dihedral_kl",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/dihedral_kl.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.constantP",
+        "OAI.KLInvariance.Dihedral.constant_normalizedKL",
+        "OAI.KLInvariance.Dihedral.klPolynomial_eq_one"
+      ],
+      "review": "Read constantP, constant_normalizedKL and klPolynomial_eq_one. Checked all seven fields, the actual finite interval sum and the selected-family uniqueness step; removed the unrelated root-plane construction from its mathematical prerequisites.",
+      "pending": []
+    },
+    {
+      "node": "kl.foundations.interval",
+      "file": "docs/knowledge/nodes/kl.coxeter/interval.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Interval",
+        "OAI.KLInvariance.rankDifference",
+        "OAI.KLInvariance.intervalBottom",
+        "OAI.KLInvariance.intervalTop",
+        "OAI.KLInvariance.rankDifference_add"
+      ],
+      "review": "Read Interval, named endpoints, natural rankDifference and rankDifference_add. Expanded nonemptiness, initial/upper/general subintervals, proper-rank arithmetic and the order-isomorphism/function transport data.",
+      "pending": []
+    },
+    {
+      "node": "kl.coxeter.interval_restriction",
+      "file": "docs/knowledge/nodes/kl.coxeter/interval_restriction.md",
+      "source_declarations": [
+        "OAI.KLInvariance.intervalIso_restrict",
+        "OAI.KLInvariance.intervalIso_restrict_val"
+      ],
+      "review": "Read intervalIso_restrict and its value lemma. Wrote both ambient inclusions, endpoint checks, inverse maps and order equivalence, retaining the source scope for arbitrary endpoint members.",
+      "pending": []
+    },
+    {
+      "node": "kl.coxeter.bruhat_successor",
+      "file": "docs/knowledge/nodes/kl.coxeter/bruhat_successor.md",
+      "source_declarations": [
+        "OAI.KLInvariance.exists_bruhat_successor"
+      ],
+      "review": "Read exists_bruhat_successor. Expanded the upper-length induction, both shorter-top cases, lifting obstruction, upper-envelope construction and the equal-length contradiction that forces the final ascent.",
+      "pending": []
+    },
+    {
+      "node": "kl.coxeter.rank_embedding",
+      "file": "docs/knowledge/nodes/kl.coxeter/rank_embedding.md",
+      "source_declarations": [
+        "OAI.KLInvariance.rankDifference_le_of_strictMono"
+      ],
+      "review": "Read rankDifference_le_of_strictMono. Retained StrictMono rather than adding injectivity/order-reflection assumptions; the one-step successor, shorter remaining rank and target integer-length increase are explicit.",
+      "pending": []
+    },
+    {
+      "node": "kl.foundations.rank_preservation",
+      "file": "docs/knowledge/nodes/kl.coxeter/rank_preservation.md",
+      "source_declarations": [
+        "OAI.KLInvariance.intervalIso_rankDifference",
+        "OAI.KLInvariance.intervalIso_bottom",
+        "OAI.KLInvariance.intervalIso_top",
+        "OAI.KLInvariance.intervalIso_full_rankDifference"
+      ],
+      "review": "Read all four interval-isomorphism lemmas. Followed the source proof through StrictMono inequalities in both directions, then both endpoint inequalities and the full-rank substitution.",
+      "pending": []
+    },
+    {
+      "node": "kl.notes.dihedral_models",
+      "file": "docs/knowledge/nodes/kl.localization/dihedral_models.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.inducedRoot",
+        "OAI.KLInvariance.Dihedral.inducedLabel",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.modelLabel",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.model_flabby",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.model_generated",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.model_quotient"
+      ],
+      "review": "Read inducedRoot, inducedLabel, modelLabel and the actual model-property interfaces. Added the ambient coefficient/label construction and removed the polynomial theorem as a proof prerequisite; interpolation proof expansion remains in L3.",
+      "pending": [
+        "Expand the interpolation and localization arguments in L3."
+      ]
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -2483,7 +2646,9 @@
       "title": "Coxeter data, words, length, and reflections",
       "status": "exposition_reviewed",
       "completion_evidence": [
-        "kl.coxeter.word_data"
+        "kl.coxeter.word_data",
+        "kl.coxeter.alternating_words",
+        "kl.coxeter.dihedral_reduced_words"
       ],
       "review_scope": "Word products, reduced length, reflections, descents, parity, and the inversion-sequence deletion calculation are defined and explained."
     },
@@ -2505,14 +2670,23 @@
       "title": "Strong Bruhat order and lifting",
       "status": "in_progress",
       "completion_evidence": [
-        "kl.coxeter.simple_edge_transport"
+        "kl.coxeter.simple_edge_transport",
+        "kl.coxeter.dihedral_bruhat_order"
       ]
     },
     {
       "code": "C4",
       "title": "Intervals, ranks, and order isomorphisms",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "exposition_reviewed",
+      "completion_evidence": [
+        "kl.coxeter.bruhat_successor",
+        "kl.coxeter.interval_restriction",
+        "kl.coxeter.rank_embedding",
+        "kl.foundations.interval",
+        "kl.foundations.rank_preservation"
+      ],
+      "pending": [],
+      "review": "Reviewed interval data/endpoints, natural rank arithmetic and proper subinterval decrease; constructed subinterval restrictions, length-one successors, StrictMono rank inequalities and endpoint/rank transport."
     },
     {
       "code": "C5",
@@ -2671,18 +2845,23 @@
     {
       "code": "H5",
       "title": "Word expansions and rigidity",
-      "status": "in_progress",
+      "status": "exposition_reviewed",
       "completion_evidence": [
-        "kl.hecke.positive_words",
-        "kl.hecke.positive_word_reciprocity",
-        "kl.hecke.scaled_polynomials",
-        "kl.foundations.scaled_kl",
         "kl.comparison.reciprocal_rigidity",
-        "kl.hecke.scaled_difference_rigidity"
+        "kl.foundations.scaled_kl",
+        "kl.hecke.dihedral_bar_sum",
+        "kl.hecke.dihedral_r_sum",
+        "kl.hecke.dihedral_strings",
+        "kl.hecke.dihedral_sum_product",
+        "kl.hecke.lower_interval_sums",
+        "kl.hecke.positive_word_reciprocity",
+        "kl.hecke.positive_words",
+        "kl.hecke.scaled_difference_rigidity",
+        "kl.hecke.scaled_polynomials",
+        "kl.notes.dihedral_kl"
       ],
-      "pending": [
-        "Complete the detailed dihedral interval-sum/bar calculation and its constant-P identification. Positive words, scaled evaluations and both reciprocal rigidity interfaces are now expanded."
-      ]
+      "pending": [],
+      "review": "The positive-word identities and scaled rigidity are joined by the complete abstract dihedral calculation: alternating lower ideals, string membership, correction recurrence, linear-bar induction, R-sum identity and the constant normalized P-family."
     },
     {
       "code": "A1",
@@ -3049,8 +3228,13 @@
     {
       "code": "L3",
       "title": "Dihedral structure models",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.notes.dihedral_models"
+      ],
+      "pending": [
+        "Expand the induced-root interpolation construction, flow-down sections and all structure-model properties with their exact ambient-label hypotheses."
+      ]
     },
     {
       "code": "L4",
@@ -3120,7 +3304,7 @@
     }
   ],
   "next_steps": [
-    "Expand the dihedral KL calculation and the remaining word-character identification; complete generic sheaf base change and morphism extension.",
+    "Complete the remaining graded-algebra and Hilbert explanations, then expand reflection Frobenius data, word modules and their character identification.",
     "Complete standard-parabolic inclusion and finite-support transport; finish word wall maps, pair kernels, and character recursions.",
     "Expand adapted-order/chamber changes, dihedral interval transport, and the path-polynomial proof.",
     "Review the remaining Hecke, localization, and simultaneous-comparison arguments against their local source bodies.",
@@ -3425,7 +3609,17 @@
       "kl.hecke.normalization_unique": "H4",
       "kl.hecke.selected_families": "H4",
       "kl.hecke.scaled_polynomials": "H5",
-      "kl.hecke.scaled_difference_rigidity": "H5"
+      "kl.hecke.scaled_difference_rigidity": "H5",
+      "kl.coxeter.dihedral_reduced_words": "C1",
+      "kl.coxeter.dihedral_bruhat_order": "C3",
+      "kl.hecke.lower_interval_sums": "H5",
+      "kl.hecke.dihedral_strings": "H5",
+      "kl.hecke.dihedral_sum_product": "H5",
+      "kl.hecke.dihedral_bar_sum": "H5",
+      "kl.hecke.dihedral_r_sum": "H5",
+      "kl.coxeter.interval_restriction": "C4",
+      "kl.coxeter.bruhat_successor": "C4",
+      "kl.coxeter.rank_embedding": "C4"
     },
     "moved_nodes": [
       {
@@ -4259,7 +4453,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 286
+    "current_node_count": 296
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -4273,7 +4467,8 @@
     "Expanded the complete root-plane-to-induced-dihedral construction and least-coset graph comparison, mapped InducedSigned, and refined the topic-stage relationship map to place plane inversion changes before the induced system.",
     "Expanded boundary existence, uniqueness and restrictions; lower-supported models; local stalk remainders and full graded decomposition; simultaneous stalk/kernel multiplicities, with a shared one-edge example and distinct splitting/pairing and decomposition/character routes.",
     "Expanded the operator-to-R construction: both Hecke conventions, cyclic reduced-word independence, bar intertwining and triangularity, polynomiality and degree, signed parameter reciprocity, inverse coefficients, and positive-word convolution. Added a bounded polynomial-reflection definition and rebuilt the topic guide around these dependencies.",
-    "Expanded the full canonical KL construction from the negative lower half: degree control, proper R-kernel, anti-reciprocal defect, rank induction, seven normalization fields and selected-family identification. Added explicit integral and scaled reciprocal rigidity and the square-parameter calculation."
+    "Expanded the full canonical KL construction from the negative lower half: degree control, proper R-kernel, anti-reciprocal defect, rank induction, seven normalization fields and selected-family identification. Added explicit integral and scaled reciprocal rigidity and the square-parameter calculation.",
+    "Expanded the complete dihedral constant-P calculation and interval-rank prerequisites. Separated first/final alternating-word conventions, proved the double-string correction and linear-bar cancellation, and removed the polynomial calculation from the direct induced-label model dependencies."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -4363,15 +4558,15 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-19T06:26:24.366193+00:00",
+    "created_at": "2026-10-19T06:48:53.701468+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 286,
-    "html_pages_checked": 546,
-    "generated_definition_links_checked": 3588,
+    "node_count": 296,
+    "html_pages_checked": 558,
+    "generated_definition_links_checked": 3704,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures have direct mappings and complete field coverage; NormalizedKL lists every field with its exact source name."
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage; documentation checks only."
   },
   "structure_coverage_scan": {
     "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
@@ -4411,12 +4606,20 @@
         "kl.hecke.low_part_solution"
       ],
       "review": "Polynomial.reflect reverses indices through d and fixes indices above d. Integer anti-reciprocity forces all coefficients above d and the possible middle coefficient to vanish, so the lowPart_solution theorem needs no separate degree hypothesis."
+    },
+    {
+      "entries": [
+        "kl.notes.dihedral_kl",
+        "kl.notes.dihedral_models"
+      ],
+      "review": "The generic dihedral polynomial theorem has no root-plane prerequisite. The induced-label structure model uses ambient roots and direct interpolation; its definition no longer records canonical P or P=1 as a proof dependency."
     }
   ],
   "relationship_map_revision": {
     "stage_count": 38,
     "edge_count": 92,
     "route": "Top splitting and primitive recognition feed the boundary-pairing route; full model decomposition feeds simultaneous character formulas.",
-    "evidence": "BoundarySheaf.splitIn_of_top_split, iso_of_primitive_top_split, GradedSheaf.exists_modelSumIso and bottCharacter_decomposition_both."
+    "evidence": "BoundarySheaf.splitIn_of_top_split, iso_of_primitive_top_split, GradedSheaf.exists_modelSumIso and bottCharacter_decomposition_both.",
+    "latest_anchor_refinement": "Added the abstract dihedral P=1 output to the canonical-polynomial stage and explicit subinterval/rank anchors to the Coxeter stage; the 38-stage/92-edge logical graph is unchanged."
   }
 }

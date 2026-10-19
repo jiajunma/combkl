@@ -23,7 +23,9 @@
       "lean_declarations": [
         "OAI.KLInvariance.BruhatLE",
         "OAI.KLInvariance.Interval",
-        "OAI.KLInvariance.rankDifference_subinterval_lt"
+        "OAI.KLInvariance.rankDifference_subinterval_lt",
+        "OAI.KLInvariance.intervalIso_restrict",
+        "OAI.KLInvariance.intervalIso_rankDifference"
       ]
     },
     {
@@ -111,11 +113,12 @@
       "requires": [
         "h"
       ],
-      "output": "Canonical KL family and uniqueness from reciprocity and strict degree.",
+      "output": "Canonical KL family, reciprocal rigidity, and the constant P-family on abstract dihedral intervals.",
       "lean_declarations": [
         "OAI.KLInvariance.NormalizedKL",
         "OAI.KLInvariance.klPolynomial_eq_constructed",
-        "OAI.KLInvariance.Comparison.eq_of_scaled_difference_reciprocal"
+        "OAI.KLInvariance.Comparison.eq_of_scaled_difference_reciprocal",
+        "OAI.KLInvariance.Dihedral.klPolynomial_eq_one"
       ]
     },
     {
@@ -1012,6 +1015,16 @@
         "OAI.KLInvariance.MomentGraph.BoundarySheaf.iso_of_primitive_top_split",
         "OAI.KLInvariance.Graded.ModuleData.exists_minimalCover_split",
         "OAI.KLInvariance.MomentGraph.GradedSheaf.exists_modelSumIso"
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "scope": "Dihedral polynomials and interval rank",
+      "change": "The abstract rank-two polynomial calculation uses only Coxeter order, Hecke operators and normalized-family uniqueness. The induced-label structure models use direct interpolation. Removed the polynomial theorem from the local model definition dependencies and expanded subinterval/rank prerequisites.",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.klPolynomial_eq_one",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.model_flabby",
+        "OAI.KLInvariance.intervalIso_rankDifference"
       ]
     }
   ]

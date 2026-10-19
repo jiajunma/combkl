@@ -1,6 +1,6 @@
 ---
 id: kl.foundations.rank_preservation
-title: Interval isomorphisms preserve rank differences
+title: Interval isomorphisms preserve endpoints and rank differences
 kind: theorem
 status: proved
 primary_topic: kl.coxeter
@@ -8,13 +8,15 @@ topics:
 - kl.coxeter
 uses:
 - kl.foundations.interval
-- kl.foundations.subword
+- kl.coxeter.rank_embedding
 lean:
   repository: openai-kl
   modules:
   - CanonicalKL
   declarations:
   - OAI.KLInvariance.intervalIso_rankDifference
+  - OAI.KLInvariance.intervalIso_bottom
+  - OAI.KLInvariance.intervalIso_top
   - OAI.KLInvariance.intervalIso_full_rankDifference
 source:
   spans:
@@ -22,6 +24,14 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.CanonicalKL:415
     format: lean-location
     note: OAI.KLInvariance.intervalIso_rankDifference
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.CanonicalKL:434
+    format: lean-location
+    note: OAI.KLInvariance.intervalIso_bottom
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.CanonicalKL:446
+    format: lean-location
+    note: OAI.KLInvariance.intervalIso_top
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.CanonicalKL:458
     format: lean-location
@@ -37,55 +47,90 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Does the exposition preserve the mathematical scope of its Lean declarations?
-  verdict: The stated hypotheses and conclusion follow the fixed source; explanatory
-    derivations retain the original proof route.
+  prompt: Are the exact interval, order-map and rank hypotheses retained?
+  verdict: Read all four interval-isomorphism lemmas. Followed the source proof through
+    StrictMono inequalities in both directions, then both endpoint inequalities and
+    the full-rank substitution.
 tags:
 - Kazhdan-Lusztig
-- background
+- Bruhat
+- intervals
 ---
 
-# Interval isomorphisms preserve rank differences
+# Interval isomorphisms preserve endpoints and rank differences
 
-If \(\phi:[u,b]\simeq[u',b']\) is an order isomorphism, then every comparable pair \(x\le y\) satisfies
+Let \(\phi:[u,b]\xrightarrow{\sim}[u',b']\) be an order isomorphism. For every comparable \(x\le y\) in the source interval,
 \[
-\ell(y)-\ell(x)=\ell(\phi(y))-\ell(\phi(x)).
+d(x,y)=d'(\phi(x),\phi(y)).
 \]
+For nonempty intervals it also satisfies
+\[
+\phi(u)=u',\qquad \phi(b)=b',\qquad d(u,b)=d'(u',b').
+\]
+
+<!-- source-comparison:start -->
+## Relation to the OpenAI notes
+
+**Explicit order-theoretic prerequisites.**
+
+**OpenAI notes:** The introduction describes Bruhat intervals as finite graded posets. The comparison induction restricts its isomorphism to smaller upper intervals and uses the equal relative ranks to normalize both vectors. [sec:introduction](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/01-introduction.tex#L1), [sec:induction](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/05-comparison.tex#L194).
+
+**Lean (primary):** Subinterval restriction is constructed on the underlying interval elements. A simple-descent induction gives a length-one successor; rank induction shows that a strictly monotone map cannot decrease rank. Applying it to an isomorphism and its inverse proves rank preservation. [Dihedral:19](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Dihedral.lean#L19), [CanonicalKL:297](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean#L297), [CanonicalKL:367](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean#L367), [CanonicalKL:415](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean#L415).
+
+**Role in the proof:** These lemmas justify both the smaller induction instances and the common powers used when transporting interval-indexed vectors.
+<!-- source-comparison:end -->
 
 *Proof.*
 
-### Step 1. Produce a length-one successor inside any nontrivial interval
+### Step 1. Apply the rank inequality to the isomorphism
 
-We use the elementary simple maps \(L_s,U_s\) and their monotonicity established in the subword proof. We claim that \(x<y\) admits \(x<z\le y\) with \(\ell(z)=\ell(x)+1\). Prove this by induction on \(\ell(y)\). Choose a simple descent \(s\) of \(y\).
+An order isomorphism is strictly monotone. Indeed, \(x<y\) gives \(\phi(x)\le\phi(y)\) by monotonicity, and equality would imply \(x=y\) by injectivity.
 
-If \(x\le sy\) and \(x=sy\), take \(z=y\). If \(x<sy\), apply induction inside \([x,sy]\), whose top is shorter, and retain the resulting \(z\).
+The [[node:kl.coxeter.rank_embedding|strict-map rank theorem]] therefore gives
+\[
+d(x,y)\le d'(\phi(x),\phi(y)).
+\]
 
-It remains to treat \(x\not\le sy\). If \(s\) raised \(x\), monotonicity of \(L_s\) would give \(x=L_s(x)\le L_s(y)=sy\), a contradiction. Thus \(s\) lowers both \(x\) and \(y\), and monotonicity gives \(sx<sy\). Induction provides
-\(sx<w\le sy\) with \(\ell(w)=\ell(sx)+1=\ell(x)\).
+### Step 2. Apply the same inequality to the inverse
 
-Monotonicity of \(U_s\) gives \(x=U_s(sx)\le U_s(w)\le U_s(sy)=y\).
-The reflection \(s\) must raise \(w\): if it lowered \(w\), then \(U_s(w)=w\), so \(x\le w\) with equal lengths would force \(x=w\le sy\), again a contradiction. Take \(z=sw=U_s(w)\). Its length is \(\ell(x)+1\), proving the claim in every case.
+The inverse is also strictly monotone. Apply the theorem to
+\(\phi(x)\le\phi(y)\):
+\[
+d'(\phi(x),\phi(y))
+\le d(\phi^{-1}\phi(x),\phi^{-1}\phi(y))
+=d(x,y).
+\]
+The two inequalities prove equality for every comparable pair.
 
-### Step 2. Build a maximal-length chain
+### Step 3. Identify the bottom
 
-Repeat Step 1 on the remaining interval \([z,y]\). Each step raises length by exactly one, and the length cannot exceed \(\ell(y)\). We obtain a chain from \(x\) to \(y\) with exactly
-\(d=\ell(y)-\ell(x)\) strict steps.
+Assume both intervals are nonempty. Since \(\phi(u)\) is a target member, \(u'\le\phi(u)\).
 
-Every strictly increasing chain has at most \(d\) steps, since each strict Bruhat comparison raises integer length by at least one. Thus \(d\) is the maximum number of strict steps in a chain between the two endpoints.
+The inverse image \(\phi^{-1}(u')\) is a source member, so \(u\le\phi^{-1}(u')\). Apply \(\phi\) to obtain \(\phi(u)\le u'\). Antisymmetry gives \(\phi(u)=u'\).
 
-### Step 3. Transport the chain and apply the inverse
+### Step 4. Identify the top
 
-An order isomorphism \(\phi\) preserves every strict comparison and takes distinct vertices to distinct vertices. Transporting the chain from Step 2 gives a chain of \(d\) strict steps between \(\phi(x)\) and \(\phi(y)\). Therefore
-\(d(x,y)\le d(\phi(x),\phi(y))\).
+As a target member, \(\phi(b)\le b'\). The source member \(\phi^{-1}(b')\) satisfies \(\phi^{-1}(b')\le b\). Applying \(\phi\) gives \(b'\le\phi(b)\), hence \(\phi(b)=b'\).
 
-Apply the same argument to \(\phi^{-1}\) to obtain the reverse inequality. The two rank differences are equal. Applying this to the bottom and top gives the full-interval statement, because an order isomorphism preserves the unique minimum and maximum.
+### Step 5. Evaluate the full rank
+
+Apply Step 2 to the source bottom and top, and substitute Steps 3–4:
+\[
+d(u,b)=d'(\phi(u),\phi(b))=d'(u',b').
+\]
+
+Together with subinterval restriction, this supplies the equal induction rank for every pair of corresponding subintervals.
 
 ## References
 
-[2. Real realizations and moment-graph sheaves](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L2).
+The local source declarations below give the construction and proof.
 
 ## Lean formalization
 
 `OAI.KLInvariance.intervalIso_rankDifference`: [CanonicalKL.lean:415](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean#L415).
+
+`OAI.KLInvariance.intervalIso_bottom`: [CanonicalKL.lean:434](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean#L434).
+
+`OAI.KLInvariance.intervalIso_top`: [CanonicalKL.lean:446](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean#L446).
 
 `OAI.KLInvariance.intervalIso_full_rankDifference`: [CanonicalKL.lean:458](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean#L458).

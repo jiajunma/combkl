@@ -400,3 +400,48 @@ comparisons:
   consequence: The KB presents the coefficient solution, defect identity, rank induction
     and seven normalization fields as a continuous construction. The classical selection
     interfaces are then identified with the explicit formulas.
+- id: dihedral-product-normalization
+  kind: The same string calculation in two normalizations
+  nodes:
+  - kl.hecke.dihedral_sum_product
+  - kl.hecke.dihedral_bar_sum
+  paper_labels:
+  - loc:dihedral-product
+  - loc:dihedral-kl
+  lean_declarations:
+  - OAI.KLInvariance.Dihedral.double_string
+  - OAI.KLInvariance.Dihedral.lowerSum_product
+  - OAI.KLInvariance.Dihedral.bar_lowerSum_alt
+  paper: The notes use \(C_w^\circ=q^{-\ell(w)/2}S_w\). Their product has a zero correction
+    at length two and the shorter-prefix vector at longer lengths; induction proves
+    semilinear bar invariance.
+  lean: The finite sum S_w has coefficient one below w. The product is S_w plus q
+    times the correction vector. Lean applies the coefficient-linear bar map to the
+    product formula at the inverse unit parameter and cancels the common correction
+    term.
+  consequence: Writing \(q=v^2\) and \(C_w^\circ=v^{-\ell(w)}S_w\) converts the two
+    product formulas and bar statements directly. The explicit double-string theorem
+    includes the finite longest-element case.
+- id: interval-rank-prerequisites
+  kind: Explicit order-theoretic prerequisites
+  nodes:
+  - kl.coxeter.interval_restriction
+  - kl.coxeter.bruhat_successor
+  - kl.foundations.rank_preservation
+  paper_labels:
+  - sec:introduction
+  - sec:induction
+  lean_declarations:
+  - OAI.KLInvariance.intervalIso_restrict
+  - OAI.KLInvariance.exists_bruhat_successor
+  - OAI.KLInvariance.rankDifference_le_of_strictMono
+  - OAI.KLInvariance.intervalIso_rankDifference
+  paper: The introduction describes Bruhat intervals as finite graded posets. The
+    comparison induction restricts its isomorphism to smaller upper intervals and
+    uses the equal relative ranks to normalize both vectors.
+  lean: Subinterval restriction is constructed on the underlying interval elements.
+    A simple-descent induction gives a length-one successor; rank induction shows
+    that a strictly monotone map cannot decrease rank. Applying it to an isomorphism
+    and its inverse proves rank preservation.
+  consequence: These lemmas justify both the smaller induction instances and the common
+    powers used when transporting interval-indexed vectors.

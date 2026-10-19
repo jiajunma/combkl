@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 51185,
-  "theorem_walkthroughs": 173,
+  "revised_proof_words": 53271,
+  "theorem_walkthroughs": 182,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -219,6 +219,57 @@
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
     },
     {
+      "node": "kl.coxeter.bruhat_successor",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.exists_bruhat_successor"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 298,
+      "proof_sha256": "15961e95bc6721c1608133230e91ed521cc33366b6dfe8fd6433fb4cf4440a22",
+      "review": "Read exists_bruhat_successor. Expanded the upper-length induction, both shorter-top cases, lifting obstruction, upper-envelope construction and the equal-length contradiction that forces the final ascent."
+    },
+    {
+      "node": "kl.coxeter.dihedral_bruhat_order",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.shorter_bruhat",
+        "OAI.KLInvariance.Dihedral.bruhat_iff_length_lt_or_eq"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 220,
+      "proof_sha256": "e40b6d764f45a2238f30110edc05e4c766068b05fbddfe257301c20fbe164d91",
+      "review": "Read shorter_bruhat and bruhat_iff_length_lt_or_eq. Both first-letter cases are realized as explicit prefixes or tail-prefixes before invoking the fixed reduced-subword criterion."
+    },
+    {
+      "node": "kl.coxeter.dihedral_reduced_words",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.reduced_cons_cons_ne",
+        "OAI.KLInvariance.Dihedral.reduced_cons_eq_alt",
+        "OAI.KLInvariance.Dihedral.reduced_eq_alt",
+        "OAI.KLInvariance.Dihedral.exists_alt",
+        "OAI.KLInvariance.Dihedral.reduced_alt_take",
+        "OAI.KLInvariance.Dihedral.eq_alt_of_descent"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 286,
+      "proof_sha256": "c43980ddfcdd44e9cfa20f84c414358c43da64f473153f19ca4e3a9b53f9d982",
+      "review": "Read the reduced-list and descent lemmas in Dihedral. Expanded adjacent cancellation, tail induction, element existence, reduced prefixes and the one-letter extension of a reduced descent word."
+    },
+    {
+      "node": "kl.coxeter.interval_restriction",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.intervalIso_restrict",
+        "OAI.KLInvariance.intervalIso_restrict_val"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 239,
+      "proof_sha256": "063ac9bc55e628e441eb677220ef8dcba5932d5b6630eb89bae35d6f84584515",
+      "review": "Read intervalIso_restrict and its value lemma. Wrote both ambient inclusions, endpoint checks, inverse maps and order equivalence, retaining the source scope for arbitrary endpoint members."
+    },
+    {
       "node": "kl.coxeter.parabolic_decomposition",
       "source_declarations": [
         "OAI.KLInvariance.ParabolicSupport.reduced_append_of_minimal",
@@ -231,6 +282,17 @@
       "revised_proof_words": 242,
       "proof_sha256": "f7830366ae989e7d2b102e5f3368bfedabc74fc2f68f1fb09609998f9c6e77c6",
       "review": "Read the local proof. Expanded reduced-subword selection, the two length sandwiches, alternating-tail cancellation, or the transported-edge length cases as applicable."
+    },
+    {
+      "node": "kl.coxeter.rank_embedding",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.rankDifference_le_of_strictMono"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 160,
+      "proof_sha256": "1fef3c6d693406ea0307ff397904ed29492b3f765992028926a80a599125ffcb",
+      "review": "Read rankDifference_le_of_strictMono. Retained StrictMono rather than adding injectivity/order-reflection assumptions; the one-step successor, shorter remaining rank and target integer-length increase are explicit."
     },
     {
       "node": "kl.coxeter.reduced_alternating_tail",
@@ -992,13 +1054,15 @@
       "node": "kl.foundations.rank_preservation",
       "source_declarations": [
         "OAI.KLInvariance.intervalIso_rankDifference",
+        "OAI.KLInvariance.intervalIso_bottom",
+        "OAI.KLInvariance.intervalIso_top",
         "OAI.KLInvariance.intervalIso_full_rankDifference"
       ],
-      "proof_steps": 3,
+      "proof_steps": 5,
       "previous_proof_words": 60,
-      "revised_proof_words": 311,
-      "proof_sha256": "f0bbc32cfd8884bc74e2f3f8a14f219bfb5e28d3fd9a8d35218980225d2e26ef",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 176,
+      "proof_sha256": "677f84c992c2b91e50bbda0108bf808d127f6957a5da6a6ca7d8dd2e0f0e9e36",
+      "review": "Read all four interval-isomorphism lemmas. Followed the source proof through StrictMono inequalities in both directions, then both endpoint inequalities and the full-rank substitution."
     },
     {
       "node": "kl.foundations.rtilde",
@@ -1138,6 +1202,55 @@
       "revised_proof_words": 237,
       "proof_sha256": "728d105dd5cd632c97337f57a614f559a6d747060b821f92e419140a1cf2ca31",
       "review": "Read the local hanti calculation in polynomial_reciprocity. Retained the conditional smaller-interval equations and detailed degree hypotheses, both finite sums, the proper kernel and delta cancellation."
+    },
+    {
+      "node": "kl.hecke.dihedral_bar_sum",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.plus_leftInv",
+        "OAI.KLInvariance.Dihedral.bar_lowerSum_alt",
+        "OAI.KLInvariance.Dihedral.bar_lowerSum"
+      ],
+      "proof_steps": 6,
+      "revised_proof_words": 309,
+      "proof_sha256": "721558af65e4834b02689a4a052e4d8089dbdb247feb77544aa9b9b7ed06f101",
+      "review": "Read bar_lowerSum_alt and bar_lowerSum. Kept the coefficient-linear transform and the product recurrence at q inverse, including the zero correction at length two and both smaller induction instances. The simple inverse identity is expanded locally from the quadratic relation, matching Dihedral.plus_leftInv."
+    },
+    {
+      "node": "kl.hecke.dihedral_r_sum",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.rValue_sum",
+        "OAI.KLInvariance.Dihedral.rPolynomial_sum"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 201,
+      "proof_sha256": "2bdea8b2717239431ee9c2e4c0441798c6c13be0229e16b6a7797ef0bc9bb771",
+      "review": "Read rValue_sum and rPolynomial_sum. Expanded the inverse-parameter coefficient extraction, bottom-power factor, comparable-length cancellation and injective return from Laurent coefficients."
+    },
+    {
+      "node": "kl.hecke.dihedral_strings",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.union_string",
+        "OAI.KLInvariance.Dihedral.double_string"
+      ],
+      "proof_steps": 6,
+      "revised_proof_words": 359,
+      "proof_sha256": "3999e84a6d68596ac98c982f74ac985453423779e857c97f3a2f2e6e87df250a",
+      "review": "Read union_string and double_string. Expanded both envelope implications, strict exclusion of the tail top, the n=0 obstruction, both length cases at the prefix and the prescribed-descent expression."
+    },
+    {
+      "node": "kl.hecke.dihedral_sum_product",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.left_plus_coeff",
+        "OAI.KLInvariance.Dihedral.lowerSum_product"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 294,
+      "proof_sha256": "ec1badb813eb285c9e5e00ead6bde05a709da39972ec587bb1ed5702d733963b",
+      "review": "Read lowerSum_product and its coefficient cases. Presented the same finite membership calculation as a string partition with explicit operator values, union and double-membership inputs."
     },
     {
       "node": "kl.hecke.low_degree_rigidity",
@@ -1403,13 +1516,15 @@
     {
       "node": "kl.notes.dihedral_kl",
       "source_declarations": [
+        "OAI.KLInvariance.Dihedral.constantP",
+        "OAI.KLInvariance.Dihedral.constant_normalizedKL",
         "OAI.KLInvariance.Dihedral.klPolynomial_eq_one"
       ],
-      "proof_steps": 5,
+      "proof_steps": 4,
       "previous_proof_words": 169,
-      "revised_proof_words": 390,
-      "proof_sha256": "fb99cdb776aead805b0efb001ad2fa2b2b4d3e9710dd2bb1fb4cb0ac89ab0bba",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 245,
+      "proof_sha256": "2346b5a21cf603fc627345ec75e2b572bc7a5ccb98515e7829ad2a5d3e3e6e8a",
+      "review": "Read constantP, constant_normalizedKL and klPolynomial_eq_one. Checked all seven fields, the actual finite interval sum and the selected-family uniqueness step; removed the unrelated root-plane construction from its mathematical prerequisites."
     },
     {
       "node": "kl.notes.extended_realization",

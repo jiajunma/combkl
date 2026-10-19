@@ -1,6 +1,6 @@
 # Coxeter combinatorics
 
-The question in this topic is: **what does an unlabelled Bruhat interval actually remember?** The final theorem compares intervals in different Coxeter groups, so we first need to distinguish the group-theoretic information used to construct an interval from the order that remains after its labels are forgotten.
+This topic constructs Bruhat intervals from Coxeter words and reflections, then develops their order, subintervals and rank. These supply the finite index sets and smaller induction instances used throughout the proof. The final theorem compares the resulting interval orders across different Coxeter systems.
 
 We use the definition of a Coxeter system \((W,S)\). Here \(W\) is the group, \(S\) is its set of simple reflections, and \(1\) is its identity. A word is a finite product of elements of \(S\). The length \(\ell(w)\) is the least number of letters in a word representing \(w\); a word attaining that minimum is reduced.
 
@@ -89,13 +89,45 @@ The fixed reduced word for \(b\) has \(m\) positions, hence only \(2^m\) choices
 
 The same argument gives more than cardinality. Every such subword uses only the finite set of generators occurring in the chosen word for \(b\). Thus an interval in a Coxeter system with infinitely many generators still lies inside a finite-generator standard parabolic subgroup. The subgroup itself may be infinite.
 
-Finally, Bruhat intervals are ranked: saturated chains from \(x\) to \(y\) have \(\ell(y)-\ell(x)\) steps. An order isomorphism preserves covers and chains, so it preserves this rank difference. It need not preserve the separate absolute lengths of the endpoints.
+## Successors and relative rank
+
+Every strict interval \(x<y\) contains \(z\) with \(x<z\le y\) and \(\ell(z)=\ell(x)+1\). The source proves this by induction on the top length. For a descent \(sy<y\), either \(x\le sy\), giving a smaller instance directly, or lifting forces \(s\) to lower \(x\) as well. In that second case, induction between \(sx\) and \(sy\), followed by the upper simple envelope, produces the required successor.
+
+This [[node:kl.coxeter.bruhat_successor|one-step result]] gives the [[node:kl.coxeter.rank_embedding|rank inequality]] for a strictly monotone interval map \(f\). Take a successor \(z\) of \(x\). The remaining pair has rank \(d(x,y)-1\); induction bounds its image rank from below, while \(f(x)<f(z)\) contributes at least one additional length unit. Hence
+\[
+d(x,y)\le d'(f(x),f(y)).
+\]
+Applying this to an order isomorphism and its inverse proves [[node:kl.foundations.rank_preservation|equality of every relative rank]].
+
+## Restriction and smaller induction instances
+
+An order isomorphism \(\phi:[u,b]\to[u',b']\) sends bottom to bottom and top to top: each image is bounded in both directions by the corresponding extremal element. For \(u\le x\le y\le b\), it restricts to
+\[
+[x,y]\xrightarrow{\sim}[\phi(x),\phi(y)]
+\]
+by the same underlying map. Monotonicity of \(\phi\) and \(\phi^{-1}\) verifies the two endpoint inequalities.
+
+The source-rank decomposition is
+\[
+d(u,b)=d(u,x)+d(x,y)+d(y,b).
+\]
+If \(x\ne u\) or \(y\ne b\), at least one outer difference is positive, so the subinterval has strictly smaller rank. Rank preservation gives that same smaller rank in the target. These are the arithmetic and mapping facts used when applying induction to a proper upper or initial interval.
+
+An interval-indexed function transports by \(f'(z')=f(\phi^{-1}(z'))\). Thus a pair of functions on isomorphic intervals can be compared after indexing both on the source interval.
+
+## The alternating rank-two order
+
+With two simple generators, reducedness forces the letters to alternate. For a shorter reduced expression, matching the first letter realizes it as a prefix of a longer reduced word; the other first letter realizes it as a prefix of the longer word's tail. Thus every strictly shorter element lies below every longer element.
+
+Consequently the lower ideal of \(w\) contains all lower length levels and only \(w\) at its own level. In the \(A_2\) example, this gives the two elements at levels one and two and the single longest top. This order description is the input to the [[node:kl.hecke.dihedral_sum_product|dihedral Hecke-sum calculation]].
+
+The root calculations use alternating words with a specified final generator. The dihedral polynomial calculation uses a specified first generator. The [[node:kl.coxeter.alternating_words|alternating-word definition]] gives the parity conversion between these two list conventions.
 
 ## Inputs for the geometric and algebraic constructions
 
 We now have finite sums over intervals, a size \(d(x,y)=\ell(y)-\ell(x)\) for induction, and a way to restrict an isomorphism to smaller intervals. Hecke algebra and polynomial invariants uses the finite sums to define reciprocal polynomial identities. reflection orders and paths returns to the distinction between covers and all reflection edges. the simultaneous invariance induction uses finite generator support to transport the final theorem back to arbitrary Coxeter systems.
 
-Before proceeding, check that you can explain why the edge \(1\to w_0\) in the \(A_2\) example is not a cover, and why finiteness of \([1,b]\) does not require finiteness of \(W\).
+The order and rank lemmas provide the common combinatorial data for the realization, Hecke and sheaf branches.
 
 
 ## Definitions and proofs by construction
@@ -109,11 +141,15 @@ Before proceeding, check that you can explain why the edge \(1\to w_0\) in the \
 - [[node:kl.foundations.bruhat_step]]
 - [[node:kl.detail.simple_envelopes]]
 - [[node:kl.foundations.finite_intervals]]
+- [[node:kl.coxeter.dihedral_bruhat_order]]
 
 ### Intervals, ranks, and order isomorphisms
 
 - [[node:kl.foundations.rank_preservation]]
 - [[node:kl.foundations.interval]]
+- [[node:kl.coxeter.interval_restriction]]
+- [[node:kl.coxeter.bruhat_successor]]
+- [[node:kl.coxeter.rank_embedding]]
 
 ### Standard parabolics and finite support
 
@@ -142,3 +178,4 @@ For a two-generator subgroup, a reduced word followed by a specified generator m
 - [[node:kl.coxeter.alternating_words]]
 - [[node:kl.coxeter.reduced_alternating_tail]]
 - [[node:kl.coxeter.simple_edge_transport]]
+- [[node:kl.coxeter.dihedral_reduced_words]]
