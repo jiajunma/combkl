@@ -23,6 +23,8 @@ lean:
   - OAI.KLInvariance.MomentGraph.GradedSheaf.kernelData
   - OAI.KLInvariance.BruhatGraph.stalkCharacter
   - OAI.KLInvariance.BruhatGraph.lowerCharacter
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.kernelEquivFull
+  - OAI.KLInvariance.BruhatGraph.costalkCharacter
 source:
   spans:
   - artifact: openai-kl-source
@@ -45,6 +47,14 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.Decomposition:104
     format: lean-location
     note: OAI.KLInvariance.BruhatGraph.lowerCharacter
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.CharacterReciprocity:787
+    format: lean-location
+    note: OAI.KLInvariance.MomentGraph.GradedSheaf.kernelEquivFull
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.CharacterReciprocity:1804
+    format: lean-location
+    note: OAI.KLInvariance.BruhatGraph.costalkCharacter
 verification:
   definition: accepted
   proof: not_applicable
@@ -76,6 +86,23 @@ If its full outgoing kernel \(K_x(B)\) is free, define the kernel character by
 K_B(x;q)=\operatorname{ch}(K_x(B);q).
 \]
 The kernel carries the grading inherited from the stalk. Each coefficient counts basis generators of the corresponding degree and is a nonnegative integer.
+
+## The full outgoing-kernel module
+
+If \(\rho^-_e:B^x\to B^e\) is the lower restriction for an outgoing edge \(e:x\to y\), then
+\[
+K_x(B)=\{v\in B^x:\rho^-_e(v)=0\text{ for every outgoing }e\}.
+\]
+Its degree-\(n\) piece is \(K_x(B)\cap B^x_n\). Each restriction preserves degree, so the vanishing conditions hold on every homogeneous component of a kernel vector.
+
+The source packages this finite graded module as kernelData. Equivalently, combine the outgoing restrictions into
+\[
+\partial_x:B^x\to\prod_{e:x\to y}B^e,\qquad
+v\mapsto(\rho^-_e(v))_e.
+\]
+Then \(K_x(B)=\ker\partial_x\), with the same underlying vectors. This is kernelEquivFull.
+
+The argument to freeKernelChar supplies freeness of this full kernel. The boundary-kernel theorem constructs that argument for the actual boundary sheaf; the resulting costalkCharacter is its full outgoing-kernel character.
 
 ## The actual boundary-stalk character
 
@@ -140,3 +167,7 @@ The local source declarations below give the constructions and proofs.
 `OAI.KLInvariance.BruhatGraph.stalkCharacter`: [SheafMorphisms.lean:206](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L206).
 
 `OAI.KLInvariance.BruhatGraph.lowerCharacter`: [Decomposition.lean:104](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean#L104).
+
+`OAI.KLInvariance.MomentGraph.GradedSheaf.kernelEquivFull`: [CharacterReciprocity.lean:787](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L787).
+
+`OAI.KLInvariance.BruhatGraph.costalkCharacter`: [CharacterReciprocity.lean:1804](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L1804).

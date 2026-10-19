@@ -118,6 +118,7 @@
       "kl.algebra.projective_presentations",
       "kl.algebra.projective_range_splittings",
       "kl.algebra.quotient_endomorphism_descent",
+      "kl.algebra.reflected_dual_character",
       "kl.algebra.root_label_primes",
       "kl.algebra.root_quotient_coordinates",
       "kl.algebra.scalar_free_presentation",
@@ -279,8 +280,14 @@
       "kl.detail.word_sheaf",
       "kl.duality.actual_character_reciprocity",
       "kl.duality.bott_character_decomposition",
+      "kl.duality.boundary_kernel_character",
       "kl.duality.character_identity_condition",
+      "kl.duality.lower_character_convolution",
+      "kl.duality.normalized_character_endpoints",
+      "kl.duality.scaled_reciprocity",
+      "kl.duality.scaled_stalk",
       "kl.duality.stalk_character",
+      "kl.duality.word_kernel_character",
       "kl.notes.boundary_image",
       "kl.notes.character_cancellation",
       "kl.notes.supported_pairings",
@@ -331,7 +338,8 @@
       "kl.sheaves.word_adjoint_descent",
       "kl.sheaves.word_boundary_summand",
       "kl.sheaves.word_polynomial_stalks",
-      "kl.sheaves.word_section_equivalence"
+      "kl.sheaves.word_section_equivalence",
+      "kl.sheaves.word_section_pairing"
     ],
     "kl.word_modules": [
       "kl.detail.word_character_formula",
@@ -1036,6 +1044,17 @@
       "paper_locations": []
     },
     {
+      "id": "kl.algebra.reflected_dual_character",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.degree_le_of_dual_equiv",
+        "OAI.KLInvariance.Graded.ModuleData.reflectedBasis",
+        "OAI.KLInvariance.Graded.ModuleData.char_of_dual_equiv",
+        "OAI.KLInvariance.Graded.ModuleData.char_natDegree_le_of_dual_equiv"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.algebra.root_label_primes",
       "chapter": "kl.graded_algebra",
       "lean_declarations": [
@@ -1598,7 +1617,12 @@
         "OAI.KLInvariance.BruhatGraph.FreeSheaf.costalk_hilbert_of_duality",
         "OAI.KLInvariance.BruhatGraph.costalk_hilbert_of_duality",
         "OAI.KLInvariance.BruhatGraph.incomingEquivInversions",
-        "OAI.KLInvariance.BruhatGraph.incoming_card"
+        "OAI.KLInvariance.BruhatGraph.incoming_card",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelEquivFull",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.kernelDual",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.kernel_free",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.kernelDual_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.kernel_character"
       ],
       "paper_locations": []
     },
@@ -2240,12 +2264,11 @@
       "id": "kl.detail.word_character_reciprocity",
       "chapter": "kl.sheaves",
       "lean_declarations": [
-        "OAI.KLInvariance.HeckeQ.barLinear_positiveWord",
-        "OAI.KLInvariance.HeckeQ.positiveWord_rValue",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_natDegree_le",
         "OAI.KLInvariance.TitsSpace.bottStalkCharacter_reciprocity",
         "OAI.KLInvariance.TitsSpace.bottKernelCharacter_rConvolution",
-        "OAI.KLInvariance.HeckeQ.rValue_inverse_eq_barBasis",
-        "OAI.KLInvariance.HeckeQ.positiveWord_support"
+        "OAI.KLInvariance.HeckeQ.positiveWord_rValue",
+        "OAI.KLInvariance.HeckeQ.eval_positiveWord"
       ],
       "paper_locations": []
     },
@@ -2494,6 +2517,21 @@
       "paper_locations": []
     },
     {
+      "id": "kl.duality.boundary_kernel_character",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.boundaryFreeSheaf",
+        "OAI.KLInvariance.BruhatGraph.boundaryPerfectPairing",
+        "OAI.KLInvariance.BruhatGraph.boundaryFreeDuality",
+        "OAI.KLInvariance.BruhatGraph.boundaryKernelFree",
+        "OAI.KLInvariance.BruhatGraph.costalkCharacter",
+        "OAI.KLInvariance.BruhatGraph.costalkCharacter_reflect",
+        "OAI.KLInvariance.BruhatGraph.stalkBasis_degree_le",
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_natDegree_le"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.duality.character_identity_condition",
       "chapter": "kl.sheaves",
       "lean_declarations": [
@@ -2504,6 +2542,55 @@
       ]
     },
     {
+      "id": "kl.duality.lower_character_convolution",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.unitPolynomialBasis",
+        "OAI.KLInvariance.Graded.ModuleData.char_unit",
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_top",
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter_diagonal",
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter_at_top",
+        "OAI.KLInvariance.BruhatGraph.lowerIntervalEquiv",
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter_convolution",
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter_convolution_zero",
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter_reciprocity_lift"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.duality.normalized_character_endpoints",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.ActualBoundary",
+        "OAI.KLInvariance.BruhatGraph.actualSectionDuality",
+        "OAI.KLInvariance.BruhatGraph.actualSectionDuality_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.emptyKernel_hilbert",
+        "OAI.KLInvariance.BruhatGraph.normalized_emptyKernel_scaledStalk",
+        "OAI.KLInvariance.BruhatGraph.normalized_fullKernel_scaledStalk",
+        "OAI.KLInvariance.BruhatGraph.normalized_emptyKernel_restrictBoundary",
+        "OAI.KLInvariance.BruhatGraph.normalized_fullKernel_restrictBoundary"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.duality.scaled_reciprocity",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.scaledStalk_reciprocity_inverse",
+        "OAI.KLInvariance.BruhatGraph.scaledStalk_reciprocity",
+        "OAI.KLInvariance.BruhatGraph.scaledStalk_reciprocity_upper"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.duality.scaled_stalk",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.scaledStalk"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.duality.stalk_character",
       "chapter": "kl.sheaves",
       "lean_declarations": [
@@ -2511,7 +2598,21 @@
         "OAI.KLInvariance.MomentGraph.GradedSheaf.freeKernelChar",
         "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelData",
         "OAI.KLInvariance.BruhatGraph.stalkCharacter",
-        "OAI.KLInvariance.BruhatGraph.lowerCharacter"
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelEquivFull",
+        "OAI.KLInvariance.BruhatGraph.costalkCharacter"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.duality.word_kernel_character",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottFreeSheaf",
+        "OAI.KLInvariance.TitsSpace.bottFreeDuality",
+        "OAI.KLInvariance.TitsSpace.bottKernelFree",
+        "OAI.KLInvariance.TitsSpace.bottKernelCharacter",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_natDegree_le"
       ],
       "paper_locations": []
     },
@@ -4366,6 +4467,22 @@
         "OAI.KLInvariance.TitsSpace.bottSection_local_denominator",
         "OAI.KLInvariance.TitsSpace.bottSection_surjective",
         "OAI.KLInvariance.TitsSpace.bottSectionEquiv"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.sheaves.word_section_pairing",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottSectionDuality",
+        "OAI.KLInvariance.TitsSpace.bottSectionDuality_apply",
+        "OAI.KLInvariance.TitsSpace.bottSection_symmetric",
+        "OAI.KLInvariance.TitsSpace.bottPiece_iff_stalks",
+        "OAI.KLInvariance.TitsSpace.bottSectionDuality_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottSection_left_orthogonal",
+        "OAI.KLInvariance.TitsSpace.bottSection_right_orthogonal",
+        "OAI.KLInvariance.TitsSpace.bottWordPerfectPairing",
+        "OAI.KLInvariance.TitsSpace.bottPolynomialPerfectPairing"
       ],
       "paper_locations": []
     },

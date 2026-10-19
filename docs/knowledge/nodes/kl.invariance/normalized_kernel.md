@@ -9,7 +9,6 @@ topics:
 uses:
 - kl.sheaves.upward_kernel
 - kl.sheaves.hilbert_free
-- kl.foundations.scaled_kl
 - kl.detail.hilbert_values
 lean:
   repository: openai-kl
@@ -49,12 +48,19 @@ tags:
 
 # Normalized Hilbert states along an edge schedule
 
-Let \(A\) be a real polynomial ring in \(N\) variables and fix \(0<t<1\). For remaining edge conditions \(F\) at \(x\), define
+Fix a finite-generator Coxeter system, \(u\le b\), and a normalized boundary sheaf \(B\) on \([u,b]\), over the real polynomial coefficient algebra \(A\) in \(N\) degree-one variables. For \(x\in[u,b]\) and a set \(F\) of outgoing edges, let \(L_x(F)\) be the submodule cut out by those vanishing conditions.
+
+Its Hilbert value is
+\[
+H_{L_x(F)}(q)=\sum_{n\in\mathbb Z}\dim_{\mathbb R}(L_x(F))_n\,q^n,
+\qquad 0<q<1.
+\]
+For \(0<t<1\), define
 \[
 D_x(t,F)=(1-t^2)^N t^{\ell(x)-\ell(b)}
- \operatorname{Hilb}(L_x(F);t^2).
+ H_{L_x(F)}(t^2).
 \]
-Removing the conditions in schedule order produces a sequence of state vectors. The ordinary polynomial parameter is \(q=t^2\), and the common transfer coefficient is \(T=t^{-1}-t\). The Hilbert value defines the state even before an intermediate kernel is expressed in a free basis.
+Removing the conditions in schedule order produces a sequence of state vectors. The ordinary polynomial parameter is \(q=t^2\), and the common transfer coefficient is \(T=t^{-1}-t\). The Hilbert value is defined from homogeneous component dimensions, so it supplies states for arbitrary partial kernels.
 
 ## Deriving the transfer coefficient
 
@@ -78,7 +84,7 @@ The dependence on the length of the individual edge cancels completely. Every ed
 
 **OpenAI notes:** The comparison uses \(0<q<1\), scale \(q^{-d/2}(1-q)^N\), and transfer coefficient \(q^{-1/2}-q^{1/2}\). [eq:state](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/05-comparison.tex#L243), [eq:step](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/05-comparison.tex#L275).
 
-**Lean (primary):** The comparison uses \(0<t<1\) and substitutes \(q=t^2\). Its scale is \(t^{-d}(1-t^2)^N\) and its transfer coefficient is \(t^{-1}-t\). [Dihedral:730](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Dihedral.lean#L730), [PositiveTransfer:591](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean#L591), [PositiveTransfer:621](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean#L621).
+**Lean (primary):** The comparison uses \(0<t<1\) and substitutes \(q=t^2\). Its scale is \(t^{-d}(1-t^2)^N\) and its transfer coefficient is \(t^{-1}-t\). [Dihedral:730](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Dihedral.lean#L730), [PositiveTransfer:591](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean#L591), [PositiveTransfer:621](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean#L621), [EdgeLocalization:377](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean#L377), [EdgeLocalization:423](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean#L423).
 
 **Role in the proof:** The substitution \(q=t^2\) identifies the two normalizations. Linear root labels have degree one throughout the calculation.
 <!-- source-comparison:end -->

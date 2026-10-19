@@ -285,6 +285,18 @@ A section supported only at the lower vertex has the form \((\alpha h,0)\). The 
 \]
 Thus the degree-zero dual generator of the stalk corresponds to a supported generator of degree one. The factor \(2\) is an invertible scalar. This calculation shows concretely how the outgoing kernel is related to a shifted stalk dual; the general support-duality theorem constructs this relation with all incoming labels accounted for.
 
+## Polynomial reflection of the kernel character
+
+The kernel basis degrees above are nonnegative. Thus, for a duality shift \(L\) on \([1,b]\), every stalk basis degree \(d_i\) satisfies \(d_i\le L-\ell(x)\). The full outgoing-kernel module has a finite homogeneous basis with degrees \(L-\ell(x)-d_i\), so its character is polynomial reflection of the stalk character in degree \(L-\ell(x)\).
+
+For the word sheaf of a reduced word and for the actual boundary sheaf, \(L=\ell(b)\). Both have the formula
+\[
+K_x(q)=\operatorname{reflect}_{\ell(b)-\ell(x)}C_x(q).
+\]
+The degree bound identifies this polynomial with \(q^{\ell(b)-\ell(x)}C_x(q^{-1})\). The reflected-basis theorem spells out the nonzero-vector argument and the natural-number degrees used by Lean.
+
+The full kernel here consists of the stalk vectors killed by every outgoing lower restriction. The bundled kernelData and the kernel of the combined outgoing map have the same underlying vectors, which is the identification used by the character construction.
+
 ## Adjoint maps, image sheaves, and the boundary pairing
 
 The splitting theorem supplies maps \(i:B\to W\) and \(p:W\to B\), with \(pi=1\), from the normalized boundary sheaf into a reduced-word sheaf. Their composite \(e=ip\) is a projector. The section equivalence identifies its action on global sections with an endomorphism \(F\) of the word module.
@@ -334,32 +346,69 @@ The last equality uses \(Fi=i\). This proves that the induced perfect boundary p
 
 Finally, a basis identifies the symmetric coefficient algebra with a polynomial ring by a degree-preserving algebra isomorphism \(\varphi\). Changing the scalar action transports each pairing value \(a\) to \(\varphi(a)\). The transported sheaf retains the quotient, generation, flabbiness, free-stalk, and primitive properties, so boundary recognition identifies it with the chosen polynomial-coordinate boundary sheaf. Pullback along that isomorphism supplies the pairing used in the polynomial character argument.
 
+## The word kernel and the R-convolution
+
+The section isomorphism of a reduced word transports its perfect word pairing to all global sections. Its inverse preserves degree because all stalk projections detect each homogeneous component. A section supported at \(x\) pairs to zero with a section vanishing at \(x\), by the word support-annihilator theorem. These facts supply the actual polynomial word perfect pairing and its kernel duality.
+
+Two results now meet at the word character. Geometry gives the kernel character as polynomial reflection. The positive Hecke-word bar identity gives the R-convolution of its standard coefficients. The [[node:kl.detail.word_character_formula|word-character theorem]] identifies those coefficients with the actual word-stalk polynomials. In the Laurent polynomial ring, the unit powers simplify to \(q^{\ell(b)-\ell(x)}\); the proved degree bound and injective polynomial embedding then give
+\[
+K_x^{\mathbf t}(q)
+=\operatorname{reflect}_{\ell(b)-\ell(x)}C_x^{\mathbf t}(q)
+=\sum_{z\le b}R_{x,z}(q)C_z^{\mathbf t}(q).
+\]
+
 ## Cancellation of lower boundary models
 
-Let the word sheaf decompose into shifted boundary models with top vertices \(y\le b\). Write \(m_y(q)\) for the polynomial counting its shifts at center \(y\). One sheaf decomposition gives both identities
-\[
-C_z^{\mathbf s}=\sum_{y\le b}m_yC_{z,y},\qquad
-K_x^{\mathbf s}=\sum_{y\le b}m_yK_{x,y}.
-\]
-Use zero for \(C_{z,y}\) when \(z\not\le y\).
+Let the word sheaf decompose into shifted boundary models on \([1,b]\). For each center \(c\le b\), let \(\mu_c(q)\) count its shifts, and let \(L_z^c=C_{z,c}\) for \(z\le c\), with value zero otherwise.
 
-The word-character formula and Hecke bar identity separately prove
+Put \(\delta(x,c)=\max\{\ell(c)-\ell(x),0\}\), the natural-number rank difference. The same graded sheaf decomposition gives
 \[
-K_x^{\mathbf s}=\sum_{z\le b}R_{x,z}C_z^{\mathbf s}.
+C_z^{\mathbf t}=\sum_c\mu_cL_z^c,\qquad
+K_x^{\mathbf t}=\sum_c\mu_c\operatorname{reflect}_{\delta(x,c)}L_x^c.
 \]
-Substitute the two decompositions and interchange the finite sums:
-\[
-\sum_{y\le b}m_y\left(K_{x,y}-\sum_{z\le b}R_{x,z}C_{z,y}\right)=0.
-\]
-For every \(y<b\), the bracket vanishes by induction on the top length. At \(y=b\), the multiplicity is one: only the top model contributes at \(b\), and the word's top stalk has character one. The equation therefore forces the remaining bracket to vanish.
+The second identity comes from the full kernels commuting with sums and shifts. Its coefficient \(\mu_c\) is therefore exactly the coefficient in the first identity.
 
-Replacing \(K_{x,b}\) by its duality expression gives
+Substitute both formulas into the word R-convolution and interchange the finite sums:
 \[
-q^{\ell(b)-\ell(x)}C_{x,b}(q^{-1})
-=\sum_{x\le z\le b}R_{x,z}(q)C_{z,b}(q).
+0=\sum_c\mu_c\left(
+\operatorname{reflect}_{\delta(x,c)}L_x^c
+-\sum_zR_{x,z}L_z^c\right).
 \]
-This is the identity used later. For \([1,s]\), it reads \(q=1+(q-1)\), so the example checks all three terms.
+For \(c\ne b\), the center has smaller length. Strong induction gives reciprocity on \([1,c]\), and the [[node:kl.duality.lower_character_convolution|lower-character convolution theorem]] transports it to the ambient sum. If \(x\not\le c\), both sides vanish by the two support conditions.
 
+At the top, the word character is \(1\), and the only model contributing there is the model centered at \(b\), also with character \(1\). Thus \(\mu_b=1\). Every other defect vanishes, so the remaining equation is
+\[
+\operatorname{reflect}_{\ell(b)-\ell(x)}C_{x,b}
+=\sum_{z\le b}R_{x,z}C_{z,b}.
+\]
+The boundary kernel degree bound gives the reciprocal expression. For \([1,s]\), the lower-vertex identity reads \(q=1+(q-1)\).
+
+## Scaled actual characters and normalized kernel endpoints
+
+For \(t\ne0\), define the scaled actual-stalk character
+\[
+c_x^b(t)=t^{\ell(x)-\ell(b)}C_{x,b}(t^2).
+\]
+Evaluating reciprocity at \(q=t^2\) and using the ordinary-to-normalized R relation gives
+\[
+c_x^b(t)=\sum_{z\le b}\widetilde R_{x,z}(t^{-1}-t)c_z^b(t^{-1}).
+\]
+For \(x\in[a,b]\), terms with \(z\not\ge a\) vanish, so this formula uses the restricted vector on the upper interval.
+
+In the real comparison range \(0<t<1\), the normalized kernel value multiplies the Hilbert sum at \(t^2\) by
+\((1-t^2)^Nt^{\ell(x)-\ell(b)}\).
+The empty-condition module is the stalk, giving
+\[
+D_x(t,\varnothing)=c_x^b(t).
+\]
+The full outgoing kernel has reflected character, giving
+\[
+D_x(t,\mathrm{all})=c_x^b(t^{-1}).
+\]
+The polynomial coefficient factors cancel, and the full-kernel power is
+\(t^{-d}(t^2)^d=t^d\). All outgoing edges at a vertex of \([a,b]\) remain in that upper restriction, so the same endpoint formulas apply there.
+
+These are the actual-character vectors used in the schedule comparison. The scaled reciprocity identity identifies their relation to the normalized R matrix.
 
 ## Local intersection and character identification
 
@@ -451,6 +500,7 @@ The actual boundary character \(C\) satisfies the reciprocal identity developed 
 ### Perfect pairings and adjoints
 
 - [[node:kl.detail.section_duality]]
+- [[node:kl.sheaves.word_section_pairing]]
 - [[node:kl.notes.supported_pairings]]
 - [[node:kl.sheaves.cut_balance]]
 - [[node:kl.sheaves.supported_stalk_duality]]
@@ -471,13 +521,19 @@ The actual boundary character \(C\) satisfies the reciprocal identity developed 
 
 - [[node:kl.duality.stalk_character]]
 - [[node:kl.detail.costalk_reciprocity]]
+- [[node:kl.duality.word_kernel_character]]
+- [[node:kl.duality.boundary_kernel_character]]
 - [[node:kl.detail.word_character_reciprocity]]
-- [[node:kl.duality.bott_character_decomposition]]
-- [[node:kl.notes.character_cancellation]]
-- [[node:kl.duality.actual_character_reciprocity]]
 - [[node:kl.sheaves.kernel_transport]]
 - [[node:kl.sheaves.model_sum_characters]]
 - [[node:kl.sheaves.lower_model_kernels]]
+- [[node:kl.duality.bott_character_decomposition]]
+- [[node:kl.duality.lower_character_convolution]]
+- [[node:kl.notes.character_cancellation]]
+- [[node:kl.duality.actual_character_reciprocity]]
+- [[node:kl.duality.scaled_stalk]]
+- [[node:kl.duality.scaled_reciprocity]]
+- [[node:kl.duality.normalized_character_endpoints]]
 
 ### Related character-identification conditions
 

@@ -9,10 +9,12 @@ topics:
 uses:
 - kl.duality.bott_character_decomposition
 - kl.duality.stalk_character
-- kl.detail.ordinary_r
+- kl.duality.boundary_kernel_character
+- kl.duality.lower_character_convolution
 - kl.notes.character_cancellation
-- kl.detail.costalk_reciprocity
 - kl.detail.word_character_reciprocity
+- kl.detail.ordinary_r
+- kl.hecke.polynomial_reflection
 lean:
   repository: openai-kl
   modules:
@@ -27,32 +29,42 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.DyerPaths:62
     format: lean-location
     note: OAI.KLInvariance.BruhatGraph.stalkCharacter_reciprocity
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.EdgeLocalization:364
+    format: lean-location
+    note: OAI.KLInvariance.BruhatGraph.stalkCharacter_natDegree_le
   - artifact: openai-kl-paper
     locator: 2. Real realizations and moment-graph sheaves; sec:background
     format: section
     note: Paper correspondence; chapter organization follows mathematical dependencies
       in the Lean library.
-  - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.EdgeLocalization:364
-    format: lean-location
-    note: OAI.KLInvariance.BruhatGraph.stalkCharacter_natDegree_le
 verification:
   statement: accepted
   proof: accepted
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Does the exposition preserve the mathematical scope of its Lean declarations?
-  verdict: The stated hypotheses and conclusion follow the fixed source; explanatory
-    derivations retain the original proof route.
+  prompt: Are the rings, scalar maps, finiteness hypotheses, pairing orientation and
+    degree conventions explicit?
+  verdict: 'Read the entire strong-induction proof in DyerPaths: top multiplicity,
+    simultaneous substitutions, smaller-length hypotheses and ambient lower-character
+    lifting. Kept the proof in integer polynomials until the separately justified
+    reciprocal interpretation.'
 tags:
 - Kazhdan-Lusztig
-- background
+- Frobenius-duality
 ---
 
 # R-reciprocity for the actual boundary-sheaf character
 
-Fix a finite-generator Coxeter system, a real basis of its extended realization, and the resulting polynomial coefficient algebra. For \(x\in[1,b]\), let \(C_{x,b}(q)\) be the actual boundary-stalk character, put \(d(x,b)=\ell(b)-\ell(x)\), and let \(R_{x,z}(q)\) be the ordinary R-polynomial family. Then
+Fix a finite-generator Coxeter system and the polynomial coefficient algebra from a finite real basis of its extended realization. Let \(C_{x,b}(q)\) be the actual normalized boundary-stalk character on \(I_b=[1,b]\), and put \(d(x,b)=\ell(b)-\ell(x)\).
+
+For every \(x\in I_b\),
+\[
+\operatorname{reflect}_{d(x,b)}C_{x,b}(q)
+=\sum_{z\in I_b}R_{x,z}(q)C_{z,b}(q).
+\]
+The degree bound \(\operatorname{natDegree}C_{x,b}\le d(x,b)\) gives the equivalent Laurent expression
 \[
 q^{d(x,b)}C_{x,b}(q^{-1})
 =\sum_{x\le z\le b}R_{x,z}(q)C_{z,b}(q).
@@ -65,78 +77,98 @@ q^{d(x,b)}C_{x,b}(q^{-1})
 
 **OpenAI notes:** The grading-normalization proposition identifies the stalk graded rank with the canonical KL polynomial and uses the Elias–Williamson character theorem through the cited moment-graph bridges. [bg:normalization](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L253).
 
-**Lean (primary):** The development defines the equality of actual stalk characters and canonical KL polynomials as StalkCharacterObligation. The unconditional theorem used in the main route is R-reciprocity for the actual character. The local strict half-degree implication retains an explicit nonzero-diagonal hypothesis. [SheafMorphisms:219](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L219), [DyerPaths:62](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L62), [PositiveTransfer:186](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean#L186).
+**Lean (primary):** The development defines the equality of actual stalk characters and canonical KL polynomials as StalkCharacterObligation. The unconditional theorem used in the main route is R-reciprocity for the actual character. The local strict half-degree implication retains an explicit nonzero-diagonal hypothesis. [SheafMorphisms:219](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L219), [DyerPaths:62](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L62), [PositiveTransfer:186](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean#L186), [CharacterReciprocity:1807](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L1807), [TerminalKernels:1273](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean#L1273), [TerminalKernels:1284](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean#L1284).
 
 **Role in the proof:** The comparison uses the actual character C and its proved R-reciprocity. Canonical P is handled by the later polynomial-rigidity induction. The local degree result applies to a diagonal coefficient satisfying its stated nonvanishing hypothesis.
 <!-- source-comparison:end -->
 
 *Proof.*
 
-### Step 1. State the induction and choose a reduced word
+### Step 1. State the strong induction and its base
 
-Induct strongly on \(\ell(b)\), for all top elements \(b\) and all \(x\in[1,b]\). In the base case \(b=1\), the only vertex is \(x=1\), the normalized character and diagonal R-polynomial are both \(1\), and the formula is \(1=1\).
+Induct strongly on \(\ell(b)\), proving the polynomial-reflection identity for every top of that length and every vertex below it.
 
-For the current \(b\), choose a reduced word and let \(V=[1,b]\). For arbitrary \(x,y\in V\), use the natural-number rank difference
+If \(\ell(b)=0\), then \(b=1\) and the interval has one vertex. Its normalized character and diagonal R-polynomial are both \(1\), while \(\operatorname{reflect}_0(1)=1\). Thus the identity holds.
+
+For the current \(b\), assume the result for every top \(c\) of strictly smaller length, at all vertices of \([1,c]\).
+
+### Step 2. Write both decompositions with one multiplicity family
+
+Choose a reduced word \(\mathbf t\) for \(b\). For \(c,z\in I_b\), let \(L_z^c\) be the lower-character function, zero when \(z\not\le c\). Put
 \[
-\delta(x,y)=\max\{\ell(y)-\ell(x),0\}.
-\]
-For comparable \(x\le y\), this is the ordinary length difference. Write
-\(C_{z,y}=0\) when \(z\not\le y\), and otherwise use the actual boundary character with top \(y\).
-
-The [[node:kl.duality.bott_character_decomposition|simultaneous word decomposition]] gives polynomials \(m_y\) and the identities
-\[
-C_z^{\mathrm{word}}=\sum_{y\in V}m_yC_{z,y},\qquad
-K_x^{\mathrm{word}}=\sum_{y\in V}m_y\operatorname{reflect}_{\delta(x,y)}C_{x,y}.
-\]
-Its top calculation gives \(m_b=1\).
-
-### Step 2. Write the word convolution before cancellation
-
-The [[node:kl.detail.word_character_reciprocity|word-character calculation]] gives
-\[
-K_x^{\mathrm{word}}=\sum_{z\in V}R_{x,z}C_z^{\mathrm{word}}.
-\]
-This is proved for the tensor word object, using its Hecke character and bar action, before extracting the boundary summand. Substitute both decompositions from Step 1:
-\[
-\sum_y m_y\operatorname{reflect}_{\delta(x,y)}C_{x,y}
-=\sum_zR_{x,z}\left(\sum_y m_yC_{z,y}\right).
+D_x^c=\operatorname{reflect}_{\delta(x,c)}L_x^c,
+\qquad
+\delta(x,c)=\max\{\ell(c)-\ell(x),0\}.
 \]
 
-### Step 3. Verify every lower-summand identity
-
-For \(y\ne b\) in \(V\), strict Bruhat comparison gives \(\ell(y)<\ell(b)\). If \(x\le y\), the induction hypothesis gives
+The [[node:kl.duality.bott_character_decomposition|simultaneous word decomposition]] supplies polynomials \(\mu_c\) with
 \[
-\operatorname{reflect}_{\delta(x,y)}C_{x,y}
-=\sum_{x\le z\le y}R_{x,z}C_{z,y}.
+C_z^{\mathbf t}=\sum_{c\in I_b}\mu_cL_z^c,\qquad
+K_x^{\mathbf t}=\sum_{c\in I_b}\mu_cD_x^c.
 \]
-Regard this as a sum over \(V\): terms with \(z\not\le y\) have \(C_{z,y}=0\), and terms with \(x\not\le z\) have \(R_{x,z}=0\).
+The second identity comes from transporting the full outgoing kernels through the same graded sheaf decomposition. Each \(\mu_c\) records the same shifts in both identities.
 
-If \(x\not\le y\), the left side is zero by the convention \(C_{x,y}=0\). Every term on the right is also zero, since a nonzero term would require \(x\le z\le y\), contradicting \(x\not\le y\). Thus the lower identity holds in both cases.
+### Step 3. Compute the top multiplicity
 
-### Step 4. Perform the finite algebraic cancellation
-
-Interchange the two finite sums in Step 2 and move them to one side:
+Evaluate the first decomposition at \(z=b\). The reduced-word top character is \(1\). Lower-character normalization gives \(L_b^b=1\), and \(L_b^c=0\) for \(c\ne b\). Therefore
 \[
-0=\sum_y m_y
-\left(\operatorname{reflect}_{\delta(x,y)}C_{x,y}
--\sum_zR_{x,z}C_{z,y}\right).
+1=C_b^{\mathbf t}=\mu_b.
 \]
-Every \(y\ne b\) summand vanishes by Step 3. The remaining coefficient is \(m_b=1\), so
+
+### Step 4. Substitute the word R-convolution
+
+For the current reduced word, the [[node:kl.detail.word_character_reciprocity|word-character convolution]] gives
 \[
-\operatorname{reflect}_{d(x,b)}C_{x,b}
-=\sum_zR_{x,z}C_{z,b}.
+K_x^{\mathbf t}=\sum_{z\in I_b}R_{x,z}C_z^{\mathbf t}.
 \]
-This also handles the induction base, where there are no lower terms.
+Substituting both decompositions yields
+\[
+\sum_c\mu_cD_x^c
+=\sum_zR_{x,z}\left(\sum_c\mu_cL_z^c\right).
+\]
 
-### Step 5. Express polynomial reflection through reciprocal powers
+### Step 5. Verify each proper-center identity
 
-Lean states the identity using polynomial reflection. The actual duality gives the weak bound \(\deg C_{x,b}\le d(x,b)\): a stalk basis vector of degree \(j\) corresponds to a nonzero kernel basis vector of degree \(d(x,b)-j\), which must be nonnegative. Therefore reflection evaluates as \(q^{d(x,b)}C_{x,b}(q^{-1})\).
+Let \(c\ne b\). Since \(c\le b\), strict Bruhat comparison gives
+\(\ell(c)<\ell(b)\). The induction hypothesis supplies reciprocity on \([1,c]\).
 
-For the interval \([1,s]\), the boundary characters are \(C_{1,s}=C_{s,s}=1\), and \(R_{1,1}=1,\ R_{1,s}=q-1\). The identity reads \(q=1+(q-1)\).
+The [[node:kl.duality.lower_character_convolution|lower-character convolution theorem]] then gives, for the current \(x\in I_b\),
+\[
+D_x^c=\sum_{z\in I_b}R_{x,z}L_z^c.
+\]
+Its proof includes both \(x\le c\) and \(x\not\le c\); in the latter case both sides are zero. Thus this identity is available for every proper center in the same ambient sum.
+
+### Step 6. Cancel the proper-center defects
+
+All sums are finite. Interchange the two sums in Step 4 and bring them to one side:
+\[
+0=\sum_{c\in I_b}\mu_c
+\left(D_x^c-\sum_{z\in I_b}R_{x,z}L_z^c\right).
+\]
+Every summand with \(c\ne b\) vanishes by Step 5. The remaining coefficient is \(\mu_b=1\), so
+\[
+D_x^b=\sum_zR_{x,z}L_z^b.
+\]
+For the top center, \(L_z^b=C_{z,b}\) and
+\(D_x^b=\operatorname{reflect}_{d(x,b)}C_{x,b}\).
+This is the required induction conclusion. It is the source's [[node:kl.notes.character_cancellation|finite-character cancellation]] with distinguished index \(b\).
+
+### Step 7. Interpret the reciprocal formula
+
+Boundary kernel duality gives
+\(\operatorname{natDegree}C_{x,b}\le d(x,b)\).
+The [[node:kl.hecke.polynomial_reflection|bounded-reflection formula]] therefore identifies the left side with
+\(q^{d(x,b)}C_{x,b}(q^{-1})\).
+
+The R-polynomial vanishes unless \(x\le z\), so only \(x\le z\le b\) contribute. On the one-edge interval \([1,s]\), the lower-vertex identity is
+\[
+q=R_{1,1}+R_{1,s}=1+(q-1),
+\]
+matching the kernel character of the degree-one root ideal.
 
 ## References
 
-[2. Real realizations and moment-graph sheaves](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L2).
+The local source declarations below give the construction and proof.
 
 ## Lean formalization
 

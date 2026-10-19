@@ -338,6 +338,17 @@ For \(S=(X,Y)\subset T=k[X,Y]\), the only missing component is the constant one.
 
 For two surjective projections, a common endomorphism may act through different scalars on the two targets. Their difference annihilates the pair-projection quotient: subtracting one scalar multiple of a lift produces a relation vector with zero second projection. The word-module construction uses this calculation to obtain its reflection-root edge labels.
 
+## Reflected characters from dual bases
+
+Suppose a linear equivalence from a module dual to a nonnegative graded module sends degree-\(r\) functionals to degree \(r+D\). A homogeneous basis of the original module with degrees \(d_i\) has dual basis degrees \(-d_i\). Its images therefore have degrees \(D-d_i\).
+
+Each image basis vector is nonzero, so nonnegativity forces \(d_i\le D\). The character of the target is consequently
+\[
+\sum_iq^{D-d_i}
+=\operatorname{reflect}_D\left(\sum_iq^{d_i}\right).
+\]
+This simultaneously proves the degree bound needed for reciprocal evaluation and supplies the outgoing-kernel character in the sheaf branch.
+
 ## Hilbert numerators from degree shifts
 
 If three dimension sequences satisfy \(f(n)=g(n)+h(n-1)\), their convergent sums satisfy \(H_f(t)=H_g(t)+tH_h(t)\). When the sums have polynomial numerators with a common nonzero factor, cancellation gives an equality of evaluations throughout \((0,1)\). The polynomial root bound then yields the formal identity
@@ -408,6 +419,7 @@ This [[node:kl.algebra.hilbert_numerators|numerator theorem]] is the bridge from
 - [[node:kl.algebra.character_basis_independence]]
 - [[node:kl.algebra.hilbert_numerators]]
 - [[node:kl.algebra.character_operations]]
+- [[node:kl.algebra.reflected_dual_character]]
 - [[node:kl.detail.hilbert_exactness]]
 - [[node:kl.algebra.hilbert_image_exactness]]
 - [[node:kl.algebra.hilbert_scalar_quotient]]

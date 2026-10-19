@@ -12,6 +12,8 @@ uses:
 - kl.detail.graded_character
 - kl.sheaves.hilbert_free
 - kl.detail.root_inversion_count
+- kl.algebra.reflected_dual_character
+- kl.hecke.polynomial_reflection
 lean:
   repository: openai-kl
   modules:
@@ -22,6 +24,11 @@ lean:
   - OAI.KLInvariance.BruhatGraph.costalk_hilbert_of_duality
   - OAI.KLInvariance.BruhatGraph.incomingEquivInversions
   - OAI.KLInvariance.BruhatGraph.incoming_card
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.kernelEquivFull
+  - OAI.KLInvariance.BruhatGraph.FreeSheaf.kernelDual
+  - OAI.KLInvariance.BruhatGraph.FreeSheaf.kernel_free
+  - OAI.KLInvariance.BruhatGraph.FreeSheaf.kernelDual_homogeneous
+  - OAI.KLInvariance.BruhatGraph.FreeSheaf.kernel_character
 source:
   spans:
   - artifact: openai-kl-source
@@ -40,6 +47,26 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.Support:1663
     format: lean-location
     note: OAI.KLInvariance.BruhatGraph.incoming_card
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.CharacterReciprocity:787
+    format: lean-location
+    note: OAI.KLInvariance.MomentGraph.GradedSheaf.kernelEquivFull
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.CharacterReciprocity:808
+    format: lean-location
+    note: OAI.KLInvariance.BruhatGraph.FreeSheaf.kernelDual
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.CharacterReciprocity:814
+    format: lean-location
+    note: OAI.KLInvariance.BruhatGraph.FreeSheaf.kernel_free
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.CharacterReciprocity:819
+    format: lean-location
+    note: OAI.KLInvariance.BruhatGraph.FreeSheaf.kernelDual_homogeneous
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.CharacterReciprocity:836
+    format: lean-location
+    note: OAI.KLInvariance.BruhatGraph.FreeSheaf.kernel_character
 verification:
   statement: accepted
   proof: accepted
@@ -56,7 +83,7 @@ tags:
 
 # The grading shift in stalk–costalk reciprocity
 
-Let \(B\) be a free sheaf on a finite Bruhat interval \([u,b]\), with coefficient algebra \(A=\mathbb R[X_1,\ldots,X_N]\), variables and edge labels in degree one. Suppose its section duality has shift \(L\):
+Let \(B\) be a free sheaf on a finite Bruhat interval \([u,b]\), with coefficient algebra \(A=\mathbb R[X_1,\ldots,X_N]\), variables and edge labels in degree one. Suppose its section duality has shift \(L\in\mathbb N\):
 \[
 \langle\Gamma(B)_i,\Gamma(B)_j\rangle\subseteq A_{i+j-L}.
 \]
@@ -77,6 +104,12 @@ H_{K_x}(q)=q^{L-n_x}C_x(q^{-1})(1-q)^{-N}.
 \]
 Here \(C_x\) is the graded-rank polynomial of the stalk, and \(H_{K_x}\) records the dimensions of the kernel's homogeneous components.
 
+On the lower interval \([1,b]\), if \(L\ge\ell(b)\), put \(D_x=L-\ell(x)\). The full kernel is finite free, and its character satisfies
+\[
+\operatorname{ch}(K_x;q)=\operatorname{reflect}_{D_x}C_x(q),
+\qquad \operatorname{natDegree}C_x\le D_x.
+\]
+
 <!-- source-comparison:start -->
 ## Relation to the OpenAI notes
 
@@ -84,7 +117,7 @@ Here \(C_x\) is the graded-rank polynomial of the stalk, and \(H_{K_x}\) records
 
 **OpenAI notes:** The grading-normalization proposition identifies the stalk graded rank with the canonical KL polynomial and uses the Elias–Williamson character theorem through the cited moment-graph bridges. [bg:normalization](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L253).
 
-**Lean (primary):** The development defines the equality of actual stalk characters and canonical KL polynomials as StalkCharacterObligation. The unconditional theorem used in the main route is R-reciprocity for the actual character. The local strict half-degree implication retains an explicit nonzero-diagonal hypothesis. [SheafMorphisms:219](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L219), [DyerPaths:62](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L62), [PositiveTransfer:186](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean#L186).
+**Lean (primary):** The development defines the equality of actual stalk characters and canonical KL polynomials as StalkCharacterObligation. The unconditional theorem used in the main route is R-reciprocity for the actual character. The local strict half-degree implication retains an explicit nonzero-diagonal hypothesis. [SheafMorphisms:219](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L219), [DyerPaths:62](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L62), [PositiveTransfer:186](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean#L186), [CharacterReciprocity:1807](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L1807), [TerminalKernels:1273](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean#L1273), [TerminalKernels:1284](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean#L1284).
 
 **Role in the proof:** The comparison uses the actual character C and its proved R-reciprocity. Canonical P is handled by the later polynomial-rigidity induction. The local degree result applies to a diagonal coefficient satisfying its stated nonvanishing hypothesis.
 <!-- source-comparison:end -->
@@ -149,7 +182,25 @@ H_{K_x}(q)
 \]
 The nonnegative kernel degrees give \(d_i\le\ell(b)-\ell(x)\) for each stalk basis vector.
 
-### Step 5. Evaluate the two-vertex example
+### Step 5. Pass to the bundled polynomial kernel character
+
+Work now on \([1,b]\) with \(L\ge\ell(b)\). The source's kernelData is the full outgoing kernel with its induced grading. The map taking all outgoing restrictions has this same kernel: keeping the underlying vector gives kernelEquivFull in both directions.
+
+Compose the inverse stalk–costalk duality with this identity on kernels:
+\[
+\Phi_x:(B^x)^*\xrightarrow{\sim}\operatorname{kernelData}(B,x).
+\]
+This is FreeSheaf.kernelDual. It proves freeness of the kernel by transporting the finite dual basis of the free stalk.
+
+For a homogeneous functional of degree \(r\), the inverse-duality degree theorem and \(n_x=\ell(x)\) give
+\[
+\Phi_x(\lambda)\in\operatorname{kernelData}(B,x)_{r+L-\ell(x)}.
+\]
+The inequalities \(\ell(x)\le\ell(b)\le L\) identify this integer difference with the natural number \(D_x\).
+
+The [[node:kl.algebra.reflected_dual_character|homogeneous dual-character theorem]] now applies. It proves the character reflection formula and the degree bound stated above. This is FreeSheaf.kernel_character, expressed for the actual bundled kernel module.
+
+### Step 6. Evaluate the two-vertex example
 
 For \(x<y\), use the one-edge congruence sheaf over \(A=\mathbb R[\alpha]\). Both stalks have character \(1\), the pairing has shift \(L=1\), and \(n_x=0,\ n_y=1\). The formula gives
 \[
@@ -170,3 +221,13 @@ The local source declarations below give the constructions and proofs.
 `OAI.KLInvariance.BruhatGraph.incomingEquivInversions`: [Support.lean:1634](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean#L1634).
 
 `OAI.KLInvariance.BruhatGraph.incoming_card`: [Support.lean:1663](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean#L1663).
+
+`OAI.KLInvariance.MomentGraph.GradedSheaf.kernelEquivFull`: [CharacterReciprocity.lean:787](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L787).
+
+`OAI.KLInvariance.BruhatGraph.FreeSheaf.kernelDual`: [CharacterReciprocity.lean:808](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L808).
+
+`OAI.KLInvariance.BruhatGraph.FreeSheaf.kernel_free`: [CharacterReciprocity.lean:814](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L814).
+
+`OAI.KLInvariance.BruhatGraph.FreeSheaf.kernelDual_homogeneous`: [CharacterReciprocity.lean:819](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L819).
+
+`OAI.KLInvariance.BruhatGraph.FreeSheaf.kernel_character`: [CharacterReciprocity.lean:836](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L836).

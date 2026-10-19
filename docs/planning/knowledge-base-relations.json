@@ -72,7 +72,8 @@
         "OAI.KLInvariance.ProjectiveLattice.mem_of_prime_local_membership",
         "OAI.KLInvariance.PairProjection.difference_annihilates",
         "OAI.KLInvariance.FiniteFreeScalar.scalar_quotient_regular",
-        "OAI.KLInvariance.ProjectiveRange.projective_of_two_stage"
+        "OAI.KLInvariance.ProjectiveRange.projective_of_two_stage",
+        "OAI.KLInvariance.Graded.ModuleData.char_of_dual_equiv"
       ]
     },
     {
@@ -315,11 +316,14 @@
         "sd",
         "h"
       ],
-      "output": "The reciprocal identity for actual boundary character C.",
+      "output": "Polynomial reflection and R-reciprocity of the actual boundary character C, with scaled reciprocity on upper intervals.",
       "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottKernelCharacter_rConvolution",
         "OAI.KLInvariance.TitsSpace.bottCharacter_decomposition_both",
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter_reciprocity_lift",
         "OAI.KLInvariance.finite_character_cancellation",
-        "OAI.KLInvariance.BruhatGraph.stalkCharacter_reciprocity"
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_reciprocity",
+        "OAI.KLInvariance.BruhatGraph.scaledStalk_reciprocity_upper"
       ]
     },
     {
@@ -595,6 +599,8 @@
       ],
       "output": "Initial/final states and exact endpoint comparison when all R-entries agree.",
       "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.normalized_emptyKernel_scaledStalk",
+        "OAI.KLInvariance.BruhatGraph.normalized_fullKernel_scaledStalk",
         "OAI.KLInvariance.BruhatGraph.actual_endpoint_of_rTilde_eq"
       ]
     },
@@ -1057,6 +1063,23 @@
         "OAI.KLInvariance.CoefficientChange.dualEquiv",
         "OAI.KLInvariance.ReverseFiltration.kernel_projective_of_presentation",
         "OAI.KLInvariance.ProjectiveLattice.mem_of_prime_local_membership"
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "scope": "Actual-character reciprocity and normalized endpoints",
+      "change": "Recorded the dual-character bound, word R-convolution, support-filtered lower-character lifting and unconditional actual-character endpoints. The established stage prerequisites remain unchanged.",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.char_of_dual_equiv",
+        "OAI.KLInvariance.TitsSpace.bottKernelCharacter_rConvolution",
+        "OAI.KLInvariance.TitsSpace.bottCharacter_decomposition_both",
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter_reciprocity_lift",
+        "OAI.KLInvariance.finite_character_cancellation",
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_reciprocity",
+        "OAI.KLInvariance.BruhatGraph.scaledStalk_reciprocity_upper",
+        "OAI.KLInvariance.BruhatGraph.normalized_emptyKernel_scaledStalk",
+        "OAI.KLInvariance.BruhatGraph.normalized_fullKernel_scaledStalk",
+        "OAI.KLInvariance.BruhatGraph.actual_endpoint_of_rTilde_eq"
       ]
     }
   ]

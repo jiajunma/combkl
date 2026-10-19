@@ -1,6 +1,6 @@
 ---
 id: kl.detail.word_character_reciprocity
-title: Bar reciprocity and R-convolution for word characters
+title: Polynomial R-convolution for word-stalk and kernel characters
 kind: theorem
 status: proved
 primary_topic: kl.sheaves
@@ -8,37 +8,26 @@ topics:
 - kl.sheaves
 uses:
 - kl.detail.word_character_formula
-- kl.definitions.bar_involution
-- kl.detail.ordinary_r
-- kl.detail.costalk_reciprocity
-- kl.notes.tensor_pairing
-- kl.detail.root_inversion_count
-- kl.hecke.positive_words
+- kl.duality.word_kernel_character
 - kl.hecke.positive_word_reciprocity
-- kl.hecke.r_parameter_reciprocity
 - kl.hecke.ordinary_r_construction
+- kl.hecke.polynomial_reflection
 lean:
   repository: openai-kl
   modules:
   - CharacterReciprocity
-  - Dihedral
   declarations:
-  - OAI.KLInvariance.HeckeQ.barLinear_positiveWord
-  - OAI.KLInvariance.HeckeQ.positiveWord_rValue
+  - OAI.KLInvariance.TitsSpace.bottStalkCharacter_natDegree_le
   - OAI.KLInvariance.TitsSpace.bottStalkCharacter_reciprocity
   - OAI.KLInvariance.TitsSpace.bottKernelCharacter_rConvolution
-  - OAI.KLInvariance.HeckeQ.rValue_inverse_eq_barBasis
-  - OAI.KLInvariance.HeckeQ.positiveWord_support
+  - OAI.KLInvariance.HeckeQ.positiveWord_rValue
+  - OAI.KLInvariance.HeckeQ.eval_positiveWord
 source:
   spans:
   - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.CharacterReciprocity:951
+    locator: OAI.RepresentationTheory.KazhdanLusztig.CharacterReciprocity:1088
     format: lean-location
-    note: OAI.KLInvariance.HeckeQ.barLinear_positiveWord
-  - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.CharacterReciprocity:997
-    format: lean-location
-    note: OAI.KLInvariance.HeckeQ.positiveWord_rValue
+    note: OAI.KLInvariance.TitsSpace.bottStalkCharacter_natDegree_le
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.CharacterReciprocity:1105
     format: lean-location
@@ -48,35 +37,40 @@ source:
     format: lean-location
     note: OAI.KLInvariance.TitsSpace.bottKernelCharacter_rConvolution
   - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.Dihedral:467
+    locator: OAI.RepresentationTheory.KazhdanLusztig.CharacterReciprocity:997
     format: lean-location
-    note: OAI.KLInvariance.HeckeQ.rValue_inverse_eq_barBasis
+    note: OAI.KLInvariance.HeckeQ.positiveWord_rValue
   - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.CharacterReciprocity:963
+    locator: OAI.RepresentationTheory.KazhdanLusztig.CharacterReciprocity:1027
     format: lean-location
-    note: OAI.KLInvariance.HeckeQ.positiveWord_support
+    note: OAI.KLInvariance.HeckeQ.eval_positiveWord
 verification:
   statement: accepted
   proof: accepted
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Are the actual Lean hypotheses, objects, and proof route retained?
-  verdict: Read against the fixed source declaration bodies and their surrounding
-    assumptions; the supplied formal proof is unchanged.
+  prompt: Are the rings, scalar maps, finiteness hypotheses, pairing orientation and
+    degree conventions explicit?
+  verdict: Read the Laurent embedding/evaluation comparison, positiveWord_rValue specialization,
+    exponent calculation, bounded reflection, injectivity and final lowerFinset-to-interval
+    reindexing. Made the actual kernel character the separate geometric input.
 tags:
 - Kazhdan-Lusztig
+- Frobenius-duality
 ---
 
-# Bar reciprocity and R-convolution for word characters
+# Polynomial R-convolution for word-stalk and kernel characters
 
-Let \(\mathbf s\) be a reduced word with product \(b\) and length \(m=\ell(b)\), and let \(x\le b\). Its stalk character and full outgoing-kernel character satisfy
+Fix a finite-generator Coxeter system, a finite basis of its extended realization, and a reduced word \(\mathbf t\) with product \(b\). Put \(I_b=[1,b]\). For \(x\in I_b\), let \(d=\ell(b)-\ell(x)\). Let \(C_x^{\mathbf t}\) be the character of the polynomial word-sheaf stalk at \(x\), and \(K_x^{\mathbf t}\) the character of its full outgoing kernel, the intersection of all outgoing restriction kernels. Then
 \[
-q^{m-\ell(x)}C^{\mathbf s}_x(q^{-1})
-=\sum_{z\le b}R_{x,z}(q)C^{\mathbf s}_z(q)
-=K^{\mathbf s}_x(q).
+\operatorname{reflect}_d C_x^{\mathbf t}(q)
+=\sum_{z\in I_b}R_{x,z}(q)C_z^{\mathbf t}(q)
+=K_x^{\mathbf t}(q).
 \]
-The left side is a polynomial: the word-stalk duality gives the degree bound \(\deg C^{\mathbf s}_x\le m-\ell(x)\).
+These are identities in \(\mathbb Z[q]\). The degree bound
+\(\operatorname{natDegree}C_x^{\mathbf t}\le d\) makes the left polynomial equal to
+\(q^d C_x^{\mathbf t}(q^{-1})\) in the Laurent polynomial ring.
 
 <!-- source-comparison:start -->
 ## Relation to the OpenAI notes
@@ -85,80 +79,90 @@ The left side is a polynomial: the word-stalk duality gives the degree bound \(\
 
 **OpenAI notes:** The normalization discussion identifies indecomposable boundary-sheaf characters with KL polynomials by the cited character theorem. [bg:normalization](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L253).
 
-**Lean (primary):** The word-stalk character is proved to equal a positive Hecke-word coefficient. Its R-convolution is then proved before model decomposition and cancellation. The separate boundary-character identification is exposed as StalkCharacterObligation. [IntegralPairings:289](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L289), [CharacterReciprocity:1134](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L1134), [SheafMorphisms:219](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L219), [BottSamelson:1924](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L1924), [BottSamelson:1945](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L1945), [IntegralPairings:104](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L104), [IntegralPairings:120](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L120).
+**Lean (primary):** The word-stalk character is proved to equal a positive Hecke-word coefficient. Its R-convolution is then proved before model decomposition and cancellation. The separate boundary-character identification is exposed as StalkCharacterObligation. [IntegralPairings:289](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L289), [CharacterReciprocity:1134](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L1134), [SheafMorphisms:219](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L219), [BottSamelson:1924](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L1924), [BottSamelson:1945](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L1945), [IntegralPairings:104](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L104), [IntegralPairings:120](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean#L120), [CharacterReciprocity:915](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L915).
 
 **Role in the proof:** The word formula and R-convolution describe the tensor word. A common decomposition into boundary models then supplies the character identities used in the cancellation argument.
 <!-- source-comparison:end -->
 
 *Proof.*
 
-### Step 1. Compute the bar of a positive generator
+### Step 1. Work at the formal Laurent unit
 
-Write \(H_{\mathbf s}(q)\) for the positive Hecke word
+Let \(\Lambda=\mathbb Z[q,q^{-1}]\), and let \(u\in\Lambda^\times\) be its distinguished variable unit. The embedding
 \[
-(1+T_{s_1})\cdots(1+T_{s_m})T_1
+j:\mathbb Z[q]\hookrightarrow\Lambda
 \]
-in the unnormalized standard module. The word-character theorem identifies its coefficient at \(T_x\) with \(C_x^{\mathbf s}(q)\). The notation \(B_q\) below denotes the coefficient-linear bar transform in that convention.
+sends a polynomial \(F\) to \(F(u)\). Indeed, both descriptions send a monomial \(a q^n\) to \(a u^n\), and preserve finite sums.
 
-For an invertible parameter \(q\), the unnormalized quadratic relation gives
+The [[node:kl.hecke.positive_word_reciprocity|positive Hecke-word reciprocity theorem]] applies to this unit. Writing
+\(m=|\mathbf t|\), it gives
 \[
-T_s^{-1}=q^{-1}(T_s-(q-1)),\qquad
-1+T_s^{-1}=q^{-1}(1+T_s).
+\sum_{z\le b}R_{x,z}(u)\,h_{\mathbf t}(z;u)
+=u^{-\ell(x)}u^m h_{\mathbf t}(x;u^{-1}).
 \]
-In the source's linear-bar notation, let \(B_q\) be the map relating parameter \(q^{-1}\) to parameter \(q\). Its intertwining identity and the displayed calculation give, by induction on the word,
+Reducedness is the support hypothesis that makes this a sum over the finite lower interval of \(b\).
+
+### Step 2. Substitute the word-character coefficients
+
+The [[node:kl.detail.word_character_formula|word-character theorem]] identifies the positive-word coefficient polynomials with \(C_z^{\mathbf t}\). Evaluation commutes with the positive-word recursion because it preserves addition, multiplication and integer coefficients. Therefore
 \[
-B_q(H_{\mathbf s}(q^{-1}))=q^{-m}H_{\mathbf s}(q).
+h_{\mathbf t}(z;u)=C_z^{\mathbf t}(u),\qquad
+h_{\mathbf t}(x;u^{-1})=C_x^{\mathbf t}(u^{-1}).
 \]
-The empty word is fixed. Each new letter contributes one additional factor \(q^{-1}\) by the formula for \(1+T_s^{-1}\). Replacing \(q\) by \(q^{-1}\) gives
-\(B_{q^{-1}}(H_{\mathbf s}(q))=q^mH_{\mathbf s}(q^{-1})\).
+The ordinary R-polynomial evaluation theorem identifies the R-values in the Hecke identity with the displayed \(R_{x,z}(u)\).
 
-### Step 2. Extract the coefficient at x
-
-The [[node:kl.hecke.r_parameter_reciprocity|inverse-parameter coefficient identity]] for the ordinary R-family gives \([T_x]B_{q^{-1}}(T_z)=q^{\ell(x)}R_{x,z}(q)\). Expand \(H_{\mathbf s}(q)\) in the standard basis and take its \(x\)-coefficient in the last [[node:kl.hecke.positive_word_reciprocity|bar identity]]. This gives
+Reducedness gives \(m=\ell(b)\). Since \(x\le b\), \(\ell(x)\le m\), and the unit powers simplify to
 \[
-q^{\ell(x)}\sum_{z\le b}R_{x,z}(q)[T_z]H_{\mathbf s}(q)
-=q^m[T_x]H_{\mathbf s}(q^{-1}).
+u^{-\ell(x)}u^m=u^{m-\ell(x)}=u^d.
 \]
-The sum is over the finite lower ideal of \(b\). Its sufficiency follows inductively from the Hecke coefficient recursion and monotonicity of the upper simple envelope: prepending a reduced letter sends the support below the new word product.
 
-Cancel the invertible \(q^{\ell(x)}\) and substitute the word-character formula. This proves the stalk identity in the Laurent polynomial ring.
+### Step 3. Recognize the reflected polynomial
 
-### Step 3. Check the degree bound and identify the kernel character
-
-The constructed word pairing has degree shift \(m\), and its balanced support duality identifies the full outgoing kernel with the dual of the stalk, with the incoming-label shift. At \(x\), there are exactly \(\ell(x)\) incoming labels by the inversion count. If a homogeneous stalk basis has degrees \(d_i\), the resulting outgoing-kernel basis has degrees
+The [[node:kl.duality.word_kernel_character|outgoing-kernel character theorem]] supplies
+\(\operatorname{natDegree}C_x^{\mathbf t}\le d\).
+Hence [[node:kl.hecke.polynomial_reflection|bounded polynomial reflection]] gives
 \[
-m-\ell(x)-d_i.
+u^d C_x^{\mathbf t}(u^{-1})
+=j(\operatorname{reflect}_d C_x^{\mathbf t}).
 \]
-These must be nonnegative, since the kernel is a homogeneous submodule of a nonnegatively graded module. Therefore \(d_i\le m-\ell(x)\), establishing the asserted degree bound.
-
-Its character is consequently
+The finite sum on the other side is
 \[
-\sum_iq^{m-\ell(x)-d_i}
-=q^{m-\ell(x)}\sum_i(q^{-1})^{d_i}
-=q^{m-\ell(x)}C^{\mathbf s}_x(q^{-1}).
+j\left(\sum_{z\le b}R_{x,z}C_z^{\mathbf t}\right),
 \]
-The stalk–costalk reciprocity proof supplies the dual-basis construction and the incoming-label product; the tensor pairing supplies the word's perfect form.
+because \(j\) is a ring homomorphism.
 
-### Step 4. Return to ordinary polynomials
+### Step 4. Return to integer polynomials and interval vertices
 
-Step 3 shows that the Laurent expression on the left of Step 2 has no negative powers. Both sides are images of ordinary integer polynomials, and the embedding into Laurent polynomials is injective. Hence their equality holds in \(\mathbb Z[q]\). Substituting the kernel character computed in Step 3 gives the full convolution identity.
+Injectivity of \(j\) proves
+\[
+\operatorname{reflect}_d C_x^{\mathbf t}
+=\sum_{z\le b}R_{x,z}C_z^{\mathbf t}
+\]
+in \(\mathbb Z[q]\).
 
-This word-object convolution supplies the identity used to cancel the lower boundary-model contributions.
+Every group element below \(b\) lies above \(1\). Thus \(z\mapsto\langle z,1\le z,z\le b\rangle\) identifies this finite index set with \(I_b\), giving the stated sum over interval vertices.
+
+### Step 5. Insert the actual kernel character
+
+The [[node:kl.duality.word_kernel_character|kernel-character theorem]] gives
+\(K_x^{\mathbf t}=\operatorname{reflect}_d C_x^{\mathbf t}\).
+Substituting into Step 4 proves the full R-convolution identity.
+
+For one letter \(s\), the two stalk characters are \(1\). At the lower vertex, the sum is
+\(R_{1,1}+R_{1,s}=1+(q-1)=q\), which is the character of the kernel \(\alpha_s A\). At the top vertex, the sum and the kernel character are both \(1\).
 
 ## References
 
-The precise Lean sources are listed below.
+The local source declarations below give the construction and proof.
 
 ## Lean formalization
 
-`OAI.KLInvariance.HeckeQ.barLinear_positiveWord`: [CharacterReciprocity.lean:951](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L951).
-
-`OAI.KLInvariance.HeckeQ.positiveWord_rValue`: [CharacterReciprocity.lean:997](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L997).
+`OAI.KLInvariance.TitsSpace.bottStalkCharacter_natDegree_le`: [CharacterReciprocity.lean:1088](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L1088).
 
 `OAI.KLInvariance.TitsSpace.bottStalkCharacter_reciprocity`: [CharacterReciprocity.lean:1105](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L1105).
 
 `OAI.KLInvariance.TitsSpace.bottKernelCharacter_rConvolution`: [CharacterReciprocity.lean:1134](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L1134).
 
-`OAI.KLInvariance.HeckeQ.rValue_inverse_eq_barBasis`: [Dihedral.lean:467](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Dihedral.lean#L467).
+`OAI.KLInvariance.HeckeQ.positiveWord_rValue`: [CharacterReciprocity.lean:997](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L997).
 
-`OAI.KLInvariance.HeckeQ.positiveWord_support`: [CharacterReciprocity.lean:963](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L963).
+`OAI.KLInvariance.HeckeQ.eval_positiveWord`: [CharacterReciprocity.lean:1027](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L1027).

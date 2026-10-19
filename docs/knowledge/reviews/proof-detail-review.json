@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 71027,
-  "theorem_walkthroughs": 248,
+  "revised_proof_words": 73068,
+  "theorem_walkthroughs": 255,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -361,6 +361,20 @@
       "revised_proof_words": 261,
       "proof_sha256": "8a2f622bf91d06f59590eec044cbae14de0d7a08f5d659ddcb2f1ee872004b24",
       "review": "Read LinearDescent and the graded descended/descendedEdge bodies. Retained lift independence, idempotence, homogeneous lifts and both quotient squares."
+    },
+    {
+      "node": "kl.algebra.reflected_dual_character",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.degree_le_of_dual_equiv",
+        "OAI.KLInvariance.Graded.ModuleData.reflectedBasis",
+        "OAI.KLInvariance.Graded.ModuleData.char_of_dual_equiv",
+        "OAI.KLInvariance.Graded.ModuleData.char_natDegree_le_of_dual_equiv"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 273,
+      "proof_sha256": "98768ef7ee33dba9b1e59229c3863a3ded2a9cb8d9926db313484197814b72a8",
+      "review": "Read degree_le_of_dual_equiv, all reflectedBasis fields, char_of_dual_equiv and the natDegree sum bound. Explained nonzero dual basis vectors, nonnegative target degrees and the natural/integer subtraction identity."
     },
     {
       "node": "kl.algebra.root_label_primes",
@@ -808,13 +822,18 @@
         "OAI.KLInvariance.BruhatGraph.FreeSheaf.costalk_hilbert_of_duality",
         "OAI.KLInvariance.BruhatGraph.costalk_hilbert_of_duality",
         "OAI.KLInvariance.BruhatGraph.incomingEquivInversions",
-        "OAI.KLInvariance.BruhatGraph.incoming_card"
+        "OAI.KLInvariance.BruhatGraph.incoming_card",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelEquivFull",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.kernelDual",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.kernel_free",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.kernelDual_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.kernel_character"
       ],
-      "proof_steps": 5,
+      "proof_steps": 6,
       "previous_proof_words": 80,
-      "revised_proof_words": 359,
-      "proof_sha256": "9e6de5c7d12ac4634116547b80f0f5a2548b4630f577511bfd7a11c2a8f1bada",
-      "review": "Compared both costalk_hilbert_of_duality declarations and incomingEquivInversions/incoming_card. Detailed the dual basis, nonnegative kernel degrees, Hilbert denominator, and the special edge count on [1,b]."
+      "revised_proof_words": 496,
+      "proof_sha256": "a51dfacba9a5968b6d8a12f80aae90a0ab1f0c2105c93e5b327ae00df442f82d",
+      "review": "Retained the dual-basis Hilbert calculation, specified the natural pairing shift, and added the exact kernelData/stalkMap identification, kernelDual composition and polynomial character result under L>=length(b)."
     },
     {
       "node": "kl.detail.diamond_reconstruction",
@@ -848,9 +867,9 @@
       ],
       "proof_steps": 4,
       "previous_proof_words": 115,
-      "revised_proof_words": 277,
-      "proof_sha256": "a05f13144438555c9139bd0c7989d576e598d0a927d91278109fc15d96d63316",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 265,
+      "proof_sha256": "027e7fd969930128a2f2496a6b9c89b2e937966c3297aa3cdda8f0ea1a076535",
+      "review": "Connected the already stated endpoint substitution to the explicit actual-character endpoint and scaled-reciprocity proofs; restated the matrix-input role directly. The schedule/path-product details remain part of the later I3 review."
     },
     {
       "node": "kl.detail.geometric_functional",
@@ -1140,18 +1159,17 @@
     {
       "node": "kl.detail.word_character_reciprocity",
       "source_declarations": [
-        "OAI.KLInvariance.HeckeQ.barLinear_positiveWord",
-        "OAI.KLInvariance.HeckeQ.positiveWord_rValue",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_natDegree_le",
         "OAI.KLInvariance.TitsSpace.bottStalkCharacter_reciprocity",
         "OAI.KLInvariance.TitsSpace.bottKernelCharacter_rConvolution",
-        "OAI.KLInvariance.HeckeQ.rValue_inverse_eq_barBasis",
-        "OAI.KLInvariance.HeckeQ.positiveWord_support"
+        "OAI.KLInvariance.HeckeQ.positiveWord_rValue",
+        "OAI.KLInvariance.HeckeQ.eval_positiveWord"
       ],
-      "proof_steps": 4,
+      "proof_steps": 5,
       "previous_proof_words": 0,
-      "revised_proof_words": 419,
-      "proof_sha256": "99b338678a33291c92d0b7de93cfb00b5b844c25ae2d3a51f6213d23c5ddb094",
-      "review": "The Hecke identities used in the existing word-character proof now have detailed nodes: positive-word definition/support/bar induction, signed parameter reciprocity and the inverse-parameter R coefficient.",
+      "revised_proof_words": 324,
+      "proof_sha256": "6dfa647cb4496124726781d3789e05932234f3f3f917dcbc168b92fbbc9e1e8b",
+      "review": "Read the Laurent embedding/evaluation comparison, positiveWord_rValue specialization, exponent calculation, bounded reflection, injectivity and final lowerFinset-to-interval reindexing. Made the actual kernel character the separate geometric input.",
       "format_correction": "2026-10-18: restored missing backslashes in qquad spacing commands; mathematical assertions unchanged."
     },
     {
@@ -1355,11 +1373,11 @@
         "OAI.KLInvariance.BruhatGraph.stalkCharacter_reciprocity",
         "OAI.KLInvariance.BruhatGraph.stalkCharacter_natDegree_le"
       ],
-      "proof_steps": 5,
+      "proof_steps": 7,
       "previous_proof_words": 84,
-      "revised_proof_words": 381,
-      "proof_sha256": "98201b7923c8e28d3c9906ca1c5620dba8cc0734305d8e68c205b7ac2334955f",
-      "review": "Rechecked DyerPaths induction and cancellation. Added the all-top induction/base, natural rank difference on arbitrary pairs, comparable/incomparable support cases and one-edge evaluation."
+      "revised_proof_words": 413,
+      "proof_sha256": "c5fa209abff730f56e3a873bc472052d6d3a26af690ae89570561b7c04eab41e",
+      "review": "Read the entire strong-induction proof in DyerPaths: top multiplicity, simultaneous substitutions, smaller-length hypotheses and ambient lower-character lifting. Kept the proof in integer polynomials until the separately justified reciprocal interpretation."
     },
     {
       "node": "kl.duality.bott_character_decomposition",
@@ -1369,8 +1387,91 @@
       "proof_steps": 5,
       "previous_proof_words": 65,
       "revised_proof_words": 337,
-      "proof_sha256": "cf5252d201114752d70270cb17e880b0e0a5740c3599cc3a70f10b1eebc0d49e",
-      "review": "Read bottCharacter_decomposition_both and the top-character calculation. Included the word pairing/free-kernel inputs, actual lower-model characters and the derivation of top multiplicity one."
+      "proof_sha256": "2eb09a34820a73251ccaecae7fb353f241900215ac5064fecc564ae9165789a7",
+      "review": "Rechecked every word/model input to exists_character_decomposition, the simultaneous substitutions and the top multiplicity calculation; added the explicit kernel-character and lower-character prerequisites."
+    },
+    {
+      "node": "kl.duality.boundary_kernel_character",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.boundaryFreeSheaf",
+        "OAI.KLInvariance.BruhatGraph.boundaryPerfectPairing",
+        "OAI.KLInvariance.BruhatGraph.boundaryFreeDuality",
+        "OAI.KLInvariance.BruhatGraph.boundaryKernelFree",
+        "OAI.KLInvariance.BruhatGraph.costalkCharacter",
+        "OAI.KLInvariance.BruhatGraph.costalkCharacter_reflect",
+        "OAI.KLInvariance.BruhatGraph.stalkBasis_degree_le",
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_natDegree_le"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 257,
+      "proof_sha256": "cce32cd97d5d85909e286081a47bb351f896463ab15f3bde2ff1f4ceec4a3cb1",
+      "review": "Read the actual boundary FreeSheaf/perfect-pairing/duality packages, kernel character and basis-degree/natDegree bounds. Kept the exact nonnegative degree bound and full outgoing-kernel meaning."
+    },
+    {
+      "node": "kl.duality.lower_character_convolution",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.unitPolynomialBasis",
+        "OAI.KLInvariance.Graded.ModuleData.char_unit",
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_top",
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter_diagonal",
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter_at_top",
+        "OAI.KLInvariance.BruhatGraph.lowerIntervalEquiv",
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter_convolution",
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter_convolution_zero",
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter_reciprocity_lift"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 292,
+      "proof_sha256": "04a169281ab42b78c4f035a0f9adc626789216b24453b0844d961283040fbad0",
+      "review": "Read the unit character and both lower-character normalizations, the explicit lower-interval bijection, support filtering and both cases of lowerCharacter_reciprocity_lift. Kept the fixed ambient coefficient basis and truncated rank difference."
+    },
+    {
+      "node": "kl.duality.normalized_character_endpoints",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.ActualBoundary",
+        "OAI.KLInvariance.BruhatGraph.actualSectionDuality",
+        "OAI.KLInvariance.BruhatGraph.actualSectionDuality_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.emptyKernel_hilbert",
+        "OAI.KLInvariance.BruhatGraph.normalized_emptyKernel_scaledStalk",
+        "OAI.KLInvariance.BruhatGraph.normalized_fullKernel_scaledStalk",
+        "OAI.KLInvariance.BruhatGraph.normalized_emptyKernel_restrictBoundary",
+        "OAI.KLInvariance.BruhatGraph.normalized_fullKernel_restrictBoundary"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 257,
+      "proof_sha256": "3a5c156f402dcf0fc2a579e59b6e6bd7cfd6541095931dc15b924659f5bb1f35",
+      "review": "Read the unconditional actual-character endpoint lemmas and the upper-restriction identities. Used the actual section duality, kept the Hilbert argument at t^2 in (0,1), and displayed both coefficient-factor and integer-power cancellations."
+    },
+    {
+      "node": "kl.duality.scaled_reciprocity",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.scaledStalk_reciprocity_inverse",
+        "OAI.KLInvariance.BruhatGraph.scaledStalk_reciprocity",
+        "OAI.KLInvariance.BruhatGraph.scaledStalk_reciprocity_upper"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 227,
+      "proof_sha256": "0df685dc44b03e4155f5a226ef131251542ee2add9d52d1b205011ecc22346c5",
+      "review": "Read both reciprocal-parameter formulas and the filtered-subtype reindexing for the upper interval. Expanded the integer exponent cancellation and retained the arbitrary scalar field and original boundary-character vector."
+    },
+    {
+      "node": "kl.duality.word_kernel_character",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottFreeSheaf",
+        "OAI.KLInvariance.TitsSpace.bottFreeDuality",
+        "OAI.KLInvariance.TitsSpace.bottKernelFree",
+        "OAI.KLInvariance.TitsSpace.bottKernelCharacter",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_natDegree_le"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 310,
+      "proof_sha256": "4a14f8d422dfd9763d67302ca1ace6b2cafb872e971e6af5481bd56b80f4995a",
+      "review": "Read bottFreeSheaf, bottFreeDuality, kernel freeness, reflected kernel character and the separate word natDegree bound. Checked the reduced-word length substitution, incoming-edge count and bundled full-kernel identification."
     },
     {
       "node": "kl.foundations.canonical_kl",
@@ -1892,7 +1993,7 @@
       "previous_proof_words": 99,
       "revised_proof_words": 166,
       "proof_sha256": "219997f27a34669bd2574c583ca8316b1d604f1f389e32aa2053ca893781fb0a",
-      "review": "Retained the checked finite distributivity and top-coefficient-one proof; replaced precautionary closing prose by the direct ring identity."
+      "review": "Re-read finite_character_cancellation and its saved proof: finite distributivity, interchange of sums, vanishing of all proper-center defects and top coefficient one suffice over the original commutative ring."
     },
     {
       "node": "kl.notes.dihedral_kl",
@@ -2565,7 +2666,7 @@
       "proof_steps": 4,
       "revised_proof_words": 250,
       "proof_sha256": "7acf291fae39582fffe637a806737f3585916104f8756dbc6a779af73bcccefd",
-      "review": "Checked kernelEquiv, sum/shift isomorphisms and character formulas. Commuting lower squares and edge-map injectivity give both kernel containments."
+      "review": "Rechecked the existing kernel-product, finite-family, shift and sheaf-isomorphism formulas against CharacterReciprocity; the component maps and their grade preservation remain explicit."
     },
     {
       "node": "kl.sheaves.lower_extension_properties",
@@ -2598,9 +2699,9 @@
         "OAI.KLInvariance.BruhatGraph.lowerCharacter"
       ],
       "proof_steps": 4,
-      "revised_proof_words": 249,
-      "proof_sha256": "7825b4d1b667cb6d6cdb78a1deaaeaf6df3855edae139aad770c8a7383482728",
-      "review": "Read lowerExtendKernelEquiv, lowerKernelEquiv and boundaryModels_kernelCharacter. Outgoing edges leaving support impose zero equations; the actual boundary pairing supplies free full kernels and their degree reversal."
+      "revised_proof_words": 257,
+      "proof_sha256": "4f02ec6610e7ea7f9fffdb415e1ceda1bdf3d33e0d565d704dbc63a8c96b819e",
+      "review": "Rechecked the support split and internal/outside outgoing-edge cases; linked the actual boundary kernel character supplying freeness and reflection."
     },
     {
       "node": "kl.sheaves.model_sum_characters",
@@ -2614,7 +2715,7 @@
       "proof_steps": 6,
       "revised_proof_words": 342,
       "proof_sha256": "4b6c397d678f28ba50a2527d70dfd5ce1b9bcabcd043990a1e8b8525a118db29",
-      "review": "Read ModelSum.character_both and exists_character_decomposition. The same constructor update gives both multiplicity formulas, nonnegativity, support and free kernel sums."
+      "review": "Rechecked ModelSum.character_both and exists_character_decomposition. The recorded shift update is used in both stalk and full-kernel formulas."
     },
     {
       "node": "kl.sheaves.model_sum_properties",
@@ -2835,6 +2936,25 @@
       "revised_proof_words": 409,
       "proof_sha256": "8251fc9ca3dd02155e81bcdc2da4d732c3a01498a538c314b84c8b12e049fa2f",
       "review": "Read the BalancedPairings vertex image proof, including its free-image route, interval class lifting and free-target denominator removal. Kept the reduced word and full interval hypotheses, separate from upper-image projectivity."
+    },
+    {
+      "node": "kl.sheaves.word_section_pairing",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottSectionDuality",
+        "OAI.KLInvariance.TitsSpace.bottSectionDuality_apply",
+        "OAI.KLInvariance.TitsSpace.bottSection_symmetric",
+        "OAI.KLInvariance.TitsSpace.bottPiece_iff_stalks",
+        "OAI.KLInvariance.TitsSpace.bottSectionDuality_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottSection_left_orthogonal",
+        "OAI.KLInvariance.TitsSpace.bottSection_right_orthogonal",
+        "OAI.KLInvariance.TitsSpace.bottWordPerfectPairing",
+        "OAI.KLInvariance.TitsSpace.bottPolynomialPerfectPairing"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 355,
+      "proof_sha256": "9d34b75c4475d9c03ffe1756dd0592e5a53b6425b361ccbdd75f8d971c843cec",
+      "review": "Read the actual section duality, degree detection by all stalks, both orthogonality arguments and the two PerfectPairing constructors. Proved every field from the word pairing and section isomorphism before coefficient transport."
     },
     {
       "node": "kl.word.character_normalization",

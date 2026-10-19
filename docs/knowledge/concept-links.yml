@@ -149,6 +149,11 @@ concepts:
   - costalk characters
   - lower character
   - lower characters
+  - full-kernel character
+  - full-kernel characters
+  - outgoing-kernel character
+  - outgoing-kernel characters
+  - lower-character function
 - node: kl.notes.reflection_order
   terms:
   - reflection orders
@@ -1164,3 +1169,15 @@ concepts:
   - descent kernel map
   topics:
   - kl.word_modules
+- node: kl.duality.scaled_stalk
+  terms:
+  - scaled actual-stalk character
+  - scaled actual-stalk characters
+  - scaled actual character
+  - scaled actual characters
+  - scaled stalk vector
+  - scaled actual-character vector
+  - scaled source character
+  topics:
+  - kl.sheaves
+  - kl.invariance

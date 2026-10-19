@@ -12,6 +12,8 @@ uses:
 - kl.paths.dyer_paths
 - kl.detail.transported_schedule
 - kl.detail.costalk_reciprocity
+- kl.duality.normalized_character_endpoints
+- kl.duality.scaled_reciprocity
 lean:
   repository: openai-kl
   modules:
@@ -95,13 +97,13 @@ For noncomparable pairs, both polynomials vanish, since \(\phi\) preserves the o
 
 ### Step 4. Apply the source reciprocity identity
 
-Actual-character reciprocity, with the square-parameter normalization, states that this last sum is \(c_x(t)\). By Step 1, it is \(D_{[]}(t)_x\). This holds for each \(x\), so the two vectors are equal:
+The [[node:kl.duality.scaled_reciprocity|scaled actual-character reciprocity theorem]] states that this last sum is \(c_x(t)\). By Step 1, it is \(D_{[]}(t)_x\). This holds for each \(x\), so the two vectors are equal:
 \[
 D_{[]}(t)=\operatorname{Dispatch}_{p^{\mathrm{rev}}}(T)D_p(t).
 \]
-No inequality is used in this calculation.
+This completes the coordinatewise endpoint identity.
 
-The hypothesis must cover the whole R-matrix, not just its bottom-to-top entry. In the simultaneous induction, the smaller subintervals supply every other comparable entry, and the newly proved current entry supplies the last one. Choosing \(t=\tfrac12\) gives one concrete exact endpoint, sufficient for the later Hilbert-equality argument.
+In the simultaneous induction, the smaller subintervals supply the other comparable R-entries, and the newly proved current entry completes the matrix equality used here. Choosing \(t=\tfrac12\) gives one concrete exact endpoint, sufficient for the later Hilbert-equality argument.
 
 ## References
 

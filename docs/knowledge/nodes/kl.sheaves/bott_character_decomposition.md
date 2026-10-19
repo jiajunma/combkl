@@ -17,6 +17,11 @@ uses:
 - kl.notes.tensor_pairing
 - kl.word.support_duality
 - kl.word.pairing_degree
+- kl.duality.word_kernel_character
+- kl.duality.boundary_kernel_character
+- kl.duality.lower_character_convolution
+- kl.sheaves.word_section_pairing
+- kl.detail.model_decomposition
 lean:
   repository: openai-kl
   modules:
@@ -63,11 +68,11 @@ Here \(C_x^{\mathbf s}\) is the word-stalk character and \(K_x^{\mathbf s}\) the
 
 The polynomial-coordinate word sheaf has free stalks and the upper-quotient rule by the word-stalk and edge-kernel theorems. Its word sections generate each stalk, and the reduced-word flabbiness theorem gives flabbiness.
 
-The word section pairing is perfect and support-orthogonal, so it supplies section duality. Together with the free-stalk, quotient, and generation data, the costalk theorem identifies each full outgoing kernel with the dual of its finite free stalk. This proves the required kernel freeness. The actual lower-supported boundary models have free stalks by construction and free full outgoing kernels by the lower-model kernel theorem. All coefficients, labels, and graph vertices are those of the common finite interval \([1,b]\).
+The [[node:kl.sheaves.word_section_pairing|word section pairing]] is perfect and support-orthogonal, so it supplies section duality. Together with the free-stalk, quotient, and generation data, the costalk theorem identifies each full outgoing kernel with the dual of its finite free stalk. This proves the required kernel freeness. The actual lower-supported boundary models have free stalks by construction and free full outgoing kernels by the [[node:kl.sheaves.lower_model_kernels|lower-model kernel theorem]]. All coefficients, labels, and graph vertices are those of the common finite interval \([1,b]\).
 
 ### Step 2. Decompose the sheaf and record its shifts
 
-Apply the model-decomposition theorem to obtain a graded sheaf isomorphism
+Apply the [[node:kl.detail.model_decomposition|model-decomposition theorem]] to obtain a graded sheaf isomorphism
 \[
 B^{\mathbf s}\simeq\bigoplus_{y,j}O_y(d_{y,j}),
 \qquad d_{y,j}\in\mathbb N.
@@ -80,7 +85,7 @@ The sums are finite, and every coefficient counts occurrences of a nonnegative s
 
 ### Step 3. Substitute the model stalk characters
 
-The simultaneous model-character theorem gives
+The [[node:kl.sheaves.model_sum_characters|simultaneous model-character theorem]] gives
 \[
 C_x^{\mathbf s}(q)=\sum_y\mu_y(q)C_{O_y}(x;q).
 \]
@@ -92,7 +97,7 @@ The same theorem and the same shifts give
 \[
 K_x^{\mathbf s}(q)=\sum_y\mu_y(q)K_{O_y}(x;q).
 \]
-For \(x\le y\), the lower-model kernel theorem identifies the term as
+For \(x\le y\), the [[node:kl.sheaves.lower_model_kernels|lower-model kernel theorem]] identifies the term as
 \(q^{\ell(y)-\ell(x)}C_{x,y}(q^{-1})\).
 For the other centers it is zero. This gives the second formula.
 

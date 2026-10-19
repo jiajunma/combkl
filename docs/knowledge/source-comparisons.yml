@@ -8,12 +8,17 @@ comparisons:
   - kl.detail.costalk_reciprocity
   - kl.detail.local_diagonal_degree
   - kl.detail.local_intersection
+  - kl.duality.boundary_kernel_character
+  - kl.duality.normalized_character_endpoints
   paper_labels:
   - bg:normalization
   lean_declarations:
   - OAI.KLInvariance.BruhatGraph.StalkCharacterObligation
   - OAI.KLInvariance.BruhatGraph.stalkCharacter_reciprocity
   - OAI.KLInvariance.BruhatGraph.localIntersection_diagonal_strict_degree
+  - OAI.KLInvariance.BruhatGraph.costalkCharacter_reflect
+  - OAI.KLInvariance.BruhatGraph.normalized_emptyKernel_scaledStalk
+  - OAI.KLInvariance.BruhatGraph.normalized_fullKernel_scaledStalk
   paper: The grading-normalization proposition identifies the stalk graded rank with
     the canonical KL polynomial and uses the Elias–Williamson character theorem through
     the cited moment-graph bridges.
@@ -156,6 +161,8 @@ comparisons:
   - kl.comparison.normalized_kernel
   - kl.comparison.edge_increment
   - kl.detail.schedule_state
+  - kl.duality.scaled_stalk
+  - kl.duality.scaled_reciprocity
   paper_labels:
   - eq:state
   - eq:step
@@ -163,6 +170,8 @@ comparisons:
   - OAI.KLInvariance.scaledKL
   - OAI.KLInvariance.BruhatGraph.stateScale
   - OAI.KLInvariance.BruhatGraph.normalized_edge_increment_le
+  - OAI.KLInvariance.BruhatGraph.scaledStalk
+  - OAI.KLInvariance.BruhatGraph.scaledStalk_reciprocity
   paper: The comparison uses \(0<q<1\), scale \(q^{-d/2}(1-q)^N\), and transfer coefficient
     \(q^{-1/2}-q^{1/2}\).
   lean: The comparison uses \(0<t<1\) and substitutes \(q=t^2\). Its scale is \(t^{-d}(1-t^2)^N\)
@@ -177,6 +186,7 @@ comparisons:
   - kl.detail.word_character_reciprocity
   - kl.word.stalk_hilbert_formula
   - kl.word.character_recursion
+  - kl.duality.word_kernel_character
   paper_labels:
   - bg:normalization
   lean_declarations:
@@ -187,6 +197,7 @@ comparisons:
   - OAI.KLInvariance.TitsSpace.bottStalkCharacter_hasSum
   - OAI.KLInvariance.TitsSpace.bottStalkCharacter_ascent
   - OAI.KLInvariance.TitsSpace.bottStalkCharacter_descent
+  - OAI.KLInvariance.TitsSpace.bottKernelCharacter
   paper: The normalization discussion identifies indecomposable boundary-sheaf characters
     with KL polynomials by the cited character theorem.
   lean: The word-stalk character is proved to equal a positive Hecke-word coefficient.

@@ -661,18 +661,6 @@
       "pending": []
     },
     {
-      "node": "kl.detail.costalk_reciprocity",
-      "file": "docs/knowledge/nodes/kl.sheaves/costalk_reciprocity.md",
-      "source_declarations": [
-        "OAI.KLInvariance.BruhatGraph.FreeSheaf.costalk_hilbert_of_duality",
-        "OAI.KLInvariance.BruhatGraph.costalk_hilbert_of_duality",
-        "OAI.KLInvariance.BruhatGraph.incomingEquivInversions",
-        "OAI.KLInvariance.BruhatGraph.incoming_card"
-      ],
-      "review": "Compared both costalk_hilbert_of_duality declarations and incomingEquivInversions/incoming_card. Detailed the dual basis, nonnegative kernel degrees, Hilbert denominator, and the special edge count on [1,b].",
-      "pending": []
-    },
-    {
       "node": "kl.detail.integral_adjoints",
       "file": "docs/knowledge/nodes/kl.sheaves/integral_adjoints.md",
       "source_declarations": [
@@ -1483,47 +1471,6 @@
       "pending": []
     },
     {
-      "node": "kl.duality.actual_character_reciprocity",
-      "file": "docs/knowledge/nodes/kl.sheaves/actual_character_reciprocity.md",
-      "source_declarations": [
-        "OAI.KLInvariance.BruhatGraph.stalkCharacter_reciprocity",
-        "OAI.KLInvariance.BruhatGraph.stalkCharacter_natDegree_le"
-      ],
-      "review": "Rechecked DyerPaths induction and cancellation. Added the all-top induction/base, natural rank difference on arbitrary pairs, comparable/incomparable support cases and one-edge evaluation.",
-      "pending": []
-    },
-    {
-      "node": "kl.duality.bott_character_decomposition",
-      "file": "docs/knowledge/nodes/kl.sheaves/bott_character_decomposition.md",
-      "source_declarations": [
-        "OAI.KLInvariance.TitsSpace.bottCharacter_decomposition_both"
-      ],
-      "review": "Read bottCharacter_decomposition_both and the top-character calculation. Included the word pairing/free-kernel inputs, actual lower-model characters and the derivation of top multiplicity one.",
-      "pending": []
-    },
-    {
-      "node": "kl.duality.stalk_character",
-      "file": "docs/knowledge/nodes/kl.sheaves/stalk_character.md",
-      "source_declarations": [
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.freeStalkChar",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.freeKernelChar",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelData",
-        "OAI.KLInvariance.BruhatGraph.stalkCharacter",
-        "OAI.KLInvariance.BruhatGraph.lowerCharacter"
-      ],
-      "review": "Checked stalk/kernel data and character definitions, their freeness inputs, lower-character zero extension, shifts and Hilbert denominator.",
-      "pending": []
-    },
-    {
-      "node": "kl.notes.character_cancellation",
-      "file": "docs/knowledge/nodes/kl.sheaves/character_cancellation.md",
-      "source_declarations": [
-        "OAI.KLInvariance.finite_character_cancellation"
-      ],
-      "review": "Retained the checked finite distributivity and top-coefficient-one proof; replaced precautionary closing prose by the direct ring identity.",
-      "pending": []
-    },
-    {
       "node": "kl.sheaves.boundary_existence",
       "file": "docs/knowledge/nodes/kl.sheaves/boundary_existence.md",
       "source_declarations": [
@@ -1601,23 +1548,6 @@
       "pending": []
     },
     {
-      "node": "kl.sheaves.kernel_transport",
-      "file": "docs/knowledge/nodes/kl.sheaves/kernel_transport.md",
-      "source_declarations": [
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.Iso.kernelEquiv",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.Iso.kernelEquiv_graded",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelShiftEquiv",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelProdEquiv",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelPiEquiv",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelChar_shift",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelChar_prod",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelChar_pi",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelChar_zero"
-      ],
-      "review": "Checked kernelEquiv, sum/shift isomorphisms and character formulas. Commuting lower squares and edge-map injectivity give both kernel containments.",
-      "pending": []
-    },
-    {
       "node": "kl.sheaves.lower_extension",
       "file": "docs/knowledge/nodes/kl.sheaves/lower_extension.md",
       "source_declarations": [
@@ -1644,34 +1574,6 @@
         "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerExtend_minimal"
       ],
       "review": "Checked each lowerExtend property: upper-set intersection, zero modules outside the lower ideal, and identical outgoing kernel conditions inside.",
-      "pending": []
-    },
-    {
-      "node": "kl.sheaves.lower_model_kernels",
-      "file": "docs/knowledge/nodes/kl.sheaves/lower_model_kernels.md",
-      "source_declarations": [
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerExtend_kernel_iff",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerExtendKernelEquiv",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerExtendKernelEquiv_graded",
-        "OAI.KLInvariance.BruhatGraph.lowerKernelEquiv",
-        "OAI.KLInvariance.BruhatGraph.boundaryModels_character",
-        "OAI.KLInvariance.BruhatGraph.boundaryModels_kernelFree",
-        "OAI.KLInvariance.BruhatGraph.boundaryModels_kernelCharacter",
-        "OAI.KLInvariance.BruhatGraph.lowerCharacter"
-      ],
-      "review": "Read lowerExtendKernelEquiv, lowerKernelEquiv and boundaryModels_kernelCharacter. Outgoing edges leaving support impose zero equations; the actual boundary pairing supplies free full kernels and their degree reversal.",
-      "pending": []
-    },
-    {
-      "node": "kl.sheaves.model_sum_characters",
-      "file": "docs/knowledge/nodes/kl.sheaves/model_sum_characters.md",
-      "source_declarations": [
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.ModelSum.character",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.ModelSum.kernelFree",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.ModelSum.character_both",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.exists_character_decomposition"
-      ],
-      "review": "Read ModelSum.character_both and exists_character_decomposition. The same constructor update gives both multiplicity formulas, nonnegativity, support and free kernel sums.",
       "pending": []
     },
     {
@@ -2022,20 +1924,6 @@
         "OAI.KLInvariance.rPolynomial_normalization"
       ],
       "review": "Read rPolynomial_normalization and rPolynomial_eq_constructed. Retained the integer-exponent induction, both branch length differences and explicit scalar factors.",
-      "pending": []
-    },
-    {
-      "node": "kl.detail.word_character_reciprocity",
-      "file": "docs/knowledge/nodes/kl.sheaves/word_character_reciprocity.md",
-      "source_declarations": [
-        "OAI.KLInvariance.HeckeQ.barLinear_positiveWord",
-        "OAI.KLInvariance.HeckeQ.positiveWord_rValue",
-        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_reciprocity",
-        "OAI.KLInvariance.TitsSpace.bottKernelCharacter_rConvolution",
-        "OAI.KLInvariance.HeckeQ.rValue_inverse_eq_barBasis",
-        "OAI.KLInvariance.HeckeQ.positiveWord_support"
-      ],
-      "review": "The Hecke identities used in the existing word-character proof now have detailed nodes: positive-word definition/support/bar induction, signed parameter reciprocity and the inverse-parameter R coefficient.",
       "pending": []
     },
     {
@@ -4144,6 +4032,258 @@
       ],
       "review": "Retained the existing component/kernel/image argument and added the explicit inverse degree and restricted piece isomorphisms for a k-linear equivalence, with the finite-dimensional character application.",
       "pending": []
+    },
+    {
+      "node": "kl.algebra.reflected_dual_character",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/reflected_dual_character.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.degree_le_of_dual_equiv",
+        "OAI.KLInvariance.Graded.ModuleData.reflectedBasis",
+        "OAI.KLInvariance.Graded.ModuleData.char_of_dual_equiv",
+        "OAI.KLInvariance.Graded.ModuleData.char_natDegree_le_of_dual_equiv"
+      ],
+      "review": "Read degree_le_of_dual_equiv, all reflectedBasis fields, char_of_dual_equiv and the natDegree sum bound. Explained nonzero dual basis vectors, nonnegative target degrees and the natural/integer subtraction identity.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.word_section_pairing",
+      "file": "docs/knowledge/nodes/kl.sheaves/word_section_pairing.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottSectionDuality",
+        "OAI.KLInvariance.TitsSpace.bottSectionDuality_apply",
+        "OAI.KLInvariance.TitsSpace.bottSection_symmetric",
+        "OAI.KLInvariance.TitsSpace.bottPiece_iff_stalks",
+        "OAI.KLInvariance.TitsSpace.bottSectionDuality_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottSection_left_orthogonal",
+        "OAI.KLInvariance.TitsSpace.bottSection_right_orthogonal",
+        "OAI.KLInvariance.TitsSpace.bottWordPerfectPairing",
+        "OAI.KLInvariance.TitsSpace.bottPolynomialPerfectPairing"
+      ],
+      "review": "Read the actual section duality, degree detection by all stalks, both orthogonality arguments and the two PerfectPairing constructors. Proved every field from the word pairing and section isomorphism before coefficient transport.",
+      "pending": []
+    },
+    {
+      "node": "kl.duality.word_kernel_character",
+      "file": "docs/knowledge/nodes/kl.sheaves/word_kernel_character.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottFreeSheaf",
+        "OAI.KLInvariance.TitsSpace.bottFreeDuality",
+        "OAI.KLInvariance.TitsSpace.bottKernelFree",
+        "OAI.KLInvariance.TitsSpace.bottKernelCharacter",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_natDegree_le"
+      ],
+      "review": "Read bottFreeSheaf, bottFreeDuality, kernel freeness, reflected kernel character and the separate word natDegree bound. Checked the reduced-word length substitution, incoming-edge count and bundled full-kernel identification.",
+      "pending": []
+    },
+    {
+      "node": "kl.duality.boundary_kernel_character",
+      "file": "docs/knowledge/nodes/kl.sheaves/boundary_kernel_character.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.boundaryFreeSheaf",
+        "OAI.KLInvariance.BruhatGraph.boundaryPerfectPairing",
+        "OAI.KLInvariance.BruhatGraph.boundaryFreeDuality",
+        "OAI.KLInvariance.BruhatGraph.boundaryKernelFree",
+        "OAI.KLInvariance.BruhatGraph.costalkCharacter",
+        "OAI.KLInvariance.BruhatGraph.costalkCharacter_reflect",
+        "OAI.KLInvariance.BruhatGraph.stalkBasis_degree_le",
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_natDegree_le"
+      ],
+      "review": "Read the actual boundary FreeSheaf/perfect-pairing/duality packages, kernel character and basis-degree/natDegree bounds. Kept the exact nonnegative degree bound and full outgoing-kernel meaning.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.word_character_reciprocity",
+      "file": "docs/knowledge/nodes/kl.sheaves/word_character_reciprocity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_natDegree_le",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_reciprocity",
+        "OAI.KLInvariance.TitsSpace.bottKernelCharacter_rConvolution",
+        "OAI.KLInvariance.HeckeQ.positiveWord_rValue",
+        "OAI.KLInvariance.HeckeQ.eval_positiveWord"
+      ],
+      "review": "Read the Laurent embedding/evaluation comparison, positiveWord_rValue specialization, exponent calculation, bounded reflection, injectivity and final lowerFinset-to-interval reindexing. Made the actual kernel character the separate geometric input.",
+      "pending": []
+    },
+    {
+      "node": "kl.duality.lower_character_convolution",
+      "file": "docs/knowledge/nodes/kl.sheaves/lower_character_convolution.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.unitPolynomialBasis",
+        "OAI.KLInvariance.Graded.ModuleData.char_unit",
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_top",
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter_diagonal",
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter_at_top",
+        "OAI.KLInvariance.BruhatGraph.lowerIntervalEquiv",
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter_convolution",
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter_convolution_zero",
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter_reciprocity_lift"
+      ],
+      "review": "Read the unit character and both lower-character normalizations, the explicit lower-interval bijection, support filtering and both cases of lowerCharacter_reciprocity_lift. Kept the fixed ambient coefficient basis and truncated rank difference.",
+      "pending": []
+    },
+    {
+      "node": "kl.duality.actual_character_reciprocity",
+      "file": "docs/knowledge/nodes/kl.sheaves/actual_character_reciprocity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_reciprocity",
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_natDegree_le"
+      ],
+      "review": "Read the entire strong-induction proof in DyerPaths: top multiplicity, simultaneous substitutions, smaller-length hypotheses and ambient lower-character lifting. Kept the proof in integer polynomials until the separately justified reciprocal interpretation.",
+      "pending": []
+    },
+    {
+      "node": "kl.duality.scaled_stalk",
+      "file": "docs/knowledge/nodes/kl.sheaves/scaled_stalk.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.scaledStalk"
+      ],
+      "review": "Read scaledStalk and separated its actual integer character, scalar evaluation field and nonzero reciprocal parameter. Explained q=t^2 and the real Hilbert scale used at comparison endpoints.",
+      "pending": []
+    },
+    {
+      "node": "kl.duality.scaled_reciprocity",
+      "file": "docs/knowledge/nodes/kl.sheaves/scaled_reciprocity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.scaledStalk_reciprocity_inverse",
+        "OAI.KLInvariance.BruhatGraph.scaledStalk_reciprocity",
+        "OAI.KLInvariance.BruhatGraph.scaledStalk_reciprocity_upper"
+      ],
+      "review": "Read both reciprocal-parameter formulas and the filtered-subtype reindexing for the upper interval. Expanded the integer exponent cancellation and retained the arbitrary scalar field and original boundary-character vector.",
+      "pending": []
+    },
+    {
+      "node": "kl.duality.normalized_character_endpoints",
+      "file": "docs/knowledge/nodes/kl.sheaves/normalized_character_endpoints.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.ActualBoundary",
+        "OAI.KLInvariance.BruhatGraph.actualSectionDuality",
+        "OAI.KLInvariance.BruhatGraph.actualSectionDuality_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.emptyKernel_hilbert",
+        "OAI.KLInvariance.BruhatGraph.normalized_emptyKernel_scaledStalk",
+        "OAI.KLInvariance.BruhatGraph.normalized_fullKernel_scaledStalk",
+        "OAI.KLInvariance.BruhatGraph.normalized_emptyKernel_restrictBoundary",
+        "OAI.KLInvariance.BruhatGraph.normalized_fullKernel_restrictBoundary"
+      ],
+      "review": "Read the unconditional actual-character endpoint lemmas and the upper-restriction identities. Used the actual section duality, kept the Hilbert argument at t^2 in (0,1), and displayed both coefficient-factor and integer-power cancellations.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.costalk_reciprocity",
+      "file": "docs/knowledge/nodes/kl.sheaves/costalk_reciprocity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.costalk_hilbert_of_duality",
+        "OAI.KLInvariance.BruhatGraph.costalk_hilbert_of_duality",
+        "OAI.KLInvariance.BruhatGraph.incomingEquivInversions",
+        "OAI.KLInvariance.BruhatGraph.incoming_card",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelEquivFull",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.kernelDual",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.kernel_free",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.kernelDual_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.kernel_character"
+      ],
+      "review": "Retained the dual-basis Hilbert calculation, specified the natural pairing shift, and added the exact kernelData/stalkMap identification, kernelDual composition and polynomial character result under L>=length(b).",
+      "pending": []
+    },
+    {
+      "node": "kl.duality.stalk_character",
+      "file": "docs/knowledge/nodes/kl.sheaves/stalk_character.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.freeStalkChar",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.freeKernelChar",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelData",
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter",
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelEquivFull",
+        "OAI.KLInvariance.BruhatGraph.costalkCharacter"
+      ],
+      "review": "Expanded the full outgoing-kernel equations, induced grading and identity with the kernel of the outgoing restriction map. Identified costalkCharacter with this kernel character and retained its freeness input.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.kernel_transport",
+      "file": "docs/knowledge/nodes/kl.sheaves/kernel_transport.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Iso.kernelEquiv",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Iso.kernelEquiv_graded",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelShiftEquiv",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelProdEquiv",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelPiEquiv",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelChar_shift",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelChar_prod",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelChar_pi",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelChar_zero"
+      ],
+      "review": "Rechecked the existing kernel-product, finite-family, shift and sheaf-isomorphism formulas against CharacterReciprocity; the component maps and their grade preservation remain explicit.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.model_sum_characters",
+      "file": "docs/knowledge/nodes/kl.sheaves/model_sum_characters.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.ModelSum.character",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.ModelSum.kernelFree",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.ModelSum.character_both",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.exists_character_decomposition"
+      ],
+      "review": "Rechecked ModelSum.character_both and exists_character_decomposition. The recorded shift update is used in both stalk and full-kernel formulas.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.lower_model_kernels",
+      "file": "docs/knowledge/nodes/kl.sheaves/lower_model_kernels.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerExtend_kernel_iff",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerExtendKernelEquiv",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerExtendKernelEquiv_graded",
+        "OAI.KLInvariance.BruhatGraph.lowerKernelEquiv",
+        "OAI.KLInvariance.BruhatGraph.boundaryModels_character",
+        "OAI.KLInvariance.BruhatGraph.boundaryModels_kernelFree",
+        "OAI.KLInvariance.BruhatGraph.boundaryModels_kernelCharacter",
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter"
+      ],
+      "review": "Rechecked the support split and internal/outside outgoing-edge cases; linked the actual boundary kernel character supplying freeness and reflection.",
+      "pending": []
+    },
+    {
+      "node": "kl.duality.bott_character_decomposition",
+      "file": "docs/knowledge/nodes/kl.sheaves/bott_character_decomposition.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottCharacter_decomposition_both"
+      ],
+      "review": "Rechecked every word/model input to exists_character_decomposition, the simultaneous substitutions and the top multiplicity calculation; added the explicit kernel-character and lower-character prerequisites.",
+      "pending": []
+    },
+    {
+      "node": "kl.notes.character_cancellation",
+      "file": "docs/knowledge/nodes/kl.sheaves/character_cancellation.md",
+      "source_declarations": [
+        "OAI.KLInvariance.finite_character_cancellation"
+      ],
+      "review": "Re-read finite_character_cancellation and its saved proof: finite distributivity, interchange of sums, vanishing of all proper-center defects and top coefficient one suffice over the original commutative ring.",
+      "pending": []
+    },
+    {
+      "node": "kl.comparison.normalized_kernel",
+      "file": "docs/knowledge/nodes/kl.invariance/normalized_kernel.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.normalizedKernel",
+        "OAI.KLInvariance.BruhatGraph.stateScale"
+      ],
+      "review": "Specified the actual Coxeter, sheaf, interval and Hilbert-value inputs of normalizedKernel, and removed canonical scaled KL polynomials as a prerequisite of this numerical definition.",
+      "pending": [
+        "Complete the surrounding edge/schedule/path argument in the I-branch review."
+      ]
+    },
+    {
+      "node": "kl.detail.endpoint_equality",
+      "file": "docs/knowledge/nodes/kl.invariance/endpoint_equality.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.actual_endpoint_of_rTilde_eq"
+      ],
+      "review": "Connected the already stated endpoint substitution to the explicit actual-character endpoint and scaled-reciprocity proofs; restated the matrix-input role directly. The schedule/path-product details remain part of the later I3 review.",
+      "pending": [
+        "Complete the surrounding edge/schedule/path argument in the I-branch review."
+      ]
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -4466,7 +4606,8 @@
         "kl.detail.hilbert_values",
         "kl.sheaves.hilbert_detection",
         "kl.sheaves.hilbert_free",
-        "kl.algebra.hilbert_numerators"
+        "kl.algebra.hilbert_numerators",
+        "kl.algebra.reflected_dual_character"
       ],
       "pending": [],
       "review": "Reviewed piece/term/value and formal-series notation; monomial and homogeneous-free formulas; finite-cover convergence; intrinsic character and its operations; exactness for surjections/images; regular scalar quotient factors; and degreewise defect positivity/equality detection."
@@ -4769,7 +4910,8 @@
         "kl.sheaves.cut_balance",
         "kl.sheaves.pairing_transport",
         "kl.sheaves.supported_stalk_duality",
-        "kl.sheaves.word_adjoint_descent"
+        "kl.sheaves.word_adjoint_descent",
+        "kl.sheaves.word_section_pairing"
       ],
       "pending": [],
       "review": "Reviewed section-duality structures, adjoint identities/degree/support/kernel descent, image-section duality, costalk degree, primitive/top recognition, the specified canonical comparison, and the final symmetric boundary pairing with coefficient transport."
@@ -4777,7 +4919,7 @@
     {
       "code": "S9",
       "title": "Stalk characters and actual-character reciprocity",
-      "status": "in_progress",
+      "status": "exposition_reviewed",
       "completion_evidence": [
         "kl.detail.costalk_reciprocity",
         "kl.duality.stalk_character",
@@ -4785,11 +4927,18 @@
         "kl.sheaves.model_sum_characters",
         "kl.sheaves.lower_model_kernels",
         "kl.duality.bott_character_decomposition",
-        "kl.detail.word_character_reciprocity"
+        "kl.detail.word_character_reciprocity",
+        "kl.duality.word_kernel_character",
+        "kl.duality.boundary_kernel_character",
+        "kl.duality.lower_character_convolution",
+        "kl.duality.actual_character_reciprocity",
+        "kl.duality.scaled_stalk",
+        "kl.duality.scaled_reciprocity",
+        "kl.duality.normalized_character_endpoints",
+        "kl.notes.character_cancellation"
       ],
-      "pending": [
-        "Finish the word-stalk character identification and its word-module inputs; the Hecke bar, support and R-coefficient arguments now have detailed nodes."
-      ]
+      "pending": [],
+      "review": "Reviewed stalk and full outgoing-kernel characters, the homogeneous dual basis and degree bound, word R-convolution via the Laurent unit, simultaneous model decomposition, support-filtered lower-character convolution, strong induction and finite cancellation, scaled reciprocity, and both unconditional normalized endpoints."
     },
     {
       "code": "S10",
@@ -4930,8 +5079,13 @@
     {
       "code": "I1",
       "title": "A single edge comparison",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.comparison.normalized_kernel"
+      ],
+      "pending": [
+        "Complete the edge-image inequality, its freeness assumptions and normalized state transition."
+      ]
     },
     {
       "code": "I2",
@@ -4942,8 +5096,13 @@
     {
       "code": "I3",
       "title": "Endpoint identities",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.detail.endpoint_equality"
+      ],
+      "pending": [
+        "Complete the schedule/path-product derivation and transported matrix calculation; the actual-character endpoint and reciprocity inputs are now detailed."
+      ]
     },
     {
       "code": "I4",
@@ -4973,11 +5132,11 @@
     }
   ],
   "next_steps": [
-    "Expand word-kernel character data and the R-convolution identity, then complete the boundary-character decomposition/cancellation route and remaining character conditions.",
-    "Complete standard-parabolic inclusion and finite-support transport; finish word wall maps, pair kernels, and character recursions.",
-    "Expand adapted-order/chamber changes, dihedral interval transport, and the path-polynomial proof.",
-    "Review the remaining Hecke, localization, and simultaneous-comparison arguments against their local source bodies.",
-    "Complete the full source-to-KB coverage, linking, document, and public-deployment audit."
+    "Expand the remaining local-intersection and character-identification conditions in S10, preserving their exact hypotheses.",
+    "Complete the remaining Coxeter/parabolic, root-space and sheaf-operation exposition.",
+    "Expand adapted orders, chamber changes, dihedral interval transport, schedules and the path-polynomial proof.",
+    "Complete localization, local image comparison, edge inequalities and the simultaneous invariance induction.",
+    "Complete the full source-to-KB coverage, linking, document and public-deployment audit."
   ],
   "topic_migration": {
     "status": "applied",
@@ -5382,7 +5541,15 @@
       "kl.word.stalk_degree_exactness": "W7",
       "kl.word.stalk_hilbert_formula": "W7",
       "kl.word.character_normalization": "W7",
-      "kl.word.character_recursion": "W7"
+      "kl.word.character_recursion": "W7",
+      "kl.algebra.reflected_dual_character": "A6",
+      "kl.sheaves.word_section_pairing": "S8",
+      "kl.duality.word_kernel_character": "S9",
+      "kl.duality.boundary_kernel_character": "S9",
+      "kl.duality.lower_character_convolution": "S9",
+      "kl.duality.scaled_stalk": "S9",
+      "kl.duality.scaled_reciprocity": "S9",
+      "kl.duality.normalized_character_endpoints": "S9"
     },
     "moved_nodes": [
       {
@@ -6216,7 +6383,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 390
+    "current_node_count": 398
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -6239,7 +6406,8 @@
     "Completed the W5 simultaneous word induction with explicit tail maps, local-pair recovery, prime-scalar quotient regularity, both saturation orientations, transformed reflection roots and the non-head kernel step. Proved new stalk freeness by both split sequences, and rewrote the induction assembly including root signs, finite generation and free edge kernels. Added polynomial-coordinate transport of the word sheaf and a worked rank-two stalk for the word (s,s).",
     "Expanded the W6 coordinate-image foundation and full conditional projectivity step: upper reflected sets, the two descended tail maps, patched-tail compatibility, common-kernel coordinate equivalence, stable-set tensor endomorphisms and two-stage split sequences. Added general projective image/kernel splittings and explained projectivity of a scalar twist. Corrected the word-flabbiness assembly to retain its shorter-word lifting hypothesis.",
     "Completed the W6 prime-class and global lifting route: root-line isometries, prime character classes, stable diagonal selectors and finite class-lift assembly, repeated-stalk subexpression presentations, denominator removal and unconditional upper-image induction. Completed S7 with the ambient interval extension, full-section isomorphism, polynomial generation/flabbiness transport and normalized boundary summand.",
-    "Completed W7: separated coefficient variables, the formal character variable and real evaluations; expanded the two head kernel maps and their grading, degreewise exact sequences, Hilbert numerator uniqueness/shift, and character base values. Rewrote the Hecke-word equality as the exact source induction, and linked the source/paper shift conventions. Added the inverse-degree piece isomorphisms to the general component theorem."
+    "Completed W7: separated coefficient variables, the formal character variable and real evaluations; expanded the two head kernel maps and their grading, degreewise exact sequences, Hilbert numerator uniqueness/shift, and character base values. Rewrote the Hecke-word equality as the exact source induction, and linked the source/paper shift conventions. Added the inverse-degree piece isomorphisms to the general component theorem.",
+    "Completed S9: added the homogeneous dual-character reflection, reduced-word section pairing, both actual kernel characters, lower-character convolution, scaled actual character and reciprocity, and unconditional normalized endpoints. Rewrote word R-convolution and actual-character cancellation with explicit hypotheses, degree bounds, finite sums and parameter substitutions."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -6346,6 +6514,15 @@
       ],
       "target": "kl.word.head_kernel_maps",
       "review": "The new definition records both head maps, their scalar types, their kernels and their real graded pieces; scoped head-projection/kernel terms resolve there."
+    },
+    {
+      "term": "scaled actual-stalk character",
+      "topics": [
+        "kl.sheaves",
+        "kl.invariance"
+      ],
+      "target": "kl.duality.scaled_stalk",
+      "review": "Scoped aliases resolve actual-character vectors to scaledStalk. The definition depends on the actual character, and the normalized-kernel definition depends on the Hilbert value; neither requires canonical P."
     }
   ],
   "corrections": [
@@ -6365,15 +6542,20 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-19T11:09:57.825113+00:00",
+    "created_at": "2026-10-19T13:21:27.500790+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 390,
-    "html_pages_checked": 654,
-    "generated_definition_links_checked": 5329,
+    "node_count": 398,
+    "html_pages_checked": 662,
+    "generated_definition_links_checked": 5527,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks the polynomial stalk presentation, both kernel scalar types, degreewise exactness and formal character identities. Documentation checks only."
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks dual-character reflection, actual kernel characters, R-convolution and cancellation, square-parameter reciprocity and unconditional endpoint identities. Documentation checks only.",
+    "focused_page_review": {
+      "entries": 19,
+      "source_anchors": 96,
+      "scope": "Read theorem statements and proof HTML payloads, checked local notation and direct source anchors, inspected the generated actual-character definition destinations and chapter reading-list reachability."
+    }
   },
   "structure_coverage_scan": {
     "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
@@ -6563,6 +6745,28 @@
         "kl.word.pair_lattice_exact_sequences"
       ],
       "review": "The ascent kernel map sends the underlying y to the twisted vector [alpha*y]. Its stalk evaluation is tau(alpha*y). Explicit bracket notation separates this ordinary multiplication from the twisted scalar action a*[y]=[tau(a)*y]."
+    },
+    {
+      "entries": [
+        "kl.algebra.reflected_dual_character",
+        "kl.duality.word_kernel_character",
+        "kl.duality.boundary_kernel_character"
+      ],
+      "review": "A homogeneous dual equivalence first bounds each stalk-basis degree using the nonnegative kernel. That bound identifies Polynomial.reflect with the reciprocal expression and gives the ordinary kernel-character polynomial."
+    },
+    {
+      "entries": [
+        "kl.duality.actual_character_reciprocity",
+        "kl.duality.lower_character_convolution"
+      ],
+      "review": "The same sheaf decomposition supplies both multiplicity families. Smaller-center reciprocity is lifted to the fixed ambient interval, including the zero case outside the center support, before finite cancellation isolates the top."
+    },
+    {
+      "entries": [
+        "kl.duality.scaled_stalk",
+        "kl.duality.normalized_character_endpoints"
+      ],
+      "review": "The scaled vector uses the actual integer boundary character, evaluated at the square parameter. Both endpoint formulas are unconditional TerminalKernels lemmas; upper restriction preserves every outgoing edge condition."
     }
   ],
   "relationship_map_revision": {
@@ -6570,6 +6774,6 @@
     "edge_count": 92,
     "route": "Top splitting and primitive recognition feed the boundary-pairing route; full model decomposition feeds simultaneous character formulas.",
     "evidence": "BoundarySheaf.splitIn_of_top_split, iso_of_primitive_top_split, GradedSheaf.exists_modelSumIso and bottCharacter_decomposition_both.",
-    "latest_anchor_refinement": "Expanded the word-character stage with its polynomial character, both graded kernel equivalences and both recursions. Its stated input is the W4–W5 graded stalk/kernel output; the W6 upper-image lifting route supplies the separate word-sheaf branch. Individual character-definition dependencies no longer include the independently defined Hecke word."
+    "latest_anchor_refinement": "Added the homogeneous dual-character bound, word R-convolution, ambient lower-character lifting, scaled reciprocity and unconditional actual-character endpoint anchors. The 38-stage, 92-edge prerequisite graph is unchanged."
   }
 }

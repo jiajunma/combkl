@@ -14,6 +14,7 @@ uses:
 - kl.duality.stalk_character
 - kl.detail.boundary_pairing
 - kl.detail.costalk_duality
+- kl.duality.boundary_kernel_character
 lean:
   repository: openai-kl
   modules:
@@ -113,7 +114,7 @@ K_x(O_c)\simeq K_x(B(c)).
 
 ### Step 3. Use the boundary costalk duality
 
-The [[node:kl.detail.boundary_pairing|boundary-pairing]] and [[node:kl.detail.costalk_duality|costalk-duality theorems]] make \(K_x(B(c))\) finite free. Its homogeneous basis degrees are
+The [[node:kl.duality.boundary_kernel_character|boundary-kernel character theorem]] makes \(K_x(B(c))\) finite free and computes its homogeneous basis from the stalk dual. Its homogeneous basis degrees are
 \[
 \ell(c)-\ell(x)-d_i,
 \]
