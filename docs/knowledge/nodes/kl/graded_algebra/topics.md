@@ -336,6 +336,8 @@ If \(T\) is homogeneous, each vector of \(T\) is a finite sum of these common co
 For \(S=(X,Y)\subset T=k[X,Y]\), the only missing component is the constant one. The defect value is one. This is the same equality-detection mechanism applied to the two embedded edge images in the invariance argument.
 
 
+For two surjective projections, a common endomorphism may act through different scalars on the two targets. Their difference annihilates the pair-projection quotient: subtracting one scalar multiple of a lift produces a relation vector with zero second projection. The word-module construction uses this calculation to obtain its reflection-root edge labels.
+
 ## Definitions and proofs by construction
 
 ### The realization coefficient algebra
@@ -408,6 +410,7 @@ For \(S=(X,Y)\subset T=k[X,Y]\), the only missing component is the constant one.
 - [[node:kl.algebra.kernel_saturation]]
 - [[node:kl.algebra.scalar_quotient]]
 - [[node:kl.algebra.pair_projection]]
+- [[node:kl.algebra.eigenvalue_difference]]
 - [[node:kl.algebra.scalar_free_presentation]]
 - [[node:kl.algebra.kernel_projectivity]]
 - [[node:kl.algebra.projective_local_membership]]

@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 60047,
-  "theorem_walkthroughs": 208,
+  "revised_proof_words": 62589,
+  "theorem_walkthroughs": 217,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -109,6 +109,17 @@
       "revised_proof_words": 178,
       "proof_sha256": "2e1668fe58f1d4aa7f347090b2e26e416afb230009b834cdef329e431e54e600",
       "review": "Compared homogeneous_basis_repr and dualBasis_homogeneous. Finite coefficient decomposition, component selection, and basis independence establish the negative dual degree."
+    },
+    {
+      "node": "kl.algebra.eigenvalue_difference",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.PairProjection.difference_annihilates"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 133,
+      "proof_sha256": "b11ca47abca98fd48a69a3db7f92c6db71cc4c0a0b6d5f53a91f05f8f45e7511",
+      "review": "Read difference_annihilates and the endpoint-surjectivity/kernel identities it uses. Expanded the actual witness Tn-bn and all quotient signs."
     },
     {
       "node": "kl.algebra.finite_graded_cover",
@@ -1087,15 +1098,17 @@
     {
       "node": "kl.detail.word_evaluation_injective",
       "source_declarations": [
-        "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_expand",
+        "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix_cons",
+        "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix_mulVec_cons",
         "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix_injective",
         "OAI.KLInvariance.TitsSpace.bottEvaluation_injective"
       ],
-      "proof_steps": 4,
+      "proof_steps": 5,
       "previous_proof_words": 0,
-      "revised_proof_words": 268,
-      "proof_sha256": "74d3927267b22f3b89913fb0a35b495ae1d6e82544966d1152e1511a1961a76f",
-      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness.",
+      "revised_proof_words": 329,
+      "proof_sha256": "27eec50b8945b7c73aefd2542d9bdf2396ef67f39f374d3d073217b0107c65f2",
+      "review": "Rewrote the theorem with its actual finite-generator realization context and explicit basis/matrix composition. Matched the empty-word and cons proofs and linked the independent generic block-injectivity theorem.",
       "format_correction": "2026-10-18: restored missing backslashes in qquad spacing commands; mathematical assertions unchanged."
     },
     {
@@ -2690,6 +2703,76 @@
       "review": "Compared bott_projection_zero_iff_annihilates_support, bottAdjoint_preserves_kernel, bottEndOfSheaf_preserves_support, bottAdjointSheaf, and bottEndOfAdjointSheaf. The proof follows integral annihilators and quotient descent."
     },
     {
+      "node": "kl.word.edge_annihilation",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.reflectionCoefficient_anti",
+        "OAI.KLInvariance.TitsSpace.reflectionCoefficient_difference",
+        "OAI.KLInvariance.TitsSpace.simpleCoefficient_difference",
+        "OAI.KLInvariance.TitsSpace.bottSimpleEdge_annihilated",
+        "OAI.KLInvariance.TitsSpace.bottSimpleEdge_kernel_inclusion",
+        "OAI.KLInvariance.TitsSpace.bottReflectionEdge_annihilated"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 186,
+      "proof_sha256": "7efcb918c10d5b8512bee80abe21f18d723fe8fad2086a935d0a25e563101b27",
+      "review": "Read the root-character difference and its application to arbitrary reflection-edge quotients, including the simple-edge kernel inclusion. Preserved the arbitrary word and absence of an ascent assumption."
+    },
+    {
+      "node": "kl.word.evaluation_grading",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_basis_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_component",
+        "OAI.KLInvariance.TitsSpace.bottCoordinatePiece",
+        "OAI.KLInvariance.TitsSpace.bottWeightProjection_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottStalk_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottStalkPiece",
+        "OAI.KLInvariance.TitsSpace.bottStalkProjection_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottStalk_homogeneous_lift"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 339,
+      "proof_sha256": "38be9e00b43c6f03dcc325afd2e5fc148c834f93178e2ca8e56627ace8f7fc6b",
+      "review": "Read basis-entry induction, homogeneous evaluation, component commutation and image grading/lift proofs. Defined the stalk pieces coordinatewise and retained the basis-dependent source grading."
+    },
+    {
+      "node": "kl.word.evaluation_right_action",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.coefficientAction_one",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_right",
+        "OAI.KLInvariance.TitsSpace.bottStalkProjection_right"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 284,
+      "proof_sha256": "f09ee511c04ba7b0871bb5cc933f95698af7ee955e6b6ed8b764715f6e0b8dba",
+      "review": "Followed the word induction and both first-bit cases of bottEvaluation_right, then the coordinatewise stalk proof. Preserved the left multiplication s*w and the right coefficient action."
+    },
+    {
+      "node": "kl.word.head_pair_equivalence",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottHeadPairCoordinates_injective",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairCoordinates_seed",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairToStalk",
+        "OAI.KLInvariance.TitsSpace.bottHeadPair_range",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairToStalk_surjective",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairEquiv",
+        "OAI.KLInvariance.TitsSpace.bottHeadLeft",
+        "OAI.KLInvariance.TitsSpace.bottHeadRight",
+        "OAI.KLInvariance.TitsSpace.bottHeadLeft_surjective",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairEquiv_coordinates",
+        "OAI.KLInvariance.TitsSpace.bottHeadLeft_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottHeadRight_homogeneous"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 387,
+      "proof_sha256": "f0ef8a2af05adb8ef8a82e4b0dbefdbb3e273b3652997f13534204ca96c94857",
+      "review": "Read the seed/range proof of headPairEquiv, coordinate recovery and both head projection definitions. Retained the real-linear type and tau-semilinearity of the right projection, then checked both homogeneous coordinate arguments."
+    },
+    {
       "node": "kl.word.induced_bimodule",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2718,6 +2801,28 @@
       "revised_proof_words": 228,
       "proof_sha256": "98c589368fdc2b91af9618f7b63a4282d3952dadcb9dab80fc8a524378873c1c",
       "review": "Read inducedBasis, its pure-tensor formula, basis pairing and homogeneous degree statement. Preserved the generic basis-degree hypothesis and separated it from a pre-existing grading on N."
+    },
+    {
+      "node": "kl.word.pair_lattice_exact_sequences",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionPairTranslation.left_surjective",
+        "OAI.KLInvariance.ReflectionPairTranslation.kernelMap",
+        "OAI.KLInvariance.ReflectionPairTranslation.kernelMap_surjective",
+        "OAI.KLInvariance.ReflectionPairTranslation.kernelMap_injective",
+        "OAI.KLInvariance.ReflectionPairTranslation.kernelEquiv",
+        "OAI.KLInvariance.ReflectionPairTranslation.free_of_surjective_of_ker_free",
+        "OAI.KLInvariance.ReflectionPairTranslation.lattice_free",
+        "OAI.KLInvariance.ReflectionPairTranslation.right",
+        "OAI.KLInvariance.ReflectionPairTranslation.right_surjective",
+        "OAI.KLInvariance.ReflectionPairTranslation.rightKernelMap",
+        "OAI.KLInvariance.ReflectionPairTranslation.rightKernelEquiv",
+        "OAI.KLInvariance.ReflectionPairTranslation.lattice_free_right"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 404,
+      "proof_sha256": "883b169010f9da74ea1fae44e1822be2abbbab107e901bbe94251513440ef92f",
+      "review": "Read left/right kernel maps and equivalences in Frobenius and BottSamelson. Preserved the separate kernel equality and regular-scalar hypotheses for each orientation, and expanded the source splitting isomorphism."
     },
     {
       "node": "kl.word.pairing_degree",
@@ -2805,6 +2910,24 @@
       "review": "Compared the determinant, adjugate construction, coordinate lifts, and expansion in Frobenius. Explained why matrix injectivity implies nonzero determinant and verified the one-letter calculation."
     },
     {
+      "node": "kl.word.simple_wall_kernel",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottSimpleFlip_divisible",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_flip",
+        "OAI.KLInvariance.TitsSpace.bottStalkProjection_flip_zero",
+        "OAI.KLInvariance.TitsSpace.bottSimpleWall_kernel_projection",
+        "OAI.KLInvariance.TitsSpace.bottSimpleWall_annihilated",
+        "OAI.KLInvariance.TitsSpace.bottSimpleWall_upper_kernel",
+        "OAI.KLInvariance.PairProjection.kernel_upper",
+        "OAI.KLInvariance.PairProjection.upper_kernel_of_divisibility"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 267,
+      "proof_sha256": "a6622d85e6da18da358b3008e53e76eed32ce8ba55896a7268423478c279a368",
+      "review": "Read tensor difference divisibility, both evaluation-flip cases, projection vanishing and the generic upper-kernel criterion. Kept the first-letter hypothesis and proved each kernel containment with its distinct input."
+    },
+    {
       "node": "kl.word.support_duality",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2884,6 +3007,36 @@
       "revised_proof_words": 145,
       "proof_sha256": "f5a7e372eb41115d641a6559757d0dc23f934021247646197f2965635dafdb12",
       "review": "Read lattice_saturated and PairProjection.compatible_iff. Expanded the twisted scalar equation, annihilation of the scalar difference, cancellation on the quotient and reconstruction of a common preimage."
+    },
+    {
+      "node": "kl.word.wall_injectivity",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionFrobenius.matrixTwist_injective",
+        "OAI.KLInvariance.ReflectionFrobenius.wallCoordinate_injective"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 170,
+      "proof_sha256": "2a72dc34f0738ec7d6b257f6a07f4ba525a5f6fddf7336b908e305f3d376df26",
+      "review": "Read matrixTwist_injective and wallCoordinate_injective. Kept the generic automorphism hypothesis, isolated the weaker first step, and stated the exact characteristic-zero/domain conditions for cancellation."
+    },
+    {
+      "node": "kl.word.weight_support",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottSubword",
+        "OAI.KLInvariance.TitsSpace.bottSubword_sublist",
+        "OAI.KLInvariance.TitsSpace.bottSubword_wordProd",
+        "OAI.KLInvariance.TitsSpace.exists_bottSubword",
+        "OAI.KLInvariance.TitsSpace.bottWeight_bruhat",
+        "OAI.KLInvariance.TitsSpace.exists_bottWeight",
+        "OAI.KLInvariance.TitsSpace.bottWeight_range",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_unit"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 311,
+      "proof_sha256": "bef51e6a4af29f0fe53cbd074d4d07e19932a1348e13b75ae8971ae429ef767d",
+      "review": "Read the sublist/bit-string recursion and both range inclusions. Kept arbitrary generator sets for the combinatorial statement and the finite-generator coefficient context for the derived stalk-support statement."
     }
   ]
 }

@@ -90,6 +90,7 @@
       "kl.algebra.coefficient_duals",
       "kl.algebra.component_transport",
       "kl.algebra.dual_basis_degrees",
+      "kl.algebra.eigenvalue_difference",
       "kl.algebra.finite_graded_cover",
       "kl.algebra.grading_components",
       "kl.algebra.hilbert_convergence",
@@ -333,24 +334,37 @@
       "kl.notes.reflection_frobenius",
       "kl.notes.tensor_pairing",
       "kl.notes.word_stalks",
+      "kl.word.edge_annihilation",
+      "kl.word.evaluation_grading",
+      "kl.word.evaluation_maps",
+      "kl.word.evaluation_right_action",
       "kl.word.frobenius_data",
+      "kl.word.head_pair_coordinates",
+      "kl.word.head_pair_equivalence",
       "kl.word.induced_bimodule",
       "kl.word.induced_pairing_degree",
       "kl.word.invariant_subalgebra",
+      "kl.word.kernel_exactness",
+      "kl.word.pair_lattice_exact_sequences",
       "kl.word.pairing_degree",
       "kl.word.reflection_algebra_action",
       "kl.word.reflection_coordinates",
       "kl.word.reflection_trace",
       "kl.word.reflection_trace_degree",
       "kl.word.scaled_coordinate_lifts",
+      "kl.word.simple_flip",
       "kl.word.simple_frobenius_data",
+      "kl.word.simple_wall_kernel",
       "kl.word.support_duality",
       "kl.word.tensor_dual_base_change",
       "kl.word.tensor_induction",
       "kl.word.top_stalk",
       "kl.word.trace_restriction_duality",
       "kl.word.twisted_lattice_saturation",
-      "kl.word.twisted_pair_lattice"
+      "kl.word.twisted_pair_lattice",
+      "kl.word.wall_coordinates",
+      "kl.word.wall_injectivity",
+      "kl.word.weight_support"
     ]
   },
   "module_imports": {
@@ -661,6 +675,14 @@
       "lean_declarations": [
         "OAI.KLInvariance.Graded.homogeneous_basis_repr",
         "OAI.KLInvariance.Graded.dualBasis_homogeneous"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.algebra.eigenvalue_difference",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.PairProjection.difference_annihilates"
       ],
       "paper_locations": []
     },
@@ -2149,7 +2171,9 @@
       "id": "kl.detail.word_evaluation_injective",
       "chapter": "kl.word_modules",
       "lean_declarations": [
-        "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_expand",
+        "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix_cons",
+        "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix_mulVec_cons",
         "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix_injective",
         "OAI.KLInvariance.TitsSpace.bottEvaluation_injective"
       ],
@@ -3247,7 +3271,9 @@
         "OAI.KLInvariance.TitsSpace.bottStalkProjection_surjective",
         "OAI.KLInvariance.TitsSpace.bottWeightSupported",
         "OAI.KLInvariance.TitsSpace.bottCoordinateDenominator",
-        "OAI.KLInvariance.TitsSpace.bottCoordinateLift"
+        "OAI.KLInvariance.TitsSpace.bottCoordinateLift",
+        "OAI.KLInvariance.TitsSpace.bottCoordinatePiece",
+        "OAI.KLInvariance.TitsSpace.bottStalkPiece"
       ],
       "paper_locations": []
     },
@@ -4167,11 +4193,96 @@
       "paper_locations": []
     },
     {
+      "id": "kl.word.edge_annihilation",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.reflectionCoefficient_anti",
+        "OAI.KLInvariance.TitsSpace.reflectionCoefficient_difference",
+        "OAI.KLInvariance.TitsSpace.simpleCoefficient_difference",
+        "OAI.KLInvariance.TitsSpace.bottSimpleEdge_annihilated",
+        "OAI.KLInvariance.TitsSpace.bottSimpleEdge_kernel_inclusion",
+        "OAI.KLInvariance.TitsSpace.bottReflectionEdge_annihilated"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.evaluation_grading",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_basis_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_component",
+        "OAI.KLInvariance.TitsSpace.bottCoordinatePiece",
+        "OAI.KLInvariance.TitsSpace.bottWeightProjection_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottStalk_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottStalkPiece",
+        "OAI.KLInvariance.TitsSpace.bottStalkProjection_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottStalk_homogeneous_lift"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.evaluation_maps",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottWeight",
+        "OAI.KLInvariance.TitsSpace.weightFunctional",
+        "OAI.KLInvariance.TitsSpace.inducedFunctional",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_tmul",
+        "OAI.KLInvariance.TitsSpace.bottUnit",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_unit",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_surjective"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.evaluation_right_action",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.coefficientAction_one",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_right",
+        "OAI.KLInvariance.TitsSpace.bottStalkProjection_right"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.word.frobenius_data",
       "chapter": "kl.word_modules",
       "lean_declarations": [
         "OAI.KLInvariance.FrobeniusDuality.restrictPairing",
         "OAI.KLInvariance.FrobeniusDuality.inducedModule"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.head_pair_coordinates",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottWeight_tail_zero",
+        "OAI.KLInvariance.TitsSpace.bottWeight_tail_one",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairCoordinates",
+        "OAI.KLInvariance.TitsSpace.simpleReverseDivisibility",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairLattice"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.head_pair_equivalence",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottHeadPairCoordinates_injective",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairCoordinates_seed",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairToStalk",
+        "OAI.KLInvariance.TitsSpace.bottHeadPair_range",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairToStalk_surjective",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairEquiv",
+        "OAI.KLInvariance.TitsSpace.bottHeadLeft",
+        "OAI.KLInvariance.TitsSpace.bottHeadRight",
+        "OAI.KLInvariance.TitsSpace.bottHeadLeft_surjective",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairEquiv_coordinates",
+        "OAI.KLInvariance.TitsSpace.bottHeadLeft_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottHeadRight_homogeneous"
       ],
       "paper_locations": []
     },
@@ -4208,6 +4319,37 @@
         "OAI.KLInvariance.ReflectionFrobenius.fixed_val",
         "OAI.KLInvariance.ReflectionFrobenius.expand",
         "OAI.KLInvariance.ReflectionFrobenius.expand_apply"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.kernel_exactness",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.BottKernelExact",
+        "OAI.KLInvariance.TitsSpace.BottKernelExact.upper_kernel",
+        "OAI.KLInvariance.TitsSpace.BottKernelExact.kernel_iff",
+        "OAI.KLInvariance.TitsSpace.BottKernelExact.kernel_iff_of_mul",
+        "OAI.KLInvariance.TitsSpace.BottKernelExact.projection_of_mul"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.pair_lattice_exact_sequences",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.ReflectionPairTranslation.left_surjective",
+        "OAI.KLInvariance.ReflectionPairTranslation.kernelMap",
+        "OAI.KLInvariance.ReflectionPairTranslation.kernelMap_surjective",
+        "OAI.KLInvariance.ReflectionPairTranslation.kernelMap_injective",
+        "OAI.KLInvariance.ReflectionPairTranslation.kernelEquiv",
+        "OAI.KLInvariance.ReflectionPairTranslation.free_of_surjective_of_ker_free",
+        "OAI.KLInvariance.ReflectionPairTranslation.lattice_free",
+        "OAI.KLInvariance.ReflectionPairTranslation.right",
+        "OAI.KLInvariance.ReflectionPairTranslation.right_surjective",
+        "OAI.KLInvariance.ReflectionPairTranslation.rightKernelMap",
+        "OAI.KLInvariance.ReflectionPairTranslation.rightKernelEquiv",
+        "OAI.KLInvariance.ReflectionPairTranslation.lattice_free_right"
       ],
       "paper_locations": []
     },
@@ -4293,6 +4435,18 @@
       "paper_locations": []
     },
     {
+      "id": "kl.word.simple_flip",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.simpleFixedAction",
+        "OAI.KLInvariance.TitsSpace.bottSimpleFlip",
+        "OAI.KLInvariance.TitsSpace.bottSimpleFlip_tmul",
+        "OAI.KLInvariance.TitsSpace.bottIndexFlip",
+        "OAI.KLInvariance.TitsSpace.bottWeight_flip"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.word.simple_frobenius_data",
       "chapter": "kl.word_modules",
       "lean_declarations": [
@@ -4309,6 +4463,21 @@
         "OAI.KLInvariance.TitsSpace.simpleDuality_apply",
         "OAI.KLInvariance.TitsSpace.simpleRoot_homogeneous",
         "OAI.KLInvariance.TitsSpace.coefficientAction_homogeneous"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.simple_wall_kernel",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottSimpleFlip_divisible",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_flip",
+        "OAI.KLInvariance.TitsSpace.bottStalkProjection_flip_zero",
+        "OAI.KLInvariance.TitsSpace.bottSimpleWall_kernel_projection",
+        "OAI.KLInvariance.TitsSpace.bottSimpleWall_annihilated",
+        "OAI.KLInvariance.TitsSpace.bottSimpleWall_upper_kernel",
+        "OAI.KLInvariance.PairProjection.kernel_upper",
+        "OAI.KLInvariance.PairProjection.upper_kernel_of_divisibility"
       ],
       "paper_locations": []
     },
@@ -4395,6 +4564,44 @@
         "OAI.KLInvariance.ReflectionPairTranslation.lattice",
         "OAI.KLInvariance.ReflectionPairTranslation.left",
         "OAI.KLInvariance.ReflectionPairTranslation.left_surjective"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.wall_coordinates",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.ReflectionFrobenius.wallCoordinate",
+        "OAI.KLInvariance.ReflectionFrobenius.wallMatrix",
+        "OAI.KLInvariance.ReflectionFrobenius.wallMatrix_mulVec",
+        "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_expand",
+        "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix_cons",
+        "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix_mulVec_cons"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.wall_injectivity",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.ReflectionFrobenius.matrixTwist_injective",
+        "OAI.KLInvariance.ReflectionFrobenius.wallCoordinate_injective"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.weight_support",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottSubword",
+        "OAI.KLInvariance.TitsSpace.bottSubword_sublist",
+        "OAI.KLInvariance.TitsSpace.bottSubword_wordProd",
+        "OAI.KLInvariance.TitsSpace.exists_bottSubword",
+        "OAI.KLInvariance.TitsSpace.bottWeight_bruhat",
+        "OAI.KLInvariance.TitsSpace.exists_bottWeight",
+        "OAI.KLInvariance.TitsSpace.bottWeight_range",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_unit"
       ],
       "paper_locations": []
     }

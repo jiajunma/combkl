@@ -9,6 +9,8 @@ topics:
 uses:
 - kl.notes.word_stalks
 - kl.coxeter.word_data
+- kl.word.evaluation_maps
+- kl.word.evaluation_grading
 lean:
   repository: openai-kl
   modules:

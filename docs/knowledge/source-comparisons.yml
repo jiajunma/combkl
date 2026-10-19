@@ -558,3 +558,26 @@ comparisons:
     basis calculation. The boundary-pairing construction subsequently transports this
     pairing to a boundary summand. The source uses roots of degree one throughout
     this tensor calculation.
+- id: word-coordinate-kernels
+  kind: Word-image construction before the boundary sheaf
+  nodes:
+  - kl.word.edge_annihilation
+  - kl.word.simple_wall_kernel
+  - kl.word.head_pair_equivalence
+  paper_labels:
+  - bg:bmp
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.bottStalk
+  - OAI.KLInvariance.TitsSpace.bottSimpleWall_upper_kernel
+  - OAI.KLInvariance.TitsSpace.bottHeadPairEquiv
+  - OAI.KLInvariance.TitsSpace.BottKernelExact
+  paper: The moment-graph sheaf theorem states the quotient description of an edge
+    module and freeness for the normalized indecomposable boundary sheaf, through
+    the cited moment-graph and Soergel constructions.
+  lean: The tensor word first supplies explicit subexpression evaluations and image
+    stalks. Right coefficient characters give label annihilation; a first-factor reflection
+    proves the exact kernel across the initial simple reflection. Reflected pair lattices
+    then describe stalks after prepending a letter.
+  consequence: These are constructions on the word module. The subsequent simultaneous
+    induction proves stalk freeness and exact kernels for all reflection edges, providing
+    the word-sheaf input to the later boundary-summand construction.

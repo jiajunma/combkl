@@ -12,6 +12,7 @@ uses:
 - kl.notes.tensor_pairing
 - kl.realization.faithful_actions
 - kl.algebra.coefficient_algebra
+- kl.word.evaluation_right_action
 lean:
   repository: openai-kl
   modules:

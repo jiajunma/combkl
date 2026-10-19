@@ -9,9 +9,11 @@ topics:
 uses:
 - kl.notes.bott_samelson
 - kl.algebra.coefficient_algebra
+- kl.word.evaluation_maps
 lean:
   repository: openai-kl
   modules:
+  - BottSamelson
   - Frobenius
   declarations:
   - OAI.KLInvariance.TitsSpace.bottWeightProjection
@@ -21,6 +23,8 @@ lean:
   - OAI.KLInvariance.TitsSpace.bottWeightSupported
   - OAI.KLInvariance.TitsSpace.bottCoordinateDenominator
   - OAI.KLInvariance.TitsSpace.bottCoordinateLift
+  - OAI.KLInvariance.TitsSpace.bottCoordinatePiece
+  - OAI.KLInvariance.TitsSpace.bottStalkPiece
 source:
   spans:
   - artifact: openai-kl-source
@@ -51,6 +55,14 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.Frobenius:1448
     format: lean-location
     note: OAI.KLInvariance.TitsSpace.bottCoordinateLift
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.BottSamelson:421
+    format: lean-location
+    note: OAI.KLInvariance.TitsSpace.bottCoordinatePiece
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.BottSamelson:449
+    format: lean-location
+    note: OAI.KLInvariance.TitsSpace.bottStalkPiece
 verification:
   definition: accepted
   proof: not_applicable
@@ -126,6 +138,18 @@ belong to \(A\) and reconstruct the pair. Hence full evaluation identifies this 
 
 Each individual weight stalk is \(A\), because diagonal pairs attain every coordinate. Supported elements are the pairs \((\alpha h,0)\) and \((0,\alpha h)\). This is the word-module source of the one-edge sheaf example.
 
+## Homogeneous stalk coordinates
+
+Choose a basis of the extended realization and give \(A\) its polynomial degree grading. The ambient coordinate module has degree-\(n\) piece
+\[
+(A^{J_x})_n=\{z:z_\eta\in A_n\text{ for every }\eta\in J_x\}.
+\]
+The image stalk has the restricted pieces
+\[
+(M_{\mathbf s}^x)_n=M_{\mathbf s}^x\cap(A^{J_x})_n.
+\]
+These are the source's bottCoordinatePiece and bottStalkPiece. The [[node:kl.word.evaluation_grading|homogeneous-evaluation theorem]] proves that the image is closed under homogeneous components, that these pieces form a grading, and that each homogeneous stalk vector has a word lift of the same degree.
+
 ## Scaled coordinate data
 
 In the standard word basis, full evaluation has a square matrix \(E\). Its determinant
@@ -159,3 +183,7 @@ The local source declarations below give the constructions and proofs.
 `OAI.KLInvariance.TitsSpace.bottCoordinateDenominator`: [Frobenius.lean:1317](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L1317).
 
 `OAI.KLInvariance.TitsSpace.bottCoordinateLift`: [Frobenius.lean:1448](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L1448).
+
+`OAI.KLInvariance.TitsSpace.bottCoordinatePiece`: [BottSamelson.lean:421](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L421).
+
+`OAI.KLInvariance.TitsSpace.bottStalkPiece`: [BottSamelson.lean:449](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean#L449).

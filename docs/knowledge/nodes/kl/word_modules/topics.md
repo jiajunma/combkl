@@ -85,6 +85,25 @@ Conversely, the image consists exactly of pairs satisfying \(f-g\in\alpha A\). G
 
 For a longer word, evaluation has one coordinate for every subexpression. The full-evaluation theorem proves injectivity by repeating the two-block argument. Grouping coordinates of equal group weight defines the stalk images.
 
+## Recursive evaluations and their homogeneous images
+
+For a longer word, write \(E_\eta\) for a tail evaluation and \(\tau=\chi_s\) for the prepended reflection. The two new evaluations are
+\[
+E_{(0,\eta)}(a\otimes m)=aE_\eta(m),\qquad
+E_{(1,\eta)}(a\otimes m)=a\tau(E_\eta(m)).
+\]
+The outer coefficient stays in place. Reflection of the tail evaluation is linear over \(A^s\), because \(\tau\) fixes this subalgebra; that is what makes the second formula respect the tensor relation.
+
+Rows of the evaluation matrix record subexpressions, and columns record basis vectors. Prepending \(s\) changes a tail matrix \(E\) into
+\[
+\begin{pmatrix}E&\alpha_sE\\ \tau(E)&-\alpha_s\tau(E)\end{pmatrix}.
+\]
+Applying the inverse automorphism to a matrix equation proves that \(\tau(E)\) is injective whenever \(E\) is. The two block equations then recover \(v_0+\alpha_s v_1\) and \(v_0-\alpha_s v_1\); cancellation of \(2\alpha_s\) recovers \(v_1\), followed by \(v_0\). Starting with the matrix \((1)\) proves full word-evaluation injectivity.
+
+A column indexed by a basis vector of degree \(d\) has entries in \(A_d\). This follows from the same blocks: \(\tau\) preserves degree, and multiplication by \(\alpha_s\) adds one. Consequently evaluations preserve degree. Given any lift of a homogeneous stalk vector, taking its component of the required degree gives a homogeneous lift.
+
+For a reduced word with product \(b\), the [[node:kl.foundations.subword|reduced-subword criterion]] identifies its weights with the whole interval \([1,b]\). A weight outside this interval has no coordinates and has zero stalk. Every weight inside it occurs, and the unit tensor has a coordinate equal to \(1\), so its stalk is nonzero.
+
 ## The pairing shift and the normalized top
 
 At each tensor step, the reflection trace satisfies
@@ -126,6 +145,24 @@ The scaled expansion then proves that a vector supported at \(x\) annihilates th
 
 This description is the input to adjoint descent in the sheaf topic. A sheaf endomorphism preserves supported coordinates. Symmetry of the word pairing then makes its adjoint preserve every stalk-projection kernel, allowing the adjoint to descend to the stalks and pair-projection edge quotients.
 
+## Reflection labels and the first-factor map
+
+For two word stalk projections \(f:M\to X\), \(g:M\to Y\), the edge module is the quotient \(Q=(X\oplus Y)/\operatorname{im}(f,g)\). If an endomorphism \(T\) acts through scalars \(a,b\) on the two projections, then \(a-b\) kills \(Q\). For a lift \(n\) of \(x\in X\), the vector \(Tn-bn\) has projections \(((a-b)x,0)\), whose quotient class is zero.
+
+For weights \(x,tx\) and reflection-root label \(\beta\), take right multiplication by \(p=\chi_x^{-1}(\beta/2)\). Its two scalars are \(\beta/2\) and \(-\beta/2\). Thus \(\beta Q=0\), which also provides a common lift of every pair \((0,\beta y)\).
+
+When the word begins with the simple reflection \(s\), its first-factor reflection is
+\[
+F_s(a\otimes m)=\tau(a)\otimes m.
+\]
+It is semilinear over \(A\) and linear over \(A^s\). The relation \(a-\tau(a)\in\alpha_sA\) gives \(v-F_s(v)\in\alpha_sM_{s\mathbf t}\). Exchanging the first subexpression bit changes weight \(x\) to \(sx\), and
+\[
+E_e(F_s(v))=\tau(E_{\sigma(e)}(v)).
+\]
+Thus \(\pi_x(v)=0\) implies \(\pi_{sx}(F_s(v))=0\). Projecting the divisible difference gives
+\(\pi_{sx}(v)\in\alpha_sM_{s\mathbf t}^{sx}\).
+Together with label annihilation, this proves that the upper edge-map kernel is exactly \(\alpha_sM_{s\mathbf t}^{sx}\).
+
 ## Twisted coordinates in a two-stalk lattice
 
 A reflection translation compares two stalk projections \(f:N\to X\), \(g:N\to Y\). Its second coordinate carries the twisted action \(r\star y=\tau(r)y\), so the pair action is
@@ -137,6 +174,18 @@ The underlying compatible pairs are those with one common preimage in \(N\).
 The source supplies two conditions: \(\alpha\mid\tau(r)-r\) for every scalar \(r\), and every pair \((0,\alpha y)\) has a common preimage. If \(n\) represents \((x,y)\), choose \(c\) with \(\tau(r)-r=\alpha c\), and a lift \(m\) of \((0,\alpha cy)\). Then \(rn+m\) represents \((rx,\tau(r)y)\). This proves closure under the twisted action.
 
 In the pair-projection quotient \(Q\), the two coordinates are compared by \(\ell(x)=u(y)\). If \(\alpha Q=0\), the actions of \(\tau(\beta)\) and \(\beta\) agree on \(Q\). When \(\beta\) acts injectively there, compatibility of the multiplied pair implies compatibility of the original pair. This is the saturation step for the twisted lattice.
+
+## The head pair and the two projection sequences
+
+Take \(X=M_{\mathbf t}^x\), \(Y=M_{\mathbf t}^{sx}\) in the twisted pair lattice. The new \(x\)-weight block consists of tail coordinates at \(x\) on its zero-bit branch and at \(sx\) on its one-bit branch. Its coordinate map is
+\[
+(p,q)\longmapsto(p,\tau(q)).
+\]
+The second scalar action is twisted, so this map is \(A\)-linear: applying \(\tau\) to \(\tau(a)q\) gives \(a\tau(q)\). Both coordinate blocks can be recovered, proving injectivity. A pair represented by \(n\) gives the evaluation of \(1\otimes n\); scalar closure and finite sums then give every new stalk vector. This identifies the head pair lattice with \(M_{s\mathbf t}^x\).
+
+Exact reflection kernels for the tail specify which projection sequence applies. For an ascent \(x<sx\), the sequence has quotient \(M_{\mathbf t}^x\) and kernel the root multiple of the twisted stalk at \(sx\). For a descent, the roles of the two projections exchange. The root acts injectively on each stalk because it is an image submodule inside a product of copies of the coefficient domain.
+
+When the two tail stalks are free, choose lifts of a basis of the quotient to split the sequence. This writes the new stalk as a direct sum of its kernel and quotient, proving freeness. The simultaneous word induction establishes both this freeness and exact reflection kernels; its non-head reflection step uses saturation of the pair lattice.
 
 ## The word character formula from a short exact sequence
 
@@ -188,17 +237,30 @@ For the single letter \(s\), the positive Hecke word is \(1+T_s\), and both stal
 
 ### Evaluation coordinates and stalk images
 
-- [[node:kl.notes.word_stalks]]
+- [[node:kl.word.evaluation_maps]]
+- [[node:kl.word.evaluation_right_action]]
+- [[node:kl.word.wall_coordinates]]
+- [[node:kl.word.wall_injectivity]]
 - [[node:kl.detail.word_evaluation_injective]]
+- [[node:kl.notes.word_stalks]]
+- [[node:kl.word.evaluation_grading]]
+- [[node:kl.word.weight_support]]
 - [[node:kl.word.scaled_coordinate_lifts]]
 - [[node:kl.word.support_duality]]
 - [[node:kl.word.top_stalk]]
 
 ### Two-stalk lattices and their kernels
 
-- [[node:kl.detail.word_standard_stalks]]
+- [[node:kl.word.edge_annihilation]]
+- [[node:kl.word.simple_flip]]
+- [[node:kl.word.simple_wall_kernel]]
 - [[node:kl.word.twisted_pair_lattice]]
+- [[node:kl.word.head_pair_coordinates]]
+- [[node:kl.word.head_pair_equivalence]]
+- [[node:kl.word.pair_lattice_exact_sequences]]
+- [[node:kl.word.kernel_exactness]]
 - [[node:kl.word.twisted_lattice_saturation]]
+- [[node:kl.detail.word_standard_stalks]]
 
 ### Word characters
 

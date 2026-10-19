@@ -8,6 +8,7 @@ topics:
 - kl.graded_algebra
 uses:
 - kl.algebra.scalar_quotient
+- kl.algebra.root_label_primes
 lean:
   repository: openai-kl
   modules:

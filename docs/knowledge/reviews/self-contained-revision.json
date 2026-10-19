@@ -694,21 +694,6 @@
       "pending": []
     },
     {
-      "node": "kl.notes.word_stalks",
-      "file": "docs/knowledge/nodes/kl.word_modules/word_stalks.md",
-      "source_declarations": [
-        "OAI.KLInvariance.TitsSpace.bottWeightProjection",
-        "OAI.KLInvariance.TitsSpace.bottStalk",
-        "OAI.KLInvariance.TitsSpace.bottStalkProjection",
-        "OAI.KLInvariance.TitsSpace.bottStalkProjection_surjective",
-        "OAI.KLInvariance.TitsSpace.bottWeightSupported",
-        "OAI.KLInvariance.TitsSpace.bottCoordinateDenominator",
-        "OAI.KLInvariance.TitsSpace.bottCoordinateLift"
-      ],
-      "review": "Read the local construction and its maps; expanded the defining data, quotient signs, matrix conventions, and worked examples.",
-      "pending": []
-    },
-    {
       "node": "kl.sheaves.adjoint_properties",
       "file": "docs/knowledge/nodes/kl.sheaves/adjoint_properties.md",
       "source_declarations": [
@@ -3297,6 +3282,239 @@
       ],
       "review": "Read inducedBasis, its pure-tensor formula, basis pairing and homogeneous degree statement. Preserved the generic basis-degree hypothesis and separated it from a pre-existing grading on N.",
       "pending": []
+    },
+    {
+      "node": "kl.word.evaluation_maps",
+      "file": "docs/knowledge/nodes/kl.word_modules/evaluation_maps.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottWeight",
+        "OAI.KLInvariance.TitsSpace.weightFunctional",
+        "OAI.KLInvariance.TitsSpace.inducedFunctional",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_tmul",
+        "OAI.KLInvariance.TitsSpace.bottUnit",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_unit",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_surjective"
+      ],
+      "review": "Read the two functional constructors, recursive evaluations and unit tensor. Explained scalar balance over the actual fixed algebra, the untouched outer coefficient and the distinction between one evaluation and their joint map.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.evaluation_right_action",
+      "file": "docs/knowledge/nodes/kl.word_modules/evaluation_right_action.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.coefficientAction_one",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_right",
+        "OAI.KLInvariance.TitsSpace.bottStalkProjection_right"
+      ],
+      "review": "Followed the word induction and both first-bit cases of bottEvaluation_right, then the coordinatewise stalk proof. Preserved the left multiplication s*w and the right coefficient action.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.wall_coordinates",
+      "file": "docs/knowledge/nodes/kl.word_modules/wall_coordinates.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionFrobenius.wallCoordinate",
+        "OAI.KLInvariance.ReflectionFrobenius.wallMatrix",
+        "OAI.KLInvariance.ReflectionFrobenius.wallMatrix_mulVec",
+        "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_expand",
+        "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix_cons",
+        "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix_mulVec_cons"
+      ],
+      "review": "Read generic wallCoordinate/wallMatrix and all four cases of bottEvaluationMatrix_cons. Made row/column roles and entrywise automorphism explicit, retaining the generic map before specializing to a simple reflection.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.wall_injectivity",
+      "file": "docs/knowledge/nodes/kl.word_modules/wall_injectivity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionFrobenius.matrixTwist_injective",
+        "OAI.KLInvariance.ReflectionFrobenius.wallCoordinate_injective"
+      ],
+      "review": "Read matrixTwist_injective and wallCoordinate_injective. Kept the generic automorphism hypothesis, isolated the weaker first step, and stated the exact characteristic-zero/domain conditions for cancellation.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.word_evaluation_injective",
+      "file": "docs/knowledge/nodes/kl.word_modules/word_evaluation_injective.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_expand",
+        "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix_cons",
+        "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix_mulVec_cons",
+        "OAI.KLInvariance.TitsSpace.bottEvaluationMatrix_injective",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_injective"
+      ],
+      "review": "Rewrote the theorem with its actual finite-generator realization context and explicit basis/matrix composition. Matched the empty-word and cons proofs and linked the independent generic block-injectivity theorem.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.weight_support",
+      "file": "docs/knowledge/nodes/kl.word_modules/weight_support.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottSubword",
+        "OAI.KLInvariance.TitsSpace.bottSubword_sublist",
+        "OAI.KLInvariance.TitsSpace.bottSubword_wordProd",
+        "OAI.KLInvariance.TitsSpace.exists_bottSubword",
+        "OAI.KLInvariance.TitsSpace.bottWeight_bruhat",
+        "OAI.KLInvariance.TitsSpace.exists_bottWeight",
+        "OAI.KLInvariance.TitsSpace.bottWeight_range",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_unit"
+      ],
+      "review": "Read the sublist/bit-string recursion and both range inclusions. Kept arbitrary generator sets for the combinatorial statement and the finite-generator coefficient context for the derived stalk-support statement.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.evaluation_grading",
+      "file": "docs/knowledge/nodes/kl.word_modules/evaluation_grading.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_basis_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_component",
+        "OAI.KLInvariance.TitsSpace.bottCoordinatePiece",
+        "OAI.KLInvariance.TitsSpace.bottWeightProjection_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottStalk_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottStalkPiece",
+        "OAI.KLInvariance.TitsSpace.bottStalkProjection_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottStalk_homogeneous_lift"
+      ],
+      "review": "Read basis-entry induction, homogeneous evaluation, component commutation and image grading/lift proofs. Defined the stalk pieces coordinatewise and retained the basis-dependent source grading.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.eigenvalue_difference",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/eigenvalue_difference.md",
+      "source_declarations": [
+        "OAI.KLInvariance.PairProjection.difference_annihilates"
+      ],
+      "review": "Read difference_annihilates and the endpoint-surjectivity/kernel identities it uses. Expanded the actual witness Tn-bn and all quotient signs.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.edge_annihilation",
+      "file": "docs/knowledge/nodes/kl.word_modules/edge_annihilation.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.reflectionCoefficient_anti",
+        "OAI.KLInvariance.TitsSpace.reflectionCoefficient_difference",
+        "OAI.KLInvariance.TitsSpace.simpleCoefficient_difference",
+        "OAI.KLInvariance.TitsSpace.bottSimpleEdge_annihilated",
+        "OAI.KLInvariance.TitsSpace.bottSimpleEdge_kernel_inclusion",
+        "OAI.KLInvariance.TitsSpace.bottReflectionEdge_annihilated"
+      ],
+      "review": "Read the root-character difference and its application to arbitrary reflection-edge quotients, including the simple-edge kernel inclusion. Preserved the arbitrary word and absence of an ascent assumption.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.simple_flip",
+      "file": "docs/knowledge/nodes/kl.word_modules/simple_flip.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.simpleFixedAction",
+        "OAI.KLInvariance.TitsSpace.bottSimpleFlip",
+        "OAI.KLInvariance.TitsSpace.bottSimpleFlip_tmul",
+        "OAI.KLInvariance.TitsSpace.bottIndexFlip",
+        "OAI.KLInvariance.TitsSpace.bottWeight_flip"
+      ],
+      "review": "Read simpleFixedAction, the tensor-map definition, bit flip and weight identity. Explained R-linearity and derived tau-semilinearity with examples separating the two tensor factors.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.simple_wall_kernel",
+      "file": "docs/knowledge/nodes/kl.word_modules/simple_wall_kernel.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottSimpleFlip_divisible",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_flip",
+        "OAI.KLInvariance.TitsSpace.bottStalkProjection_flip_zero",
+        "OAI.KLInvariance.TitsSpace.bottSimpleWall_kernel_projection",
+        "OAI.KLInvariance.TitsSpace.bottSimpleWall_annihilated",
+        "OAI.KLInvariance.TitsSpace.bottSimpleWall_upper_kernel",
+        "OAI.KLInvariance.PairProjection.kernel_upper",
+        "OAI.KLInvariance.PairProjection.upper_kernel_of_divisibility"
+      ],
+      "review": "Read tensor difference divisibility, both evaluation-flip cases, projection vanishing and the generic upper-kernel criterion. Kept the first-letter hypothesis and proved each kernel containment with its distinct input.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.head_pair_coordinates",
+      "file": "docs/knowledge/nodes/kl.word_modules/head_pair_coordinates.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottWeight_tail_zero",
+        "OAI.KLInvariance.TitsSpace.bottWeight_tail_one",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairCoordinates",
+        "OAI.KLInvariance.TitsSpace.simpleReverseDivisibility",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairLattice"
+      ],
+      "review": "Read the tail-weight identities, twisted coordinate map and actual lattice instantiation. Explained why the second block applies tau and how its scalar twist restores A-linearity.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.head_pair_equivalence",
+      "file": "docs/knowledge/nodes/kl.word_modules/head_pair_equivalence.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottHeadPairCoordinates_injective",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairCoordinates_seed",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairToStalk",
+        "OAI.KLInvariance.TitsSpace.bottHeadPair_range",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairToStalk_surjective",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairEquiv",
+        "OAI.KLInvariance.TitsSpace.bottHeadLeft",
+        "OAI.KLInvariance.TitsSpace.bottHeadRight",
+        "OAI.KLInvariance.TitsSpace.bottHeadLeft_surjective",
+        "OAI.KLInvariance.TitsSpace.bottHeadPairEquiv_coordinates",
+        "OAI.KLInvariance.TitsSpace.bottHeadLeft_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottHeadRight_homogeneous"
+      ],
+      "review": "Read the seed/range proof of headPairEquiv, coordinate recovery and both head projection definitions. Retained the real-linear type and tau-semilinearity of the right projection, then checked both homogeneous coordinate arguments.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.pair_lattice_exact_sequences",
+      "file": "docs/knowledge/nodes/kl.word_modules/pair_lattice_exact_sequences.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionPairTranslation.left_surjective",
+        "OAI.KLInvariance.ReflectionPairTranslation.kernelMap",
+        "OAI.KLInvariance.ReflectionPairTranslation.kernelMap_surjective",
+        "OAI.KLInvariance.ReflectionPairTranslation.kernelMap_injective",
+        "OAI.KLInvariance.ReflectionPairTranslation.kernelEquiv",
+        "OAI.KLInvariance.ReflectionPairTranslation.free_of_surjective_of_ker_free",
+        "OAI.KLInvariance.ReflectionPairTranslation.lattice_free",
+        "OAI.KLInvariance.ReflectionPairTranslation.right",
+        "OAI.KLInvariance.ReflectionPairTranslation.right_surjective",
+        "OAI.KLInvariance.ReflectionPairTranslation.rightKernelMap",
+        "OAI.KLInvariance.ReflectionPairTranslation.rightKernelEquiv",
+        "OAI.KLInvariance.ReflectionPairTranslation.lattice_free_right"
+      ],
+      "review": "Read left/right kernel maps and equivalences in Frobenius and BottSamelson. Preserved the separate kernel equality and regular-scalar hypotheses for each orientation, and expanded the source splitting isomorphism.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.kernel_exactness",
+      "file": "docs/knowledge/nodes/kl.word_modules/kernel_exactness.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.BottKernelExact",
+        "OAI.KLInvariance.TitsSpace.BottKernelExact.upper_kernel",
+        "OAI.KLInvariance.TitsSpace.BottKernelExact.kernel_iff",
+        "OAI.KLInvariance.TitsSpace.BottKernelExact.kernel_iff_of_mul",
+        "OAI.KLInvariance.TitsSpace.BottKernelExact.projection_of_mul"
+      ],
+      "review": "Read BottKernelExact and its four endpoint/kernel consequences. Preserved the universal root quantifier, strict upward length hypothesis and divisibility in the image stalk; explained the reverse inclusion using the separate annihilation theorem.",
+      "pending": []
+    },
+    {
+      "node": "kl.notes.word_stalks",
+      "file": "docs/knowledge/nodes/kl.word_modules/word_stalks.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottWeightProjection",
+        "OAI.KLInvariance.TitsSpace.bottStalk",
+        "OAI.KLInvariance.TitsSpace.bottStalkProjection",
+        "OAI.KLInvariance.TitsSpace.bottStalkProjection_surjective",
+        "OAI.KLInvariance.TitsSpace.bottWeightSupported",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateDenominator",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateLift",
+        "OAI.KLInvariance.TitsSpace.bottCoordinatePiece",
+        "OAI.KLInvariance.TitsSpace.bottStalkPiece"
+      ],
+      "review": "Retained the weight-image/support definitions and one-letter example, added the actual coordinatewise stalk grading and connected it to the homogeneous-lift theorem and recursive evaluation definition.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -3634,7 +3852,8 @@
         "kl.algebra.projective_local_membership",
         "kl.algebra.quotient_endomorphism_descent",
         "kl.algebra.scalar_free_presentation",
-        "kl.algebra.scalar_quotient"
+        "kl.algebra.scalar_quotient",
+        "kl.algebra.eigenvalue_difference"
       ],
       "pending": [],
       "review": "Reviewed quotient and pair-projection descent, saturation and free reduced images, finite free scalar-quotient presentations, the explicit projective-kernel retraction, and free/projective target prime-denominator membership."
@@ -3686,16 +3905,22 @@
     {
       "code": "W4",
       "title": "Evaluation coordinates and stalk images",
-      "status": "in_progress",
+      "status": "exposition_reviewed",
       "completion_evidence": [
+        "kl.detail.word_evaluation_injective",
         "kl.notes.word_stalks",
+        "kl.word.evaluation_grading",
+        "kl.word.evaluation_maps",
+        "kl.word.evaluation_right_action",
         "kl.word.scaled_coordinate_lifts",
         "kl.word.support_duality",
-        "kl.word.top_stalk"
+        "kl.word.top_stalk",
+        "kl.word.wall_coordinates",
+        "kl.word.wall_injectivity",
+        "kl.word.weight_support"
       ],
-      "pending": [
-        "Expand wall maps and the remaining evaluation-lattice comparison details."
-      ]
+      "pending": [],
+      "review": "Reviewed recursive evaluations and right coefficient characters, wall coordinates/matrices and full injectivity, homogeneous image stalks and component lifts, exact reduced-word Bruhat support, coordinate denominators/lifts, support duality and the reduced-word top stalk."
     },
     {
       "code": "W5",
@@ -3703,10 +3928,17 @@
       "status": "in_progress",
       "completion_evidence": [
         "kl.word.twisted_pair_lattice",
-        "kl.word.twisted_lattice_saturation"
+        "kl.word.twisted_lattice_saturation",
+        "kl.word.edge_annihilation",
+        "kl.word.simple_flip",
+        "kl.word.simple_wall_kernel",
+        "kl.word.head_pair_coordinates",
+        "kl.word.head_pair_equivalence",
+        "kl.word.pair_lattice_exact_sequences",
+        "kl.word.kernel_exactness"
       ],
       "pending": [
-        "Expand the full pair-translation projection/kernel sequence, polynomial-coordinate transport and the word-induction freeness arguments."
+        "Expand the two tail-extraction maps, non-head reflection divisibility and saturation application, and complete the simultaneous BottKernelExact/stalk-freeness induction. Connect its polynomial-coordinate transport to the later character constructions."
       ]
     },
     {
@@ -4056,7 +4288,7 @@
     }
   ],
   "next_steps": [
-    "Expand word evaluation/stalk images, wall maps and pair kernels, then complete word-support and character recursions.",
+    "Complete the word-kernel/freeness induction: explicit tail maps, non-head divisibility, head-lattice saturation and both ascent/descent splitting cases; then expand images over weight sets and word characters.",
     "Complete standard-parabolic inclusion and finite-support transport; finish word wall maps, pair kernels, and character recursions.",
     "Expand adapted-order/chamber changes, dihedral interval transport, and the path-polynomial proof.",
     "Review the remaining Hecke, localization, and simultaneous-comparison arguments against their local source bodies.",
@@ -4408,7 +4640,21 @@
       "kl.word.tensor_dual_base_change": "W2",
       "kl.word.tensor_induction": "W2",
       "kl.word.induced_bimodule": "W2",
-      "kl.word.induced_pairing_degree": "W2"
+      "kl.word.induced_pairing_degree": "W2",
+      "kl.word.evaluation_maps": "W4",
+      "kl.word.evaluation_right_action": "W4",
+      "kl.word.wall_coordinates": "W4",
+      "kl.word.wall_injectivity": "W4",
+      "kl.word.weight_support": "W4",
+      "kl.word.evaluation_grading": "W4",
+      "kl.algebra.eigenvalue_difference": "A7",
+      "kl.word.edge_annihilation": "W5",
+      "kl.word.simple_flip": "W5",
+      "kl.word.simple_wall_kernel": "W5",
+      "kl.word.head_pair_coordinates": "W5",
+      "kl.word.head_pair_equivalence": "W5",
+      "kl.word.pair_lattice_exact_sequences": "W5",
+      "kl.word.kernel_exactness": "W5"
     },
     "moved_nodes": [
       {
@@ -5242,7 +5488,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 333
+    "current_node_count": 347
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -5260,7 +5506,8 @@
     "Expanded the complete dihedral constant-P calculation and interval-rank prerequisites. Separated first/final alternating-word conventions, proved the double-string correction and linear-bar cancellation, and removed the polynomial calculation from the direct induced-label model dependencies.",
     "Expanded graded module data and Hilbert foundations: exact augmentation, homogeneous maps and subquotients, finite shifted free covers, monomial-series convergence, basis-independent characters, scalar quotient normalization and equality detection through degreewise defects. Reorganized the graded-algebra guide into its seven approved subtopics.",
     "Completed the coefficient/comparison algebra exposition: generic linear quotients and root-label primality, coefficient-dual transport and scalar twists, projective presentations and explicit retractions, saturation and free reduced images, and prime-denominator membership. Added the twisted pair-lattice construction and plane-prime unit criterion at their mathematical homes.",
-    "Completed the reflection Frobenius and paired tensor-induction exposition: explicit invariant coordinates, normalized trace and inverse duality, symmetric-algebra reflection hypotheses and actual simple data, functional recovery and finite free dual base change, induced right actions and one-step pairing degree. Linked the constructions to word bases and expanded the shared one-variable example in the topic guide."
+    "Completed the reflection Frobenius and paired tensor-induction exposition: explicit invariant coordinates, normalized trace and inverse duality, symmetric-algebra reflection hypotheses and actual simple data, functional recovery and finite free dual base change, induced right actions and one-step pairing degree. Linked the constructions to word bases and expanded the shared one-variable example in the topic guide.",
+    "Expanded subexpression evaluations, coefficient characters, generic wall-matrix injectivity, homogeneous stalk lifting and exact Bruhat support. Added the scalar-difference edge argument, first-factor reflection and exact first-wall kernel, reflected head-pair equivalence, both pair-lattice kernel sequences and the BottKernelExact definition. Completed the W4 exposition review and refined the remaining W5 induction work."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -5349,6 +5596,11 @@
       ],
       "target": "kl.word.frobenius_data",
       "review": "The bare term resolves to the general linear trace/duality data. The longer reflection trace phrase resolves to its specialized coordinate-trace definition, preserving the scope of generic restriction and extension theorems."
+    },
+    {
+      "term": "weight evaluation",
+      "target": "kl.word.evaluation_maps",
+      "review": "Moved the old broad stalk-entry aliases to the dedicated recursive evaluation definition. Kept stalk projection, homogeneous stalk coordinates and supported submodule terms at their image-module definition."
     }
   ],
   "corrections": [
@@ -5368,15 +5620,15 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-19T08:50:49.638413+00:00",
+    "created_at": "2026-10-19T09:09:44.329587+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 333,
-    "html_pages_checked": 597,
-    "generated_definition_links_checked": 4419,
+    "node_count": 347,
+    "html_pages_checked": 611,
+    "generated_definition_links_checked": 4631,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage; PairedModule and PairedBimodule now have explicit field tables. Documentation checks only."
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. The current revision adds BottKernelExact as an explained proposition and checks the new evaluation/pair-lattice references. Documentation checks only."
   },
   "structure_coverage_scan": {
     "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
@@ -5466,6 +5718,21 @@
         "kl.notes.tensor_pairing"
       ],
       "review": "Trace restriction is proved for every module through explicit functional recovery. Finite freeness enters the dual base-change step. PairedModule supplies a perfect pairing, and PairedBimodule separately supplies balance and symmetry."
+    },
+    {
+      "entries": [
+        "kl.word.edge_annihilation",
+        "kl.word.simple_wall_kernel",
+        "kl.word.kernel_exactness"
+      ],
+      "review": "Root-label annihilation holds for every word and weight. Exact kernel divisibility across the initial simple reflection uses the first-factor reflection; BottKernelExact is the upward-edge condition carried by the later simultaneous induction."
+    },
+    {
+      "entries": [
+        "kl.word.head_pair_coordinates",
+        "kl.word.head_pair_equivalence"
+      ],
+      "review": "The second tail coordinate has the tau-twisted scalar action. Its reflected coordinate map is A-linear; forgetting the twist yields the tau-semilinear, real-linear right head projection."
     }
   ],
   "relationship_map_revision": {
@@ -5473,6 +5740,6 @@
     "edge_count": 92,
     "route": "Top splitting and primitive recognition feed the boundary-pairing route; full model decomposition feeds simultaneous character formulas.",
     "evidence": "BoundarySheaf.splitIn_of_top_split, iso_of_primitive_top_split, GradedSheaf.exists_modelSumIso and bottCharacter_decomposition_both.",
-    "latest_anchor_refinement": "Added reflection coordinates, trace-restriction duality and induced-bimodule anchors to the existing Frobenius word-module stage. Its stage dependencies remain unchanged; individual KB nodes now expose the two distinct duality steps."
+    "latest_anchor_refinement": "Added the generic scalar-difference quotient theorem to the algebra stage, and recursive evaluations, wall coordinates, head-pair equivalence and BottKernelExact to the word-coordinate stage. The approved stage dependencies remain unchanged."
   }
 }

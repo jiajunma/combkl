@@ -128,8 +128,6 @@ concepts:
   - tensor words
 - node: kl.notes.word_stalks
   terms:
-  - weight evaluations
-  - weight evaluation
   - weight projection
   - weight stalk
   - weight stalks
@@ -139,6 +137,8 @@ concepts:
   - evaluation denominator
   - scaled coordinate lift
   - scaled coordinate lifts
+  - stalk grading
+  - homogeneous stalk coordinates
 - node: kl.duality.stalk_character
   terms:
   - stalk characters
@@ -974,3 +974,54 @@ concepts:
   - trace
   topics:
   - kl.word_modules
+- node: kl.word.evaluation_maps
+  terms:
+  - subexpression evaluations
+  - subexpression evaluation
+  - weight evaluations
+  - weight evaluation
+  - full evaluation
+  - coefficient character
+  - coefficient characters
+  topics:
+  - kl.word_modules
+  - kl.sheaves
+- node: kl.word.wall_coordinates
+  terms:
+  - wall-coordinate map
+  - wall-coordinate maps
+  - reflection block matrix
+  - wall matrix
+  - evaluation matrix
+  - evaluation matrices
+  topics:
+  - kl.word_modules
+  - kl.sheaves
+- node: kl.word.simple_flip
+  terms:
+  - first-factor reflection
+  - first-bit exchange
+  - first-bit flip
+  - reflection flip
+  topics:
+  - kl.word_modules
+  - kl.sheaves
+- node: kl.word.head_pair_coordinates
+  terms:
+  - reflected pair lattice
+  - reflected pair lattices
+  - head pair lattice
+  - head-pair lattice
+  - head pair coordinates
+  - head-pair coordinates
+  topics:
+  - kl.word_modules
+  - kl.sheaves
+- node: kl.word.kernel_exactness
+  terms:
+  - exact reflection kernels
+  - reflection-kernel exactness
+  - kernel exactness
+  topics:
+  - kl.word_modules
+  - kl.sheaves

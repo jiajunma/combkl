@@ -13,6 +13,11 @@ uses:
 - kl.detail.bruhat_lifting
 - kl.detail.root_reflection_correspondence
 - kl.detail.linear_quotient
+- kl.word.kernel_exactness
+- kl.word.edge_annihilation
+- kl.word.head_pair_equivalence
+- kl.word.pair_lattice_exact_sequences
+- kl.word.simple_wall_kernel
 lean:
   repository: openai-kl
   modules:
