@@ -1,6 +1,6 @@
 # Localization and comparison of embedded images
 
-The question is: **how do local rank-two calculations imply an inclusion between actual submodules in a larger graph?** We will compare two images in the same edge module. Before considering localization, identify those images and the hypothesis that makes one of them manageable.
+This topic derives an inclusion between two submodules of the same edge module from local calculations on root-plane cosets. The argument starts with the two images, constructs a free target, compares the images after localization, and then recovers global membership.
 
 Fix an edge \(e:x\to y\) with label \(\alpha\), and fix the outgoing conditions that remain during its scheduled step. Let \(K_x\subseteq B^x\) and \(K_y\subseteq B^y\) be the corresponding kernels. Put
 \[
@@ -50,7 +50,15 @@ A_{\mathfrak p}/(\gamma)=0.
 \]
 An edge labelled by a linear combination of \(\alpha,\beta\) can still impose a condition. This is the algebraic reason localization at a root-plane prime leaves only the edges belonging to that plane.
 
-Tensoring a module with \(A_{\mathfrak p}\) implements localization. It is flat, so it preserves kernels of the finite systems of section equations and the exact sequences used here. The base-change theorem proves this for the actual sheaf maps.
+Tensoring a module with \(A_{\mathfrak p}\) implements localization. For a general flat scalar extension \(R\to S\), compatible sections are the kernel of the section constraint, and selected stalk kernels are kernels of the outgoing constraint. Tensoring commutes with the finite products in those constraints. The [[node:kl.sheaves.flat_section_base_change|flat section base-change theorem]] therefore identifies the sections after extension.
+
+For an embedded submodule \(P\subseteq M\), the extended submodule \(P_S\) is the image of \(S\otimes_RP\) in \(S\otimes_RM\). The [[node:kl.algebra.flat_embedded_modules|embedded base-change theorem]] gives
+\[
+(\ker f)_S=\ker f_S,\qquad (f(P))_S=f_S(P_S),
+\]
+with flatness required for the kernel identity. Applying these equations to the selected outgoing constraints and both edge restrictions proves the [[node:kl.notes.sheaf_localization|flat kernel-and-image theorem]]. Both images are then compared inside the same extended edge module.
+
+Generation, free stalks, finite generation, the upper-quotient rule and flabbiness transfer with the hypotheses stated in the [[node:kl.sheaves.base_change_properties|scalar-extension property theorem]]. Restriction to a surviving coset adds the graph-pullback conditions developed next.
 
 ## Reduce the local calculation to a dihedral model
 
@@ -117,6 +125,11 @@ The logical order to retain is: free upper kernel, free edge target, local model
 
 ### Localizing graph sheaves
 
+- [[node:kl.detail.base_change]]
+- [[node:kl.sheaves.section_constraints]]
+- [[node:kl.sheaves.flat_section_base_change]]
+- [[node:kl.sheaves.base_change_properties]]
+- [[node:kl.algebra.flat_embedded_modules]]
 - [[node:kl.notes.sheaf_localization]]
 
 ### Dihedral structure models

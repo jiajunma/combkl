@@ -372,6 +372,12 @@ concepts:
   terms:
   - base change
   - scalar extension
+  - tensor base change
+  - sheaf scalar extension
+  topics:
+  - kl.sheaves
+  - kl.localization
+  - kl.invariance
 - node: kl.detail.localization_rings
   terms:
   - root-plane ring
@@ -1196,3 +1202,23 @@ concepts:
   topics:
   - kl.sheaves
   - kl.invariance
+- node: kl.sheaves.section_constraints
+  terms:
+  - section constraint
+  - section constraints
+  - section constraint map
+  - selected outgoing constraint
+  - selected outgoing constraint map
+  - outgoing constraint map
+  - outgoing constraint
+  - outgoing constraints
+  topics:
+  - kl.sheaves
+  - kl.localization
+- node: kl.detail.sheaf_morphism
+  terms:
+  - partial morphism
+  - partial morphisms
+  topics:
+  - kl.sheaves
+  - kl.localization

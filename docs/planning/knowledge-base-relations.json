@@ -73,7 +73,9 @@
         "OAI.KLInvariance.PairProjection.difference_annihilates",
         "OAI.KLInvariance.FiniteFreeScalar.scalar_quotient_regular",
         "OAI.KLInvariance.ProjectiveRange.projective_of_two_stage",
-        "OAI.KLInvariance.Graded.ModuleData.char_of_dual_equiv"
+        "OAI.KLInvariance.Graded.ModuleData.char_of_dual_equiv",
+        "OAI.KLInvariance.FlatSubmodule.baseChange_ker",
+        "OAI.KLInvariance.FlatSubmodule.baseChange_map"
       ]
     },
     {
@@ -141,11 +143,14 @@
       "requires": [
         "a"
       ],
-      "output": "Stalk/edge maps, sections, kernels, and graded sheaf morphisms.",
+      "output": "Stalk/edge maps, section constraints, selected kernels, finite-flat scalar extension and graded morphism extension.",
       "lean_declarations": [
         "OAI.KLInvariance.MomentGraph.OrderedGraph",
         "OAI.KLInvariance.MomentGraph.Sheaf",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf"
+        "OAI.KLInvariance.MomentGraph.GradedSheaf",
+        "OAI.KLInvariance.MomentGraph.Sheaf.constraint",
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorSectionsEquiv",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.exists_extension"
       ]
     },
     {
@@ -482,7 +487,8 @@
       "output": "Plane localization and the surviving labelled coset graph.",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.planePrime",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset"
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localizedCoset",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upwardKernel"
       ]
     },
     {
@@ -1097,6 +1103,19 @@
         "OAI.KLInvariance.BruhatGraph.normalized_fullKernel_of_duality_character",
         "OAI.KLInvariance.Graded.local_diagonal_strict_degree",
         "OAI.KLInvariance.BruhatGraph.costalkEquivDual_symmetric"
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "scope": "Sheaf operations and flat embedded images",
+      "change": "Recorded the section constraint, finite-flat section equivalence, graded morphism extension and embedded kernel/image transport. Removed the individual generic kernel/image theorem’s dihedral-model prerequisite; the coset stage still uses induced-coset geometry.",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.constraint",
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorSectionsEquiv",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.exists_extension",
+        "OAI.KLInvariance.FlatSubmodule.baseChange_ker",
+        "OAI.KLInvariance.FlatSubmodule.baseChange_map",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upwardKernel"
       ]
     }
   ]

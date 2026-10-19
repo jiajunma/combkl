@@ -8,17 +8,23 @@ topics:
 - kl.sheaves
 uses:
 - kl.detail.sheaf_morphism
+- kl.sheaves.boundary_morphism_lift
+- kl.sheaves.morphism_extension_step
 - kl.detail.upper_quotient
 - kl.sheaves.flabbiness
-- kl.detail.compatible_sections
 lean:
   repository: openai-kl
   modules:
   - SheafMorphisms
   declarations:
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.ofUniv
   - OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.exists_extension
 source:
   spans:
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.SheafMorphisms:607
+    format: lean-location
+    note: OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.ofUniv
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.SheafMorphisms:834
     format: lean-location
@@ -34,56 +40,93 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Does the entry preserve the source hypotheses, construction, and conclusion?
-  verdict: Read against the named Lean declarations and surrounding variable context;
-    explanatory examples are distinguished from the formal statement.
+  prompt: Are the ambient modules, pairing orientation, scalar types, grading conventions
+    and quantified hypotheses explicit?
+  verdict: Read the full finite-complement strong induction, empty case, maximal missing
+    vertex, graded stalk lift, one-vertex extension and old-vertex transport. The
+    final old-edge equality is derived explicitly from the source conclusion and upper-map
+    surjectivity.
 tags:
 - Kazhdan-Lusztig
-- moment_graph_sheaves
+- sheaf-operations
 ---
 
 # Extending a sheaf morphism from an upper set
 
-Let \(A\) be a connected nonnegatively graded Noetherian domain, and let the labelled ordered graph be finite. Suppose \(B\) and \(C\) satisfy the upper quotient rule, are flabby and globally generated, and every stalk of \(B\) is free. Then a graded sheaf morphism on an upper set \(U\) extends to a graded morphism \(B\to C\) agreeing with all its prescribed vertex maps.
+Let \(k\) be a field and \(A\) a connected nonnegatively graded Noetherian domain over \(k\). Let the ordered graph have finite vertex set \(V\) and edge set \(E\), with labels \(\alpha_e\).
+
+Suppose \(B,C\) are graded sheaves satisfying the upper-quotient rule for these labels. Assume both are flabby and globally generated, and every stalk of \(B\) is free.
+
+For an upper set \(U\), every degree-zero partial morphism \(j\) on \(U\) extends to a degree-zero sheaf morphism \(f:B\to C\) with
+\[
+f_x=j_x\qquad(x\in U).
+\]
+The upper-quotient rule also makes its edge maps agree with \(j_e\) whenever \(t(e)\in U\).
+
+<!-- source-comparison:start -->
+## Relation to the OpenAI notes
+
+**Graded extension preceding local decomposition.**
+
+**OpenAI notes:** The local-ring decomposition descends through the coset vertices, lifting stalk maps over the common boundary image and retaining both endpoint restrictions. [loc:decomposition](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/04-localization.tex#L285).
+
+**Lean (primary):** The graded morphism-extension theorem works over a connected nonnegatively graded Noetherian domain. A homogeneous free-basis lift constructs the next stalk map, upper quotients construct the incoming edge maps, and finite-complement induction extends the partial morphism. [SheafMorphisms:675](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L675), [SheafMorphisms:723](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L723), [SheafMorphisms:834](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L834).
+
+**Role in the proof:** This graded extension is used in boundary recognition and splitting. The ungraded local-ring decomposition is a later construction with its own local-ring and model hypotheses.
+<!-- source-comparison:end -->
 
 *Proof.*
 
-### Step 1. Identify the boundary map forced at the next vertex
+### Step 1. Set up induction on the missing vertices
 
-Suppose a morphism is already defined on an upper set \(U\), and choose a maximal missing vertex \(x\). Every outgoing target of \(x\) lies in \(U\).
+Let \(T=V\setminus U\). Use strong induction on the finite set \(T\), proving extension for every partial morphism on its upper complement.
 
-The existing edge maps send boundary tuples of \(B\)-sections above \(x\) to boundary tuples of \(C\)-sections above \(x\). Thus they induce a graded map \(D_B(x)\to D_C(x)\) between boundary images.
+If \(T=\varnothing\), then \(U=V\). The partial morphism already supplies all vertex maps, all edge maps and both commuting squares. The source's ofUniv construction regards these as a full morphism.
 
-For either sheaf, the image of the stalk boundary map equals this boundary image. One containment follows from global generation: realize any stalk value by a global section. The reverse containment follows from flabbiness: extend a section above \(x\) globally and take its value at \(x\). Both hypotheses in the statement are used here.
+### Step 2. Choose a maximal missing vertex
 
-### Step 2. Lift the required boundary map to a stalk map
+Assume \(T\ne\varnothing\), and choose a maximal element \(x\in T\). If \(x<y\), then \(y\notin T\): otherwise maximality would force \(y\le x\), contradicting \(x<y\). Hence every vertex strictly above \(x\) lies in \(U\).
 
-Compose \(B^x\to D_B(x)\to D_C(x)\). The map \(C^x\twoheadrightarrow D_C(x)\) is surjective by its definition as an image.
-
-Choose a homogeneous basis of the free graded module \(B^x\). For a basis vector of degree \(n\), choose any preimage in \(C^x\) of its required boundary value, then retain the degree-\(n\) component of that preimage. Since the quotient map preserves degree, this component still has the required image. Extending linearly gives a degree-zero map \(f_x:B^x\to C^x\) with the required boundary equation.
-
-### Step 3. Define the new edge maps and check well-definedness
-
-For an incoming edge \(e:z\to x\), the map on its upper stalk \(x\) induces
+Apply the [[node:kl.sheaves.boundary_morphism_lift|boundary-morphism lifting theorem]]. Its hypotheses hold because the edge set is finite, the source stalk \(B^x\) is free, and both sheaves are flabby and generated. It gives a degree-zero \(l_x:B^x\to C^x\) with
 \[
-B^x/\alpha_eB^x\longrightarrow C^x/\alpha_eC^x.
+r_C l_x=j_{\partial x}r_B.
 \]
-It is well-defined because \(A\)-linearity sends \(\alpha_ev\) to \(\alpha_ef_x(v)\). Use the upper quotient identifications to obtain the edge map. The lower vertex \(z\) is not in \(U\): otherwise the upper-set property would already put \(x\) in \(U\). Hence no previously imposed lower square is disturbed.
+Evaluating this tuple equation at an outgoing edge gives
+\(j_e\rho^{B,-}_e=\rho^{C,-}_e l_x\).
 
-For outgoing edges \(x\to y\), the edge map is already determined by the upper data. The boundary equation from Step 2 is precisely the required lower commuting square. Old squares remain unchanged.
+### Step 3. Extend across the chosen vertex
 
-### Step 4. Complete finite downward induction
+The [[node:kl.sheaves.morphism_extension_step|one-vertex morphism extension theorem]] applies to \(U,x,j,l_x\) and the upper-quotient rules. It gives a partial morphism \(j'\) on \(U'=U\cup\{x\}\) that agrees with all old vertex maps.
 
-We have extended the partial morphism from \(U\) to \(U\cup\{x\}\), preserving all its old vertex maps. This new set is upper, because all vertices strictly above \(x\) were already present. Its complement is smaller. Repeat until no vertex is missing.
+The new set is upper. If \(y\in U\) and \(y\le z\), then \(z\in U\). If \(y=x\), either \(z=x\), or \(x<z\) and the maximality argument places \(z\) in \(U\).
 
-This proves an actual sheaf morphism: both endpoint squares commute on every edge, rather than merely giving unrelated maps of stalks.
+Its complement is \(T\setminus\{x\}\), a strict subset of \(T\).
+
+### Step 4. Apply the strictly smaller induction instance
+
+The induction hypothesis extends \(j'\) to a full morphism \(f\) agreeing on \(U'\). For each \(y\in U\),
+\[
+f_y=j'_y=j_y.
+\]
+The first equality is the smaller-set induction conclusion; the second is preservation in the one-vertex construction. This completes the induction and proves the vertex agreement claimed by exists_extension.
+
+### Step 5. Recover agreement on the old edge maps
+
+Let \(e\) have target \(y\in U\). Both morphisms have the upper commuting square, and \(f_y=j_y\), so
+\[
+f_e\rho^{B,+}_e
+=\rho^{C,+}_e f_y
+=\rho^{C,+}_e j_y
+=j_e\rho^{B,+}_e.
+\]
+The upper restriction \(\rho^{B,+}_e\) is surjective. Every edge vector has an upper-stalk preimage, and evaluating the displayed equality on that preimage gives \(f_e=j_e\).
 
 ## References
 
-[Related paper context](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L225).
+The local source declarations below give the construction and proof.
 
 ## Lean formalization
 
-
+`OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.ofUniv`: [SheafMorphisms.lean:607](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L607).
 
 `OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.exists_extension`: [SheafMorphisms.lean:834](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L834).

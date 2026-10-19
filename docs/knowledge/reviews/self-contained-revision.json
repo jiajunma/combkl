@@ -4371,6 +4371,121 @@
       ],
       "review": "Re-read boundarySheaf_gradedIso and stalkCharacter_eq_character and expanded basis transport in the existing character-restriction proof. The selected-kernel equation remains the same outgoing-complete restriction argument.",
       "pending": []
+    },
+    {
+      "node": "kl.detail.base_change",
+      "file": "docs/knowledge/nodes/kl.sheaves/base_change.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange",
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorAssignments",
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorAssignments_tmul",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_tmul_compatible",
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorSections",
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorSections_tmul"
+      ],
+      "review": "Read baseChange and both natural tensor maps. Retained arbitrary commutative scalar extension and graph, the full-assignment convention, and pure-tensor/additivity verification before the later finite-flat isomorphism.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.section_constraints",
+      "file": "docs/knowledge/nodes/kl.sheaves/section_constraints.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.constraint",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ker_constraint",
+        "OAI.KLInvariance.MomentGraph.Sheaf.kernelConstraint",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ker_kernelConstraint"
+      ],
+      "review": "Read both constraint definitions and their kernel equalities. Specified the internal-edge subtype for sections, the selected outgoing-edge subtype for a stalk, and both coordinatewise equivalences.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.flat_section_base_change",
+      "file": "docs/knowledge/nodes/kl.sheaves/flat_section_base_change.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorAssignments_bijective",
+        "OAI.KLInvariance.MomentGraph.Sheaf.constraint_tensorAssignments",
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorSections_surjective",
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorSections_injective",
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorSectionsEquiv"
+      ],
+      "review": "Read the finite assignment bijection, pure-tensor constraint identity, flat exactness and separate surjectivity/injectivity proofs. Kept the full ambient vertex product and the weaker finiteness requirement for injectivity.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.base_change_properties",
+      "file": "docs/knowledge/nodes/kl.sheaves/base_change_properties.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_generated",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_vertex_free",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_vertex_finite",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upperQuotient",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_flabby"
+      ],
+      "review": "Read all five property-transfer results. Separated generation/free/finite transport from the source flatness hypothesis for upper quotients and the finite-graph plus flatness hypotheses for flabbiness.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.boundary_morphism_lift",
+      "file": "docs/knowledge/nodes/kl.sheaves/boundary_morphism_lift.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.mapAssignment",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.compatible",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.boundary",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.boundaryMap",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.map_stalk_image_le",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.extend_stalk"
+      ],
+      "review": "Read the partial assignment, boundary map and image-containment constructions, then the exact graded-range lift. Retained finite edges, the arbitrary subset containing all vertices above x, only source-stalk freeness at x, and both sheaves’ flabbiness/generation.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.morphism_extension_step",
+      "file": "docs/knowledge/nodes/kl.sheaves/morphism_extension_step.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.extend",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.extend_vertex_old",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.extend_vertex_new",
+        "OAI.KLInvariance.QuotientEdge.descend",
+        "OAI.KLInvariance.QuotientEdge.descend_apply",
+        "OAI.KLInvariance.QuotientEdge.kernel_scalar_le",
+        "OAI.KLInvariance.Graded.ModuleData.quotientHom",
+        "OAI.KLInvariance.Graded.ModuleData.quotientHom_apply"
+      ],
+      "review": "Read the complete OnHom.extend construction, both preservation lemmas, QuotientEdge.descend and the graded quotientHom. Explained kernel containment, homogeneous preimages, old/new edge cases and the exact partial-morphism domains without adding finiteness or freeness assumptions.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.morphism_extension",
+      "file": "docs/knowledge/nodes/kl.sheaves/morphism_extension.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.ofUniv",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.exists_extension"
+      ],
+      "review": "Read the full finite-complement strong induction, empty case, maximal missing vertex, graded stalk lift, one-vertex extension and old-vertex transport. The final old-edge equality is derived explicitly from the source conclusion and upper-map surjectivity.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.flat_embedded_modules",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/flat_embedded_modules.md",
+      "source_declarations": [
+        "OAI.KLInvariance.FlatSubmodule.baseChange_ker",
+        "OAI.KLInvariance.FlatSubmodule.baseChange_map"
+      ],
+      "review": "Read both FlatSubmodule proofs. Defined the embedded base-change submodule as an image, proved image commutation by tensor generators in both directions, and retained flatness only for the kernel identity.",
+      "pending": []
+    },
+    {
+      "node": "kl.notes.sheaf_localization",
+      "file": "docs/knowledge/nodes/kl.localization/sheaf_localization.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.kernelConstraint_tensor",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upwardKernel",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_lowerImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upperImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.edge_subsingleton_of_unit"
+      ],
+      "review": "Read the outgoing-constraint tensor identity, embedded kernel equality and both edge-image substitutions. Kept finite edges but no finite-vertex hypothesis, separated the extra upper-quotient/unit-label claim, and removed dihedral models as a prerequisite of this general flat-algebra theorem.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -4716,7 +4831,8 @@
         "kl.algebra.eigenvalue_difference",
         "kl.algebra.scalar_quotient_regular",
         "kl.algebra.projective_range_splittings",
-        "kl.algebra.two_stage_projectivity"
+        "kl.algebra.two_stage_projectivity",
+        "kl.algebra.flat_embedded_modules"
       ],
       "pending": [],
       "review": "Reviewed quotient and pair-projection descent, saturation and free reduced images, finite free scalar-quotient presentations, the explicit projective-kernel retraction, and free/projective target prime-denominator membership."
@@ -4891,7 +5007,7 @@
     {
       "code": "S3",
       "title": "Operations and morphisms",
-      "status": "in_progress",
+      "status": "exposition_reviewed",
       "completion_evidence": [
         "kl.detail.sheaf_morphism",
         "kl.detail.sheaf_isomorphisms",
@@ -4899,11 +5015,17 @@
         "kl.sheaves.finite_sum_properties",
         "kl.sheaves.lower_extension",
         "kl.sheaves.lower_extension_properties",
-        "kl.sheaves.partial_iso_extension"
+        "kl.sheaves.partial_iso_extension",
+        "kl.detail.base_change",
+        "kl.sheaves.section_constraints",
+        "kl.sheaves.flat_section_base_change",
+        "kl.sheaves.base_change_properties",
+        "kl.sheaves.boundary_morphism_lift",
+        "kl.sheaves.morphism_extension_step",
+        "kl.detail.morphism_extension"
       ],
-      "pending": [
-        "Complete tensor base change, constraint maps and the remaining morphism-extension exposition."
-      ]
+      "pending": [],
+      "review": "The existing finite operations, lower extensions, morphism/isomorphism data and partial-isomorphism extension are joined by explicit tensor base change, both constraint maps, the finite-flat section isomorphism, property transport, graded boundary lifting, one-vertex quotient descent and finite-complement morphism extension."
     },
     {
       "code": "S4",
@@ -5131,8 +5253,13 @@
     {
       "code": "L2",
       "title": "Localizing graph sheaves",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.notes.sheaf_localization"
+      ],
+      "pending": [
+        "Expand live-edge pullback, induced localized labels and restriction to the surviving plane-coset graph; finite-flat section, selected-kernel and edge-image transport are now detailed."
+      ]
     },
     {
       "code": "L3",
@@ -5230,7 +5357,7 @@
     }
   ],
   "next_steps": [
-    "Complete the remaining sheaf operations: tensor base change, constraint maps and morphism extension.",
+    "Expand live-edge graph pullback, induced localized labels and the actual plane-localized coset sheaf, then continue the local comparison arguments.",
     "Complete the remaining Coxeter/parabolic, root-space and sheaf-operation exposition.",
     "Expand adapted orders, chamber changes, dihedral interval transport, schedules and the path-polynomial proof.",
     "Complete localization, local image comparison, edge inequalities and the simultaneous invariance induction.",
@@ -5652,7 +5779,13 @@
       "kl.algebra.local_diagonal_bound": "A5",
       "kl.duality.local_intersection_properties": "S10",
       "kl.duality.costalk_freeness_condition": "S10",
-      "kl.duality.character_endpoint_substitution": "S10"
+      "kl.duality.character_endpoint_substitution": "S10",
+      "kl.sheaves.section_constraints": "S3",
+      "kl.sheaves.flat_section_base_change": "S3",
+      "kl.sheaves.base_change_properties": "S3",
+      "kl.sheaves.boundary_morphism_lift": "S3",
+      "kl.sheaves.morphism_extension_step": "S3",
+      "kl.algebra.flat_embedded_modules": "A7"
     },
     "moved_nodes": [
       {
@@ -6486,7 +6619,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 403
+    "current_node_count": 409
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -6511,7 +6644,8 @@
     "Completed the W6 prime-class and global lifting route: root-line isometries, prime character classes, stable diagonal selectors and finite class-lift assembly, repeated-stalk subexpression presentations, denominator removal and unconditional upper-image induction. Completed S7 with the ambient interval extension, full-section isomorphism, polynomial generation/flabbiness transport and normalized boundary summand.",
     "Completed W7: separated coefficient variables, the formal character variable and real evaluations; expanded the two head kernel maps and their grading, degreewise exact sequences, Hilbert numerator uniqueness/shift, and character base values. Rewrote the Hecke-word equality as the exact source induction, and linked the source/paper shift conventions. Added the inverse-degree piece isomorphisms to the general component theorem.",
     "Completed S9: added the homogeneous dual-character reflection, reduced-word section pairing, both actual kernel characters, lower-character convolution, scaled actual character and reciprocity, and unconditional normalized endpoints. Rewrote word R-convolution and actual-character cancellation with explicit hypotheses, degree bounds, finite sums and parameter substitutions.",
-    "Completed S10: expanded the local intersection map into construction, properties and the exact strict diagonal-degree implication; exposed the generic positive-ideal coordinate argument and supported-section symmetry calculation. Defined full outgoing-kernel freeness and expanded the character-identification condition and both KL endpoint substitutions. Added explicit boundary-model character transport to the upper-restriction proof."
+    "Completed S10: expanded the local intersection map into construction, properties and the exact strict diagonal-degree implication; exposed the generic positive-ideal coordinate argument and supported-section symmetry calculation. Defined full outgoing-kernel freeness and expanded the character-identification condition and both KL endpoint substitutions. Added explicit boundary-model character transport to the upper-restriction proof.",
+    "Completed S3: expanded tensor base change and its section map, separated section/outgoing constraints, proved finite-flat section transport and sheaf-property transfer, and developed graded boundary lifting, quotient edge descent and finite-complement morphism extension. Added the generic embedded kernel/image theorem and rewrote the localization node at its actual flat-algebra generality."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -6645,6 +6779,25 @@
       ],
       "target": "kl.duality.character_identity_condition",
       "review": "The definition records equality in integer polynomials at every interval vertex; its generated aliases preserve that exact condition."
+    },
+    {
+      "term": "scalar extension",
+      "topics": [
+        "kl.sheaves",
+        "kl.localization",
+        "kl.invariance"
+      ],
+      "target": "kl.detail.base_change",
+      "review": "Restricted the sheaf base-change aliases to sheaf/application topics; the generic embedded-module theorem defines its own ambient image operation and is not redirected to the sheaf definition. Added scoped aliases for the section and selected outgoing constraint maps."
+    },
+    {
+      "term": "partial morphism",
+      "topics": [
+        "kl.sheaves",
+        "kl.localization"
+      ],
+      "target": "kl.detail.sheaf_morphism",
+      "review": "The existing OnHom definition explains maps on vertices in U and on every edge whose target lies in U. Scoped aliases connect the new lifting and extension proofs to that exact data."
     }
   ],
   "corrections": [
@@ -6664,19 +6817,20 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-19T13:36:32.870691+00:00",
+    "created_at": "2026-10-19T14:01:55.868932+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 403,
-    "html_pages_checked": 668,
-    "generated_definition_links_checked": 5673,
+    "node_count": 409,
+    "html_pages_checked": 675,
+    "generated_definition_links_checked": 5772,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks local intersection construction, range/minimality/degree/symmetry, generic positive-ideal coordinates, full-kernel freeness and character identification, and conditional KL endpoint substitutions. Documentation checks only.",
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks tensor sheaf extension, both constraint maps, finite-flat section transport, property transfer, graded boundary lifting and quotient descent, finite morphism extension, and embedded kernel/image identities. Documentation checks only.",
     "focused_page_review": {
-      "entries": 10,
-      "source_anchors": 34,
-      "scope": "Read saved statements and detailed proofs, checked source anchors and topic-guide reachability, and verified that the lower-case proof name costalkFreeObligation is not linked to the uppercase condition definition by case-folded aliases."
+      "entries": 9,
+      "source_anchors": 43,
+      "partial_morphism_links": 10,
+      "scope": "Read saved statements and full proofs, checked formula and source-link payloads and guide reachability, verified constraint and partial-morphism destinations, and checked the general kernel/image theorem has no dihedral-model prerequisite."
     }
   },
   "structure_coverage_scan": {
@@ -6910,6 +7064,28 @@
         "kl.duality.character_endpoint_substitution"
       ],
       "review": "StalkCharacterObligation quantifies polynomial equalities for the chosen normalized boundary sheaf on its interval. Boundary uniqueness transports the character to other models. The empty KL endpoint works on an arbitrary interval; the full endpoint explicitly assumes lower-interval duality with shift length(b)."
+    },
+    {
+      "entries": [
+        "kl.sheaves.flat_section_base_change",
+        "kl.notes.sheaf_localization"
+      ],
+      "review": "Section-map injectivity uses finite vertices and flatness; surjectivity also uses finite edges. Selected outgoing kernels and edge-image transport use finite edges and flatness, without a finite-vertex hypothesis."
+    },
+    {
+      "entries": [
+        "kl.algebra.flat_embedded_modules",
+        "kl.notes.sheaf_localization"
+      ],
+      "review": "Embedded base change is the image of the tensor of a submodule inclusion. Image commutation holds for any scalar extension; kernel commutation uses flatness. Removed dihedral models from the general kernel/image theorem prerequisites."
+    },
+    {
+      "entries": [
+        "kl.sheaves.boundary_morphism_lift",
+        "kl.sheaves.morphism_extension_step",
+        "kl.detail.morphism_extension"
+      ],
+      "review": "The graded stalk lift uses a free source stalk and both sheaves’ generation/flabbiness. Gluing one vertex uses upper quotients and the outgoing equations. The full theorem uses finite-complement strong induction, and agreement on old edge maps follows from upper surjectivity."
     }
   ],
   "relationship_map_revision": {
@@ -6917,6 +7093,6 @@
     "edge_count": 92,
     "route": "Top splitting and primitive recognition feed the boundary-pairing route; full model decomposition feeds simultaneous character formulas.",
     "evidence": "BoundarySheaf.splitIn_of_top_split, iso_of_primitive_top_split, GradedSheaf.exists_modelSumIso and bottCharacter_decomposition_both.",
-    "latest_anchor_refinement": "Expanded S10 anchors for full-kernel freeness, the local intersection matrix, strict diagonal degree and KL endpoint substitution. The generic degree calculation is linked to graded algebra. The 38-stage, 92-edge prerequisite graph is unchanged."
+    "latest_anchor_refinement": "Added section-constraint, finite-flat section, graded-morphism extension and embedded-image transport anchors. Removed the generic selected-kernel theorem’s dihedral-model edge. The 38-stage, 92-edge graph retains geometry at the later surviving-coset stage."
   }
 }

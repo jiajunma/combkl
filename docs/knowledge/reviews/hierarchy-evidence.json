@@ -92,6 +92,7 @@
       "kl.algebra.dual_basis_degrees",
       "kl.algebra.eigenvalue_difference",
       "kl.algebra.finite_graded_cover",
+      "kl.algebra.flat_embedded_modules",
       "kl.algebra.grading_components",
       "kl.algebra.hilbert_convergence",
       "kl.algebra.hilbert_defect",
@@ -299,10 +300,12 @@
       "kl.sheaves.adjoint_fixed_stalk",
       "kl.sheaves.adjoint_properties",
       "kl.sheaves.adjoint_summand_duality",
+      "kl.sheaves.base_change_properties",
       "kl.sheaves.boundary_coefficient_transport",
       "kl.sheaves.boundary_existence",
       "kl.sheaves.boundary_image_identity",
       "kl.sheaves.boundary_models_exist",
+      "kl.sheaves.boundary_morphism_lift",
       "kl.sheaves.boundary_pullback",
       "kl.sheaves.boundary_recognition",
       "kl.sheaves.boundary_sheaf",
@@ -315,6 +318,7 @@
       "kl.sheaves.finite_operations",
       "kl.sheaves.finite_sum_properties",
       "kl.sheaves.flabbiness",
+      "kl.sheaves.flat_section_base_change",
       "kl.sheaves.free_quotient_sheaf",
       "kl.sheaves.graph_sheaf",
       "kl.sheaves.image_sections",
@@ -328,11 +332,13 @@
       "kl.sheaves.model_sum_characters",
       "kl.sheaves.model_sum_properties",
       "kl.sheaves.model_sum_step",
+      "kl.sheaves.morphism_extension_step",
       "kl.sheaves.pairing_transport",
       "kl.sheaves.partial_iso_extension",
       "kl.sheaves.primitive_image",
       "kl.sheaves.projector_image",
       "kl.sheaves.relative_flabbiness",
+      "kl.sheaves.section_constraints",
       "kl.sheaves.split_sheaf_properties",
       "kl.sheaves.stalk_remainder",
       "kl.sheaves.support_annihilator",
@@ -751,6 +757,15 @@
       "lean_declarations": [
         "OAI.KLInvariance.Graded.exists_finite_homogeneous_generators",
         "OAI.KLInvariance.Hilbert.exists_finite_graded_cover"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.algebra.flat_embedded_modules",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.FlatSubmodule.baseChange_ker",
+        "OAI.KLInvariance.FlatSubmodule.baseChange_map"
       ],
       "paper_locations": []
     },
@@ -1514,8 +1529,11 @@
       "chapter": "kl.sheaves",
       "lean_declarations": [
         "OAI.KLInvariance.MomentGraph.Sheaf.baseChange",
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorAssignments",
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorAssignments_tmul",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_tmul_compatible",
         "OAI.KLInvariance.MomentGraph.Sheaf.tensorSections",
-        "OAI.KLInvariance.MomentGraph.Sheaf.constraint"
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorSections_tmul"
       ],
       "paper_locations": []
     },
@@ -1948,6 +1966,7 @@
       "id": "kl.detail.morphism_extension",
       "chapter": "kl.sheaves",
       "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.ofUniv",
         "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.exists_extension"
       ],
       "paper_locations": [
@@ -3475,9 +3494,11 @@
       "id": "kl.notes.sheaf_localization",
       "chapter": "kl.localization",
       "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.kernelConstraint_tensor",
         "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upwardKernel",
         "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_lowerImage",
-        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upperImage"
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upperImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.edge_subsingleton_of_unit"
       ],
       "paper_locations": [
         "4. Localization at a root plane; loc:decomposition"
@@ -3926,6 +3947,18 @@
       "paper_locations": []
     },
     {
+      "id": "kl.sheaves.base_change_properties",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_generated",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_vertex_free",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_vertex_finite",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upperQuotient",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_flabby"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.sheaves.boundary_coefficient_transport",
       "chapter": "kl.sheaves",
       "lean_declarations": [
@@ -3969,6 +4002,19 @@
         "OAI.KLInvariance.BruhatGraph.lowerIntervalMap",
         "OAI.KLInvariance.BruhatGraph.lowerIntervalBoundary",
         "OAI.KLInvariance.BruhatGraph.boundaryModels"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.sheaves.boundary_morphism_lift",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.mapAssignment",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.compatible",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.boundary",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.boundaryMap",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.map_stalk_image_le",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.extend_stalk"
       ],
       "paper_locations": []
     },
@@ -4109,6 +4155,18 @@
       "paper_locations": [
         "2. Real realizations and moment-graph sheaves; sec:background"
       ]
+    },
+    {
+      "id": "kl.sheaves.flat_section_base_change",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorAssignments_bijective",
+        "OAI.KLInvariance.MomentGraph.Sheaf.constraint_tensorAssignments",
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorSections_surjective",
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorSections_injective",
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorSectionsEquiv"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.sheaves.free_quotient_sheaf",
@@ -4332,6 +4390,21 @@
       "paper_locations": []
     },
     {
+      "id": "kl.sheaves.morphism_extension_step",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.extend",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.extend_vertex_old",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.extend_vertex_new",
+        "OAI.KLInvariance.QuotientEdge.descend",
+        "OAI.KLInvariance.QuotientEdge.descend_apply",
+        "OAI.KLInvariance.QuotientEdge.kernel_scalar_le",
+        "OAI.KLInvariance.Graded.ModuleData.quotientHom",
+        "OAI.KLInvariance.Graded.ModuleData.quotientHom_apply"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.sheaves.pairing_transport",
       "chapter": "kl.sheaves",
       "lean_declarations": [
@@ -4384,6 +4457,17 @@
       "paper_locations": [
         "4. Localization at a root plane; sec:localization"
       ]
+    },
+    {
+      "id": "kl.sheaves.section_constraints",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.constraint",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ker_constraint",
+        "OAI.KLInvariance.MomentGraph.Sheaf.kernelConstraint",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ker_kernelConstraint"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.sheaves.split_sheaf_properties",

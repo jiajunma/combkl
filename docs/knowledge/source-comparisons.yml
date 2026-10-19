@@ -699,3 +699,48 @@ comparisons:
   consequence: The full kernel is the image of the local intersection map and is linearly
     equivalent to the finite free stalk dual. Its induced grading is the one used
     in the kernel-character formula.
+- id: finite-flat-sheaf-constraints
+  kind: Explicit finite-flat construction
+  nodes:
+  - kl.sheaves.flat_section_base_change
+  - kl.sheaves.base_change_properties
+  - kl.algebra.flat_embedded_modules
+  - kl.notes.sheaf_localization
+  paper_labels:
+  - loc:models
+  - loc:decomposition
+  lean_declarations:
+  - OAI.KLInvariance.MomentGraph.Sheaf.tensorSectionsEquiv
+  - OAI.KLInvariance.MomentGraph.Sheaf.baseChange_flabby
+  - OAI.KLInvariance.FlatSubmodule.baseChange_ker
+  - OAI.KLInvariance.MomentGraph.Sheaf.baseChange_lowerImage
+  paper: The localization discussion uses flat extension of kernels and images and
+    then decomposes the localized sheaf over the local ring on a dihedral coset.
+  lean: The scalar-extension lemmas first treat general commutative rings and graph
+    sheaves. Finite product maps identify tensor constraints; flat exactness gives
+    section and selected-kernel identities. Image commutation is proved separately
+    by tensor generators.
+  consequence: These algebraic results precede the root-plane and coset specialization.
+    The later pullback argument controls the surviving edges, while both localized
+    edge images retain their common ambient module.
+- id: graded-morphism-extension
+  kind: Graded extension preceding local decomposition
+  nodes:
+  - kl.sheaves.boundary_morphism_lift
+  - kl.sheaves.morphism_extension_step
+  - kl.detail.morphism_extension
+  paper_labels:
+  - loc:decomposition
+  lean_declarations:
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.extend_stalk
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.extend
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.exists_extension
+  paper: The local-ring decomposition descends through the coset vertices, lifting
+    stalk maps over the common boundary image and retaining both endpoint restrictions.
+  lean: The graded morphism-extension theorem works over a connected nonnegatively
+    graded Noetherian domain. A homogeneous free-basis lift constructs the next stalk
+    map, upper quotients construct the incoming edge maps, and finite-complement induction
+    extends the partial morphism.
+  consequence: This graded extension is used in boundary recognition and splitting.
+    The ungraded local-ring decomposition is a later construction with its own local-ring
+    and model hypotheses.

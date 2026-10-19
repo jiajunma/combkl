@@ -48,7 +48,7 @@ Global generation asks whether every stalk vector can be realized as the value o
 
 An upper set is a vertex subset that contains every vertex above any of its members. The nontrivial proper upper set in this example is \(\{y\}\). Flabbiness asks whether every compatible section on an upper set extends to a global section.
 
-A polynomial \(g\) prescribed at \(y\) extends to \((g,g)\), so the example is flabby. On a graph with several vertices, prescribing compatible values on an entire upper set imposes more conditions than prescribing a value at one stalk. The two extension statements become separate inputs to the boundary-image theorem.
+A polynomial \(g\) prescribed at \(y\) extends to \((g,g)\), so the example is flabby. On a graph with several vertices, prescribing compatible values on an entire upper set imposes more conditions than prescribing a value at one stalk. The two extension statements become separate inputs to the [[node:kl.sheaves.boundary_image_identity|boundary-image theorem]].
 
 Relative flabbiness is the extension statement for sets closed under the edges that remain relevant after localization. It will be used in localization and edge-image comparison when some edge modules become zero.
 
@@ -107,6 +107,44 @@ j_e\rho^B_{x,e}=\rho^C_{x,e}j_x.
 This equation ensures that a kernel or image in \(B\) goes to the corresponding kernel or image in \(C\).
 
 In the free module \(A\), the submodules \(A\) and \(\alpha A\) both have rank one, and their inclusions have different images. A commuting sheaf isomorphism tracks those inclusions. Later comparisons use it to place the relevant edge images in a common module.
+
+## Extending a morphism through one stalk
+
+A partial morphism on an upper set \(U\) includes an edge map whenever the edge's target lies in \(U\). For a maximal vertex \(x\) outside \(U\), all outgoing targets of \(x\) are already present. Their edge maps give a degree-zero map between the boundary products
+\[
+j_{\partial x}:\prod_{e:x\to y}B^e\longrightarrow\prod_{e:x\to y}C^e.
+\]
+
+Applying the known vertex maps to a section strictly above \(x\) preserves compatibility, by the two commuting squares. Its boundary values are transformed by \(j_{\partial x}\). The [[node:kl.sheaves.boundary_image_identity|boundary-image theorem]] then gives
+\[
+j_{\partial x}(\operatorname{im}r_B)\subseteq\operatorname{im}r_C,
+\]
+using generation and flabbiness of both sheaves.
+
+Set \(T=\operatorname{im}r_C\). The required map \(B^x\to T\) lifts through the surjection \(C^x\to T\): choose a homogeneous free basis of \(B^x\), lift each image, and retain its homogeneous component of the same degree. The resulting map \(l_x:B^x\to C^x\) satisfies \(r_C l_x=j_{\partial x}r_B\), which verifies every outgoing lower square.
+
+For a new incoming edge \(e:z\to x\), the upper-quotient rule descends \(l_x\) to an edge map. Indeed
+\(l_x(\alpha_e v)=\alpha_e l_x(v)\), so the old upper kernel maps into the new upper kernel. Homogeneous preimages show that this quotient map preserves degree. These constructions extend the partial morphism to \(U\cup\{x\}\). Removing \(x\) from the finite missing set supplies the strictly smaller induction instance.
+
+The [[node:kl.sheaves.boundary_morphism_lift|boundary-morphism lifting theorem]], [[node:kl.sheaves.morphism_extension_step|one-vertex morphism extension theorem]] and [[node:kl.detail.morphism_extension|full morphism extension theorem]] develop these three steps separately.
+
+## Tensor extension and compatible sections
+
+For a commutative scalar extension \(R\to S\), define \(B_S^x=S\otimes_R B^x\) and \(B_S^e=S\otimes_R B^e\), with restrictions \(1\otimes\rho^\pm_e\). A compatible assignment \(f\) gives \((s\otimes f_x)_x\), producing
+\[
+\Theta_\Omega:S\otimes_R\Gamma_\Omega(B)\longrightarrow\Gamma_\Omega(B_S).
+\]
+
+The section constraint map collects the differences of the two restrictions on edges internal to \(\Omega\). Its kernel is exactly \(\Gamma_\Omega(B)\). The finite assignment and edge-product maps commute with tensoring, and on a pure tensor the constraint identity is
+\[
+s\otimes\rho^-_e(f_{s(e)})-s\otimes\rho^+_e(f_{t(e)})
+=s\otimes\bigl(\rho^-_e(f_{s(e)})-\rho^+_e(f_{t(e)})\bigr).
+\]
+Flatness preserves the kernel sequence. Thus the [[node:kl.sheaves.flat_section_base_change|flat section base-change theorem]] makes \(\Theta_\Omega\) an isomorphism for a finite graph.
+
+A tensor stalk value is a finite sum of pure tensors, so global sections generating its second factors generate the value after extension. Under the finite-flat hypotheses, a section on an upper set likewise comes from a finite sum of tensor sections; extending each original section proves flabbiness of \(B_S\). The [[node:kl.sheaves.base_change_properties|scalar-extension property theorem]] also transports free stalks, finite generation and the upper-quotient rule.
+
+The selected outgoing constraint map applies the same construction at one stalk. It identifies \(K_x(F)\) with a kernel, giving the [[node:kl.notes.sheaf_localization|flat kernel-and-image theorem]] used in localization. That theorem preserves the embeddings of both edge images into the same extended edge module.
 
 ## Minimal covers detect a boundary-sheaf isomorphism
 
@@ -480,8 +518,13 @@ The OpenAI notes obtain the equality of \(C\) and \(P\) through their cited char
 
 - [[node:kl.detail.sheaf_morphism]]
 - [[node:kl.detail.sheaf_isomorphisms]]
+- [[node:kl.sheaves.boundary_morphism_lift]]
+- [[node:kl.sheaves.morphism_extension_step]]
 - [[node:kl.detail.morphism_extension]]
 - [[node:kl.detail.base_change]]
+- [[node:kl.sheaves.section_constraints]]
+- [[node:kl.sheaves.flat_section_base_change]]
+- [[node:kl.sheaves.base_change_properties]]
 - [[node:kl.sheaves.finite_operations]]
 - [[node:kl.sheaves.finite_sum_properties]]
 - [[node:kl.sheaves.lower_extension]]

@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 74136,
-  "theorem_walkthroughs": 259,
+  "revised_proof_words": 75717,
+  "theorem_walkthroughs": 264,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -135,6 +135,18 @@
       "revised_proof_words": 259,
       "proof_sha256": "2f1421d48eab94737e49ecfc9d08f6301fe6bcfbfb458cb1b93205756ca765d2",
       "review": "Read finite homogeneous generators and exists_finite_graded_cover. Explained the finite union of component supports, spanning, the exact shifted coefficient condition and its lower-bound consequence."
+    },
+    {
+      "node": "kl.algebra.flat_embedded_modules",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.FlatSubmodule.baseChange_ker",
+        "OAI.KLInvariance.FlatSubmodule.baseChange_map"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 240,
+      "proof_sha256": "ecc99e6151c9e327689ca8d063970502fe0f36d779e05b471f78136e17d8443b",
+      "review": "Read both FlatSubmodule proofs. Defined the embedded base-change submodule as an image, proved image commutation by tensor generators in both directions, and retained flatness only for the kernel identity."
     },
     {
       "node": "kl.algebra.hilbert_convergence",
@@ -1007,13 +1019,14 @@
     {
       "node": "kl.detail.morphism_extension",
       "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.ofUniv",
         "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.exists_extension"
       ],
-      "proof_steps": 4,
+      "proof_steps": 5,
       "previous_proof_words": 110,
-      "revised_proof_words": 384,
-      "proof_sha256": "698042a0e0412eb148dbd6448a88a48e7904209e62de09608631e76fe23d69fb",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 335,
+      "proof_sha256": "599fa4974bafad5e6ac3c0d248f01c34ac5513190c0dfcdd25a8d20147fc86a4",
+      "review": "Read the full finite-complement strong induction, empty case, maximal missing vertex, graded stalk lift, one-vertex extension and old-vertex transport. The final old-edge equality is derived explicitly from the source conclusion and upper-map surjectivity."
     },
     {
       "node": "kl.detail.primitive_summand",
@@ -2155,15 +2168,17 @@
     {
       "node": "kl.notes.sheaf_localization",
       "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.kernelConstraint_tensor",
         "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upwardKernel",
         "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_lowerImage",
-        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upperImage"
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upperImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.edge_subsingleton_of_unit"
       ],
-      "proof_steps": 4,
+      "proof_steps": 5,
       "previous_proof_words": 165,
-      "revised_proof_words": 321,
-      "proof_sha256": "b45bf4babf82356f26e5d5dc8fc1cb5facd479711c1f961a7c8149ed0d9aa9e7",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 293,
+      "proof_sha256": "73830da20c69c0fa4e376e6b28b289e85969a54621d56a837ef4eab1ad25c696",
+      "review": "Read the outgoing-constraint tensor identity, embedded kernel equality and both edge-image substitutions. Kept finite edges but no finite-vertex hypothesis, separated the extra upper-quotient/unit-label claim, and removed dihedral models as a prerequisite of this general flat-algebra theorem."
     },
     {
       "node": "kl.notes.tensor_pairing",
@@ -2469,6 +2484,21 @@
       "review": "Compared dualSection, dualProjection, their splitting equation, adjointProjector_range, and rangeAdjointEquivDual. Both inverse maps and the range equality are explicit; symmetry is not used."
     },
     {
+      "node": "kl.sheaves.base_change_properties",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_generated",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_vertex_free",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_vertex_finite",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_upperQuotient",
+        "OAI.KLInvariance.MomentGraph.Sheaf.baseChange_flabby"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 355,
+      "proof_sha256": "78cc2858bc625b6e808fd198272193bfa63c9d37626ae726572faec9aa56f814",
+      "review": "Read all five property-transfer results. Separated generation/free/finite transport from the source flatness hypothesis for upper quotients and the finite-graph plus flatness hypotheses for flabbiness."
+    },
+    {
       "node": "kl.sheaves.boundary_coefficient_transport",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2524,6 +2554,22 @@
       "revised_proof_words": 283,
       "proof_sha256": "b79115f236896ec27e768ce87d2610a6f2491d2c3977f814f40ed3581e5b9626",
       "review": "Checked lowerBoundary, actualBoundaryModels and the Bruhat lowerIntervalMap construction. Existence on each lower ideal supplies top normalization and minimality; lower extension supplies support."
+    },
+    {
+      "node": "kl.sheaves.boundary_morphism_lift",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.mapAssignment",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.compatible",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.boundary",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.boundaryMap",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.map_stalk_image_le",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.extend_stalk"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 370,
+      "proof_sha256": "283a1468139a4be04ac39d16516ff3c5597ddaab1ea6b87f3138732a9fe9980c",
+      "review": "Read the partial assignment, boundary map and image-containment constructions, then the exact graded-range lift. Retained finite edges, the arbitrary subset containing all vertices above x, only source-stalk freeness at x, and both sheaves’ flabbiness/generation."
     },
     {
       "node": "kl.sheaves.boundary_pullback",
@@ -2652,6 +2698,21 @@
       "revised_proof_words": 394,
       "proof_sha256": "9200db1e805b297e8865fa1ead0971d7ce48791ca2202fa0a60182dc818fdd9e",
       "review": "Checked componentwise generation/flabbiness/quotients/kernels and the finite coordinate-insertion proof for positive-ideal membership."
+    },
+    {
+      "node": "kl.sheaves.flat_section_base_change",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorAssignments_bijective",
+        "OAI.KLInvariance.MomentGraph.Sheaf.constraint_tensorAssignments",
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorSections_surjective",
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorSections_injective",
+        "OAI.KLInvariance.MomentGraph.Sheaf.tensorSectionsEquiv"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 319,
+      "proof_sha256": "f951c0b94b5e801df5cf58e52145485c13f225eda56aecb9362986877c3d8e72",
+      "review": "Read the finite assignment bijection, pure-tensor constraint identity, flat exactness and separate surjectivity/injectivity proofs. Kept the full ambient vertex product and the weaker finiteness requirement for injectivity."
     },
     {
       "node": "kl.sheaves.hilbert_detection",
@@ -2797,6 +2858,24 @@
       "revised_proof_words": 339,
       "proof_sha256": "7af2c3e21b5cf67f82f7e680add303bb99551ea4e0fb38635e7e056dcdc169c2",
       "review": "Read extend_modelSum. The graded remainder becomes new centered shifted models; their support kills every old vertex and every edge with old upper endpoint; outgoing squares and incoming quotient maps complete the extension."
+    },
+    {
+      "node": "kl.sheaves.morphism_extension_step",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.extend",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.extend_vertex_old",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnHom.extend_vertex_new",
+        "OAI.KLInvariance.QuotientEdge.descend",
+        "OAI.KLInvariance.QuotientEdge.descend_apply",
+        "OAI.KLInvariance.QuotientEdge.kernel_scalar_le",
+        "OAI.KLInvariance.Graded.ModuleData.quotientHom",
+        "OAI.KLInvariance.Graded.ModuleData.quotientHom_apply"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 374,
+      "proof_sha256": "aae32d63e035cf5e95b2ae9a9bdc55de7e26a0764a57224c05e32dc69c14e714",
+      "review": "Read the complete OnHom.extend construction, both preservation lemmas, QuotientEdge.descend and the graded quotientHom. Explained kernel containment, homogeneous preimages, old/new edge cases and the exact partial-morphism domains without adding finiteness or freeness assumptions."
     },
     {
       "node": "kl.sheaves.pairing_transport",

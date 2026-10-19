@@ -319,6 +319,25 @@ The equation \(fr(v,k)=f(v)-ga(v)+g(k)=0\) puts the value in \(\ker f\), and \(r
 
 For a finite free module over \(A/(\alpha)\), coordinate reduction from \(A^r\) gives a presentation whose kernel is \(\alpha A^r\). Over a domain with \(\alpha\ne0\), multiplication by \(\alpha\) identifies this kernel with \(A^r\). This supplies a [[node:kl.algebra.scalar_free_presentation|concrete projective presentation]] for comparison.
 
+## Embedded kernels and images after scalar extension
+
+For \(R\to S\) and an actual submodule \(P\subseteq M\), define
+\[
+P_S=\operatorname{im}(S\otimes_R P\longrightarrow S\otimes_R M).
+\]
+This places the extended module inside a fixed ambient tensor module. If \(f:M\to N\), then
+\[
+(f(P))_S=f_S(P_S)
+\]
+by expanding both sides into finite sums \(s\otimes f(p)\). This equality of images holds for any scalar extension.
+
+If \(S\) is flat over \(R\), tensoring the exact sequence
+\(0\to\ker f\to M\to N\) gives
+\[
+(\ker f)_S=\ker f_S.
+\]
+The [[node:kl.algebra.flat_embedded_modules|embedded base-change theorem]] proves both assertions. Applying them to selected outgoing constraints and the two edge restrictions preserves the lower and upper images in one edge module. Localization is the case \(S=R_{\mathfrak p}\).
+
 ## Prime denominators and membership in a target module
 
 Let \(R\) be a UFD, let \(E\) be torsion-free, and let a vector \(x\in E\) have a nonzero multiplier \(c\) with \(cx\in M\). Prime-local membership supplies, for every prime element \(p\), a multiplier \(a\) with \(p\nmid a\) and \(ax\in M\).
@@ -438,6 +457,8 @@ This [[node:kl.algebra.hilbert_numerators|numerator theorem]] is the bridge from
 - [[node:kl.sheaves.hilbert_detection]]
 
 ### Algebra for support, quotients and comparison
+
+- [[node:kl.algebra.flat_embedded_modules]]
 
 - [[node:kl.algebra.localized_membership]]
 - [[node:kl.algebra.quotient_endomorphism_descent]]
