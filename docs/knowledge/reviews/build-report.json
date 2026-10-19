@@ -4,7 +4,7 @@
     "path": "docs/knowledge"
   },
   "decision": "extracted",
-  "created_at": "2026-10-19T06:48:53.701468+00:00",
+  "created_at": "2026-10-19T07:28:22.896127+00:00",
   "inputs": [
     "agoramachina/openai-math@adc7f1241b42e322a6451854ab7e4b4c146bf78a"
   ],
@@ -18,50 +18,52 @@
   "code_link_repository": "https://github.com/jiajunma/combkl",
   "code_link_revision": "108243e05ed46235bf82dc30d4d90c794579776f",
   "uncovered_structure_fields": 0,
-  "node_count": 296,
+  "node_count": 308,
   "definition_navigation": {
     "engine": "Python registry matcher; no LLM calls",
-    "registry_sha256": "754a4bdf1e0c315ed6ffc5ac8de73057fee71c2df8bc9e5eb65801464e6dc067",
-    "definition_targets": 112,
-    "aliases": 534
+    "registry_sha256": "aaa98cd8226ee7239e2331f56cad88d8f777538874de5796e7152a568e2bf0e7",
+    "definition_targets": 114,
+    "aliases": 567
   },
   "chapter_count": 9,
   "legacy_page_redirects": 226,
   "bundled_source_files_verified": 34,
   "node_kinds": {
-    "theorem": 182,
-    "definition": 113,
+    "theorem": 192,
+    "definition": 115,
     "concept": 1
   },
   "node_statuses": {
-    "proved": 182,
-    "formalized": 114
+    "proved": 192,
+    "formalized": 116
   },
   "proof_exposition_review": {
-    "reviewed_theorem_walkthroughs": 182,
+    "reviewed_theorem_walkthroughs": 192,
     "check_scope": "Matches reviewed prose; does not certify mathematical completeness"
   },
   "source_comparisons": {
     "authority": "Lean",
-    "entries_with_explicit_source_comparison": 56,
+    "entries_with_explicit_source_comparison": 60,
     "changed_files": 0
   },
   "diagnostics": [
     "[WARNING] lean.repository.openai-kl: Lean repository 'openai-kl' has uncommitted or untracked files"
   ],
   "browser_automation_used": false,
-  "html_pages_checked": 558,
-  "node_pages_checked": 296,
-  "graph_detail_payloads_checked": 296,
-  "generated_definition_links_checked": 3704,
+  "html_pages_checked": 570,
+  "node_pages_checked": 308,
+  "graph_detail_payloads_checked": 308,
+  "generated_definition_links_checked": 3855,
   "definition_link_occurrences": {
-    "kl.algebra.coefficient_algebra": 117,
-    "kl.algebra.grading_components": 78,
-    "kl.algebra.homogeneous_basis": 70,
+    "kl.algebra.coefficient_algebra": 120,
+    "kl.algebra.grading_components": 105,
+    "kl.algebra.hilbert_defect": 2,
+    "kl.algebra.homogeneous_basis": 86,
     "kl.algebra.homogeneous_subquotients": 22,
+    "kl.algebra.module_operations": 21,
     "kl.algebra.pair_projection": 9,
-    "kl.algebra.positive_ideal": 50,
-    "kl.algebra.scalar_quotient": 10,
+    "kl.algebra.positive_ideal": 51,
+    "kl.algebra.scalar_quotient": 19,
     "kl.algebra.scalar_twist": 4,
     "kl.comparison.free_suffixes": 26,
     "kl.comparison.normalized_kernel": 4,
@@ -80,12 +82,12 @@
     "kl.detail.compatible_sections": 136,
     "kl.detail.diamond_closure": 1,
     "kl.detail.edge_factor": 16,
-    "kl.detail.edge_images": 14,
-    "kl.detail.graded_character": 9,
-    "kl.detail.graded_maps_shifts": 14,
+    "kl.detail.edge_images": 15,
+    "kl.detail.graded_character": 47,
+    "kl.detail.graded_maps_shifts": 13,
     "kl.detail.graded_sheaf": 112,
     "kl.detail.graph_transport": 4,
-    "kl.detail.hilbert_values": 23,
+    "kl.detail.hilbert_values": 72,
     "kl.detail.integral_adjoints": 8,
     "kl.detail.kl_defect": 1,
     "kl.detail.local_intersection": 1,
@@ -96,7 +98,7 @@
     "kl.detail.ordinary_r": 17,
     "kl.detail.plane_basis": 21,
     "kl.detail.polynomial_labels": 58,
-    "kl.detail.positive_roots": 210,
+    "kl.detail.positive_roots": 209,
     "kl.detail.primitive_projectors": 39,
     "kl.detail.root_inversions": 29,
     "kl.detail.rtilde_family": 11,
@@ -154,7 +156,7 @@
     "kl.sheaves.finite_operations": 12,
     "kl.sheaves.flabbiness": 151,
     "kl.sheaves.free_quotient_sheaf": 20,
-    "kl.sheaves.graded_module": 43,
+    "kl.sheaves.graded_module": 29,
     "kl.sheaves.graph_sheaf": 11,
     "kl.sheaves.integral_cuts": 36,
     "kl.sheaves.lower_extension": 16,
@@ -163,13 +165,13 @@
     "kl.sheaves.supported_sections": 18,
     "kl.sheaves.upward_kernel": 112
   },
-  "math_occurrences_extracted": 11494,
+  "math_occurrences_extracted": 12065,
   "broken_links": [],
   "katex": {
     "renderer": "KaTeX",
     "version": "0.16.46",
-    "occurrences_checked": 11494,
-    "distinct_formulas_checked": 5603,
+    "occurrences_checked": 12065,
+    "distinct_formulas_checked": 5794,
     "browser_used": false
   }
 }

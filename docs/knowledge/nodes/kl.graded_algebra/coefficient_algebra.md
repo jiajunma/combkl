@@ -8,6 +8,7 @@ topics:
 - kl.graded_algebra
 uses:
 - kl.realization.extended_action
+- kl.algebra.grading_components
 lean:
   repository: openai-kl
   modules:
@@ -17,6 +18,8 @@ lean:
   - OAI.KLInvariance.TitsSpace.coefficientAction
   - OAI.KLInvariance.TitsSpace.coefficientAction_ι
   - OAI.KLInvariance.TitsSpace.simpleRootPolynomial
+  - OAI.KLInvariance.TitsSpace.symmetricGrading
+  - OAI.KLInvariance.TitsSpace.mem_symmetricGrading
 source:
   spans:
   - artifact: openai-kl-source
@@ -35,6 +38,14 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.Frobenius:48
     format: lean-location
     note: OAI.KLInvariance.TitsSpace.simpleRootPolynomial
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Frobenius:777
+    format: lean-location
+    note: OAI.KLInvariance.TitsSpace.symmetricGrading
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Frobenius:782
+    format: lean-location
+    note: OAI.KLInvariance.TitsSpace.mem_symmetricGrading
 verification:
   definition: accepted
   proof: not_applicable
@@ -51,7 +62,7 @@ tags:
 
 # The symmetric coefficient algebra and its action
 
-Let \(V\) be the extended real root space. The coefficient algebra is
+Fix a finite-generator Coxeter system and let \(V\) be its extended real root space. The coefficient algebra is
 \[
 A=\operatorname{Sym}_{\mathbb R}(V).
 \]
@@ -70,6 +81,18 @@ The reverse homomorphism sends \(X_i\) to \(\iota(e_i)\). The composites fix all
 For \(v=\sum_i c_i e_i\), its generator becomes the linear polynomial \(\sum_i c_iX_i\). For example, \(2e_1-e_2\) becomes \(2X_1-X_2\). A basis of the extended space includes the added dual directions, so those directions also supply polynomial variables.
 
 A nonzero vector gives a nonzero degree-one polynomial, since some basis coefficient is nonzero. In particular, a root vector gives the nonzero linear label used on an edge.
+
+## The transported symmetric grading
+
+Let \(\Phi:A\to\mathbb R[X_1,\ldots,X_N]\) be the chosen polynomial-coordinate isomorphism. The source defines
+\[
+A_n=\Phi^{-1}\bigl(\mathbb R[X_1,\ldots,X_N]_n\bigr).
+\]
+Equivalently, it takes the image of the polynomial degree-\(n\) subspace under \(\Phi^{-1}\).
+
+To decompose \(a\in A\), decompose \(\Phi(a)\) into finitely many homogeneous polynomial components and apply \(\Phi^{-1}\) to each. Uniqueness follows by applying \(\Phi\) again. Since \(\Phi\) is an algebra isomorphism, products of pieces have the sum of their degrees.
+
+Thus each \(\iota(v)\) is degree one, constants are degree zero, and negative pieces vanish. This is the symmetric grading used by the word-module constructions.
 
 ## Extending the group action to coefficients
 
@@ -106,3 +129,7 @@ The local source declarations below define the constructions and prove the state
 `OAI.KLInvariance.TitsSpace.coefficientAction_ι`: [Frobenius.lean:23](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L23).
 
 `OAI.KLInvariance.TitsSpace.simpleRootPolynomial`: [Frobenius.lean:48](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L48).
+
+`OAI.KLInvariance.TitsSpace.symmetricGrading`: [Frobenius.lean:777](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L777).
+
+`OAI.KLInvariance.TitsSpace.mem_symmetricGrading`: [Frobenius.lean:782](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean#L782).

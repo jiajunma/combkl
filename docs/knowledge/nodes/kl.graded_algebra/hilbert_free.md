@@ -1,22 +1,49 @@
 ---
 id: kl.sheaves.hilbert_free
-title: The Hilbert series of a finite graded free module
+title: Hilbert series and values of a homogeneous free basis
 kind: theorem
 status: proved
 primary_topic: kl.graded_algebra
 topics:
 - kl.graded_algebra
 uses:
+- kl.algebra.polynomial_hilbert
+- kl.algebra.module_operations
+- kl.algebra.component_transport
 - kl.detail.hilbert_values
-- kl.algebra.grading_components
 lean:
   repository: openai-kl
   modules:
   - HilbertSeries
   declarations:
+  - OAI.KLInvariance.Hilbert.shiftedPieceEquiv
+  - OAI.KLInvariance.Hilbert.shiftedPiece_finrank
+  - OAI.KLInvariance.Hilbert.hasSum_shifted_polynomial
+  - OAI.KLInvariance.Hilbert.hasSum_shiftedFree
+  - OAI.KLInvariance.Hilbert.finrank_homogeneous_basis
   - OAI.KLInvariance.Hilbert.hasSum_homogeneous_basis
 source:
   spans:
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.HilbertSeries:127
+    format: lean-location
+    note: OAI.KLInvariance.Hilbert.shiftedPieceEquiv
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.HilbertSeries:142
+    format: lean-location
+    note: OAI.KLInvariance.Hilbert.shiftedPiece_finrank
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.HilbertSeries:147
+    format: lean-location
+    note: OAI.KLInvariance.Hilbert.hasSum_shifted_polynomial
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.HilbertSeries:160
+    format: lean-location
+    note: OAI.KLInvariance.Hilbert.hasSum_shiftedFree
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.HilbertSeries:301
+    format: lean-location
+    note: OAI.KLInvariance.Hilbert.finrank_homogeneous_basis
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.HilbertSeries:321
     format: lean-location
@@ -32,68 +59,88 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Does the exposition preserve the mathematical scope of its Lean declarations?
-  verdict: The stated hypotheses and conclusion follow the fixed source; explanatory
-    derivations retain the original proof route.
+  prompt: Are the grading, scalar, finiteness and convergence hypotheses retained?
+  verdict: 'Read shiftedPieceEquiv, shifted-free HasSum and homogeneous-basis finrank/HasSum.
+    Followed the source order: polynomial series, integer translation, finite coordinate
+    sum and degreewise basis bijection.'
 tags:
 - Kazhdan-Lusztig
-- background
+- graded-algebra
 ---
 
-# The Hilbert series of a finite graded free module
+# Hilbert series and values of a homogeneous free basis
 
-Let \(A=k[x_1,\ldots,x_N]\), with every variable in degree one. Suppose that a finite graded free \(A\)-module \(M\) has a homogeneous basis \(e_i\) of degrees \(d_i\). For \(0<q<1\),
+Let \(k\) be a field and \(A=k[X_1,\ldots,X_N]\), and let a graded \(A\)-module \(M\) have a finite homogeneous basis \(e_i\) with integer degrees \(d_i\). Then
 \[
-\sum_{n\in\mathbb Z}\dim_k M_n\,q^n
-=\frac{\sum_i q^{d_i}}{(1-q)^N}.
+\operatorname{Hilb}(M;z)=\frac{\sum_i z^{d_i}}{(1-z)^N}.
+\]
+For every \(0<q<1\), the numerical series converges and
+\[
+H_M(q)=\frac{\sum_i q^{d_i}}{(1-q)^N}.
 \]
 
 *Proof.*
 
-### Step 1. Describe one homogeneous piece using the basis
+### Step 1. Compute the pieces of the shifted free coordinate module
 
-Let \(m_i\) be a finite homogeneous basis with \(\deg m_i=d_i\). Every \(m\in M\) has a unique expression \(\sum_i a_im_i\). The expression is homogeneous of degree \(n\) precisely when \(a_i\) is homogeneous of degree \(n-d_i\) for every \(i\).
-
-To verify the reverse implication, decompose each \(a_i\) by degree. Components of total degree different from \(n\) must sum to zero. Linear independence of the \(m_i\) forces the corresponding coefficients to vanish separately. Hence
+Let \(F=A^I\), with the basis coordinate \(i\) placed in degree \(d_i\). Its degree-\(n\) piece identifies with
 \[
-M_n\simeq\bigoplus_i A_{n-d_i},
-\qquad \dim_kM_n=\sum_i\dim_kA_{n-d_i}.
+F_n\simeq\prod_{i\in I}A_{n-d_i}
+\]
+by viewing each coordinate together with its degree-membership condition. The inverse assembles those coordinates into one tuple.
+
+The polynomial pieces are finite-dimensional, and \(I\) is finite. Therefore
+\[
+\dim_kF_n=\sum_i\dim_kA_{n-d_i}.
 \]
 
-### Step 2. Compute the polynomial-ring series
+### Step 2. Evaluate one shifted contribution
 
-Monomials \(X_1^{a_1}\cdots X_N^{a_N}\), with \(a_j\ge0\), form a basis of \(A\). Their degree is \(a_1+\cdots+a_N\). For \(0<q<1\),
+For a fixed integer \(d_i\), set \(m=n-d_i\). The map \(m\mapsto m+d_i\) is a bijection of \(\mathbb Z\). Since \(q>0\),
+\(q^{m+d_i}=q^{d_i}q^m\).
+Thus the polynomial-ring series gives
 \[
-\sum_n\dim_k(A_n)q^n
-=\sum_{a_1,\ldots,a_N\ge0}q^{a_1+\cdots+a_N}
-=\left(\sum_{a\ge0}q^a\right)^N
-=(1-q)^{-N}.
+\sum_{n\in\mathbb Z}\dim_kA_{n-d_i}\,q^n
+=q^{d_i}\sum_{m\in\mathbb Z}\dim_kA_m\,q^m
+=\frac{q^{d_i}}{(1-q)^N}.
 \]
-The geometric series converges, and its finite product gives the required convergent monomial sum.
+Translation of the convergent series proves convergence of this shifted contribution, including when \(d_i<0\).
 
-### Step 3. Account for the basis shifts
+### Step 3. Sum the finitely many coordinates
 
-For a fixed \(i\), change the summation index \(m=n-d_i\):
+Use Step 1 and add the finitely many convergent series from Step 2:
 \[
-\sum_{n\in\mathbb Z}\dim_k(A_{n-d_i})q^n
-=q^{d_i}\sum_{m\ge0}\dim_k(A_m)q^m
-=q^{d_i}(1-q)^{-N}.
-\]
-This works even for an integer shift \(d_i<0\), because \(q>0\), and the degrees remain bounded below for each shifted summand.
-
-### Step 4. Sum the finitely many basis contributions
-
-Use the dimension equality in Step 1 and interchange a finite sum with the convergent series:
-\[
-H_M(q)=\sum_iq^{d_i}(1-q)^{-N}
+H_F(q)=\sum_i\frac{q^{d_i}}{(1-q)^N}
 =\frac{\sum_iq^{d_i}}{(1-q)^N}.
 \]
-Thus a generator of positive degree contributes a positive exponent in the numerator, as required by the grading convention.
+The same degree identities yield the formal Laurent-series formula.
+
+### Step 4. Transfer the pieces through the homogeneous basis
+
+The basis gives an \(A\)-linear bijection
+\[
+F\longrightarrow M,\qquad (a_i)\longmapsto\sum_i a_ie_i.
+\]
+A degree-\(n\) tuple has \(a_i\in A_{n-d_i}\), so each product \(a_ie_i\) has degree \(n\). The bijection preserves degree.
+
+It is surjective on each degree by the [[node:kl.algebra.component_transport|homogeneous-preimage theorem]]. It is injective there because it is injective on the whole module. Thus \(F_n\simeq M_n\) for every \(n\), preserving all the dimensions and transferring Step 3 to \(M\).
+
+For \(M=A\oplus A(2)\), the basis degrees give numerator \(1+q^2\). If \(N=1\), its numerical Hilbert value is \((1+q^2)/(1-q)\); if \(N=2\), it is \((1+q^2)/(1-q)^2\).
 
 ## References
 
-[2. Real realizations and moment-graph sheaves](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L2).
+The local source declarations below give the construction and proof.
 
 ## Lean formalization
+
+`OAI.KLInvariance.Hilbert.shiftedPieceEquiv`: [HilbertSeries.lean:127](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/HilbertSeries.lean#L127).
+
+`OAI.KLInvariance.Hilbert.shiftedPiece_finrank`: [HilbertSeries.lean:142](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/HilbertSeries.lean#L142).
+
+`OAI.KLInvariance.Hilbert.hasSum_shifted_polynomial`: [HilbertSeries.lean:147](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/HilbertSeries.lean#L147).
+
+`OAI.KLInvariance.Hilbert.hasSum_shiftedFree`: [HilbertSeries.lean:160](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/HilbertSeries.lean#L160).
+
+`OAI.KLInvariance.Hilbert.finrank_homogeneous_basis`: [HilbertSeries.lean:301](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/HilbertSeries.lean#L301).
 
 `OAI.KLInvariance.Hilbert.hasSum_homogeneous_basis`: [HilbertSeries.lean:321](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/HilbertSeries.lean#L321).

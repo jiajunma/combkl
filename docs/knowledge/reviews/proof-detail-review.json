@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 53271,
-  "theorem_walkthroughs": 182,
+  "revised_proof_words": 55798,
+  "theorem_walkthroughs": 192,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -14,6 +14,74 @@
   ],
   "mechanical_check_limit": "The build checks text hashes, references, graph structure and formulas. These checks do not certify mathematical or pedagogical completeness.",
   "proofs": [
+    {
+      "node": "kl.algebra.augmentation_kernel",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.nonnegativeAugmentation",
+        "OAI.KLInvariance.Graded.positiveIdeal_eq_augmentation_ker",
+        "OAI.KLInvariance.Graded.polynomialGrading_negative",
+        "OAI.KLInvariance.Graded.polynomialGrading_zero",
+        "OAI.KLInvariance.Graded.polynomial_scalar_mod_positive"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 275,
+      "proof_sha256": "db073c9481706d4900fe7415a8314b8e41b12d7c8b62ffedd3045e9791b99a0b",
+      "review": "Read the homogeneous multiplication proof and both ideal containments, plus polynomial negative/zero degree and scalar-mod-positive lemmas."
+    },
+    {
+      "node": "kl.algebra.character_basis_independence",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.NonnegativeBasis.hasSum",
+        "OAI.KLInvariance.Graded.NonnegativeBasis.polynomial_eq",
+        "OAI.KLInvariance.Graded.character_eq"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 184,
+      "proof_sha256": "e5d8a9eaca91e50ef9331f604502060b067c2f4df82598ef4bd68968330a89a0",
+      "review": "Read NonnegativeBasis.polynomial_eq and character_eq. Expanded equality of the two convergent sums, nonzero denominator cancellation, infinitely many evaluations and injectivity of integer coefficients."
+    },
+    {
+      "node": "kl.algebra.character_operations",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.mapNonnegativeBasis",
+        "OAI.KLInvariance.Graded.ModuleData.character_eq_of_gradedEquiv",
+        "OAI.KLInvariance.Graded.ModuleData.shiftedBasis",
+        "OAI.KLInvariance.Graded.ModuleData.char_shift",
+        "OAI.KLInvariance.Graded.ModuleData.productBasis",
+        "OAI.KLInvariance.Graded.ModuleData.char_prod",
+        "OAI.KLInvariance.Graded.ModuleData.piBasis",
+        "OAI.KLInvariance.Graded.ModuleData.char_pi",
+        "OAI.KLInvariance.Graded.ModuleData.char_zero",
+        "OAI.KLInvariance.CoefficientChange.equiv",
+        "OAI.KLInvariance.CoefficientChange.kEquiv",
+        "OAI.KLInvariance.Graded.ModuleData.mem_changePiece"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 285,
+      "proof_sha256": "46509e353bea225933b570aa592a043f420bbf5db7ee69e686b2e3203257b2af",
+      "review": "Read map/shift/product/pi bases and all character identities; the coefficient-transport consequence follows from the explicit semilinear equivalence and changePiece membership formula."
+    },
+    {
+      "node": "kl.algebra.component_transport",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.map_component",
+        "OAI.KLInvariance.Graded.kernel_homogeneous",
+        "OAI.KLInvariance.Graded.range_homogeneous",
+        "OAI.KLInvariance.Graded.component_homogeneous_smul",
+        "OAI.KLInvariance.Graded.scalar_range_homogeneous",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.component",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.mem_of_map_mem",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.homogeneous_preimage"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 218,
+      "proof_sha256": "42954028c4342d80128d0ba7ae9d36a61898db9142ecfa7d1f50750165e024ae",
+      "review": "Read map_component and the kernel/range/scalar consequences, plus Hom homogeneous preimages and injective degree detection. The argument uses only finite component decompositions and additive linearity."
+    },
     {
       "node": "kl.algebra.dual_basis_degrees",
       "previous_proof_words": 0,
@@ -25,6 +93,64 @@
       "revised_proof_words": 178,
       "proof_sha256": "2e1668fe58f1d4aa7f347090b2e26e416afb230009b834cdef329e431e54e600",
       "review": "Compared homogeneous_basis_repr and dualBasis_homogeneous. Finite coefficient decomposition, component selection, and basis independence establish the negative dual degree."
+    },
+    {
+      "node": "kl.algebra.finite_graded_cover",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.exists_finite_homogeneous_generators",
+        "OAI.KLInvariance.Hilbert.exists_finite_graded_cover"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 259,
+      "proof_sha256": "2f1421d48eab94737e49ecfc9d08f6301fe6bcfbfb458cb1b93205756ca765d2",
+      "review": "Read finite homogeneous generators and exists_finite_graded_cover. Explained the finite union of component supports, spanning, the exact shifted coefficient condition and its lower-bound consequence."
+    },
+    {
+      "node": "kl.algebra.hilbert_convergence",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Hilbert.degreeMap",
+        "OAI.KLInvariance.Hilbert.degreeMap_surjective",
+        "OAI.KLInvariance.Hilbert.polynomialModule_piece_finite",
+        "OAI.KLInvariance.Hilbert.summable_polynomialModule",
+        "OAI.KLInvariance.Hilbert.summable_term"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 212,
+      "proof_sha256": "a579b4c8ec01648c543c10bafc2de2df37efbe1d1f07c99b70393546c8c92196",
+      "review": "Read polynomialModule_piece_finite, summable_polynomialModule and summable_term. Kept arbitrary integer grading and arbitrary k-subspaces; expanded homogeneous preimages and termwise domination by a finite shifted free cover."
+    },
+    {
+      "node": "kl.algebra.hilbert_image_exactness",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Hilbert.imagePieceMap",
+        "OAI.KLInvariance.Hilbert.imagePieceMap_surjective",
+        "OAI.KLInvariance.Hilbert.imageKernelEquiv",
+        "OAI.KLInvariance.Hilbert.finrank_image_exact",
+        "OAI.KLInvariance.Hilbert.value_image_exact"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 229,
+      "proof_sha256": "689ce0964cbca1ffc2b3bada6100687ef42a4ca7f1f182c214e381c6bb095770",
+      "review": "Read imagePieceMap, its homogeneous lifting proof, the kernel equivalence and value_image_exact. Kept finiteness on the source pieces and derived image finiteness from the surjection."
+    },
+    {
+      "node": "kl.algebra.hilbert_scalar_quotient",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Hilbert.scalarDegreeMap",
+        "OAI.KLInvariance.Hilbert.scalarDegreeMap_surjective",
+        "OAI.KLInvariance.Hilbert.scalarDegreeMap_injective",
+        "OAI.KLInvariance.Hilbert.scalarDegreeEquiv",
+        "OAI.KLInvariance.Hilbert.scalar_value",
+        "OAI.KLInvariance.Hilbert.scalarQuotient_value"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 228,
+      "proof_sha256": "8952b3a0ff270b8359f9de7998e07c5c48462594a2100c14f6d23a995c93c973",
+      "review": "Read scalarDegreeMap, its bijectivity, scalar_value and scalarQuotient_value. Preserved integer degree, injective scalar action, q nonzero for the image formula and positive q/finite pieces for the quotient."
     },
     {
       "node": "kl.algebra.homogeneous_lifts",
@@ -100,6 +226,21 @@
       "review": "Compared perfect_inverse_of_homogeneous_functional. The saved proof selects the output component j+r, extends equality from homogeneous vectors by finite additivity, and uses injectivity of the pairing equivalence."
     },
     {
+      "node": "kl.algebra.polynomial_hilbert",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Hilbert.hasSum_monomials",
+        "OAI.KLInvariance.Hilbert.polynomial_finrank_nat",
+        "OAI.KLInvariance.Hilbert.hasSum_finsupp_monomials",
+        "OAI.KLInvariance.Hilbert.hasSum_polynomial_nat",
+        "OAI.KLInvariance.Hilbert.hasSum_polynomial"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 303,
+      "proof_sha256": "1f79e289ecc8f1e6490126ad935a883aa9704e998f13f0111e6e14accdd5d20d",
+      "review": "Read the monomial sum, degree-fiber and polynomial HasSum proofs. Expanded the empty-variable base, one-variable product induction, finite degree fibers and integer-index extension."
+    },
+    {
       "node": "kl.algebra.quotient_endomorphism_descent",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -127,6 +268,26 @@
       "revised_proof_words": 108,
       "proof_sha256": "d6f28f600ba620db80bda7c8951b6c56e4ab16d4e9a9a63d21acb7de17cfcfa8",
       "review": "Compared mem_of_homogeneous_smul. The component identity and injectivity of scalar multiplication recover degree n-d without a division operation."
+    },
+    {
+      "node": "kl.algebra.subquotient_gradings",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.internal_of_components",
+        "OAI.KLInvariance.Graded.image_isInternal",
+        "OAI.KLInvariance.Graded.sub_isInternal",
+        "OAI.KLInvariance.Graded.quotient_isInternal",
+        "OAI.KLInvariance.Graded.subPiece_eq_bot",
+        "OAI.KLInvariance.Graded.quotientPiece_eq_bot",
+        "OAI.KLInvariance.Graded.ModuleData.sub",
+        "OAI.KLInvariance.Graded.ModuleData.quotient",
+        "OAI.KLInvariance.Graded.ModuleData.subtype",
+        "OAI.KLInvariance.Graded.ModuleData.quotientMap"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 304,
+      "proof_sha256": "77db6d4f34e8765aa8241580fa98b0ccb0b5e16033aeffa80dae0bb5b542b06d",
+      "review": "Read sub_isInternal and quotient_isInternal via image_isInternal. Included well-defined quotient components, finite-sum independence, scalar compatibility and the precise finiteness assumptions."
     },
     {
       "node": "kl.comparison.edge_increment",
@@ -545,13 +706,15 @@
       "source_declarations": [
         "OAI.KLInvariance.Hilbert.degreeMap_surjective",
         "OAI.KLInvariance.Hilbert.finrank_exact",
-        "OAI.KLInvariance.Hilbert.value_exact_of_summable"
+        "OAI.KLInvariance.Hilbert.value_exact_of_summable",
+        "OAI.KLInvariance.Hilbert.degreeKernelEquiv",
+        "OAI.KLInvariance.Hilbert.value_exact"
       ],
       "proof_steps": 4,
       "previous_proof_words": 0,
-      "revised_proof_words": 210,
-      "proof_sha256": "f043a8ddb468b9fba2c0b71b161fe1d15569c96e88ed7f70803853bd85444bb3",
-      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
+      "revised_proof_words": 213,
+      "proof_sha256": "6e88574c448905aa348e22901e330715bae2777037a82ad6985b94fbf10c81de",
+      "review": "Read degreeMap_surjective, degreeKernelEquiv, finrank_exact and both value_exact statements. Retained degreewise exactness, source-piece finiteness and convergence by domination."
     },
     {
       "node": "kl.detail.indecomposable_boundary",
@@ -2107,24 +2270,38 @@
     {
       "node": "kl.sheaves.hilbert_detection",
       "source_declarations": [
+        "OAI.KLInvariance.Hilbert.piece_mono",
+        "OAI.KLInvariance.Hilbert.term_mono",
+        "OAI.KLInvariance.Hilbert.summable_of_le",
+        "OAI.KLInvariance.Hilbert.pieces_eq_of_value_eq",
+        "OAI.KLInvariance.Hilbert.eq_of_value_eq",
+        "OAI.KLInvariance.Hilbert.value_mono",
+        "OAI.KLInvariance.Hilbert.defectTerm_eq_sub",
+        "OAI.KLInvariance.Hilbert.defect_value_eq_sub",
+        "OAI.KLInvariance.Hilbert.defect_value_pos",
         "OAI.KLInvariance.Hilbert.polynomial_eq_of_value_eq"
       ],
-      "proof_steps": 4,
+      "proof_steps": 5,
       "previous_proof_words": 61,
       "revised_proof_words": 269,
-      "proof_sha256": "b05825ef872b223f363367c849205d018c438532d61a2a5b437321456a45afe6",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "proof_sha256": "dfe3924da04a6469ab9c1ad2913d617368c9ebfae67c67771b9be4fb4dcd3277",
+      "review": "Read the generic piece/value comparison and defect lemmas, then polynomial_eq_of_value_eq. Preserved arbitrary k-subspaces, homogeneity of the target only, positive q and the exact summability hypothesis."
     },
     {
       "node": "kl.sheaves.hilbert_free",
       "source_declarations": [
+        "OAI.KLInvariance.Hilbert.shiftedPieceEquiv",
+        "OAI.KLInvariance.Hilbert.shiftedPiece_finrank",
+        "OAI.KLInvariance.Hilbert.hasSum_shifted_polynomial",
+        "OAI.KLInvariance.Hilbert.hasSum_shiftedFree",
+        "OAI.KLInvariance.Hilbert.finrank_homogeneous_basis",
         "OAI.KLInvariance.Hilbert.hasSum_homogeneous_basis"
       ],
       "proof_steps": 4,
       "previous_proof_words": 158,
-      "revised_proof_words": 221,
-      "proof_sha256": "65ef64f6197802efc01393ebf1a6aae8d1ea1716967c5c52c8c8df50b6d4304c",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 248,
+      "proof_sha256": "c4e12e190ea0e61f0344e866cb7c8e2893ad767d2d674005baeb6feb4e7b2c8f",
+      "review": "Read shiftedPieceEquiv, shifted-free HasSum and homogeneous-basis finrank/HasSum. Followed the source order: polynomial series, integer translation, finite coordinate sum and degreewise basis bijection."
     },
     {
       "node": "kl.sheaves.image_sections",

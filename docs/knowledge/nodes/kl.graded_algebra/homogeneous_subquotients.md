@@ -9,6 +9,8 @@ topics:
 uses:
 - kl.sheaves.graded_module
 - kl.algebra.grading_components
+- kl.detail.graded_maps_shifts
+- kl.algebra.component_transport
 lean:
   repository: openai-kl
   modules:
@@ -97,6 +99,8 @@ For a homogeneous \(a\in A_d\), the image \(aM\) is homogeneous: the degree-\(n\
 Take \(A=k[X,Y]\) and \(a=X\). The degree-\(n\) part of \(A/(X)\) is spanned by the class of \(Y^n\). All monomials containing \(X\) vanish in the quotient.
 
 In the finite-module data used by sheaves, quotients retain finite generation. Submodules, kernels, and images retain finite generation over a Noetherian coefficient ring. The polynomial rings in this development satisfy that hypothesis.
+
+The [[node:kl.algebra.subquotient_gradings|submodule and quotient grading theorem]] supplies the direct-sum and finiteness checks in detail.
 
 ## References
 

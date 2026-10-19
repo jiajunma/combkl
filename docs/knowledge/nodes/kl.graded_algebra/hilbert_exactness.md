@@ -9,6 +9,7 @@ topics:
 uses:
 - kl.detail.hilbert_values
 - kl.detail.graded_maps_shifts
+- kl.algebra.component_transport
 lean:
   repository: openai-kl
   modules:
@@ -17,6 +18,8 @@ lean:
   - OAI.KLInvariance.Hilbert.degreeMap_surjective
   - OAI.KLInvariance.Hilbert.finrank_exact
   - OAI.KLInvariance.Hilbert.value_exact_of_summable
+  - OAI.KLInvariance.Hilbert.degreeKernelEquiv
+  - OAI.KLInvariance.Hilbert.value_exact
 source:
   spans:
   - artifact: openai-kl-source
@@ -31,6 +34,14 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.HilbertSeries:392
     format: lean-location
     note: OAI.KLInvariance.Hilbert.value_exact_of_summable
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.HilbertSeries:346
+    format: lean-location
+    note: OAI.KLInvariance.Hilbert.degreeKernelEquiv
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.HilbertSeries:374
+    format: lean-location
+    note: OAI.KLInvariance.Hilbert.value_exact
 verification:
   statement: accepted
   proof: accepted
@@ -54,7 +65,6 @@ If \(q>0\) and the Hilbert series of \(M\) converges at \(q\), the kernel and ta
 \[
 H_M(q)=H_{\ker f}(q)+H_N(q).
 \]
-No free-module hypothesis is needed.
 
 *Proof.*
 
@@ -75,7 +85,7 @@ The two dimensions on the right are nonnegative and individually at most \(\dim 
 
 ### Step 4. Sum the exact identities
 
-Multiply the degreewise dimension equation by \(q^n\) and sum over \(n\in\mathbb Z\). Step 3 permits splitting the sum into the two convergent series, yielding the stated identity. The argument retains possible torsion in the modules; only the finite-dimensional graded pieces enter rank-nullity.
+Multiply the degreewise dimension equation by \(q^n\) and sum over \(n\in\mathbb Z\). Step 3 permits splitting the sum into the two convergent series, yielding the stated identity. The equality is obtained from finite-dimensional rank–nullity in each piece and summability of the two resulting nonnegative series.
 
 ## References
 
@@ -88,3 +98,7 @@ The precise Lean sources are listed below.
 `OAI.KLInvariance.Hilbert.finrank_exact`: [HilbertSeries.lean:360](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/HilbertSeries.lean#L360).
 
 `OAI.KLInvariance.Hilbert.value_exact_of_summable`: [HilbertSeries.lean:392](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/HilbertSeries.lean#L392).
+
+`OAI.KLInvariance.Hilbert.degreeKernelEquiv`: [HilbertSeries.lean:346](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/HilbertSeries.lean#L346).
+
+`OAI.KLInvariance.Hilbert.value_exact`: [HilbertSeries.lean:374](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/HilbertSeries.lean#L374).

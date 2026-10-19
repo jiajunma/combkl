@@ -83,9 +83,18 @@
       "kl.main.finite_model_transport"
     ],
     "kl.graded_algebra": [
+      "kl.algebra.augmentation_kernel",
+      "kl.algebra.character_basis_independence",
+      "kl.algebra.character_operations",
       "kl.algebra.coefficient_algebra",
+      "kl.algebra.component_transport",
       "kl.algebra.dual_basis_degrees",
+      "kl.algebra.finite_graded_cover",
       "kl.algebra.grading_components",
+      "kl.algebra.hilbert_convergence",
+      "kl.algebra.hilbert_defect",
+      "kl.algebra.hilbert_image_exactness",
+      "kl.algebra.hilbert_scalar_quotient",
       "kl.algebra.homogeneous_basis",
       "kl.algebra.homogeneous_lifts",
       "kl.algebra.homogeneous_subquotients",
@@ -93,13 +102,16 @@
       "kl.algebra.kernel_saturation",
       "kl.algebra.minimal_cover_maps",
       "kl.algebra.minimal_cover_remainder",
+      "kl.algebra.module_operations",
       "kl.algebra.pair_projection",
       "kl.algebra.perfect_inverse_degree",
+      "kl.algebra.polynomial_hilbert",
       "kl.algebra.positive_ideal",
       "kl.algebra.quotient_endomorphism_descent",
       "kl.algebra.scalar_inverse_degree",
       "kl.algebra.scalar_quotient",
       "kl.algebra.scalar_twist",
+      "kl.algebra.subquotient_gradings",
       "kl.detail.coefficient_change",
       "kl.detail.graded_character",
       "kl.detail.graded_maps_shifts",
@@ -535,13 +547,71 @@
   ],
   "node_correspondence": [
     {
+      "id": "kl.algebra.augmentation_kernel",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.nonnegativeAugmentation",
+        "OAI.KLInvariance.Graded.positiveIdeal_eq_augmentation_ker",
+        "OAI.KLInvariance.Graded.polynomialGrading_negative",
+        "OAI.KLInvariance.Graded.polynomialGrading_zero",
+        "OAI.KLInvariance.Graded.polynomial_scalar_mod_positive"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.algebra.character_basis_independence",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.NonnegativeBasis.hasSum",
+        "OAI.KLInvariance.Graded.NonnegativeBasis.polynomial_eq",
+        "OAI.KLInvariance.Graded.character_eq"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.algebra.character_operations",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.mapNonnegativeBasis",
+        "OAI.KLInvariance.Graded.ModuleData.character_eq_of_gradedEquiv",
+        "OAI.KLInvariance.Graded.ModuleData.shiftedBasis",
+        "OAI.KLInvariance.Graded.ModuleData.char_shift",
+        "OAI.KLInvariance.Graded.ModuleData.productBasis",
+        "OAI.KLInvariance.Graded.ModuleData.char_prod",
+        "OAI.KLInvariance.Graded.ModuleData.piBasis",
+        "OAI.KLInvariance.Graded.ModuleData.char_pi",
+        "OAI.KLInvariance.Graded.ModuleData.char_zero",
+        "OAI.KLInvariance.CoefficientChange.equiv",
+        "OAI.KLInvariance.CoefficientChange.kEquiv",
+        "OAI.KLInvariance.Graded.ModuleData.mem_changePiece"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.algebra.coefficient_algebra",
       "chapter": "kl.graded_algebra",
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.SymmetricCoefficient",
         "OAI.KLInvariance.TitsSpace.coefficientAction",
         "OAI.KLInvariance.TitsSpace.coefficientAction_ι",
-        "OAI.KLInvariance.TitsSpace.simpleRootPolynomial"
+        "OAI.KLInvariance.TitsSpace.simpleRootPolynomial",
+        "OAI.KLInvariance.TitsSpace.symmetricGrading",
+        "OAI.KLInvariance.TitsSpace.mem_symmetricGrading"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.algebra.component_transport",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.map_component",
+        "OAI.KLInvariance.Graded.kernel_homogeneous",
+        "OAI.KLInvariance.Graded.range_homogeneous",
+        "OAI.KLInvariance.Graded.component_homogeneous_smul",
+        "OAI.KLInvariance.Graded.scalar_range_homogeneous",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.component",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.mem_of_map_mem",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.homogeneous_preimage"
       ],
       "paper_locations": []
     },
@@ -555,13 +625,69 @@
       "paper_locations": []
     },
     {
+      "id": "kl.algebra.finite_graded_cover",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.exists_finite_homogeneous_generators",
+        "OAI.KLInvariance.Hilbert.exists_finite_graded_cover"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.algebra.grading_components",
       "chapter": "kl.graded_algebra",
       "lean_declarations": [
         "OAI.KLInvariance.Graded.polynomialGrading",
         "OAI.KLInvariance.Graded.component",
         "OAI.KLInvariance.Graded.component_smul_homogeneous",
-        "OAI.KLInvariance.TitsSpace.symmetricGrading"
+        "OAI.KLInvariance.Graded.polynomialGrading_negative",
+        "OAI.KLInvariance.Graded.polynomialGrading_zero"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.algebra.hilbert_convergence",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hilbert.degreeMap",
+        "OAI.KLInvariance.Hilbert.degreeMap_surjective",
+        "OAI.KLInvariance.Hilbert.polynomialModule_piece_finite",
+        "OAI.KLInvariance.Hilbert.summable_polynomialModule",
+        "OAI.KLInvariance.Hilbert.summable_term"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.algebra.hilbert_defect",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hilbert.defectPiece",
+        "OAI.KLInvariance.Hilbert.defectTerm"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.algebra.hilbert_image_exactness",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hilbert.imagePieceMap",
+        "OAI.KLInvariance.Hilbert.imagePieceMap_surjective",
+        "OAI.KLInvariance.Hilbert.imageKernelEquiv",
+        "OAI.KLInvariance.Hilbert.finrank_image_exact",
+        "OAI.KLInvariance.Hilbert.value_image_exact"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.algebra.hilbert_scalar_quotient",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hilbert.scalarDegreeMap",
+        "OAI.KLInvariance.Hilbert.scalarDegreeMap_surjective",
+        "OAI.KLInvariance.Hilbert.scalarDegreeMap_injective",
+        "OAI.KLInvariance.Hilbert.scalarDegreeEquiv",
+        "OAI.KLInvariance.Hilbert.scalar_value",
+        "OAI.KLInvariance.Hilbert.scalarQuotient_value"
       ],
       "paper_locations": []
     },
@@ -636,6 +762,24 @@
       "paper_locations": []
     },
     {
+      "id": "kl.algebra.module_operations",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.piPiece",
+        "OAI.KLInvariance.Graded.shiftedPiece",
+        "OAI.KLInvariance.Graded.ModuleData.zero",
+        "OAI.KLInvariance.Graded.ModuleData.unit",
+        "OAI.KLInvariance.Graded.ModuleData.pi",
+        "OAI.KLInvariance.Graded.ModuleData.prod",
+        "OAI.KLInvariance.Graded.ModuleData.free",
+        "OAI.KLInvariance.Graded.ModuleData.projection",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.zero",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.pi",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.prodMap"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.algebra.pair_projection",
       "chapter": "kl.graded_algebra",
       "lean_declarations": [
@@ -659,10 +803,23 @@
       "paper_locations": []
     },
     {
+      "id": "kl.algebra.polynomial_hilbert",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hilbert.hasSum_monomials",
+        "OAI.KLInvariance.Hilbert.polynomial_finrank_nat",
+        "OAI.KLInvariance.Hilbert.hasSum_finsupp_monomials",
+        "OAI.KLInvariance.Hilbert.hasSum_polynomial_nat",
+        "OAI.KLInvariance.Hilbert.hasSum_polynomial"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.algebra.positive_ideal",
       "chapter": "kl.graded_algebra",
       "lean_declarations": [
-        "OAI.KLInvariance.Graded.positiveIdeal"
+        "OAI.KLInvariance.Graded.positiveIdeal",
+        "OAI.KLInvariance.Graded.nonnegativeAugmentation"
       ],
       "paper_locations": []
     },
@@ -704,6 +861,23 @@
       "lean_declarations": [
         "OAI.KLInvariance.ReflectionPairTranslation.Twist",
         "OAI.KLInvariance.ReflectionPairTranslation.Twist.equiv"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.algebra.subquotient_gradings",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.internal_of_components",
+        "OAI.KLInvariance.Graded.image_isInternal",
+        "OAI.KLInvariance.Graded.sub_isInternal",
+        "OAI.KLInvariance.Graded.quotient_isInternal",
+        "OAI.KLInvariance.Graded.subPiece_eq_bot",
+        "OAI.KLInvariance.Graded.quotientPiece_eq_bot",
+        "OAI.KLInvariance.Graded.ModuleData.sub",
+        "OAI.KLInvariance.Graded.ModuleData.quotient",
+        "OAI.KLInvariance.Graded.ModuleData.subtype",
+        "OAI.KLInvariance.Graded.ModuleData.quotientMap"
       ],
       "paper_locations": []
     },
@@ -1242,8 +1416,13 @@
       "id": "kl.detail.graded_character",
       "chapter": "kl.graded_algebra",
       "lean_declarations": [
+        "OAI.KLInvariance.Graded.NonnegativeBasis.polynomial",
+        "OAI.KLInvariance.Graded.NonnegativeBasis.coeff_nonneg",
+        "OAI.KLInvariance.Graded.NonnegativeBasis.eval₂_eq",
         "OAI.KLInvariance.Graded.character",
-        "OAI.KLInvariance.Graded.NonnegativeBasis.polynomial_eq"
+        "OAI.KLInvariance.Graded.character_coeff_nonneg",
+        "OAI.KLInvariance.Graded.character_eq",
+        "OAI.KLInvariance.Graded.ModuleData.char"
       ],
       "paper_locations": [
         "Related paper context; bg:realization"
@@ -1255,7 +1434,10 @@
       "lean_declarations": [
         "OAI.KLInvariance.Graded.ModuleData.Hom",
         "OAI.KLInvariance.Graded.ModuleData.shift",
-        "OAI.KLInvariance.Graded.ModuleData.Hom.shift"
+        "OAI.KLInvariance.Graded.ModuleData.Hom.shift",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.id",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.comp",
+        "OAI.KLInvariance.Graded.shift_isInternal"
       ],
       "paper_locations": []
     },
@@ -1307,7 +1489,9 @@
       "lean_declarations": [
         "OAI.KLInvariance.Hilbert.degreeMap_surjective",
         "OAI.KLInvariance.Hilbert.finrank_exact",
-        "OAI.KLInvariance.Hilbert.value_exact_of_summable"
+        "OAI.KLInvariance.Hilbert.value_exact_of_summable",
+        "OAI.KLInvariance.Hilbert.degreeKernelEquiv",
+        "OAI.KLInvariance.Hilbert.value_exact"
       ],
       "paper_locations": []
     },
@@ -1318,8 +1502,9 @@
         "OAI.KLInvariance.Hilbert.piece",
         "OAI.KLInvariance.Hilbert.term",
         "OAI.KLInvariance.Hilbert.value",
-        "OAI.KLInvariance.Hilbert.defectPiece",
-        "OAI.KLInvariance.Hilbert.defectTerm"
+        "OAI.KLInvariance.Hilbert.subPieceEquiv",
+        "OAI.KLInvariance.Hilbert.term_subPiece",
+        "OAI.KLInvariance.Hilbert.value_subPiece"
       ],
       "paper_locations": []
     },
@@ -3476,6 +3661,15 @@
       "id": "kl.sheaves.hilbert_detection",
       "chapter": "kl.graded_algebra",
       "lean_declarations": [
+        "OAI.KLInvariance.Hilbert.piece_mono",
+        "OAI.KLInvariance.Hilbert.term_mono",
+        "OAI.KLInvariance.Hilbert.summable_of_le",
+        "OAI.KLInvariance.Hilbert.pieces_eq_of_value_eq",
+        "OAI.KLInvariance.Hilbert.eq_of_value_eq",
+        "OAI.KLInvariance.Hilbert.value_mono",
+        "OAI.KLInvariance.Hilbert.defectTerm_eq_sub",
+        "OAI.KLInvariance.Hilbert.defect_value_eq_sub",
+        "OAI.KLInvariance.Hilbert.defect_value_pos",
         "OAI.KLInvariance.Hilbert.polynomial_eq_of_value_eq"
       ],
       "paper_locations": [
@@ -3486,6 +3680,11 @@
       "id": "kl.sheaves.hilbert_free",
       "chapter": "kl.graded_algebra",
       "lean_declarations": [
+        "OAI.KLInvariance.Hilbert.shiftedPieceEquiv",
+        "OAI.KLInvariance.Hilbert.shiftedPiece_finrank",
+        "OAI.KLInvariance.Hilbert.hasSum_shifted_polynomial",
+        "OAI.KLInvariance.Hilbert.hasSum_shiftedFree",
+        "OAI.KLInvariance.Hilbert.finrank_homogeneous_basis",
         "OAI.KLInvariance.Hilbert.hasSum_homogeneous_basis"
       ],
       "paper_locations": [

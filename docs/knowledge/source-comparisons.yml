@@ -445,3 +445,32 @@ comparisons:
     and its inverse proves rank preservation.
   consequence: These lemmas justify both the smaller induction instances and the common
     powers used when transporting interval-indexed vectors.
+- id: hilbert-values-and-quotients
+  kind: Explicit convergence and degreewise comparison
+  nodes:
+  - kl.detail.hilbert_values
+  - kl.algebra.hilbert_convergence
+  - kl.algebra.hilbert_scalar_quotient
+  - kl.sheaves.hilbert_detection
+  paper_labels:
+  - sec:background
+  - eq:state
+  - eq:image-equality
+  lean_declarations:
+  - OAI.KLInvariance.Hilbert.value
+  - OAI.KLInvariance.Hilbert.summable_polynomialModule
+  - OAI.KLInvariance.Hilbert.scalarQuotient_value
+  - OAI.KLInvariance.Hilbert.eq_of_value_eq
+  paper: The graded-rank paragraph gives \(\operatorname{Hilb}(M;q)=\operatorname{grk}_A(M;q)/(1-q)^N\)
+    for a homogeneous free basis. The comparison evaluates Hilbert series at \(0<q<1\),
+    uses the factor \(1-q\) for a degree-one scalar quotient, and detects equality
+    through a positive quotient deficit.
+  lean: The implementation defines real integer-indexed terms from the finite ranks
+    of intersections with ambient pieces. Finite homogeneous covers prove piece finiteness
+    and summability. Degreewise exactness proves the scalar-quotient factor, and inclusion
+    plus homogeneity of the larger subspace turns one equal positive Hilbert value
+    into equality.
+  consequence: The KB distinguishes the formal coefficient series, its convergent
+    real value and the free-module basis-degree polynomial. The factor \((1-q)^N\)
+    removes the coefficient-ring contribution; \(1-q\) records quotienting by a regular
+    degree-one label.

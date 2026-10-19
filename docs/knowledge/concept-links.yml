@@ -61,10 +61,12 @@ concepts:
   - lower-half operation
 - node: kl.sheaves.graded_module
   terms:
-  - graded modules
-  - graded module
-  - nonnegatively graded modules
-  - nonnegatively graded module
+  - finite graded module
+  - finite graded modules
+  - finite nonnegatively graded module
+  - finite nonnegatively graded modules
+  - graded module data
+  - module data
 - node: kl.sheaves.minimal_cover
   terms:
   - minimal graded free cover
@@ -317,8 +319,6 @@ concepts:
   terms:
   - Hilbert values
   - Hilbert value
-  - degreewise defect
-  - degreewise defects
 - node: kl.detail.graph_transport
   terms:
   - graph map
@@ -812,3 +812,62 @@ concepts:
   - initial subintervals
   - upper subinterval
   - upper subintervals
+- node: kl.algebra.grading_components
+  terms:
+  - graded module
+  - graded modules
+  - nonnegatively graded module
+  - nonnegatively graded modules
+  - homogeneous component
+  - homogeneous components
+  - component projection
+- node: kl.algebra.positive_ideal
+  terms:
+  - degree-zero augmentation
+  - augmentation map
+  - connected grading
+- node: kl.algebra.module_operations
+  terms:
+  - shifted free module
+  - shifted free modules
+  - finite graded product
+  - finite graded products
+- node: kl.algebra.hilbert_defect
+  terms:
+  - degreewise defect
+  - degreewise defects
+  - defect space
+  - defect spaces
+  - defect term
+  - defect terms
+  topics:
+  - kl.graded_algebra
+  - kl.sheaves
+  - kl.localization
+  - kl.invariance
+- node: kl.detail.hilbert_values
+  terms:
+  - Hilbert function
+  - Hilbert functions
+  - numerical Hilbert value
+  - numerical Hilbert values
+  - intersection series
+- node: kl.detail.graded_character
+  terms:
+  - basis-degree polynomial
+  - basis-degree polynomials
+- node: kl.algebra.module_operations
+  terms:
+  - unit module
+  - graded unit module
+  topics:
+  - kl.graded_algebra
+  - kl.sheaves
+- node: kl.detail.hilbert_values
+  terms:
+  - Hilbert series
+  - formal Hilbert series
+- node: kl.detail.graded_character
+  terms:
+  - graded rank
+  - graded ranks

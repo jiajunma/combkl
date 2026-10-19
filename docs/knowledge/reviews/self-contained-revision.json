@@ -90,44 +90,6 @@
       "review": "Rewritten as the projection-based proof used in Lean, with all three nondegeneracy tests and both independence arguments explicit."
     },
     {
-      "node": "kl.algebra.coefficient_algebra",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/coefficient_algebra.md",
-      "source_declarations": [
-        "OAI.KLInvariance.TitsSpace.SymmetricCoefficient",
-        "OAI.KLInvariance.TitsSpace.coefficientAction",
-        "OAI.KLInvariance.TitsSpace.coefficientAction_ι",
-        "OAI.KLInvariance.TitsSpace.simpleRootPolynomial"
-      ],
-      "review": "Read source definitions, surrounding assumptions, and the computations used in the entry.",
-      "pending": []
-    },
-    {
-      "node": "kl.algebra.grading_components",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/grading_components.md",
-      "source_declarations": [
-        "OAI.KLInvariance.Graded.polynomialGrading",
-        "OAI.KLInvariance.Graded.component",
-        "OAI.KLInvariance.Graded.component_smul_homogeneous",
-        "OAI.KLInvariance.TitsSpace.symmetricGrading"
-      ],
-      "review": "Read source definitions, surrounding assumptions, and the computations used in the entry.",
-      "pending": []
-    },
-    {
-      "node": "kl.algebra.homogeneous_subquotients",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/homogeneous_subquotients.md",
-      "source_declarations": [
-        "OAI.KLInvariance.Graded.subPiece",
-        "OAI.KLInvariance.Graded.quotientPiece",
-        "OAI.KLInvariance.Graded.ModuleData.sub",
-        "OAI.KLInvariance.Graded.ModuleData.quotient",
-        "OAI.KLInvariance.Graded.ModuleData.kernel",
-        "OAI.KLInvariance.Graded.ModuleData.range"
-      ],
-      "review": "Read source definitions, surrounding assumptions, and the computations used in the entry.",
-      "pending": []
-    },
-    {
       "node": "kl.algebra.scalar_twist",
       "file": "docs/knowledge/nodes/kl.graded_algebra/scalar_twist.md",
       "source_declarations": [
@@ -169,20 +131,8 @@
       "pending": []
     },
     {
-      "node": "kl.sheaves.graded_module",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/graded_module.md",
-      "review": "Expanded the full definition, examples, and the reduction or component arguments against ModuleData, MinimalCover, and Hilbert.piece/term/value.",
-      "pending": []
-    },
-    {
       "node": "kl.sheaves.minimal_cover",
       "file": "docs/knowledge/nodes/kl.graded_algebra/minimal_cover.md",
-      "review": "Expanded the full definition, examples, and the reduction or component arguments against ModuleData, MinimalCover, and Hilbert.piece/term/value.",
-      "pending": []
-    },
-    {
-      "node": "kl.detail.hilbert_values",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/hilbert_values.md",
       "review": "Expanded the full definition, examples, and the reduction or component arguments against ModuleData, MinimalCover, and Hilbert.piece/term/value.",
       "pending": []
     },
@@ -795,17 +745,6 @@
       "pending": []
     },
     {
-      "node": "kl.detail.graded_maps_shifts",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/graded_maps_shifts.md",
-      "source_declarations": [
-        "OAI.KLInvariance.Graded.ModuleData.Hom",
-        "OAI.KLInvariance.Graded.ModuleData.shift",
-        "OAI.KLInvariance.Graded.ModuleData.Hom.shift"
-      ],
-      "review": "Read the local construction and its maps; expanded the defining data, quotient signs, matrix conventions, and worked examples.",
-      "pending": []
-    },
-    {
       "node": "kl.detail.integral_adjoints",
       "file": "docs/knowledge/nodes/kl.sheaves/integral_adjoints.md",
       "source_declarations": [
@@ -984,15 +923,6 @@
         "OAI.KLInvariance.Graded.ModuleData.MinimalCover.equiv"
       ],
       "review": "Read MinimalCover.hom_bijective, bijective_of_boundaryIso, and equiv: lift a reverse map, place both errors in the positive ideal, deduce bijectivity, and construct a comparison between arbitrary covers.",
-      "pending": []
-    },
-    {
-      "node": "kl.algebra.positive_ideal",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/positive_ideal.md",
-      "source_declarations": [
-        "OAI.KLInvariance.Graded.positiveIdeal"
-      ],
-      "review": "Read the local defining data and maps; expanded connectedness, normalization, scalar direction, or the distinction between word-basis degrees and evaluation weights.",
       "pending": []
     },
     {
@@ -2637,6 +2567,324 @@
       "pending": [
         "Expand the interpolation and localization arguments in L3."
       ]
+    },
+    {
+      "node": "kl.algebra.positive_ideal",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/positive_ideal.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.positiveIdeal",
+        "OAI.KLInvariance.Graded.nonnegativeAugmentation"
+      ],
+      "review": "Read positiveIdeal and nonnegativeAugmentation. Preserved the actual ring-endomorphism codomain, with the base-field interpretation stated under connectedness and nontriviality.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.augmentation_kernel",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/augmentation_kernel.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.nonnegativeAugmentation",
+        "OAI.KLInvariance.Graded.positiveIdeal_eq_augmentation_ker",
+        "OAI.KLInvariance.Graded.polynomialGrading_negative",
+        "OAI.KLInvariance.Graded.polynomialGrading_zero",
+        "OAI.KLInvariance.Graded.polynomial_scalar_mod_positive"
+      ],
+      "review": "Read the homogeneous multiplication proof and both ideal containments, plus polynomial negative/zero degree and scalar-mod-positive lemmas.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.graded_module",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/graded_module.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData"
+      ],
+      "review": "Read all eight ModuleData fields and its parameter context. Explained the scalar tower, finite decomposition versus finite A-generation, and the separate coefficient-family input.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.component_transport",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/component_transport.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.map_component",
+        "OAI.KLInvariance.Graded.kernel_homogeneous",
+        "OAI.KLInvariance.Graded.range_homogeneous",
+        "OAI.KLInvariance.Graded.component_homogeneous_smul",
+        "OAI.KLInvariance.Graded.scalar_range_homogeneous",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.component",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.mem_of_map_mem",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.homogeneous_preimage"
+      ],
+      "review": "Read map_component and the kernel/range/scalar consequences, plus Hom homogeneous preimages and injective degree detection. The argument uses only finite component decompositions and additive linearity.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.module_operations",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/module_operations.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.piPiece",
+        "OAI.KLInvariance.Graded.shiftedPiece",
+        "OAI.KLInvariance.Graded.ModuleData.zero",
+        "OAI.KLInvariance.Graded.ModuleData.unit",
+        "OAI.KLInvariance.Graded.ModuleData.pi",
+        "OAI.KLInvariance.Graded.ModuleData.prod",
+        "OAI.KLInvariance.Graded.ModuleData.free",
+        "OAI.KLInvariance.Graded.ModuleData.projection",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.zero",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.pi",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.prodMap"
+      ],
+      "review": "Read piPiece, shiftedPiece, ModuleData zero/unit/pi/prod/free and their maps. Preserved finite index sets and distinguished arbitrary integer generator degrees from nonnegative ModuleData.free.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.subquotient_gradings",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/subquotient_gradings.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.internal_of_components",
+        "OAI.KLInvariance.Graded.image_isInternal",
+        "OAI.KLInvariance.Graded.sub_isInternal",
+        "OAI.KLInvariance.Graded.quotient_isInternal",
+        "OAI.KLInvariance.Graded.subPiece_eq_bot",
+        "OAI.KLInvariance.Graded.quotientPiece_eq_bot",
+        "OAI.KLInvariance.Graded.ModuleData.sub",
+        "OAI.KLInvariance.Graded.ModuleData.quotient",
+        "OAI.KLInvariance.Graded.ModuleData.subtype",
+        "OAI.KLInvariance.Graded.ModuleData.quotientMap"
+      ],
+      "review": "Read sub_isInternal and quotient_isInternal via image_isInternal. Included well-defined quotient components, finite-sum independence, scalar compatibility and the precise finiteness assumptions.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.finite_graded_cover",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/finite_graded_cover.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.exists_finite_homogeneous_generators",
+        "OAI.KLInvariance.Hilbert.exists_finite_graded_cover"
+      ],
+      "review": "Read finite homogeneous generators and exists_finite_graded_cover. Explained the finite union of component supports, spanning, the exact shifted coefficient condition and its lower-bound consequence.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.hilbert_values",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/hilbert_values.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hilbert.piece",
+        "OAI.KLInvariance.Hilbert.term",
+        "OAI.KLInvariance.Hilbert.value",
+        "OAI.KLInvariance.Hilbert.subPieceEquiv",
+        "OAI.KLInvariance.Hilbert.term_subPiece",
+        "OAI.KLInvariance.Hilbert.value_subPiece"
+      ],
+      "review": "Read Hilbert.piece/term/value and the subPiece equivalence. Separated formal coefficient notation from the actual real-valued implementation, and stated its finite-piece/summability scope.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.polynomial_hilbert",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/polynomial_hilbert.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hilbert.hasSum_monomials",
+        "OAI.KLInvariance.Hilbert.polynomial_finrank_nat",
+        "OAI.KLInvariance.Hilbert.hasSum_finsupp_monomials",
+        "OAI.KLInvariance.Hilbert.hasSum_polynomial_nat",
+        "OAI.KLInvariance.Hilbert.hasSum_polynomial"
+      ],
+      "review": "Read the monomial sum, degree-fiber and polynomial HasSum proofs. Expanded the empty-variable base, one-variable product induction, finite degree fibers and integer-index extension.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.hilbert_free",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/hilbert_free.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hilbert.shiftedPieceEquiv",
+        "OAI.KLInvariance.Hilbert.shiftedPiece_finrank",
+        "OAI.KLInvariance.Hilbert.hasSum_shifted_polynomial",
+        "OAI.KLInvariance.Hilbert.hasSum_shiftedFree",
+        "OAI.KLInvariance.Hilbert.finrank_homogeneous_basis",
+        "OAI.KLInvariance.Hilbert.hasSum_homogeneous_basis"
+      ],
+      "review": "Read shiftedPieceEquiv, shifted-free HasSum and homogeneous-basis finrank/HasSum. Followed the source order: polynomial series, integer translation, finite coordinate sum and degreewise basis bijection.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.hilbert_convergence",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/hilbert_convergence.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hilbert.degreeMap",
+        "OAI.KLInvariance.Hilbert.degreeMap_surjective",
+        "OAI.KLInvariance.Hilbert.polynomialModule_piece_finite",
+        "OAI.KLInvariance.Hilbert.summable_polynomialModule",
+        "OAI.KLInvariance.Hilbert.summable_term"
+      ],
+      "review": "Read polynomialModule_piece_finite, summable_polynomialModule and summable_term. Kept arbitrary integer grading and arbitrary k-subspaces; expanded homogeneous preimages and termwise domination by a finite shifted free cover.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.graded_character",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/graded_character.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.NonnegativeBasis.polynomial",
+        "OAI.KLInvariance.Graded.NonnegativeBasis.coeff_nonneg",
+        "OAI.KLInvariance.Graded.NonnegativeBasis.eval₂_eq",
+        "OAI.KLInvariance.Graded.character",
+        "OAI.KLInvariance.Graded.character_coeff_nonneg",
+        "OAI.KLInvariance.Graded.character_eq",
+        "OAI.KLInvariance.Graded.ModuleData.char"
+      ],
+      "review": "Read NonnegativeBasis.polynomial, Graded.character and ModuleData.char. Distinguished basis-degree polynomial selection, basis independence, graded rank and Hilbert numerator; retained finite free nonnegative polynomial hypotheses.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.character_basis_independence",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/character_basis_independence.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.NonnegativeBasis.hasSum",
+        "OAI.KLInvariance.Graded.NonnegativeBasis.polynomial_eq",
+        "OAI.KLInvariance.Graded.character_eq"
+      ],
+      "review": "Read NonnegativeBasis.polynomial_eq and character_eq. Expanded equality of the two convergent sums, nonzero denominator cancellation, infinitely many evaluations and injectivity of integer coefficients.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.character_operations",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/character_operations.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.mapNonnegativeBasis",
+        "OAI.KLInvariance.Graded.ModuleData.character_eq_of_gradedEquiv",
+        "OAI.KLInvariance.Graded.ModuleData.shiftedBasis",
+        "OAI.KLInvariance.Graded.ModuleData.char_shift",
+        "OAI.KLInvariance.Graded.ModuleData.productBasis",
+        "OAI.KLInvariance.Graded.ModuleData.char_prod",
+        "OAI.KLInvariance.Graded.ModuleData.piBasis",
+        "OAI.KLInvariance.Graded.ModuleData.char_pi",
+        "OAI.KLInvariance.Graded.ModuleData.char_zero",
+        "OAI.KLInvariance.CoefficientChange.equiv",
+        "OAI.KLInvariance.CoefficientChange.kEquiv",
+        "OAI.KLInvariance.Graded.ModuleData.mem_changePiece"
+      ],
+      "review": "Read map/shift/product/pi bases and all character identities; the coefficient-transport consequence follows from the explicit semilinear equivalence and changePiece membership formula.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.hilbert_defect",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/hilbert_defect.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hilbert.defectPiece",
+        "OAI.KLInvariance.Hilbert.defectTerm"
+      ],
+      "review": "Read defectPiece and defectTerm. Explained the actual comap denominator for arbitrary S,T, its simplification under inclusion and the homogeneous quotient interpretation.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.hilbert_detection",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/hilbert_detection.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hilbert.piece_mono",
+        "OAI.KLInvariance.Hilbert.term_mono",
+        "OAI.KLInvariance.Hilbert.summable_of_le",
+        "OAI.KLInvariance.Hilbert.pieces_eq_of_value_eq",
+        "OAI.KLInvariance.Hilbert.eq_of_value_eq",
+        "OAI.KLInvariance.Hilbert.value_mono",
+        "OAI.KLInvariance.Hilbert.defectTerm_eq_sub",
+        "OAI.KLInvariance.Hilbert.defect_value_eq_sub",
+        "OAI.KLInvariance.Hilbert.defect_value_pos",
+        "OAI.KLInvariance.Hilbert.polynomial_eq_of_value_eq"
+      ],
+      "review": "Read the generic piece/value comparison and defect lemmas, then polynomial_eq_of_value_eq. Preserved arbitrary k-subspaces, homogeneity of the target only, positive q and the exact summability hypothesis.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.hilbert_image_exactness",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/hilbert_image_exactness.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hilbert.imagePieceMap",
+        "OAI.KLInvariance.Hilbert.imagePieceMap_surjective",
+        "OAI.KLInvariance.Hilbert.imageKernelEquiv",
+        "OAI.KLInvariance.Hilbert.finrank_image_exact",
+        "OAI.KLInvariance.Hilbert.value_image_exact"
+      ],
+      "review": "Read imagePieceMap, its homogeneous lifting proof, the kernel equivalence and value_image_exact. Kept finiteness on the source pieces and derived image finiteness from the surjection.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.hilbert_scalar_quotient",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/hilbert_scalar_quotient.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hilbert.scalarDegreeMap",
+        "OAI.KLInvariance.Hilbert.scalarDegreeMap_surjective",
+        "OAI.KLInvariance.Hilbert.scalarDegreeMap_injective",
+        "OAI.KLInvariance.Hilbert.scalarDegreeEquiv",
+        "OAI.KLInvariance.Hilbert.scalar_value",
+        "OAI.KLInvariance.Hilbert.scalarQuotient_value"
+      ],
+      "review": "Read scalarDegreeMap, its bijectivity, scalar_value and scalarQuotient_value. Preserved integer degree, injective scalar action, q nonzero for the image formula and positive q/finite pieces for the quotient.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.grading_components",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/grading_components.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.polynomialGrading",
+        "OAI.KLInvariance.Graded.component",
+        "OAI.KLInvariance.Graded.component_smul_homogeneous",
+        "OAI.KLInvariance.Graded.polynomialGrading_negative",
+        "OAI.KLInvariance.Graded.polynomialGrading_zero"
+      ],
+      "review": "Rechecked component, component_smul_homogeneous and polynomial grading. Stated generic module grading and bounded support, and moved the specialized symmetric grading to the coefficient-algebra definition.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.coefficient_algebra",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/coefficient_algebra.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.SymmetricCoefficient",
+        "OAI.KLInvariance.TitsSpace.coefficientAction",
+        "OAI.KLInvariance.TitsSpace.coefficientAction_ι",
+        "OAI.KLInvariance.TitsSpace.simpleRootPolynomial",
+        "OAI.KLInvariance.TitsSpace.symmetricGrading",
+        "OAI.KLInvariance.TitsSpace.mem_symmetricGrading"
+      ],
+      "review": "Read symmetricGrading/mem_symmetricGrading and the finite-generator coefficient-algebra context. Added the exact pullback/image construction and finite homogeneous decomposition.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.graded_maps_shifts",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/graded_maps_shifts.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.Hom",
+        "OAI.KLInvariance.Graded.ModuleData.shift",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.shift",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.id",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.comp",
+        "OAI.KLInvariance.Graded.shift_isInternal"
+      ],
+      "review": "Read Hom, Hom.id/comp, shift_isInternal and Hom.shift. Added shifted component supports, scalar degree arithmetic and the exact natural shift parameter.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.homogeneous_subquotients",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/homogeneous_subquotients.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.subPiece",
+        "OAI.KLInvariance.Graded.quotientPiece",
+        "OAI.KLInvariance.Graded.ModuleData.sub",
+        "OAI.KLInvariance.Graded.ModuleData.quotient",
+        "OAI.KLInvariance.Graded.ModuleData.kernel",
+        "OAI.KLInvariance.Graded.ModuleData.range"
+      ],
+      "review": "Rechecked subPiece, quotientPiece and the bundled sub/kernel/range constructors. Connected their definitions to the complete component and quotient-decomposition proofs.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.hilbert_exactness",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/hilbert_exactness.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hilbert.degreeMap_surjective",
+        "OAI.KLInvariance.Hilbert.finrank_exact",
+        "OAI.KLInvariance.Hilbert.value_exact_of_summable",
+        "OAI.KLInvariance.Hilbert.degreeKernelEquiv",
+        "OAI.KLInvariance.Hilbert.value_exact"
+      ],
+      "review": "Read degreeMap_surjective, degreeKernelEquiv, finrank_exact and both value_exact statements. Retained degreewise exactness, source-piece finiteness and convergence by domination.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -2867,22 +3115,39 @@
       "code": "A1",
       "title": "The realization coefficient algebra",
       "status": "in_progress",
-      "completion_evidence": []
+      "completion_evidence": [
+        "kl.algebra.coefficient_algebra"
+      ]
     },
     {
       "code": "A2",
       "title": "Grading and the positive ideal",
-      "status": "in_progress",
-      "completion_evidence": []
+      "status": "exposition_reviewed",
+      "completion_evidence": [
+        "kl.algebra.augmentation_kernel",
+        "kl.algebra.grading_components",
+        "kl.algebra.positive_ideal"
+      ],
+      "pending": [],
+      "review": "Reviewed generic components, polynomial degrees, nonnegative augmentation and its exact positive-ideal kernel. The symmetric grading is explained at the specialized coefficient algebra, keeping the general foundation independent of roots."
     },
     {
       "code": "A3",
       "title": "Graded modules and maps",
-      "status": "in_progress",
+      "status": "exposition_reviewed",
       "completion_evidence": [
+        "kl.algebra.component_transport",
+        "kl.algebra.finite_graded_cover",
+        "kl.algebra.homogeneous_subquotients",
+        "kl.algebra.module_operations",
         "kl.algebra.perfect_inverse_degree",
-        "kl.algebra.scalar_inverse_degree"
-      ]
+        "kl.algebra.scalar_inverse_degree",
+        "kl.algebra.subquotient_gradings",
+        "kl.detail.graded_maps_shifts",
+        "kl.sheaves.graded_module"
+      ],
+      "pending": [],
+      "review": "Reviewed all ModuleData/Hom fields, scalar towers, component transport, homogeneous sub/quotient/kernel/range constructions, finite products, shifted free modules, nonnegative shifts, finite homogeneous covers and the previously reviewed inverse-degree calculations."
     },
     {
       "code": "A4",
@@ -2914,8 +3179,23 @@
     {
       "code": "A6",
       "title": "Hilbert series, Hilbert values, and characters",
-      "status": "in_progress",
-      "completion_evidence": []
+      "status": "exposition_reviewed",
+      "completion_evidence": [
+        "kl.algebra.character_basis_independence",
+        "kl.algebra.character_operations",
+        "kl.algebra.hilbert_convergence",
+        "kl.algebra.hilbert_defect",
+        "kl.algebra.hilbert_image_exactness",
+        "kl.algebra.hilbert_scalar_quotient",
+        "kl.algebra.polynomial_hilbert",
+        "kl.detail.graded_character",
+        "kl.detail.hilbert_exactness",
+        "kl.detail.hilbert_values",
+        "kl.sheaves.hilbert_detection",
+        "kl.sheaves.hilbert_free"
+      ],
+      "pending": [],
+      "review": "Reviewed piece/term/value and formal-series notation; monomial and homogeneous-free formulas; finite-cover convergence; intrinsic character and its operations; exactness for surjections/images; regular scalar quotient factors; and degreewise defect positivity/equality detection."
     },
     {
       "code": "A7",
@@ -3304,7 +3584,7 @@
     }
   ],
   "next_steps": [
-    "Complete the remaining graded-algebra and Hilbert explanations, then expand reflection Frobenius data, word modules and their character identification.",
+    "Complete coefficient algebras, coefficient changes and scalar-quotient comparison algebra, then expand reflection Frobenius data and word-module character inputs.",
     "Complete standard-parabolic inclusion and finite-support transport; finish word wall maps, pair kernels, and character recursions.",
     "Expand adapted-order/chamber changes, dihedral interval transport, and the path-polynomial proof.",
     "Review the remaining Hecke, localization, and simultaneous-comparison arguments against their local source bodies.",
@@ -3619,7 +3899,19 @@
       "kl.hecke.dihedral_r_sum": "H5",
       "kl.coxeter.interval_restriction": "C4",
       "kl.coxeter.bruhat_successor": "C4",
-      "kl.coxeter.rank_embedding": "C4"
+      "kl.coxeter.rank_embedding": "C4",
+      "kl.algebra.augmentation_kernel": "A2",
+      "kl.algebra.component_transport": "A3",
+      "kl.algebra.module_operations": "A3",
+      "kl.algebra.subquotient_gradings": "A3",
+      "kl.algebra.finite_graded_cover": "A3",
+      "kl.algebra.polynomial_hilbert": "A6",
+      "kl.algebra.hilbert_convergence": "A6",
+      "kl.algebra.character_basis_independence": "A6",
+      "kl.algebra.character_operations": "A6",
+      "kl.algebra.hilbert_defect": "A6",
+      "kl.algebra.hilbert_image_exactness": "A6",
+      "kl.algebra.hilbert_scalar_quotient": "A6"
     },
     "moved_nodes": [
       {
@@ -4453,7 +4745,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 296
+    "current_node_count": 308
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -4468,7 +4760,8 @@
     "Expanded boundary existence, uniqueness and restrictions; lower-supported models; local stalk remainders and full graded decomposition; simultaneous stalk/kernel multiplicities, with a shared one-edge example and distinct splitting/pairing and decomposition/character routes.",
     "Expanded the operator-to-R construction: both Hecke conventions, cyclic reduced-word independence, bar intertwining and triangularity, polynomiality and degree, signed parameter reciprocity, inverse coefficients, and positive-word convolution. Added a bounded polynomial-reflection definition and rebuilt the topic guide around these dependencies.",
     "Expanded the full canonical KL construction from the negative lower half: degree control, proper R-kernel, anti-reciprocal defect, rank induction, seven normalization fields and selected-family identification. Added explicit integral and scaled reciprocal rigidity and the square-parameter calculation.",
-    "Expanded the complete dihedral constant-P calculation and interval-rank prerequisites. Separated first/final alternating-word conventions, proved the double-string correction and linear-bar cancellation, and removed the polynomial calculation from the direct induced-label model dependencies."
+    "Expanded the complete dihedral constant-P calculation and interval-rank prerequisites. Separated first/final alternating-word conventions, proved the double-string correction and linear-bar cancellation, and removed the polynomial calculation from the direct induced-label model dependencies.",
+    "Expanded graded module data and Hilbert foundations: exact augmentation, homogeneous maps and subquotients, finite shifted free covers, monomial-series convergence, basis-independent characters, scalar quotient normalization and equality detection through degreewise defects. Reorganized the graded-algebra guide into its seven approved subtopics."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -4539,6 +4832,16 @@
       "term": "lower-half KL recursion",
       "target": "kl.hecke.recursive_p",
       "review": "The recursion now has its own definition; reciprocity-defect aliases stay attached to the proper-upper sum definition."
+    },
+    {
+      "term": "graded module",
+      "target": "kl.algebra.grading_components",
+      "review": "Generic graded-module and nonnegative-grading terms now resolve to the general component definition. Finite graded module and module-data terms resolve to the eight-field ModuleData definition."
+    },
+    {
+      "term": "degreewise defect",
+      "target": "kl.algebra.hilbert_defect",
+      "review": "Moved the former Hilbert-value alias to the dedicated quotient-defect definition; scoped defect terms to the module/sheaf/comparison topics."
     }
   ],
   "corrections": [
@@ -4558,15 +4861,15 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-19T06:48:53.701468+00:00",
+    "created_at": "2026-10-19T07:28:22.896127+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 296,
-    "html_pages_checked": 558,
-    "generated_definition_links_checked": 3704,
+    "node_count": 308,
+    "html_pages_checked": 570,
+    "generated_definition_links_checked": 3855,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage; documentation checks only."
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage, including all eight ModuleData fields and both Hom fields; documentation checks only."
   },
   "structure_coverage_scan": {
     "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
@@ -4613,6 +4916,20 @@
         "kl.notes.dihedral_models"
       ],
       "review": "The generic dihedral polynomial theorem has no root-plane prerequisite. The induced-label structure model uses ambient roots and direct interpolation; its definition no longer records canonical P or P=1 as a proof dependency."
+    },
+    {
+      "entries": [
+        "kl.algebra.positive_ideal",
+        "kl.algebra.augmentation_kernel"
+      ],
+      "review": "The actual nonnegativeAugmentation has codomain A and image A_0. The interpretation as a map to k uses the connected nonzero algebra identification."
+    },
+    {
+      "entries": [
+        "kl.algebra.hilbert_convergence",
+        "kl.algebra.hilbert_scalar_quotient"
+      ],
+      "review": "Finite graded covers allow integer generator degrees and prove convergence for arbitrary ambient k-subspaces. The factor (1-q)^N removes the polynomial coefficient series, whereas (1-q) is the quotient factor for one regular degree-one scalar."
     }
   ],
   "relationship_map_revision": {
