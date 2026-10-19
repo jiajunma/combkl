@@ -97,6 +97,18 @@ A degree-zero self-map equal to the identity modulo the positive ideal is surjec
 
 This comparison controls boundary-sheaf morphisms. Isomorphisms above a vertex identify its two boundary images; the remaining stalk maps become maps of minimal covers over a common target. Their bijectivity propagates downward from the normalized stalk.
 
+## A free cover with extra generators
+
+Let \(\pi:P\to T\) be a minimal cover and \(f:F\to T\) a free graded cover. Homogeneous lifting gives \(g:F\to P\) and \(h_0:P\to F\) with \(\pi g=f\) and \(fh_0=\pi\). The difference \(1-gh_0\) maps into \(\ker\pi\subseteq JP\), so \(u=gh_0\) is invertible. Replacing \(h_0\) by \(h=h_0u^{-1}\) gives \(gh=1\).
+
+Thus
+\[
+F\simeq P\oplus\ker g,\qquad v\longmapsto(gv,v-hgv).
+\]
+The kernel is a graded projective summand and therefore graded free under the connected Noetherian-domain hypotheses. Its homogeneous generators record the extra shifts that must be added when a model decomposition extends over a new vertex.
+
+For \(T=A/(\alpha)\), \(P=A\), and \(F=A\oplus A(2)\), with both covers given by the first coordinate modulo \(\alpha\), the remainder is \(A(2)\). This is the algebraic step behind the sheaf example \(O_y\oplus O_x(2)\).
+
 ## Exactness can be checked degree by degree
 
 For a degree-zero surjection \(M\to N\) with kernel \(K\), a homogeneous vector in \(N_n\) has a homogeneous preimage in \(M_n\): take any preimage and retain its degree-\(n\) component. Consequently
@@ -142,6 +154,7 @@ The tools to carry forward are: linear labels and prime quotients; homogeneous m
 - [[node:kl.algebra.homogeneous_lifts]]
 - [[node:kl.algebra.identity_mod_positive]]
 - [[node:kl.algebra.minimal_cover_maps]]
+- [[node:kl.algebra.minimal_cover_remainder]]
 
 ### Hilbert series, Hilbert values, and characters
 

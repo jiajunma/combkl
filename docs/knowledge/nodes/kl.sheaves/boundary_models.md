@@ -8,7 +8,8 @@ topics:
 - kl.sheaves
 uses:
 - kl.sheaves.boundary_sheaf
-- kl.detail.graded_sheaf
+- kl.sheaves.lower_extension
+- kl.detail.sheaf_isomorphisms
 lean:
   repository: openai-kl
   modules:
@@ -21,11 +22,6 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.MinimalExtensions:661
     format: lean-location
     note: OAI.KLInvariance.MomentGraph.GradedSheaf.BoundaryModels
-  - artifact: openai-kl-paper
-    locator: Related paper context; bg:bmp
-    format: section
-    note: Contextual correspondence, not a claim that this Lean result appears verbatim
-      in the preprint.
 verification:
   definition: accepted
   proof: not_applicable
@@ -42,25 +38,48 @@ tags:
 
 # Boundary models supported on principal lower ideals
 
-A boundary-model family assigns to every vertex \(c\) a graded sheaf \(O_c\) on the whole graph, supported on the principal lower ideal \(\{x:x\leq c\}\). Its data satisfy:
+Fix a nonnegatively graded coefficient algebra \(A\), a labelled ordered graph, and \(J=A_{>0}\). A boundary-model family assigns to every vertex \(c\) a graded sheaf \(O_c\) on the whole graph.
 
-- Every stalk of \(O_c\) is free.
-- Every upper edge restriction is the quotient by the prescribed label.
-- \(O_c\) is flabby and globally generated.
-- Its stalk is zero whenever \(x\not\leq c\).
-- The stalk at \(c\) is graded-isomorphic to \(A\), with generator in degree zero.
-- Away from \(c\), the full outgoing boundary map is minimal.
+Its data satisfy the following conditions for all centers \(c\):
 
-One obtains these models by constructing the normalized minimal-boundary sheaf on the lower ideal and extending it by zero. Edges leaving that ideal have zero upper stalk and zero edge quotient, consistent with the quotient rule.
+- Every stalk \(O_c^x\) is free over \(A\).
+- Every upper edge map is surjective with kernel \(\alpha_eO_c^{t(e)}\).
+- Global sections generate every stalk.
+- The sheaf is flabby.
+- If \(x\not\le c\), then \(O_c^x=0\).
+- A specified \(A\)-linear isomorphism \(O_c^c\simeq A\) preserves grading, with \(1\in A\) in degree zero.
+- For every \(x\ne c\), the full outgoing kernel satisfies
+  \[
+  K_x(O_c)\subseteq JO_c^x.
+  \]
 
-A finite model sum is built from finitely many copies \(O_c(d)\), with nonnegative shifts \(d\). The model-decomposition theorem explains when a given sheaf is isomorphic to such a sum. The shifts are actual homogeneous generator degrees, rather than arbitrary Laurent powers.
+The support condition places the sheaf on the principal lower ideal
+\(\{x:x\le c\}\). The normalization at \(c\) specifies its top generator, and minimality controls the stalk covers at other vertices.
+
+## The top isomorphism and its grading
+
+The source records the top linear isomorphism and its forward degree condition separately. Its inverse also preserves degree: decompose a preimage into homogeneous components, apply the forward map, and use uniqueness of components and injectivity to eliminate every degree except the prescribed one.
+
+Thus the normalization identifies \(O_c^c\) with the graded unit module in both directions.
+
+## Construction on each lower ideal
+
+Construct the normalized boundary sheaf on the lower graph \(\{x:x\le c\}\), then extend it by zero to the full graph. The extension theorem supplies the free-stalk, quotient, section, and minimality properties above.
+
+If the target of an edge is outside this lower ideal, its edge module is zero. This follows directly from the extension construction and also from the upper-quotient rule applied to its zero upper stalk.
+
+## The two models on one edge
+
+On \(x\to y\) over \(A=\mathbb R[\alpha]\), the model \(O_y\) is the congruence sheaf with stalks \(A,A\) and edge module \(A/(\alpha)\).
+
+The model \(O_x\) has stalks \(A,0\) and zero edge module. It is obtained from the normalized one-vertex sheaf at \(x\) by extension by zero. These two models are the building blocks for a general free flabby sheaf on this graph.
 
 ## References
 
-[Related paper context](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L225).
+The local source declarations below give the constructions and proofs.
 
 ## Lean formalization
 
-The fields are `sheaf`, `free`, `quotient`, `generated`, `flabby`, `support`, `top`, `top_graded`, `minimal`. The separate top_graded field records compatibility of the top isomorphism with the grading.
+The fields `sheaf`, `free`, `quotient`, `generated`, `flabby`, `support`, `top`, `top_graded`, and `minimal` record the family and the conditions above.
 
 `OAI.KLInvariance.MomentGraph.GradedSheaf.BoundaryModels`: [MinimalExtensions.lean:661](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/MinimalExtensions.lean#L661).

@@ -1,6 +1,6 @@
 ---
 id: kl.sheaves.boundary_existence
-title: Existence of the Bruhat minimal-boundary sheaf
+title: Existence of normalized boundary sheaves on finite ordered graphs
 kind: theorem
 status: proved
 primary_topic: kl.sheaves
@@ -8,29 +8,34 @@ topics:
 - kl.sheaves
 uses:
 - kl.sheaves.boundary_sheaf
-- kl.sheaves.minimal_cover
-- kl.foundations.finite_intervals
-- kl.notes.boundary_image
-- kl.notes.minimal_cover_existence
 - kl.detail.boundary_extension
+- kl.notes.minimal_cover_existence
+- kl.detail.graph_transport
+- kl.foundations.finite_intervals
 - kl.detail.polynomial_labels
 lean:
   repository: openai-kl
   modules:
+  - GradedSheaves
   - SheafMorphisms
   declarations:
+  - OAI.KLInvariance.MomentGraph.exists_boundarySheaf_card
+  - OAI.KLInvariance.MomentGraph.exists_boundarySheaf
   - OAI.KLInvariance.BruhatGraph.exists_boundarySheaf
 source:
   spans:
   - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.GradedSheaves:1177
+    format: lean-location
+    note: OAI.KLInvariance.MomentGraph.exists_boundarySheaf_card
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.GradedSheaves:1238
+    format: lean-location
+    note: OAI.KLInvariance.MomentGraph.exists_boundarySheaf
+  - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.SheafMorphisms:172
     format: lean-location
     note: OAI.KLInvariance.BruhatGraph.exists_boundarySheaf
-  - artifact: openai-kl-paper
-    locator: 2. Real realizations and moment-graph sheaves; sec:background
-    format: section
-    note: Paper correspondence; chapter organization follows mathematical dependencies
-      in the Lean library.
 verification:
   statement: accepted
   proof: accepted
@@ -45,44 +50,58 @@ tags:
 - background
 ---
 
-# Existence of the Bruhat minimal-boundary sheaf
+# Existence of normalized boundary sheaves on finite ordered graphs
 
-For a finite-generator Coxeter system and \(u\le b\), choose a real basis of the extended Tits realization and express roots as degree-one coordinate polynomials. The Bruhat interval graph admits a minimal-boundary sheaf with top \(b\).
+Let \(A\) be a nonnegatively graded Noetherian \(k\)-algebra such that every coefficient is congruent to a scalar modulo \(A_{>0}\). Let \(G\) be a finite ordered graph with greatest vertex \(b\), and suppose every edge label is homogeneous of degree one.
+
+Then \(G\) admits a normalized minimal-boundary sheaf with distinguished stalk \(A\) at \(b\).
+
+In particular, this applies to every Bruhat interval \([u,b]\) in a finite-generator Coxeter system, with polynomial coefficients from a basis of the real extended realization and its degree-one root labels.
 
 *Proof.*
 
-### Step 1. Check the coefficient and graph hypotheses
+### Step 1. Establish the one-vertex case
 
-For the Bruhat graph of \([u,b]\), interval finiteness gives finitely many vertices. Its edges are selected pairs of vertices, so there are finitely many edges too. The order has greatest vertex \(b\).
+If \(b\) is the only vertex, there are no edges, since every edge must strictly increase the order. Set \(B^b=A\) with its coefficient grading, whose unit generator has degree zero.
 
-The coefficient ring is a real polynomial ring: it is Noetherian, nonnegatively graded, and its quotient by the positive-degree ideal is \(\mathbb R\). Every root label is homogeneous of degree one. These are exactly the hypotheses needed for the minimal-cover construction.
+The stalk is free; its values are global sections; every compatible assignment extends; and there are no non-top minimality conditions. This supplies the boundary-sheaf data.
 
-### Step 2. Induct on the number of vertices
+### Step 2. Remove a minimal vertex in the general case
 
-For a one-vertex graph, take \(B^b=A\). There are no edges, every assignment is a global section, and every top-stalk value is realized. Freeness and the top normalization hold; the non-top minimality condition is vacuous.
+Proceed by strong induction on the number of vertices. If there is more than one vertex, choose a minimal vertex \(x\).
 
-For a graph with more than one vertex, choose a minimal vertex \(x\). It cannot equal the greatest vertex \(b\), because then every vertex would equal \(b\). No edge can end at \(x\): its source would be strictly smaller than \(x\).
+It differs from \(b\): if \(x=b\), every vertex would be at most \(x\), and minimality would force equality. No edge ends at \(x\), because its source would be strictly smaller.
 
-### Step 3. Remove x and apply induction
+Remove \(x\) and all edges starting at it. The remaining finite graph still has greatest vertex \(b\), has fewer vertices, and retains its homogeneous labels.
 
-Remove \(x\) and all edges whose source is \(x\). The remaining graph has fewer vertices, still has greatest vertex \(b\), and inherits the same homogeneous labels. Induction constructs its boundary sheaf.
+### Step 3. Apply induction and reconstruct the removed data
 
-The removed edges are now a finite list of attachments from a new bottom vertex to their old targets. Apply [[node:kl.detail.boundary_extension]]: form the boundary image, choose its minimal graded free cover, and attach that cover as the stalk at \(x\).
+Induction gives a boundary sheaf on the remaining graph. Regard the removed edges as attachments from a newly adjoined bottom vertex to their old targets.
 
-### Step 4. Verify the definition's conditions separately
+The [[node:kl.detail.boundary_extension|bottom-attachment theorem]] constructs the new free stalk, edge quotients, and restrictions through a minimal cover of the attachment boundary image. It preserves generation and edge flabbiness, preserves old minimality, and supplies minimality at the new vertex.
 
-Old stalks remain free and the new stalk is free. Old quotient maps remain unchanged and new ones were defined as quotients. Extension from edge-closed subsets and global generation hold by the two lifting arguments in the attachment theorem.
+### Step 4. Return to the original graph
 
-The top stalk remains the old stalk \(A\), because \(x\ne b\). Minimality at \(x\) is the kernel condition of its chosen cover; minimality at old vertices is unchanged. Thus all fields required for a minimal-boundary sheaf have been supplied.
+Identify the adjoined vertex with \(x\), the retained vertices with their original vertices, and the old and attachment edge sets with the original edge set. These are bijections preserving sources, targets, and labels.
 
-### Step 5. Return to the original graph labels
+Reindex the constructed sheaf along those bijections. Free stalks, quotient maps, and outgoing kernels are transported componentwise. Edge-closed subsets correspond under the incidence bijection, so edge flabbiness transports as well; global generation is transported by reindexing sections.
 
-The attachment construction uses a graph with a formally adjoined bottom vertex. Identify that bottom with the removed \(x\), the old vertices with their original vertices, and the two classes of edges with the original edge set. This graph isomorphism preserves sources, targets, and labels. Reindex the constructed sheaf along it to obtain the required sheaf on the original Bruhat graph.
+The distinguished vertex is still \(b\), whose stalk retains its normalization. All the fields of a minimal-boundary sheaf are now verified on the original graph.
+
+### Step 5. Check the Bruhat specialization
+
+A Bruhat interval is finite, and its reflection edges form a finite set of vertex pairs. Its greatest vertex is \(b\).
+
+The real polynomial coefficient algebra is Noetherian and nonnegatively graded, and reduction modulo its positive ideal is the base field. The polynomial root labels have degree one. Hence all hypotheses of the general construction hold, proving the stated specialization.
 
 ## References
 
-[2. Real realizations and moment-graph sheaves](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L2).
+The local source declarations below give the constructions and proofs.
 
 ## Lean formalization
+
+`OAI.KLInvariance.MomentGraph.exists_boundarySheaf_card`: [GradedSheaves.lean:1177](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L1177).
+
+`OAI.KLInvariance.MomentGraph.exists_boundarySheaf`: [GradedSheaves.lean:1238](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L1238).
 
 `OAI.KLInvariance.BruhatGraph.exists_boundarySheaf`: [SheafMorphisms.lean:172](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L172).

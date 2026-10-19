@@ -327,3 +327,28 @@ comparisons:
     then exports the graph, count, and path statements under that least-length hypothesis.
   consequence: The proof below uses those exported statements and derives uniqueness
     explicitly from the plane count and the length-zero characterization of the identity.
+- id: graded-and-local-model-decomposition
+  kind: Related descent in different coefficient settings
+  nodes:
+  - kl.detail.model_decomposition
+  - kl.sheaves.model_sum_step
+  - kl.algebra.minimal_cover_remainder
+  paper_labels:
+  - loc:decomposition
+  lean_declarations:
+  - OAI.KLInvariance.Graded.ModuleData.exists_minimalCover_split
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.extend_modelSum
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.exists_modelSumIso
+  paper: The plane-localization proposition descends through a finite coset graph
+    over an ungraded local ring. Nakayama makes the lifted stalk map surjective, its
+    free target gives a splitting, and projectivity over the local ring makes the
+    remainder free. Multiplicities count copies of local structure models.
+  lean: The graded construction lifts in both directions and corrects the composite
+    using invertibility modulo the positive ideal. The remainder is graded projective
+    over a connected Noetherian domain and has a homogeneous basis. Its degrees determine
+    nonnegative shifts of boundary models. Partial isomorphisms already include every
+    edge whose upper endpoint has been processed.
+  consequence: Both constructions split a stalk over the upper boundary image and
+    add models centered at the new vertex. The graded construction records a polynomial
+    of shifts at each center; the ungraded local construction records an integer number
+    of copies.

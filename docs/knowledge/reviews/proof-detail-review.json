@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 42920,
-  "theorem_walkthroughs": 142,
+  "revised_proof_words": 46801,
+  "theorem_walkthroughs": 155,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -73,6 +73,20 @@
       "revised_proof_words": 296,
       "proof_sha256": "86adfd4d9ae8ea69af91ce97dc65ec418ae936d0789254b5be7a2b1bbb6fc87d",
       "review": "Read MinimalCover.hom_bijective, bijective_of_boundaryIso, and equiv: lift a reverse map, place both errors in the positive ideal, deduce bijectivity, and construct a comparison between arbitrary covers."
+    },
+    {
+      "node": "kl.algebra.minimal_cover_remainder",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.exists_minimalCover_split",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.splitEquiv",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.splitEquiv_graded",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.kernel_free_of_split"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 330,
+      "proof_sha256": "cfc7458b9175da2bb5df62b9ecf9194b70bf905ba1d90b5c2861c842a662f421",
+      "review": "Read exists_minimalCover_split, splitEquiv, grading and kernel freeness. Both homogeneous lifts, correction of their composite, inverse formulas and projective remainder are explicit."
     },
     {
       "node": "kl.algebra.perfect_inverse_degree",
@@ -309,15 +323,23 @@
     {
       "node": "kl.detail.boundary_extension",
       "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.bottomGraph",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.attachEdges",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.attachBoundaryMap",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.attachImage",
         "OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom",
         "OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_edgeFlabby",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_generated"
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_generated",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_freeStalks",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_upperQuotient",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_kernelMinimal_bot",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_kernelMinimal_coe"
       ],
       "proof_steps": 5,
       "previous_proof_words": 102,
-      "revised_proof_words": 409,
-      "proof_sha256": "948a8da37aa594e924866386f485d167ab9f07cd79f9d78ef5c1a2861ae9d5b3",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 484,
+      "proof_sha256": "b27800ec3f15b7f2308cf261947e995101a32b83f34a75fc0af7ed8164279d8d",
+      "review": "Read attachBoundaryMap, attachImage, extendBottom and property proofs. Retained finite old vertices and finite attachments, both edge-flabbiness cases, and the image/cover kernel calculation."
     },
     {
       "node": "kl.detail.boundary_pairing",
@@ -337,13 +359,15 @@
     {
       "node": "kl.detail.boundary_uniqueness",
       "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.extend_stalk_graded",
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.extend_iso",
         "OAI.KLInvariance.MomentGraph.BoundarySheaf.exists_gradedIso"
       ],
-      "proof_steps": 4,
+      "proof_steps": 5,
       "previous_proof_words": 130,
-      "revised_proof_words": 381,
-      "proof_sha256": "7d3362e5013d43c930e8d882a94984ac6ce0302ddd155c81a29cbcccf553c1f5",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 371,
+      "proof_sha256": "8105306d8b8b2a8b43774c4b8c4751ca97eb21a30e5efe3974cab68c5d6108df",
+      "review": "Read extend_stalk_graded, extend_iso and exists_gradedIso. The finite partial-isomorphism construction treats the top normalization and non-top minimal covers separately."
     },
     {
       "node": "kl.detail.bruhat_lifting",
@@ -527,9 +551,9 @@
       ],
       "proof_steps": 5,
       "previous_proof_words": 120,
-      "revised_proof_words": 420,
-      "proof_sha256": "91575814cd8c42f0872d019e14c35c29672bb9753337d96fb88a5904d8b56696",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 397,
+      "proof_sha256": "b2bb6c08f5a3d45c7ac3db475515b6aacbd773f6b7a070143236517b24f1e027",
+      "review": "Read exists_modelSumIso. Recorded the finite-complement induction, empty partial isomorphism, maximal missing vertex, upper closure and conversion of full-domain partial data into an isomorphism."
     },
     {
       "node": "kl.detail.morphism_extension",
@@ -696,13 +720,15 @@
         "OAI.KLInvariance.HeckeQ.barLinear_positiveWord",
         "OAI.KLInvariance.HeckeQ.positiveWord_rValue",
         "OAI.KLInvariance.TitsSpace.bottStalkCharacter_reciprocity",
-        "OAI.KLInvariance.TitsSpace.bottKernelCharacter_rConvolution"
+        "OAI.KLInvariance.TitsSpace.bottKernelCharacter_rConvolution",
+        "OAI.KLInvariance.HeckeQ.rValue_inverse_eq_barBasis",
+        "OAI.KLInvariance.HeckeQ.positiveWord_support"
       ],
       "proof_steps": 4,
       "previous_proof_words": 0,
-      "revised_proof_words": 395,
-      "proof_sha256": "cad8eb1f6265cc67c234af02752ba7b6934dae44c28791b329c1b9c3e789f709",
-      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness.",
+      "revised_proof_words": 419,
+      "proof_sha256": "8465fd6f360f10e1979c4dc554e9885fbb6f1ce4ab1f94f96a1eb476c9d076bf",
+      "review": "Rechecked barLinear_positiveWord, positiveWord_rValue and the inverse-parameter bar coefficient theorem. Defined the positive word and linear transform and identified the coefficient identity as a derived theorem; detailed upstream H2/H3 exposition is still pending.",
       "format_correction": "2026-10-18: restored missing backslashes in qquad spacing commands; mathematical assertions unchanged."
     },
     {
@@ -899,9 +925,9 @@
       ],
       "proof_steps": 5,
       "previous_proof_words": 84,
-      "revised_proof_words": 355,
-      "proof_sha256": "f7f3d533f9a994ebfb8d317f05a45b95063a5d516d2fa212eab20d32d762b26c",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 381,
+      "proof_sha256": "98201b7923c8e28d3c9906ca1c5620dba8cc0734305d8e68c205b7ac2334955f",
+      "review": "Rechecked DyerPaths induction and cancellation. Added the all-top induction/base, natural rank difference on arbitrary pairs, comparable/incomparable support cases and one-edge evaluation."
     },
     {
       "node": "kl.duality.bott_character_decomposition",
@@ -910,9 +936,9 @@
       ],
       "proof_steps": 5,
       "previous_proof_words": 65,
-      "revised_proof_words": 380,
-      "proof_sha256": "6c08897a7ae52f2af9967e58a00d9ab502e76037bb9af5de4d7058775ce64df3",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 337,
+      "proof_sha256": "cf5252d201114752d70270cb17e880b0e0a5740c3599cc3a70f10b1eebc0d49e",
+      "review": "Read bottCharacter_decomposition_both and the top-character calculation. Included the word pairing/free-kernel inputs, actual lower-model characters and the derivation of top multiplicity one."
     },
     {
       "node": "kl.foundations.canonical_kl",
@@ -1104,9 +1130,9 @@
       ],
       "proof_steps": 4,
       "previous_proof_words": 99,
-      "revised_proof_words": 176,
-      "proof_sha256": "b626be10c839ea2e5c542459df84ac660d89b01e9c359ce871c3d2d7351af95c",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 166,
+      "proof_sha256": "219997f27a34669bd2574c583ca8316b1d604f1f389e32aa2053ca893781fb0a",
+      "review": "Retained the checked finite distributivity and top-coefficient-one proof; replaced precautionary closing prose by the direct ring identity."
     },
     {
       "node": "kl.notes.dihedral_kl",
@@ -1544,13 +1570,15 @@
     {
       "node": "kl.sheaves.boundary_existence",
       "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.exists_boundarySheaf_card",
+        "OAI.KLInvariance.MomentGraph.exists_boundarySheaf",
         "OAI.KLInvariance.BruhatGraph.exists_boundarySheaf"
       ],
       "proof_steps": 5,
       "previous_proof_words": 92,
-      "revised_proof_words": 401,
-      "proof_sha256": "f8c047918e58e99e1bd6765a7a77ca4b7e14bfaa2ddc4806b5e8f49ed50e1a70",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 391,
+      "proof_sha256": "a01616d3c42dc0d9a103e4003af597ddb2a87d2941fc953aff9e96923ef1021f",
+      "review": "Read exists_boundarySheaf_card and its general theorem. The singleton unit retains the coefficient grading; the minimal-vertex induction reconstructs incidence and transports edge flabbiness through GraphEquiv."
     },
     {
       "node": "kl.sheaves.boundary_image_identity",
@@ -1564,6 +1592,34 @@
       "revised_proof_words": 201,
       "proof_sha256": "0a1e0e8aa7a74e1a33be6bbf04c95360a3bc943e4964117fd6a653a080d5cd53",
       "review": "Compared both range containments with range_stalkMap_eq_boundaryImage. Generation lifts a stalk vector; flabbiness extends from the strict upper set; equality is checked at each outgoing edge coordinate."
+    },
+    {
+      "node": "kl.sheaves.boundary_models_exist",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.lowerBoundary",
+        "OAI.KLInvariance.MomentGraph.actualBoundaryModels",
+        "OAI.KLInvariance.BruhatGraph.lowerIntervalMap",
+        "OAI.KLInvariance.BruhatGraph.lowerIntervalBoundary",
+        "OAI.KLInvariance.BruhatGraph.boundaryModels"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 283,
+      "proof_sha256": "b79115f236896ec27e768ce87d2610a6f2491d2c3977f814f40ed3581e5b9626",
+      "review": "Checked lowerBoundary, actualBoundaryModels and the Bruhat lowerIntervalMap construction. Existence on each lower ideal supplies top normalization and minimality; lower extension supplies support."
+    },
+    {
+      "node": "kl.sheaves.boundary_pullback",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.pullback_edgeFlabby",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.pullback_kernelMinimal",
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.pullback"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 329,
+      "proof_sha256": "412ca14e5f8bf56ef31f8653b58a212705feefd8240e1c9eb4007d4ff6678a13",
+      "review": "Read pullback_edgeFlabby, pullback_kernelMinimal and BoundarySheaf.pullback. Injective vertices and complete outgoing lifts transport compatible assignments, edge closure, every kernel condition and the normalized top."
     },
     {
       "node": "kl.sheaves.boundary_recognition",
@@ -1651,6 +1707,23 @@
       "review": "Checked the two kernel vectors and both bilinear expansions against BalancedCuts.balanced_two; the generic argument uses a bilinear map, and the specialization checks both support conditions."
     },
     {
+      "node": "kl.sheaves.finite_sum_properties",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.pi_compatible",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pi_generated",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pi_flabby",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pi_upperQuotient",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pi_kernel_iff",
+        "OAI.KLInvariance.LocalCover.pi_mem_ideal_smul",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pi_minimal"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 394,
+      "proof_sha256": "9200db1e805b297e8865fa1ead0971d7ce48791ca2202fa0a60182dc818fdd9e",
+      "review": "Checked componentwise generation/flabbiness/quotients/kernels and the finite coordinate-insertion proof for positive-ideal membership."
+    },
+    {
       "node": "kl.sheaves.hilbert_detection",
       "source_declarations": [
         "OAI.KLInvariance.Hilbert.polynomial_eq_of_value_eq"
@@ -1687,6 +1760,101 @@
       "review": "Compared imageSection_fixed, imageSectionMap_bijective, and imageSectionEquiv. Retained ambient assignments on all vertices, assumed only vertex idempotence, and proved both directions of the section-image identification."
     },
     {
+      "node": "kl.sheaves.kernel_transport",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Iso.kernelEquiv",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Iso.kernelEquiv_graded",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelShiftEquiv",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelProdEquiv",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelPiEquiv",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelChar_shift",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelChar_prod",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelChar_pi",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelChar_zero"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 250,
+      "proof_sha256": "7acf291fae39582fffe637a806737f3585916104f8756dbc6a779af73bcccefd",
+      "review": "Checked kernelEquiv, sum/shift isomorphisms and character formulas. Commuting lower squares and edge-map injectivity give both kernel containments."
+    },
+    {
+      "node": "kl.sheaves.lower_extension_properties",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.projectLower_compatible",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.liftLower_compatible",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerExtend_free",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerExtend_generated",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerExtend_flabby",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerExtend_quotient",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerExtend_minimal"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 374,
+      "proof_sha256": "bafd5a94b868a7b1a176b24bc8aeac9866e884a8b95df78f0ea2beda23e30178",
+      "review": "Checked each lowerExtend property: upper-set intersection, zero modules outside the lower ideal, and identical outgoing kernel conditions inside."
+    },
+    {
+      "node": "kl.sheaves.lower_model_kernels",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerExtend_kernel_iff",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerExtendKernelEquiv",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerExtendKernelEquiv_graded",
+        "OAI.KLInvariance.BruhatGraph.lowerKernelEquiv",
+        "OAI.KLInvariance.BruhatGraph.boundaryModels_character",
+        "OAI.KLInvariance.BruhatGraph.boundaryModels_kernelFree",
+        "OAI.KLInvariance.BruhatGraph.boundaryModels_kernelCharacter",
+        "OAI.KLInvariance.BruhatGraph.lowerCharacter"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 249,
+      "proof_sha256": "7825b4d1b667cb6d6cdb78a1deaaeaf6df3855edae139aad770c8a7383482728",
+      "review": "Read lowerExtendKernelEquiv, lowerKernelEquiv and boundaryModels_kernelCharacter. Outgoing edges leaving support impose zero equations; the actual boundary pairing supplies free full kernels and their degree reversal."
+    },
+    {
+      "node": "kl.sheaves.model_sum_characters",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.ModelSum.character",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.ModelSum.kernelFree",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.ModelSum.character_both",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.exists_character_decomposition"
+      ],
+      "proof_steps": 6,
+      "revised_proof_words": 342,
+      "proof_sha256": "4b6c397d678f28ba50a2527d70dfd5ce1b9bcabcd043990a1e8b8525a118db29",
+      "review": "Read ModelSum.character_both and exists_character_decomposition. The same constructor update gives both multiplicity formulas, nonnegativity, support and free kernel sums."
+    },
+    {
+      "node": "kl.sheaves.model_sum_properties",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.ModelSum.mono",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.ModelSum.free",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.ModelSum.quotient",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.ModelSum.generated",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.ModelSum.flabby",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.ModelSum.minimal"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 232,
+      "proof_sha256": "94caf4c6285fa2159ee641ca2433c00aba061278934a43e4232d7f8b60c53e51",
+      "review": "Checked constructor induction for all structural properties and minimality away from the center set."
+    },
+    {
+      "node": "kl.sheaves.model_sum_step",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.extend_modelSum"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 339,
+      "proof_sha256": "7af2c3e21b5cf67f82f7e680add303bb99551ea4e0fb38635e7e056dcdc169c2",
+      "review": "Read extend_modelSum. The graded remainder becomes new centered shifted models; their support kills every old vertex and every edge with old upper endpoint; outgoing squares and incoming quotient maps complete the extension."
+    },
+    {
       "node": "kl.sheaves.pairing_transport",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -1702,6 +1870,18 @@
       "revised_proof_words": 381,
       "proof_sha256": "9e928d3fccfbedbecbe5ea04b7cb7b38d34ef46407aa314c9a21fae3e4d16226",
       "review": "Read dualEquiv, pairingEquiv, PerfectPairing transport/pullback, and symmetric variants. Constructed the functional representative in both transports and checked each orthogonality condition and grading."
+    },
+    {
+      "node": "kl.sheaves.partial_iso_extension",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.OnIso.extend",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.OnIso.extend"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 271,
+      "proof_sha256": "f425716d35165a147c0817c61e54d68d208b1129d0c2386062f99145c4fde41b",
+      "review": "Read OnIso.extend in GradedSheaves and MinimalExtensions. Edge maps belong to the domain whenever the upper endpoint does; incoming maps descend through quotients and homogeneous lifts prove grading."
     },
     {
       "node": "kl.sheaves.primitive_image",
@@ -1743,6 +1923,17 @@
       "review": "Read the SplitIn flabby, generated, upperQuotient, vertex_projective and vertex_free proofs; expanded both quotient-kernel containments and the lifting definition of inherited projectivity."
     },
     {
+      "node": "kl.sheaves.stalk_remainder",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.split_stalk_graded"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 241,
+      "proof_sha256": "9998e011c1632e483857787b4602ae8579161e4275a1e03c500138a8e207d132",
+      "review": "Read AboveIso.split_stalk_graded: the common target is the graded range of the second stalk map, not a global section module. Finite edge products, boundary-image equality and the minimal-cover remainder provide the local splitting."
+    },
+    {
       "node": "kl.sheaves.support_annihilator",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -1766,6 +1957,19 @@
       "revised_proof_words": 281,
       "proof_sha256": "646046250c58b0c81e45df3425e12282ca62ace731b72ac3597ef7ce79fe7165",
       "review": "Expanded dualToSupport and supportEquivDual into lift-independent descent, linearity, and both inverse identities. Global generation supplies exactly the required surjective evaluation."
+    },
+    {
+      "node": "kl.sheaves.upper_interval_kernels",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.stalkCharacter_upperRestriction",
+        "OAI.KLInvariance.BruhatGraph.restrictBoundary_kernel",
+        "OAI.KLInvariance.BruhatGraph.intervalBoundary_upper_kernel"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 218,
+      "proof_sha256": "bddbf93212b68c9b058aa82b3c3a5d1a396fd607678f66ea95cbea157ec0e846",
+      "review": "Read restrictBoundary_kernel and intervalBoundary_upper_kernel. Compared the same selected equations on the same graded stalk, and used uniqueness only for independently chosen boundary objects."
     },
     {
       "node": "kl.sheaves.word_adjoint_descent",

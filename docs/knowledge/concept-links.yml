@@ -134,6 +134,12 @@ concepts:
   terms:
   - stalk characters
   - stalk character
+  - kernel character
+  - kernel characters
+  - costalk character
+  - costalk characters
+  - lower character
+  - lower characters
 - node: kl.notes.reflection_order
   terms:
   - reflection orders
@@ -205,7 +211,6 @@ concepts:
   - boundary models
   - boundary-model family
   - boundary model
-  - model sum
 - node: kl.detail.sheaf_morphism
   terms:
   - sheaf morphism
@@ -325,6 +330,8 @@ concepts:
   - graded sheaf isomorphism
   - graded sheaf isomorphisms
   - isomorphism above
+  - partial sheaf isomorphism
+  - partial sheaf isomorphisms
 - node: kl.detail.split_summands
   terms:
   - split sheaf summand
@@ -654,3 +661,54 @@ concepts:
   - induced signed relation
   - induced signed datum
   - induced signed data
+- node: kl.sheaves.finite_operations
+  terms:
+  - zero sheaf
+  - zero sheaves
+  - finite sheaf sum
+  - finite sheaf sums
+  - shifted sheaf
+  - shifted sheaves
+  - sheaf product
+  - sheaf products
+- node: kl.sheaves.lower_extension
+  terms:
+  - lower graph
+  - lower graphs
+  - lower-ideal extension
+  - lower-ideal extensions
+  - lower extension
+- node: kl.sheaves.lower_extension
+  terms:
+  - extension by zero
+  topics:
+  - kl.sheaves
+  - kl.localization
+- node: kl.detail.model_sums
+  terms:
+  - model sum
+  - model sums
+  topics:
+  - kl.sheaves
+  - kl.graded_algebra
+  - kl.word_modules
+- node: kl.detail.local_models
+  terms:
+  - model sum
+  - model sums
+  topics:
+  - kl.localization
+- node: kl.detail.local_models
+  terms:
+  - local model sum
+  - local model sums
+- node: kl.detail.model_sums
+  terms:
+  - multiplicity polynomial
+  - multiplicity polynomials
+- node: kl.sheaves.interval_boundary
+  terms:
+  - interval-boundary family
+  - upper-interval restriction
+  - upper-interval restrictions
+  - interval boundary sheaf

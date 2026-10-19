@@ -8,11 +8,9 @@ topics:
 - kl.sheaves
 uses:
 - kl.detail.boundary_models
-- kl.detail.morphism_extension
-- kl.detail.top_splitting
-- kl.notes.minimal_cover_existence
-- kl.notes.graded_projective_free
 - kl.detail.model_sums
+- kl.sheaves.model_sum_step
+- kl.detail.sheaf_isomorphisms
 lean:
   repository: openai-kl
   modules:
@@ -25,11 +23,6 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.SheafMorphisms:1642
     format: lean-location
     note: OAI.KLInvariance.MomentGraph.GradedSheaf.exists_modelSumIso
-  - artifact: openai-kl-paper
-    locator: Related paper context; bg:bmp
-    format: section
-    note: Contextual correspondence, not a claim that this Lean result appears verbatim
-      in the preprint.
 verification:
   statement: accepted
   proof: accepted
@@ -46,55 +39,71 @@ tags:
 
 # Decomposing a free flabby sheaf into shifted boundary models
 
-Let \(A\) be a connected nonnegatively graded Noetherian domain and let the labelled ordered graph be finite. Fix a boundary-model family \(O_c\). Every graded sheaf \(B\) with free stalks, the upper quotient rule, flabbiness, and global generation admits a graded isomorphism
+Let \(A\) be a connected nonnegatively graded Noetherian domain, and let the labelled ordered graph have finite vertex and edge sets. Fix a boundary-model family \((O_c)\).
+
+Every graded sheaf \(B\) with free stalks, the upper-quotient rule, flabbiness, and global generation has a graded sheaf isomorphism
 \[
-B\simeq\bigoplus_{c,i}O_c(d_{c,i}),\qquad d_{c,i}\in\mathbb N,
+B\simeq\bigoplus_{c,j}O_c(d_{c,j}),
+\qquad d_{c,j}\in\mathbb N,
 \]
 with finitely many summands.
 
+<!-- source-comparison:start -->
+## Relation to the OpenAI notes
+
+**Related descent in different coefficient settings.**
+
+**OpenAI notes:** The plane-localization proposition descends through a finite coset graph over an ungraded local ring. Nakayama makes the lifted stalk map surjective, its free target gives a splitting, and projectivity over the local ring makes the remainder free. Multiplicities count copies of local structure models. [loc:decomposition](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/04-localization.tex#L285).
+
+**Lean (primary):** The graded construction lifts in both directions and corrects the composite using invertibility modulo the positive ideal. The remainder is graded projective over a connected Noetherian domain and has a homogeneous basis. Its degrees determine nonnegative shifts of boundary models. Partial isomorphisms already include every edge whose upper endpoint has been processed. [SheafMorphisms:1427](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L1427), [SheafMorphisms:1567](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L1567), [SheafMorphisms:1642](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L1642).
+
+**Role in the proof:** Both constructions split a stalk over the upper boundary image and add models centered at the new vertex. The graded construction records a polynomial of shifts at each center; the ungraded local construction records an integer number of copies.
+<!-- source-comparison:end -->
+
 *Proof.*
 
-### Step 1. State the downward-induction invariant
+### Step 1. State the induction data
 
-Maintain an upper set \(U\), a finite sum \(C\) of nonnegatively shifted models \(O_c\) with \(c\in U\), and a graded isomorphism \(B|_U\simeq C|_U\). Initially \(U=\varnothing\) and \(C=0\); the assertion on the empty set is vacuous.
+Maintain an upper set \(U\), a constructed model sum \(C\) centered in \(U\), and a graded partial isomorphism from \(B\) to \(C\) on \(U\).
 
-Choose a maximal vertex \(x\notin U\). All its strict upper neighbors lie in \(U\), so the existing isomorphism identifies the two boundary images at \(x\); denote the identified module by \(D\).
+The partial data include vertex maps at all \(y\in U\) and edge maps whenever the upper endpoint lies in \(U\). The lower square is imposed when both endpoints are in \(U\), and the upper square whenever the target is in \(U\).
 
-### Step 2. Compare the two stalk covers
+We prove that these data extend to a decomposition on the whole graph, by induction on the number of missing vertices.
 
-The map \(f:B^x\twoheadrightarrow D\) is surjective by flabbiness and generation. The map \(p:C^x\twoheadrightarrow D\) is a minimal free cover: every model already in \(C\) has top in \(U\), different from \(x\), so its minimality condition holds at \(x\), and finite sums and grading shifts preserve that kernel containment.
+### Step 2. Start with the empty domain
 
-Lift \(f\) through \(p\) to a graded map \(g:B^x\to C^x\), using freeness of \(B^x\). Lift \(p\) through \(f\) to \(h_0:C^x\to B^x\), using freeness of \(C^x\). The composite \(gh_0\) lies over the identity of \(D\); minimality of \(p\) makes it invertible by the minimal-cover argument. Replace \(h_0\) with \(h=h_0(gh_0)^{-1}\). Then \(gh=1\).
+Take \(U=\varnothing\) and \(C=0\), the zero constructor for a model sum. No vertex belongs to \(U\), and no edge has its target there, so the partial isomorphism has no components to choose. This provides the initial data.
 
-### Step 3. Separate the residual free generators
+### Step 3. Choose a maximal missing vertex
 
-Let \(K=\ker g\). The splitting gives
+If the missing set is nonempty, its finiteness supplies a maximal element \(x\). Every \(y>x\) already lies in \(U\); otherwise it would be a larger missing vertex.
+
+The [[node:kl.sheaves.model_sum_step|model-sum extension theorem]] applies because \(B^x\) is free and the other sheaf properties are the hypotheses of the present theorem. It produces a new model sum \(D\) centered in \(U'=U\cup\{x\}\), and a graded partial isomorphism on \(U'\).
+
+The set \(U'\) is upper. An element above a vertex of \(U\) remains in \(U\); an element strictly above \(x\) belongs to \(U\) by maximality. Thus the induction data are preserved.
+
+### Step 4. Continue on a strictly smaller complement
+
+The new missing set is the old set with \(x\) removed, so its cardinality decreases by one. Apply the induction hypothesis to the new data.
+
+When no vertex is missing, \(U=V\). Every vertex map and every edge map is then present, with both restriction squares. The partial isomorphism is a full graded sheaf isomorphism, and the target is a model sum centered in the whole vertex set.
+
+### Step 5. Follow the one-edge construction
+
+For \(B=O_y\oplus O_x(2)\) on \(x\to y\), the first vertex is \(y\). Its stalk has one degree-zero generator, so the first block is \(O_y\).
+
+At \(x\), compare
 \[
-B^x\simeq C^x\oplus K,\qquad
-v\longmapsto(gv,\ v-hgv).
+B^x=A\oplus A(2)\longrightarrow A/(\alpha)
 \]
-Its inverse sends \((c,k)\) to \(hc+k\). These formulas verify both inverse identities and preserve grading.
+with the minimal cover \(O_y^x=A\to A/(\alpha)\). The remainder is \(A(2)\), so the next block is \(O_x(2)\).
 
-The kernel is a finite graded projective module, as a direct summand of the free stalk \(B^x\). The homogeneous-basis theorem makes it free, with homogeneous basis degrees \(d_1,\ldots,d_m\ge0\), since its grading is inherited from a nonnegative stalk.
-
-### Step 4. Realize those generators by model summands
-
-Put \(S=\bigoplus_{i=1}^mO_x(d_i)\) and replace \(C\) by \(C\oplus S\). At \(x\), the normalized top stalk of \(O_x\) identifies \(S^x\) with \(K\), giving the isomorphism in Step 3.
-
-At any \(y\in U\), the relation \(y\le x\) is impossible: because \(U\) is upper, it would imply \(x\in U\). The model support therefore gives \(S^y=0\). An edge with target in \(U\) likewise has zero \(S\)-edge module by the quotient rule. Hence the old isomorphism on \(U\) remains unchanged.
-
-### Step 5. Check compatibility and finish
-
-At a new outgoing edge from \(x\), the \(C\)-component commutes with restriction because \(pg=f\). The \(S\)-component has zero edge target, so its square commutes automatically. Incoming edge maps are induced from the new upper-stalk isomorphism through the common quotient rule.
-
-We have extended the isomorphism to \(U\cup\{x\}\) while retaining the invariant. The complement decreases by one; finiteness finishes the induction. The final sum is an isomorphism of sheaves, so the same summands control stalks and their outgoing kernels.
+The completed isomorphism records exactly the two summands and their restriction maps. The character formulas use this same construction at both stalks and outgoing kernels.
 
 ## References
 
-[Related paper context](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L225).
+The local source declarations below give the constructions and proofs.
 
 ## Lean formalization
-
-
 
 `OAI.KLInvariance.MomentGraph.GradedSheaf.exists_modelSumIso`: [SheafMorphisms.lean:1642](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L1642).

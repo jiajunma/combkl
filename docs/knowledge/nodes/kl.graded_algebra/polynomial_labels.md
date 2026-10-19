@@ -13,15 +13,38 @@ uses:
 - kl.detail.root_reflection_correspondence
 - kl.realization.radical_extension
 - kl.algebra.coefficient_algebra
+- kl.detail.ordered_graph
+- kl.foundations.interval
 lean:
   repository: openai-kl
   modules:
   - SheafMorphisms
+  - Tits
   declarations:
+  - OAI.KLInvariance.BruhatGraph.Edge
+  - OAI.KLInvariance.BruhatGraph.source
+  - OAI.KLInvariance.BruhatGraph.target
+  - OAI.KLInvariance.BruhatGraph.graph
   - OAI.KLInvariance.BruhatGraph.root
   - OAI.KLInvariance.BruhatGraph.polynomialLabel
 source:
   spans:
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Tits:22
+    format: lean-location
+    note: OAI.KLInvariance.BruhatGraph.Edge
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Tits:29
+    format: lean-location
+    note: OAI.KLInvariance.BruhatGraph.source
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Tits:30
+    format: lean-location
+    note: OAI.KLInvariance.BruhatGraph.target
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Tits:32
+    format: lean-location
+    note: OAI.KLInvariance.BruhatGraph.graph
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.SheafMorphisms:141
     format: lean-location
@@ -30,11 +53,6 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.SheafMorphisms:144
     format: lean-location
     note: OAI.KLInvariance.BruhatGraph.polynomialLabel
-  - artifact: openai-kl-paper
-    locator: Related paper context; bg:realization
-    format: section
-    note: Contextual correspondence, not a claim that this Lean result appears verbatim
-      in the preprint.
 verification:
   definition: accepted
   proof: not_applicable
@@ -51,23 +69,69 @@ tags:
 
 # Reflection roots as polynomial edge labels
 
-Fix a finite-generator real realization \(V\) and its symmetric algebra \(A=\operatorname{Sym}_{\mathbb R}(V)\). For an upward edge \(e:x\to y\), the group element \(yx^{-1}\) is a reflection. Choose its distinguished positive root \(\alpha_e\), embed that root in the extended realization, and take its degree-one image in \(A\).
-
-After choosing a basis of \(V\), this is a linear polynomial in a polynomial ring:
+Fix a Coxeter system with finitely many simple generators and an interval \([u,b]\). Let \(V_0\) be its original real root space, let \(E\) be the nondegenerate extension, and write \(\iota:V_0\to E\) for the embedding. The coefficient algebra is
 \[
-\alpha_e=\sum_i a_iX_i.
+A=\operatorname{Sym}_{\mathbb R}(E).
 \]
-The coordinates describe the same symmetric-algebra element; they do not change which reflection labels the edge.
 
-The resulting nonzero linear form generates the edge ideal \((\alpha_e)\). Thus the edge coefficient ring is \(A/(\alpha_e)\), and root-plane localization is controlled by which of these linear forms remain nonunits. Keeping the reflection, its root vector, its linear polynomial, and its quotient ring distinct avoids conflating four different objects that participate in the proof.
+## The underlying Bruhat interval graph
+
+The vertex set is \([u,b]\). An edge is a pair \((x,y)\) satisfying
+\[
+y=tx,\qquad t\text{ a reflection},\qquad\ell(x)<\ell(y).
+\]
+Its source and target are \(x,y\). A Bruhat step gives \(x<y\), so this is an ordered graph.
+
+The left reflection label is determined by the endpoints:
+\[
+t=yx^{-1}.
+\]
+The interval is finite, and its edge set is a subset of the finite vertex-pair set.
+
+In type \(A_2\), \(w_0=sts\) is a reflection of length three. Thus the graph on \([1,w_0]\) includes the edge \(1\to w_0\), along with the covering edges and saturated paths.
+
+## From the reflection to its linear polynomial
+
+Let \(a_e\) be the unique positive root representing the left reflection label of \(e\). Let \(\kappa:E\to\operatorname{Sym}_{\mathbb R}(E)\) be the degree-one inclusion. Embed the root in \(E\), then apply this map:
+\[
+\alpha_e=\kappa(\iota(a_e)).
+\]
+This is a nonzero element of degree one.
+
+Choose a basis \(v_1,\ldots,v_N\) of \(E\), and identify its symmetric algebra with
+\(\mathbb R[X_1,\ldots,X_N]\). If
+\[
+\iota(a_e)=\sum_j c_jv_j,
+\]
+then the polynomial label is
+\[
+\alpha_e=\sum_jc_jX_j.
+\]
+The coordinates describe the same degree-one symmetric-algebra element. The embedded root is nonzero, so some coefficient \(c_j\) is nonzero. It is the coefficient of \(X_j\) in the label, proving \(\alpha_e\ne0\).
+
+## The edge coefficient ring
+
+The principal ideal \((\alpha_e)\) gives the edge coefficient quotient
+\[
+A/(\alpha_e).
+\]
+For a sheaf satisfying the upper-quotient rule, the upper stalk modulo multiplication by this label is its edge module. In root-plane localization, the position of the root vector determines whether its label becomes a unit.
+
+The reflection \(t\), its positive root \(a_e\), the embedded vector \(\iota(a_e)\), and the polynomial \(\alpha_e\) are linked by these explicit maps.
 
 ## References
 
-[Related paper context](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L34).
+The source declarations below define the interval graph and polynomial label map.
 
 ## Lean formalization
 
+`OAI.KLInvariance.BruhatGraph.Edge`: [Tits.lean:22](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean#L22).
 
+`OAI.KLInvariance.BruhatGraph.source`: [Tits.lean:29](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean#L29).
+
+`OAI.KLInvariance.BruhatGraph.target`: [Tits.lean:30](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean#L30).
+
+`OAI.KLInvariance.BruhatGraph.graph`: [Tits.lean:32](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean#L32).
 
 `OAI.KLInvariance.BruhatGraph.root`: [SheafMorphisms.lean:141](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L141).
 

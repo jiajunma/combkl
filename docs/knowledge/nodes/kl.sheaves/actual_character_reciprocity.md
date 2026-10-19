@@ -9,7 +9,7 @@ topics:
 uses:
 - kl.duality.bott_character_decomposition
 - kl.duality.stalk_character
-- kl.foundations.rtilde
+- kl.detail.ordinary_r
 - kl.notes.character_cancellation
 - kl.detail.costalk_reciprocity
 - kl.detail.word_character_reciprocity
@@ -52,7 +52,7 @@ tags:
 
 # R-reciprocity for the actual boundary-sheaf character
 
-In a finite-generator real realization, let \(C_{x,b}(q)\) be the stalk character of the constructed minimal-boundary sheaf. Then
+Fix a finite-generator Coxeter system, a real basis of its extended realization, and the resulting polynomial coefficient algebra. For \(x\in[1,b]\), let \(C_{x,b}(q)\) be the actual boundary-stalk character, put \(d(x,b)=\ell(b)-\ell(x)\), and let \(R_{x,z}(q)\) be the ordinary R-polynomial family. Then
 \[
 q^{d(x,b)}C_{x,b}(q^{-1})
 =\sum_{x\le z\le b}R_{x,z}(q)C_{z,b}(q).
@@ -74,25 +74,31 @@ q^{d(x,b)}C_{x,b}(q^{-1})
 
 ### Step 1. State the induction and choose a reduced word
 
-Induct strongly on \(\ell(b)\), for all top elements \(b\) and all \(x\le b\). Fix the current \(b\), choose a reduced word for it, and let \(V=[1,b]\). Write
+Induct strongly on \(\ell(b)\), for all top elements \(b\) and all \(x\in[1,b]\). In the base case \(b=1\), the only vertex is \(x=1\), the normalized character and diagonal R-polynomial are both \(1\), and the formula is \(1=1\).
+
+For the current \(b\), choose a reduced word and let \(V=[1,b]\). For arbitrary \(x,y\in V\), use the natural-number rank difference
+\[
+\delta(x,y)=\max\{\ell(y)-\ell(x),0\}.
+\]
+For comparable \(x\le y\), this is the ordinary length difference. Write
 \(C_{z,y}=0\) when \(z\not\le y\), and otherwise use the actual boundary character with top \(y\).
 
-The simultaneous word decomposition gives polynomials \(m_y\) and the identities
+The [[node:kl.duality.bott_character_decomposition|simultaneous word decomposition]] gives polynomials \(m_y\) and the identities
 \[
 C_z^{\mathrm{word}}=\sum_{y\in V}m_yC_{z,y},\qquad
-K_x^{\mathrm{word}}=\sum_{y\in V}m_y\operatorname{reflect}_{d(x,y)}C_{x,y}.
+K_x^{\mathrm{word}}=\sum_{y\in V}m_y\operatorname{reflect}_{\delta(x,y)}C_{x,y}.
 \]
 Its top calculation gives \(m_b=1\).
 
 ### Step 2. Write the word convolution before cancellation
 
-The word-character calculation gives
+The [[node:kl.detail.word_character_reciprocity|word-character calculation]] gives
 \[
 K_x^{\mathrm{word}}=\sum_{z\in V}R_{x,z}C_z^{\mathrm{word}}.
 \]
 This is proved for the tensor word object, using its Hecke character and bar action, before extracting the boundary summand. Substitute both decompositions from Step 1:
 \[
-\sum_y m_y\operatorname{reflect}_{d(x,y)}C_{x,y}
+\sum_y m_y\operatorname{reflect}_{\delta(x,y)}C_{x,y}
 =\sum_zR_{x,z}\left(\sum_y m_yC_{z,y}\right).
 \]
 
@@ -100,7 +106,7 @@ This is proved for the tensor word object, using its Hecke character and bar act
 
 For \(y\ne b\) in \(V\), strict Bruhat comparison gives \(\ell(y)<\ell(b)\). If \(x\le y\), the induction hypothesis gives
 \[
-\operatorname{reflect}_{d(x,y)}C_{x,y}
+\operatorname{reflect}_{\delta(x,y)}C_{x,y}
 =\sum_{x\le z\le y}R_{x,z}C_{z,y}.
 \]
 Regard this as a sum over \(V\): terms with \(z\not\le y\) have \(C_{z,y}=0\), and terms with \(x\not\le z\) have \(R_{x,z}=0\).
@@ -112,7 +118,7 @@ If \(x\not\le y\), the left side is zero by the convention \(C_{x,y}=0\). Every 
 Interchange the two finite sums in Step 2 and move them to one side:
 \[
 0=\sum_y m_y
-\left(\operatorname{reflect}_{d(x,y)}C_{x,y}
+\left(\operatorname{reflect}_{\delta(x,y)}C_{x,y}
 -\sum_zR_{x,z}C_{z,y}\right).
 \]
 Every \(y\ne b\) summand vanishes by Step 3. The remaining coefficient is \(m_b=1\), so
@@ -122,11 +128,11 @@ Every \(y\ne b\) summand vanishes by Step 3. The remaining coefficient is \(m_b=
 \]
 This also handles the induction base, where there are no lower terms.
 
-### Step 5. Explain the reciprocal notation without assuming a KL bound
+### Step 5. Express polynomial reflection through reciprocal powers
 
 Lean states the identity using polynomial reflection. The actual duality gives the weak bound \(\deg C_{x,b}\le d(x,b)\): a stalk basis vector of degree \(j\) corresponds to a nonzero kernel basis vector of degree \(d(x,b)-j\), which must be nonnegative. Therefore reflection evaluates as \(q^{d(x,b)}C_{x,b}(q^{-1})\).
 
-The strict inequality \(2\deg P_{x,b}<d(x,b)\) for canonical KL polynomials is a different statement. It is not an input to this induction, and \(C_{x,b}\) has not been replaced here by \(P_{x,b}\).
+For the interval \([1,s]\), the boundary characters are \(C_{1,s}=C_{s,s}=1\), and \(R_{1,1}=1,\ R_{1,s}=q-1\). The identity reads \(q=1+(q-1)\).
 
 ## References
 

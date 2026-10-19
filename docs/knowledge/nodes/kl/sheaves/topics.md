@@ -64,7 +64,7 @@ Its image is all of \(A/(\alpha)\). To attach a stalk at \(x\), we need a free m
 
 For several outgoing edges, the boundary image need not be the full product: values arriving from the upper region must already satisfy its internal section equations. Taking a minimal cover of this image retains those constraints. The theorem [[node:kl.sheaves.boundary_image_identity]] identifies it with the image of the lower stalk map: global generation gives one containment, and extension from the strict upper set gives the other.
 
-Start at the top vertex \(b\), where the stalk is normalized to \(A\), and repeat the construction downward. Finiteness of the vertex set guarantees termination. The boundary-existence theorem verifies all required sheaf properties. The uniqueness theorem compares two such constructions by identifying their upper boundary images and extending the resulting isomorphism through the minimal covers.
+Start at the top vertex \(b\), where the stalk is normalized to \(A\), and repeat the construction downward. Finiteness of the vertex set guarantees termination. The [[node:kl.sheaves.boundary_existence|boundary-existence theorem]] verifies all required sheaf properties. The [[node:kl.detail.boundary_uniqueness|uniqueness theorem]] compares two such constructions by identifying their upper boundary images and extending the resulting isomorphism through the minimal covers.
 
 ## Kernels remember which outgoing conditions have been imposed
 
@@ -100,24 +100,84 @@ These component maps identify compatible upper tuples and their boundary images.
 
 The specified morphism between those covers is bijective by the minimal-cover comparison theorem. Finite downward induction gives bijectivity at every stalk, and upper quotients give it at every edge. This is the top-detection theorem.
 
-It is also the correction step in top splitting. Extend an inclusion and retraction from the top to sheaf morphisms \(i,p\). Their composite \(f=pi\) is invertible by top detection. Replacing \(i\) by \(if^{-1}\) gives a split pair on the whole sheaf.
+It is also the correction step in top splitting. Extend an inclusion and retraction from the top to sheaf morphisms \(i,p\). Their composite \(f=pi\) is invertible by [[node:kl.sheaves.boundary_top_detection|top detection]]. Replacing \(i\) by \(if^{-1}\) gives a split pair on the whole sheaf.
 
-## Splitting sheaves and decomposing their kernels
+## Boundary models and extension from a lower ideal
 
-A split inclusion consists of sheaf maps \(i:B\to C\) and \(p:C\to B\) with \(pi=1_B\). For \(C=B\oplus D\), the familiar maps are inclusion into the first component and projection back to it. Their composite \(ip\) is a projector on \(C\).
+For each vertex \(c\), construct a normalized boundary sheaf on the lower ideal \(\{x:x\le c\}\), then extend it by zero. The result \(O_c\) has top stalk \(A\), vanishes at vertices outside that ideal, and has zero edge module whenever the edge ends outside it. Inside the ideal, its restrictions are the original ones. At \(x\ne c\), the full outgoing kernel is contained in \(JO_c^x\).
 
-Under the top-splitting theorem’s hypotheses, a split map at the normalized top extends to a split pair of sheaf maps. Primitivity then controls when a nonzero summand already exhausts the whole sheaf.
+For the single edge \(x\to y\), the model \(O_y\) is the congruence sheaf already constructed. The other model \(O_x\) has stalk \(A\) at \(x\), zero at \(y\), and zero edge module. Thus the two possible centers give different local data.
 
-Applying these results repeatedly yields a decomposition into shifted boundary models. A model \(O_y\) is normalized at \(y\) and vanishes outside the lower ideal below \(y\). Schematically,
+A graded model sum starts with the zero sheaf and repeatedly adds finite blocks of shifts \(O_c(d)\), with \(d\ge0\). A basis generator of degree \(r\) in \(O_c\) has degree \(r+d\) in the shifted sheaf. A finite sum uses componentwise restrictions, so its compatible sections and outgoing kernels split componentwise.
+
+## Decomposition through a stalk cover and its remainder
+
+Suppose a free-stalk, globally generated, flabby sheaf \(B\), with the prescribed upper quotients, has already been identified with a model sum \(C\) on an upper set \(U\). Take a maximal vertex \(x\) outside \(U\).
+
+The partial isomorphism includes every edge map whose target lies in \(U\). In particular it identifies all outgoing edge modules at \(x\). Generation and flabbiness identify the two boundary images. Both stalk maps can therefore be written as surjections to one graded module:
 \[
-C\simeq\bigoplus_{y,j}O_y(d_{y,j}).
+f:B^x\twoheadrightarrow T,\qquad \pi:C^x\twoheadrightarrow T.
 \]
-This is one sheaf isomorphism. At a stalk it gives a direct sum of stalks; on an outgoing kernel it gives the direct sum of the corresponding kernels.
+The existing centers lie in \(U\), so \(C\) is kernel-minimal at \(x\). Hence \(\pi\) is a minimal cover.
 
-For example, \(O_b\oplus O_b(2)\) has stalk character \((1+q^2)\operatorname{ch}(O_b^x)\) and kernel character \((1+q^2)\operatorname{ch}(K_x^{O_b})\). The same factor occurs because the same summands define both modules. The character argument uses this shared decomposition to cancel lower models.
+The [[node:kl.algebra.minimal_cover_remainder|free-cover remainder theorem]] constructs degree-zero maps
+\[
+g:B^x\to C^x,\qquad h:C^x\to B^x,\qquad
+\pi g=f,\quad gh=1.
+\]
+It gives the explicit graded decomposition
+\[
+B^x\simeq C^x\oplus K,\qquad
+v\longmapsto(gv,v-hgv),\qquad K=\ker g.
+\]
+The remainder \(K\) is a finite graded direct summand of a free module, so it has a homogeneous basis. If its basis degrees are \(d_1,\ldots,d_m\), add the block \(\bigoplus_jO_x(d_j)\).
 
-The objects to retain are therefore explicit: stalks hold vectors, edge modules impose congruences, sections solve the congruences, boundary images determine new stalk covers, and outgoing kernels record vanishing conditions.
+This block has zero stalks at every old vertex in \(U\) and zero modules on every edge ending there. The old partial isomorphism thus extends by zero on the new components. At \(x\), the displayed decomposition supplies the stalk map; the equation \(\pi g=f\) verifies every outgoing square. Incoming edge maps are induced by the new stalk isomorphism through the upper quotient rule.
 
+The missing-vertex set has decreased by one. [[node:kl.detail.model_decomposition|Finite induction]] constructs an isomorphism of whole sheaves
+\[
+B\simeq\bigoplus_{c,j}O_c(d_{c,j}).
+\]
+The [[node:kl.sheaves.stalk_remainder|local cover argument]], the [[node:kl.sheaves.model_sum_step|one-vertex extension]], and the finite induction are developed separately in the linked proofs below.
+
+## One decomposition and two characters
+
+Over a polynomial coefficient algebra, a finite free graded module with basis degrees \(d_i\) has character \(\sum_iq^{d_i}\). Its Hilbert series is that character divided by \((1-q)^N\), where \(N\) is the number of polynomial variables.
+
+Record the model shifts at center \(c\) by
+\[
+\mu_c(q)=\sum_jq^{d_{c,j}}.
+\]
+These are the multiplicity polynomials. The sheaf decomposition induces both the stalk decomposition and the outgoing-kernel decomposition. When the model kernels are free, both character identities therefore use the same \(\mu_c\).
+
+For the example \(B=O_y\oplus O_x(2)\), the restrictions at \(x\) ignore the second summand:
+\[
+B^x=A\oplus A(2)\longrightarrow A/(\alpha),\qquad
+(f,g)\longmapsto f\bmod\alpha.
+\]
+
+| Vertex | Stalk | Full outgoing kernel | Stalk character | Kernel character |
+|---|---|---|---|---|
+| \(x\) | \(A\oplus A(2)\) | \(\alpha A\oplus A(2)\) | \(1+q^2\) | \(q+q^2\) |
+| \(y\) | \(A\) | \(A\) | \(1\) | \(1\) |
+
+Here \(\mu_y=1\) and \(\mu_x=q^2\). The lower model contributes \(q^2\) to both lower-vertex characters; the upper model contributes \(1\) to the stalk and \(q\) to the kernel.
+
+## Top splitting and the boundary pairing
+
+A split inclusion consists of sheaf maps \(i:B\to W\) and \(p:W\to B\) with \(pi=1_B\). Their reverse composite \(ip\) is a projector on \(W\). The [[node:kl.detail.top_splitting|top-splitting theorem]] constructs such maps from a split pair at the normalized top; top detection corrects their composite on the whole boundary sheaf.
+
+This splitting supplies the boundary summand of a reduced-word sheaf. Its projector and the word pairing produce the adjoint image and boundary pairing developed below. The full model decomposition supplies the simultaneous character formulas used later in cancellation. These constructions meet when [[node:kl.detail.costalk_duality|boundary duality]] evaluates the kernels of all the lower models.
+
+## Upper restrictions with a fixed top
+
+For a fixed top \(b\), let \(B(b)\) be the actual boundary sheaf on \([1,b]\). Its restriction to an upper interval is the family
+\[
+\mathcal I_{u,b}=B(b)|_{[u,b]}.
+\]
+Every edge beginning in \([u,b]\) also ends there, so the inclusion retains all outgoing restrictions at each retained stalk. Consequently the restriction is a normalized boundary sheaf, and every selected outgoing kernel is the same submodule of the same stalk after identifying its retained edges.
+
+This construction keeps \(B(b)\) and its top fixed while varying \(u\). The lower model \(O_c\) instead starts with \(B(c)\) on \([1,c]\) and extends by zero. The former is used to transfer an induction hypothesis to a smaller upper interval; the latter supplies the summands and multiplicity polynomials of decomposition.
 
 ## From coordinate images to a sheaf
 
@@ -318,6 +378,11 @@ The actual boundary character \(C\) satisfies the reciprocal identity developed 
 - [[node:kl.detail.sheaf_isomorphisms]]
 - [[node:kl.detail.morphism_extension]]
 - [[node:kl.detail.base_change]]
+- [[node:kl.sheaves.finite_operations]]
+- [[node:kl.sheaves.finite_sum_properties]]
+- [[node:kl.sheaves.lower_extension]]
+- [[node:kl.sheaves.lower_extension_properties]]
+- [[node:kl.sheaves.partial_iso_extension]]
 
 ### Boundary sheaves and minimal extension
 
@@ -327,6 +392,9 @@ The actual boundary character \(C\) satisfies the reciprocal identity developed 
 - [[node:kl.sheaves.boundary_existence]]
 - [[node:kl.detail.boundary_extension]]
 - [[node:kl.detail.boundary_uniqueness]]
+- [[node:kl.sheaves.boundary_pullback]]
+- [[node:kl.sheaves.interval_boundary]]
+- [[node:kl.sheaves.upper_interval_kernels]]
 
 ### Summands, primitive objects, and decomposition
 
@@ -343,6 +411,10 @@ The actual boundary character \(C\) satisfies the reciprocal identity developed 
 - [[node:kl.detail.boundary_models]]
 - [[node:kl.detail.model_sums]]
 - [[node:kl.detail.model_decomposition]]
+- [[node:kl.sheaves.boundary_models_exist]]
+- [[node:kl.sheaves.model_sum_properties]]
+- [[node:kl.sheaves.stalk_remainder]]
+- [[node:kl.sheaves.model_sum_step]]
 
 ### Integral support and cut operators
 
@@ -383,6 +455,9 @@ The actual boundary character \(C\) satisfies the reciprocal identity developed 
 - [[node:kl.duality.bott_character_decomposition]]
 - [[node:kl.notes.character_cancellation]]
 - [[node:kl.duality.actual_character_reciprocity]]
+- [[node:kl.sheaves.kernel_transport]]
+- [[node:kl.sheaves.model_sum_characters]]
+- [[node:kl.sheaves.lower_model_kernels]]
 
 ### Related character-identification conditions
 

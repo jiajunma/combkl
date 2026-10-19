@@ -11,16 +11,42 @@ uses:
 - kl.notes.minimal_cover_existence
 - kl.detail.upper_quotient
 - kl.detail.compatible_sections
+- kl.sheaves.flabbiness
+- kl.algebra.scalar_quotient
 lean:
   repository: openai-kl
   modules:
   - GradedSheaves
   declarations:
+  - OAI.KLInvariance.MomentGraph.bottomGraph
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.attachEdges
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.attachBoundaryMap
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.attachImage
   - OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom
   - OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_edgeFlabby
   - OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_generated
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_freeStalks
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_upperQuotient
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_kernelMinimal_bot
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_kernelMinimal_coe
 source:
   spans:
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.GradedSheaves:108
+    format: lean-location
+    note: OAI.KLInvariance.MomentGraph.bottomGraph
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.GradedSheaves:122
+    format: lean-location
+    note: OAI.KLInvariance.MomentGraph.GradedSheaf.attachEdges
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.GradedSheaves:132
+    format: lean-location
+    note: OAI.KLInvariance.MomentGraph.GradedSheaf.attachBoundaryMap
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.GradedSheaves:140
+    format: lean-location
+    note: OAI.KLInvariance.MomentGraph.GradedSheaf.attachImage
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.GradedSheaves:150
     format: lean-location
@@ -33,11 +59,22 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.GradedSheaves:190
     format: lean-location
     note: OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_generated
-  - artifact: openai-kl-paper
-    locator: Related paper context; bg:bmp
-    format: section
-    note: Contextual correspondence, not a claim that this Lean result appears verbatim
-      in the preprint.
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.GradedSheaves:472
+    format: lean-location
+    note: OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_freeStalks
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.GradedSheaves:479
+    format: lean-location
+    note: OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_upperQuotient
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.GradedSheaves:493
+    format: lean-location
+    note: OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_kernelMinimal_bot
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.GradedSheaves:501
+    format: lean-location
+    note: OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_kernelMinimal_coe
 verification:
   statement: accepted
   proof: accepted
@@ -54,56 +91,99 @@ tags:
 
 # Attaching a new bottom stalk by a minimal cover
 
-Suppose a graded sheaf is already constructed on a finite upper part of an ordered graph. Add a new bottom vertex \(x\), with outgoing edges \(e:x\to y_e\) labelled by homogeneous linear forms. Form the edge quotients
-\[
-Q_e=B^{y_e}/\alpha_eB^{y_e}
-\]
-and the boundary image \(D_x\subseteq\bigoplus_eQ_e\) of compatible sections above \(x\). Choose a minimal graded free cover \(p:F_x\twoheadrightarrow D_x\).
+Let \(A\) be a nonnegatively graded Noetherian algebra over \(k\), with every coefficient congruent to a base-field scalar modulo \(J=A_{>0}\). Let \(B\) be a graded sheaf on an ordered graph with finitely many vertices.
 
-Set \(B^x=F_x\); its lower restriction maps are the components of \(F_x\to D_x\hookrightarrow\bigoplus_eQ_e\). This extension preserves extension from edge-closed sets, and preserves global generation if the original sheaf was globally generated.
+Adjoin a new bottom vertex \(x\), with a finite family of edges \(d:x\to\tau(d)\) labelled by homogeneous degree-one elements \(\alpha_d\). There is an extension constructed by a minimal cover of the new boundary image. It preserves free stalks, upper quotients, global generation, and edge flabbiness when the old sheaf has those properties. Its new stalk is kernel-minimal, and old kernel-minimality conditions are retained.
 
 *Proof.*
 
-### Step 1. Construct the new modules and restrictions
+### Step 1. Construct the new edge quotients and boundary image
 
-Let \(x\) be the new bottom vertex and let the old graph contain all its upper targets \(y_e\). Set
-\(Q_e=B^{y_e}/\alpha_eB^{y_e}\).
-For an old global section \(f\), take its tuple of quotient values \((f_{y_e}\bmod\alpha_e)_e\). Let \(D_x\) be the image of this map.
+For each attachment, put
+\[
+Q_d=B^{\tau(d)}/\alpha_dB^{\tau(d)}.
+\]
+The label is homogeneous, so the scalar quotient has its quotient grading. The quotient map is degree zero.
 
-Choose a minimal graded free cover \(p:F_x\twoheadrightarrow D_x\), as constructed in [[node:kl.notes.minimal_cover_existence]]. The new stalk is \(F_x\); the lower map along \(e\) is its \(e\)-component under \(F_x\to D_x\subseteq\bigoplus_eQ_e\). The upper map is the quotient map \(B^{y_e}\to Q_e\). Old modules and restrictions are unchanged.
+An old global section \(f\) supplies a boundary tuple
+\[
+b(f)=\bigl(f_{\tau(d)}\bmod\alpha_d\bigr)_d
+\in\prod_dQ_d.
+\]
+Define \(D=\operatorname{im}b\).
 
-### Step 2. Characterize a global section of the extension
+The old section module is a submodule of a finite product of finite stalks. Noetherianity makes it finite; the boundary product and the image \(D\) are finite graded modules as well. The [[node:kl.notes.minimal_cover_existence|minimal-cover theorem]] therefore supplies a degree-zero surjection
+\[
+\pi:F\twoheadrightarrow D
+\]
+from a finite nonnegative graded free module, with \(\ker\pi\subseteq JF\).
 
-A pair \((v,f)\), with \(v\in F_x\) and \(f\) an old global section, is a new global section exactly when \(p(v)\) equals the boundary tuple of \(f\). Old edges are compatible because \(f\) is; each new edge imposes exactly one coordinate of this equality.
+### Step 2. Specify the extended sheaf
 
-Every old global section extends: its boundary tuple belongs to \(D_x\) by definition, so choose a preimage under the surjection \(p\).
+Use \(F\) as the new stalk at \(x\). The lower restriction on attachment \(d\) is the \(d\)-component of
+\[
+F\xrightarrow{\pi}D\hookrightarrow\prod_dQ_d.
+\]
+Its upper restriction is the quotient map \(B^{\tau(d)}\to Q_d\). The old modules and restrictions supply the other components.
 
-### Step 3. Prove extension from an edge-closed subset
+A pair \((v,f)\), with \(v\in F\) and an old global section \(f\), is a new global section exactly when
+\[
+\pi(v)=b(f).
+\]
+This equality gives the new edge equations coordinate by coordinate.
 
-Let \(\Omega\) be closed upward along the actual edges, and let a compatible assignment be given there. Restrict to the old vertices, obtaining an edge-closed subset of the old graph. Use its extension property to get an old global section \(g\).
+### Step 3. Extend old global sections and generate stalk values
 
-If \(x\notin\Omega\), choose any lift of the boundary tuple of \(g\) under \(p\), as in Step 2. This changes none of the prescribed coordinates.
+For any old global section \(f\), the tuple \(b(f)\) belongs to \(D\). Surjectivity of \(\pi\) gives a \(v\) making \((v,f)\) global.
 
-If \(x\in\Omega\), edge closure forces every target \(y_e\) into \(\Omega\). Thus \(g\) agrees with the prescribed assignment at each \(y_e\). Its boundary tuple equals \(p(v)\) for the already prescribed \(v\in F_x\), by compatibility on the new edges. Retain that \(v\). Again Step 2 proves global compatibility.
+If an old stalk value is prescribed, first realize it by an old global section, then apply this extension.
 
-### Step 4. Prove global generation
+If a new-stalk vector \(v\in F\) is prescribed, its image \(\pi(v)\in D\) has the form \(b(f)\) for some old global section \(f\), by the definition of \(D\). The resulting pair \((v,f)\) realizes the desired value. Thus global generation is preserved.
 
-At an old vertex, choose an old global section realizing the desired stalk value and extend it using Step 2. At \(x\), start with an arbitrary \(v\in F_x\). Its image \(p(v)\in D_x\) is, by the definition of \(D_x\), the boundary tuple of some old global section \(f\). The pair \((v,f)\) is then global and realizes \(v\).
+### Step 4. Extend from an edge-closed subset
 
-### Step 5. Check the remaining construction data
+Let \(\Omega\) be closed under the directed edges of the enlarged graph, and let a compatible assignment on \(\Omega\) be given. Its old vertices form an edge-closed subset of the old graph. Old edge flabbiness extends those values to an old global section \(g\).
 
-The new stalk is free by the cover construction. New upper maps satisfy the quotient rule by definition. The outgoing boundary map at \(x\) has kernel \(\ker p\), contained in \(A_{>0}F_x\), so it is minimal. At every old vertex no outgoing edge or stalk changed, so its previous minimality condition remains valid.
+If \(x\notin\Omega\), choose a lift of \(b(g)\) under \(\pi\). This produces a new global section agreeing with all prescribed values.
+
+If \(x\in\Omega\), closure puts every attachment target \(\tau(d)\) in \(\Omega\). The section \(g\) agrees with the prescribed values at all those targets. Compatibility of the prescribed assignment therefore gives
+\[
+b(g)=\pi(v),
+\]
+where \(v\) is its already prescribed value at \(x\). Keeping this \(v\) gives the required global extension.
+
+### Step 5. Verify the free, quotient, and minimality conditions
+
+The new stalk \(F\) is free. Each new upper map is the defining quotient map to \(Q_d\), so it has the required kernel and is onto.
+
+The full outgoing map at \(x\) is the inclusion of \(D\) after \(\pi\). Since that inclusion is injective, its kernel is \(\ker\pi\subseteq JF\). Thus the new stalk is kernel-minimal.
+
+Every new edge starts at \(x\), so the outgoing maps at old vertices retain their old targets and values. Their kernel-minimality conditions are therefore unchanged.
 
 ## References
 
-[Related paper context](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L225).
+The local source declarations below give the constructions and proofs.
 
 ## Lean formalization
 
+`OAI.KLInvariance.MomentGraph.bottomGraph`: [GradedSheaves.lean:108](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L108).
 
+`OAI.KLInvariance.MomentGraph.GradedSheaf.attachEdges`: [GradedSheaves.lean:122](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L122).
+
+`OAI.KLInvariance.MomentGraph.GradedSheaf.attachBoundaryMap`: [GradedSheaves.lean:132](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L132).
+
+`OAI.KLInvariance.MomentGraph.GradedSheaf.attachImage`: [GradedSheaves.lean:140](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L140).
 
 `OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom`: [GradedSheaves.lean:150](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L150).
 
 `OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_edgeFlabby`: [GradedSheaves.lean:207](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L207).
 
 `OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_generated`: [GradedSheaves.lean:190](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L190).
+
+`OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_freeStalks`: [GradedSheaves.lean:472](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L472).
+
+`OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_upperQuotient`: [GradedSheaves.lean:479](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L479).
+
+`OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_kernelMinimal_bot`: [GradedSheaves.lean:493](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L493).
+
+`OAI.KLInvariance.MomentGraph.GradedSheaf.extendBottom_kernelMinimal_coe`: [GradedSheaves.lean:501](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean#L501).

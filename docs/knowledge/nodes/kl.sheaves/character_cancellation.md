@@ -73,7 +73,7 @@ Subtract the expanded right-hand side from the left:
 \[
 0=\sum_y m_y\left(q_y-\sum_zr_zp_{y,z}\right).
 \]
-This is an identity in the coefficient ring; no ordering or positivity is assumed.
+The displayed identity follows by distributivity in the coefficient ring.
 
 ### Step 3. Eliminate each lower-index term
 
@@ -89,7 +89,7 @@ The hypothesis \(m_t=1\) changes the last equality to
 \(q_t-\sum_zr_zp_{t,z}=0\).
 Add the finite sum to both sides to obtain the conclusion.
 
-The value one, rather than merely nonzero, means no division is required. The argument therefore works over an arbitrary commutative ring and applies directly to the integral character polynomials.
+The normalization at the top makes this a finite-sum identity over the original commutative ring, so it applies directly to integral character polynomials.
 
 ## References
 

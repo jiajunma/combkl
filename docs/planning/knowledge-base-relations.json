@@ -155,6 +155,23 @@
       ]
     },
     {
+      "id": "ss",
+      "title": "Boundary top splitting and recognition",
+      "topics": [
+        "S5"
+      ],
+      "requires": [
+        "sb",
+        "a",
+        "s"
+      ],
+      "output": "A normalized top splitting extends to a boundary summand; primitive top data recognize an isomorphic boundary object.",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.splitIn_of_top_split",
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.iso_of_primitive_top_split"
+      ]
+    },
+    {
       "id": "sd",
       "title": "Boundary-model decomposition",
       "topics": [
@@ -164,9 +181,9 @@
         "sb",
         "a"
       ],
-      "output": "Split objects, primitive recognition, and decomposition into shifted boundary models.",
+      "output": "Finite downward construction of a graded model sum, retaining every restriction map and recording nonnegative shifts.",
       "lean_declarations": [
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn",
+        "OAI.KLInvariance.Graded.ModuleData.exists_minimalCover_split",
         "OAI.KLInvariance.MomentGraph.GradedSheaf.exists_modelSumIso"
       ]
     },
@@ -233,7 +250,7 @@
       "requires": [
         "we",
         "s",
-        "sd"
+        "ss"
       ],
       "output": "Word sheaves with generation, flabbiness, and boundary splitting.",
       "lean_declarations": [
@@ -250,7 +267,7 @@
       ],
       "requires": [
         "ws",
-        "sd",
+        "ss",
         "w",
         "a"
       ],
@@ -931,8 +948,8 @@
     "structures": 35,
     "inductives": 3,
     "topic_count": 61,
-    "stage_count": 37,
-    "edge_count": 89,
+    "stage_count": 38,
+    "edge_count": 92,
     "topological_order": [
       "c",
       "a",
@@ -946,6 +963,7 @@
       "w",
       "ow",
       "cf",
+      "ss",
       "sd",
       "we",
       "og",
@@ -983,6 +1001,17 @@
         "OAI.KLInvariance.TitsSpace.PlaneSimple.planeLength_step",
         "OAI.KLInvariance.TitsSpace.PlaneSimple.planeLength_conj_drop",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.rootRef_mem_pairClosure"
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "scope": "Boundary splitting, model decomposition and character formulas",
+      "change": "Separated top splitting and primitive recognition, which supply the boundary-pairing route, from the full graded model decomposition used for simultaneous character formulas.",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.splitIn_of_top_split",
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.iso_of_primitive_top_split",
+        "OAI.KLInvariance.Graded.ModuleData.exists_minimalCover_split",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.exists_modelSumIso"
       ]
     }
   ]

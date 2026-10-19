@@ -17,11 +17,14 @@ lean:
   repository: openai-kl
   modules:
   - CharacterReciprocity
+  - Dihedral
   declarations:
   - OAI.KLInvariance.HeckeQ.barLinear_positiveWord
   - OAI.KLInvariance.HeckeQ.positiveWord_rValue
   - OAI.KLInvariance.TitsSpace.bottStalkCharacter_reciprocity
   - OAI.KLInvariance.TitsSpace.bottKernelCharacter_rConvolution
+  - OAI.KLInvariance.HeckeQ.rValue_inverse_eq_barBasis
+  - OAI.KLInvariance.HeckeQ.positiveWord_support
 source:
   spans:
   - artifact: openai-kl-source
@@ -40,6 +43,14 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.CharacterReciprocity:1134
     format: lean-location
     note: OAI.KLInvariance.TitsSpace.bottKernelCharacter_rConvolution
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Dihedral:467
+    format: lean-location
+    note: OAI.KLInvariance.HeckeQ.rValue_inverse_eq_barBasis
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.CharacterReciprocity:963
+    format: lean-location
+    note: OAI.KLInvariance.HeckeQ.positiveWord_support
 verification:
   statement: accepted
   proof: accepted
@@ -79,6 +90,12 @@ The left side is a polynomial: the word-stalk duality gives the degree bound \(\
 
 ### Step 1. Compute the bar of a positive generator
 
+Write \(H_{\mathbf s}(q)\) for the positive Hecke word
+\[
+(1+T_{s_1})\cdots(1+T_{s_m})T_1
+\]
+in the unnormalized standard module. The word-character theorem identifies its coefficient at \(T_x\) with \(C_x^{\mathbf s}(q)\). The notation \(B_q\) below denotes the coefficient-linear bar transform in that convention.
+
 For an invertible parameter \(q\), the unnormalized quadratic relation gives
 \[
 T_s^{-1}=q^{-1}(T_s-(q-1)),\qquad
@@ -93,7 +110,7 @@ The empty word is fixed. Each new letter contributes one additional factor \(q^{
 
 ### Step 2. Extract the coefficient at x
 
-The ordinary R-family is normalized so that the coefficient of \(T_x\) in \(B_{q^{-1}}(T_z)\) is \(q^{\ell(x)}R_{x,z}(q)\). Expand \(H_{\mathbf s}(q)\) in the standard basis and take its \(x\)-coefficient in the last bar identity. This gives
+The inverse-parameter coefficient identity for the ordinary R-family gives \([T_x]B_{q^{-1}}(T_z)=q^{\ell(x)}R_{x,z}(q)\). Expand \(H_{\mathbf s}(q)\) in the standard basis and take its \(x\)-coefficient in the last bar identity. This gives
 \[
 q^{\ell(x)}\sum_{z\le b}R_{x,z}(q)[T_z]H_{\mathbf s}(q)
 =q^m[T_x]H_{\mathbf s}(q^{-1}).
@@ -122,7 +139,7 @@ The stalk–costalk reciprocity proof supplies the dual-basis construction and t
 
 Step 3 shows that the Laurent expression on the left of Step 2 has no negative powers. Both sides are images of ordinary integer polynomials, and the embedding into Laurent polynomials is injective. Hence their equality holds in \(\mathbb Z[q]\). Substituting the kernel character computed in Step 3 gives the full convolution identity.
 
-This is the word-object convolution used before cancelling lower boundary-model summands. It supplies an unconditional intermediate theorem without inserting the boundary-character identification condition.
+This word-object convolution supplies the identity used to cancel the lower boundary-model contributions.
 
 ## References
 
@@ -137,3 +154,7 @@ The precise Lean sources are listed below.
 `OAI.KLInvariance.TitsSpace.bottStalkCharacter_reciprocity`: [CharacterReciprocity.lean:1105](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L1105).
 
 `OAI.KLInvariance.TitsSpace.bottKernelCharacter_rConvolution`: [CharacterReciprocity.lean:1134](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L1134).
+
+`OAI.KLInvariance.HeckeQ.rValue_inverse_eq_barBasis`: [Dihedral.lean:467](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Dihedral.lean#L467).
+
+`OAI.KLInvariance.HeckeQ.positiveWord_support`: [CharacterReciprocity.lean:963](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean#L963).
