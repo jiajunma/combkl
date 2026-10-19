@@ -43,6 +43,18 @@ For the infinite dihedral example, choose \(p(x\alpha_s+y\alpha_t)=(x+y)k/2\) an
 \]
 Its determinant is \(-8\), and the two simple normals have independent rows \((2,-2,1)\) and \((-2,2,1)\).
 
+## Independent normal forms and prescribed values
+
+For two independent linear forms \(f,g:V\to k\), the map \(v\mapsto(f(v),g(v))\) is onto \(k^2\). A functional annihilating its image would give a relation \(af+bg=0\); independence makes both coefficients zero, and a proper subspace of \(k^2\) always has a nonzero annihilating functional. The [[node:kl.realization.form_pair_surjective|independent-form surjectivity theorem]] develops this argument.
+
+In the extended realization, a representing root \(a\) determines the normal form
+\[
+n_a(v)=\widetilde B(i_0a,v).
+\]
+Roots representing distinct reflections are independent: a scalar dependence, together with their norm-two normalization, would identify them up to sign and hence identify their reflections. Nondegeneracy of the extended form sends their embedded vectors to independent normal forms.
+
+It is therefore possible to choose \(v_0\) with \(n_a(v_0)=-1\) and \(n_d(v_0)=0\). The reflection displacements at that vector are \(i_0a\) and \(0\). The [[node:kl.local.orbit_spline_factors|orbit-spline factor theorem]] turns these two prescribed displacements into one polynomial value and one extra zero. This is the use of the nondegenerate extension in the interpolation proof.
+
 ## The extended action and moving spaces
 
 The extended action uses the same reflection formula with the extended form and embedded roots. For a simple generator it restricts to the original action because the original form is preserved on \(V_0\oplus0\). Induction on a word proves the restriction identity for every group element.
@@ -149,6 +161,7 @@ The same sign theorem makes every real root positive or negative. A simple refle
 
 ## Root planes and subgroup membership
 
+- [[node:kl.realization.form_pair_surjective]]
 - [[node:kl.realization.root_planes]]
 - [[node:kl.realization.root_subgroups]]
 - [[node:kl.realization.plane_reflection_membership]]

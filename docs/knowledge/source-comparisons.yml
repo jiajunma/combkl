@@ -139,20 +139,37 @@ comparisons:
   - kl.notes.dihedral_models
   - kl.detail.dihedral_model_properties
   - kl.local.localized_decomposition
+  - kl.local.orbit_splines
+  - kl.local.orbit_spline_congruence
+  - kl.local.orbit_spline_factors
+  - kl.local.dihedral_interpolation
+  - kl.local.flow_down
+  - kl.local.flow_down_flabbiness
+  - kl.local.induced_flow_down
+  - kl.local.induced_label_primes
   paper_labels:
   - loc:models
   lean_declarations:
   - OAI.KLInvariance.TitsSpace.PlaneBasis.model_flabby
   - OAI.KLInvariance.TitsSpace.PlaneBasis.model_generated
   - OAI.KLInvariance.TitsSpace.PlaneBasis.model_quotient
+  - OAI.KLInvariance.lower_parity_balance
+  - OAI.KLInvariance.external_parity_card_le
+  - OAI.KLInvariance.TitsSpace.orbitSpline_pair_factor
+  - OAI.KLInvariance.Dihedral.interpolation_exists
+  - OAI.KLInvariance.MomentGraph.Sheaf.flowDown_flabby
   paper: The induced-model lemma justifies applying the character theorem to the restricted
     reflection-faithful realization and uses the dihedral character calculation to
     identify the rank-one model.
-  lean: The actual induced-label structure model is handled by orbit-spline interpolation.
-    Its congruences, flow-down sections, flabbiness, global generation, and quotient
-    maps are established directly before local model decomposition.
-  consequence: Orbit-spline interpolation proves the model properties for the ambient
-    root labels. These properties supply the inputs to the local decomposition theorem.
+  lean: The direct construction first proves parity matching in arbitrary lower Bruhat
+    intervals by a simple-reflection involution. In the dihedral application, orbit-spline
+    factors supply the prescribed values and zeros; their product gives flow-down
+    sections. A finite induction on prescribed upper sets proves flabbiness, while
+    generation and quotient maps follow from the structure-sheaf construction.
+  consequence: The Blueprint follows the parity, normal-form prescription, spline
+    product and flow-down correction arguments. Injectivity of the reflection-preserving
+    group map provides distinct factor data and pairwise relatively prime incident
+    labels. These model properties feed the later local-ring decomposition.
 - id: square-parameter
   kind: Equivalent parameter conventions
   nodes:

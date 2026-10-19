@@ -25,7 +25,9 @@
         "OAI.KLInvariance.Interval",
         "OAI.KLInvariance.rankDifference_subinterval_lt",
         "OAI.KLInvariance.intervalIso_restrict",
-        "OAI.KLInvariance.intervalIso_rankDifference"
+        "OAI.KLInvariance.intervalIso_rankDifference",
+        "OAI.KLInvariance.lower_parity_balance",
+        "OAI.KLInvariance.external_parity_card_le"
       ]
     },
     {
@@ -46,7 +48,9 @@
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.form",
         "OAI.KLInvariance.TitsSpace.extendedForm",
-        "OAI.KLInvariance.TitsSpace.reflectionFaithful"
+        "OAI.KLInvariance.TitsSpace.reflectionFaithful",
+        "OAI.KLInvariance.ReflectionPlane.formPair_surjective",
+        "OAI.KLInvariance.TitsSpace.orbitSpline_pair_factor"
       ]
     },
     {
@@ -515,10 +519,14 @@
         "sb",
         "og"
       ],
-      "output": "Structure-model products and decomposition of the localized boundary sheaf.",
+      "output": "Induced structure models, explicit interpolation and flow-down flabbiness, followed by model products and decomposition of the localized boundary sheaf.",
       "lean_declarations": [
         "OAI.KLInvariance.MomentGraph.Sheaf.LocalModels",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.localized_boundary_decomposition"
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localized_boundary_decomposition",
+        "OAI.KLInvariance.Dihedral.interpolation_exists",
+        "OAI.KLInvariance.Dihedral.hasFlowDown",
+        "OAI.KLInvariance.MomentGraph.Sheaf.flowDown_flabby",
+        "OAI.KLInvariance.Dihedral.model_flabby"
       ]
     },
     {
@@ -1154,6 +1162,21 @@
         "OAI.KLInvariance.BruhatGraph.EdgeRing",
         "OAI.KLInvariance.TitsSpace.LocalizedEdgeRing",
         "OAI.KLInvariance.TitsSpace.localizedReduction_associated"
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "scope": "Native dihedral model interpolation and flabbiness",
+      "change": "Expanded the Coxeter parity, independent-normal, orbit-factor, interpolation, outgoing-product and upper-set induction interfaces. The induced label definition precedes the injectivity hypotheses used for interpolation and relative primality. Localized finite-coset transport and image products remain the next refinement.",
+      "source_declarations": [
+        "OAI.KLInvariance.lower_parity_balance",
+        "OAI.KLInvariance.external_parity_card_le",
+        "OAI.KLInvariance.ReflectionPlane.formPair_surjective",
+        "OAI.KLInvariance.TitsSpace.orbitSpline_pair_factor",
+        "OAI.KLInvariance.Dihedral.interpolation_exists",
+        "OAI.KLInvariance.Dihedral.hasFlowDown",
+        "OAI.KLInvariance.MomentGraph.Sheaf.flowDown_flabby",
+        "OAI.KLInvariance.Dihedral.model_flabby"
       ]
     }
   ]

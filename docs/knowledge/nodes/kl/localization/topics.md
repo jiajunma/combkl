@@ -144,19 +144,96 @@ The first equality uses outgoing lifts and zero edge modules; the second uses fl
 
 Applying either endpoint restriction of a relative edge carries this equality into the same edge module \(R_P\otimes_A C^{j_E(a)}\). The [[node:kl.algebra.flat_embedded_modules|embedded-image identity]] identifies its image with the scalar extension of the original edge image. The [[node:kl.local.localized_coset_kernels|localized coset kernel-and-image theorem]] therefore places the actual comparison submodules in the coordinates used by the later model decomposition.
 
-## Reduce the local calculation to a dihedral model
+## Induced dihedral structure models
 
-The finite relative coset graph now carries the localized boundary sheaf with its established free stalks, generation, flabbiness and upper quotients.
+Let \(H\) be a two-generator Coxeter system and let \(\phi:H\to W\) be a homomorphism carrying reflections to ambient reflections. On \([1,b]_H\), label an edge \(e:x\to y\) by the polynomial of the canonical positive ambient root representing \(\phi(yx^{-1})\). These are the induced polynomial labels.
 
-The local model-decomposition theorem identifies it with a finite sum of dihedral structure models. In a structure model the supported stalks are copies of the local ring and restrictions are quotient maps. The interpolation theorem proves the required extension properties for the actual induced labels.
+For \(c\le_Hb\), the structure model \(\mathcal O_c\) has stalk \(A\) below \(c\), zero outside that lower ideal, and edge quotient \(A/(\alpha_e)\) whenever the upper endpoint is below \(c\). Constant assignments on the lower support prove generation. The quotient restrictions and finite free stalks follow directly from this construction.
 
-For a rank-one stalk \(R\) with outgoing labels \(\lambda_1,\ldots,\lambda_m\), the full vanishing condition is
+The flabbiness proof assumes \(\phi\) is injective. It constructs global sections with precisely controlled lower support, then uses them to extend arbitrary prescribed sections on upper sets.
+
+## Parity matching and orbit-spline factors
+
+For \(x\le_Hc\), the external lower vertices are
 \[
-r\in(\lambda_1)\cap\cdots\cap(\lambda_m).
+E(x,c)=\{z:z\le_Hc,\ z\not\le_Hx\}.
 \]
-When these labels are pairwise relatively prime in the divisibility sense, this intersection equals the product ideal \((\lambda_1\cdots\lambda_m)\): if each prime factor divides \(r\), their product divides \(r\). This is the model calculation behind the kernel-product formula.
+Let \(Y\) be those of opposite length parity to \(x\), and \(Z\) those of the same parity. The general [[node:kl.coxeter.lower_interval_parity|lower-interval parity theorem]] gives an injection \(j:Z\hookrightarrow Y\). Its proof pairs lower-interval vertices by a simple left descent and then subtracts the two lower ideals.
 
-The decomposition is an isomorphism of sheaves, so it carries these computed kernels and images through maps that commute with restrictions. An isomorphism of stalk ranks would not be enough.
+For an ambient reference vertex \(y\) and vector \(v_0\) in the extended realization, the orbit spline is
+\[
+F_{y,v_0}(w)=\Lambda(\rho(wy^{-1})v_0-v_0).
+\]
+It vanishes at \(y\). Across a reflection \(t\) represented by a root \(a\), its difference is
+\[
+F_{y,v_0}(w)-F_{y,v_0}(tw)
+=\widetilde B(i_0a,\rho(wy^{-1})v_0)\lambda(a),
+\]
+so it satisfies the edge congruence.
+
+For each \(y\in Y\), choose one such factor with reference vertex \(\phi(y)\) and value \(\lambda(a_y)\) at \(\phi(x)\). If \(y=j(z)\), prescribe an additional zero at \(\phi(z)\). The two normal forms are independent, so the [[node:kl.local.orbit_spline_factors|orbit-spline factor theorem]] supplies a vector with normal values \((-1,0)\). Injectivity of \(j\) gives at most one additional zero to prescribe for each factor.
+
+The product of these factors has value \(\prod_{y\in Y}\lambda(a_y)\) at \(x\), and vanishes at every external vertex. Congruences persist because reduction modulo an edge label preserves products.
+
+## The exact outgoing product and a flow-down section
+
+In a dihedral system, the opposite-parity external vertices are exactly the outgoing neighbors \(y\) of \(x\) with \(y\le_Hc\). The target map and \(y\mapsto(x,y)\) form a bijection, and both label definitions choose the positive ambient root of \(\phi(yx^{-1})\). Thus
+\[
+\prod_{y\in Y(x,c)}\lambda(a_y)
+=\prod_{e\in\operatorname{Out}_c(x)}\alpha_e=P_c(x).
+\]
+
+Restrict the interpolating function to the model stalks, using zero outside their lower support. The [[node:kl.local.induced_flow_down|induced flow-down theorem]] gives a global section \(\theta_x\) with
+\[
+\theta_x(x)=P_c(x),\qquad
+\theta_x(y)=0\quad(y\not\le_Hx).
+\]
+This is the flow-down property used in the extension step.
+
+For a worked example in type \(A_2\), take \(H=W\), \(\phi=\operatorname{id}\) and \(x=s,\ c=st\). Identify the simple roots \(a,b\) with their embedded vectors, normalized by \(\widetilde B(a,a)=\widetilde B(b,b)=2\) and \(\widetilde B(a,b)=-1\), and write \(\alpha=\Lambda(a)\), \(\beta=\Lambda(b)\). The external matching sends \(t\) to \(st\). The orbit vector
+\[
+v_0=-\tfrac13a-\tfrac23b
+\]
+has normal values zero on \(a\) and minus one on \(a+b\). With reference vertex \(st\), it gives the section
+
+| Vertex | Value |
+|---|---|
+| \(1\) | \(\beta\) |
+| \(s\) | \(\alpha+\beta\) |
+| \(t\) | \(0\) |
+| \(st\) | \(0\) |
+
+The value at \(s\) is its supported outgoing label \(\alpha+\beta\), and the support lies below \(s\). The [[node:kl.local.dihedral_interpolation|full interpolation proof]] checks all four edge congruences.
+
+## Correcting one remaining prescribed value
+
+Let \(U\) be a finite upper set with a compatible assignment \(f\), and choose a minimal \(x\in U\). First extend the prescription on \(U\setminus\{x\}\) by induction, obtaining a global section \(g\).
+
+For every supported outgoing edge \(x\to y\), the upper endpoint already has \(f_y=g_y\). Subtracting the two compatibility equations gives
+\[
+\alpha_e\mid f_x-g_x.
+\]
+Distinct induced labels at a fixed source are relatively prime: divisibility of their linear polynomials would identify their positive roots, then their reflections under the injective \(\phi\), and finally the edge itself. Therefore
+\[
+f_x-g_x=P_c(x)r
+\]
+for some scalar \(r\).
+
+The correction \(g+r\theta_x\) is global and has the desired value at \(x\). Every other vertex of \(U\) lies outside the lower ideal of the chosen minimal vertex \(x\), so the flow-down section vanishes there and preserves all other prescribed values. If \(x\) is outside the model support, its stalk is already zero.
+
+In the \(A_2\) example, an error \(r(\alpha+\beta)\) at \(s\) is corrected by adding \(r\theta_s\), while the values at \(t,st\) stay fixed. The [[node:kl.local.flow_down_flabbiness|flow-down flabbiness theorem]] gives this induction in general.
+
+For the actual plane subgroup, its inclusion into \(W\) is injective and sends intrinsic reflections to ambient reflections. The [[node:kl.detail.dihedral_model_properties|dihedral model theorem]] therefore supplies the required model flabbiness, generation and upper quotients.
+
+## Model kernels and the next local comparison
+
+At a supported rank-one stalk, selected outgoing conditions say that its scalar belongs to each ideal \((\alpha_e)\) for a supported selected edge. Pairwise relative primality makes this intersection the product ideal:
+\[
+K_x(F)=\left(\prod_{e\in F,\ t(e)\le c}\alpha_e\right)A.
+\]
+An unsupported edge has zero module and contributes no equation.
+
+After scalar extension and restriction to a finite coset graph, the local model construction supplies the corresponding sheaf isomorphism over the local ring. Its commuting edge maps carry both selected kernel images into the same model edge modules. Those product and transport identities are the inputs to the local comparison.
 
 ## Root-plane counts and the scalar correction
 
@@ -231,7 +308,16 @@ The logical order to retain is: free upper kernel, free edge target, local model
 ### Dihedral structure models
 
 - [[node:kl.detail.structure_sheaves]]
+- [[node:kl.local.structure_sheaf_properties]]
 - [[node:kl.notes.dihedral_models]]
+- [[node:kl.local.orbit_splines]]
+- [[node:kl.local.orbit_spline_congruence]]
+- [[node:kl.local.orbit_spline_factors]]
+- [[node:kl.local.dihedral_interpolation]]
+- [[node:kl.local.flow_down]]
+- [[node:kl.local.induced_flow_down]]
+- [[node:kl.local.induced_label_primes]]
+- [[node:kl.local.flow_down_flabbiness]]
 - [[node:kl.detail.dihedral_model_properties]]
 
 ### Local model decomposition

@@ -1,6 +1,6 @@
 ---
 id: kl.detail.dihedral_model_properties
-title: Interpolation and flabbiness of the induced dihedral models
+title: Flabbiness of the induced dihedral structure models
 kind: theorem
 status: proved
 primary_topic: kl.localization
@@ -8,19 +8,26 @@ topics:
 - kl.localization
 uses:
 - kl.notes.dihedral_models
-- kl.notes.extended_realization
-- kl.realization.reflection_plane
-- kl.detail.structure_sheaves
+- kl.local.structure_sheaf_properties
+- kl.local.induced_flow_down
+- kl.local.induced_label_primes
+- kl.local.flow_down_flabbiness
+- kl.dihedral.induced_reflections_length
 lean:
   repository: openai-kl
   modules:
   - DihedralIntervals
   declarations:
+  - OAI.KLInvariance.Dihedral.model_flabby
   - OAI.KLInvariance.TitsSpace.PlaneBasis.model_flabby
   - OAI.KLInvariance.TitsSpace.PlaneBasis.model_generated
   - OAI.KLInvariance.TitsSpace.PlaneBasis.model_quotient
 source:
   spans:
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.DihedralIntervals:580
+    format: lean-location
+    note: OAI.KLInvariance.Dihedral.model_flabby
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.DihedralIntervals:616
     format: lean-location
@@ -42,17 +49,24 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Are the actual induced labels and the relative graph retained?
-  verdict: The construction uses the ambient root representation and the exact relative
-    dihedral order.
+  prompt: Are the ambient modules, pairing orientation, scalar types, grading conventions
+    and quantified hypotheses explicit?
+  verdict: 'Replaced the compressed model proof by the source dependency chain: basic
+    structure properties, fixed-source label coprimality, explicit HasFlowDown construction,
+    the finite upper-set induction and the PlaneBasis inclusion specialization. Preserved
+    the general reflection-preserving map and its separate injectivity requirement.'
 tags:
 - Kazhdan-Lusztig
-- localization
+- interpolation
 ---
 
-# Interpolation and flabbiness of the induced dihedral models
+# Flabbiness of the induced dihedral structure models
 
-For a dihedral reflection subgroup with its actual induced ambient root labels, the rank-one structure model below a top vertex is flabby and globally generated, and satisfies the upper quotient rule.
+Let \(H\) be a two-generator Coxeter system, \(W\) a finite-generator ambient Coxeter system, and \(\phi:H\to W\) a homomorphism carrying reflections to reflections. Use the induced ambient polynomial labels on \([1,b]_H\), and let \(c\le_Hb\).
+
+The structure model \(\mathcal O_c\) has finite free stalks, is globally generated and satisfies the upper-quotient rule. If \(\phi\) is injective, it is also flabby for the intrinsic Bruhat order.
+
+In particular these properties hold for the inclusion of the induced plane subgroup \(D_P\) into \(W\), with the source's modelLabel.
 
 <!-- source-comparison:start -->
 ## Relation to the OpenAI notes
@@ -61,60 +75,55 @@ For a dihedral reflection subgroup with its actual induced ambient root labels, 
 
 **OpenAI notes:** The induced-model lemma justifies applying the character theorem to the restricted reflection-faithful realization and uses the dihedral character calculation to identify the rank-one model. [loc:models](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/04-localization.tex#L125).
 
-**Lean (primary):** The actual induced-label structure model is handled by orbit-spline interpolation. Its congruences, flow-down sections, flabbiness, global generation, and quotient maps are established directly before local model decomposition. [DihedralIntervals:616](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L616), [DihedralIntervals:622](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L622), [DihedralIntervals:626](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L626).
+**Lean (primary):** The direct construction first proves parity matching in arbitrary lower Bruhat intervals by a simple-reflection involution. In the dihedral application, orbit-spline factors supply the prescribed values and zeros; their product gives flow-down sections. A finite induction on prescribed upper sets proves flabbiness, while generation and quotient maps follow from the structure-sheaf construction. [DihedralIntervals:616](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L616), [DihedralIntervals:622](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L622), [DihedralIntervals:626](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L626), [SheafMorphisms:252](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L252), [SheafMorphisms:288](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L288), [DihedralIntervals:176](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L176), [DihedralIntervals:251](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L251), [DihedralIntervals:372](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L372).
 
-**Role in the proof:** Orbit-spline interpolation proves the model properties for the ambient root labels. These properties supply the inputs to the local decomposition theorem.
+**Role in the proof:** The Blueprint follows the parity, normal-form prescription, spline product and flow-down correction arguments. Injectivity of the reflection-preserving group map provides distinct factor data and pairwise relatively prime incident labels. These model properties feed the later local-ring decomposition.
 <!-- source-comparison:end -->
 
 *Proof.*
 
-### Step 1. Specify the interpolation section needed at a vertex
+### Step 1. Apply the basic structure-sheaf construction
 
-Fix the model top \(c\) and \(x\le_Dc\). We will construct a global polynomial section \(F_x\) such that
+Every supported stalk is \(A\), and every unsupported stalk is zero. The [[node:kl.local.structure_sheaf_properties|basic structure-sheaf properties theorem]] gives finite free stalks, global generation and upper quotients.
+
+Generation uses a constant scalar on the lower support. On supported edges the two restrictions are the same quotient map, and on the other edges the target module is zero.
+
+### Step 2. Verify relative primality at each outgoing set
+
+Assume now that \(\phi\) is injective. The [[node:kl.local.induced_label_primes|induced-label primality theorem]] proves that distinct outgoing edges at any fixed source have relatively prime labels.
+
+Every \(\operatorname{Out}_c(x)\) is a subset of those edges, so it has exactly the pairwise relative-primality property required by the [[node:kl.local.flow_down_flabbiness|flow-down criterion]].
+
+### Step 3. Supply the normalized lower-supported sections
+
+The [[node:kl.local.induced_flow_down|induced flow-down theorem]] constructs, for every \(x\le_Hc\), a global section \(\theta_x\) with
 \[
-F_x(x)=\prod_{e:x\to y,\ y\le_Dc}\alpha_e,\qquad
-F_x(z)=0\quad(z\le_Dc,\ z\not\le_Dx).
+\theta_x(x)=P_c(x),\qquad
+\theta_x(y)=0\quad(y\not\le_Hx).
 \]
-The second condition says that its support is contained in the lower ideal of \(x\).
+Its construction uses the general lower-interval parity matching, normalized orbit-spline factors, and the exact bijection between opposite external vertices and supported outgoing edges.
 
-### Step 2. Construct degree-one factors from the actual realization
+### Step 4. Apply the flabbiness criterion
 
-For an ambient vertex \(y\) and vector \(v_0\) in the extended realization, define the polynomial-valued function
-\[
-f_{y,v_0}(w)=\iota\bigl((wy^{-1})v_0-v_0\bigr),
-\]
-where \(\iota\) inserts a vector as a linear polynomial. It vanishes at \(w=y\).
-Along a reflection edge \(w\to tw\), the difference of the two vectors is a scalar multiple of the root of \(t\); hence the edge label divides \(f_{y,v_0}(w)-f_{y,v_0}(tw)\). Thus this function satisfies every edge congruence.
+The lower Bruhat interval \([1,b]_H\) is finite. Its edge set is a subset of the finite square of the vertex set, hence finite.
 
-For two distinct reflections giving the pairs \(x,y\) and \(z,y\), their normal forms are independent in the nondegenerate ambient realization. Choose \(v_0\) on which the first normal is \(-1\) and the second is zero. The reflection formula then makes \(f_{y,v_0}(x)\) the label of \(x\to y\), while it vanishes at both \(y\) and \(z\).
+The coefficient algebra is a polynomial ring over \(\mathbb R\), so it has the product-divisibility structure used in the [[node:kl.local.flow_down_flabbiness|flow-down flabbiness theorem]]. Steps 2 and 3 supply that theorem's other hypotheses. It follows that every section on an intrinsic upper subset extends globally.
 
-### Step 3. Multiply enough factors to kill every external vertex
+This is the source's general Dihedral.model_flabby theorem.
 
-Partition the vertices below \(c\) but not below \(x\) according to whether their relative-length parity is opposite to or the same as that of \(x\). The opposite-parity set is exactly the set of upward reflection neighbors of \(x\) below \(c\). The dihedral rank pattern has two vertices per internal rank, so the same-parity external set has cardinality at most the opposite-parity one.
+### Step 5. Specialize to the actual plane subgroup
 
-Assign each same-parity external vertex \(z\) to a different opposite-parity vertex \(y\). For each \(y\), choose the factor from Step 2 vanishing at \(y\) and, if one is assigned, at that \(z\), with value \(\alpha_{x,y}\) at \(x\). When no \(z\) is assigned, prescribe only the first normal value.
+A plane basis supplies the induced Coxeter system on \(D_P\). Its subgroup inclusion is injective, and the [[node:kl.dihedral.induced_reflections_length|intrinsic-reflection theorem]] says that every reflection of that system is an ambient reflection.
 
-Multiply these factors. Products preserve edge congruences because reduction modulo an edge label is a ring homomorphism. At \(x\) the product is the required outgoing-label product. Every external vertex is killed by at least one factor. This constructs \(F_x\).
-
-### Step 4. Extend an arbitrary section on a relative upper set
-
-Let a compatible section be prescribed on an upper subset \(\Omega\) of the model support. Process its vertices downward, retaining a residual section and a sum of global sections already chosen.
-
-At the next vertex \(x\), the residual is zero at all higher vertices already processed. Along every supported outgoing edge, compatibility therefore says that its value at \(x\) is divisible by the edge label. Distinct incident root labels are pairwise relatively prime linear polynomials. In a UFD, divisibility by each such prime factor implies divisibility by their product. Write the residual value as \(a_xF_x(x)\).
-
-Subtract the global section \(a_xF_x\). This kills the value at \(x\) and does not change any previously processed vertex, since \(F_x\) vanishes outside the lower ideal of \(x\). Continue through the finite set. The sum of the chosen global sections agrees with all prescribed values, proving flabbiness.
-
-### Step 5. Check generation and the quotient rule
-
-To generate a supported stalk, use the constant polynomial assignment on the entire lower support; it satisfies all edge congruences. Its value at the chosen stalk is any desired polynomial. Outside the support the stalk is zero. Thus the model is globally generated.
-
-Each supported edge was defined to have module \(A/(\alpha_e)\), with both endpoint maps reduction modulo \(\alpha_e\); the upper quotient rule is therefore literal. This argument uses induced ambient roots directly and does not obtain these properties by substituting a KL-character theorem.
+Thus the inclusion satisfies all hypotheses above. The induced labels are exactly modelLabel by definition. The three exported PlaneBasis theorems give flabbiness, generation and the upper-quotient rule for these actual labels.
 
 ## References
 
-[Preprint: induced dihedral models](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/04-localization.tex#L125).
+The local source declarations below give the construction and proof.
 
 ## Lean formalization
+
+`OAI.KLInvariance.Dihedral.model_flabby`: [DihedralIntervals.lean:580](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L580).
 
 `OAI.KLInvariance.TitsSpace.PlaneBasis.model_flabby`: [DihedralIntervals.lean:616](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L616).
 

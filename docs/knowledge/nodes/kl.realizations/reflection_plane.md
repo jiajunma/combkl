@@ -9,12 +9,14 @@ topics:
 uses:
 - kl.realization.linear_reflection
 - kl.realization.moving_spaces
+- kl.realization.form_pair_surjective
 lean:
   repository: openai-kl
   modules:
   - ReflectionPlane
   declarations:
   - OAI.KLInvariance.ReflectionPlane.range_preReflection_product_sub_id
+  - OAI.KLInvariance.ReflectionPlane.formPair_surjective
 source:
   spans:
   - artifact: openai-kl-source
@@ -26,6 +28,10 @@ source:
     format: section
     note: Paper correspondence; chapter organization follows mathematical dependencies
       in the Lean library.
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.ReflectionPlane:16
+    format: lean-location
+    note: OAI.KLInvariance.ReflectionPlane.formPair_surjective
 verification:
   statement: accepted
   proof: accepted
@@ -70,9 +76,11 @@ Thus every image vector lies in \(\operatorname{span}\{\alpha,\beta\}\).
 
 ### Step 2. Surjectivity of the pair of functionals
 
-Consider \(F:V\to k^2\), \(F(v)=(f(v),g(v))\). If its image were a proper subspace of the two-dimensional space \(k^2\), some nonzero linear functional on \(k^2\), say \((a,b)\mapsto ca+db\), would vanish on that image.
-
-Then \(cf+dg=0\), with \((c,d)\ne(0,0)\), contradicting the assumed independence of \(f,g\). Hence \(F\) is surjective.
+The [[node:kl.realization.form_pair_surjective|independent-form surjectivity theorem]] applies to \(f,g\). It gives surjectivity of
+\[
+F:V\to k^2,\qquad F(v)=(f(v),g(v)).
+\]
+Its proof expands a functional vanishing on the image into its two coordinate coefficients. Independence forces both coefficients to vanish, so the image is the whole coordinate plane.
 
 ### Step 3. Produce a preimage for an arbitrary vector in the plane
 
@@ -92,3 +100,5 @@ The two containments prove equality.
 ## Lean formalization
 
 `OAI.KLInvariance.ReflectionPlane.range_preReflection_product_sub_id`: [ReflectionPlane.lean:44](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionPlane.lean#L44).
+
+`OAI.KLInvariance.ReflectionPlane.formPair_surjective`: [ReflectionPlane.lean:16](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionPlane.lean#L16).

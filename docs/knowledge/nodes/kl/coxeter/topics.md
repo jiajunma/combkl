@@ -115,6 +115,22 @@ If \(x\ne u\) or \(y\ne b\), at least one outer difference is positive, so the s
 
 An interval-indexed function transports by \(f'(z')=f(\phi^{-1}(z'))\). Thus a pair of functions on isomorphic intervals can be compared after indexing both on the source interval.
 
+## Parity pairs and external lower vertices
+
+For \(c\ne1\), choose a simple left descent \(s\) of \(c\). The upper-envelope calculation
+\[
+sz\le U_s(sz)=U_s(z)\le U_s(c)=c\qquad(z\le c)
+\]
+keeps left multiplication by \(s\) inside \([1,c]\). It is an involution and changes length by one, so it pairs the two length parities.
+
+For \(x\le c\), define the external lower set
+\[
+E(x,c)=[1,c]\setminus[1,x].
+\]
+Split it into \(Y\), opposite in parity to \(x\), and \(Z\), of the same parity. When both \(x,c\) are nonidentity, removing one balanced lower interval from another gives \(|Y|=|Z|\). For \(x=1<c\), removal deletes one even vertex, so \(|Y|=|Z|+1\). For \(x=c=1\), both are empty.
+
+Thus \(|Z|\le|Y|\) in every case. The [[node:kl.coxeter.lower_interval_parity|lower-interval parity theorem]] proves these statements and supplies an injection \(Z\hookrightarrow Y\). In the dihedral interpolation argument, each opposite-parity vertex supplies one orbit-spline factor, and the injection assigns at most one extra zero to that factor.
+
 ## The alternating rank-two order
 
 With two simple generators, reducedness forces the letters to alternate. For a shorter reduced expression, matching the first letter realizes it as a prefix of a longer reduced word; the other first letter realizes it as a prefix of the longer word's tail. Thus every strictly shorter element lies below every longer element.
@@ -142,6 +158,8 @@ The order and rank lemmas provide the common combinatorial data for the realizat
 - [[node:kl.detail.simple_envelopes]]
 - [[node:kl.foundations.finite_intervals]]
 - [[node:kl.coxeter.dihedral_bruhat_order]]
+- [[node:kl.coxeter.external_vertices]]
+- [[node:kl.coxeter.lower_interval_parity]]
 
 ### Intervals, ranks, and order isomorphisms
 

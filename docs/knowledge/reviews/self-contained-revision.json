@@ -1342,15 +1342,6 @@
       "pending": []
     },
     {
-      "node": "kl.realization.reflection_plane",
-      "file": "docs/knowledge/nodes/kl.realizations/reflection_plane.md",
-      "source_declarations": [
-        "OAI.KLInvariance.ReflectionPlane.range_preReflection_product_sub_id"
-      ],
-      "review": "Rechecked the existing coefficient formula and independent-functional surjectivity proof; removed precautionary closing prose.",
-      "pending": []
-    },
-    {
       "node": "kl.realization.root_planes",
       "file": "docs/knowledge/nodes/kl.realizations/root_planes.md",
       "source_declarations": [
@@ -2266,22 +2257,6 @@
       ],
       "review": "Read all four interval-isomorphism lemmas. Followed the source proof through StrictMono inequalities in both directions, then both endpoint inequalities and the full-rank substitution.",
       "pending": []
-    },
-    {
-      "node": "kl.notes.dihedral_models",
-      "file": "docs/knowledge/nodes/kl.localization/dihedral_models.md",
-      "source_declarations": [
-        "OAI.KLInvariance.Dihedral.inducedRoot",
-        "OAI.KLInvariance.Dihedral.inducedLabel",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.modelLabel",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.model_flabby",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.model_generated",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.model_quotient"
-      ],
-      "review": "Read inducedRoot, inducedLabel, modelLabel and the actual model-property interfaces. Added the ambient coefficient/label construction and removed the polynomial theorem as a proof prerequisite; interpolation proof expansion remains in L3.",
-      "pending": [
-        "Expand the interpolation and localization arguments in L3."
-      ]
     },
     {
       "node": "kl.algebra.positive_ideal",
@@ -4683,6 +4658,200 @@
       ],
       "review": "Clarified that the unit-multiple definition of associated scalars applies to any commutative ring, matching the general target algebra in PlaneReduction; the linear-ideal and quotient definitions are unchanged.",
       "pending": []
+    },
+    {
+      "node": "kl.coxeter.external_vertices",
+      "file": "docs/knowledge/nodes/kl.coxeter/external_vertices.md",
+      "source_declarations": [
+        "OAI.KLInvariance.externalLower",
+        "OAI.KLInvariance.mem_externalLower",
+        "OAI.KLInvariance.Dihedral.oppositeExternal",
+        "OAI.KLInvariance.Dihedral.sameExternal"
+      ],
+      "review": "Read the general finite set difference and its membership theorem, then both dihedral parity filters. Kept x<=c as the later theorem hypothesis rather than a restriction on the definition.",
+      "pending": []
+    },
+    {
+      "node": "kl.coxeter.lower_interval_parity",
+      "file": "docs/knowledge/nodes/kl.coxeter/lower_interval_parity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.simple_mul_bruhat_of_descent",
+        "OAI.KLInvariance.lower_parity_balance",
+        "OAI.KLInvariance.external_parity_card_le"
+      ],
+      "review": "Read the simple-envelope proof of lower-ideal stability, the simple-reflection parity bijection and the finite set-difference calculation. Preserved the arbitrary-rank Coxeter scope and all c=1, x=1 and nonidentity cases.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.form_pair_surjective",
+      "file": "docs/knowledge/nodes/kl.realizations/form_pair_surjective.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionPlane.formPair_surjective"
+      ],
+      "review": "Read formPair_surjective: expanded the dual functional in the two coordinate evaluations, used independence to kill both coefficients and explained the finite-dimensional annihilator criterion used to conclude surjectivity.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.odd_reflection_edges",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/odd_reflection_edges.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.alt_odd_sandwich",
+        "OAI.KLInvariance.Dihedral.odd_alt_reflection",
+        "OAI.KLInvariance.Dihedral.reflection_iff_odd",
+        "OAI.KLInvariance.Dihedral.step_iff_odd",
+        "OAI.KLInvariance.Dihedral.reflection_of_parity"
+      ],
+      "review": "Read the odd alternating-word conjugation induction and both parity characterizations. Kept the two-generator hypothesis, arbitrary finite or infinite group, and the direction and strict length condition of BruhatStep.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.orbit_splines",
+      "file": "docs/knowledge/nodes/kl.localization/orbit_splines.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.linearPolynomial",
+        "OAI.KLInvariance.TitsSpace.orbitSpline"
+      ],
+      "review": "Read linearPolynomial and orbitSpline with their exact action order w*y^-1. Distinguished the extended-space coefficient map from the original-root label, defined the spline congruence terminology and explained the normal-value parameters.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.orbit_spline_congruence",
+      "file": "docs/knowledge/nodes/kl.localization/orbit_spline_congruence.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.orbitSpline_self",
+        "OAI.KLInvariance.TitsSpace.orbitSpline_reflection"
+      ],
+      "review": "Read the exact displacement calculation in orbitSpline_reflection and its coefficient c. Retained a general representing root, the left reflection action and the order x*y^-1 before taking the polynomial image.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.orbit_spline_factors",
+      "file": "docs/knowledge/nodes/kl.localization/orbit_spline_factors.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.Represents.independent_of_ne",
+        "OAI.KLInvariance.TitsSpace.Represents.extended_independent_of_ne",
+        "OAI.KLInvariance.TitsSpace.exists_pair_vector",
+        "OAI.KLInvariance.TitsSpace.orbitSpline_single_factor",
+        "OAI.KLInvariance.TitsSpace.orbitSpline_pair_factor"
+      ],
+      "review": "Read the single-factor vector, root-independence norm argument, extended normal-form independence, prescribed (-1,0) pair and three value calculations. Kept both representing-root hypotheses, the group product directions and x!=z.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.structure_sheaves",
+      "file": "docs/knowledge/nodes/kl.localization/structure_sheaves.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureVertexIso",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureCompatible_iff"
+      ],
+      "review": "Read the PLift-indexed structureSheaf fields and structureVertexIso, together with structureCompatible_iff. Explained the singleton/empty coordinate modules, both restrictions and the exact supported-edge congruences.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.structure_sheaf_properties",
+      "file": "docs/knowledge/nodes/kl.localization/structure_sheaf_properties.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_free",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_finite",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_support",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_generated",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_upperQuotient",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_minimal"
+      ],
+      "review": "Read all basic structureSheaf property lemmas and the local minimality proof. Preserved arbitrary commutative rings for the basic properties, and the separate local-ring, maximal-ideal-label and outgoing-edge hypotheses for minimality.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.flow_down",
+      "file": "docs/knowledge/nodes/kl.localization/flow_down.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.modelOutgoing",
+        "OAI.KLInvariance.MomentGraph.Sheaf.mem_modelOutgoing",
+        "OAI.KLInvariance.MomentGraph.Sheaf.modelProduct",
+        "OAI.KLInvariance.MomentGraph.Sheaf.HasFlowDown"
+      ],
+      "review": "Read modelOutgoing, its exact membership condition, modelProduct and every clause of HasFlowDown. Distinguished the supported outgoing set from all outgoing edges and recorded the global lower-support and prescribed-product conditions.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.flow_down_flabbiness",
+      "file": "docs/knowledge/nodes/kl.localization/flow_down_flabbiness.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureCompatible_iff",
+        "OAI.KLInvariance.MomentGraph.Sheaf.flowDown_flabby"
+      ],
+      "review": "Read the strong induction on the assigned upper set, its minimal-vertex removal, the zero-support branch, both congruences for the residual, the pairwise product divisor and the g+r*t correction. Stated the DecompositionMonoid product rule explicitly.",
+      "pending": []
+    },
+    {
+      "node": "kl.notes.dihedral_models",
+      "file": "docs/knowledge/nodes/kl.localization/dihedral_models.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.inducedRoot",
+        "OAI.KLInvariance.Dihedral.inducedLabel",
+        "OAI.KLInvariance.Dihedral.interpolationRoot",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.modelLabel"
+      ],
+      "review": "Read inducedRoot/inducedLabel for a reflection-preserving group homomorphism, the external interpolationRoot, and the PlaneBasis modelLabel specialization. Kept injectivity as the later flabbiness hypothesis and the intrinsic graph/order separate from ambient coefficient data.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.dihedral_interpolation",
+      "file": "docs/knowledge/nodes/kl.localization/dihedral_interpolation.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.interpolation_exists"
+      ],
+      "review": "Read the full interpolation_exists construction: finite parity injection, the reflection-inverse identity for x*y^-1, the unique paired vertex, both factor cases, quotient-ring product congruence and both parity zero cases. Added a hand-derived A2 example as an illustration of the same construction.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.induced_flow_down",
+      "file": "docs/knowledge/nodes/kl.localization/induced_flow_down.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.external_step",
+        "OAI.KLInvariance.Dihedral.step_external",
+        "OAI.KLInvariance.Dihedral.externalEdge",
+        "OAI.KLInvariance.Dihedral.externalEdge_mem",
+        "OAI.KLInvariance.Dihedral.outgoingEquiv",
+        "OAI.KLInvariance.Dihedral.interpolation_product",
+        "OAI.KLInvariance.Dihedral.hasFlowDown"
+      ],
+      "review": "Read both external-step directions, externalEdge, the inverse maps in outgoingEquiv, exact canonical-label product reindexing and the construction of the supported assignment from F. Preserved all order, parity and support cases.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.induced_label_primes",
+      "file": "docs/knowledge/nodes/kl.localization/induced_label_primes.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.inducedLabel_prime",
+        "OAI.KLInvariance.Dihedral.label_eq_of_induced_dvd",
+        "OAI.KLInvariance.Dihedral.model_flabby"
+      ],
+      "review": "Read inducedLabel_prime and the complete divisibility-to-reflection argument, then the fixed-source edge identification used inside model_flabby. Kept injectivity only for label identification and relative primality, and restricted the distinct-edge conclusion to a common source.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.dihedral_model_properties",
+      "file": "docs/knowledge/nodes/kl.localization/dihedral_model_properties.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.model_flabby",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.model_flabby",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.model_generated",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.model_quotient"
+      ],
+      "review": "Replaced the compressed model proof by the source dependency chain: basic structure properties, fixed-source label coprimality, explicit HasFlowDown construction, the finite upper-set induction and the PlaneBasis inclusion specialization. Preserved the general reflection-preserving map and its separate injectivity requirement.",
+      "pending": []
+    },
+    {
+      "node": "kl.realization.reflection_plane",
+      "file": "docs/knowledge/nodes/kl.realizations/reflection_plane.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionPlane.range_preReflection_product_sub_id",
+        "OAI.KLInvariance.ReflectionPlane.formPair_surjective"
+      ],
+      "review": "Kept the composite pre-reflection calculation and target coefficient solution; extracted the independent-form surjectivity argument into its own reusable theorem and linked the exact source declaration.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -4717,7 +4886,9 @@
       "status": "in_progress",
       "completion_evidence": [
         "kl.coxeter.simple_edge_transport",
-        "kl.coxeter.dihedral_bruhat_order"
+        "kl.coxeter.dihedral_bruhat_order",
+        "kl.coxeter.external_vertices",
+        "kl.coxeter.lower_interval_parity"
       ]
     },
     {
@@ -4812,7 +4983,8 @@
         "kl.realization.dominant_signs",
         "kl.realization.plane_reflection_membership",
         "kl.realization.root_planes",
-        "kl.realization.root_subgroups"
+        "kl.realization.root_subgroups",
+        "kl.realization.form_pair_surjective"
       ],
       "pending": [],
       "review": "The earlier dominant-functional and cotangent entries are now joined by explicit root spans, displacement/generated subgroups, reflection membership, and the common-plane argument in the nondegenerate extension."
@@ -5409,8 +5581,14 @@
     {
       "code": "O3",
       "title": "Dihedral interval combinatorics",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.dihedral.odd_reflection_edges"
+      ],
+      "pending": [
+        "Expand signed dihedral indices and flip identities, relative interval transport and the later-edge counts used in local comparison."
+      ],
+      "review": "Reviewed the two-generator reflection/parity and directed-edge criteria. The interval transport and counting arguments remain."
     },
     {
       "code": "O4",
@@ -5475,11 +5653,23 @@
       "title": "Dihedral structure models",
       "status": "in_progress",
       "completion_evidence": [
-        "kl.notes.dihedral_models"
+        "kl.notes.dihedral_models",
+        "kl.local.orbit_splines",
+        "kl.local.orbit_spline_congruence",
+        "kl.local.orbit_spline_factors",
+        "kl.detail.structure_sheaves",
+        "kl.local.structure_sheaf_properties",
+        "kl.local.flow_down",
+        "kl.local.flow_down_flabbiness",
+        "kl.local.dihedral_interpolation",
+        "kl.local.induced_flow_down",
+        "kl.local.induced_label_primes",
+        "kl.detail.dihedral_model_properties"
       ],
       "pending": [
-        "Expand the induced-root interpolation construction, flow-down sections and all structure-model properties with their exact ambient-label hypotheses."
-      ]
+        "Expand scalar extension and transport of the native models to finite relative coset graphs, then the exact selected-kernel and edge-image product formulas."
+      ],
+      "review": "Reviewed the generic structure sheaf and its basic/local-minimality properties, general lower-interval parity matching, orbit splines and prescribed normal values, dihedral interpolation, supported outgoing-product reindexing, prime induced labels and the full upper-set induction proving native model flabbiness."
     },
     {
       "code": "L4",
@@ -5566,7 +5756,7 @@
     }
   ],
   "next_steps": [
-    "Expand the actual dihedral structure models, their interpolation and flow-down arguments, then the ungraded local-ring decomposition.",
+    "Complete the localized finite-coset structure-model transport and selected kernel/image products, then expand the ungraded local-ring decomposition.",
     "Complete the remaining Coxeter/parabolic, root-space and sheaf-operation exposition.",
     "Expand adapted orders, chamber changes, dihedral interval transport, schedules and the path-polynomial proof.",
     "Complete localization, local image comparison, edge inequalities and the simultaneous invariance induction.",
@@ -6008,7 +6198,20 @@
       "kl.algebra.tensor_scalar_quotient": "A4",
       "kl.local.localized_edge_ring": "L1",
       "kl.algebra.plane_reduction": "A1",
-      "kl.local.localized_root_reduction": "L1"
+      "kl.local.localized_root_reduction": "L1",
+      "kl.coxeter.external_vertices": "C3",
+      "kl.coxeter.lower_interval_parity": "C3",
+      "kl.realization.form_pair_surjective": "R6",
+      "kl.dihedral.odd_reflection_edges": "O3",
+      "kl.local.orbit_splines": "L3",
+      "kl.local.orbit_spline_congruence": "L3",
+      "kl.local.orbit_spline_factors": "L3",
+      "kl.local.structure_sheaf_properties": "L3",
+      "kl.local.flow_down": "L3",
+      "kl.local.flow_down_flabbiness": "L3",
+      "kl.local.dihedral_interpolation": "L3",
+      "kl.local.induced_flow_down": "L3",
+      "kl.local.induced_label_primes": "L3"
     },
     "moved_nodes": [
       {
@@ -6842,7 +7045,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 423
+    "current_node_count": 436
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -6870,7 +7073,8 @@
     "Completed S10: expanded the local intersection map into construction, properties and the exact strict diagonal-degree implication; exposed the generic positive-ideal coordinate argument and supported-section symmetry calculation. Defined full outgoing-kernel freeness and expanded the character-identification condition and both KL endpoint substitutions. Added explicit boundary-model character transport to the upper-restriction proof.",
     "Completed S3: expanded tensor base change and its section map, separated section/outgoing constraints, proved finite-flat section transport and sheaf-property transfer, and developed graded boundary lifting, quotient edge descent and finite-complement morphism extension. Added the generic embedded kernel/image theorem and rewrote the localization node at its actual flat-algebra generality.",
     "Completed L2: defined the finite relative coset graph and localized coset sheaf, proved the outgoing lifts and lower-ideal properties, separated general surviving-edge flabbiness from fixed-vertex kernel pullback, and checked all inputs for the actual plane localization. Added the induced/ambient root-label identification and preserved both selected edge images in the common ambient tensor module.",
-    "Completed L1: separated edge coefficient rings, the plane local ring and the localized edge quotient; wrote the scalar maps and tensor-quotient inverse explicitly. Added coordinate-basis descent and the actual edge-module action/freeness, expanded polynomial edge-ring coordinates and plane-prime generators, and proved root association via a nonzero transverse real coefficient."
+    "Completed L1: separated edge coefficient rings, the plane local ring and the localized edge quotient; wrote the scalar maps and tensor-quotient inverse explicitly. Added coordinate-basis descent and the actual edge-module action/freeness, expanded polynomial edge-ring coordinates and plane-prime generators, and proved root association via a nonzero transverse real coefficient.",
+    "Expanded the native dihedral model construction into its full dependency chain: general Coxeter parity matching, independent normal-value prescription, single- and double-zero orbit factors, product interpolation, supported outgoing products and the finite upper-set flabbiness induction. Added an explicit A2 section calculation. L3 remains in progress for localized coset-model transport and product/image formulas."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -7057,6 +7261,41 @@
       ],
       "target": "kl.detail.base_change",
       "review": "Restricted the bare phrase to the sheaf topic. Specific sheaf-base-change phrases remain available in applications; coefficient-ring tensor extensions in localization are no longer automatically assigned to the sheaf construction."
+    },
+    {
+      "term": "orbit spline",
+      "topics": [
+        "kl.localization",
+        "kl.realizations"
+      ],
+      "target": "kl.local.orbit_splines",
+      "review": "The registry resolves the polynomial spline and orbit-factor terminology to the extended-action displacement definition."
+    },
+    {
+      "term": "flow-down section",
+      "topics": [
+        "kl.localization"
+      ],
+      "target": "kl.local.flow_down",
+      "review": "The registry links the flow-down property and supported outgoing product to their precise support and value conditions; broad outgoing-product terminology remains outside this alias."
+    },
+    {
+      "term": "external lower set",
+      "topics": [
+        "kl.coxeter",
+        "kl.localization",
+        "kl.reflection_combinatorics"
+      ],
+      "target": "kl.coxeter.external_vertices",
+      "review": "The external set and its two length-parity classes have a shared definition, with the later x<=c hypothesis kept separate."
+    },
+    {
+      "term": "induced polynomial label",
+      "topics": [
+        "kl.localization"
+      ],
+      "target": "kl.notes.dihedral_models",
+      "review": "The definition uses the ambient canonical positive root under a reflection-preserving homomorphism, and does not assume injectivity until the later theorem."
     }
   ],
   "corrections": [
@@ -7076,20 +7315,20 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-19T14:52:29.220534+00:00",
+    "created_at": "2026-10-19T15:42:47.604434+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 423,
-    "html_pages_checked": 690,
-    "generated_definition_links_checked": 6126,
+    "node_count": 436,
+    "html_pages_checked": 704,
+    "generated_definition_links_checked": 6368,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks symmetric/polynomial edge rings, quotient-module bases and scalar actions, plane-prime generators and units, localized edge reduction, tensor/quotient compatibility and associated root labels. Documentation checks only.",
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks external parity classes, orbit splines, induced labels, structure models, prescribed normal values, interpolation and the finite upper-set flabbiness argument. Documentation checks only.",
     "focused_page_review": {
-      "entries": 12,
-      "source_anchors": 62,
-      "coefficient_definition_links": 30,
-      "scope": "Read saved statements and detailed proofs, checked the quotient-map directions and distinct scalar-ring types, inspected source/formula payloads and guide reachability, and verified separate destinations for edge coefficient rings, plane rings and localized edge quotients."
+      "entries": 17,
+      "source_anchors": 58,
+      "definition_links": 44,
+      "scope": "Read the saved statements and proof steps, checked the arbitrary-Coxeter parity scope and injectivity hypotheses, the action order and normal-value signs, the supported-product indexing and minimal-assigned-vertex induction. Inspected both A2 tables, formula/source payloads, guide reachability and the distinct new definition destinations."
     }
   },
   "structure_coverage_scan": {
@@ -7395,6 +7634,43 @@
         "kl.local.localized_root_reduction"
       ],
       "review": "The localization subspace P is independent of the span of a and b in the actual source theorem. The nonzero transverse coefficient comes from c outside the killed line, and its image is a unit by mapping the field inverse."
+    },
+    {
+      "entries": [
+        "kl.coxeter.lower_interval_parity",
+        "kl.local.dihedral_interpolation"
+      ],
+      "review": "The parity matching is proved for arbitrary Coxeter lower intervals by a simple-reflection involution. Only the subsequent identification of odd products with reflections and external vertices with outgoing edges uses two generators."
+    },
+    {
+      "entries": [
+        "kl.local.orbit_splines",
+        "kl.local.orbit_spline_factors",
+        "kl.realization.form_pair_surjective"
+      ],
+      "review": "The coefficient map is defined on the extended vector space, while root labels first use the original-space embedding. Independent normal forms prescribe (-1,0); the orbit action is w*y^-1. The A2 calculation is an explanatory derivation, not a new Lean declaration."
+    },
+    {
+      "entries": [
+        "kl.notes.dihedral_models",
+        "kl.local.induced_label_primes",
+        "kl.detail.dihedral_model_properties"
+      ],
+      "review": "Reflection preservation defines the induced labels and gives their primality. Injectivity is an additional hypothesis for distinct paired vertices and for recovering distinct outgoing edges from their labels, and hence for the model flabbiness proof."
+    },
+    {
+      "entries": [
+        "kl.local.flow_down",
+        "kl.local.flow_down_flabbiness"
+      ],
+      "review": "The product ranges over outgoing edges whose targets lie in the model support. The source induction removes a minimal vertex from the prescribed upper set, extends the smaller prescription, and corrects its remaining scalar error using a lower-supported flow-down section."
+    },
+    {
+      "entries": [
+        "kl.detail.structure_sheaves",
+        "kl.notes.dihedral_models"
+      ],
+      "review": "The construction prerequisites remain separate from forward property references. Generic structure sheaves need neither upper-quotient nor flabbiness assertions as input, and induced labels are defined before orbit interpolation is proved."
     }
   ],
   "relationship_map_revision": {
@@ -7402,6 +7678,6 @@
     "edge_count": 92,
     "route": "Top splitting and primitive recognition feed the boundary-pairing route; full model decomposition feeds simultaneous character formulas.",
     "evidence": "BoundarySheaf.splitIn_of_top_split, iso_of_primitive_top_split, GradedSheaf.exists_modelSumIso and bottCharacter_decomposition_both.",
-    "latest_anchor_refinement": "Recorded the three coefficient-ring presentations, tensor/principal-quotient compatibility, scalar-kernel basis descent and associated root reduction. The 38-stage, 92-edge graph is unchanged; these algebraic inputs feed the local product comparison."
+    "latest_anchor_refinement": "Recorded general lower-interval parity, independent normal-value prescription, orbit-spline interpolation, supported outgoing products and the upper-set flow-down induction. The 38-stage, 92-edge graph is unchanged; node-level dependencies separate model definitions from the later flabbiness construction."
   }
 }

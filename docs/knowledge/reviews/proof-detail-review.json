@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 78878,
-  "theorem_walkthroughs": 274,
+  "revised_proof_words": 81541,
+  "theorem_walkthroughs": 284,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -697,6 +697,19 @@
       "review": "Read intervalIso_restrict and its value lemma. Wrote both ambient inclusions, endpoint checks, inverse maps and order equivalence, retaining the source scope for arbitrary endpoint members."
     },
     {
+      "node": "kl.coxeter.lower_interval_parity",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.simple_mul_bruhat_of_descent",
+        "OAI.KLInvariance.lower_parity_balance",
+        "OAI.KLInvariance.external_parity_card_le"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 304,
+      "proof_sha256": "a38e601efd13dd812f5461e29f8b24c54102787b6357455dcae9b8ca585e5c41",
+      "review": "Read the simple-envelope proof of lower-ideal stability, the simple-reflection parity bijection and the finite set-difference calculation. Preserved the arbitrary-rank Coxeter scope and all c=1, x=1 and nonidentity cases."
+    },
+    {
       "node": "kl.coxeter.parabolic_decomposition",
       "source_declarations": [
         "OAI.KLInvariance.ParabolicSupport.reduced_append_of_minimal",
@@ -921,15 +934,16 @@
     {
       "node": "kl.detail.dihedral_model_properties",
       "source_declarations": [
+        "OAI.KLInvariance.Dihedral.model_flabby",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.model_flabby",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.model_generated",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.model_quotient"
       ],
       "proof_steps": 5,
       "previous_proof_words": 0,
-      "revised_proof_words": 586,
-      "proof_sha256": "089bce29a1f32a1185b036d8a3c97cf7114fd2d4c49fda5a928d580df21ea8ca",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 315,
+      "proof_sha256": "0034549cf2413326f8ce797ac616deb0c23e6c83fb205ab708d396f11371de59",
+      "review": "Replaced the compressed model proof by the source dependency chain: basic structure properties, fixed-source label coprimality, explicit HasFlowDown construction, the finite upper-set induction and the PlaneBasis inclusion specialization. Preserved the general reflection-preserving map and its separate injectivity requirement."
     },
     {
       "node": "kl.detail.endpoint_equality",
@@ -1359,6 +1373,21 @@
       "revised_proof_words": 237,
       "proof_sha256": "43e358ba50287de6702613ce296095c8a25a86eccf9bfce15590107bbdf3b379",
       "review": "Read least coset existence and all root-sign transport lemmas in Tits. Kept the least ambient-length hypothesis, preserved both signs, and applied it after the subgroup inverse action."
+    },
+    {
+      "node": "kl.dihedral.odd_reflection_edges",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.alt_odd_sandwich",
+        "OAI.KLInvariance.Dihedral.odd_alt_reflection",
+        "OAI.KLInvariance.Dihedral.reflection_iff_odd",
+        "OAI.KLInvariance.Dihedral.step_iff_odd",
+        "OAI.KLInvariance.Dihedral.reflection_of_parity"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 264,
+      "proof_sha256": "30dfef7102fd9ce1372c164b6ac893b082a1f502a16881001fbaf493bf3b8462",
+      "review": "Read the odd alternating-word conjugation induction and both parity characterizations. Kept the two-generator hypothesis, arbitrary finite or infinite group, and the direction and strict length condition of BruhatStep."
     },
     {
       "node": "kl.dihedral.plane_basis_existence",
@@ -2008,6 +2037,17 @@
       "review": "Read the injectivity/finite instance, lower-closure argument, explicit t*x target in coset_lift_live and the first-step extraction in coset_outgoing_below. All ambient/relative order and label directions are explicit."
     },
     {
+      "node": "kl.local.dihedral_interpolation",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.interpolation_exists"
+      ],
+      "proof_steps": 6,
+      "revised_proof_words": 617,
+      "proof_sha256": "d3aaaeee91662da6c679d73b6de8b74e4bf376affde6d21681a4e104ab50f82e",
+      "review": "Read the full interpolation_exists construction: finite parity injection, the reflection-inverse identity for x*y^-1, the unique paired vertex, both factor cases, quotient-ring product congruence and both parity zero cases. Added a hand-derived A2 example as an illustration of the same construction."
+    },
+    {
       "node": "kl.local.edge_inclusion",
       "source_declarations": [
         "OAI.KLInvariance.BruhatGraph.schedule_edge_image_le"
@@ -2017,6 +2057,18 @@
       "revised_proof_words": 571,
       "proof_sha256": "a99a02557d0cc0720abaf3bdad12c9d769260cc8096b6e0cc32d0a5f075afff1",
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+    },
+    {
+      "node": "kl.local.flow_down_flabbiness",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureCompatible_iff",
+        "OAI.KLInvariance.MomentGraph.Sheaf.flowDown_flabby"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 324,
+      "proof_sha256": "cdb0a9907cba4fde1f92c42c84b82c063f110b25ab1c6d5bf3752fd01bd5b254",
+      "review": "Read the strong induction on the assigned upper set, its minimal-vertex removal, the zero-support branch, both congruences for the residual, the pairwise product divisor and the g+r*t correction. Stated the DecompositionMonoid product rule explicitly."
     },
     {
       "node": "kl.local.free_target_localization",
@@ -2030,6 +2082,36 @@
       "revised_proof_words": 237,
       "proof_sha256": "3aea43d1e6b6b5ef4a47caf46fa7a82b312ffdbcd9dab3bba34ee7f0dfbf08ac",
       "review": "Read the exact Noetherian-UFD height-one equivalence and intersection theorem. Retained global scalar generic span and free target, and linked the fully expanded prime-removal proof."
+    },
+    {
+      "node": "kl.local.induced_flow_down",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.external_step",
+        "OAI.KLInvariance.Dihedral.step_external",
+        "OAI.KLInvariance.Dihedral.externalEdge",
+        "OAI.KLInvariance.Dihedral.externalEdge_mem",
+        "OAI.KLInvariance.Dihedral.outgoingEquiv",
+        "OAI.KLInvariance.Dihedral.interpolation_product",
+        "OAI.KLInvariance.Dihedral.hasFlowDown"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 308,
+      "proof_sha256": "fd4260a1a074676412a77b1d9ba88a297ad68c47341c71e5470e63aec6a10a19",
+      "review": "Read both external-step directions, externalEdge, the inverse maps in outgoingEquiv, exact canonical-label product reindexing and the construction of the supported assignment from F. Preserved all order, parity and support cases."
+    },
+    {
+      "node": "kl.local.induced_label_primes",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.inducedLabel_prime",
+        "OAI.KLInvariance.Dihedral.label_eq_of_induced_dvd",
+        "OAI.KLInvariance.Dihedral.model_flabby"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 230,
+      "proof_sha256": "921b95c582606bc33e1b4bf10637ea74b3de17d7df68b16517d42e67ee2e487d",
+      "review": "Read inducedLabel_prime and the complete divisibility-to-reflection argument, then the fixed-source edge identification used inside model_flabby. Kept injectivity only for label identification and relative primality, and restricted the distinct-edge conclusion to a common source."
     },
     {
       "node": "kl.local.localized_coset_kernels",
@@ -2088,6 +2170,33 @@
       "review": "Read localizedReduction_associated with its arbitrary localization subspace P, the distinct-positive-root line exclusion, and both definitional polynomial-root compatibility formulas. Kept the span P(a,b) separate from P and derived the explicit nonzero real coefficient through the generic lemma."
     },
     {
+      "node": "kl.local.orbit_spline_congruence",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.orbitSpline_self",
+        "OAI.KLInvariance.TitsSpace.orbitSpline_reflection"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 123,
+      "proof_sha256": "cde07999c90a01f4e875c54682740a0dde9e679cf2d01e0d75fdac95f09bcf09",
+      "review": "Read the exact displacement calculation in orbitSpline_reflection and its coefficient c. Retained a general representing root, the left reflection action and the order x*y^-1 before taking the polynomial image."
+    },
+    {
+      "node": "kl.local.orbit_spline_factors",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.Represents.independent_of_ne",
+        "OAI.KLInvariance.TitsSpace.Represents.extended_independent_of_ne",
+        "OAI.KLInvariance.TitsSpace.exists_pair_vector",
+        "OAI.KLInvariance.TitsSpace.orbitSpline_single_factor",
+        "OAI.KLInvariance.TitsSpace.orbitSpline_pair_factor"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 269,
+      "proof_sha256": "fb543d651c1997fe277346e9470c7b012399024ea7d2f4a5a7447f48f9b30f2c",
+      "review": "Read the single-factor vector, root-independence norm argument, extended normal-form independence, prescribed (-1,0) pair and three value calculations. Kept both representing-root hypotheses, the group product directions and x!=z."
+    },
+    {
       "node": "kl.local.plane_prime_membership",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2104,6 +2213,22 @@
       "revised_proof_words": 275,
       "proof_sha256": "640d4fd8639531946431a243660267b5b716e64a409c70a464d6411eff7850f8",
       "review": "Rechecked mapped ideal membership and the unit/maximal-ideal criteria, then expanded planePrime_span into both ideal containments for any pair of positive roots."
+    },
+    {
+      "node": "kl.local.structure_sheaf_properties",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_free",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_finite",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_support",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_generated",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_upperQuotient",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_minimal"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 310,
+      "proof_sha256": "189b727dfdc284ea7eceb62d071482a14e3819d5bc368cd5d7033e38a4349aeb",
+      "review": "Read all basic structureSheaf property lemmas and the local minimality proof. Preserved arbitrary commutative rings for the basic properties, and the separate local-ring, maximal-ideal-label and outgoing-edge hypotheses for minimality."
     },
     {
       "node": "kl.main.combinatorial_invariance",
@@ -2447,6 +2572,17 @@
       "formatting_check": "The second matrix row starts with a space after the TeX row separator; matrix entries remain 2,c,c,2."
     },
     {
+      "node": "kl.realization.form_pair_surjective",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionPlane.formPair_surjective"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 185,
+      "proof_sha256": "3ef983c5da4e4bcfedb5c043b03e1d94216cd6036a755bab77a4b9f7b0426010",
+      "review": "Read formPair_surjective: expanded the dual functional in the two coordinate evaluations, used independence to kill both coefficients and explained the finite-dimensional annihilator criterion used to conclude surjectivity."
+    },
+    {
       "node": "kl.realization.orthogonal_rank_one",
       "source_declarations": [
         "OAI.KLInvariance.Realization.orthogonal_rank_one_form",
@@ -2476,13 +2612,14 @@
     {
       "node": "kl.realization.reflection_plane",
       "source_declarations": [
-        "OAI.KLInvariance.ReflectionPlane.range_preReflection_product_sub_id"
+        "OAI.KLInvariance.ReflectionPlane.range_preReflection_product_sub_id",
+        "OAI.KLInvariance.ReflectionPlane.formPair_surjective"
       ],
       "proof_steps": 3,
       "previous_proof_words": 45,
       "revised_proof_words": 147,
-      "proof_sha256": "d9c586cd95427445452099d52436ad184b8e0f67dfefd6498fc060c9c64917dc",
-      "review": "Rechecked the existing coefficient formula and independent-functional surjectivity proof; removed precautionary closing prose.",
+      "proof_sha256": "966f6602085cef04ada740e2b3f4802f8e77b5efbde4658bad3b65ddb76d7831",
+      "review": "Kept the composite pre-reflection calculation and target coefficient solution; extracted the independent-form surjectivity argument into its own reusable theorem and linked the exact source declaration.",
       "heading_revision": "Replaced the question-style step heading with its mathematical statement; verified the non-heading proof text is unchanged."
     },
     {

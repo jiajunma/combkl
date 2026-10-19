@@ -56,7 +56,9 @@
       "kl.coxeter.bruhat_successor",
       "kl.coxeter.dihedral_bruhat_order",
       "kl.coxeter.dihedral_reduced_words",
+      "kl.coxeter.external_vertices",
       "kl.coxeter.interval_restriction",
+      "kl.coxeter.lower_interval_parity",
       "kl.coxeter.parabolic_decomposition",
       "kl.coxeter.parabolic_subgroups",
       "kl.coxeter.rank_embedding",
@@ -178,15 +180,24 @@
       "kl.detail.structure_sheaves",
       "kl.local.coset_graph",
       "kl.local.coset_outgoing_lifts",
+      "kl.local.dihedral_interpolation",
       "kl.local.edge_inclusion",
+      "kl.local.flow_down",
+      "kl.local.flow_down_flabbiness",
       "kl.local.free_target_localization",
+      "kl.local.induced_flow_down",
+      "kl.local.induced_label_primes",
       "kl.local.localized_coset",
       "kl.local.localized_coset_kernels",
       "kl.local.localized_coset_properties",
       "kl.local.localized_decomposition",
       "kl.local.localized_edge_ring",
       "kl.local.localized_root_reduction",
+      "kl.local.orbit_spline_congruence",
+      "kl.local.orbit_spline_factors",
+      "kl.local.orbit_splines",
       "kl.local.plane_prime_membership",
+      "kl.local.structure_sheaf_properties",
       "kl.notes.dihedral_models",
       "kl.notes.sheaf_localization",
       "kl.notes.upper_image_free",
@@ -208,6 +219,7 @@
       "kl.realization.extension_minimality",
       "kl.realization.faithful_actions",
       "kl.realization.finite_reflection_relations",
+      "kl.realization.form_pair_surjective",
       "kl.realization.geometric_action",
       "kl.realization.linear_reflection",
       "kl.realization.moving_spaces",
@@ -240,6 +252,7 @@
       "kl.dihedral.induced_signed_action",
       "kl.dihedral.induced_system",
       "kl.dihedral.minimal_plane_cosets",
+      "kl.dihedral.odd_reflection_edges",
       "kl.dihedral.plane_basis_existence",
       "kl.dihedral.plane_coset_graph",
       "kl.dihedral.plane_generation",
@@ -1413,11 +1426,32 @@
       "paper_locations": []
     },
     {
+      "id": "kl.coxeter.external_vertices",
+      "chapter": "kl.coxeter",
+      "lean_declarations": [
+        "OAI.KLInvariance.externalLower",
+        "OAI.KLInvariance.mem_externalLower",
+        "OAI.KLInvariance.Dihedral.oppositeExternal",
+        "OAI.KLInvariance.Dihedral.sameExternal"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.coxeter.interval_restriction",
       "chapter": "kl.coxeter",
       "lean_declarations": [
         "OAI.KLInvariance.intervalIso_restrict",
         "OAI.KLInvariance.intervalIso_restrict_val"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.coxeter.lower_interval_parity",
+      "chapter": "kl.coxeter",
+      "lean_declarations": [
+        "OAI.KLInvariance.simple_mul_bruhat_of_descent",
+        "OAI.KLInvariance.lower_parity_balance",
+        "OAI.KLInvariance.external_parity_card_le"
       ],
       "paper_locations": []
     },
@@ -1747,6 +1781,7 @@
       "id": "kl.detail.dihedral_model_properties",
       "chapter": "kl.localization",
       "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.model_flabby",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.model_flabby",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.model_generated",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.model_quotient"
@@ -2297,7 +2332,9 @@
       "id": "kl.detail.structure_sheaves",
       "chapter": "kl.localization",
       "lean_declarations": [
-        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf"
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureVertexIso",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureCompatible_iff"
       ],
       "paper_locations": []
     },
@@ -2510,6 +2547,18 @@
         "OAI.KLInvariance.TitsSpace.root_nonpos_coset_minimal_iff",
         "OAI.KLInvariance.TitsSpace.root_inversion_coset_iff",
         "OAI.KLInvariance.TitsSpace.leftInversion_coset_iff"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.odd_reflection_edges",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.alt_odd_sandwich",
+        "OAI.KLInvariance.Dihedral.odd_alt_reflection",
+        "OAI.KLInvariance.Dihedral.reflection_iff_odd",
+        "OAI.KLInvariance.Dihedral.step_iff_odd",
+        "OAI.KLInvariance.Dihedral.reflection_of_parity"
       ],
       "paper_locations": []
     },
@@ -3274,6 +3323,14 @@
       "paper_locations": []
     },
     {
+      "id": "kl.local.dihedral_interpolation",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.interpolation_exists"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.local.edge_inclusion",
       "chapter": "kl.localization",
       "lean_declarations": [
@@ -3282,6 +3339,26 @@
       "paper_locations": [
         "5. Comparison of edge images; sec:edge"
       ]
+    },
+    {
+      "id": "kl.local.flow_down",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.modelOutgoing",
+        "OAI.KLInvariance.MomentGraph.Sheaf.mem_modelOutgoing",
+        "OAI.KLInvariance.MomentGraph.Sheaf.modelProduct",
+        "OAI.KLInvariance.MomentGraph.Sheaf.HasFlowDown"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.local.flow_down_flabbiness",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureCompatible_iff",
+        "OAI.KLInvariance.MomentGraph.Sheaf.flowDown_flabby"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.local.free_target_localization",
@@ -3294,6 +3371,30 @@
       "paper_locations": [
         "5. Comparison of edge images; sec:edge"
       ]
+    },
+    {
+      "id": "kl.local.induced_flow_down",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.external_step",
+        "OAI.KLInvariance.Dihedral.step_external",
+        "OAI.KLInvariance.Dihedral.externalEdge",
+        "OAI.KLInvariance.Dihedral.externalEdge_mem",
+        "OAI.KLInvariance.Dihedral.outgoingEquiv",
+        "OAI.KLInvariance.Dihedral.interpolation_product",
+        "OAI.KLInvariance.Dihedral.hasFlowDown"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.local.induced_label_primes",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.inducedLabel_prime",
+        "OAI.KLInvariance.Dihedral.label_eq_of_induced_dvd",
+        "OAI.KLInvariance.Dihedral.model_flabby"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.local.localized_coset",
@@ -3362,6 +3463,36 @@
       "paper_locations": []
     },
     {
+      "id": "kl.local.orbit_spline_congruence",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.orbitSpline_self",
+        "OAI.KLInvariance.TitsSpace.orbitSpline_reflection"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.local.orbit_spline_factors",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.Represents.independent_of_ne",
+        "OAI.KLInvariance.TitsSpace.Represents.extended_independent_of_ne",
+        "OAI.KLInvariance.TitsSpace.exists_pair_vector",
+        "OAI.KLInvariance.TitsSpace.orbitSpline_single_factor",
+        "OAI.KLInvariance.TitsSpace.orbitSpline_pair_factor"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.local.orbit_splines",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.linearPolynomial",
+        "OAI.KLInvariance.TitsSpace.orbitSpline"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.local.plane_prime_membership",
       "chapter": "kl.localization",
       "lean_declarations": [
@@ -3373,6 +3504,19 @@
         "OAI.KLInvariance.TitsSpace.linear_mem_maximal_iff",
         "OAI.KLInvariance.TitsSpace.linear_isUnit_iff",
         "OAI.KLInvariance.BruhatGraph.planePrime_span"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.local.structure_sheaf_properties",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_free",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_finite",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_support",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_generated",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_upperQuotient",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_minimal"
       ],
       "paper_locations": []
     },
@@ -3481,10 +3625,8 @@
       "lean_declarations": [
         "OAI.KLInvariance.Dihedral.inducedRoot",
         "OAI.KLInvariance.Dihedral.inducedLabel",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.modelLabel",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.model_flabby",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.model_generated",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.model_quotient"
+        "OAI.KLInvariance.Dihedral.interpolationRoot",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.modelLabel"
       ],
       "paper_locations": [
         "4. Localization at a root plane; loc:models"
@@ -3856,6 +3998,14 @@
       "paper_locations": []
     },
     {
+      "id": "kl.realization.form_pair_surjective",
+      "chapter": "kl.realizations",
+      "lean_declarations": [
+        "OAI.KLInvariance.ReflectionPlane.formPair_surjective"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.realization.geometric_action",
       "chapter": "kl.realizations",
       "lean_declarations": [
@@ -3959,7 +4109,8 @@
       "id": "kl.realization.reflection_plane",
       "chapter": "kl.realizations",
       "lean_declarations": [
-        "OAI.KLInvariance.ReflectionPlane.range_preReflection_product_sub_id"
+        "OAI.KLInvariance.ReflectionPlane.range_preReflection_product_sub_id",
+        "OAI.KLInvariance.ReflectionPlane.formPair_surjective"
       ],
       "paper_locations": [
         "2. Real realizations and moment-graph sheaves; sec:background"

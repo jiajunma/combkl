@@ -1276,3 +1276,46 @@ concepts:
   - scalar extension
   topics:
   - kl.sheaves
+- node: kl.coxeter.external_vertices
+  terms:
+  - external lower set
+  - external lower sets
+  - opposite-parity external vertices
+  - same-parity external vertices
+  - external parity classes
+  topics:
+  - kl.coxeter
+  - kl.localization
+  - kl.reflection_combinatorics
+- node: kl.local.orbit_splines
+  terms:
+  - orbit spline
+  - orbit splines
+  - orbit-spline factor
+  - orbit-spline factors
+  - polynomial spline
+  - polynomial splines
+  topics:
+  - kl.localization
+  - kl.realizations
+- node: kl.local.flow_down
+  terms:
+  - flow-down section
+  - flow-down sections
+  - flow-down property
+  - supported outgoing set
+  - supported outgoing sets
+  - supported outgoing label product
+  - supported outgoing product
+  topics:
+  - kl.localization
+- node: kl.notes.dihedral_models
+  terms:
+  - induced polynomial label
+  - induced polynomial labels
+  - induced label
+  - induced labels
+  - interpolation root
+  - interpolation roots
+  topics:
+  - kl.localization
