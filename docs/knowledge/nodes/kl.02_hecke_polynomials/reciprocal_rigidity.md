@@ -1,12 +1,13 @@
 ---
 id: kl.comparison.reciprocal_rigidity
-title: Rigidity below the middle degree
+title: Rigidity of a low-degree polynomial under reciprocal evaluation
 kind: theorem
 status: proved
 primary_topic: kl.02_hecke_polynomials
 topics:
 - kl.02_hecke_polynomials
-uses: []
+uses:
+- kl.hecke.polynomial_reflection
 lean:
   repository: openai-kl
   modules:
@@ -35,52 +36,68 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Does the exposition preserve the mathematical scope of its Lean declarations?
-  verdict: The stated hypotheses and conclusion follow the fixed source; explanatory
-    derivations retain the original proof route.
+  prompt: Does the exposition preserve the exact domain, degree conventions and source
+    argument?
+  verdict: Read both Comparison rigidity theorems. Explained the passage from all
+    real parameters to polynomial equality, the finite-root argument, the decisive
+    coefficient and the injective coefficient map.
 tags:
 - Kazhdan-Lusztig
-- induction
+- Hecke
 ---
 
-# Rigidity below the middle degree
+# Rigidity of a low-degree polynomial under reciprocal evaluation
 
-Let \(f\in\mathbb R[q]\) with \(2\deg f<d\). If
+Let \(f\in\mathbb R[q]\), \(d\in\mathbb N\), and
+\(2\,\operatorname{natDegree}(f)<d\).
+If
 \[
-f(q)=q^d f(q^{-1})\qquad(0<q<1),
+f(q)=q^df(q^{-1})\qquad(0<q<1),
 \]
-then \(f=0\). Consequently, two integral polynomials satisfying the strict half-degree bound are equal if their difference obeys this reciprocal identity.
+then \(f=0\).
+
+Consequently, integral polynomials \(P,P'\), each satisfying the strict midpoint bound, are equal if
+\[
+P(q)-P'(q)=q^d\bigl(P(q^{-1})-P'(q^{-1})\bigr)
+\qquad(0<q<1).
+\]
 
 *Proof.*
 
-### Step 1. Turn reciprocal evaluations into a polynomial identity
+### Step 1. Replace reciprocal evaluation by a polynomial
 
-Let \(p\in\mathbb R[q]\), with \(m=\deg p\) when \(p\ne0\), and assume \(2\operatorname{natDegree}(p)<d\). In particular its degree is at most \(d\), so
-\[
-p^\vee(q)=q^dp(q^{-1})
-\]
-is a polynomial: if \(p(q)=\sum_{i=0}^m a_iq^i\), then
-\(p^\vee(q)=\sum_{i=0}^m a_iq^{d-i}\).
+The degree bound implies \(\operatorname{natDegree}(f)\le d\). Its reflected polynomial
+\(f^\vee=\operatorname{reflect}_df\)
+therefore satisfies
+\(f^\vee(q)=q^df(q^{-1})\) at every nonzero real \(q\).
 
-The hypothesis gives \(p(q)=p^\vee(q)\) for every real \(0<q<1\). The interval contains infinitely many numbers; therefore the polynomial \(p-p^\vee\) has infinitely many roots and is zero. We have obtained the polynomial identity \(p=p^\vee\), not just equality at a selected parameter.
+The assumed identity says \(f(q)-f^\vee(q)=0\) on the interval \((0,1)\).
 
-### Step 2. Compare one decisive coefficient
+### Step 2. Obtain equality of polynomials
 
-Suppose \(p\ne0\). Its coefficient \(a_m\) is nonzero. Since \(2m<d\), we have \(d-m>m\), so the coefficient of \(q^{d-m}\) in \(p\) is zero.
+The interval contains infinitely many distinct real numbers, for example \(1/(n+2)\) for natural \(n\).
 
-But the coefficient of \(q^{d-m}\) in \(p^\vee\) is exactly \(a_m\): the term with index \(i=m\) produces that exponent, and no other index does. The identity \(p=p^\vee\) therefore says \(0=a_m\), a contradiction. Hence \(p=0\).
+A nonzero polynomial of degree \(m\) has at most \(m\) distinct roots: at a root \(a\), the factor theorem divides out \(q-a\); at any different root the remaining factor still vanishes; each division lowers the degree by one. Therefore a polynomial with infinitely many roots must be zero.
 
-### Step 3. Apply this to a difference of two integral polynomials
+Apply this to \(f-f^\vee\). We obtain the polynomial identity
+\(\operatorname{reflect}_df=f\).
 
-Let \(P,P'\in\mathbb Z[q]\), each strictly below the middle degree. Put
-\(p=(P-P')\) and view its coefficients in \(\mathbb R\).
-Subtraction cannot increase the degree beyond the maximum of the two original degrees, so \(p\) satisfies the same strict half-degree bound.
+### Step 3. Compare the coefficient at the natural degree
 
-If the assumed reciprocal-difference equation holds for \(P-P'\), Steps 1–2 give \(p=0\) over \(\mathbb R\). Injectivity of \(\mathbb Z\to\mathbb R\) gives \(P=P'\) over \(\mathbb Z\). No positivity of the coefficients of \(P\) or \(P'\) is used.
+Suppose \(f\ne0\), and put \(m=\operatorname{natDegree}(f)\). Its coefficient \(f_m\) is nonzero. Since \(2m<d\), we have \(d-m>m\), and hence \(f_{d-m}=0\).
+
+The coefficient of the reflected polynomial at \(m\) is \(f_{d-m}=0\). The identity from Step 2 says it equals \(f_m\), a contradiction. Thus \(f=0\).
+
+### Step 4. Apply the conclusion to an integral difference
+
+Put \(g=(P-P')\) and map its integer coefficients into \(\mathbb R\). Subtraction creates no exponent beyond the maximum of the two original natural degrees; mapping coefficients creates no new exponent. Hence
+\(2\,\operatorname{natDegree}(g)<d\).
+
+The assumed reciprocal-difference identity is exactly the hypothesis of Steps 1–3 for this real polynomial. Thus its real coefficients all vanish. Injectivity of \(\mathbb Z\to\mathbb R\) makes every integer coefficient of \(P-P'\) zero, proving \(P=P'\).
 
 ## References
 
-[6. Reciprocity and simultaneous induction](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/05-comparison.tex#L194).
+The local source declarations below give the construction and proof.
 
 ## Lean formalization
 

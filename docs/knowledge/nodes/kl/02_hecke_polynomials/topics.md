@@ -162,37 +162,111 @@ For a reduced word with product \(b\), monotonicity of the upper simple envelope
 \]
 The [[node:kl.detail.word_character_formula|word-module character theorem]] later identifies \(h_\omega(x;q)\) with its stalk character. [[node:kl.word.support_duality|Word support duality]] identifies the reciprocal expression with its full outgoing-kernel character. This supplies the R-convolution used in boundary-model cancellation.
 
-## Canonical KL polynomials from reciprocity and degree
+## The normalization data and the recursive P-family
 
-The KL polynomial \(P_{x,y}(q)\) satisfies \(P_{x,x}=1\), vanishes outside Bruhat order, and obeys
+A normalized pair consists of two integral polynomial families. The R-family has diagonal one, vanishes outside \(x\le y\), and satisfies the ordinary recurrence for every left descent of \(y\). The P-family has diagonal one, the same support condition, the strict midpoint degree bound, and the reciprocity equation
 \[
-q^{d}P_{x,y}(q^{-1})
-=\sum_{x\le z\le y}R_{x,z}(q)P_{z,y}(q),
-\qquad d=\ell(y)-\ell(x).
+\operatorname{reflect}_{d(x,y)}P_{x,y}
+=\sum_{x\le z\le y}R_{x,z}P_{z,y}.
 \]
-When \(x<y\), its degree must be strictly less than \(d/2\).
+These are the seven fields of the normalization data.
 
-To see what must be constructed, isolate the term \(z=x\). Since \(R_{x,x}=1\), the equation becomes
+The ordinary R-family is already constructed. To build P, set \(P_{x,x}=1\) and \(P_{x,y}=0\) outside \(x\le y\). On a strict interval define the reciprocity defect
 \[
-q^dP_{x,y}(q^{-1})-P_{x,y}(q)
-=\sum_{x<z\le y}R_{x,z}(q)P_{z,y}(q).
+D_{x,y}=\sum_{x<z\le y}R_{x,z}P_{z,y}.
 \]
-Every polynomial on the right involves a smaller upper interval. It is already available in the recursion. Thus the unknown polynomial occurs only on the left.
-
-For a polynomial of degree below \(d/2\), its original coefficients occupy the low degrees, whereas its reflected coefficients occupy the high degrees. Reading the low-degree part of the right-hand side therefore determines the unknown coefficients. The lower-half construction carries this out; the R-kernel identity proves that the remaining high-degree equations are consistent. The uniqueness theorem then shows that no second polynomial with the same degree bound can solve the equation.
-
-The detailed defect entry fixes the sign used by the implementation when naming this right-hand-side data.
-
-## The KL polynomial on a two-element interval
-
-For \(x=1,y=s\), we have \(d=1\), so \(P_{1,s}\) must be a constant \(c\). The two terms of reciprocity are
+The bottom \(x\) is omitted, while the top \(y\) is included. Each \(P_{z,y}\) has smaller rank because
 \[
-qc=R_{1,1}P_{1,s}+R_{1,s}P_{s,s}
-=c+(q-1).
+d(z,y)=\ell(y)-\ell(z)<\ell(y)-\ell(x)=d(x,y).
 \]
-Rearranging gives \((q-1)c=q-1\), hence \(c=1\).
+Thus strong recursion on the rank difference determines the sum before constructing the next P-value.
 
-This example already shows the roles of the ingredients. The R-recursion supplies \(q-1\); the degree bound reduces the unknown to a constant; reciprocity fixes that constant. In larger intervals the same mechanism determines several low-degree coefficients.
+## The coefficient choice below the midpoint
+
+For \(p(q)=\sum_i a_iq^i\), its strict lower-half truncation is
+\[
+\operatorname{low}_dp=\sum_{2i<d}a_iq^i.
+\]
+At even \(d=2m\) it keeps degrees \(0,\ldots,m-1\); at odd \(d=2m+1\) it keeps \(0,\ldots,m\).
+
+Suppose \(P\) is supported strictly below \(d/2\). Its reflection has no coefficients below that midpoint. Reading
+\[
+\operatorname{reflect}_dP=P+D
+\]
+in a low degree gives \(0=P_i+D_i\). Hence the required choice is
+\[
+P=-\operatorname{low}_dD.
+\]
+The negative sign comes directly from the equation.
+
+For an anti-reciprocal defect, \(D_{d-i}=-D_i\). Its middle coefficient is zero when \(d\) is even, since an integer equal to its negative must vanish. Coefficients above \(d\) also vanish: Lean's reflection fixes those positions, and [[node:kl.hecke.defect_antireciprocity|anti-reciprocity]] again makes each coefficient equal to its negative.
+
+These relations prove the high-degree equations for the chosen \(P\). In a low degree, \(P_i+D_i=0\). In a high degree, the reflected coefficient is \(-D_{d-i}=D_i\). At the middle both sides are zero. This is the [[node:kl.hecke.low_part_solution|lower-half solution theorem]].
+
+For the algebraic example
+\[
+d=3,\qquad D=q^3+2q^2-2q-1,
+\]
+the construction gives \(P=1+2q\), and
+\[
+\operatorname{reflect}_3P=q^3+2q^2=P+D.
+\]
+
+## The R-kernel calculation behind anti-reciprocity
+
+In a strict interval \(x<y\), assume reciprocity has been proved for every proper upper pair \((z,y)\). Degree bounds and rank additivity permit reflection of each product:
+\[
+\operatorname{reflect}_{d(x,y)}(R_{x,z}P_{z,y})
+=\overline R_{x,z}\operatorname{reflect}_{d(z,y)}P_{z,y}.
+\]
+Substitute the smaller reciprocity equations and interchange the two finite sums:
+\[
+\begin{aligned}
+\operatorname{reflect}_{d(x,y)}D_{x,y}
+&=\sum_{x<z\le y}\overline R_{x,z}
+  \sum_{t\le y}R_{z,t}P_{t,y}\\
+&=\sum_{t\le y}
+  \left(\sum_{x<z\le y}\overline R_{x,z}R_{z,t}\right)P_{t,y}.
+\end{aligned}
+\]
+
+The [[node:kl.hecke.proper_r_kernel|reversed R-kernel identity, with its bottom term removed]], evaluates the parenthesized sum as
+\[
+\delta_{x,t}-R_{x,t}.
+\]
+Its delta contribution is \(P_{x,y}\), while the other contribution is the negative full R-weighted sum. Consequently
+\[
+\operatorname{reflect}_{d(x,y)}D_{x,y}
+=P_{x,y}-\sum_{t\le y}R_{x,t}P_{t,y}
+=-D_{x,y}.
+\]
+
+The defect is therefore anti-reciprocal. The lower-half solution theorem gives the new reciprocity equation. The degree bound was already ensured by the truncation, so the rank induction supplies every P-condition.
+
+## Two small interval calculations
+
+On \([1,s]\), the defect is \(q-1\), whose lower half in degree one is \(-1\). Thus \(P_{1,s}=1\), and reciprocity reads
+\[
+q=1+(q-1).
+\]
+
+For distinct simple reflections \(s,t\), the interval \([1,st]\) has the four elements \(1,s,t,st\). Its three proper-upper contributions are
+\[
+D_{1,st}=(q-1)\cdot1+(q-1)\cdot1+(q-1)^2\cdot1=q^2-1.
+\]
+The negative lower half in degree two is again one, so \(P_{1,st}=1\) and reciprocity reads \(q^2=1+(q^2-1)\).
+
+## Uniqueness and the selected interfaces
+
+Two normalized R-families agree by induction on the upper length: they have the same values at upper endpoint \(1\), and each descent recurrence uses a shorter upper endpoint.
+
+Once R is common, compare two P-families by induction on interval rank. The proper-upper terms of their reciprocal equations agree by induction. Subtraction leaves
+\[
+\operatorname{reflect}_df=f,\qquad f=P_{x,y}-P'_{x,y}.
+\]
+The difference remains strictly below the midpoint. If its highest nonzero degree were \(m\), then \(d-m>m\). Reflection would give coefficient zero at \(m\), while \(f_m\ne0\), a contradiction. Thus \(f=0\).
+
+The constructed pair supplies all seven fields, and these two inductions prove uniqueness. The source's selected pair, klFamilies, is therefore the constructed pair. Its [[node:kl.hecke.selected_families|public components]] rPolynomial and klPolynomial agree with the explicit R and recursive P formulas.
 
 ## The square parameter and normalized reciprocity
 
@@ -221,6 +295,24 @@ For \([1,s]\), \(p_1(t)=t^{-1}\) and \(p_s(t)=1\). The equation becomes
 t^{-1}=t+(t^{-1}-t)\cdot1.
 \]
 This is exactly the one-edge transfer that will reappear in Hilbert comparison.
+
+## Reciprocal scaled differences
+
+For an integral polynomial \(p\), write \(S_d(p;t)=t^{-d}p(t^2)\). A monomial \(a_iq^i\) contributes \(a_it^{2i-d}\). The strict midpoint bound makes these exponents negative; inversion changes them to \(d-2i\).
+
+Suppose two polynomials \(P,P'\) satisfy that bound and
+\[
+S_d(P;t)-S_d(P';t)
+=S_d(P;t^{-1})-S_d(P';t^{-1})
+\quad(0<t<1).
+\]
+For any \(0<q<1\), put \(t=\sqrt q\). Writing \(\Delta=P-P'\), the equation is
+\[
+t^{-d}\Delta(q)=t^d\Delta(q^{-1}).
+\]
+Multiplication by \(t^d\) gives \(\Delta(q)=q^d\Delta(q^{-1})\). The equality on an infinite real interval implies a polynomial reflection identity. The same [[node:kl.hecke.low_degree_rigidity|highest-coefficient argument]] then gives \(\Delta=0\).
+
+This is the precise passage from [[node:kl.hecke.scaled_difference_rigidity|reciprocal equality of scaled evaluations]] to equality of integral polynomials. Its nodes connect the final comparison to the degree restriction in the normalization data.
 
 ## Outputs for the invariance proof
 
@@ -269,6 +361,15 @@ The actual boundary character \(C\) has its own R-reciprocity, proved through sh
 - [[node:kl.detail.kl_defect]]
 - [[node:kl.detail.kl_recursion]]
 - [[node:kl.foundations.canonical_kl]]
+- [[node:kl.hecke.low_part_properties]]
+- [[node:kl.hecke.low_part_solution]]
+- [[node:kl.hecke.low_degree_rigidity]]
+- [[node:kl.hecke.recursive_p]]
+- [[node:kl.hecke.recursive_p_degree]]
+- [[node:kl.hecke.proper_r_kernel]]
+- [[node:kl.hecke.defect_antireciprocity]]
+- [[node:kl.hecke.normalization_unique]]
+- [[node:kl.hecke.selected_families]]
 
 ### Word expansions and rigidity
 
@@ -277,3 +378,5 @@ The actual boundary character \(C\) has its own R-reciprocity, proved through sh
 - [[node:kl.notes.dihedral_kl]]
 - [[node:kl.hecke.positive_words]]
 - [[node:kl.hecke.positive_word_reciprocity]]
+- [[node:kl.hecke.scaled_polynomials]]
+- [[node:kl.hecke.scaled_difference_rigidity]]

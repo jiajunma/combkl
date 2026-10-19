@@ -31,44 +31,62 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Does the exposition preserve the mathematical scope of its Lean declarations?
-  verdict: The stated hypotheses and conclusion follow the fixed source; explanatory
-    derivations retain the original proof route.
+  prompt: Does the exposition preserve the exact domain, degree conventions and source
+    argument?
+  verdict: Read lowPart and its finite range. Explained parity, d=0, the strict coefficient
+    cutoff, the minus sign in the candidate and an explicit polynomial example.
 tags:
 - Kazhdan-Lusztig
-- introduction
+- Hecke
 ---
 
 # The strict lower-half truncation
 
-For \(d\in\mathbb N\) and \(p(q)=\sum_n a_nq^n\in\mathbb Z[q]\), set
+For \(d\in\mathbb N\) and \(p(q)=\sum_{n\ge0}a_nq^n\in\mathbb Z[q]\), define
 \[
 \operatorname{low}_d(p)=\sum_{2n<d}a_nq^n.
 \]
-When \(d>0\), this polynomial satisfies the strict half-degree bound. If the \(d\)-reflection of \(p\) is \(-p\), the negative lower-half truncation supplies the low-degree solution to the reciprocal defect equation used in the canonical KL recursion.
+The inequality is strict. It retains the exponents below the midpoint \(d/2\).
 
-## Solving a reciprocal defect
+Lean writes the finite index set as
+\[
+0\le n<\left\lfloor\frac{d+1}{2}\right\rfloor.
+\]
+For even \(d=2m\), the allowed exponents are \(0,\ldots,m-1\). For odd \(d=2m+1\), they are \(0,\ldots,m\). At \(d=0\), the sum is empty and the result is zero.
 
-At a nontrivial interval, write the contribution from the already constructed upper terms as
+For \(p=4-3q+2q^2+7q^3\),
 \[
-D(q)=\sum_{x<z\le y}R_{x,z}(q)P_{z,y}(q).
+\operatorname{low}_3p=4-3q,\qquad
+\operatorname{low}_4p=4-3q,\qquad
+\operatorname{low}_5p=4-3q+2q^2.
 \]
-The reciprocal equation for the unknown polynomial is
-\[
-q^dP(q^{-1})=P(q)+D(q).
-\]
-The construction proves the required anti-reciprocity of the defect and chooses \(P=-\operatorname{low}_d(D)\).
+The operation discards coefficients according to the chosen bound \(d\), independently of their signs.
 
-As a polynomial calculation, take \(d=3\) and
-\(D=q^3+2q^2-2q-1\). Its strict lower half is \(-1-2q\), so \(P=1+2q\). Directly,
+## The low coefficients of a reciprocity equation
+
+Suppose a polynomial \(P\) is supported strictly below \(d/2\), and
 \[
-q^3P(q^{-1})=q^3+2q^2=P(q)+D(q).
+\operatorname{reflect}_dP=P+D.
 \]
-This calculation illustrates the truncation operation; it does not assert that this chosen defect comes from a particular Bruhat interval.
+Every term of the reflected polynomial has degree strictly above \(d/2\). Therefore the coefficient of degree \(n\) with \(2n<d\) on the left is zero. The right coefficient is \(P_n+D_n\), so
+\(P_n=-D_n\).
+
+This determines the candidate
+\[
+P=-\operatorname{low}_dD.
+\]
+The [[node:kl.hecke.low_part_solution|anti-reciprocal solution theorem]] verifies that this candidate satisfies the whole equation when \(\operatorname{reflect}_dD=-D\).
+
+For the polynomial example \(d=3\),
+\(D=q^3+2q^2-2q-1\),
+the candidate is \(P=1+2q\). Direct calculation gives
+\[
+\operatorname{reflect}_3P=q^3+2q^2=P+D.
+\]
 
 ## References
 
-[1. Introduction and conventions](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/01-introduction.tex#L1).
+The local source declarations below give the construction and proof.
 
 ## Lean formalization
 

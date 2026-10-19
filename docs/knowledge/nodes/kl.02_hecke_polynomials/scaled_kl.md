@@ -8,21 +8,23 @@ topics:
 - kl.02_hecke_polynomials
 uses:
 - kl.foundations.rtilde
-- kl.foundations.normalized_kl
+- kl.foundations.canonical_kl
+- kl.hecke.recursive_p_degree
+- kl.hecke.scaled_polynomials
 - kl.hecke.polynomial_reflection
 lean:
   repository: openai-kl
   modules:
   - Dihedral
   declarations:
-  - OAI.KLInvariance.scaledKL
+  - OAI.KLInvariance.scaledKL_reciprocity_inverse
   - OAI.KLInvariance.scaledKL_reciprocity
 source:
   spans:
   - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.Dihedral:730
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Dihedral:737
     format: lean-location
-    note: OAI.KLInvariance.scaledKL
+    note: OAI.KLInvariance.scaledKL_reciprocity_inverse
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.Dihedral:790
     format: lean-location
@@ -38,26 +40,28 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Does the exposition preserve the mathematical scope of its Lean declarations?
-  verdict: The stated hypotheses and conclusion follow the fixed source; explanatory
-    derivations retain the original proof route.
+  prompt: Does the exposition preserve the exact domain, degree conventions and source
+    argument?
+  verdict: Read both scaledKL reciprocity proofs. Checked weak-degree reflection evaluation
+    at v squared, finite sums, rank additivity, exact exponent cancellation and the
+    final inverse substitution.
 tags:
 - Kazhdan-Lusztig
-- introduction
+- Hecke
 ---
 
 # Normalized KL reciprocity in the square parameter
 
-For a nonzero field element \(t\), define
+Let \(t\ne0\) lie in a field and let \(x\le b\). Write
 \[
-p_x(t)=t^{\ell(x)-\ell(b)}P_{x,b}(t^2).
+p_x(t)=t^{-d(x,b)}P_{x,b}(t^2).
 \]
 Then
 \[
 p_x(t)=\sum_{z\in[x,b]}
  \widetilde R_{x,z}(t^{-1}-t)\,p_z(t^{-1}).
 \]
-Over the real interval \(0<t<1\), the common transfer coefficient is \(T=t^{-1}-t>0\).
+For real \(0<t<1\), the parameter \(t^{-1}-t\) is positive.
 
 <!-- source-comparison:start -->
 ## Relation to the OpenAI notes
@@ -73,51 +77,73 @@ Over the real interval \(0<t<1\), the common transfer coefficient is \(T=t^{-1}-
 
 *Proof.*
 
-### Step 1. Start from polynomial reciprocity
+### Step 1. Evaluate the canonical reciprocity equation
 
-Let \(d(x,b)=\ell(b)-\ell(x)\) and \(v\ne0\). The canonical identity, evaluated at \(q=v^2\), is
+Take a nonzero field element \(v\). The canonical normalization gives
+\[
+\operatorname{reflect}_{d(x,b)}P_{x,b}
+=\sum_{z\in[x,b]}R_{x,z}P_{z,b}.
+\]
+The canonical P-value equals the recursive P-value, whose weak degree bound is at most \(d(x,b)\). The bounded reflection evaluation theorem therefore applies at the unit \(v^2\), giving
 \[
 v^{2d(x,b)}P_{x,b}(v^{-2})
-=\sum_{x\le z\le b}R_{x,z}(v^2)P_{z,b}(v^2).
+=\sum_{z\in[x,b]}R_{x,z}(v^2)P_{z,b}(v^2).
 \]
-The degree bound ensures that evaluating polynomial reflection gives exactly the expression on the left.
+Evaluation preserves the finite sum and each product.
 
-### Step 2. Multiply by the scale and identify the left side
+### Step 2. Multiply by the scale
 
-Multiply by \(v^{-d(x,b)}\). The left side becomes
+Multiply both sides by \(v^{-d(x,b)}\). On the left the exponents add:
 \[
-v^{d(x,b)}P_{x,b}(v^{-2})=k_x(v^{-1}),
+v^{-d(x,b)}v^{2d(x,b)}P_{x,b}(v^{-2})
+=v^{d(x,b)}P_{x,b}(v^{-2})
+=p_x(v^{-1}).
 \]
-where \(k_x(v)=v^{-d(x,b)}P_{x,b}(v^2)\).
+The final equality uses \((v^{-1})^{-d}=v^d\) and \((v^{-1})^2=v^{-2}\).
 
-### Step 3. Simplify each summand on the right
+### Step 3. Convert each R-factor and combine the powers
 
-Use square-parameter normalization
-\(R_{x,z}(v^2)=v^{d(x,z)}\widetilde R_{x,z}(v-v^{-1})\).
-Rank additivity gives \(d(x,b)=d(x,z)+d(z,b)\). Therefore
+For each \(x\le z\le b\), the [[node:kl.foundations.rtilde|square-parameter normalization]] gives
 \[
+R_{x,z}(v^2)=v^{d(x,z)}
+ \widetilde R_{x,z}(v-v^{-1}).
+\]
+Length differences add:
+\(d(x,b)=d(x,z)+d(z,b)\).
+Thus the corresponding scaled summand becomes
+\[
+\begin{aligned}
 v^{-d(x,b)}R_{x,z}(v^2)P_{z,b}(v^2)
-=\widetilde R_{x,z}(v-v^{-1})\,v^{-d(z,b)}P_{z,b}(v^2).
+&=\widetilde R_{x,z}(v-v^{-1})
+  v^{-d(x,b)+d(x,z)}P_{z,b}(v^2)\\
+&=\widetilde R_{x,z}(v-v^{-1})\,p_z(v).
+\end{aligned}
 \]
-The final factor is \(k_z(v)\). We have proved
+This proves the inverse-direction formula
 \[
-k_x(v^{-1})=\sum_z\widetilde R_{x,z}(v-v^{-1})k_z(v).
+p_x(v^{-1})=\sum_z\widetilde R_{x,z}(v-v^{-1})p_z(v).
 \]
 
-### Step 4. Invert the parameter
+### Step 4. Substitute the inverse parameter
 
-Replace \(v\) by \(t^{-1}\), which is nonzero whenever \(t\ne0\). Then \(v-v^{-1}=t^{-1}-t\), and
+Set \(v=t^{-1}\), which is nonzero. Then \(v^{-1}=t\) and \(v-v^{-1}=t^{-1}-t\). Substitution gives the stated formula.
+
+For real \(0<t<1\), division of \(t<1\) by \(t>0\) gives \(1<t^{-1}\). Hence \(t^{-1}>1>t\), proving \(t^{-1}-t>0\).
+
+### Step 5. Evaluate the rank-one example
+
+For \([1,s]\), the scaled values are \(p_1(t)=t^{-1}\), \(p_s(t)=1\), and \(\widetilde R_{1,s}(T)=T\). The equation reads
 \[
-k_x(t)=\sum_z\widetilde R_{x,z}(t^{-1}-t)k_z(t^{-1}).
+t^{-1}=t+(t^{-1}-t)\cdot1.
 \]
-For \(0<t<1\), this parameter is positive. The positive sign comes from applying reciprocity at the inverted parameter; it is not an independent change in the definition of \(\widetilde R\).
+Its two terms correspond to the bottom and top vertices in the reciprocal interval sum.
 
 ## References
 
-[1. Introduction and conventions](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/01-introduction.tex#L1).
+The local source declarations below give the construction and proof.
 
 ## Lean formalization
 
-`OAI.KLInvariance.scaledKL`: [Dihedral.lean:730](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Dihedral.lean#L730).
+`OAI.KLInvariance.scaledKL_reciprocity_inverse`: [Dihedral.lean:737](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Dihedral.lean#L737).
 
 `OAI.KLInvariance.scaledKL_reciprocity`: [Dihedral.lean:790](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Dihedral.lean#L790).

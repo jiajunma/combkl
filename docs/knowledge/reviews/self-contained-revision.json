@@ -2279,9 +2279,200 @@
       "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/polynomial_reflection.md",
       "source_declarations": [
         "OAI.KLInvariance.eval₂_reflect_unit",
-        "OAI.KLInvariance.reflect_finset_sum"
+        "OAI.KLInvariance.reflect_finset_sum",
+        "OAI.KLInvariance.CanonicalP.lowPart_solution"
       ],
-      "review": "Read eval₂_reflect_unit and the local finite-sum reflection lemma. Explained the bounded-degree operation, coefficient reversal, product rule, double reflection and natural degree of zero.",
+      "review": "Read the coefficient cases in lowPart_solution, including revAt above the chosen degree. Extended the earlier bounded definition to the actual full operation and retained bounds on reciprocal evaluation and products.",
+      "pending": []
+    },
+    {
+      "node": "kl.foundations.low_half",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/low_half.md",
+      "source_declarations": [
+        "OAI.KLInvariance.CanonicalP.lowPart"
+      ],
+      "review": "Read lowPart and its finite range. Explained parity, d=0, the strict coefficient cutoff, the minus sign in the candidate and an explicit polynomial example.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.low_part_properties",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/low_part_properties.md",
+      "source_declarations": [
+        "OAI.KLInvariance.CanonicalP.coeff_lowPart",
+        "OAI.KLInvariance.CanonicalP.lowPart_degree"
+      ],
+      "review": "Read coeff_lowPart and lowPart_degree; expanded the finite coefficient extraction, both parity cases and the positive-d hypothesis with the natural degree convention.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.low_part_solution",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/low_part_solution.md",
+      "source_declarations": [
+        "OAI.KLInvariance.CanonicalP.lowPart_solution"
+      ],
+      "review": "Read the four coefficient cases of lowPart_solution. The proof retains its unrestricted d and derives high-degree vanishing from integer anti-reciprocity rather than assuming a degree bound.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.low_degree_rigidity",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/low_degree_rigidity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.low_degree_reflect_eq_self"
+      ],
+      "review": "Read low_degree_reflect_eq_self in Bruhat; used its decisive coefficient at natural degree and derived uniqueness of a low-degree defect solution by subtraction.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.recursive_p",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/recursive_p.md",
+      "source_declarations": [
+        "OAI.KLInvariance.CanonicalP.polynomial",
+        "OAI.KLInvariance.CanonicalP.polynomial_diagonal",
+        "OAI.KLInvariance.CanonicalP.polynomial_zero",
+        "OAI.KLInvariance.CanonicalP.polynomial_recursion"
+      ],
+      "review": "Read polynomial and its termination proof. Explained all branches, attached finite-index evidence, strict rank decrease, the negative lower-half choice and explicit first-rank computations.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.kl_defect",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/kl_defect.md",
+      "source_declarations": [
+        "OAI.KLInvariance.properIntervalFinset",
+        "OAI.KLInvariance.mem_properIntervalFinset",
+        "OAI.KLInvariance.CanonicalP.defect",
+        "OAI.KLInvariance.CanonicalP.defect_full_sum"
+      ],
+      "review": "Read properIntervalFinset, defect and defect_full_sum. Specified the excluded bottom, support-zero terms, diagonal removal and all-pair definition.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.recursive_p_degree",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/recursive_p_degree.md",
+      "source_declarations": [
+        "OAI.KLInvariance.CanonicalP.polynomial_diagonal",
+        "OAI.KLInvariance.CanonicalP.polynomial_zero",
+        "OAI.KLInvariance.CanonicalP.polynomial_strict_degree",
+        "OAI.KLInvariance.CanonicalP.polynomial_degree"
+      ],
+      "review": "Read polynomial_strict_degree and polynomial_degree. The bound is obtained before reciprocity; included positive rank, the zero natural degree and all three endpoint cases.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.proper_r_kernel",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/proper_r_kernel.md",
+      "source_declarations": [
+        "OAI.KLInvariance.sum_proper_eq_sub",
+        "OAI.KLInvariance.CanonicalP.reversed_kernel_on_lower",
+        "OAI.KLInvariance.CanonicalP.reversed_kernel_on_proper"
+      ],
+      "review": "Read reversed_kernel_on_lower/proper and sum_proper_eq_sub. Explained extension by zero terms to a common lower ideal, removal of incomparable indices and subtraction of the bottom term.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.defect_antireciprocity",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/defect_antireciprocity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.CanonicalP.polynomial_reciprocity",
+        "OAI.KLInvariance.CanonicalP.defect_full_sum",
+        "OAI.KLInvariance.CanonicalP.reversed_kernel_on_proper"
+      ],
+      "review": "Read the local hanti calculation in polynomial_reciprocity. Retained the conditional smaller-interval equations and detailed degree hypotheses, both finite sums, the proper kernel and delta cancellation.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.kl_recursion",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/kl_recursion.md",
+      "source_declarations": [
+        "OAI.KLInvariance.CanonicalP.polynomial_reciprocity"
+      ],
+      "review": "Read polynomial_reciprocity. Made the all-comparable rank induction, diagonal lower-ideal sum, each proper upper interval and the two detailed supporting calculations explicit.",
+      "pending": []
+    },
+    {
+      "node": "kl.foundations.normalized_kl",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/normalized_kl.md",
+      "source_declarations": [
+        "OAI.KLInvariance.PolynomialFamilies",
+        "OAI.KLInvariance.NormalizedKL"
+      ],
+      "review": "Read all seven NormalizedKL fields and PolynomialFamilies. Preserved every-descent quantification, the natural degree convention, interval subtype sum and reflected polynomial form.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.normalization_unique",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/normalization_unique.md",
+      "source_declarations": [
+        "OAI.KLInvariance.normalized_R_unique",
+        "OAI.KLInvariance.normalized_P_unique",
+        "OAI.KLInvariance.normalizedKL_unique"
+      ],
+      "review": "Read normalized_R_unique, normalized_P_unique and normalizedKL_unique. Separated the upper-length and interval-rank inductions, all endpoint cases, the single surviving bottom term and the exact degree bound for the difference.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.selected_families",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/selected_families.md",
+      "source_declarations": [
+        "OAI.KLInvariance.klFamilies",
+        "OAI.KLInvariance.klPolynomial",
+        "OAI.KLInvariance.rPolynomial"
+      ],
+      "review": "Read klFamilies/klPolynomial in Model and rPolynomial in Bruhat, plus their later equality interfaces. Kept the classical selection distinct from the explicit recursive constructors.",
+      "pending": []
+    },
+    {
+      "node": "kl.foundations.canonical_kl",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/canonical_kl.md",
+      "source_declarations": [
+        "OAI.KLInvariance.normalized_interval_sum",
+        "OAI.KLInvariance.constructed_normalizedKL",
+        "OAI.KLInvariance.normalizedKL_existsUnique",
+        "OAI.KLInvariance.klFamilies_spec",
+        "OAI.KLInvariance.klFamilies_eq_constructed",
+        "OAI.KLInvariance.klPolynomial_eq_constructed",
+        "OAI.KLInvariance.rPolynomial_eq_constructed"
+      ],
+      "review": "Read normalized_interval_sum, the seven-field construction, unique existence and all selected-family equalities. Every field is supplied by an explicit prior theorem and the lower-ideal/interval sum conversion is explained.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.scaled_polynomials",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/scaled_polynomials.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Comparison.scaledPolynomial",
+        "OAI.KLInvariance.scaledKL"
+      ],
+      "review": "Read scaledPolynomial and scaledKL. Distinguished the real general-polynomial interface from the field-valued KL interface, retained the integer exponent, and expanded coefficient exponents and linearity.",
+      "pending": []
+    },
+    {
+      "node": "kl.foundations.scaled_kl",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/scaled_kl.md",
+      "source_declarations": [
+        "OAI.KLInvariance.scaledKL_reciprocity_inverse",
+        "OAI.KLInvariance.scaledKL_reciprocity"
+      ],
+      "review": "Read both scaledKL reciprocity proofs. Checked weak-degree reflection evaluation at v squared, finite sums, rank additivity, exact exponent cancellation and the final inverse substitution.",
+      "pending": []
+    },
+    {
+      "node": "kl.comparison.reciprocal_rigidity",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/reciprocal_rigidity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Comparison.low_degree_zero_of_eval_reciprocal",
+        "OAI.KLInvariance.Comparison.eq_of_eval_difference_reciprocal"
+      ],
+      "review": "Read both Comparison rigidity theorems. Explained the passage from all real parameters to polynomial equality, the finite-root argument, the decisive coefficient and the injective coefficient map.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.scaled_difference_rigidity",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/scaled_difference_rigidity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Comparison.eq_of_scaled_difference_reciprocal"
+      ],
+      "review": "Read eq_of_scaled_difference_reciprocal in SimultaneousInvariance. Preserved quantification over all t in (0,1), the square-root substitution and the multiplication that converts scaled symmetry to ordinary reciprocal evaluation.",
       "pending": []
     }
   ],
@@ -2456,13 +2647,26 @@
     {
       "code": "H4",
       "title": "Canonical KL polynomials",
-      "status": "in_progress",
+      "status": "exposition_reviewed",
       "completion_evidence": [
-        "kl.hecke.polynomial_reflection"
+        "kl.detail.kl_defect",
+        "kl.detail.kl_recursion",
+        "kl.foundations.canonical_kl",
+        "kl.foundations.low_half",
+        "kl.foundations.normalized_kl",
+        "kl.hecke.defect_antireciprocity",
+        "kl.hecke.low_degree_rigidity",
+        "kl.hecke.low_part_properties",
+        "kl.hecke.low_part_solution",
+        "kl.hecke.normalization_unique",
+        "kl.hecke.polynomial_reflection",
+        "kl.hecke.proper_r_kernel",
+        "kl.hecke.recursive_p",
+        "kl.hecke.recursive_p_degree",
+        "kl.hecke.selected_families"
       ],
-      "pending": [
-        "Expand the canonical lower-half/defect construction and its reciprocity/existence proof, with every NormalizedKL field and the selected-family interface."
-      ]
+      "pending": [],
+      "review": "Reviewed full polynomial reflection, lower-part coefficient/degree/solution lemmas, the recursive family, proper-interval defect and kernel sum, anti-reciprocity and rank induction, all seven NormalizedKL fields, uniqueness and the selected interfaces."
     },
     {
       "code": "H5",
@@ -2470,10 +2674,14 @@
       "status": "in_progress",
       "completion_evidence": [
         "kl.hecke.positive_words",
-        "kl.hecke.positive_word_reciprocity"
+        "kl.hecke.positive_word_reciprocity",
+        "kl.hecke.scaled_polynomials",
+        "kl.foundations.scaled_kl",
+        "kl.comparison.reciprocal_rigidity",
+        "kl.hecke.scaled_difference_rigidity"
       ],
       "pending": [
-        "Complete the dihedral KL calculation, scaled polynomial vectors and reciprocal-difference rigidity review."
+        "Complete the detailed dihedral interval-sum/bar calculation and its constant-P identification. Positive words, scaled evaluations and both reciprocal rigidity interfaces are now expanded."
       ]
     },
     {
@@ -2912,7 +3120,7 @@
     }
   ],
   "next_steps": [
-    "Expand canonical KL construction and the remaining word-character identification; complete generic sheaf base change and morphism extension.",
+    "Expand the dihedral KL calculation and the remaining word-character identification; complete generic sheaf base change and morphism extension.",
     "Complete standard-parabolic inclusion and finite-support transport; finish word wall maps, pair kernels, and character recursions.",
     "Expand adapted-order/chamber changes, dihedral interval transport, and the path-polynomial proof.",
     "Review the remaining Hecke, localization, and simultaneous-comparison arguments against their local source bodies.",
@@ -3206,7 +3414,18 @@
       "kl.hecke.bar_coefficient_inverse": "H3",
       "kl.hecke.positive_words": "H5",
       "kl.hecke.positive_word_reciprocity": "H5",
-      "kl.hecke.polynomial_reflection": "H4"
+      "kl.hecke.polynomial_reflection": "H4",
+      "kl.hecke.low_part_properties": "H4",
+      "kl.hecke.low_part_solution": "H4",
+      "kl.hecke.low_degree_rigidity": "H4",
+      "kl.hecke.recursive_p": "H4",
+      "kl.hecke.recursive_p_degree": "H4",
+      "kl.hecke.proper_r_kernel": "H4",
+      "kl.hecke.defect_antireciprocity": "H4",
+      "kl.hecke.normalization_unique": "H4",
+      "kl.hecke.selected_families": "H4",
+      "kl.hecke.scaled_polynomials": "H5",
+      "kl.hecke.scaled_difference_rigidity": "H5"
     },
     "moved_nodes": [
       {
@@ -4040,7 +4259,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 275
+    "current_node_count": 286
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -4053,7 +4272,8 @@
     "Completed the detailed minimal-cover/top-detection and adjoint-boundary recognition chain, the word pairing degree, and transport to the chosen polynomial-coordinate boundary sheaf.",
     "Expanded the complete root-plane-to-induced-dihedral construction and least-coset graph comparison, mapped InducedSigned, and refined the topic-stage relationship map to place plane inversion changes before the induced system.",
     "Expanded boundary existence, uniqueness and restrictions; lower-supported models; local stalk remainders and full graded decomposition; simultaneous stalk/kernel multiplicities, with a shared one-edge example and distinct splitting/pairing and decomposition/character routes.",
-    "Expanded the operator-to-R construction: both Hecke conventions, cyclic reduced-word independence, bar intertwining and triangularity, polynomiality and degree, signed parameter reciprocity, inverse coefficients, and positive-word convolution. Added a bounded polynomial-reflection definition and rebuilt the topic guide around these dependencies."
+    "Expanded the operator-to-R construction: both Hecke conventions, cyclic reduced-word independence, bar intertwining and triangularity, polynomiality and degree, signed parameter reciprocity, inverse coefficients, and positive-word convolution. Added a bounded polynomial-reflection definition and rebuilt the topic guide around these dependencies.",
+    "Expanded the full canonical KL construction from the negative lower half: degree control, proper R-kernel, anti-reciprocal defect, rank induction, seven normalization fields and selected-family identification. Added explicit integral and scaled reciprocal rigidity and the square-parameter calculation."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -4119,6 +4339,11 @@
       "term": "positive Hecke word",
       "target": "kl.hecke.positive_words",
       "review": "Moved the alias from the combined word-character entry to the dedicated algebraic definition; word-stalk character aliases retain their original target."
+    },
+    {
+      "term": "lower-half KL recursion",
+      "target": "kl.hecke.recursive_p",
+      "review": "The recursion now has its own definition; reciprocity-defect aliases stay attached to the proper-upper sum definition."
     }
   ],
   "corrections": [
@@ -4138,15 +4363,15 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-19T06:07:27.039807+00:00",
+    "created_at": "2026-10-19T06:26:24.366193+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 275,
-    "html_pages_checked": 535,
-    "generated_definition_links_checked": 3531,
+    "node_count": 286,
+    "html_pages_checked": 546,
+    "generated_definition_links_checked": 3588,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 mapped local structures retain complete field coverage; no Lean execution."
+    "field_audit_scope": "All 35 local structures have direct mappings and complete field coverage; NormalizedKL lists every field with its exact source name."
   },
   "structure_coverage_scan": {
     "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
@@ -4179,6 +4404,13 @@
         "kl.notes.relative_dihedral_intervals"
       ],
       "review": "The displacement subgroup uses the original geometric action. The finite plane inversion count is defined before the induced Coxeter system and is later proved to equal intrinsic length. Relative intervals map monotonically and injectively into ambient intervals."
+    },
+    {
+      "entries": [
+        "kl.hecke.polynomial_reflection",
+        "kl.hecke.low_part_solution"
+      ],
+      "review": "Polynomial.reflect reverses indices through d and fixes indices above d. Integer anti-reciprocity forces all coefficients above d and the possible middle coefficient to vanish, so the lowPart_solution theorem needs no separate degree hypothesis."
     }
   ],
   "relationship_map_revision": {

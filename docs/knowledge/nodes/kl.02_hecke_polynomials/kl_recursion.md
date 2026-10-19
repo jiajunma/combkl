@@ -7,31 +7,23 @@ primary_topic: kl.02_hecke_polynomials
 topics:
 - kl.02_hecke_polynomials
 uses:
+- kl.hecke.recursive_p
 - kl.detail.kl_defect
-- kl.detail.r_kernel
-- kl.foundations.low_half
+- kl.hecke.recursive_p_degree
+- kl.hecke.defect_antireciprocity
+- kl.hecke.low_part_solution
 lean:
   repository: openai-kl
   modules:
   - CanonicalKL
   declarations:
-  - OAI.KLInvariance.CanonicalP.lowPart_solution
   - OAI.KLInvariance.CanonicalP.polynomial_reciprocity
-  - OAI.KLInvariance.CanonicalP.polynomial_strict_degree
 source:
   spans:
-  - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.CanonicalKL:43
-    format: lean-location
-    note: OAI.KLInvariance.CanonicalP.lowPart_solution
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.CanonicalKL:162
     format: lean-location
     note: OAI.KLInvariance.CanonicalP.polynomial_reciprocity
-  - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.CanonicalKL:104
-    format: lean-location
-    note: OAI.KLInvariance.CanonicalP.polynomial_strict_degree
   - artifact: openai-kl-paper
     locator: Related paper context; sec:introduction
     format: section
@@ -43,89 +35,89 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Does the entry preserve the source hypotheses, construction, and conclusion?
-  verdict: Read against the named Lean declarations and surrounding variable context;
-    explanatory examples are distinguished from the formal statement.
+  prompt: Does the exposition preserve the exact domain, degree conventions and source
+    argument?
+  verdict: Read polynomial_reciprocity. Made the all-comparable rank induction, diagonal
+    lower-ideal sum, each proper upper interval and the two detailed supporting calculations
+    explicit.
 tags:
 - Kazhdan-Lusztig
-- hecke_polynomials
+- Hecke
 ---
 
 # Reciprocity of the lower-half construction
 
-The recursively constructed family satisfies
+For the recursively constructed family and every comparable \(x\le y\),
 \[
-q^{d(x,y)}P_{x,y}(q^{-1})
-=\sum_{x\leq z\leq y}R_{x,z}(q)P_{z,y}(q),
-\qquad
-2\deg P_{x,y}<d(x,y)\quad(x<y).
+\operatorname{reflect}_{d(x,y)}P_{x,y}
+=\sum_{z\le y}R_{x,z}P_{z,y}
+=\sum_{x\le z\le y}R_{x,z}P_{z,y}.
 \]
+Since \(\deg P_{x,y}\le d(x,y)\), the left side is also \(q^{d(x,y)}P_{x,y}(q^{-1})\).
+
+<!-- source-comparison:start -->
+## Relation to the OpenAI notes
+
+**Explicit construction of the normalized family.**
+
+**OpenAI notes:** The conventions specify the ordinary R recurrence, the strict P degree bound and reciprocity, referring to the classical Kazhdan–Lusztig normalization. [sec:introduction](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/01-introduction.tex#L1), [eq:reciprocity](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/01-introduction.tex#L235).
+
+**Lean (primary):** After constructing R, the development defines P by the negative lower half of the proper-upper defect. The reversed R-kernel proves that defect anti-reciprocal, yielding reciprocity. Separate uniqueness inductions identify the selected family with the construction. [CanonicalKL:70](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean#L70), [CanonicalKL:162](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean#L162), [Bruhat:204](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Bruhat.lean#L204), [CanonicalKL:260](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean#L260), [CanonicalKL:282](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean#L282).
+
+**Role in the proof:** The KB presents the coefficient solution, defect identity, rank induction and seven normalization fields as a continuous construction. The classical selection interfaces are then identified with the explicit formulas.
+<!-- source-comparison:end -->
 
 *Proof.*
 
-### Step 1. Make the induction data explicit
+### Step 1. State the rank induction
 
-For \(x<y\), put \(d=d(x,y)\) and
+Use strong induction on the natural rank difference \(d(x,y)\), for every comparable pair. The weak and strict degree bounds are already available from the recursive definition.
+
+When \(x=y\), \(P_{x,x}=1\) and reflection in degree zero fixes one. In the lower-ideal sum, the term \(z=x\) is \(R_{x,x}P_{x,x}=1\).
+
+For any other \(z\le x\), the comparison \(x\le z\) would force \(z=x\) by antisymmetry. Hence \(R_{x,z}=0\), and every other term is zero. This proves the diagonal case.
+
+### Step 2. Verify each smaller induction instance
+
+Now take \(x<y\), and write \(d=d(x,y)>0\). For every \(z\) with \(x<z\le y\),
 \[
-D_{x,y}=\sum_{x<z\le y}R_{x,z}P_{z,y},
-\qquad P_{x,y}=-\operatorname{low}_dD_{x,y}.
+d(z,y)=\ell(y)-\ell(z)<\ell(y)-\ell(x)=d.
 \]
-Every term \(P_{z,y}\) has smaller rank because \(z>x\). Induct on \(d\). The diagonal case has \(P_{x,x}=R_{x,x}=1\), so reciprocity holds.
-
-The construction itself gives \(\deg P_{x,y}<d/2\): the truncation retains exactly the exponents \(i\) with \(2i<d\), and changing a sign creates no new exponent.
-
-### Step 2. Reflect the defect and substitute the smaller reciprocity equations
-
-Let a bar on an entry with endpoints \(u,v\) mean reflection in degree \(d(u,v)\). Rank additivity and the degree bounds give
+The induction hypothesis at \((z,y)\) therefore gives exactly
 \[
-\overline{D}_{x,y}
-=\sum_{x<z\le y}\overline R_{x,z}\,\overline P_{z,y}.
-\]
-The induction hypothesis says
-\(\overline P_{z,y}=\sum_{z\le w\le y}R_{z,w}P_{w,y}\).
-Substitute it and interchange the two finite sums:
-\[
-\overline D_{x,y}
-=\sum_{x<w\le y}
-\left(\sum_{x<z\le w}\overline R_{x,z}R_{z,w}\right)P_{w,y}.
+\operatorname{reflect}_{d(z,y)}P_{z,y}
+=\sum_{t\le y}R_{z,t}P_{t,y}.
 \]
 
-### Step 3. Evaluate the inner sum
+### Step 3. Obtain the current anti-reciprocal defect
 
-For \(w>x\), the R-kernel identity gives
-\(\sum_{x\le z\le w}\overline R_{x,z}R_{z,w}=0\).
-Its \(z=x\) term is \(R_{x,w}\), because \(R_{x,x}=1\). Removing that term gives
+The [[node:kl.hecke.defect_antireciprocity|defect anti-reciprocity theorem]] applies to the equations in Step 2. Its degree hypotheses hold by the already proved R and recursive-P bounds. It gives
 \[
-\sum_{x<z\le w}\overline R_{x,z}R_{z,w}=-R_{x,w}.
+\operatorname{reflect}_dD_{x,y}=-D_{x,y}.
 \]
-Thus Step 2 becomes
-\(\overline D_{x,y}=-\sum_{x<w\le y}R_{x,w}P_{w,y}=-D_{x,y}\).
-This proves the anti-reciprocity required by the lower-half construction.
 
-### Step 4. Solve the anti-reciprocal equation coefficient by coefficient
+### Step 4. Solve the defect equation
 
-Write \(D=\sum_i a_iq^i\), and set \(P=-\sum_{2i<d}a_iq^i\). Anti-reciprocity says \(a_{d-i}=-a_i\). If \(d\) is even, its middle coefficient satisfies \(a_{d/2}=-a_{d/2}\), hence is zero over \(\mathbb Z\).
+By the defining recursion,
+\(P_{x,y}=-\operatorname{low}_dD_{x,y}\).
+The [[node:kl.hecke.low_part_solution|lower-half solution theorem]], applied to Step 3, yields
+\[
+\operatorname{reflect}_dP_{x,y}=P_{x,y}+D_{x,y}.
+\]
+The full-sum identity for \(D_{x,y}\) identifies the right side with
+\(\sum_{z\le y}R_{x,z}P_{z,y}\).
+This proves the new induction case.
 
-For \(2i<d\), the coefficient of \(q^i\) in \(\overline P\) is zero, and that in \(P+D\) is \(-a_i+a_i=0\).
-For \(2i>d\), the coefficient in \(\overline P\) is \(-a_{d-i}=a_i\), and that in \(P+D\) is \(a_i\).
-At the middle, both are zero. Outside degrees \(0,\ldots,d\), the bounds give zero. Hence \(\overline P=P+D\).
+### Step 5. Restrict the sum to the interval
 
-### Step 5. Restore the omitted diagonal summand
+A term with \(z\le y\) but \(x\not\le z\) has \(R_{x,z}=0\). Removing those terms gives the sum over \([x,y]\).
 
-Since \(R_{x,x}=1\), \(P_{x,y}+D_{x,y}\) is exactly
-\(\sum_{x\le z\le y}R_{x,z}P_{z,y}\).
-Step 4 is the desired reciprocity equation. Together with the degree observation in Step 1, this completes the induction.
+The degree bound permits reciprocal evaluation of the reflected polynomial, giving the displayed power notation and completing the proof.
 
 ## References
 
-[Related paper context](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/01-introduction.tex#L1).
+The local source declarations below give the construction and proof.
 
 ## Lean formalization
 
-
-
-`OAI.KLInvariance.CanonicalP.lowPart_solution`: [CanonicalKL.lean:43](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean#L43).
-
 `OAI.KLInvariance.CanonicalP.polynomial_reciprocity`: [CanonicalKL.lean:162](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean#L162).
-
-`OAI.KLInvariance.CanonicalP.polynomial_strict_degree`: [CanonicalKL.lean:104](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean#L104).

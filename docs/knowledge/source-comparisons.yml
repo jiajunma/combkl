@@ -376,3 +376,27 @@ comparisons:
   consequence: The KB develops these algebraic constructions before the geometric
     path formula. The recurrence and inverse-parameter coefficient identities used
     by the character argument follow from the constructed operators.
+- id: canonical-lower-half-construction
+  kind: Explicit construction of the normalized family
+  nodes:
+  - kl.foundations.canonical_kl
+  - kl.detail.kl_recursion
+  - kl.hecke.normalization_unique
+  paper_labels:
+  - sec:introduction
+  - eq:reciprocity
+  lean_declarations:
+  - OAI.KLInvariance.CanonicalP.polynomial
+  - OAI.KLInvariance.CanonicalP.polynomial_reciprocity
+  - OAI.KLInvariance.normalizedKL_unique
+  - OAI.KLInvariance.constructed_normalizedKL
+  - OAI.KLInvariance.klFamilies_eq_constructed
+  paper: The conventions specify the ordinary R recurrence, the strict P degree bound
+    and reciprocity, referring to the classical Kazhdan–Lusztig normalization.
+  lean: After constructing R, the development defines P by the negative lower half
+    of the proper-upper defect. The reversed R-kernel proves that defect anti-reciprocal,
+    yielding reciprocity. Separate uniqueness inductions identify the selected family
+    with the construction.
+  consequence: The KB presents the coefficient solution, defect identity, rank induction
+    and seven normalization fields as a continuous construction. The classical selection
+    interfaces are then identified with the explicit formulas.

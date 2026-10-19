@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 49662,
-  "theorem_walkthroughs": 165,
+  "revised_proof_words": 51185,
+  "theorem_walkthroughs": 173,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -167,11 +167,11 @@
         "OAI.KLInvariance.Comparison.low_degree_zero_of_eval_reciprocal",
         "OAI.KLInvariance.Comparison.eq_of_eval_difference_reciprocal"
       ],
-      "proof_steps": 3,
+      "proof_steps": 4,
       "previous_proof_words": 61,
-      "revised_proof_words": 229,
-      "proof_sha256": "f33d7a9fa9fd269365e30f80498e9ff216d6d6c53966e4a0553caa61d908fe03",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 242,
+      "proof_sha256": "1e1f2d5cdca4ee0d65cbb6bddb53d0220d2663a4644027ebbd7a434fa9a8627d",
+      "review": "Read both Comparison rigidity theorems. Explained the passage from all real parameters to polynomial equality, the finite-root argument, the decisive coefficient and the injective coefficient map."
     },
     {
       "node": "kl.comparison.reverse_freeness",
@@ -516,15 +516,13 @@
     {
       "node": "kl.detail.kl_recursion",
       "source_declarations": [
-        "OAI.KLInvariance.CanonicalP.lowPart_solution",
-        "OAI.KLInvariance.CanonicalP.polynomial_reciprocity",
-        "OAI.KLInvariance.CanonicalP.polynomial_strict_degree"
+        "OAI.KLInvariance.CanonicalP.polynomial_reciprocity"
       ],
       "proof_steps": 5,
       "previous_proof_words": 120,
-      "revised_proof_words": 292,
-      "proof_sha256": "179756fdd0da0f3872176b952434bd741e0aea664ef0fad4869156c221911027",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 239,
+      "proof_sha256": "c2a665a8d713f3f119c1159057f5cdcd524312a84615cb52b5a0c21ee2cd89f3",
+      "review": "Read polynomial_reciprocity. Made the all-comparable rank induction, diagonal lower-ideal sum, each proper upper interval and the two detailed supporting calculations explicit."
     },
     {
       "node": "kl.detail.linear_quotient",
@@ -953,15 +951,19 @@
     {
       "node": "kl.foundations.canonical_kl",
       "source_declarations": [
+        "OAI.KLInvariance.normalized_interval_sum",
+        "OAI.KLInvariance.constructed_normalizedKL",
         "OAI.KLInvariance.normalizedKL_existsUnique",
         "OAI.KLInvariance.klFamilies_spec",
-        "OAI.KLInvariance.klPolynomial_eq_constructed"
+        "OAI.KLInvariance.klFamilies_eq_constructed",
+        "OAI.KLInvariance.klPolynomial_eq_constructed",
+        "OAI.KLInvariance.rPolynomial_eq_constructed"
       ],
-      "proof_steps": 4,
+      "proof_steps": 5,
       "previous_proof_words": 76,
-      "revised_proof_words": 302,
-      "proof_sha256": "642f6dd744568ee03e9b7404df5db930c806e6079ea7bfffce15473b12de0c3d",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 262,
+      "proof_sha256": "471b0ebf89597bad95c34a03d54c4b00ef290eb931bed1f9caa210e85421c11c",
+      "review": "Read normalized_interval_sum, the seven-field construction, unique existence and all selected-family equalities. Every field is supplied by an explicit prior theorem and the lower-ideal/interval sum conversion is explained."
     },
     {
       "node": "kl.foundations.finite_intervals",
@@ -1013,14 +1015,14 @@
     {
       "node": "kl.foundations.scaled_kl",
       "source_declarations": [
-        "OAI.KLInvariance.scaledKL",
+        "OAI.KLInvariance.scaledKL_reciprocity_inverse",
         "OAI.KLInvariance.scaledKL_reciprocity"
       ],
-      "proof_steps": 4,
+      "proof_steps": 5,
       "previous_proof_words": 29,
-      "revised_proof_words": 150,
-      "proof_sha256": "eb8dac916de4b8bbcebbf9a07d3d1db84bfd3672dbfb6270acb20af39a625751",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 218,
+      "proof_sha256": "a12faac1917dd8d4b6290c7a60ea54cb6a19fdb3428aad6da339d382e3a14402",
+      "review": "Read both scaledKL reciprocity proofs. Checked weak-degree reflection evaluation at v squared, finite sums, rank additivity, exact exponent cancellation and the final inverse substitution."
     },
     {
       "node": "kl.foundations.subword",
@@ -1125,6 +1127,66 @@
       "review": "Read both left_right_commute proofs. Expanded the noncollapsed orientation square in both parameter conventions and the identical two-dimensional action in the collapsed case."
     },
     {
+      "node": "kl.hecke.defect_antireciprocity",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.CanonicalP.polynomial_reciprocity",
+        "OAI.KLInvariance.CanonicalP.defect_full_sum",
+        "OAI.KLInvariance.CanonicalP.reversed_kernel_on_proper"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 237,
+      "proof_sha256": "728d105dd5cd632c97337f57a614f559a6d747060b821f92e419140a1cf2ca31",
+      "review": "Read the local hanti calculation in polynomial_reciprocity. Retained the conditional smaller-interval equations and detailed degree hypotheses, both finite sums, the proper kernel and delta cancellation."
+    },
+    {
+      "node": "kl.hecke.low_degree_rigidity",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.low_degree_reflect_eq_self"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 142,
+      "proof_sha256": "ef040314a4b27b0886e57ac873ab66c0f9963b31e8dc8640ed2089b9e0b8ff3b",
+      "review": "Read low_degree_reflect_eq_self in Bruhat; used its decisive coefficient at natural degree and derived uniqueness of a low-degree defect solution by subtraction."
+    },
+    {
+      "node": "kl.hecke.low_part_properties",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.CanonicalP.coeff_lowPart",
+        "OAI.KLInvariance.CanonicalP.lowPart_degree"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 143,
+      "proof_sha256": "96402883172d24a4e6ec116424b1d43f127f5a882178766ec3e8e0e1d02dc8d6",
+      "review": "Read coeff_lowPart and lowPart_degree; expanded the finite coefficient extraction, both parity cases and the positive-d hypothesis with the natural degree convention."
+    },
+    {
+      "node": "kl.hecke.low_part_solution",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.CanonicalP.lowPart_solution"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 229,
+      "proof_sha256": "68a548abaf07b8c355617b81c9d0d227fee3f4009298c42adb1b2e2f8d099d4a",
+      "review": "Read the four coefficient cases of lowPart_solution. The proof retains its unrestricted d and derives high-degree vanishing from integer anti-reciprocity rather than assuming a degree bound."
+    },
+    {
+      "node": "kl.hecke.normalization_unique",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.normalized_R_unique",
+        "OAI.KLInvariance.normalized_P_unique",
+        "OAI.KLInvariance.normalizedKL_unique"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 296,
+      "proof_sha256": "9a236deca7faf0c5dc2c5ef3fbeb0644d583c0daf0472d9f5c7102b4fb0eff7b",
+      "review": "Read normalized_R_unique, normalized_P_unique and normalizedKL_unique. Separated the upper-length and interval-rank inductions, all endpoint cases, the single surviving bottom term and the exact degree bound for the difference."
+    },
+    {
       "node": "kl.hecke.ordinary_r_construction",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -1166,6 +1228,19 @@
       "review": "Read positiveWord support, barLinear_positiveWord and positiveWord_rValue. Kept the arbitrary-word bar identity separate from the reduced-word support hypothesis and displayed the coefficient extraction and bottom power."
     },
     {
+      "node": "kl.hecke.proper_r_kernel",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.sum_proper_eq_sub",
+        "OAI.KLInvariance.CanonicalP.reversed_kernel_on_lower",
+        "OAI.KLInvariance.CanonicalP.reversed_kernel_on_proper"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 183,
+      "proof_sha256": "04965f4ca8fc8c8d6b85155f95080e41b466a24e3ce298257d95c9c1825272c2",
+      "review": "Read reversed_kernel_on_lower/proper and sum_proper_eq_sub. Explained extension by zero terms to a common lower ideal, removal of incomparable indices and subtraction of the bottom term."
+    },
+    {
       "node": "kl.hecke.r_parameter_reciprocity",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -1191,6 +1266,31 @@
       "revised_proof_words": 188,
       "proof_sha256": "d26fbbecaa12ec0aa06e0a897532a4c268af136b6fb8f5bbdd8664583c2d7c12",
       "review": "Read rValue_recursion and its coefficient input. Displayed both scalar normalizations with exact length shifts and explained why every left descent is valid."
+    },
+    {
+      "node": "kl.hecke.recursive_p_degree",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.CanonicalP.polynomial_diagonal",
+        "OAI.KLInvariance.CanonicalP.polynomial_zero",
+        "OAI.KLInvariance.CanonicalP.polynomial_strict_degree",
+        "OAI.KLInvariance.CanonicalP.polynomial_degree"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 147,
+      "proof_sha256": "072cac9fcb148cab0a384d6e76addca7c485cf042e7373758e270de75c7d6ee8",
+      "review": "Read polynomial_strict_degree and polynomial_degree. The bound is obtained before reciprocity; included positive rank, the zero natural degree and all three endpoint cases."
+    },
+    {
+      "node": "kl.hecke.scaled_difference_rigidity",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Comparison.eq_of_scaled_difference_reciprocal"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 158,
+      "proof_sha256": "5316d2c6d0d595868a11c550859e61d4dd6d65200b9962f46dc1d3fb06e40cf7",
+      "review": "Read eq_of_scaled_difference_reciprocal in SimultaneousInvariance. Preserved quantification over all t in (0,1), the square-root substitution and the multiplication that converts scaled symmetry to ordinary reciprocal evaluation."
     },
     {
       "node": "kl.hecke.word_independence",

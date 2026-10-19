@@ -22,14 +22,25 @@
       "kl.hecke.bar_interchange",
       "kl.hecke.bar_triangularity",
       "kl.hecke.commutation",
+      "kl.hecke.defect_antireciprocity",
+      "kl.hecke.low_degree_rigidity",
+      "kl.hecke.low_part_properties",
+      "kl.hecke.low_part_solution",
+      "kl.hecke.normalization_unique",
       "kl.hecke.ordinary_r_construction",
       "kl.hecke.ordinary_r_degree",
       "kl.hecke.polynomial_reflection",
       "kl.hecke.positive_word_reciprocity",
       "kl.hecke.positive_words",
+      "kl.hecke.proper_r_kernel",
       "kl.hecke.r_parameter_reciprocity",
       "kl.hecke.r_value_recursion",
       "kl.hecke.r_values",
+      "kl.hecke.recursive_p",
+      "kl.hecke.recursive_p_degree",
+      "kl.hecke.scaled_difference_rigidity",
+      "kl.hecke.scaled_polynomials",
+      "kl.hecke.selected_families",
       "kl.hecke.word_actions",
       "kl.hecke.word_independence",
       "kl.notes.dihedral_kl",
@@ -1284,8 +1295,10 @@
       "id": "kl.detail.kl_defect",
       "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
+        "OAI.KLInvariance.properIntervalFinset",
+        "OAI.KLInvariance.mem_properIntervalFinset",
         "OAI.KLInvariance.CanonicalP.defect",
-        "OAI.KLInvariance.CanonicalP.polynomial"
+        "OAI.KLInvariance.CanonicalP.defect_full_sum"
       ],
       "paper_locations": [
         "Related paper context; sec:introduction"
@@ -1295,9 +1308,7 @@
       "id": "kl.detail.kl_recursion",
       "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
-        "OAI.KLInvariance.CanonicalP.lowPart_solution",
-        "OAI.KLInvariance.CanonicalP.polynomial_reciprocity",
-        "OAI.KLInvariance.CanonicalP.polynomial_strict_degree"
+        "OAI.KLInvariance.CanonicalP.polynomial_reciprocity"
       ],
       "paper_locations": [
         "Related paper context; sec:introduction"
@@ -1988,9 +1999,13 @@
       "id": "kl.foundations.canonical_kl",
       "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
+        "OAI.KLInvariance.normalized_interval_sum",
+        "OAI.KLInvariance.constructed_normalizedKL",
         "OAI.KLInvariance.normalizedKL_existsUnique",
         "OAI.KLInvariance.klFamilies_spec",
-        "OAI.KLInvariance.klPolynomial_eq_constructed"
+        "OAI.KLInvariance.klFamilies_eq_constructed",
+        "OAI.KLInvariance.klPolynomial_eq_constructed",
+        "OAI.KLInvariance.rPolynomial_eq_constructed"
       ],
       "paper_locations": [
         "1. Introduction and conventions; sec:introduction"
@@ -2042,6 +2057,7 @@
       "id": "kl.foundations.normalized_kl",
       "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
+        "OAI.KLInvariance.PolynomialFamilies",
         "OAI.KLInvariance.NormalizedKL"
       ],
       "paper_locations": [
@@ -2074,7 +2090,7 @@
       "id": "kl.foundations.scaled_kl",
       "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
-        "OAI.KLInvariance.scaledKL",
+        "OAI.KLInvariance.scaledKL_reciprocity_inverse",
         "OAI.KLInvariance.scaledKL_reciprocity"
       ],
       "paper_locations": [
@@ -2180,6 +2196,51 @@
       "paper_locations": []
     },
     {
+      "id": "kl.hecke.defect_antireciprocity",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.CanonicalP.polynomial_reciprocity",
+        "OAI.KLInvariance.CanonicalP.defect_full_sum",
+        "OAI.KLInvariance.CanonicalP.reversed_kernel_on_proper"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.low_degree_rigidity",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.low_degree_reflect_eq_self"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.low_part_properties",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.CanonicalP.coeff_lowPart",
+        "OAI.KLInvariance.CanonicalP.lowPart_degree"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.low_part_solution",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.CanonicalP.lowPart_solution"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.normalization_unique",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.normalized_R_unique",
+        "OAI.KLInvariance.normalized_P_unique",
+        "OAI.KLInvariance.normalizedKL_unique"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.hecke.ordinary_r_construction",
       "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
@@ -2205,7 +2266,8 @@
       "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
         "OAI.KLInvariance.eval₂_reflect_unit",
-        "OAI.KLInvariance.reflect_finset_sum"
+        "OAI.KLInvariance.reflect_finset_sum",
+        "OAI.KLInvariance.CanonicalP.lowPart_solution"
       ],
       "paper_locations": []
     },
@@ -2229,6 +2291,16 @@
         "OAI.KLInvariance.HeckeQ.positiveWord",
         "OAI.KLInvariance.HeckeQ.positiveWord_nil",
         "OAI.KLInvariance.HeckeQ.positiveWord_cons_coeff"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.proper_r_kernel",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.sum_proper_eq_sub",
+        "OAI.KLInvariance.CanonicalP.reversed_kernel_on_lower",
+        "OAI.KLInvariance.CanonicalP.reversed_kernel_on_proper"
       ],
       "paper_locations": []
     },
@@ -2260,6 +2332,55 @@
         "OAI.KLInvariance.HeckeQ.rValue",
         "OAI.KLInvariance.HeckeQ.rValue_diagonal",
         "OAI.KLInvariance.HeckeQ.rValue_zero"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.recursive_p",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.CanonicalP.polynomial",
+        "OAI.KLInvariance.CanonicalP.polynomial_diagonal",
+        "OAI.KLInvariance.CanonicalP.polynomial_zero",
+        "OAI.KLInvariance.CanonicalP.polynomial_recursion"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.recursive_p_degree",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.CanonicalP.polynomial_diagonal",
+        "OAI.KLInvariance.CanonicalP.polynomial_zero",
+        "OAI.KLInvariance.CanonicalP.polynomial_strict_degree",
+        "OAI.KLInvariance.CanonicalP.polynomial_degree"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.scaled_difference_rigidity",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.Comparison.eq_of_scaled_difference_reciprocal"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.scaled_polynomials",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.Comparison.scaledPolynomial",
+        "OAI.KLInvariance.scaledKL"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.selected_families",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.klFamilies",
+        "OAI.KLInvariance.klPolynomial",
+        "OAI.KLInvariance.rPolynomial"
       ],
       "paper_locations": []
     },

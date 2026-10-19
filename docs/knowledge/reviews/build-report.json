@@ -4,7 +4,7 @@
     "path": "docs/knowledge"
   },
   "decision": "extracted",
-  "created_at": "2026-10-19T06:07:27.039807+00:00",
+  "created_at": "2026-10-19T06:26:24.366193+00:00",
   "inputs": [
     "agoramachina/openai-math@adc7f1241b42e322a6451854ab7e4b4c146bf78a"
   ],
@@ -18,42 +18,42 @@
   "code_link_repository": "https://github.com/jiajunma/combkl",
   "code_link_revision": "108243e05ed46235bf82dc30d4d90c794579776f",
   "uncovered_structure_fields": 0,
-  "node_count": 275,
+  "node_count": 286,
   "definition_navigation": {
     "engine": "Python registry matcher; no LLM calls",
-    "registry_sha256": "5d4573f62ee3b655d3b4dde5d654ecf6bf7bb16965380f6c206e5eb1067d4eac",
-    "definition_targets": 108,
-    "aliases": 496
+    "registry_sha256": "1328412c1945f722e59e6bd58bb3c1662c6d176964373b9867ef9dfc3dc4e9e8",
+    "definition_targets": 111,
+    "aliases": 520
   },
   "chapter_count": 9,
   "legacy_page_redirects": 226,
   "bundled_source_files_verified": 34,
   "node_kinds": {
-    "theorem": 165,
-    "definition": 109,
+    "theorem": 173,
+    "definition": 112,
     "concept": 1
   },
   "node_statuses": {
-    "proved": 165,
-    "formalized": 110
+    "proved": 173,
+    "formalized": 113
   },
   "proof_exposition_review": {
-    "reviewed_theorem_walkthroughs": 165,
+    "reviewed_theorem_walkthroughs": 173,
     "check_scope": "Matches reviewed prose; does not certify mathematical completeness"
   },
   "source_comparisons": {
     "authority": "Lean",
-    "entries_with_explicit_source_comparison": 48,
+    "entries_with_explicit_source_comparison": 51,
     "changed_files": 0
   },
   "diagnostics": [
     "[WARNING] lean.repository.openai-kl: Lean repository 'openai-kl' has uncommitted or untracked files"
   ],
   "browser_automation_used": false,
-  "html_pages_checked": 535,
-  "node_pages_checked": 275,
-  "graph_detail_payloads_checked": 275,
-  "generated_definition_links_checked": 3531,
+  "html_pages_checked": 546,
+  "node_pages_checked": 286,
+  "graph_detail_payloads_checked": 286,
+  "generated_definition_links_checked": 3588,
   "definition_link_occurrences": {
     "kl.algebra.coefficient_algebra": 117,
     "kl.algebra.grading_components": 78,
@@ -70,7 +70,7 @@
     "kl.coxeter.parabolic_subgroups": 5,
     "kl.coxeter.signed_reflection_action": 2,
     "kl.coxeter.signed_word_action": 8,
-    "kl.coxeter.word_data": 270,
+    "kl.coxeter.word_data": 279,
     "kl.definitions.bar_involution": 26,
     "kl.definitions.hecke_operators": 129,
     "kl.definitions.hecke_quadratic_relation": 11,
@@ -87,12 +87,13 @@
     "kl.detail.graph_transport": 4,
     "kl.detail.hilbert_values": 23,
     "kl.detail.integral_adjoints": 8,
+    "kl.detail.kl_defect": 1,
     "kl.detail.local_intersection": 1,
     "kl.detail.local_models": 13,
     "kl.detail.localization_rings": 6,
     "kl.detail.model_sums": 27,
     "kl.detail.ordered_graph": 97,
-    "kl.detail.ordinary_r": 13,
+    "kl.detail.ordinary_r": 15,
     "kl.detail.plane_basis": 21,
     "kl.detail.polynomial_labels": 58,
     "kl.detail.positive_roots": 210,
@@ -115,14 +116,17 @@
     "kl.dihedral.plane_length": 8,
     "kl.dihedral.plane_simple": 35,
     "kl.duality.stalk_character": 48,
-    "kl.foundations.bruhat_order": 42,
+    "kl.foundations.bruhat_order": 43,
     "kl.foundations.bruhat_step": 98,
-    "kl.foundations.interval": 84,
-    "kl.foundations.normalized_kl": 44,
+    "kl.foundations.interval": 91,
+    "kl.foundations.low_half": 8,
+    "kl.foundations.normalized_kl": 54,
     "kl.geometry.plane_weights": 24,
-    "kl.hecke.polynomial_reflection": 12,
+    "kl.hecke.polynomial_reflection": 21,
     "kl.hecke.positive_words": 7,
-    "kl.hecke.r_values": 32,
+    "kl.hecke.r_values": 36,
+    "kl.hecke.recursive_p": 2,
+    "kl.hecke.selected_families": 4,
     "kl.hecke.word_actions": 4,
     "kl.main.finite_interval_model": 1,
     "kl.notes.bott_samelson": 23,
@@ -158,13 +162,13 @@
     "kl.sheaves.supported_sections": 18,
     "kl.sheaves.upward_kernel": 112
   },
-  "math_occurrences_extracted": 10681,
+  "math_occurrences_extracted": 11047,
   "broken_links": [],
   "katex": {
     "renderer": "KaTeX",
     "version": "0.16.46",
-    "occurrences_checked": 10681,
-    "distinct_formulas_checked": 5219,
+    "occurrences_checked": 11047,
+    "distinct_formulas_checked": 5400,
     "browser_used": false
   }
 }
