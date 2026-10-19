@@ -7,20 +7,20 @@ primary_topic: kl.sheaves
 topics:
 - kl.sheaves
 uses:
+- kl.sheaves.boundary_sheaf
 - kl.detail.top_splitting
-- kl.detail.indecomposable_boundary
 - kl.detail.word_flabbiness
-- kl.notes.tensor_pairing
-- kl.notes.supported_pairings
-- kl.notes.graded_projective_free
-- kl.detail.integral_adjoints
-- kl.detail.adjoint_primitivity
-- kl.detail.primitive_summand
 - kl.detail.word_evaluation_injective
+- kl.notes.tensor_pairing
+- kl.word.pairing_degree
 - kl.sheaves.word_adjoint_descent
+- kl.sheaves.adjoint_boundary_recognition
+- kl.sheaves.canonical_adjoint_comparison
 - kl.sheaves.image_sections
 - kl.sheaves.adjoint_summand_duality
-- kl.sheaves.projector_image
+- kl.word.support_duality
+- kl.sheaves.boundary_coefficient_transport
+- kl.sheaves.pairing_transport
 lean:
   repository: openai-kl
   modules:
@@ -29,17 +29,14 @@ lean:
   - OAI.KLInvariance.BruhatGraph.boundarySheaf_symmetricPairing
   - OAI.KLInvariance.TitsSpace.bottCanonicalAdjointIso
   - OAI.KLInvariance.TitsSpace.bottCanonicalPerfectPairing_apply
+  - OAI.KLInvariance.TitsSpace.symmetricBoundarySheaf_symmetricPairing_word
+  - OAI.KLInvariance.TitsSpace.symmetricBoundarySheaf_symmetricPairing
 source:
   spans:
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.EdgeLocalization:1006
     format: lean-location
     note: OAI.KLInvariance.BruhatGraph.boundarySheaf_symmetricPairing
-  - artifact: openai-kl-paper
-    locator: Related paper context; bg:normalization
-    format: section
-    note: Contextual correspondence, not a claim that this Lean result appears verbatim
-      in the preprint.
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.EdgeLocalization:833
     format: lean-location
@@ -48,6 +45,19 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.EdgeLocalization:906
     format: lean-location
     note: OAI.KLInvariance.TitsSpace.bottCanonicalPerfectPairing_apply
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.EdgeLocalization:977
+    format: lean-location
+    note: OAI.KLInvariance.TitsSpace.symmetricBoundarySheaf_symmetricPairing_word
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.EdgeLocalization:988
+    format: lean-location
+    note: OAI.KLInvariance.TitsSpace.symmetricBoundarySheaf_symmetricPairing
+  - artifact: openai-kl-paper
+    locator: Related paper context; bg:normalization
+    format: section
+    note: Contextual correspondence, not a claim that this Lean result appears verbatim
+      in the preprint.
 verification:
   statement: accepted
   proof: accepted
@@ -64,9 +74,16 @@ tags:
 
 # Symmetric perfect pairings on the actual boundary sheaf
 
-For the actual minimal-boundary sheaf \(B_b\) on \([1,b]\) in a finite-generator real realization, its global sections admit a symmetric, integral, support-orthogonal perfect pairing. If sections \(m,n\) are homogeneous of degrees \(i,j\), its value has degree
+Fix a Coxeter system with finitely many simple generators, an element \(b\), and a basis of the real extended realization \(V\). Let
 \[
-i+j-\ell(b).
+A=\mathbb R[X_1,\ldots,X_N]
+\]
+be the resulting polynomial coefficient algebra, with variables in degree one, and let \(B_A\) be the chosen normalized boundary sheaf on \([1,b]\).
+
+Its global section module has an \(A\)-bilinear symmetric perfect pairing with support orthogonality and degree shift \(\ell(b)\):
+\[
+\langle\Gamma(B_A)_i,\Gamma(B_A)_j\rangle
+\subseteq A_{i+j-\ell(b)}.
 \]
 
 <!-- source-comparison:start -->
@@ -78,92 +95,116 @@ i+j-\ell(b).
 
 **Lean (primary):** The word pairing is constructed by tensor induction. Supported weight submodules prove adjoint kernel preservation, which descends the adjoint to a graded sheaf map. The adjoint image is dual to the original boundary summand; primitive recognition and the canonical comparison isomorphism produce its perfect symmetric pairing. [BalancedPairings:717](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BalancedPairings.lean#L717), [EdgeLocalization:833](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean#L833), [EdgeLocalization:906](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean#L906), [EdgeLocalization:1006](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean#L1006).
 
-**Role in the proof:** The proof below follows the integral adjoint, image-section, recognition, and canonical-comparison maps. Homogeneous inverse calculations then determine the stalk–costalk degree shift.
+**Role in the proof:** The proof follows the integral adjoint, image-section duality, primitive recognition, and canonical-comparison maps. The trace lowers degree once per word letter. Coefficient transport and a boundary-recognition isomorphism deliver the pairing on the chosen polynomial-coordinate sheaf.
 <!-- source-comparison:end -->
 
 *Proof.*
 
-### Step 1. Obtain the actual normalized summand of a word sheaf
+### Step 1. Construct the symmetric-coefficient boundary summand
 
-Choose a reduced word \(\mathbf s\) for \(b\). Its word sheaf has a rank-one top stalk with the same normalization as the boundary sheaf \(B\). The top-splitting theorem supplies sheaf maps
-\(i:B\to W\), \(p:W\to B\), with \(pi=1\). Put \(e=ip\), so \(e^2=e\) and its image is the specified boundary summand.
+Write \(R=\operatorname{Sym}_{\mathbb R}(V)\), with the same degree-one grading, and choose a reduced word \(\mathbf s\) for \(b\). Its length is \(\ell(b)\).
 
-The word module identifies with all global sections of \(W\): surjectivity follows from the word lifting theorem, and injectivity follows from the injective full weight evaluation. The word pairing is a symmetric integral perfect pairing on this module \(M\); write \(D:M\to M^*\) for its pairing isomorphism and \(\pi_x\) for its stalk projections. We also write \(i,p\) for the induced maps on global sections, using the section equivalence to regard the word sections as elements of \(M\).
+Let \(B_R\) be the normalized boundary sheaf over \(R\), and let \(W\) be the graded word sheaf of \(\mathbf s\). The word theorems supply free stalks, the upper-quotient rule, flabbiness, and global generation for \(W\). Its top stalk is \(R\) in degree zero.
 
-### Step 2. Descend the integral adjoint through the actual stalk projections
-
-Let \(F\) be the word-module endomorphism induced by the sheaf projector \(e\). The integral adjoint is
+The normalized top identifications and the [[node:kl.detail.top_splitting|top-splitting theorem]] give
 \[
-F^*=D^{-1}F^\vee D,\qquad
-\langle F^*m,n\rangle=\langle m,Fn\rangle.
+i:B_R\to W,\qquad p:W\to B_R,\qquad pi=1.
 \]
-The adjoint identities imply \((F^*)^2=F^*\), and the homogeneous-representative theorem makes \(F^*\) degree zero.
+The word module \(M=M_{\mathbf s}\) is isomorphic to \(\Gamma(W)\), by the word lifting theorem and injectivity of full evaluation. We use this identification for the induced maps on sections, writing
+\(i:\Gamma(B_R)\to M\) and \(p:M\to\Gamma(B_R)\).
 
-The descent in [[node:kl.sheaves.word_adjoint_descent]] uses the supported weight submodules \(S_x\). The original sheaf map acts componentwise, so \(F(S_x)\subseteq S_x\). If \(\pi_x(m)=0\) and \(s\in S_x\), symmetry gives
+The tensor construction gives a symmetric perfect pairing \(D\) on \(M\). The [[node:kl.word.pairing_degree|word-degree theorem]] gives its shift \(|\mathbf s|=\ell(b)\).
+
+### Step 2. Construct and recognize the adjoint image
+
+The sheaf projector \(e=ip\) induces the module projector \(F=ip\) on \(M\). The integral adjoint
 \[
-\langle s,F^*m\rangle=\langle Fs,m\rangle=0.
+F^*=D^{-1}F^\vee D
 \]
-The projection-kernel annihilator theorem therefore gives \(\pi_x(F^*m)=0\). This makes
+descends to a graded sheaf projector \(e^*\), by the supported-stalk annihilator and quotient-descent argument.
+
+Let \(C=\operatorname{im}e^*\), with inclusion \(j:C\to W\) and projection \(q:W\to C\). The [[node:kl.sheaves.adjoint_boundary_recognition|adjoint-image recognition theorem]] verifies its inherited free stalks, upper quotients, flabbiness, global generation, primitive identity, and normalized top, and gives \(C\simeq B_R\).
+
+The [[node:kl.sheaves.canonical_adjoint_comparison|canonical-comparison theorem]] proves that the specified map
 \[
-e_x^*(\pi_x(m))=\pi_x(F^*m)
+h=qi:B_R\xrightarrow{\sim}C
 \]
-well defined. Descent through each pair-projection quotient gives the edge maps and both restriction squares. The resulting \(e^*\) is a graded sheaf endomorphism.
+is an isomorphism. Its inclusion satisfies \(jh=e^*i\).
 
-Its vertex maps are idempotent by lifting a stalk vector to \(M\) and applying \((F^*)^2=F^*\). The lower edge maps of the pair-projection sheaf are surjective, so their commuting squares transfer the same idempotence to the edge components. Thus \(e^*\) is a sheaf projector.
+### Step 3. Identify the adjoint-image sections with the dual
 
-### Step 3. Recognize its image as another copy of B
-
-Let \(C=\operatorname{im}e^*\) be the image sheaf, with the componentwise inclusion and projection. It is a sheaf direct summand of \(W\), so it inherits the quotient rule, flabbiness, and global generation. Its stalks are finite graded projective, hence graded free.
-
-The projector \(e\) is primitive because its image \(B\) is indecomposable. Adjoint reverses composition and is involutive, so a nontrivial projector splitting \(e^*\) would, after taking adjoints, split \(e\). Hence \(e^*\) is primitive. At the top, both projectors are the identity on the normalized rank-one stalk. Top splitting places a copy of \(B\) inside \(C\); primitivity and the nonzero top force its complementary summand to be zero. Therefore \(C\simeq B\).
-
-### Step 4. Prove that the canonical comparison map is an isomorphism
-
-Write \(j:C\to W\) and \(q:W\to C\) for the adjoint-image splitting. Define the canonical map \(h=qi:B\to C\); after inclusion in \(W\), its value is \(e^*i(v)\).
-
-At the top vertex, \(ip\) and \(jq\) are both the identity on the word stalk. The map \(g=pj\) at that vertex satisfies
+The [[node:kl.sheaves.image_sections|image-section theorem]] identifies
 \[
-gh=pjqi=pi=1,\qquad hg=qipj=qj=1.
+\Gamma(C)\simeq\operatorname{im}F^*.
 \]
-Hence \(h\) is bijective at the top. Compose \(h\) with any recognition isomorphism \(C\simeq B\). The composite is a boundary-sheaf endomorphism invertible at the top, hence invertible everywhere by the downward minimal-cover argument. Consequently \(h\) itself is an isomorphism.
-
-### Step 5. Identify the perfect pairing through the adjoint image
-
-The image-section theorem [[node:kl.sheaves.image_sections]] identifies
-\(\Gamma(C)\) with \(\operatorname{im}F^*\). The original splitting similarly identifies \(\Gamma(B)\) with \(\operatorname{im}F\) in the word module.
-
-The adjoint-summand theorem [[node:kl.sheaves.adjoint_summand_duality]] gives a linear isomorphism
+For the split module maps \(i,p\), the [[node:kl.sheaves.adjoint_summand_duality|adjoint-summand theorem]] gives a perfect pairing between \(\operatorname{im}F^*\) and \(\Gamma(B_R)\):
 \[
-\Gamma(C)\xrightarrow{\sim}\Gamma(B)^*,\qquad
-c\longmapsto\bigl(w\mapsto\langle c,i(w)\rangle\bigr).
+Q(c,n)=\langle j(c),i(n)\rangle_M.
 \]
-Explicitly, a functional \(\lambda\) on \(\Gamma(B)\) extends to \(\lambda\circ p\) on \(M\). Its perfect-pairing representative \(D^{-1}(\lambda\circ p)\) lies in \(\operatorname{im}F^*\), and supplies the inverse map.
+Here both included sections are viewed as word elements.
 
-Compose this duality with the section isomorphism induced by the canonical comparison \(h\) from Step 4. For \(v,w\in\Gamma(B)\), its value is
+Its associated linear isomorphism is \(\Gamma(C)\to\Gamma(B_R)^*\). To represent a functional \(\lambda\), first form \(\lambda\circ p\) on \(M\), then take \(D^{-1}(\lambda\circ p)\). The [[node:kl.sheaves.adjoint_summand_duality|adjoint-summand theorem]] places this element in \(\operatorname{im}F^*\) and proves uniqueness.
+
+### Step 4. Pull back through the canonical comparison
+
+Define
+\[
+P(m,n)=Q(h(m),n),\qquad m,n\in\Gamma(B_R).
+\]
+The map \(h\) is a section isomorphism and the map associated to \(Q\) is an isomorphism to the dual. Their composite proves perfection of \(P\).
+
+The canonical formula identifies this pairing explicitly:
 \[
 \begin{aligned}
-\langle h(v),i(w)\rangle
-&=\langle F^*i(v),i(w)\rangle\\
-&=\langle i(v),Fi(w)\rangle\\
-&=\langle i(v),i(w)\rangle.
+P(m,n)
+&=\langle F^*i(m),i(n)\rangle_M\\
+&=\langle i(m),Fi(n)\rangle_M\\
+&=\langle i(m),i(n)\rangle_M.
 \end{aligned}
 \]
-The last equality uses \(Fi=ipi=i\). The resulting perfect pairing is therefore the word pairing evaluated on the two included sections. Symmetry of the word form gives symmetry on \(\Gamma(B)\).
+The last equality follows from \(Fi=ipi=i\). Symmetry of the word form therefore gives symmetry of \(P\).
 
-### Step 6. Preserve grading, support, and coefficient coordinates
+### Step 5. Verify the degree and support equations
 
-All inclusion, projection, and comparison maps have degree zero. The word pairing has degree shift \(\ell(b)\), so the restricted pairing has that same shift. If \(v\) is supported at \(x\), its included section is also supported at \(x\), since the component maps send zero to zero. If \(w_x=0\), its inclusion still has zero \(x\)-coordinate. Word support orthogonality therefore gives the first orthogonality equation for the restricted form. Symmetry gives the second. Finally transfer along the symmetric-algebra-to-polynomial-coordinate isomorphism and the graded boundary-sheaf isomorphism. These isomorphisms preserve all three properties, yielding the stated pairing on the actual chosen polynomial-coordinate boundary sheaf.
+The inclusion \(i\) preserves degree. For inputs of degrees \(r,s\), the displayed formula and the [[node:kl.word.pairing_degree|word-degree theorem]] give
+\[
+P(m,n)\in R_{r+s-\ell(b)}.
+\]
+
+If \(m\) is supported at a vertex \(x\), the included section has zero value at every other vertex because each inclusion component is linear. If \(n_x=0\), its included section also has zero \(x\)-value. Word support orthogonality gives \(P(m,n)=0\). Symmetry gives the right support equation as well.
+
+Thus \(P\) is a symmetric perfect support-orthogonal section pairing over \(R\).
+
+### Step 6. Transfer the result to the chosen polynomial sheaf
+
+The chosen basis gives a graded algebra isomorphism
+\[
+\varphi:R\xrightarrow{\sim}A.
+\]
+It sends every symmetric root label to the corresponding polynomial label. The [[node:kl.sheaves.boundary_coefficient_transport|coefficient-transport recognition theorem]] gives a graded sheaf isomorphism
+\[
+\psi:B_A\xrightarrow{\sim}{}^\varphi B_R.
+\]
+
+Transport \(P\) along \(\varphi\), then pull it back along \(\psi\). Explicitly, if \(\overline\psi(m)\) denotes the underlying \(R\)-section corresponding to \(\psi(m)\), set
+\[
+\langle m,n\rangle_A
+=\varphi\!\left(P(\overline\psi(m),\overline\psi(n))\right).
+\]
+The [[node:kl.sheaves.pairing_transport|pairing-transport theorem]] proves perfection, symmetry, both support equations, and preservation of the shift. This produces the required pairing on the actual chosen polynomial-coordinate boundary sheaf \(B_A\).
 
 ## References
 
-[Related paper context](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L253).
+The source declarations below give the constructions and proofs.
 
 ## Lean formalization
-
-
 
 `OAI.KLInvariance.BruhatGraph.boundarySheaf_symmetricPairing`: [EdgeLocalization.lean:1006](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean#L1006).
 
 `OAI.KLInvariance.TitsSpace.bottCanonicalAdjointIso`: [EdgeLocalization.lean:833](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean#L833).
 
 `OAI.KLInvariance.TitsSpace.bottCanonicalPerfectPairing_apply`: [EdgeLocalization.lean:906](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean#L906).
+
+`OAI.KLInvariance.TitsSpace.symmetricBoundarySheaf_symmetricPairing_word`: [EdgeLocalization.lean:977](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean#L977).
+
+`OAI.KLInvariance.TitsSpace.symmetricBoundarySheaf_symmetricPairing`: [EdgeLocalization.lean:988](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean#L988).

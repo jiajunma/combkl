@@ -52,8 +52,11 @@
       "kl.algebra.dual_basis_degrees",
       "kl.algebra.grading_components",
       "kl.algebra.homogeneous_basis",
+      "kl.algebra.homogeneous_lifts",
       "kl.algebra.homogeneous_subquotients",
+      "kl.algebra.identity_mod_positive",
       "kl.algebra.kernel_saturation",
+      "kl.algebra.minimal_cover_maps",
       "kl.algebra.pair_projection",
       "kl.algebra.perfect_inverse_degree",
       "kl.algebra.positive_ideal",
@@ -194,11 +197,17 @@
       "kl.notes.boundary_image",
       "kl.notes.character_cancellation",
       "kl.notes.supported_pairings",
+      "kl.sheaves.adjoint_boundary_recognition",
+      "kl.sheaves.adjoint_fixed_stalk",
       "kl.sheaves.adjoint_properties",
       "kl.sheaves.adjoint_summand_duality",
+      "kl.sheaves.boundary_coefficient_transport",
       "kl.sheaves.boundary_existence",
       "kl.sheaves.boundary_image_identity",
+      "kl.sheaves.boundary_recognition",
       "kl.sheaves.boundary_sheaf",
+      "kl.sheaves.boundary_top_detection",
+      "kl.sheaves.canonical_adjoint_comparison",
       "kl.sheaves.costalk_duality_degree",
       "kl.sheaves.costalk_support",
       "kl.sheaves.cut_balance",
@@ -207,8 +216,11 @@
       "kl.sheaves.graph_sheaf",
       "kl.sheaves.image_sections",
       "kl.sheaves.integral_cuts",
+      "kl.sheaves.pairing_transport",
+      "kl.sheaves.primitive_image",
       "kl.sheaves.projector_image",
       "kl.sheaves.relative_flabbiness",
+      "kl.sheaves.split_sheaf_properties",
       "kl.sheaves.support_annihilator",
       "kl.sheaves.supported_sections",
       "kl.sheaves.supported_stalk_duality",
@@ -225,8 +237,10 @@
       "kl.notes.reflection_frobenius",
       "kl.notes.tensor_pairing",
       "kl.notes.word_stalks",
+      "kl.word.pairing_degree",
       "kl.word.scaled_coordinate_lifts",
-      "kl.word.support_duality"
+      "kl.word.support_duality",
+      "kl.word.top_stalk"
     ]
   },
   "module_imports": {
@@ -489,6 +503,15 @@
       "paper_locations": []
     },
     {
+      "id": "kl.algebra.homogeneous_lifts",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.exists_hom_lift_of_basis",
+        "OAI.KLInvariance.Graded.ModuleData.exists_hom_lift"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.algebra.homogeneous_subquotients",
       "chapter": "kl.graded_algebra",
       "lean_declarations": [
@@ -502,11 +525,29 @@
       "paper_locations": []
     },
     {
+      "id": "kl.algebra.identity_mod_positive",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.Hom.bijective_of_mod_positive"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.algebra.kernel_saturation",
       "chapter": "kl.graded_algebra",
       "lean_declarations": [
         "OAI.KLInvariance.EdgeImage.kernel_saturated",
         "OAI.KLInvariance.EdgeImage.reduced_kernel_injective"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.algebra.minimal_cover_maps",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.MinimalCover.hom_bijective",
+        "OAI.KLInvariance.Graded.ModuleData.MinimalCover.bijective_of_boundaryIso",
+        "OAI.KLInvariance.Graded.ModuleData.MinimalCover.equiv"
       ],
       "paper_locations": []
     },
@@ -896,7 +937,9 @@
       "lean_declarations": [
         "OAI.KLInvariance.BruhatGraph.boundarySheaf_symmetricPairing",
         "OAI.KLInvariance.TitsSpace.bottCanonicalAdjointIso",
-        "OAI.KLInvariance.TitsSpace.bottCanonicalPerfectPairing_apply"
+        "OAI.KLInvariance.TitsSpace.bottCanonicalPerfectPairing_apply",
+        "OAI.KLInvariance.TitsSpace.symmetricBoundarySheaf_symmetricPairing_word",
+        "OAI.KLInvariance.TitsSpace.symmetricBoundarySheaf_symmetricPairing"
       ],
       "paper_locations": [
         "Related paper context; bg:normalization"
@@ -930,7 +973,10 @@
         "OAI.KLInvariance.CoefficientChange",
         "OAI.KLInvariance.CoefficientChange.equiv",
         "OAI.KLInvariance.CoefficientChange.kEquiv",
-        "OAI.KLInvariance.Graded.ModuleData.change"
+        "OAI.KLInvariance.Graded.ModuleData.change",
+        "OAI.KLInvariance.Graded.ModuleData.changeHom",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChangeSections"
       ],
       "paper_locations": []
     },
@@ -1493,7 +1539,8 @@
       "chapter": "kl.sheaves",
       "lean_declarations": [
         "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.projector"
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.projector",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.comparison_bijective"
       ],
       "paper_locations": []
     },
@@ -1912,7 +1959,12 @@
         "OAI.KLInvariance.TitsSpace.bottSamelson",
         "OAI.KLInvariance.TitsSpace.BottSamelsonModule",
         "OAI.KLInvariance.TitsSpace.BottIndex",
-        "OAI.KLInvariance.TitsSpace.bottWeight"
+        "OAI.KLInvariance.TitsSpace.bottWeight",
+        "OAI.KLInvariance.TitsSpace.bottBasis",
+        "OAI.KLInvariance.TitsSpace.bottDegree",
+        "OAI.KLInvariance.TitsSpace.bottPiece",
+        "OAI.KLInvariance.TitsSpace.bottSamelsonRight",
+        "OAI.KLInvariance.TitsSpace.bottSamelsonDuality"
       ],
       "paper_locations": [
         "2. Real realizations and moment-graph sheaves; bg:normalization"
@@ -1993,7 +2045,8 @@
       "chapter": "kl.graded_algebra",
       "lean_declarations": [
         "OAI.KLInvariance.Graded.exists_homogeneous_basis_polynomial",
-        "OAI.KLInvariance.Graded.linearIndependent_of_projective_cover"
+        "OAI.KLInvariance.Graded.linearIndependent_of_projective_cover",
+        "OAI.KLInvariance.Graded.exists_homogeneous_basis_connected"
       ],
       "paper_locations": [
         "6. Reciprocity and simultaneous induction; sec:induction"
@@ -2414,6 +2467,32 @@
       ]
     },
     {
+      "id": "kl.sheaves.adjoint_boundary_recognition",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottBoundarySheaf_splitIn",
+        "OAI.KLInvariance.TitsSpace.bottSplitAdjointSplit",
+        "OAI.KLInvariance.TitsSpace.bottSplitAdjoint_free",
+        "OAI.KLInvariance.TitsSpace.bottSplitAdjointTop_split",
+        "OAI.KLInvariance.TitsSpace.bottBoundarySplitAdjoint_primitive",
+        "OAI.KLInvariance.TitsSpace.bottBoundarySheaf_iso_adjoint"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.sheaves.adjoint_fixed_stalk",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottEndOfSheaf_fixed_support",
+        "OAI.KLInvariance.TitsSpace.bottAdjointSheaf_fixed_stalk",
+        "OAI.KLInvariance.TitsSpace.bottAdjointSheaf_fixed_stalk_iff",
+        "OAI.KLInvariance.Graded.ModuleData.unit_split_reverse",
+        "OAI.KLInvariance.TitsSpace.bottBoundarySplit_top_fixed",
+        "OAI.KLInvariance.TitsSpace.bottBoundarySplitAdjoint_top_fixed"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.sheaves.adjoint_properties",
       "chapter": "kl.sheaves",
       "lean_declarations": [
@@ -2443,6 +2522,19 @@
       "paper_locations": []
     },
     {
+      "id": "kl.sheaves.boundary_coefficient_transport",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_free",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_upperQuotient",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_flabby",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_generated",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_primitive",
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.iso_coefficientChange"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.sheaves.boundary_existence",
       "chapter": "kl.sheaves",
       "lean_declarations": [
@@ -2465,14 +2557,46 @@
       ]
     },
     {
+      "id": "kl.sheaves.boundary_recognition",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.top_nontrivial",
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.iso_of_primitive_top_split"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.sheaves.boundary_sheaf",
       "chapter": "kl.sheaves",
       "lean_declarations": [
         "OAI.KLInvariance.MomentGraph.BoundarySheaf"
       ],
-      "paper_locations": [
-        "2. Real realizations and moment-graph sheaves; sec:background"
-      ]
+      "paper_locations": []
+    },
+    {
+      "id": "kl.sheaves.boundary_top_detection",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.edge_bijective_of_vertex",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.stalk_hom_bijective",
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.hom_vertex_bijective",
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.homIso",
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.hom_vertex_bijective_of_iso",
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.homIsoOfIso"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.sheaves.canonical_adjoint_comparison",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.comparison_bijective",
+        "OAI.KLInvariance.TitsSpace.bottCanonicalAdjointHom",
+        "OAI.KLInvariance.TitsSpace.bottCanonicalAdjointHom_top_bijective",
+        "OAI.KLInvariance.TitsSpace.bottCanonicalAdjointIso",
+        "OAI.KLInvariance.TitsSpace.bottCanonicalAdjointIso_vertex"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.sheaves.costalk_duality_degree",
@@ -2616,6 +2740,30 @@
       ]
     },
     {
+      "id": "kl.sheaves.pairing_transport",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.CoefficientChange.dualEquiv",
+        "OAI.KLInvariance.CoefficientChange.pairingEquiv",
+        "OAI.KLInvariance.CoefficientChange.pairingEquiv_apply",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.PerfectPairing.pullback",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.PerfectPairing.coefficientChange",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SymmetricPerfectPairing.pullback",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SymmetricPerfectPairing.coefficientChange"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.sheaves.primitive_image",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.primitive_id_of_projector",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.primitive_projector_of_id",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.primitive_image"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.sheaves.projector_image",
       "chapter": "kl.sheaves",
       "lean_declarations": [
@@ -2635,6 +2783,18 @@
       "paper_locations": [
         "4. Localization at a root plane; sec:localization"
       ]
+    },
+    {
+      "id": "kl.sheaves.split_sheaf_properties",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.flabby",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.generated",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.upperQuotient",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.vertex_projective",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.vertex_free"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.sheaves.support_annihilator",
@@ -2700,6 +2860,19 @@
       "paper_locations": []
     },
     {
+      "id": "kl.word.pairing_degree",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.ReflectionFrobenius.trace_difference",
+        "OAI.KLInvariance.ReflectionFrobenius.trace_homogeneous",
+        "OAI.KLInvariance.FrobeniusDuality.inducedPairing_basis",
+        "OAI.KLInvariance.FrobeniusDuality.inducedPairing_basis_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottBasis_pairing_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottDuality_homogeneous"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.word.scaled_coordinate_lifts",
       "chapter": "kl.word_modules",
       "lean_declarations": [
@@ -2725,6 +2898,22 @@
         "OAI.KLInvariance.TitsSpace.bottStalkDualToSupport_bijective",
         "OAI.KLInvariance.TitsSpace.bottStalkDuality",
         "OAI.KLInvariance.TitsSpace.coefficientAction_separates"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.top_stalk",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottFullIndex",
+        "OAI.KLInvariance.TitsSpace.bottWeight_eq_top",
+        "OAI.KLInvariance.TitsSpace.bottUnit",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_unit",
+        "OAI.KLInvariance.TitsSpace.bottTopCoordinate_bijective",
+        "OAI.KLInvariance.TitsSpace.bottTopStalkEquiv",
+        "OAI.KLInvariance.TitsSpace.bottTopStalkEquiv_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottTopHom",
+        "OAI.KLInvariance.TitsSpace.bottTopInvHom"
       ],
       "paper_locations": []
     }

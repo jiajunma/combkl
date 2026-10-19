@@ -92,6 +92,16 @@ This equation ensures that a kernel or image in \(B\) goes to the corresponding 
 
 In the free module \(A\), the submodules \(A\) and \(\alpha A\) both have rank one, and their inclusions have different images. A commuting sheaf isomorphism tracks those inclusions. Later comparisons use it to place the relevant edge images in a common module.
 
+## Minimal covers detect a boundary-sheaf isomorphism
+
+Consider a graded morphism between two normalized boundary sheaves, bijective at the distinguished stalk. Suppose its stalk maps are already bijective strictly above \(x\). Upper quotient maps then make the relevant edge maps bijective.
+
+These component maps identify compatible upper tuples and their boundary images. Global generation and flabbiness identify each boundary image with the image of its outgoing stalk map. At \(x\), the two stalk maps are therefore minimal free covers of a common graded module.
+
+The specified morphism between those covers is bijective by the minimal-cover comparison theorem. Finite downward induction gives bijectivity at every stalk, and upper quotients give it at every edge. This is the top-detection theorem.
+
+It is also the correction step in top splitting. Extend an inclusion and retraction from the top to sheaf morphisms \(i,p\). Their composite \(f=pi\) is invertible by top detection. Replacing \(i\) by \(if^{-1}\) gives a split pair on the whole sheaf.
+
 ## Splitting sheaves and decomposing their kernels
 
 A split inclusion consists of sheaf maps \(i:B\to C\) and \(p:C\to B\) with \(pi=1_B\). For \(C=B\oplus D\), the familiar maps are inclusion into the first component and projection back to it. Their composite \(ip\) is a projector on \(C\).
@@ -227,11 +237,15 @@ c\longmapsto(w\mapsto\langle c,i(w)\rangle).
 \]
 Its inverse represents the extended functional \(\lambda\circ p\) by the perfect word form.
 
-Primitivity and top splitting recognize \(C\) as another copy of \(B\). The next step proves that the specified comparison
+The image \(C\) inherits the quotient rule, flabbiness, and global generation by inclusion, extension in the word sheaf, and projection. Its stalks are graded direct summands of free stalks, hence projective and then graded free.
+
+The identity of \(B\) is primitive, so its ambient projector \(e\) is primitive. The adjoint preserves primitivity, and the image-splitting correspondence makes \(1_C\) primitive. At the top, both word and boundary stalks are \(A\). A split pair there consists of multiplication by two scalars whose product is one, so its reverse composite is also one. The fixed-stalk theorem makes \(e^*\) the identity at that same top stalk.
+
+These facts supply a normalized top splitting into \(C\). Boundary recognition gives an isomorphism \(B\simeq C\). With \(j:C\to W\) and \(q:W\to C\), the specified canonical comparison is
 \[
-h:B\to C,\qquad h(v)=e^*i(v)
+h=qi:B\to C,\qquad jh=e^*i.
 \]
-is an isomorphism. This comparison is bijective at the top; the boundary minimal-cover argument extends bijectivity down through the interval.
+At the top its inverse is \(pj\), since both ambient projectors are the identity. The recognized-target form of top detection then proves that this particular \(h\) is an isomorphism everywhere.
 
 Pull the displayed duality back through \(h\). For global sections \(v,w\) of \(B\),
 \[
@@ -241,6 +255,8 @@ Pull the displayed duality back through \(h\). For global sections \(v,w\) of \(
 =\langle i(v),i(w)\rangle.
 \]
 The last equality uses \(Fi=i\). This proves that the induced perfect boundary pairing is the word form on the included sections. Its symmetry, degree shift, and support conditions pass through the inclusion maps.
+
+Finally, a basis identifies the symmetric coefficient algebra with a polynomial ring by a degree-preserving algebra isomorphism \(\varphi\). Changing the scalar action transports each pairing value \(a\) to \(\varphi(a)\). The transported sheaf retains the quotient, generation, flabbiness, free-stalk, and primitive properties, so boundary recognition identifies it with the chosen polynomial-coordinate boundary sheaf. Pullback along that isomorphism supplies the pairing used in the polynomial character argument.
 
 ## Cancellation of lower boundary models
 
@@ -306,6 +322,8 @@ The actual boundary character \(C\) satisfies the reciprocal identity developed 
 ### Boundary sheaves and minimal extension
 
 - [[node:kl.sheaves.boundary_sheaf]]
+- [[node:kl.sheaves.boundary_top_detection]]
+- [[node:kl.sheaves.boundary_coefficient_transport]]
 - [[node:kl.sheaves.boundary_existence]]
 - [[node:kl.detail.boundary_extension]]
 - [[node:kl.detail.boundary_uniqueness]]
@@ -315,6 +333,9 @@ The actual boundary character \(C\) satisfies the reciprocal identity developed 
 - [[node:kl.detail.split_summands]]
 - [[node:kl.sheaves.projector_image]]
 - [[node:kl.sheaves.image_sections]]
+- [[node:kl.sheaves.split_sheaf_properties]]
+- [[node:kl.sheaves.primitive_image]]
+- [[node:kl.sheaves.boundary_recognition]]
 - [[node:kl.detail.primitive_projectors]]
 - [[node:kl.detail.primitive_summand]]
 - [[node:kl.detail.top_splitting]]
@@ -345,6 +366,10 @@ The actual boundary character \(C\) satisfies the reciprocal identity developed 
 - [[node:kl.sheaves.adjoint_properties]]
 - [[node:kl.sheaves.adjoint_summand_duality]]
 - [[node:kl.sheaves.word_adjoint_descent]]
+- [[node:kl.sheaves.adjoint_fixed_stalk]]
+- [[node:kl.sheaves.adjoint_boundary_recognition]]
+- [[node:kl.sheaves.canonical_adjoint_comparison]]
+- [[node:kl.sheaves.pairing_transport]]
 - [[node:kl.detail.adjoint_primitivity]]
 - [[node:kl.detail.boundary_pairing]]
 - [[node:kl.detail.costalk_duality]]

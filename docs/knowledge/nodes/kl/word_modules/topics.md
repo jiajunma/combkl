@@ -55,6 +55,24 @@ Conversely, the image consists exactly of pairs satisfying \(f-g\in\alpha A\). G
 
 For a longer word, evaluation has one coordinate for every subexpression. The full-evaluation theorem proves injectivity by repeating the two-block argument. Grouping coordinates of equal group weight defines the stalk images.
 
+## The pairing shift and the normalized top
+
+At each tensor step, the reflection trace satisfies
+\[
+2\alpha_s\operatorname{tr}_s(a)=a-s(a).
+\]
+The coefficient action preserves degree and \(\alpha_s\) has degree one, so the trace lowers degree by one. On the recursively constructed tensor basis, the pairing formula applies one such trace for every letter. Bilinear expansion then gives
+\[
+\langle(M_{\mathbf s})_i,(M_{\mathbf s})_j\rangle
+\subseteq A_{i+j-|\mathbf s|}.
+\]
+
+For a reduced word of length \(m\) and product \(b\), a subexpression with product \(b\) must retain all \(m\) letters: its selected length is at least \(\ell(b)=m\) and at most \(m\). Thus the top-weight coordinate is unique.
+
+The recursively defined all-unit tensor evaluates to \(1\) in every coordinate. Its scalar multiples show that the top coordinate is onto \(A\). The single-coordinate description identifies the top stalk with \(A\) in both grading directions, giving its degree-zero normalization.
+
+This top identification supplies the maps used to split the boundary sheaf into the word sheaf. The pairing shift \(|\mathbf s|=\ell(b)\) then remains unchanged when the canonical boundary pairing is constructed.
+
 ## Scaled coordinates and weight support
 
 The evaluation matrix \(E\) is injective over the coefficient domain. Its determinant \(\Delta\) is consequently nonzero. The adjugate identity
@@ -108,6 +126,7 @@ For the single letter \(s\), the positive Hecke word is \(1+T_s\), and both stal
 ### Word modules and homogeneous bases
 
 - [[node:kl.notes.bott_samelson]]
+- [[node:kl.word.pairing_degree]]
 
 ### Evaluation coordinates and stalk images
 
@@ -115,6 +134,7 @@ For the single letter \(s\), the positive Hecke word is \(1+T_s\), and both stal
 - [[node:kl.detail.word_evaluation_injective]]
 - [[node:kl.word.scaled_coordinate_lifts]]
 - [[node:kl.word.support_duality]]
+- [[node:kl.word.top_stalk]]
 
 ### Two-stalk lattices and their kernels
 

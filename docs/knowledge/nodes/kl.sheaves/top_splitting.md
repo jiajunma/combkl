@@ -10,6 +10,7 @@ uses:
 - kl.detail.morphism_extension
 - kl.sheaves.boundary_sheaf
 - kl.detail.split_summands
+- kl.sheaves.boundary_top_detection
 lean:
   repository: openai-kl
   modules:
@@ -43,47 +44,50 @@ tags:
 
 # Extending a split top stalk to a sheaf summand
 
-Let \(B\) be the normalized minimal-boundary sheaf on a finite labelled graph with greatest vertex \(b\), over a connected nonnegatively graded Noetherian domain. Let \(C\) be a graded sheaf with free stalks, the same upper quotient rule, flabbiness, and global generation. If graded maps
+Let \(A\) be a connected nonnegatively graded Noetherian domain, and let \(B\) be a normalized minimal-boundary sheaf on a finite labelled ordered graph with greatest vertex \(b\).
+
+Let \(C\) be a graded sheaf with free stalks, the same upper-quotient rule, flabbiness, and global generation. Suppose degree-zero maps
 \[
 i_b:B^b\to C^b,\qquad p_b:C^b\to B^b,\qquad p_bi_b=1
 \]
-split the top stalk, then \(B\) is a graded direct summand of \(C\).
+split the top stalk. Then these maps extend to a split pair of graded sheaf morphisms, so \(B\) is a graded summand of \(C\).
 
 *Proof.*
 
-### Step 1. Extend both top maps with their hypotheses checked
+### Step 1. Extend the top maps in both directions
 
-The given maps \(i_b:B^b\to C^b\), \(p_b:C^b\to B^b\) satisfy \(p_bi_b=1\).
-Apply the morphism-extension theorem once to \(B\to C\) and once to \(C\to B\). Both sheaves are flabby, globally generated, and obey the same upper quotient rule. Both have free stalks, so the required source-freeness condition holds in each direction. We obtain graded morphisms \(i,p\) agreeing with the given maps at \(b\).
+The set \(\{b\}\) is upper because \(b\) is greatest. Each of the two prescribed vertex maps determines the incoming edge maps through the upper quotients.
 
-Their composite \(f=pi\) is a sheaf endomorphism of \(B\) whose top component is the identity. It need not yet be the identity at other vertices.
+Apply the morphism-extension theorem to \(B\to C\). Its hypotheses hold: both sheaves have the same upper quotients, are flabby and globally generated, and the source stalks of \(B\) are free. Apply it again to \(C\to B\), now using freeness of the stalks of \(C\).
 
-### Step 2. Show that f is invertible below the top
+We obtain graded sheaf maps \(i:B\to C\) and \(p:C\to B\) with the prescribed top components.
 
-Induct downward. Suppose its stalk maps are invertible above \(x\). Their quotient maps make its outgoing edge maps invertible, and hence identify the boundary image at \(x\) with itself by an automorphism \(a\).
+### Step 2. Prove the composite is a sheaf automorphism
 
-The stalk map \(f_x\) lies over \(a\) on the minimal cover \(B^x\to D_x\). Lift \(a^{-1}\) through the cover, obtaining a graded map \(l\). Then both \(f_xl-1\) and \(lf_x-1\) have image in the cover kernel, hence in \(JB^x\).
-
-A graded self-map congruent to the identity modulo \(J\) is bijective: its homogeneous cokernel has zero quotient modulo \(J\), so Nakayama makes it surjective; on a finite free module, a surjective self-map has invertible determinant and is injective. Therefore \(f_xl\) and \(lf_x\) are bijective. The former makes \(f_x\) surjective and the latter makes it injective. This completes the downward induction.
-
-### Step 3. Construct the inverse as a sheaf morphism
-
-Invert each bijective stalk and edge map. The equations expressing commutation with restrictions can be multiplied by these inverses, proving the same commutation equations for them. The inverses preserve degree, so they assemble into a graded sheaf inverse \(f^{-1}\).
-
-### Step 4. Correct the splitting
-
-Set \(\widehat i=i f^{-1}\). Then
+Let \(f=pi:B\to B\). At the top,
 \[
-p\widehat i=pi f^{-1}=ff^{-1}=1
+f_b=p_bi_b=1_{B^b}.
 \]
-at every stalk and edge. Thus \(B\) is a graded direct summand of \(C\). The correction is explicit; the argument never assumes that arbitrary extensions of the two top maps already split.
+The top-detection theorem [[node:kl.sheaves.boundary_top_detection]] applies to the morphism \(f\) between \(B\) and itself. It compares minimal stalk covers downward from the top and yields bijectivity at every stalk and edge. Thus \(f\) is a graded sheaf automorphism.
+
+### Step 3. Correct the inclusion
+
+Define
+\[
+\widehat i=i f^{-1}:B\to C.
+\]
+Then
+\[
+p\widehat i=pi f^{-1}=ff^{-1}=1_B
+\]
+at every vertex and edge. The maps \(\widehat i,p\) therefore form a split pair.
+
+Since \(f_b=1\), its inverse at the top is also the identity. Hence \(\widehat i_b=i_b\), and the correction retains the original top maps.
 
 ## References
 
-[Related paper context](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L225).
+The source declarations below give the constructions and proofs.
 
 ## Lean formalization
-
-
 
 `OAI.KLInvariance.MomentGraph.BoundarySheaf.splitIn_of_top_split`: [SheafMorphisms.lean:1380](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L1380).

@@ -113,6 +113,10 @@ concepts:
   - Bott–Samelson object
   - word objects
   - word object
+  - word grading
+  - word basis
+  - tensor word
+  - tensor words
 - node: kl.notes.word_stalks
   terms:
   - weight evaluations
@@ -321,11 +325,14 @@ concepts:
   - split sheaf summands
   - split inclusion
   - split inclusions
+  - canonical comparison
+  - canonical comparison map
 - node: kl.detail.primitive_projectors
   terms:
   - primitive projector
   - primitive projectors
   - primitivity
+  - primitive identity
 - node: kl.detail.model_sums
   terms:
   - graded model sum
@@ -432,6 +439,10 @@ concepts:
   - positive ideal
   - positive-degree ideal
   - augmentation
+  - connected grading
+  - connected graded algebra
+  - connected nonnegative graded
+  - connected nonnegatively graded
 - node: kl.algebra.homogeneous_subquotients
   terms:
   - homogeneous submodule

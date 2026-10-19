@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 35433,
-  "theorem_walkthroughs": 114,
+  "revised_proof_words": 39179,
+  "theorem_walkthroughs": 128,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -27,6 +27,29 @@
       "review": "Compared homogeneous_basis_repr and dualBasis_homogeneous. Finite coefficient decomposition, component selection, and basis independence establish the negative dual degree."
     },
     {
+      "node": "kl.algebra.homogeneous_lifts",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.exists_hom_lift_of_basis",
+        "OAI.KLInvariance.Graded.ModuleData.exists_hom_lift"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 157,
+      "proof_sha256": "37d5c4e314d523ea5a0386fa4d0af95f9262dac932430218ecb371605fa88815",
+      "review": "Read exists_hom_lift_of_basis and exists_hom_lift: choose homogeneous lifts of basis images, extend linearly, and verify degrees using coefficient degrees."
+    },
+    {
+      "node": "kl.algebra.identity_mod_positive",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.Hom.bijective_of_mod_positive"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 241,
+      "proof_sha256": "873d73130e1d4cb432495fb205ab6dd72e8c609645b571ed4e73704ab0af0669",
+      "review": "Read Hom.bijective_of_mod_positive: homogeneous range plus graded Nakayama gives surjectivity; the stabilized kernel-chain argument explains Noetherian injectivity for a surjective endomorphism."
+    },
+    {
       "node": "kl.algebra.kernel_saturation",
       "source_declarations": [
         "OAI.KLInvariance.EdgeImage.kernel_saturated",
@@ -37,6 +60,19 @@
       "revised_proof_words": 179,
       "proof_sha256": "371cc8fb94c3dc1ff0baadbb92fe262241a19dbc70e20c6d0bd55210b7fc5425",
       "review": "Compared kernel_saturated and reduced_kernel_injective: scalar injectivity cancels a in the target, and every zero reduced class is represented by a multiple within the original kernel."
+    },
+    {
+      "node": "kl.algebra.minimal_cover_maps",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.MinimalCover.hom_bijective",
+        "OAI.KLInvariance.Graded.ModuleData.MinimalCover.bijective_of_boundaryIso",
+        "OAI.KLInvariance.Graded.ModuleData.MinimalCover.equiv"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 296,
+      "proof_sha256": "86adfd4d9ae8ea69af91ce97dc65ec418ae936d0789254b5be7a2b1bbb6fc87d",
+      "review": "Read MinimalCover.hom_bijective, bijective_of_boundaryIso, and equiv: lift a reverse map, place both errors in the positive ideal, deduce bijectivity, and construct a comparison between arbitrary covers."
     },
     {
       "node": "kl.algebra.perfect_inverse_degree",
@@ -288,13 +324,15 @@
       "source_declarations": [
         "OAI.KLInvariance.BruhatGraph.boundarySheaf_symmetricPairing",
         "OAI.KLInvariance.TitsSpace.bottCanonicalAdjointIso",
-        "OAI.KLInvariance.TitsSpace.bottCanonicalPerfectPairing_apply"
+        "OAI.KLInvariance.TitsSpace.bottCanonicalPerfectPairing_apply",
+        "OAI.KLInvariance.TitsSpace.symmetricBoundarySheaf_symmetricPairing_word",
+        "OAI.KLInvariance.TitsSpace.symmetricBoundarySheaf_symmetricPairing"
       ],
       "proof_steps": 6,
       "previous_proof_words": 128,
-      "revised_proof_words": 754,
-      "proof_sha256": "62c2736b8e4e941c241f01693c6f96e8b6738bb93e64be2342d927126b2fdbdd",
-      "review": "Replaced the inaccurate fraction-field descent description by the actual integral support-annihilator argument. Expanded component idempotence, image-section equivalences, the algebraic duality inverse, and the canonical-pairing calculation. Recognition and top-to-global bijectivity remain topics for further detailed expansion."
+      "revised_proof_words": 572,
+      "proof_sha256": "ffcf90f7b4a6d8c2d7986d66ed0bbfde62530bab9f9941d201d6ba8e9f5494cb",
+      "review": "Read the actual symmetricBoundarySheaf and polynomial boundary pairing constructors. Every major step now links to detailed word grading, integral adjoint descent, primitive recognition, canonical comparison, image duality, and coefficient transport."
     },
     {
       "node": "kl.detail.boundary_uniqueness",
@@ -512,9 +550,9 @@
       ],
       "proof_steps": 3,
       "previous_proof_words": 0,
-      "revised_proof_words": 153,
-      "proof_sha256": "bd1e6f7f084ba9a256c2c926e1b28eafc6da02eb139254d79ce0c493293c45fc",
-      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness."
+      "revised_proof_words": 129,
+      "proof_sha256": "29276eb18cede7085d2a48a141ab3c0fdffe923402b226ad63ed11a618c925e0",
+      "review": "Rechecked projector_eq_id_of_primitive and isoOfPrimitive; retained the nonzero stalk hypothesis and both inverse equations while removing precautionary closing prose."
     },
     {
       "node": "kl.detail.quotient_image_free",
@@ -619,11 +657,11 @@
       "source_declarations": [
         "OAI.KLInvariance.MomentGraph.BoundarySheaf.splitIn_of_top_split"
       ],
-      "proof_steps": 4,
+      "proof_steps": 3,
       "previous_proof_words": 84,
-      "revised_proof_words": 334,
-      "proof_sha256": "9aa46e145ae433a411cc99a72d63e891b7786212bbae131100b10848cc1d755d",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 205,
+      "proof_sha256": "1d3d202eeb50d2ffad13696ff67ac681bbd7c63e0a7f330fce88ac72daceb1e0",
+      "review": "Read splitIn_of_top_split and its two top extensions. The composite is inverted by top detection and the inclusion is corrected by that inverse; the prescribed top maps remain unchanged."
     },
     {
       "node": "kl.detail.transfer_properties",
@@ -945,22 +983,23 @@
       ],
       "proof_steps": 4,
       "previous_proof_words": 143,
-      "revised_proof_words": 267,
-      "proof_sha256": "ce490c31c97cb72fb513a35fd4c398bc2537ed2aff9c96c7078879c060fb98fa",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test.",
+      "revised_proof_words": 242,
+      "proof_sha256": "a0b9b378516127b12833f0c906474b6e2b080a680ec2215b30cec0002df8b19b",
+      "review": "Rechecked the bounded-below degree induction and positive-ideal component argument; removed the precautionary final sentence without changing the hypotheses or proof.",
       "heading_revision": "Read the step body and named its actual induction setup or interval data; all non-heading proof text is unchanged."
     },
     {
       "node": "kl.notes.graded_projective_free",
       "source_declarations": [
         "OAI.KLInvariance.Graded.exists_homogeneous_basis_polynomial",
-        "OAI.KLInvariance.Graded.linearIndependent_of_projective_cover"
+        "OAI.KLInvariance.Graded.linearIndependent_of_projective_cover",
+        "OAI.KLInvariance.Graded.exists_homogeneous_basis_connected"
       ],
       "proof_steps": 4,
       "previous_proof_words": 115,
-      "revised_proof_words": 308,
-      "proof_sha256": "6b3a8994013a4ddf66d892686526405721a4f5b1764cce12ac041e9fa7fbc216",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 299,
+      "proof_sha256": "ca220a16050c693f5b17bfc62eed1945733c6f66f5f8e9ac72331aac95248378",
+      "review": "Read exists_homogeneous_basis_connected and the projective-cover determinant argument. Expanded the statement to the connected graded Noetherian-domain scope used by the new lifting and sheaf-retract results."
     },
     {
       "node": "kl.notes.minimal_cover_existence",
@@ -1223,6 +1262,38 @@
       "review": "Read the local source proof and expanded the exact induction, coefficient, and sign cases. The parabolic prefix is strictly shorter; the dual action uses the inverse; the signed action tracks both coordinates."
     },
     {
+      "node": "kl.sheaves.adjoint_boundary_recognition",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottBoundarySheaf_splitIn",
+        "OAI.KLInvariance.TitsSpace.bottSplitAdjointSplit",
+        "OAI.KLInvariance.TitsSpace.bottSplitAdjoint_free",
+        "OAI.KLInvariance.TitsSpace.bottSplitAdjointTop_split",
+        "OAI.KLInvariance.TitsSpace.bottBoundarySplitAdjoint_primitive",
+        "OAI.KLInvariance.TitsSpace.bottBoundarySheaf_iso_adjoint"
+      ],
+      "proof_steps": 6,
+      "revised_proof_words": 395,
+      "proof_sha256": "7b5fa05fac4b605c46c11e75ad8d87fedda500e2027332c65f82d172c8346e92",
+      "review": "Read actual word splitting, adjoint image splitting, inherited free stalks and section properties, primitive identity, normalized top maps, and bottBoundarySheaf_iso_adjoint."
+    },
+    {
+      "node": "kl.sheaves.adjoint_fixed_stalk",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottEndOfSheaf_fixed_support",
+        "OAI.KLInvariance.TitsSpace.bottAdjointSheaf_fixed_stalk",
+        "OAI.KLInvariance.TitsSpace.bottAdjointSheaf_fixed_stalk_iff",
+        "OAI.KLInvariance.Graded.ModuleData.unit_split_reverse",
+        "OAI.KLInvariance.TitsSpace.bottBoundarySplit_top_fixed",
+        "OAI.KLInvariance.TitsSpace.bottBoundarySplitAdjoint_top_fixed"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 251,
+      "proof_sha256": "4550c6010aa9c426fb23f969234b1b7545fb5b58068cc2bcf3be62f0acf75de1",
+      "review": "Read fixed support, the projection-kernel annihilator test, fixed_stalk_iff, and normalized top projectors. The rank-one reverse splitting follows from commutative scalar multiplication."
+    },
+    {
       "node": "kl.sheaves.adjoint_properties",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -1258,6 +1329,22 @@
       "review": "Compared dualSection, dualProjection, their splitting equation, adjointProjector_range, and rangeAdjointEquivDual. Both inverse maps and the range equality are explicit; symmetry is not used."
     },
     {
+      "node": "kl.sheaves.boundary_coefficient_transport",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_free",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_upperQuotient",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_flabby",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_generated",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.coefficientChange_primitive",
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.iso_coefficientChange"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 303,
+      "proof_sha256": "d7df9473db96fff04b0d28e6d8196388db1b9983d29df33cb3142ce2aa4a9cb4",
+      "review": "Read iso_coefficientChange and its transport prerequisites. Free bases, quotient kernels, sections, primitivity, and the two normalized top maps are transported explicitly before recognition."
+    },
+    {
       "node": "kl.sheaves.boundary_existence",
       "source_declarations": [
         "OAI.KLInvariance.BruhatGraph.exists_boundarySheaf"
@@ -1280,6 +1367,49 @@
       "revised_proof_words": 201,
       "proof_sha256": "0a1e0e8aa7a74e1a33be6bbf04c95360a3bc943e4964117fd6a653a080d5cd53",
       "review": "Compared both range containments with range_stalkMap_eq_boundaryImage. Generation lifts a stalk vector; flabbiness extends from the strict upper set; equality is checked at each outgoing edge coordinate."
+    },
+    {
+      "node": "kl.sheaves.boundary_recognition",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.top_nontrivial",
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.iso_of_primitive_top_split"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 191,
+      "proof_sha256": "55a11ea7cf77bf298922d2206133a0f9f5a3b04102408bec613db6b26265e6d3",
+      "review": "Read iso_of_primitive_top_split and top_nontrivial; checked the complete sheaf hypotheses, top splitting, and exclusion of the zero projector using the normalized vector."
+    },
+    {
+      "node": "kl.sheaves.boundary_top_detection",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.edge_bijective_of_vertex",
+        "OAI.KLInvariance.MomentGraph.Sheaf.AboveIso.stalk_hom_bijective",
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.hom_vertex_bijective",
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.homIso",
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.hom_vertex_bijective_of_iso",
+        "OAI.KLInvariance.MomentGraph.BoundarySheaf.homIsoOfIso"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 462,
+      "proof_sha256": "13c3d4689d0260d217fca53fd6128e22d05de0f4aafa597c6417073ce002de92",
+      "review": "Read hom_vertex_bijective, AboveIso.stalk_hom_bijective, edge_bijective_of_vertex, and homIsoOfIso. Retained partial upper-tuple conventions, identified boundary images and minimal covers, and explained finite downward induction."
+    },
+    {
+      "node": "kl.sheaves.canonical_adjoint_comparison",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.comparison_bijective",
+        "OAI.KLInvariance.TitsSpace.bottCanonicalAdjointHom",
+        "OAI.KLInvariance.TitsSpace.bottCanonicalAdjointHom_top_bijective",
+        "OAI.KLInvariance.TitsSpace.bottCanonicalAdjointIso",
+        "OAI.KLInvariance.TitsSpace.bottCanonicalAdjointIso_vertex"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 228,
+      "proof_sha256": "6d2ec6b96a8e6f15af4b917c45f95a1574aedc69dfb8f071a18068b32ef7a91c",
+      "review": "Read comparison_bijective and bottCanonicalAdjointIso. The exact map qi has inverse pj at the top; the recognized-target top-detection theorem applies to that specified map."
     },
     {
       "node": "kl.sheaves.costalk_duality_degree",
@@ -1360,6 +1490,36 @@
       "review": "Compared imageSection_fixed, imageSectionMap_bijective, and imageSectionEquiv. Retained ambient assignments on all vertices, assumed only vertex idempotence, and proved both directions of the section-image identification."
     },
     {
+      "node": "kl.sheaves.pairing_transport",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.CoefficientChange.dualEquiv",
+        "OAI.KLInvariance.CoefficientChange.pairingEquiv",
+        "OAI.KLInvariance.CoefficientChange.pairingEquiv_apply",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.PerfectPairing.pullback",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.PerfectPairing.coefficientChange",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SymmetricPerfectPairing.pullback",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SymmetricPerfectPairing.coefficientChange"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 381,
+      "proof_sha256": "9e928d3fccfbedbecbe5ea04b7cb7b38d34ef46407aa314c9a21fae3e4d16226",
+      "review": "Read dualEquiv, pairingEquiv, PerfectPairing transport/pullback, and symmetric variants. Constructed the functional representative in both transports and checked each orthogonality condition and grading."
+    },
+    {
+      "node": "kl.sheaves.primitive_image",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.primitive_id_of_projector",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.primitive_projector_of_id",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.primitive_image"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 190,
+      "proof_sha256": "fa2a62ae5f62a974900eeccf2219e0fb4ce5f17ed189fe9bba5efdc917c1f7f0",
+      "review": "Read primitive_id_of_projector, primitive_projector_of_id, and primitive_image; all lifted/descended idempotent equations and the image splitting are explicit."
+    },
+    {
       "node": "kl.sheaves.relative_flabbiness",
       "source_declarations": [
         "OAI.KLInvariance.MomentGraph.Sheaf.extend_closedUnder"
@@ -1369,6 +1529,21 @@
       "revised_proof_words": 328,
       "proof_sha256": "fc45e39268e6a589e0fb15ce608bb89a70bd14dd65a3f685af02b3747a90d8ed",
       "review": "Read extend_one, closedUnder_insert, and extend_closedUnder. The ambient assignment update, maximal missing vertex, zero incoming-edge cases, and induction on a strictly smaller complement are explicit."
+    },
+    {
+      "node": "kl.sheaves.split_sheaf_properties",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.flabby",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.generated",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.upperQuotient",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.vertex_projective",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.vertex_free"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 313,
+      "proof_sha256": "b1a91fb8112e0b1f14d1e5fc05aeb0998650e4ff95952b659012c0a3dd543ff7",
+      "review": "Read the SplitIn flabby, generated, upperQuotient, vertex_projective and vertex_free proofs; expanded both quotient-kernel containments and the lifting definition of inherited projectivity."
     },
     {
       "node": "kl.sheaves.support_annihilator",
@@ -1415,6 +1590,22 @@
       "review": "Compared bott_projection_zero_iff_annihilates_support, bottAdjoint_preserves_kernel, bottEndOfSheaf_preserves_support, bottAdjointSheaf, and bottEndOfAdjointSheaf. The proof follows integral annihilators and quotient descent."
     },
     {
+      "node": "kl.word.pairing_degree",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionFrobenius.trace_difference",
+        "OAI.KLInvariance.ReflectionFrobenius.trace_homogeneous",
+        "OAI.KLInvariance.FrobeniusDuality.inducedPairing_basis",
+        "OAI.KLInvariance.FrobeniusDuality.inducedPairing_basis_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottBasis_pairing_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottDuality_homogeneous"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 375,
+      "proof_sha256": "ebeff1bb8ed01a01185ff9928e7e733235380143a7412e78b2d51bc7bcdae27d",
+      "review": "Read trace_difference, trace_homogeneous, inducedPairing_basis_homogeneous, and bottDuality_homogeneous. Trace cancellation lowers degree by one; basis induction and coefficient expansion prove the full word-length shift."
+    },
+    {
       "node": "kl.word.scaled_coordinate_lifts",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -1448,6 +1639,25 @@
       "revised_proof_words": 433,
       "proof_sha256": "428bc5828e37d59c398fd15732f93b2a032eeb4a7cb1bf8ac9f2e3f48d6c60e2",
       "review": "Compared the right-action eigenvalue criterion, separation, distinct-weight orthogonality, scaled-coordinate expansion, both annihilator implications, and the stalk-duality inverse maps in Frobenius."
+    },
+    {
+      "node": "kl.word.top_stalk",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottFullIndex",
+        "OAI.KLInvariance.TitsSpace.bottWeight_eq_top",
+        "OAI.KLInvariance.TitsSpace.bottUnit",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_unit",
+        "OAI.KLInvariance.TitsSpace.bottTopCoordinate_bijective",
+        "OAI.KLInvariance.TitsSpace.bottTopStalkEquiv",
+        "OAI.KLInvariance.TitsSpace.bottTopStalkEquiv_homogeneous",
+        "OAI.KLInvariance.TitsSpace.bottTopHom",
+        "OAI.KLInvariance.TitsSpace.bottTopInvHom"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 332,
+      "proof_sha256": "e0425e9692af39121c4fe186d918a87b7cc433cfb76584a4a4caced4c2349f9a",
+      "review": "Read bottWeight_eq_top, unit evaluation, top-coordinate bijectivity, and both homogeneous directions. The retained-letter length inequalities force the unique top coordinate."
     }
   ]
 }

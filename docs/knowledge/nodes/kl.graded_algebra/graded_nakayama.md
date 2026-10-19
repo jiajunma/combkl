@@ -76,8 +76,6 @@ The first term belongs to \(N\) by its homogeneous-component closure. The second
 
 Every \(m\in M\) is a finite sum of homogeneous components, all now in \(N\). Thus \(M=N\). In particular, taking \(N=0\), the identity \(M=JM\) forces \(M=0\).
 
-The lower bound is the reason the induction starts. Without it, repeated division into lower degrees could continue indefinitely and this conclusion would not follow.
-
 ## References
 
 [2. Real realizations and moment-graph sheaves](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L2).

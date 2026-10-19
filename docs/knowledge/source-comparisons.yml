@@ -283,6 +283,7 @@ comparisons:
     prove adjoint kernel preservation, which descends the adjoint to a graded sheaf
     map. The adjoint image is dual to the original boundary summand; primitive recognition
     and the canonical comparison isomorphism produce its perfect symmetric pairing.
-  consequence: The proof below follows the integral adjoint, image-section, recognition,
-    and canonical-comparison maps. Homogeneous inverse calculations then determine
-    the stalk–costalk degree shift.
+  consequence: The proof follows the integral adjoint, image-section duality, primitive
+    recognition, and canonical-comparison maps. The trace lowers degree once per word
+    letter. Coefficient transport and a boundary-recognition isomorphism deliver the
+    pairing on the chosen polynomial-coordinate sheaf.

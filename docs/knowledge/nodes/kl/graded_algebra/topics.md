@@ -87,6 +87,16 @@ The source's projective-to-free proof then uses a determinant argument. Finite g
 
 The reverse kernel argument first establishes projectivity, then applies this graded construction to obtain freeness.
 
+## Lifting maps and comparing minimal covers
+
+A homogeneous basis turns a module map into a finite collection of prescribed vectors. To lift a map through a graded surjection, lift each basis image and retain the component of its required degree. The coefficient-degree formula then proves that the resulting linear map preserves degree.
+
+For two minimal covers \(\pi:F\to T\) and \(\rho:G\to T\), a map \(f:F\to G\) covering the identity has a reverse homogeneous lift \(g\). The differences \(1-gf\) and \(1-fg\) land in the respective cover kernels, hence in \(JF\) and \(JG\).
+
+A degree-zero self-map equal to the identity modulo the positive ideal is surjective by graded Nakayama. It is injective because the kernels of its powers stabilize in a Noetherian module. Thus \(gf\) and \(fg\) are invertible, which makes the specified map \(f\) bijective.
+
+This comparison controls boundary-sheaf morphisms. Isomorphisms above a vertex identify its two boundary images; the remaining stalk maps become maps of minimal covers over a common target. Their bijectivity propagates downward from the normalized stalk.
+
 ## Exactness can be checked degree by degree
 
 For a degree-zero surjection \(M\to N\) with kernel \(K\), a homogeneous vector in \(N_n\) has a homogeneous preimage in \(M_n\): take any preimage and retain its degree-\(n\) component. Consequently
@@ -129,6 +139,9 @@ The tools to carry forward are: linear labels and prime quotients; homogeneous m
 - [[node:kl.sheaves.minimal_cover]]
 - [[node:kl.notes.minimal_cover_existence]]
 - [[node:kl.notes.graded_projective_free]]
+- [[node:kl.algebra.homogeneous_lifts]]
+- [[node:kl.algebra.identity_mod_positive]]
+- [[node:kl.algebra.minimal_cover_maps]]
 
 ### Hilbert series, Hilbert values, and characters
 

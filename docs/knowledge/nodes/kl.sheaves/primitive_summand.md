@@ -62,8 +62,6 @@ because \(p_xi_x=1\). This contradicts \(v\ne0\). Thus \(e=1_C\).
 
 We now have both \(p_xi_x=1\) and \(i_xp_x=1\) at every stalk, and the same equations at every edge module. They define inverse linear isomorphisms. Since \(i,p\) were graded sheaf morphisms, these isomorphisms preserve grading and commute with both restrictions. Hence they form the required graded sheaf isomorphism.
 
-The nonzero hypothesis is necessary for this argument: the zero sheaf splits into every sheaf, and the formal primitive-projector predicate allows the zero projector.
-
 ## References
 
 The precise Lean sources are listed below.

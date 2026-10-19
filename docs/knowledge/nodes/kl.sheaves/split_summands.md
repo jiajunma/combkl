@@ -11,11 +11,13 @@ uses:
 lean:
   repository: openai-kl
   modules:
-  - SheafMorphisms
   - BalancedPairings
+  - EdgeLocalization
+  - SheafMorphisms
   declarations:
   - OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn
   - OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.projector
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.comparison_bijective
 source:
   spans:
   - artifact: openai-kl-source
@@ -26,6 +28,10 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.BalancedPairings:1314
     format: lean-location
     note: OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.projector
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.EdgeLocalization:785
+    format: lean-location
+    note: OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.comparison_bijective
 verification:
   definition: accepted
   proof: not_applicable
@@ -55,6 +61,27 @@ Its stalk and edge images form a subsheaf because \(e\) commutes with the restri
 
 A split inclusion includes its actual maps. In the perfect-pairing construction the adjoint projector acts on the same word sheaf, so these maps determine the embedded images whose duality is being compared.
 
+## Comparison of two summands in one sheaf
+
+Suppose \(B\) and \(D\) both split into a sheaf \(C\), with maps
+\[
+i:B\to C,\ p:C\to B,\qquad
+j:D\to C,\ q:C\to D.
+\]
+The comparison from the first summand to the second is
+\[
+h=qi:B\to D.
+\]
+After inclusion in \(C\), it is \(jh=(jq)i\): include a vector from \(B\), then apply the projector selecting \(D\).
+
+At a vertex where both projectors \(ip\) and \(jq\) are the identity on \(C^x\), the reverse map \(g=pj\) satisfies
+\[
+gh=pjqi=pi=1,\qquad hg=qipj=qj=1.
+\]
+Thus the comparison is bijective at that vertex.
+
+For the word-sheaf splitting and its adjoint image, this is the canonical comparison map used in the perfect boundary-pairing construction.
+
 ## References
 
 The precise Lean sources are listed below.
@@ -66,3 +93,5 @@ The fields `inclusion`, `projection`, `vertex_split`, and `edge_split` supply th
 `OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn`: [SheafMorphisms.lean:1354](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean#L1354).
 
 `OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.projector`: [BalancedPairings.lean:1314](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/BalancedPairings.lean#L1314).
+
+`OAI.KLInvariance.MomentGraph.GradedSheaf.SplitIn.comparison_bijective`: [EdgeLocalization.lean:785](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean#L785).

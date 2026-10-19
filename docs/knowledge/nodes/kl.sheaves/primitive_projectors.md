@@ -35,19 +35,31 @@ tags:
 
 # Primitive sheaf projectors
 
-A sheaf endomorphism \(e\) is a primitive projector if \(e^2=e\) and every idempotent \(f\) satisfying
+A graded sheaf endomorphism \(e:C\to C\) is a primitive projector when \(e^2=e\) and every graded endomorphism \(f\) satisfying
 \[
 f^2=f,\qquad fe=f,\qquad ef=f
 \]
-is either zero or \(e\). The last two equations say that \(f\) acts within the summand selected by \(e\).
+equals either zero or \(e\).
 
-For \(e=1_B\), the condition says that every idempotent endomorphism of \(B\) is zero or the identity. Thus a decomposition of \(B\) into two nonzero split sheaf summands is impossible: the projection onto either would be a forbidden idempotent.
+The equation \(ef=f\) places the image of \(f\) in the image of \(e\). The equation \(fe=f\) says that \(f\) depends only on the component selected by \(e\): for \(v\in\ker e\), it gives \(f(v)=f(e(v))=0\). Thus the predicate describes idempotents acting within that image summand.
 
-The formal predicate does not separately impose \(e\ne0\); the zero projector satisfies it. Nonzero stalk hypotheses are therefore stated explicitly when primitivity is used to conclude that a split inclusion is an isomorphism. For the boundary sheaf, the normalized rank-one top stalk supplies this nonzero condition.
+## Identity and zero projectors
+
+For \(e=1_C\), the two support equations hold automatically. Primitivity says that every graded idempotent on \(C\) is zero or the identity. A decomposition into two nonzero graded summands would yield a projection that is neither, so a sheaf with primitive identity is indecomposable.
+
+For \(e=0\), the equation \(fe=f\) forces \(f=0\), so the zero projector satisfies the formal predicate. When a nonzero normalized top stalk is present, it supplies the nonzero vector used to recognize a split summand as the whole sheaf.
+
+## Examples over a domain
+
+On the single-vertex sheaf with stalk \(A\), every \(A\)-linear endomorphism is multiplication by a scalar \(a\). The idempotence equation is \(a(a-1)=0\). If \(A\) is a domain, \(a=0\) or \(a=1\), so the identity is primitive.
+
+On the single-vertex sheaf with stalk \(A\oplus A\), projection onto the first coordinate is a nonzero idempotent different from the identity. Thus the identity of this sheaf is not primitive.
+
+The transfer theorem [[node:kl.sheaves.primitive_image]] relates primitivity of a split summand to primitivity of its projector in the ambient sheaf.
 
 ## References
 
-The precise Lean sources are listed below.
+The source declarations below give the constructions and proofs.
 
 ## Lean formalization
 

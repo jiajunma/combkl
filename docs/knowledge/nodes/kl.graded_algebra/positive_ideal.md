@@ -49,7 +49,9 @@ Assume \(A_n=0\) for \(n<0\). Decompose each coefficient \(r_j\) into homogeneou
 A_+=\bigoplus_{n>0}A_n.
 \]
 
-If also \(A_0=k\), projection to degree zero is an algebra homomorphism
+A nonnegative grading is connected when \(A_0\) is exactly the image of the base field \(k\). For a nonzero \(k\)-algebra, this identifies \(A_0\) with \(k\).
+
+In this connected case, projection to degree zero is an algebra homomorphism
 \[
 \epsilon:A\to k.
 \]
@@ -67,7 +69,7 @@ For an \(A\)-module \(M\), the submodule \(A_+M\) consists of finite sums \(am\)
 
 If \(M=Ae_0\oplus Ae_2\), with generator degrees zero and two, its reduction has basis \(\overline e_0,\overline e_2\) over \(k\). Positive-degree polynomial multiples disappear; the generator degrees remain recorded by the induced grading.
 
-A minimal graded cover \(F\to M\) has kernel contained in \(A_+F\). Its generators consequently become a basis of \(M/A_+M\). Graded Nakayama lifts this reduced information back to a generating family in \(M\).
+A minimal graded cover \(F\to M\) has kernel contained in \(A_+F\). Its generators consequently become a basis of \(M/A_+M\). [[node:kl.notes.graded_nakayama|Graded Nakayama]] lifts this reduced information back to a generating family in \(M\).
 
 ## References
 
