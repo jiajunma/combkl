@@ -1,14 +1,14 @@
 ---
 id: kl.definitions.bar_involution
-title: The Hecke bar involution
+title: Inverse-basis transforms and the Hecke bar involution
 kind: definition
 status: formalized
 primary_topic: kl.02_hecke_polynomials
 topics:
 - kl.02_hecke_polynomials
 uses:
-- kl.definitions.hecke_operators
-- kl.definitions.hecke_quadratic_relation
+- kl.hecke.word_actions
+- kl.hecke.word_independence
 lean:
   repository: openai-kl
   modules:
@@ -16,11 +16,8 @@ lean:
   declarations:
   - OAI.KLInvariance.Hecke.barBasis
   - OAI.KLInvariance.Hecke.barLinear
-  - OAI.KLInvariance.Hecke.barLinear_inverse
   - OAI.KLInvariance.HeckeQ.barBasis
   - OAI.KLInvariance.HeckeQ.barLinear
-  - OAI.KLInvariance.HeckeQ.barLinear_left
-  - OAI.KLInvariance.HeckeQ.barLinear_inverse
 source:
   spans:
   - artifact: openai-kl-source
@@ -32,13 +29,6 @@ source:
     format: lean-location
     note: OAI.KLInvariance.Hecke.barLinear
   - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.Hecke:381
-    format: lean-location
-    note: OAI.KLInvariance.Hecke.barLinear_inverse
-  - artifact: openai-kl-paper
-    locator: 1. Introduction and conventions; sec:introduction
-    format: section
-  - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.Hecke:790
     format: lean-location
     note: OAI.KLInvariance.HeckeQ.barBasis
@@ -46,78 +36,89 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.Hecke:833
     format: lean-location
     note: OAI.KLInvariance.HeckeQ.barLinear
-  - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.Hecke:841
-    format: lean-location
-    note: OAI.KLInvariance.HeckeQ.barLinear_left
-  - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.Hecke:876
-    format: lean-location
-    note: OAI.KLInvariance.HeckeQ.barLinear_inverse
+  - artifact: openai-kl-paper
+    locator: 1. Introduction and conventions; sec:introduction
+    format: section
 verification:
   definition: accepted
   proof: not_applicable
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Does this definition retain the implemented conventions?
-  verdict: Normalized and unnormalized parameters, operators, and semilinearity are
-    distinguished explicitly.
+  prompt: Are the actual coefficient hypotheses, conventions and source proof retained?
+  verdict: Read both barBasis/barLinear definitions. Put inverse standard operators
+    first, state the exact coefficient-linear maps, and derive the Laurent semilinear
+    description by coefficient substitution.
 tags:
 - Kazhdan-Lusztig
-- definitions
 - Hecke
 ---
 
-# The Hecke bar involution
+# Inverse-basis transforms and the Hecke bar involution
 
-Over the Laurent coefficient ring \(\mathbb Z[v,v^{-1}]\), the Hecke bar involution is the semilinear map characterized by
+Let \(U_w\) be the standard invertible action on the Hecke module. The inverse-basis vector attached to \(w\) is
 \[
-\overline v=v^{-1},\qquad
-\overline{H_w}=H_{w^{-1}}^{-1},\qquad
-\overline{fh}=\overline f\,\overline h.
+b_w=U_{w^{-1}}^{-1}e_1.
 \]
-It preserves products and satisfies \(\overline{\overline h}=h\). Semilinearity transforms scalar coefficients by the involution on the Laurent ring.
-
-For a simple reflection, \(a=v-v^{-1}\) changes to \(-a\), and
+The linear bar transform is the \(C\)-linear operator \(B\) defined by \(B(e_w)=b_w\). Thus for any finitely supported vector,
 \[
-\overline{H_s}=H_s^{-1}=H_s-a.
+B\left(\sum_w c_we_w\right)=\sum_w c_wb_w.
 \]
-Applying bar a second time gives \(H_s\), since the second application also reverses the sign of \(a\).
+The standard action is independent of the chosen reduced word, so this definition is independent of that choice as well.
 
-The implementation first works over a general coefficient ring with a chosen parameter. Its linear inverse-basis transforms satisfy
+Write \(b_w(a),B_a\) in the normalized convention, and \(b_w(q),B_q\) in the unnormalized convention. The latter uses a unit \(q\).
+
+## A reduced-word formula
+
+If \(w=s_1\cdots s_m\) is reduced, then the reverse word is reduced for \(w^{-1}\). Reversing the product when taking its inverse gives
 \[
-\operatorname{barLinear}_a\circ\operatorname{barLinear}_{-a}=I.
+b_w=L_{s_1}^{-1}\cdots L_{s_m}^{-1}e_1.
 \]
-The Laurent coefficient involution changes the parameter from a to its negative between the two linear transforms. Their displayed composition therefore gives the square of the semilinear involution.
-
-A bar-invariant element is one satisfying \(\overline h=h\). Canonical KL basis elements are specified by bar invariance together with a leading term and a strict triangular degree condition. The bar normalization is the choice of parameter and basis convention used in these formulas.
-
-## The linear transform in the unnormalized q convention
-
-For a unit \(q\) in a commutative coefficient ring, let \(T_w\) be the standard basis of the unnormalized Hecke module. The linear bar transform \(B_q\) is defined on a basis vector by applying the inverse standard word operator for \(w^{-1}\) to \(T_1\):
+In particular \(b_1=e_1\). For a simple reflection,
 \[
-B_q(T_w)=T_{w^{-1}}^{-1}.
+b_s(a)=H_s-aH_1,\qquad
+b_s(q)=q^{-1}T_s+(q^{-1}-1)T_1.
 \]
-This formula denotes the corresponding inverse-operator vector in the module.
 
-For a simple reflection,
-\[
-B_q(T_s)=T_s^{-1}
-=q^{-1}\bigl(T_s-(q-1)T_1\bigr).
-\]
-The transform is coefficient-linear. Its operator identities are
-\[
-B_qL_s(q^{-1})=L_s(q)^{-1}B_q,\qquad
-B_qB_{q^{-1}}=1.
-\]
-The word-character calculation uses this form of the transform.
+These expressions are the vectors denoted conventionally by \(H_{w^{-1}}^{-1}\) and \(T_{w^{-1}}^{-1}\). The source defines them by inverse operators.
 
-Over Laurent coefficients, composing the linear transform with coefficient inversion \(q\mapsto q^{-1}\) gives the semilinear bar operation in this convention. The relation \(q=v^2\) connects it with the normalized \(v\)-convention above.
+## Parameter interchange
+
+The parameter-interchange theorem proves
+\[
+B_aL_s(-a)=L_s(a)^{-1}B_a,\qquad B_aB_{-a}=I,
+\]
+and
+\[
+B_qL_s(q^{-1})=L_s(q)^{-1}B_q,\qquad B_qB_{q^{-1}}=I.
+\]
+The maps \(B_a,B_q\) themselves are coefficient-linear.
+
+## Semilinearity over Laurent coefficients
+
+In the normalized Laurent convention, \(C=\mathbb Z[v,v^{-1}]\) and \(a=v-v^{-1}\). Let \(\sigma\) replace \(v\) by \(v^{-1}\) in every coefficient and leave the basis labels fixed. Then \(\sigma(a)=-a\).
+
+The semilinear bar is
+\[
+\overline f=B_a(\sigma f).
+\]
+Consequently \(\overline{cf}=\sigma(c)\overline f\), and \(\overline{H_w}=b_w(a)\). Applying coefficient inversion to the defining operator formulas changes \(B_a\) to \(B_{-a}\). Hence
+\[
+\overline{\overline f}=B_aB_{-a}f=f.
+\]
+
+For \(H_s\), this can be read directly:
+\[
+\overline{H_s}=H_s-aH_1,\qquad
+\overline{H_s-aH_1}=(H_s-aH_1)+aH_1=H_s.
+\]
+The unnormalized Laurent convention similarly uses coefficient inversion \(q\mapsto q^{-1}\) before \(B_q\).
+
+A bar-invariant vector satisfies \(\overline f=f\). The linear transforms are the objects used by the coefficient proofs in Lean; the semilinear formulas express them in the usual Laurent notation.
 
 ## References
 
-[Paper conventions](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/01-introduction.tex#L215).
+The local source declarations below give the construction and proof.
 
 ## Lean formalization
 
@@ -125,12 +126,6 @@ Over Laurent coefficients, composing the linear transform with coefficient inver
 
 `OAI.KLInvariance.Hecke.barLinear`: [Hecke.lean:339](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean#L339).
 
-`OAI.KLInvariance.Hecke.barLinear_inverse`: [Hecke.lean:381](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean#L381).
-
 `OAI.KLInvariance.HeckeQ.barBasis`: [Hecke.lean:790](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean#L790).
 
 `OAI.KLInvariance.HeckeQ.barLinear`: [Hecke.lean:833](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean#L833).
-
-`OAI.KLInvariance.HeckeQ.barLinear_left`: [Hecke.lean:841](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean#L841).
-
-`OAI.KLInvariance.HeckeQ.barLinear_inverse`: [Hecke.lean:876](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean#L876).

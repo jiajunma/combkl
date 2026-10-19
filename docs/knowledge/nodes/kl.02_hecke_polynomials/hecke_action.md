@@ -12,6 +12,10 @@ uses:
 - kl.definitions.hecke_quadratic_relation
 - kl.definitions.bar_involution
 - kl.detail.hecke_quadratic_identity
+- kl.hecke.commutation
+- kl.hecke.word_independence
+- kl.hecke.bar_interchange
+- kl.hecke.bar_triangularity
 lean:
   repository: openai-kl
   modules:
@@ -77,7 +81,7 @@ To see the quadratic relation directly, pair the two basis elements \(H_w,H_{sw}
 \[
 \begin{pmatrix}0&1\\1&a\end{pmatrix},
 \]
-whose square is the identity plus \(a\) times the matrix. The braid relations make products along reduced expressions independent of the chosen reduced word.
+whose square is the identity plus \(a\) times the matrix. Left and right simple operators commute. A reduced right word for \(w^{-1}\) takes the identity vector to \(H_w\). Thus an operator commuting with all right operations is determined by its value at the identity. Two reduced left words for \(w\) have that same value, so their operators agree. This proves reduced-word independence and hence the braid identities.
 
 The bar construction uses inverse operators and changes \(a\) to \(-a\). In Laurent coefficients this is the familiar semilinearity \(v\mapsto v^{-1}\). Its coefficients are triangular for Bruhat order. The normalized R-polynomial \(\widetilde R_{x,y}(T)\) is the coefficient of \(H_x\) in the inverse-basis expression for \(H_y\), evaluated with parameter \(-T\).
 

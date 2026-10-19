@@ -9,6 +9,7 @@ topics:
 uses:
 - kl.definitions.bar_involution
 - kl.foundations.bruhat_order
+- kl.hecke.bar_triangularity
 lean:
   repository: openai-kl
   modules:
@@ -66,7 +67,7 @@ Triangularity of the bar basis gives
 \]
 These are polynomials with integer coefficients, constructed from operators rather than postulated as solutions of a recursion.
 
-The descent recursion is a theorem about this family. The relation to ordinary \(R_{x,y}(q)\) after the square-parameter substitution is another theorem, with its own normalization factors. Keeping the definition and these two identities separate makes the later path evaluation unambiguous.
+The descent recursion is a theorem about this family. The relation to ordinary \(R_{x,y}(q)\) after the square-parameter substitution is another theorem, with its own normalization factors. The path theorem later identifies this operator-defined family with the polynomial counting increasing reflection paths.
 
 <!-- source-comparison:start -->
 ## Relation to the OpenAI notes

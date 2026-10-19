@@ -10,6 +10,8 @@ uses:
 - kl.detail.rtilde_family
 - kl.definitions.bar_involution
 - kl.detail.hecke_quadratic_identity
+- kl.hecke.bar_interchange
+- kl.hecke.bar_triangularity
 lean:
   repository: openai-kl
   modules:
@@ -71,7 +73,7 @@ Together with diagonal value \(1\) and vanishing outside Bruhat order, this comp
 
 Fix a simple reflection \(s\) with \(sy<y\), and put \(v=sy\). Then \(sv=y\) is an ascent from \(v\). Write \(B_v\) for the bar-basis vector at \(v\), with the parameter convention \(-a\) used to define \(\widetilde R\).
 
-The bar-basis ascent formula gives \(B_y=L_s^{-1}B_v\). The quadratic identity says that the inverse operator is \(L_s-(-a)=L_s+a\) in this parameter convention.
+The bar-basis ascent formula gives \(B_y=L_s^{-1}B_v\). The [[node:kl.detail.hecke_quadratic_identity|quadratic identity]] says that the inverse operator is \(L_s-(-a)=L_s+a\) in this parameter convention.
 
 ### Step 2. Read the coefficient of a general vector
 

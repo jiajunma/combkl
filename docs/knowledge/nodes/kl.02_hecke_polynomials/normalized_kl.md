@@ -9,6 +9,7 @@ topics:
 uses:
 - kl.foundations.interval
 - kl.foundations.finite_intervals
+- kl.hecke.polynomial_reflection
 lean:
   repository: openai-kl
   modules:

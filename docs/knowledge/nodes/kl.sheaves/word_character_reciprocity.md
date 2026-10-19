@@ -13,6 +13,10 @@ uses:
 - kl.detail.costalk_reciprocity
 - kl.notes.tensor_pairing
 - kl.detail.root_inversion_count
+- kl.hecke.positive_words
+- kl.hecke.positive_word_reciprocity
+- kl.hecke.r_parameter_reciprocity
+- kl.hecke.ordinary_r_construction
 lean:
   repository: openai-kl
   modules:
@@ -110,7 +114,7 @@ The empty word is fixed. Each new letter contributes one additional factor \(q^{
 
 ### Step 2. Extract the coefficient at x
 
-The inverse-parameter coefficient identity for the ordinary R-family gives \([T_x]B_{q^{-1}}(T_z)=q^{\ell(x)}R_{x,z}(q)\). Expand \(H_{\mathbf s}(q)\) in the standard basis and take its \(x\)-coefficient in the last bar identity. This gives
+The [[node:kl.hecke.r_parameter_reciprocity|inverse-parameter coefficient identity]] for the ordinary R-family gives \([T_x]B_{q^{-1}}(T_z)=q^{\ell(x)}R_{x,z}(q)\). Expand \(H_{\mathbf s}(q)\) in the standard basis and take its \(x\)-coefficient in the last [[node:kl.hecke.positive_word_reciprocity|bar identity]]. This gives
 \[
 q^{\ell(x)}\sum_{z\le b}R_{x,z}(q)[T_z]H_{\mathbf s}(q)
 =q^m[T_x]H_{\mathbf s}(q^{-1}).

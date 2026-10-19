@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 46801,
-  "theorem_walkthroughs": 155,
+  "revised_proof_words": 49662,
+  "theorem_walkthroughs": 165,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -275,13 +275,14 @@
         "OAI.KLInvariance.bruhatStep_simple_mul",
         "OAI.KLInvariance.bruhatStep_inv",
         "OAI.KLInvariance.bruhatStep_mul_simple",
-        "OAI.KLInvariance.right_descent_simple_mul_iff"
+        "OAI.KLInvariance.right_descent_simple_mul_iff",
+        "OAI.KLInvariance.left_descent_mul_simple_iff"
       ],
       "proof_steps": 5,
       "previous_proof_words": 0,
-      "revised_proof_words": 275,
-      "proof_sha256": "6fd34dd1da75842ce50bdb33759312f3637f7d53a6faa062c8a8143658af99f0",
-      "review": "Read the local proof. Expanded reduced-subword selection, the two length sandwiches, alternating-tail cancellation, or the transported-edge length cases as applicable."
+      "revised_proof_words": 331,
+      "proof_sha256": "752ebe692fb3b393fd97785df3d38927644710954531d7b56f5055492c1d5af2",
+      "review": "Re-read both noncollapsed descent-square lemmas and right-edge transport. Added the left-descent equivalence with its two orientations and exact noncollapse condition."
     },
     {
       "node": "kl.coxeter.word_reduction",
@@ -462,13 +463,20 @@
     {
       "node": "kl.detail.hecke_quadratic_identity",
       "source_declarations": [
-        "OAI.KLInvariance.Hecke.left_quadratic"
+        "OAI.KLInvariance.Hecke.left_quadratic",
+        "OAI.KLInvariance.Hecke.leftInv",
+        "OAI.KLInvariance.Hecke.left_mul_leftInv",
+        "OAI.KLInvariance.Hecke.leftInv_mul_left",
+        "OAI.KLInvariance.HeckeQ.left_quadratic",
+        "OAI.KLInvariance.HeckeQ.leftInv",
+        "OAI.KLInvariance.HeckeQ.left_mul_leftInv",
+        "OAI.KLInvariance.HeckeQ.leftInv_mul_left"
       ],
-      "proof_steps": 4,
+      "proof_steps": 3,
       "previous_proof_words": 67,
-      "revised_proof_words": 146,
-      "proof_sha256": "8aeec6e4c6aaeb77561b3c146019d31cace919b708ea10d9a880607733d261f8",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 171,
+      "proof_sha256": "99e58a016e4a7b000d61dbd4b0dcf872a6e535e27c1e22f99499d353c0b56692",
+      "review": "Read both quadratic proofs and both-sided inverse declarations; the ascent-pair calculation covers every basis vector and retains the unit hypothesis only in the q convention."
     },
     {
       "node": "kl.detail.hilbert_exactness",
@@ -592,13 +600,15 @@
     {
       "node": "kl.detail.r_kernel",
       "source_declarations": [
-        "OAI.KLInvariance.OrdinaryR.polynomial_kernel_reverse"
+        "OAI.KLInvariance.OrdinaryR.polynomial_kernel_reverse",
+        "OAI.KLInvariance.OrdinaryR.polynomial_kernel",
+        "OAI.KLInvariance.eval₂_reflect_unit"
       ],
       "proof_steps": 3,
       "previous_proof_words": 78,
-      "revised_proof_words": 249,
-      "proof_sha256": "d137cea7f5d56415cd07dd3288ef3e7f037194e07ab848970d5f8d2fa5c99e6f",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 272,
+      "proof_sha256": "0ea6858b2c78aa073ee73ebf8367f898dc5007e8aa1f0ee8678afbf9de20e869",
+      "review": "Read both polynomial kernel directions and eval₂_reflect_unit. Added the coefficient definition of bounded reflection and linked the full sign/power cancellation and polynomial degree proof."
     },
     {
       "node": "kl.detail.reverse_projectivity",
@@ -651,8 +661,8 @@
       "proof_steps": 3,
       "previous_proof_words": 74,
       "revised_proof_words": 199,
-      "proof_sha256": "ceb3ee217ebaf27c8cdc3498cfbaeef7bfdd199ac6381a0b8002cd312deaf357",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "proof_sha256": "1ca949ac871a57cf7c070781504d19e864e33ccc899c429c68128f687c42530f",
+      "review": "Re-read rTilde_recursion. Its coefficient calculation is retained and now points to the detailed inverse-basis ascent and triangularity proofs."
     },
     {
       "node": "kl.detail.schedule_comparison",
@@ -727,8 +737,8 @@
       "proof_steps": 4,
       "previous_proof_words": 0,
       "revised_proof_words": 419,
-      "proof_sha256": "8465fd6f360f10e1979c4dc554e9885fbb6f1ce4ab1f94f96a1eb476c9d076bf",
-      "review": "Rechecked barLinear_positiveWord, positiveWord_rValue and the inverse-parameter bar coefficient theorem. Defined the positive word and linear transform and identified the coefficient identity as a derived theorem; detailed upstream H2/H3 exposition is still pending.",
+      "proof_sha256": "99b338678a33291c92d0b7de93cfb00b5b844c25ae2d3a51f6213d23c5ddb094",
+      "review": "The Hecke identities used in the existing word-character proof now have detailed nodes: positive-word definition/support/bar induction, signed parameter reciprocity and the inverse-parameter R coefficient.",
       "format_correction": "2026-10-18: restored missing backslashes in qquad spacing commands; mathematical assertions unchanged."
     },
     {
@@ -998,7 +1008,7 @@
       "previous_proof_words": 50,
       "revised_proof_words": 184,
       "proof_sha256": "857684a9d7287777009ffcd26b3e50bf9adba112986a039ba63c7c99fe0cbe93",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "review": "Read rPolynomial_normalization and rPolynomial_eq_constructed. Retained the integer-exponent induction, both branch length differences and explicit scalar factors."
     },
     {
       "node": "kl.foundations.scaled_kl",
@@ -1049,6 +1059,162 @@
       "revised_proof_words": 387,
       "proof_sha256": "81d3c0801c71d91230cb4bd1ad53386916dc28403e2ac486f6b9726db2f8f103",
       "review": "Rechecked partner-orbit sign changes, finiteness, the distinguished root, and the plane-by-plane doubling identity now used by induced-system construction."
+    },
+    {
+      "node": "kl.hecke.bar_coefficient_inverse",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.HeckeQ.bar_coeff_inverse",
+        "OAI.KLInvariance.HeckeQ.rValue_inverse_factor",
+        "OAI.KLInvariance.HeckeQ.rValue_inverse"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 214,
+      "proof_sha256": "1a758e1491fd73db589913a1b2283d7859cbed222c39f8508505536a899e9642",
+      "review": "Read bar_coeff_inverse, rValue_inverse_factor and rValue_inverse. Expanded the finite-support coefficient sum and cancelled signs and q-powers separately before evaluating the diagonal."
+    },
+    {
+      "node": "kl.hecke.bar_interchange",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Hecke.barBasis_simple_mul_ascent",
+        "OAI.KLInvariance.Hecke.leftInv_barBasis",
+        "OAI.KLInvariance.Hecke.barLinear_left",
+        "OAI.KLInvariance.Hecke.barLinear_leftInv",
+        "OAI.KLInvariance.Hecke.barLinear_barBasis",
+        "OAI.KLInvariance.Hecke.barLinear_inverse",
+        "OAI.KLInvariance.HeckeQ.barBasis_simple_mul_ascent",
+        "OAI.KLInvariance.HeckeQ.leftInv_barBasis",
+        "OAI.KLInvariance.HeckeQ.barLinear_left",
+        "OAI.KLInvariance.HeckeQ.barLinear_leftInv",
+        "OAI.KLInvariance.HeckeQ.barLinear_barBasis",
+        "OAI.KLInvariance.HeckeQ.barLinear_inverse"
+      ],
+      "proof_steps": 6,
+      "revised_proof_words": 342,
+      "proof_sha256": "db6eb5ca84d353134b0fcd4f601fac5a7e1d50e6b38cd70452bf549f181ed01f",
+      "review": "Read both bar ascent, intertwining and inverse proofs; explained unit multiplication order, both descent calculations, inverse-generator intertwining and the reduced-word induction."
+    },
+    {
+      "node": "kl.hecke.bar_triangularity",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Hecke.leftInv_coeff",
+        "OAI.KLInvariance.Hecke.simple_mul_le_ascent",
+        "OAI.KLInvariance.Hecke.barBasis_zero",
+        "OAI.KLInvariance.Hecke.barBasis_diagonal",
+        "OAI.KLInvariance.HeckeQ.leftInv_coeff",
+        "OAI.KLInvariance.HeckeQ.barBasis_zero",
+        "OAI.KLInvariance.HeckeQ.barBasis_diagonal"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 315,
+      "proof_sha256": "d37117c75cca71fbbc71bb516b7fcfbcb21352ec46e3abe90408c7a8c7999eca",
+      "review": "Read both inverse-coefficient and triangularity proofs; included the upper-envelope implication for sx, the all-bottom induction and separate normalized/q diagonal calculations."
+    },
+    {
+      "node": "kl.hecke.commutation",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Hecke.left_right_commute",
+        "OAI.KLInvariance.HeckeQ.left_right_commute"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 302,
+      "proof_sha256": "67d49a5b36ad276d9cdaad9f1cd2b07ff309f89be1801ed27081cc5a1971a8b2",
+      "review": "Read both left_right_commute proofs. Expanded the noncollapsed orientation square in both parameter conventions and the identical two-dimensional action in the collapsed case."
+    },
+    {
+      "node": "kl.hecke.ordinary_r_construction",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.OrdinaryR.rValue_polynomial",
+        "OAI.KLInvariance.OrdinaryR.toLaurent_polynomial",
+        "OAI.KLInvariance.OrdinaryR.polynomial_diagonal",
+        "OAI.KLInvariance.OrdinaryR.polynomial_zero",
+        "OAI.KLInvariance.OrdinaryR.polynomial_recursion",
+        "OAI.KLInvariance.OrdinaryR.polynomial_eval"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 302,
+      "proof_sha256": "40aa15eb40f82efefa1c6b7c34033ff733f5f2ffd11b8d6924ff004dfdf4aa2a",
+      "review": "Read polynomiality, Laurent truncation, every-descent recurrence and polynomial_eval. Both inductions include all lower labels, diagonal/support base cases and the smaller upper endpoint."
+    },
+    {
+      "node": "kl.hecke.ordinary_r_degree",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.OrdinaryR.polynomial_degree"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 235,
+      "proof_sha256": "1bf1f5924d2b7b9608db65705bf705366acef777eb6c618d255f048421a730e9",
+      "review": "Read polynomial_degree. Preserved natural truncated length difference, the zero-polynomial convention, the two descent branches and the support case required before subtracting two from the rank."
+    },
+    {
+      "node": "kl.hecke.positive_word_reciprocity",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.HeckeQ.one_add_leftInv",
+        "OAI.KLInvariance.HeckeQ.barLinear_positiveWord",
+        "OAI.KLInvariance.HeckeQ.positiveWord_support",
+        "OAI.KLInvariance.HeckeQ.positiveWord_rValue"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 291,
+      "proof_sha256": "797150c0ea1adffd811c5914cf5187098290b890eeddd003a2be7188496189cf",
+      "review": "Read positiveWord support, barLinear_positiveWord and positiveWord_rValue. Kept the arbitrary-word bar identity separate from the reduced-word support hypothesis and displayed the coefficient extraction and bottom power."
+    },
+    {
+      "node": "kl.hecke.r_parameter_reciprocity",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.HeckeQ.dualR",
+        "OAI.KLInvariance.HeckeQ.dualR_diagonal",
+        "OAI.KLInvariance.HeckeQ.dualR_zero",
+        "OAI.KLInvariance.HeckeQ.dualR_recursion",
+        "OAI.KLInvariance.HeckeQ.rValue_eq_dualR",
+        "OAI.KLInvariance.HeckeQ.rValue_inverse_eq_barBasis"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 235,
+      "proof_sha256": "26d8c8e5295d48664f54a9487e4e34519edcc0afb2d0ef629908d734a2f67ae4",
+      "review": "Read dualR and all four reciprocity lemmas in Dihedral. Expanded the matching recurrences, strong-induction base, and cancellation of all sign and unit powers in the bar coefficient identity."
+    },
+    {
+      "node": "kl.hecke.r_value_recursion",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.HeckeQ.rValue_recursion"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 188,
+      "proof_sha256": "d26fbbecaa12ec0aa06e0a897532a4c268af136b6fb8f5bbdd8664583c2d7c12",
+      "review": "Read rValue_recursion and its coefficient input. Displayed both scalar normalizations with exact length shifts and explained why every left descent is valid."
+    },
+    {
+      "node": "kl.hecke.word_independence",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Hecke.leftWord_one",
+        "OAI.KLInvariance.Hecke.rightWord_one",
+        "OAI.KLInvariance.Hecke.commuting_ext",
+        "OAI.KLInvariance.Hecke.leftWord_independent",
+        "OAI.KLInvariance.Hecke.standardUnit_word",
+        "OAI.KLInvariance.Hecke.standardUnit_simple_mul",
+        "OAI.KLInvariance.Hecke.standardUnit_mul_simple",
+        "OAI.KLInvariance.HeckeQ.leftWord_one",
+        "OAI.KLInvariance.HeckeQ.rightWord_one",
+        "OAI.KLInvariance.HeckeQ.commuting_ext",
+        "OAI.KLInvariance.HeckeQ.leftWord_independent",
+        "OAI.KLInvariance.HeckeQ.standardUnit_word",
+        "OAI.KLInvariance.HeckeQ.standardUnit_simple_mul",
+        "OAI.KLInvariance.HeckeQ.standardUnit_mul_simple"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 333,
+      "proof_sha256": "971f13e46a6d6b3ef3872491a4eb65f1fafdbd165b8c8c6ac77a9855f177b877",
+      "review": "Read the parallel normalized/unnormalized cyclic-action proofs. Expanded reduced-tail induction, inversion in the right action, commuting-map extensionality and the standard ascent products."
     },
     {
       "node": "kl.local.edge_inclusion",

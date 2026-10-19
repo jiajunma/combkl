@@ -1,22 +1,34 @@
 ---
 id: kl.definitions.hecke_operators
-title: Left and right Hecke operators
+title: The standard module and its left and right Hecke operators
 kind: definition
 status: formalized
 primary_topic: kl.02_hecke_polynomials
 topics:
 - kl.02_hecke_polynomials
 uses:
-- kl.foundations.bruhat_order
+- kl.coxeter.word_data
 lean:
   repository: openai-kl
   modules:
   - Hecke
   declarations:
+  - OAI.KLInvariance.Hecke.Space
+  - OAI.KLInvariance.Hecke.basis
   - OAI.KLInvariance.Hecke.left
   - OAI.KLInvariance.Hecke.right
+  - OAI.KLInvariance.HeckeQ.left
+  - OAI.KLInvariance.HeckeQ.right
 source:
   spans:
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Hecke:24
+    format: lean-location
+    note: OAI.KLInvariance.Hecke.Space
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Hecke:26
+    format: lean-location
+    note: OAI.KLInvariance.Hecke.basis
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.Hecke:39
     format: lean-location
@@ -25,6 +37,14 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.Hecke:44
     format: lean-location
     note: OAI.KLInvariance.Hecke.right
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Hecke:514
+    format: lean-location
+    note: OAI.KLInvariance.HeckeQ.left
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Hecke:521
+    format: lean-location
+    note: OAI.KLInvariance.HeckeQ.right
   - artifact: openai-kl-paper
     locator: 1. Introduction and conventions; sec:introduction
     format: section
@@ -34,47 +54,89 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Does this definition retain the implemented conventions?
-  verdict: Normalized and unnormalized parameters, operators, and semilinearity are
-    distinguished explicitly.
+  prompt: Are the actual coefficient hypotheses, conventions and source proof retained?
+  verdict: Read Space/basis and both left/right definitions. The finite-support description,
+    both descent tables and Laurent rescaling retain the actual conventions.
 tags:
 - Kazhdan-Lusztig
-- definitions
 - Hecke
 ---
 
-# Left and right Hecke operators
+# The standard module and its left and right Hecke operators
 
-Let \(C\) be a commutative ring, let \(a\in C\), and let
+Fix a Coxeter system \((W,S)\) and a commutative ring \(C\). The standard module is
 \[
-\mathcal H_C=\bigoplus_{w\in W} C H_w
+\mathcal H_C=\bigoplus_{w\in W}Ce_w.
 \]
-be the free module with standard basis indexed by the Coxeter group. A left Hecke operator \(L_s\), for \(s\in S\), is the \(C\)-linear map determined by
+A vector is a function \(f:W\to C\) with finite support, written \(\sum_w f(w)e_w\). Its coefficient at \(w\) is \(f(w)\); \(e_w\) has coefficient one at \(w\) and zero elsewhere. This is the source's finitely supported function type.
+
+An operator is a \(C\)-linear map from this module to itself. Specifying its values on the \(e_w\) defines it on a general vector by
 \[
-L_s(H_w)=
+L\left(\sum_w f(w)e_w\right)=\sum_w f(w)L(e_w).
+\]
+The sum is finite even when \(W\) is infinite.
+
+## The normalized convention
+
+For \(a\in C\), use the basis notation \(H_w=e_w\). The left operator is
+\[
+L_s(a)H_w=
 \begin{cases}
 H_{sw},&\ell(sw)>\ell(w),\\
 H_{sw}+aH_w,&\ell(sw)<\ell(w).
 \end{cases}
 \]
-The right Hecke operator \(R_s\) is defined by replacing \(sw\) with \(ws\).
+The right operator \(D_t(a)\) uses \(wt\) in place of \(sw\). Simple multiplication changes length by exactly one, so these two cases exhaust the possibilities.
 
-An operator here is a linear endomorphism of \(\mathcal H_C\). The formula on basis vectors determines it on every vector by linearity. The simple generator \(s\) is a group element; \(L_s\) is the associated linear operator. Their squares obey different formulas.
+The symbols \(L_s,D_t\) name operators; \(H_w\) names a vector. The expression \(H_sH_w\) abbreviates the left operator value in the regular-action notation.
 
-For instance, on the pair \(H_1,H_s\), the matrix of \(L_s\) is
+On a pair \(H_w,H_{sw}\) with \(\ell(sw)=\ell(w)+1\), the matrix is
 \[
 \begin{pmatrix}0&1\\1&a\end{pmatrix}.
 \]
-The two possible length comparisons give its two columns. This model is the regular-action description of the Hecke algebra used by the implementation.
+The first column says \(H_w\mapsto H_{sw}\); the second says \(H_{sw}\mapsto H_w+aH_{sw}\).
 
-The usual normalized parameter is \(a=v-v^{-1}\). The unnormalized operators on the basis \(T_w\) use \(q\) and have descent rule \(T_sT_w=qT_{sw}+(q-1)T_w\).
+## The unnormalized convention
+
+For \(q\in C\), write \(T_w=e_w\) and use
+\[
+L_s(q)T_w=
+\begin{cases}
+T_{sw},&\ell(sw)>\ell(w),\\
+qT_{sw}+(q-1)T_w,&\ell(sw)<\ell(w).
+\end{cases}
+\]
+Again \(D_t(q)\) is the right version. On an ascent pair its matrix is
+\[
+\begin{pmatrix}0&q\\1&q-1\end{pmatrix}.
+\]
+These operators are defined for every \(q\). Their inverse construction uses an invertible \(q\).
+
+## Conversion over Laurent coefficients
+
+Take \(q=v^2\) with \(v\) invertible, and set \(H_w=v^{-\ell(w)}T_w\). The operator \(v^{-1}L_s(q)\) then has normalized parameter \(a=v-v^{-1}\).
+
+In an ascent, \(v^{-1-\ell(w)}T_{sw}=H_{sw}\). In a descent, \(\ell(sw)=\ell(w)-1\), so
+\[
+v^{-1-\ell(w)}\bigl(v^2T_{sw}+(v^2-1)T_w\bigr)
+=H_{sw}+(v-v^{-1})H_w.
+\]
+Thus the two tables describe the two coefficient conventions used in the source. Later formulas specify which parameter and basis are being used.
 
 ## References
 
-[Paper conventions](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/01-introduction.tex#L215).
+The local source declarations below give the construction and proof.
 
 ## Lean formalization
+
+`OAI.KLInvariance.Hecke.Space`: [Hecke.lean:24](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean#L24).
+
+`OAI.KLInvariance.Hecke.basis`: [Hecke.lean:26](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean#L26).
 
 `OAI.KLInvariance.Hecke.left`: [Hecke.lean:39](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean#L39).
 
 `OAI.KLInvariance.Hecke.right`: [Hecke.lean:44](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean#L44).
+
+`OAI.KLInvariance.HeckeQ.left`: [Hecke.lean:514](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean#L514).
+
+`OAI.KLInvariance.HeckeQ.right`: [Hecke.lean:521](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean#L521).

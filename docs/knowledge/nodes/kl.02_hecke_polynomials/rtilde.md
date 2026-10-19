@@ -12,6 +12,7 @@ uses:
 - kl.detail.rtilde_family
 - kl.detail.rtilde_recursion
 - kl.detail.ordinary_r
+- kl.hecke.ordinary_r_construction
 lean:
   repository: openai-kl
   modules:

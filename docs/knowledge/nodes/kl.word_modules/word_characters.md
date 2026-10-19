@@ -12,6 +12,7 @@ uses:
 - kl.definitions.hecke_operators
 - kl.detail.word_standard_stalks
 - kl.detail.coefficient_change
+- kl.hecke.positive_words
 lean:
   repository: openai-kl
   modules:
@@ -57,7 +58,7 @@ H_{\varnothing}=T_1,\qquad H_{(s,\mathbf t)}=(1+T_s)H_{\mathbf t}.
 \]
 Equivalently, apply the left Hecke operator and add the previous vector. This definition is valid for any word; reducedness is not required. The word-character theorem identifies \(C^{\mathbf s}_x\) with the coefficient of \(T_x\) in \(H_{\mathbf s}\).
 
-The character of a word stalk and the character of an indecomposable boundary-sheaf stalk are distinct objects. Identifying the first with a positive Hecke word does not identify the second with a KL polynomial.
+The positive-word coefficient recurrence describes the tensor-word stalks. Decomposing the word sheaf into shifted boundary models later expresses these characters in terms of the actual boundary characters.
 
 <!-- source-comparison:start -->
 ## Relation to the OpenAI notes

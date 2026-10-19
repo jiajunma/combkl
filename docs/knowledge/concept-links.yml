@@ -378,8 +378,6 @@ concepts:
   terms:
   - word-stalk character
   - word-stalk characters
-  - positive Hecke word
-  - positive Hecke words
 - node: kl.detail.integral_adjoints
   terms:
   - integral adjoint
@@ -712,3 +710,45 @@ concepts:
   - upper-interval restriction
   - upper-interval restrictions
   - interval boundary sheaf
+- node: kl.definitions.hecke_operators
+  terms:
+  - standard Hecke module
+  - Hecke module
+  - Hecke modules
+- node: kl.hecke.word_actions
+  terms:
+  - word operator
+  - word operators
+  - standard unit
+  - standard units
+  - standard action
+  - word unit
+  - word units
+- node: kl.definitions.bar_involution
+  terms:
+  - linear bar transform
+  - linear bar transforms
+  - inverse-basis vector
+  - inverse-basis vectors
+  - bar-basis vector
+  - bar-basis vectors
+  - bar basis
+- node: kl.hecke.r_values
+  terms:
+  - R-value
+  - R-values
+  - R value
+  - R values
+- node: kl.hecke.positive_words
+  terms:
+  - positive Hecke word
+  - positive Hecke words
+  - positive word
+  - positive words
+- node: kl.hecke.polynomial_reflection
+  terms:
+  - polynomial reflection
+  - polynomial reflections
+  - reflection in degree
+  - reflected polynomial
+  - reflected polynomials

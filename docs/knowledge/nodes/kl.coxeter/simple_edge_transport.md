@@ -19,6 +19,7 @@ lean:
   - OAI.KLInvariance.bruhatStep_inv
   - OAI.KLInvariance.bruhatStep_mul_simple
   - OAI.KLInvariance.right_descent_simple_mul_iff
+  - OAI.KLInvariance.left_descent_mul_simple_iff
 source:
   spans:
   - artifact: openai-kl-source
@@ -37,6 +38,10 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.Bruhat:504
     format: lean-location
     note: OAI.KLInvariance.right_descent_simple_mul_iff
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Bruhat:483
+    format: lean-location
+    note: OAI.KLInvariance.left_descent_mul_simple_iff
 verification:
   statement: accepted
   proof: accepted
@@ -64,6 +69,12 @@ The corresponding right-multiplication statement holds when \(y\ne xs\). Consequ
 \ell(sxt)<\ell(sx)
 \quad\Longleftrightarrow\quad
 \ell(xt)<\ell(x).
+\]
+The left-descent version is
+\[
+\ell(sxt)<\ell(xt)
+\quad\Longleftrightarrow\quad
+\ell(sx)<\ell(x).
 \]
 
 *Proof.*
@@ -112,6 +123,8 @@ If instead \(\ell(x)<\ell(xt)\), apply left multiplication to \(x\to xt\). The h
 
 These are the two possible simple-length cases, proving the equivalence.
 
+For the left-descent version, apply right multiplication by \(t\) to the edge between \(sx\) and \(x\). If \(sx<x\), the upward edge \(sx\to x\) becomes \(sxt\to xt\). Its noncollapsed condition is \(x\ne sxt\), equivalent to \(sx\ne xt\). If \(x<sx\), the edge \(x\to sx\) becomes \(xt\to sxt\), with the same condition. These two cases give the second equivalence.
+
 ## References
 
 The local word and parabolic calculations are listed below.
@@ -125,3 +138,5 @@ The local word and parabolic calculations are listed below.
 `OAI.KLInvariance.bruhatStep_mul_simple`: [Bruhat.lean:470](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Bruhat.lean#L470).
 
 `OAI.KLInvariance.right_descent_simple_mul_iff`: [Bruhat.lean:504](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Bruhat.lean#L504).
+
+`OAI.KLInvariance.left_descent_mul_simple_iff`: [Bruhat.lean:483](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Bruhat.lean#L483).

@@ -1,37 +1,35 @@
 ---
 id: kl.detail.ordinary_r
-title: The ordinary R-polynomial family
+title: The ordinary integral R-polynomial family
 kind: definition
 status: formalized
 primary_topic: kl.02_hecke_polynomials
 topics:
 - kl.02_hecke_polynomials
 uses:
-- kl.definitions.hecke_operators
-- kl.definitions.bar_involution
-- kl.foundations.bruhat_order
+- kl.hecke.r_values
 lean:
   repository: openai-kl
   modules:
   - OrdinaryR
   declarations:
+  - OAI.KLInvariance.OrdinaryR.variableUnit
   - OAI.KLInvariance.OrdinaryR.polynomial
-  - OAI.KLInvariance.OrdinaryR.polynomial_recursion
-  - OAI.KLInvariance.OrdinaryR.polynomial_degree
+  - OAI.KLInvariance.OrdinaryR.toLaurent_polynomial
 source:
   spans:
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.OrdinaryR:24
+    format: lean-location
+    note: OAI.KLInvariance.OrdinaryR.variableUnit
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.OrdinaryR:62
     format: lean-location
     note: OAI.KLInvariance.OrdinaryR.polynomial
   - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.OrdinaryR:80
+    locator: OAI.RepresentationTheory.KazhdanLusztig.OrdinaryR:65
     format: lean-location
-    note: OAI.KLInvariance.OrdinaryR.polynomial_recursion
-  - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.OrdinaryR:125
-    format: lean-location
-    note: OAI.KLInvariance.OrdinaryR.polynomial_degree
+    note: OAI.KLInvariance.OrdinaryR.toLaurent_polynomial
   - artifact: openai-kl-paper
     locator: Related paper context; sec:introduction
     format: section
@@ -43,21 +41,44 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Does the entry preserve the source hypotheses, construction, and conclusion?
-  verdict: Read against the named Lean declarations and surrounding variable context;
-    explanatory examples are distinguished from the formal statement.
+  prompt: Are the actual coefficient hypotheses, conventions and source proof retained?
+  verdict: Read variableUnit, polynomial and toLaurent_polynomial. Defined Laurent
+    coefficients and truncation, and kept polynomiality and evaluation as linked supporting
+    theorems.
 tags:
 - Kazhdan-Lusztig
-- hecke_polynomials
+- Hecke
 ---
 
-# The ordinary R-polynomial family
+# The ordinary integral R-polynomial family
 
-For a Coxeter system, the ordinary R-polynomials \(R_{x,y}(q)\in\mathbb Z[q]\) are the integral polynomial coefficients obtained from the unnormalized Hecke bar action. They satisfy
+Let \(Q\) be the Laurent indeterminate in \(\mathbb Z[Q,Q^{-1}]\). A Laurent polynomial is a finite sum \(\sum_{n\in\mathbb Z}a_nQ^n\). The element \(Q\) is a unit with inverse \(Q^{-1}\), so the Hecke R-value \(r_Q(x,y)\) is defined.
+
+The polynomiality theorem proves that every exponent occurring in \(r_Q(x,y)\) is nonnegative. Thus there is a unique polynomial
 \[
-R_{x,x}=1,\qquad R_{x,y}=0\quad(x\not\leq y).
+R_{x,y}(q)\in\mathbb Z[q]
 \]
-If \(s\) is a simple reflection with \(sy<y\), then
+whose Laurent image is \(r_Q(x,y)\). The source defines it by the truncation map retaining the nonnegative coefficients, after proving polynomiality. In symbols,
+\[
+R_{x,y}(Q)=r_Q(x,y).
+\]
+Uniqueness follows because the inclusion of polynomials into Laurent polynomials is injective: it retains every coefficient.
+
+## Evaluation at a unit
+
+For a commutative ring \(C\) and a unit \(q_0\in C\), evaluate integer coefficients through the canonical map \(\mathbb Z\to C\). The specialization theorem gives
+\[
+R_{x,y}(q_0)=r_{q_0}(x,y).
+\]
+The polynomial also has a well-defined value at nonunits, since polynomial evaluation uses only nonnegative powers. The inverse-operator description uses units.
+
+## Initial values and recurrence
+
+The source proves
+\[
+R_{x,x}=1,\qquad R_{x,y}=0\quad(x\not\le y),
+\]
+and, for any \(sy<y\),
 \[
 R_{x,y}=
 \begin{cases}
@@ -65,22 +86,22 @@ R_{sx,sy},&sx<x,\\
 (q-1)R_{x,sy}+qR_{sx,sy},&sx>x.
 \end{cases}
 \]
-In particular \(R_{1,s}=q-1\). Their degrees satisfy \(\deg R_{x,y}\leq\ell(y)-\ell(x)\) for comparable endpoints.
+Polynomiality, specialization and this recurrence are developed together in the construction theorem. The separate degree theorem proves the bound by the length difference.
 
-The construction first takes coefficients over the Laurent polynomial ring, where the parameter is a unit. Induction on \(\ell(y)\) shows that these coefficients actually lie in its polynomial subring. Taking their polynomial representative therefore loses no terms; the recursion descends along the injective polynomial-to-Laurent map.
-
-These are the ordinary \(R\)-polynomials. The normalized family \(\widetilde R\) uses a different variable and has a different descent recursion.
+For distinct simple reflections \(s,t\), the reduced word \(st\) gives
+\[
+R_{1,st}=(q-1)R_{1,t}+qR_{s,t}=(q-1)^2.
+\]
+Here \(R_{s,t}=0\): comparable elements of the same length must be equal, and \(s\ne t\).
 
 ## References
 
-[Related paper context](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/01-introduction.tex#L1).
+The local source declarations below give the construction and proof.
 
 ## Lean formalization
 
-
+`OAI.KLInvariance.OrdinaryR.variableUnit`: [OrdinaryR.lean:24](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/OrdinaryR.lean#L24).
 
 `OAI.KLInvariance.OrdinaryR.polynomial`: [OrdinaryR.lean:62](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/OrdinaryR.lean#L62).
 
-`OAI.KLInvariance.OrdinaryR.polynomial_recursion`: [OrdinaryR.lean:80](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/OrdinaryR.lean#L80).
-
-`OAI.KLInvariance.OrdinaryR.polynomial_degree`: [OrdinaryR.lean:125](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/OrdinaryR.lean#L125).
+`OAI.KLInvariance.OrdinaryR.toLaurent_polynomial`: [OrdinaryR.lean:65](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/OrdinaryR.lean#L65).

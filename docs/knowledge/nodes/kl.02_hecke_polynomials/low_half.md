@@ -6,7 +6,8 @@ status: formalized
 primary_topic: kl.02_hecke_polynomials
 topics:
 - kl.02_hecke_polynomials
-uses: []
+uses:
+- kl.hecke.polynomial_reflection
 lean:
   repository: openai-kl
   modules:

@@ -9,6 +9,7 @@ topics:
 uses:
 - kl.foundations.rtilde
 - kl.foundations.normalized_kl
+- kl.hecke.polynomial_reflection
 lean:
   repository: openai-kl
   modules:

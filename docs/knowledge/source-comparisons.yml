@@ -352,3 +352,27 @@ comparisons:
     add models centered at the new vertex. The graded construction records a polynomial
     of shifts at each center; the ungraded local construction records an integer number
     of copies.
+- id: hecke-operator-construction
+  kind: Algebraic construction behind the polynomial conventions
+  nodes:
+  - kl.hecke.word_independence
+  - kl.hecke.ordinary_r_construction
+  - kl.hecke.r_parameter_reciprocity
+  paper_labels:
+  - sec:introduction
+  - bg:paths
+  lean_declarations:
+  - OAI.KLInvariance.HeckeQ.leftWord_independent
+  - OAI.KLInvariance.HeckeQ.rValue_recursion
+  - OAI.KLInvariance.OrdinaryR.rValue_polynomial
+  - OAI.KLInvariance.HeckeQ.rValue_eq_dualR
+  paper: The conventions specify the ordinary R descent recurrence. The reflection-order
+    path theorem introduces the normalized family through path counting and states
+    its square-parameter relation to ordinary R.
+  lean: The regular operators are built from Coxeter length. Left/right commutation
+    and the cyclic identity vector prove reduced-word independence. Inverse operators
+    define R-values; their recurrence proves polynomiality, and a second matching-recurrence
+    argument proves signed parameter reciprocity.
+  consequence: The KB develops these algebraic constructions before the geometric
+    path formula. The recurrence and inverse-parameter coefficient identities used
+    by the character argument follow from the constructed operators.

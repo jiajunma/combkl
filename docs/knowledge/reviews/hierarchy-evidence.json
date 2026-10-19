@@ -18,6 +18,20 @@
       "kl.foundations.normalized_kl",
       "kl.foundations.rtilde",
       "kl.foundations.scaled_kl",
+      "kl.hecke.bar_coefficient_inverse",
+      "kl.hecke.bar_interchange",
+      "kl.hecke.bar_triangularity",
+      "kl.hecke.commutation",
+      "kl.hecke.ordinary_r_construction",
+      "kl.hecke.ordinary_r_degree",
+      "kl.hecke.polynomial_reflection",
+      "kl.hecke.positive_word_reciprocity",
+      "kl.hecke.positive_words",
+      "kl.hecke.r_parameter_reciprocity",
+      "kl.hecke.r_value_recursion",
+      "kl.hecke.r_values",
+      "kl.hecke.word_actions",
+      "kl.hecke.word_independence",
       "kl.notes.dihedral_kl",
       "kl.notes.hecke_action"
     ],
@@ -874,7 +888,8 @@
         "OAI.KLInvariance.bruhatStep_simple_mul",
         "OAI.KLInvariance.bruhatStep_inv",
         "OAI.KLInvariance.bruhatStep_mul_simple",
-        "OAI.KLInvariance.right_descent_simple_mul_iff"
+        "OAI.KLInvariance.right_descent_simple_mul_iff",
+        "OAI.KLInvariance.left_descent_mul_simple_iff"
       ],
       "paper_locations": []
     },
@@ -909,11 +924,8 @@
       "lean_declarations": [
         "OAI.KLInvariance.Hecke.barBasis",
         "OAI.KLInvariance.Hecke.barLinear",
-        "OAI.KLInvariance.Hecke.barLinear_inverse",
         "OAI.KLInvariance.HeckeQ.barBasis",
-        "OAI.KLInvariance.HeckeQ.barLinear",
-        "OAI.KLInvariance.HeckeQ.barLinear_left",
-        "OAI.KLInvariance.HeckeQ.barLinear_inverse"
+        "OAI.KLInvariance.HeckeQ.barLinear"
       ],
       "paper_locations": [
         "1. Introduction and conventions; sec:introduction"
@@ -923,8 +935,12 @@
       "id": "kl.definitions.hecke_operators",
       "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
+        "OAI.KLInvariance.Hecke.Space",
+        "OAI.KLInvariance.Hecke.basis",
         "OAI.KLInvariance.Hecke.left",
-        "OAI.KLInvariance.Hecke.right"
+        "OAI.KLInvariance.Hecke.right",
+        "OAI.KLInvariance.HeckeQ.left",
+        "OAI.KLInvariance.HeckeQ.right"
       ],
       "paper_locations": [
         "1. Introduction and conventions; sec:introduction"
@@ -1200,7 +1216,14 @@
       "id": "kl.detail.hecke_quadratic_identity",
       "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
-        "OAI.KLInvariance.Hecke.left_quadratic"
+        "OAI.KLInvariance.Hecke.left_quadratic",
+        "OAI.KLInvariance.Hecke.leftInv",
+        "OAI.KLInvariance.Hecke.left_mul_leftInv",
+        "OAI.KLInvariance.Hecke.leftInv_mul_left",
+        "OAI.KLInvariance.HeckeQ.left_quadratic",
+        "OAI.KLInvariance.HeckeQ.leftInv",
+        "OAI.KLInvariance.HeckeQ.left_mul_leftInv",
+        "OAI.KLInvariance.HeckeQ.leftInv_mul_left"
       ],
       "paper_locations": [
         "Related paper context; sec:introduction"
@@ -1374,9 +1397,9 @@
       "id": "kl.detail.ordinary_r",
       "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
+        "OAI.KLInvariance.OrdinaryR.variableUnit",
         "OAI.KLInvariance.OrdinaryR.polynomial",
-        "OAI.KLInvariance.OrdinaryR.polynomial_recursion",
-        "OAI.KLInvariance.OrdinaryR.polynomial_degree"
+        "OAI.KLInvariance.OrdinaryR.toLaurent_polynomial"
       ],
       "paper_locations": [
         "Related paper context; sec:introduction"
@@ -1447,7 +1470,9 @@
       "id": "kl.detail.r_kernel",
       "chapter": "kl.02_hecke_polynomials",
       "lean_declarations": [
-        "OAI.KLInvariance.OrdinaryR.polynomial_kernel_reverse"
+        "OAI.KLInvariance.OrdinaryR.polynomial_kernel_reverse",
+        "OAI.KLInvariance.OrdinaryR.polynomial_kernel",
+        "OAI.KLInvariance.eval₂_reflect_unit"
       ],
       "paper_locations": [
         "Related paper context; sec:introduction"
@@ -2099,6 +2124,180 @@
         "OAI.KLInvariance.TitsSpace.planeWeight",
         "OAI.KLInvariance.TitsSpace.inversionVector",
         "OAI.KLInvariance.TitsSpace.rootChange"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.bar_coefficient_inverse",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.HeckeQ.bar_coeff_inverse",
+        "OAI.KLInvariance.HeckeQ.rValue_inverse_factor",
+        "OAI.KLInvariance.HeckeQ.rValue_inverse"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.bar_interchange",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hecke.barBasis_simple_mul_ascent",
+        "OAI.KLInvariance.Hecke.leftInv_barBasis",
+        "OAI.KLInvariance.Hecke.barLinear_left",
+        "OAI.KLInvariance.Hecke.barLinear_leftInv",
+        "OAI.KLInvariance.Hecke.barLinear_barBasis",
+        "OAI.KLInvariance.Hecke.barLinear_inverse",
+        "OAI.KLInvariance.HeckeQ.barBasis_simple_mul_ascent",
+        "OAI.KLInvariance.HeckeQ.leftInv_barBasis",
+        "OAI.KLInvariance.HeckeQ.barLinear_left",
+        "OAI.KLInvariance.HeckeQ.barLinear_leftInv",
+        "OAI.KLInvariance.HeckeQ.barLinear_barBasis",
+        "OAI.KLInvariance.HeckeQ.barLinear_inverse"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.bar_triangularity",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hecke.leftInv_coeff",
+        "OAI.KLInvariance.Hecke.simple_mul_le_ascent",
+        "OAI.KLInvariance.Hecke.barBasis_zero",
+        "OAI.KLInvariance.Hecke.barBasis_diagonal",
+        "OAI.KLInvariance.HeckeQ.leftInv_coeff",
+        "OAI.KLInvariance.HeckeQ.barBasis_zero",
+        "OAI.KLInvariance.HeckeQ.barBasis_diagonal"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.commutation",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hecke.left_right_commute",
+        "OAI.KLInvariance.HeckeQ.left_right_commute"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.ordinary_r_construction",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.OrdinaryR.rValue_polynomial",
+        "OAI.KLInvariance.OrdinaryR.toLaurent_polynomial",
+        "OAI.KLInvariance.OrdinaryR.polynomial_diagonal",
+        "OAI.KLInvariance.OrdinaryR.polynomial_zero",
+        "OAI.KLInvariance.OrdinaryR.polynomial_recursion",
+        "OAI.KLInvariance.OrdinaryR.polynomial_eval"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.ordinary_r_degree",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.OrdinaryR.polynomial_degree"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.polynomial_reflection",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.eval₂_reflect_unit",
+        "OAI.KLInvariance.reflect_finset_sum"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.positive_word_reciprocity",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.HeckeQ.one_add_leftInv",
+        "OAI.KLInvariance.HeckeQ.barLinear_positiveWord",
+        "OAI.KLInvariance.HeckeQ.positiveWord_support",
+        "OAI.KLInvariance.HeckeQ.positiveWord_rValue"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.positive_words",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.HeckeQ.left_coeff",
+        "OAI.KLInvariance.HeckeQ.left_plus_coeff",
+        "OAI.KLInvariance.HeckeQ.positiveWord",
+        "OAI.KLInvariance.HeckeQ.positiveWord_nil",
+        "OAI.KLInvariance.HeckeQ.positiveWord_cons_coeff"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.r_parameter_reciprocity",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.HeckeQ.dualR",
+        "OAI.KLInvariance.HeckeQ.dualR_diagonal",
+        "OAI.KLInvariance.HeckeQ.dualR_zero",
+        "OAI.KLInvariance.HeckeQ.dualR_recursion",
+        "OAI.KLInvariance.HeckeQ.rValue_eq_dualR",
+        "OAI.KLInvariance.HeckeQ.rValue_inverse_eq_barBasis"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.r_value_recursion",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.HeckeQ.rValue_recursion"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.r_values",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.HeckeQ.rValue",
+        "OAI.KLInvariance.HeckeQ.rValue_diagonal",
+        "OAI.KLInvariance.HeckeQ.rValue_zero"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.word_actions",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hecke.leftWord",
+        "OAI.KLInvariance.Hecke.rightWord",
+        "OAI.KLInvariance.Hecke.unit",
+        "OAI.KLInvariance.Hecke.wordUnit",
+        "OAI.KLInvariance.Hecke.standardUnit",
+        "OAI.KLInvariance.HeckeQ.leftWord",
+        "OAI.KLInvariance.HeckeQ.rightWord",
+        "OAI.KLInvariance.HeckeQ.unit",
+        "OAI.KLInvariance.HeckeQ.wordUnit",
+        "OAI.KLInvariance.HeckeQ.standardUnit"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.hecke.word_independence",
+      "chapter": "kl.02_hecke_polynomials",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hecke.leftWord_one",
+        "OAI.KLInvariance.Hecke.rightWord_one",
+        "OAI.KLInvariance.Hecke.commuting_ext",
+        "OAI.KLInvariance.Hecke.leftWord_independent",
+        "OAI.KLInvariance.Hecke.standardUnit_word",
+        "OAI.KLInvariance.Hecke.standardUnit_simple_mul",
+        "OAI.KLInvariance.Hecke.standardUnit_mul_simple",
+        "OAI.KLInvariance.HeckeQ.leftWord_one",
+        "OAI.KLInvariance.HeckeQ.rightWord_one",
+        "OAI.KLInvariance.HeckeQ.commuting_ext",
+        "OAI.KLInvariance.HeckeQ.leftWord_independent",
+        "OAI.KLInvariance.HeckeQ.standardUnit_word",
+        "OAI.KLInvariance.HeckeQ.standardUnit_simple_mul",
+        "OAI.KLInvariance.HeckeQ.standardUnit_mul_simple"
       ],
       "paper_locations": []
     },

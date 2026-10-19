@@ -374,18 +374,6 @@
       "pending": []
     },
     {
-      "node": "kl.coxeter.simple_edge_transport",
-      "file": "docs/knowledge/nodes/kl.coxeter/simple_edge_transport.md",
-      "source_declarations": [
-        "OAI.KLInvariance.bruhatStep_simple_mul",
-        "OAI.KLInvariance.bruhatStep_inv",
-        "OAI.KLInvariance.bruhatStep_mul_simple",
-        "OAI.KLInvariance.right_descent_simple_mul_iff"
-      ],
-      "review": "The definitions and length calculations follow the local ParabolicSupport and Bruhat proofs.",
-      "pending": []
-    },
-    {
       "node": "kl.realization.alternating_root_formula",
       "file": "docs/knowledge/nodes/kl.realizations/alternating_root_formula.md",
       "source_declarations": [
@@ -1637,21 +1625,6 @@
       "pending": []
     },
     {
-      "node": "kl.definitions.bar_involution",
-      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/bar_involution.md",
-      "source_declarations": [
-        "OAI.KLInvariance.Hecke.barBasis",
-        "OAI.KLInvariance.Hecke.barLinear",
-        "OAI.KLInvariance.Hecke.barLinear_inverse",
-        "OAI.KLInvariance.HeckeQ.barBasis",
-        "OAI.KLInvariance.HeckeQ.barLinear",
-        "OAI.KLInvariance.HeckeQ.barLinear_left",
-        "OAI.KLInvariance.HeckeQ.barLinear_inverse"
-      ],
-      "review": "Checked HeckeQ.barBasis/barLinear and parameter-intertwining identities. Added the coefficient-linear q convention used by characters; detailed underlying bar and R proofs remain in the pending H2/H3 expansion.",
-      "pending": []
-    },
-    {
       "node": "kl.detail.boundary_extension",
       "file": "docs/knowledge/nodes/kl.sheaves/boundary_extension.md",
       "source_declarations": [
@@ -1743,20 +1716,6 @@
         "OAI.KLInvariance.BruhatGraph.polynomialLabel"
       ],
       "review": "Checked the Bruhat edge pair definition and polynomial root map. Distinguished the original root space, its embedding in the extension, and the symmetric-algebra inclusion.",
-      "pending": []
-    },
-    {
-      "node": "kl.detail.word_character_reciprocity",
-      "file": "docs/knowledge/nodes/kl.sheaves/word_character_reciprocity.md",
-      "source_declarations": [
-        "OAI.KLInvariance.HeckeQ.barLinear_positiveWord",
-        "OAI.KLInvariance.HeckeQ.positiveWord_rValue",
-        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_reciprocity",
-        "OAI.KLInvariance.TitsSpace.bottKernelCharacter_rConvolution",
-        "OAI.KLInvariance.HeckeQ.rValue_inverse_eq_barBasis",
-        "OAI.KLInvariance.HeckeQ.positiveWord_support"
-      ],
-      "review": "Rechecked barLinear_positiveWord, positiveWord_rValue and the inverse-parameter bar coefficient theorem. Defined the positive word and linear transform and identified the coefficient identity as a derived theorem; detailed upstream H2/H3 exposition is still pending.",
       "pending": []
     },
     {
@@ -2003,6 +1962,327 @@
       ],
       "review": "Read restrictBoundary_kernel and intervalBoundary_upper_kernel. Compared the same selected equations on the same graded stalk, and used uniqueness only for independently chosen boundary objects.",
       "pending": []
+    },
+    {
+      "node": "kl.definitions.hecke_operators",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/hecke_operators.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hecke.Space",
+        "OAI.KLInvariance.Hecke.basis",
+        "OAI.KLInvariance.Hecke.left",
+        "OAI.KLInvariance.Hecke.right",
+        "OAI.KLInvariance.HeckeQ.left",
+        "OAI.KLInvariance.HeckeQ.right"
+      ],
+      "review": "Read Space/basis and both left/right definitions. The finite-support description, both descent tables and Laurent rescaling retain the actual conventions.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.hecke_quadratic_identity",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/hecke_quadratic_identity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hecke.left_quadratic",
+        "OAI.KLInvariance.Hecke.leftInv",
+        "OAI.KLInvariance.Hecke.left_mul_leftInv",
+        "OAI.KLInvariance.Hecke.leftInv_mul_left",
+        "OAI.KLInvariance.HeckeQ.left_quadratic",
+        "OAI.KLInvariance.HeckeQ.leftInv",
+        "OAI.KLInvariance.HeckeQ.left_mul_leftInv",
+        "OAI.KLInvariance.HeckeQ.leftInv_mul_left"
+      ],
+      "review": "Read both quadratic proofs and both-sided inverse declarations; the ascent-pair calculation covers every basis vector and retains the unit hypothesis only in the q convention.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.commutation",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/hecke_commutation.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hecke.left_right_commute",
+        "OAI.KLInvariance.HeckeQ.left_right_commute"
+      ],
+      "review": "Read both left_right_commute proofs. Expanded the noncollapsed orientation square in both parameter conventions and the identical two-dimensional action in the collapsed case.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.word_actions",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/hecke_word_actions.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hecke.leftWord",
+        "OAI.KLInvariance.Hecke.rightWord",
+        "OAI.KLInvariance.Hecke.unit",
+        "OAI.KLInvariance.Hecke.wordUnit",
+        "OAI.KLInvariance.Hecke.standardUnit",
+        "OAI.KLInvariance.HeckeQ.leftWord",
+        "OAI.KLInvariance.HeckeQ.rightWord",
+        "OAI.KLInvariance.HeckeQ.unit",
+        "OAI.KLInvariance.HeckeQ.wordUnit",
+        "OAI.KLInvariance.HeckeQ.standardUnit"
+      ],
+      "review": "Read both word/standard unit definitions; explained composition order, the inverse word, reduced-word choice and the length-additive identities.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.word_independence",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/hecke_word_independence.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hecke.leftWord_one",
+        "OAI.KLInvariance.Hecke.rightWord_one",
+        "OAI.KLInvariance.Hecke.commuting_ext",
+        "OAI.KLInvariance.Hecke.leftWord_independent",
+        "OAI.KLInvariance.Hecke.standardUnit_word",
+        "OAI.KLInvariance.Hecke.standardUnit_simple_mul",
+        "OAI.KLInvariance.Hecke.standardUnit_mul_simple",
+        "OAI.KLInvariance.HeckeQ.leftWord_one",
+        "OAI.KLInvariance.HeckeQ.rightWord_one",
+        "OAI.KLInvariance.HeckeQ.commuting_ext",
+        "OAI.KLInvariance.HeckeQ.leftWord_independent",
+        "OAI.KLInvariance.HeckeQ.standardUnit_word",
+        "OAI.KLInvariance.HeckeQ.standardUnit_simple_mul",
+        "OAI.KLInvariance.HeckeQ.standardUnit_mul_simple"
+      ],
+      "review": "Read the parallel normalized/unnormalized cyclic-action proofs. Expanded reduced-tail induction, inversion in the right action, commuting-map extensionality and the standard ascent products.",
+      "pending": []
+    },
+    {
+      "node": "kl.definitions.bar_involution",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/bar_involution.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hecke.barBasis",
+        "OAI.KLInvariance.Hecke.barLinear",
+        "OAI.KLInvariance.HeckeQ.barBasis",
+        "OAI.KLInvariance.HeckeQ.barLinear"
+      ],
+      "review": "Read both barBasis/barLinear definitions. Put inverse standard operators first, state the exact coefficient-linear maps, and derive the Laurent semilinear description by coefficient substitution.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.bar_interchange",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/bar_parameter_interchange.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hecke.barBasis_simple_mul_ascent",
+        "OAI.KLInvariance.Hecke.leftInv_barBasis",
+        "OAI.KLInvariance.Hecke.barLinear_left",
+        "OAI.KLInvariance.Hecke.barLinear_leftInv",
+        "OAI.KLInvariance.Hecke.barLinear_barBasis",
+        "OAI.KLInvariance.Hecke.barLinear_inverse",
+        "OAI.KLInvariance.HeckeQ.barBasis_simple_mul_ascent",
+        "OAI.KLInvariance.HeckeQ.leftInv_barBasis",
+        "OAI.KLInvariance.HeckeQ.barLinear_left",
+        "OAI.KLInvariance.HeckeQ.barLinear_leftInv",
+        "OAI.KLInvariance.HeckeQ.barLinear_barBasis",
+        "OAI.KLInvariance.HeckeQ.barLinear_inverse"
+      ],
+      "review": "Read both bar ascent, intertwining and inverse proofs; explained unit multiplication order, both descent calculations, inverse-generator intertwining and the reduced-word induction.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.bar_triangularity",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/bar_triangularity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hecke.leftInv_coeff",
+        "OAI.KLInvariance.Hecke.simple_mul_le_ascent",
+        "OAI.KLInvariance.Hecke.barBasis_zero",
+        "OAI.KLInvariance.Hecke.barBasis_diagonal",
+        "OAI.KLInvariance.HeckeQ.leftInv_coeff",
+        "OAI.KLInvariance.HeckeQ.barBasis_zero",
+        "OAI.KLInvariance.HeckeQ.barBasis_diagonal"
+      ],
+      "review": "Read both inverse-coefficient and triangularity proofs; included the upper-envelope implication for sx, the all-bottom induction and separate normalized/q diagonal calculations.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.r_values",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/hecke_r_values.md",
+      "source_declarations": [
+        "OAI.KLInvariance.HeckeQ.rValue",
+        "OAI.KLInvariance.HeckeQ.rValue_diagonal",
+        "OAI.KLInvariance.HeckeQ.rValue_zero"
+      ],
+      "review": "Read rValue and its diagonal/support lemmas. Retained the exact sign and top-power normalization and separated ring-valued coefficients from ordinary integral polynomials.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.r_value_recursion",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/r_value_recursion.md",
+      "source_declarations": [
+        "OAI.KLInvariance.HeckeQ.rValue_recursion"
+      ],
+      "review": "Read rValue_recursion and its coefficient input. Displayed both scalar normalizations with exact length shifts and explained why every left descent is valid.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.ordinary_r",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/ordinary_r.md",
+      "source_declarations": [
+        "OAI.KLInvariance.OrdinaryR.variableUnit",
+        "OAI.KLInvariance.OrdinaryR.polynomial",
+        "OAI.KLInvariance.OrdinaryR.toLaurent_polynomial"
+      ],
+      "review": "Read variableUnit, polynomial and toLaurent_polynomial. Defined Laurent coefficients and truncation, and kept polynomiality and evaluation as linked supporting theorems.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.ordinary_r_construction",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/ordinary_r_construction.md",
+      "source_declarations": [
+        "OAI.KLInvariance.OrdinaryR.rValue_polynomial",
+        "OAI.KLInvariance.OrdinaryR.toLaurent_polynomial",
+        "OAI.KLInvariance.OrdinaryR.polynomial_diagonal",
+        "OAI.KLInvariance.OrdinaryR.polynomial_zero",
+        "OAI.KLInvariance.OrdinaryR.polynomial_recursion",
+        "OAI.KLInvariance.OrdinaryR.polynomial_eval"
+      ],
+      "review": "Read polynomiality, Laurent truncation, every-descent recurrence and polynomial_eval. Both inductions include all lower labels, diagonal/support base cases and the smaller upper endpoint.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.ordinary_r_degree",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/ordinary_r_degree.md",
+      "source_declarations": [
+        "OAI.KLInvariance.OrdinaryR.polynomial_degree"
+      ],
+      "review": "Read polynomial_degree. Preserved natural truncated length difference, the zero-polynomial convention, the two descent branches and the support case required before subtracting two from the rank.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.r_parameter_reciprocity",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/r_parameter_reciprocity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.HeckeQ.dualR",
+        "OAI.KLInvariance.HeckeQ.dualR_diagonal",
+        "OAI.KLInvariance.HeckeQ.dualR_zero",
+        "OAI.KLInvariance.HeckeQ.dualR_recursion",
+        "OAI.KLInvariance.HeckeQ.rValue_eq_dualR",
+        "OAI.KLInvariance.HeckeQ.rValue_inverse_eq_barBasis"
+      ],
+      "review": "Read dualR and all four reciprocity lemmas in Dihedral. Expanded the matching recurrences, strong-induction base, and cancellation of all sign and unit powers in the bar coefficient identity.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.bar_coefficient_inverse",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/bar_coefficient_inverse.md",
+      "source_declarations": [
+        "OAI.KLInvariance.HeckeQ.bar_coeff_inverse",
+        "OAI.KLInvariance.HeckeQ.rValue_inverse_factor",
+        "OAI.KLInvariance.HeckeQ.rValue_inverse"
+      ],
+      "review": "Read bar_coeff_inverse, rValue_inverse_factor and rValue_inverse. Expanded the finite-support coefficient sum and cancelled signs and q-powers separately before evaluating the diagonal.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.positive_words",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/positive_hecke_words.md",
+      "source_declarations": [
+        "OAI.KLInvariance.HeckeQ.left_coeff",
+        "OAI.KLInvariance.HeckeQ.left_plus_coeff",
+        "OAI.KLInvariance.HeckeQ.positiveWord",
+        "OAI.KLInvariance.HeckeQ.positiveWord_nil",
+        "OAI.KLInvariance.HeckeQ.positiveWord_cons_coeff"
+      ],
+      "review": "Read positiveWord and the coefficient lemmas in IntegralPairings. Explained input versus output descent conditions, factor order, arbitrary words and elementary examples.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.positive_word_reciprocity",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/positive_word_reciprocity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.HeckeQ.one_add_leftInv",
+        "OAI.KLInvariance.HeckeQ.barLinear_positiveWord",
+        "OAI.KLInvariance.HeckeQ.positiveWord_support",
+        "OAI.KLInvariance.HeckeQ.positiveWord_rValue"
+      ],
+      "review": "Read positiveWord support, barLinear_positiveWord and positiveWord_rValue. Kept the arbitrary-word bar identity separate from the reduced-word support hypothesis and displayed the coefficient extraction and bottom power.",
+      "pending": []
+    },
+    {
+      "node": "kl.coxeter.simple_edge_transport",
+      "file": "docs/knowledge/nodes/kl.coxeter/simple_edge_transport.md",
+      "source_declarations": [
+        "OAI.KLInvariance.bruhatStep_simple_mul",
+        "OAI.KLInvariance.bruhatStep_inv",
+        "OAI.KLInvariance.bruhatStep_mul_simple",
+        "OAI.KLInvariance.right_descent_simple_mul_iff",
+        "OAI.KLInvariance.left_descent_mul_simple_iff"
+      ],
+      "review": "Re-read both noncollapsed descent-square lemmas and right-edge transport. Added the left-descent equivalence with its two orientations and exact noncollapse condition.",
+      "pending": []
+    },
+    {
+      "node": "kl.notes.hecke_action",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/hecke_action.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hecke.left",
+        "OAI.KLInvariance.Hecke.left_quadratic",
+        "OAI.KLInvariance.Hecke.barLinear_left",
+        "OAI.KLInvariance.Hecke.rTilde"
+      ],
+      "review": "Replaced the compressed braid justification with the actual left/right commutation and cyclic-vector proof; connected the overview to the new detailed nodes.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.rtilde_recursion",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/rtilde_recursion.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hecke.rTilde_recursion"
+      ],
+      "review": "Re-read rTilde_recursion. Its coefficient calculation is retained and now points to the detailed inverse-basis ascent and triangularity proofs.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.rtilde_family",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/rtilde_family.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hecke.rTilde",
+        "OAI.KLInvariance.Hecke.rTilde_diagonal",
+        "OAI.KLInvariance.Hecke.rTilde_zero"
+      ],
+      "review": "Re-read rTilde definition, support and diagonal. Kept the parameter -a and linked the proved triangularity rather than assuming it.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.r_kernel",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/r_kernel.md",
+      "source_declarations": [
+        "OAI.KLInvariance.OrdinaryR.polynomial_kernel_reverse",
+        "OAI.KLInvariance.OrdinaryR.polynomial_kernel",
+        "OAI.KLInvariance.eval₂_reflect_unit"
+      ],
+      "review": "Read both polynomial kernel directions and eval₂_reflect_unit. Added the coefficient definition of bounded reflection and linked the full sign/power cancellation and polynomial degree proof.",
+      "pending": []
+    },
+    {
+      "node": "kl.foundations.rtilde",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/rtilde.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Hecke.rTilde",
+        "OAI.KLInvariance.rPolynomial_normalization"
+      ],
+      "review": "Read rPolynomial_normalization and rPolynomial_eq_constructed. Retained the integer-exponent induction, both branch length differences and explicit scalar factors.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.word_character_reciprocity",
+      "file": "docs/knowledge/nodes/kl.sheaves/word_character_reciprocity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.HeckeQ.barLinear_positiveWord",
+        "OAI.KLInvariance.HeckeQ.positiveWord_rValue",
+        "OAI.KLInvariance.TitsSpace.bottStalkCharacter_reciprocity",
+        "OAI.KLInvariance.TitsSpace.bottKernelCharacter_rConvolution",
+        "OAI.KLInvariance.HeckeQ.rValue_inverse_eq_barBasis",
+        "OAI.KLInvariance.HeckeQ.positiveWord_support"
+      ],
+      "review": "The Hecke identities used in the existing word-character proof now have detailed nodes: positive-word definition/support/bar induction, signed parameter reciprocity and the inverse-parameter R coefficient.",
+      "pending": []
+    },
+    {
+      "node": "kl.hecke.polynomial_reflection",
+      "file": "docs/knowledge/nodes/kl.02_hecke_polynomials/polynomial_reflection.md",
+      "source_declarations": [
+        "OAI.KLInvariance.eval₂_reflect_unit",
+        "OAI.KLInvariance.reflect_finset_sum"
+      ],
+      "review": "Read eval₂_reflect_unit and the local finite-sum reflection lemma. Explained the bounded-degree operation, coefficient reversal, product rule, double reflection and natural degree of zero.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -2033,7 +2313,9 @@
       "code": "C3",
       "title": "Strong Bruhat order and lifting",
       "status": "in_progress",
-      "completion_evidence": []
+      "completion_evidence": [
+        "kl.coxeter.simple_edge_transport"
+      ]
     },
     {
       "code": "C4",
@@ -2126,37 +2408,73 @@
     {
       "code": "H1",
       "title": "Hecke modules and operators",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "exposition_reviewed",
+      "completion_evidence": [
+        "kl.definitions.hecke_operators",
+        "kl.definitions.hecke_quadratic_relation",
+        "kl.detail.hecke_quadratic_identity",
+        "kl.hecke.commutation",
+        "kl.hecke.word_actions",
+        "kl.hecke.word_independence",
+        "kl.notes.hecke_action"
+      ],
+      "pending": [],
+      "review": "Standard finite-support module, both coefficient conventions and conversion, simple inverses, left/right commutation, cyclicity, word units and reduced-word independence are explicit."
     },
     {
       "code": "H2",
       "title": "The bar operation",
-      "status": "in_progress",
+      "status": "exposition_reviewed",
       "completion_evidence": [
-        "kl.definitions.bar_involution"
+        "kl.definitions.bar_involution",
+        "kl.hecke.bar_interchange",
+        "kl.hecke.bar_triangularity"
       ],
-      "pending": [
-        "Expand detailed proofs of the bar construction and parameter-intertwining identities."
-      ]
+      "pending": [],
+      "review": "Inverse-basis vectors, coefficient-linear maps, Laurent semilinearity, ascent/descent intertwining, inverse composition and Bruhat triangularity are explained with full inductions."
     },
     {
       "code": "H3",
       "title": "The R-polynomial families",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "exposition_reviewed",
+      "completion_evidence": [
+        "kl.detail.ordinary_r",
+        "kl.detail.r_kernel",
+        "kl.detail.rtilde_family",
+        "kl.detail.rtilde_recursion",
+        "kl.foundations.rtilde",
+        "kl.hecke.bar_coefficient_inverse",
+        "kl.hecke.ordinary_r_construction",
+        "kl.hecke.ordinary_r_degree",
+        "kl.hecke.r_parameter_reciprocity",
+        "kl.hecke.r_value_recursion",
+        "kl.hecke.r_values"
+      ],
+      "pending": [],
+      "review": "Exact R-value normalization, every-descent recurrence, Laurent polynomiality, specialization, degree bounds, inverse coefficients, reciprocal convolution and square-parameter conversion have linked detailed proofs."
     },
     {
       "code": "H4",
       "title": "Canonical KL polynomials",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.hecke.polynomial_reflection"
+      ],
+      "pending": [
+        "Expand the canonical lower-half/defect construction and its reciprocity/existence proof, with every NormalizedKL field and the selected-family interface."
+      ]
     },
     {
       "code": "H5",
       "title": "Word expansions and rigidity",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.hecke.positive_words",
+        "kl.hecke.positive_word_reciprocity"
+      ],
+      "pending": [
+        "Complete the dihedral KL calculation, scaled polynomial vectors and reciprocal-difference rigidity review."
+      ]
     },
     {
       "code": "A1",
@@ -2422,10 +2740,11 @@
         "kl.sheaves.kernel_transport",
         "kl.sheaves.model_sum_characters",
         "kl.sheaves.lower_model_kernels",
-        "kl.duality.bott_character_decomposition"
+        "kl.duality.bott_character_decomposition",
+        "kl.detail.word_character_reciprocity"
       ],
       "pending": [
-        "Expand the upstream Hecke bar/R coefficient identities and word-character inputs before completing the whole reciprocity subtopic."
+        "Finish the word-stalk character identification and its word-module inputs; the Hecke bar, support and R-coefficient arguments now have detailed nodes."
       ]
     },
     {
@@ -2593,7 +2912,7 @@
     }
   ],
   "next_steps": [
-    "Complete Hecke operators, bar/R coefficient identities and word-character inputs; finish generic sheaf base change and morphism extension.",
+    "Expand canonical KL construction and the remaining word-character identification; complete generic sheaf base change and morphism extension.",
     "Complete standard-parabolic inclusion and finite-support transport; finish word wall maps, pair kernels, and character recursions.",
     "Expand adapted-order/chamber changes, dihedral interval transport, and the path-polynomial proof.",
     "Review the remaining Hecke, localization, and simultaneous-comparison arguments against their local source bodies.",
@@ -2873,7 +3192,21 @@
       "kl.sheaves.lower_model_kernels": "S9",
       "kl.sheaves.boundary_pullback": "S4",
       "kl.sheaves.interval_boundary": "S4",
-      "kl.sheaves.upper_interval_kernels": "S4"
+      "kl.sheaves.upper_interval_kernels": "S4",
+      "kl.hecke.commutation": "H1",
+      "kl.hecke.word_actions": "H1",
+      "kl.hecke.word_independence": "H1",
+      "kl.hecke.bar_interchange": "H2",
+      "kl.hecke.bar_triangularity": "H2",
+      "kl.hecke.r_values": "H3",
+      "kl.hecke.r_value_recursion": "H3",
+      "kl.hecke.ordinary_r_construction": "H3",
+      "kl.hecke.ordinary_r_degree": "H3",
+      "kl.hecke.r_parameter_reciprocity": "H3",
+      "kl.hecke.bar_coefficient_inverse": "H3",
+      "kl.hecke.positive_words": "H5",
+      "kl.hecke.positive_word_reciprocity": "H5",
+      "kl.hecke.polynomial_reflection": "H4"
     },
     "moved_nodes": [
       {
@@ -3707,7 +4040,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 261
+    "current_node_count": 275
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -3719,7 +4052,8 @@
     "Expanded homogeneous inverse duality, scalar degree cancellation, costalk Hilbert reciprocity, scaled word coordinates, integral adjoint descent, and image-section duality.",
     "Completed the detailed minimal-cover/top-detection and adjoint-boundary recognition chain, the word pairing degree, and transport to the chosen polynomial-coordinate boundary sheaf.",
     "Expanded the complete root-plane-to-induced-dihedral construction and least-coset graph comparison, mapped InducedSigned, and refined the topic-stage relationship map to place plane inversion changes before the induced system.",
-    "Expanded boundary existence, uniqueness and restrictions; lower-supported models; local stalk remainders and full graded decomposition; simultaneous stalk/kernel multiplicities, with a shared one-edge example and distinct splitting/pairing and decomposition/character routes."
+    "Expanded boundary existence, uniqueness and restrictions; lower-supported models; local stalk remainders and full graded decomposition; simultaneous stalk/kernel multiplicities, with a shared one-edge example and distinct splitting/pairing and decomposition/character routes.",
+    "Expanded the operator-to-R construction: both Hecke conventions, cyclic reduced-word independence, bar intertwining and triangularity, polynomiality and degree, signed parameter reciprocity, inverse coefficients, and positive-word convolution. Added a bounded polynomial-reflection definition and rebuilt the topic guide around these dependencies."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -3780,6 +4114,11 @@
         "kl.localization"
       ],
       "review": "Graded topic occurrences resolve to ModelSum with nonnegative shifts; localization occurrences resolve to the ungraded local-ring ModelSum."
+    },
+    {
+      "term": "positive Hecke word",
+      "target": "kl.hecke.positive_words",
+      "review": "Moved the alias from the combined word-character entry to the dedicated algebraic definition; word-stalk character aliases retain their original target."
     }
   ],
   "corrections": [
@@ -3799,15 +4138,15 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-19T05:49:41.653307+00:00",
+    "created_at": "2026-10-19T06:07:27.039807+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 261,
-    "html_pages_checked": 521,
-    "generated_definition_links_checked": 3318,
+    "node_count": 275,
+    "html_pages_checked": 535,
+    "generated_definition_links_checked": 3531,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "Mapped declarations; all 35 local structures have direct mappings and the fresh build reports no uncovered fields."
+    "field_audit_scope": "All 35 mapped local structures retain complete field coverage; no Lean execution."
   },
   "structure_coverage_scan": {
     "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",

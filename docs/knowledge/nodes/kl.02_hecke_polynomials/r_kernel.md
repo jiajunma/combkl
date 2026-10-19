@@ -10,18 +10,33 @@ uses:
 - kl.detail.ordinary_r
 - kl.definitions.bar_involution
 - kl.foundations.finite_intervals
+- kl.hecke.bar_coefficient_inverse
+- kl.hecke.ordinary_r_construction
+- kl.hecke.ordinary_r_degree
+- kl.hecke.polynomial_reflection
 lean:
   repository: openai-kl
   modules:
+  - Hecke
   - OrdinaryR
   declarations:
   - OAI.KLInvariance.OrdinaryR.polynomial_kernel_reverse
+  - OAI.KLInvariance.OrdinaryR.polynomial_kernel
+  - OAI.KLInvariance.eval₂_reflect_unit
 source:
   spans:
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.OrdinaryR:245
     format: lean-location
     note: OAI.KLInvariance.OrdinaryR.polynomial_kernel_reverse
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.OrdinaryR:190
+    format: lean-location
+    note: OAI.KLInvariance.OrdinaryR.polynomial_kernel
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.Hecke:1101
+    format: lean-location
+    note: OAI.KLInvariance.eval₂_reflect_unit
   - artifact: openai-kl-paper
     locator: Related paper context; sec:introduction
     format: section
@@ -43,6 +58,12 @@ tags:
 
 # The reciprocal convolution identity for R-polynomials
 
+For a polynomial \(p(q)=\sum_{i=0}^d c_iq^i\) of degree at most \(d\), its reflection in degree \(d\) is
+\[
+\operatorname{reflect}_d p=\sum_{i=0}^d c_iq^{d-i}=q^dp(q^{-1}).
+\]
+For example, reflecting \(2+3q\) in degree two gives \(2q^2+3q\). It is a linear operation on polynomials of degree at most \(d\), and reflecting twice returns the original coefficients.
+
 Write \(d(x,z)=\ell(z)-\ell(x)\) for comparable endpoints and
 \[
 \overline R_{x,z}(q)=q^{d(x,z)}R_{x,z}(q^{-1}).
@@ -59,7 +80,7 @@ Terms with noncomparable endpoints vanish. The degree bound on \(R\) ensures tha
 
 Let \(Q\) be the Laurent indeterminate, so \(Q\) is a unit in \(\mathbb Z[Q,Q^{-1}]\). The constructed ordinary R-polynomial evaluated at \(Q\) equals the coefficient R-value of the unnormalized Hecke bar transform.
 
-The coefficient identity for the two inverse bar transforms is
+The [[node:kl.hecke.bar_coefficient_inverse|inverse bar-coefficient theorem]] substitutes the factors \((-1)^{\ell(x)}(-Q)^{\ell(z)}\) and \((-1)^{\ell(z)}(-Q^{-1})^{\ell(y)}\) into the coefficient sum. Its calculation cancels all powers at the intermediate vertex and leaves a diagonal sign equal to one. It gives
 \[
 \sum_{x\le z\le y}
 R_{x,z}(Q)\,Q^{\ell(y)}Q^{-\ell(z)}
@@ -71,7 +92,7 @@ This is the \((x,y)\)-entry of the identity operator obtained by composing the b
 
 Since \(z\le y\),
 \(Q^{\ell(y)}Q^{-\ell(z)}=Q^{d(z,y)}\).
-The ordinary R-degree bound gives
+The [[node:kl.hecke.ordinary_r_degree|ordinary R-degree bound]] gives
 \(\deg R_{z,y}\le d(z,y)\).
 Consequently \(Q^{d(z,y)}R_{z,y}(Q^{-1})\) is the Laurent image of the polynomial \(\operatorname{reflect}_{d(z,y)}R_{z,y}\).
 
@@ -104,6 +125,8 @@ For noncomparable \(x,y\), each potential term vanishes by triangularity, and th
 
 ## Lean formalization
 
-
-
 `OAI.KLInvariance.OrdinaryR.polynomial_kernel_reverse`: [OrdinaryR.lean:245](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/OrdinaryR.lean#L245).
+
+`OAI.KLInvariance.OrdinaryR.polynomial_kernel`: [OrdinaryR.lean:190](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/OrdinaryR.lean#L190).
+
+`OAI.KLInvariance.eval₂_reflect_unit`: [Hecke.lean:1101](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean#L1101).
