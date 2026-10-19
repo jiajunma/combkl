@@ -26,7 +26,7 @@ on the \(R\)-basis \(1,\alpha\): the trace of \(1\) and \(\alpha^2\) is zero, an
 
 The general reflection Frobenius theorem proves this even/odd decomposition and trace pairing for the actual coefficient ring and reflection.
 
-## Build and evaluate the one-letter word module
+## The one-letter word module and its evaluations
 
 For the word consisting of \(s\), tensor induction gives
 \[
@@ -55,7 +55,26 @@ Conversely, the image consists exactly of pairs satisfying \(f-g\in\alpha A\). G
 
 For a longer word, evaluation has one coordinate for every subexpression. The full-evaluation theorem proves injectivity by repeating the two-block argument. Grouping coordinates of equal group weight defines the stalk images.
 
-## Derive the word character formula from a short exact sequence
+## Scaled coordinates and weight support
+
+The evaluation matrix \(E\) is injective over the coefficient domain. Its determinant \(\Delta\) is consequently nonzero. The adjugate identity
+\[
+E\operatorname{adj}(E)=\Delta I
+\]
+constructs a word element with evaluations \(\Delta\) in any chosen coordinate and zero elsewhere. For a lift \(c_\varepsilon\) at coordinate \(\varepsilon\), every word element satisfies
+\[
+\Delta m=\sum_\varepsilon E_\varepsilon(m)c_\varepsilon.
+\]
+This expresses a scaled word element as a sum of elements supported at individual weights.
+
+The right coefficient action acts on a vector supported at weight \(x\) through the coefficient character \(\chi_x\). Faithfulness separates two distinct characters, and balance of the word pairing forces distinct supported weights to pair to zero.
+
+The scaled expansion then proves that a vector supported at \(x\) annihilates the kernel of the stalk projection. The converse follows by testing the pairing against
+\(T_a n-\chi_x(a)n\). Thus the supported submodule is exactly that annihilator, and perfection identifies it with the stalk dual.
+
+This description is the input to adjoint descent in the sheaf topic. A sheaf endomorphism preserves supported coordinates. Symmetry of the word pairing then makes its adjoint preserve every stalk-projection kernel, allowing the adjoint to descend to the stalks and pair-projection edge quotients.
+
+## The word character formula from a short exact sequence
 
 Let \(C_x^{\mathbf t}(q)\) be the stalk character of an old word \(\mathbf t\), and prepend a simple reflection \(s\). If \(x<sx\), the head projection is surjective onto the old stalk at \(x\), with kernel the old stalk at \(sx\) shifted upward by one degree. Degreewise exactness therefore gives
 \[
@@ -65,7 +84,7 @@ If \(sx<x\), the other projection gives
 \[
 C_x^{s\mathbf t}(q)=C_{sx}^{\mathbf t}(q)+qC_x^{\mathbf t}(q).
 \]
-The factor \(q\) records the degree-one root multiplication in the kernel; it is not an arbitrary normalization.
+The factor \(q\) records the degree-one root multiplication in the kernel.
 
 These are exactly the coefficient recurrences for multiplication by \(1+T_s\). The empty word has one stalk \(A\) at \(1\), so its character vector is the coefficient vector of \(T_1\). Induction on the word proves
 \[
@@ -94,6 +113,8 @@ For the single letter \(s\), the positive Hecke word is \(1+T_s\), and both stal
 
 - [[node:kl.notes.word_stalks]]
 - [[node:kl.detail.word_evaluation_injective]]
+- [[node:kl.word.scaled_coordinate_lifts]]
+- [[node:kl.word.support_duality]]
 
 ### Two-stalk lattices and their kernels
 

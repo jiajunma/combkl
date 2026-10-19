@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 32356,
-  "theorem_walkthroughs": 103,
+  "revised_proof_words": 35433,
+  "theorem_walkthroughs": 114,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -14,6 +14,18 @@
   ],
   "mechanical_check_limit": "The build checks text hashes, references, graph structure and formulas. These checks do not certify mathematical or pedagogical completeness.",
   "proofs": [
+    {
+      "node": "kl.algebra.dual_basis_degrees",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.homogeneous_basis_repr",
+        "OAI.KLInvariance.Graded.dualBasis_homogeneous"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 178,
+      "proof_sha256": "2e1668fe58f1d4aa7f347090b2e26e416afb230009b834cdef329e431e54e600",
+      "review": "Compared homogeneous_basis_repr and dualBasis_homogeneous. Finite coefficient decomposition, component selection, and basis independence establish the negative dual degree."
+    },
     {
       "node": "kl.algebra.kernel_saturation",
       "source_declarations": [
@@ -25,6 +37,46 @@
       "revised_proof_words": 179,
       "proof_sha256": "371cc8fb94c3dc1ff0baadbb92fe262241a19dbc70e20c6d0bd55210b7fc5425",
       "review": "Compared kernel_saturated and reduced_kernel_injective: scalar injectivity cancels a in the target, and every zero reduced class is represented by a multiple within the original kernel."
+    },
+    {
+      "node": "kl.algebra.perfect_inverse_degree",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.perfect_inverse_of_homogeneous_functional"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 209,
+      "proof_sha256": "603d0ebfd9ff6f6d1b9657c1b3203a48a3063a207659ad92e32f57ae5446049f",
+      "review": "Compared perfect_inverse_of_homogeneous_functional. The saved proof selects the output component j+r, extends equality from homogeneous vectors by finite additivity, and uses injectivity of the pairing equivalence."
+    },
+    {
+      "node": "kl.algebra.quotient_endomorphism_descent",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.LinearDescent.descend",
+        "OAI.LinearDescent.descend_apply",
+        "OAI.LinearDescent.descend_idempotent",
+        "OAI.KLInvariance.Graded.ModuleData.descended",
+        "OAI.KLInvariance.Graded.ModuleData.lower_kernel_preserved",
+        "OAI.KLInvariance.Graded.ModuleData.descendedEdge",
+        "OAI.KLInvariance.Graded.ModuleData.descendedEdge_lower",
+        "OAI.KLInvariance.Graded.ModuleData.descendedEdge_upper"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 261,
+      "proof_sha256": "8a2f622bf91d06f59590eec044cbae14de0d7a08f5d659ddcb2f1ee872004b24",
+      "review": "Compared LinearDescent.descend and the graded descended/descendedEdge construction. Lift independence, homogeneous lifts, the lower quotient kernel, and both edge squares are explicit."
+    },
+    {
+      "node": "kl.algebra.scalar_inverse_degree",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.mem_of_homogeneous_smul"
+      ],
+      "proof_steps": 2,
+      "revised_proof_words": 108,
+      "proof_sha256": "d6f28f600ba620db80bda7c8951b6c56e4ab16d4e9a9a63d21acb7de17cfcfa8",
+      "review": "Compared mem_of_homogeneous_smul. The component identity and injectivity of scalar multiplication recover degree n-d without a division operation."
     },
     {
       "node": "kl.comparison.edge_increment",
@@ -213,9 +265,9 @@
       ],
       "proof_steps": 4,
       "previous_proof_words": 0,
-      "revised_proof_words": 207,
-      "proof_sha256": "14970ad2e29192e58694515fd659d1d8d6e61f1d6659ad42c266a925c26d0ffd",
-      "review": "Statement, local hypotheses, constructions and numbered derivation read against the cited Lean bodies during the 2026-10-18 coverage review. Hashes detect stale prose, not mathematical completeness.",
+      "revised_proof_words": 223,
+      "proof_sha256": "b4605194f1476257871b538da10d5d48574e300e7a5d568560d9557002de2736",
+      "review": "Compared the anti-involution argument and the descended word-adjoint identities. Removed the circular exposition reference to the boundary-pairing proof and linked the independent descent theorem.",
       "format_correction": "2026-10-18: restored missing backslashes in qquad spacing commands; mathematical assertions unchanged."
     },
     {
@@ -240,9 +292,9 @@
       ],
       "proof_steps": 6,
       "previous_proof_words": 128,
-      "revised_proof_words": 592,
-      "proof_sha256": "9040cd63d74b6ae48e0dc54a4f5093d47783c08c766ae8521fa4b4f4ec020636",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 754,
+      "proof_sha256": "62c2736b8e4e941c241f01693c6f96e8b6738bb93e64be2342d927126b2fdbdd",
+      "review": "Replaced the inaccurate fraction-field descent description by the actual integral support-annihilator argument. Expanded component idempotence, image-section equivalences, the algebraic duality inverse, and the canonical-pairing calculation. Recognition and top-to-global bijectivity remain topics for further detailed expansion."
     },
     {
       "node": "kl.detail.boundary_uniqueness",
@@ -286,13 +338,16 @@
     {
       "node": "kl.detail.costalk_reciprocity",
       "source_declarations": [
-        "OAI.KLInvariance.BruhatGraph.costalk_hilbert_of_duality"
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.costalk_hilbert_of_duality",
+        "OAI.KLInvariance.BruhatGraph.costalk_hilbert_of_duality",
+        "OAI.KLInvariance.BruhatGraph.incomingEquivInversions",
+        "OAI.KLInvariance.BruhatGraph.incoming_card"
       ],
-      "proof_steps": 4,
+      "proof_steps": 5,
       "previous_proof_words": 80,
-      "revised_proof_words": 288,
-      "proof_sha256": "4ac1bed839701448aa7fd46052e77e0c0495681bde0fe42a105b48868b101a70",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 359,
+      "proof_sha256": "9e6de5c7d12ac4634116547b80f0f5a2548b4630f577511bfd7a11c2a8f1bada",
+      "review": "Compared both costalk_hilbert_of_duality declarations and incomingEquivInversions/incoming_card. Detailed the dual basis, nonnegative kernel degrees, Hilbert denominator, and the special edge count on [1,b]."
     },
     {
       "node": "kl.detail.diamond_reconstruction",
@@ -1168,6 +1223,41 @@
       "review": "Read the local source proof and expanded the exact induction, coefficient, and sign cases. The parabolic prefix is strictly shorter; the dual action uses the inverse; the signed action tracks both coordinates."
     },
     {
+      "node": "kl.sheaves.adjoint_properties",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.PerfectAdjoint.adjoint_comp",
+        "OAI.PerfectAdjoint.adjoint_idempotent",
+        "OAI.PerfectAdjoint.commutes_of_balanced",
+        "OAI.PerfectAdjoint.symmetric_pairing",
+        "OAI.PerfectAdjoint.adjoint_adjoint",
+        "OAI.PerfectAdjoint.adjoint_zero",
+        "OAI.KLInvariance.Graded.adjoint_homogeneous"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 195,
+      "proof_sha256": "e6189e48fd9864b88591a6b69d7a770a24c7772b921029a30763fd33e98b8e83",
+      "review": "Compared the composition, symmetry, involution, zero, balance-commutation, and homogeneous-adjoint proofs. Matrix conventions are stated separately in the definition."
+    },
+    {
+      "node": "kl.sheaves.adjoint_summand_duality",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.AdjointSummandDuality.dualSection",
+        "OAI.AdjointSummandDuality.dualProjection",
+        "OAI.AdjointSummandDuality.projection_section",
+        "OAI.AdjointSummandDuality.adjointSummand",
+        "OAI.AdjointSummandDuality.adjointEquivDual",
+        "OAI.PerfectAdjoint.adjoint_projector_eq",
+        "OAI.PerfectAdjoint.rangeAdjointEquivDual",
+        "OAI.PerfectAdjoint.rangeAdjointEquivDualRange"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 242,
+      "proof_sha256": "bb1daf7faebe30f4913becf7ec1d9ce0bc79f2103c05f1f02d5c1b044c10cffa",
+      "review": "Compared dualSection, dualProjection, their splitting equation, adjointProjector_range, and rangeAdjointEquivDual. Both inverse maps and the range equality are explicit; symmetry is not used."
+    },
+    {
       "node": "kl.sheaves.boundary_existence",
       "source_declarations": [
         "OAI.KLInvariance.BruhatGraph.exists_boundarySheaf"
@@ -1190,6 +1280,20 @@
       "revised_proof_words": 201,
       "proof_sha256": "0a1e0e8aa7a74e1a33be6bbf04c95360a3bc943e4964117fd6a653a080d5cd53",
       "review": "Compared both range containments with range_stalkMap_eq_boundaryImage. Generation lifts a stalk vector; flabbiness extends from the strict upper set; equality is checked at each outgoing edge coordinate."
+    },
+    {
+      "node": "kl.sheaves.costalk_duality_degree",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.dualToSupport_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.costalkEquivDual_inverse_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.kernelEquivSingleSupport_apply",
+        "OAI.KLInvariance.BruhatGraph.incomingProduct_homogeneous"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 262,
+      "proof_sha256": "d97ab19233e360438748149538755e9e86df2de0e66a9ceebc93caa92597b870",
+      "review": "Compared dualToSupport_homogeneous and FreeSheaf.costalkEquivDual_inverse_homogeneous, including finite section grading, the exact incoming-product coordinate equation, and torsion-free scalar cancellation."
     },
     {
       "node": "kl.sheaves.costalk_support",
@@ -1242,6 +1346,20 @@
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
     },
     {
+      "node": "kl.sheaves.image_sections",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageSection_fixed",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageSectionMap",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageSectionMap_bijective",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageSectionEquiv"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 240,
+      "proof_sha256": "564d1b0786aa4ec4fada8b5dc8f6f69307b9be1ff34c741279e7bf47bc029a31",
+      "review": "Compared imageSection_fixed, imageSectionMap_bijective, and imageSectionEquiv. Retained ambient assignments on all vertices, assumed only vertex idempotence, and proved both directions of the section-image identification."
+    },
+    {
       "node": "kl.sheaves.relative_flabbiness",
       "source_declarations": [
         "OAI.KLInvariance.MomentGraph.Sheaf.extend_closedUnder"
@@ -1276,6 +1394,60 @@
       "revised_proof_words": 281,
       "proof_sha256": "646046250c58b0c81e45df3425e12282ca62ace731b72ac3597ef7ce79fe7165",
       "review": "Expanded dualToSupport and supportEquivDual into lift-independent descent, linearity, and both inverse identities. Global generation supplies exactly the required surjective evaluation."
+    },
+    {
+      "node": "kl.sheaves.word_adjoint_descent",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bott_projection_zero_iff_annihilates_support",
+        "OAI.KLInvariance.TitsSpace.bottAdjoint_preserves_kernel",
+        "OAI.KLInvariance.TitsSpace.bottAdjoint_preserves_support",
+        "OAI.KLInvariance.TitsSpace.bottEndOfSheaf",
+        "OAI.KLInvariance.TitsSpace.bottEndOfSheaf_preserves_support",
+        "OAI.KLInvariance.TitsSpace.bottAdjointWordHom",
+        "OAI.KLInvariance.TitsSpace.bottAdjointSheaf",
+        "OAI.KLInvariance.TitsSpace.bottAdjointSheaf_vertex",
+        "OAI.KLInvariance.TitsSpace.bottEndOfAdjointSheaf"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 443,
+      "proof_sha256": "6cfdc49b1995a9e991538f92f367f494a090c547a83d25c4246f777098863108",
+      "review": "Compared bott_projection_zero_iff_annihilates_support, bottAdjoint_preserves_kernel, bottEndOfSheaf_preserves_support, bottAdjointSheaf, and bottEndOfAdjointSheaf. The proof follows integral annihilators and quotient descent."
+    },
+    {
+      "node": "kl.word.scaled_coordinate_lifts",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottCoordinateDenominator",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateDenominator_ne_zero",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_contains_scaled_coordinates",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateLift",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateLift_eval",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateLift_supported",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateExpansion"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 257,
+      "proof_sha256": "e31c2cbd43fed53f45845bdb40f89bc63308a96341ddb04a33fc627079dbfeed",
+      "review": "Compared the determinant, adjugate construction, coordinate lifts, and expansion in Frobenius. Explained why matrix injectivity implies nonzero determinant and verified the one-letter calculation."
+    },
+    {
+      "node": "kl.word.support_duality",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bott_weight_eigen",
+        "OAI.KLInvariance.TitsSpace.bott_eigen_supported",
+        "OAI.KLInvariance.TitsSpace.bott_distinct_weight_orthogonal",
+        "OAI.KLInvariance.TitsSpace.bott_supported_iff_annihilates",
+        "OAI.KLInvariance.TitsSpace.bottStalkDualToSupport",
+        "OAI.KLInvariance.TitsSpace.bottStalkDualToSupport_bijective",
+        "OAI.KLInvariance.TitsSpace.bottStalkDuality",
+        "OAI.KLInvariance.TitsSpace.coefficientAction_separates"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 433,
+      "proof_sha256": "428bc5828e37d59c398fd15732f93b2a032eeb4a7cb1bf8ac9f2e3f48d6c60e2",
+      "review": "Compared the right-action eigenvalue criterion, separation, distinct-weight orthogonality, scaled-coordinate expansion, both annihilator implications, and the stalk-duality inverse maps in Frobenius."
     }
   ]
 }

@@ -265,3 +265,24 @@ comparisons:
   consequence: The Blueprint follows these integral maps. The pairing construction
     and its homogeneity equation supply the later graded reciprocity statement. Degree
     shifts use the Lean convention M(d)_n = M_{n-d}.
+- id: boundary-pairing-construction
+  kind: Different construction of the boundary duality
+  nodes:
+  - kl.detail.boundary_pairing
+  paper_labels:
+  - bg:normalization
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.bottAdjointSheaf
+  - OAI.KLInvariance.TitsSpace.bottCanonicalAdjointIso
+  - OAI.KLInvariance.TitsSpace.bottCanonicalPerfectPairing_apply
+  - OAI.KLInvariance.BruhatGraph.boundarySheaf_symmetricPairing
+  paper: The normalization proof uses the normalized self-dual projective and the
+    cited moment-graph/Soergel equivalence to relate the stalk and lower-support layer,
+    before translating grading conventions.
+  lean: The word pairing is constructed by tensor induction. Supported weight submodules
+    prove adjoint kernel preservation, which descends the adjoint to a graded sheaf
+    map. The adjoint image is dual to the original boundary summand; primitive recognition
+    and the canonical comparison isomorphism produce its perfect symmetric pairing.
+  consequence: The proof below follows the integral adjoint, image-section, recognition,
+    and canonical-comparison maps. Homogeneous inverse calculations then determine
+    the stalk–costalk degree shift.

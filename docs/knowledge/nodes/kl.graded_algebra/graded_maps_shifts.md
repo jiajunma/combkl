@@ -47,6 +47,22 @@ tags:
 
 For graded \(A\)-modules \(M=\bigoplus_n M_n\) and \(N=\bigoplus_n N_n\), a homogeneous map of degree zero is an \(A\)-linear map \(f:M\to N\) satisfying \(f(M_n)\subseteq N_n\) for every integer \(n\). These are two pieces of data: the linear map and its grading-preservation condition.
 
+## Maps and functionals of an integer degree
+
+More generally, an \(A\)-linear map has degree \(r\in\mathbb Z\) when
+\[
+f(M_n)\subseteq N_{n+r}\qquad(n\in\mathbb Z).
+\]
+A homogeneous functional of degree \(r\) is an \(A\)-linear map \(\lambda:M\to A\) satisfying
+\[
+\lambda(M_n)\subseteq A_{n+r}.
+\]
+Composition adds degrees: if \(f\) has degree \(r\) and \(g\) degree \(s\), then \(g(f(M_n))\subseteq P_{n+r+s}\).
+
+For a basis vector of degree \(d\), its coordinate functional has degree \(-d\): on a degree-\(n\) vector it reads a coefficient of degree \(n-d\). The detailed coefficient argument is in [[node:kl.algebra.dual_basis_degrees]].
+
+## Positive shifts of nonnegative module data
+
 For an integer \(d\ge0\), the positive shift \(M(d)\) has the same underlying module and
 \[
 M(d)_n=M_{n-d}.

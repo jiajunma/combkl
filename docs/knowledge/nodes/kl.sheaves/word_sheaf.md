@@ -10,6 +10,7 @@ uses:
 - kl.notes.bott_samelson
 - kl.notes.word_stalks
 - kl.sheaves.graph_sheaf
+- kl.algebra.pair_projection
 lean:
   repository: openai-kl
   modules:
@@ -54,21 +55,34 @@ tags:
 
 # The pair-projection sheaf of a Bott–Samelson module
 
-Let \(M_{\mathbf s}\) be a Bott–Samelson word module and let
-\(p_x:M_{\mathbf s}\twoheadrightarrow M_{\mathbf s}^x\) be its weight-stalk projections. On an edge \(e:x\to y\), form
+Let \(M_{\mathbf s}\) be a Bott–Samelson word module over the symmetric coefficient algebra \(A\), and let
+\(\pi_x:M_{\mathbf s}\twoheadrightarrow M_{\mathbf s}^x\) be its weight-stalk projections. On an edge \(e:x\to y\), form the pair-projection quotient
 \[
 B^e=(M_{\mathbf s}^x\oplus M_{\mathbf s}^y)/
-\operatorname{im}(p_x,p_y).
+\operatorname{im}(\pi_x,\pi_y).
 \]
-The lower map sends \(v\) to the class of \((v,0)\); the upper map sends \(w\) to the negative of the class of \((0,w)\). Consequently
+The lower map sends \(v\) to \([(v,0)]\), and the upper map sends \(w\) to \(-[(0,w)]\). The pair-projection calculation gives
 \[
-\rho_{x,e}(v)=\rho_{y,e}(w)
+\rho^-_e(v)=\rho^+_e(w)
 \quad\Longleftrightarrow\quad
-(v,w)=(p_x(m),p_y(m))\text{ for some }m\in M_{\mathbf s}.
+\exists m\in M_{\mathbf s},\ (\pi_x(m),\pi_y(m))=(v,w).
 \]
-This is the pair-projection sheaf: its edge compatibility records simultaneous lifting of two stalk coordinates.
+Thus edge compatibility expresses simultaneous lifting of the two endpoint values.
 
-Every word-module element supplies a global section by applying all the projections. Since the projections onto stalk images are surjective, these sections generate every stalk. Surjectivity onto all compatible sections is a separate theorem; pairwise lifting alone does not automatically supply a single simultaneous lift over an arbitrary subset.
+For one reflection, the full evaluation image is
+\(\{(f,g):f-g\in\alpha A\}\). Both stalk images are \(A\), and the quotient above is \(A/(\alpha)\), via \([(f,g)]\mapsto f-g\bmod\alpha\). The lower and upper maps both become reduction modulo \(\alpha\).
+
+## Sections supplied by word elements
+
+Every \(m\in M_{\mathbf s}\) gives a global section \((\pi_x(m))_x\), because it lifts its own two projections on every edge. Since each stalk projection is onto its image, these global sections generate every stalk.
+
+For a reduced word, the word-lifting theorem proves that every compatible global section arises this way. Full evaluation is injective, so the section map is then an isomorphism. This identifies sheaf endomorphisms with word-module endomorphisms preserving the coordinate conditions.
+
+## Graded maps and pair quotients
+
+The evaluation projections preserve degree, and their image stalks inherit the image grading. Each pair relation is a homogeneous image, so its edge quotient has the quotient grading. Both restriction maps have degree zero.
+
+An endomorphism of the word module preserving the kernels of both endpoint projections descends to their stalks. The quotient-descent theorem then supplies an edge endomorphism satisfying both commuting squares. This construction is used to turn the integral word adjoint into a graded sheaf endomorphism.
 
 ## References
 

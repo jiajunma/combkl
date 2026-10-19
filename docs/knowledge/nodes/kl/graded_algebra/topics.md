@@ -38,15 +38,27 @@ M(d)_n=M_{n-d}.
 \]
 Thus the generator \(1\) of \(A\), originally in degree zero, has degree \(d\) in \(A(d)\).
 
-## Calculate a character and a Hilbert series
+## Homogeneous functionals and inverse degree calculations
+
+For a homogeneous basis vector of degree \(d_i\), its coordinate functional reads the coefficient in degree \(n-d_i\) from a degree-\(n\) vector. Its functional degree is therefore \(-d_i\).
+
+Suppose a perfect pairing has shift \(L\), sending input degrees \(i,j\) to degree \(i+j-L\). A functional of degree \(r\) has a unique representative in degree \(r+L\). The proof decomposes that representative, tests it against homogeneous vectors, and takes the output component of degree \(j+r\). Perfection then identifies the whole representative with its degree-\((r+L)\) component.
+
+A second component calculation handles scalar multiplication. If a homogeneous scalar \(a\) of degree \(d\) acts injectively and \(am\) has degree \(n\), then
+\[
+a m_{n-d}=(am)_n=am,
+\]
+so injectivity gives \(m=m_{n-d}\). These two theorems account for both shifts in the later costalk formula: the pairing contributes \(L\), and removal of the incoming label product subtracts its degree.
+
+## Characters and Hilbert series
 
 Suppose \(M\) is finite graded free with homogeneous basis degrees \(d_1,\ldots,d_r\). Its graded-rank polynomial is
 \[
 \operatorname{ch}(M;q)=\sum_{i=1}^r q^{d_i}.
 \]
-The coefficient of a power of q counts the homogeneous basis generators in that degree.
+The coefficient of a power of \(q\) counts the homogeneous basis generators in that degree.
 
-The Hilbert series records the latter:
+The Hilbert series records the dimensions of the entire homogeneous components:
 \[
 H_M(q)=\sum_n\dim_{\mathbb R}(M_n)q^n.
 \]
@@ -73,7 +85,7 @@ Projectivity is the splitting property: a surjection onto a projective module ha
 
 The source's projective-to-free proof then uses a determinant argument. Finite generation writes generators of \(K\) as a matrix of \(J\)-coefficients times themselves. The determinant of the identity minus this matrix annihilates \(K\), but has constant term one and is therefore nonzero. Since \(K\) lies inside a free module over a domain, multiplication by that determinant is injective. Thus \(K=0\). The chosen lifts are a homogeneous free basis.
 
-This explains why finite generation alone is insufficient, and why the later reverse argument first proves projectivity.
+The reverse kernel argument first establishes projectivity, then applies this graded construction to obtain freeness.
 
 ## Exactness can be checked degree by degree
 
@@ -103,6 +115,8 @@ The tools to carry forward are: linear labels and prime quotients; homogeneous m
 
 - [[node:kl.sheaves.graded_module]]
 - [[node:kl.detail.graded_maps_shifts]]
+- [[node:kl.algebra.perfect_inverse_degree]]
+- [[node:kl.algebra.scalar_inverse_degree]]
 
 ### Changing coefficients and twisting
 
@@ -111,6 +125,7 @@ The tools to carry forward are: linear labels and prime quotients; homogeneous m
 ### Bases, minimal covers, and projectivity
 
 - [[node:kl.notes.graded_nakayama]]
+- [[node:kl.algebra.dual_basis_degrees]]
 - [[node:kl.sheaves.minimal_cover]]
 - [[node:kl.notes.minimal_cover_existence]]
 - [[node:kl.notes.graded_projective_free]]
@@ -122,6 +137,11 @@ The tools to carry forward are: linear labels and prime quotients; homogeneous m
 - [[node:kl.sheaves.hilbert_free]]
 - [[node:kl.detail.hilbert_exactness]]
 - [[node:kl.sheaves.hilbert_detection]]
+
+### Algebra for support, quotients, and comparison
+
+- [[node:kl.algebra.pair_projection]]
+- [[node:kl.algebra.quotient_endomorphism_descent]]
 
 ## Additional foundational entries
 

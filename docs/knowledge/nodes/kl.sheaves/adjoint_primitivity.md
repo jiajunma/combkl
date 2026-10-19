@@ -9,6 +9,7 @@ topics:
 uses:
 - kl.detail.integral_adjoints
 - kl.detail.primitive_projectors
+- kl.sheaves.word_adjoint_descent
 lean:
   repository: openai-kl
   modules:
@@ -66,7 +67,7 @@ For a perfect pairing, evaluate against an arbitrary vector \(n\):
 Injectivity of the pairing map gives \((fg)^*=g^*f^*\). For a symmetric pairing,
 \(\langle(f^*)^*m,n\rangle=\langle m,f^*n\rangle=\langle fm,n\rangle\), hence \((f^*)^*=f\). The same defining identity gives \(0^*=0\).
 
-The word-sheaf adjoint is the descended integral module adjoint; its stalk and edge maps satisfy these identities. The descent uses the balance and support construction in the boundary-pairing proof. The following argument needs exactly these three identities.
+The word-sheaf adjoint is supplied by [[node:kl.sheaves.word_adjoint_descent]]. Its vertex identities follow from these module identities by lifting a stalk vector through its surjective projection. Its edge identities follow by lifting an edge vector through the surjective lower restriction and using the commuting square. Thus the descended operation is involutive, reverses composition, and sends zero to zero.
 
 ### Step 2. Check that the new projector is idempotent
 
@@ -88,7 +89,7 @@ Primitivity of \(p\) therefore gives \(a(f)=0\) or \(a(f)=p\).
 
 Apply \(a\) again. Involutivity and preservation of zero give respectively \(f=0\) or \(f=a(p)\). This is precisely the defining condition for primitivity of \(a(p)\).
 
-For the actual word sheaf, substitute the proved adjoint operation. The argument concerns an endomorphism and its adjoint; it does not assume that restricting a perfect form to an arbitrary summand is perfect.
+For the actual word sheaf, substitute the descended adjoint operation. A primitive projector therefore has a primitive adjoint projector, as used to recognize the adjoint image of the boundary summand.
 
 ## References
 

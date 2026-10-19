@@ -752,6 +752,265 @@
       "file": "docs/knowledge/nodes/kl.sheaves/relative_flabbiness.md",
       "review": "Rechecked extend_one, closedUnder_insert and extend_closedUnder. Expanded the standalone hypotheses and explicit update of ambient assignments; completed the finite-complement induction.",
       "pending": []
+    },
+    {
+      "node": "kl.algebra.dual_basis_degrees",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/dual_basis_degrees.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.homogeneous_basis_repr",
+        "OAI.KLInvariance.Graded.dualBasis_homogeneous"
+      ],
+      "review": "Compared homogeneous_basis_repr and dualBasis_homogeneous. Finite coefficient decomposition, component selection, and basis independence establish the negative dual degree.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.pair_projection",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/pair_projection.md",
+      "source_declarations": [
+        "OAI.KLInvariance.PairProjection.relation",
+        "OAI.KLInvariance.PairProjection.Edge",
+        "OAI.KLInvariance.PairProjection.lower",
+        "OAI.KLInvariance.PairProjection.upper",
+        "OAI.KLInvariance.PairProjection.compatible_iff",
+        "OAI.KLInvariance.PairProjection.kernel_lower",
+        "OAI.KLInvariance.PairProjection.lower_surjective",
+        "OAI.KLInvariance.PairProjection.upper_surjective"
+      ],
+      "review": "Read the local construction and its maps; expanded the defining data, quotient signs, matrix conventions, and worked examples.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.perfect_inverse_degree",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/perfect_inverse_degree.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.perfect_inverse_of_homogeneous_functional"
+      ],
+      "review": "Compared perfect_inverse_of_homogeneous_functional. The saved proof selects the output component j+r, extends equality from homogeneous vectors by finite additivity, and uses injectivity of the pairing equivalence.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.quotient_endomorphism_descent",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/quotient_endomorphism_descent.md",
+      "source_declarations": [
+        "OAI.LinearDescent.descend",
+        "OAI.LinearDescent.descend_apply",
+        "OAI.LinearDescent.descend_idempotent",
+        "OAI.KLInvariance.Graded.ModuleData.descended",
+        "OAI.KLInvariance.Graded.ModuleData.lower_kernel_preserved",
+        "OAI.KLInvariance.Graded.ModuleData.descendedEdge",
+        "OAI.KLInvariance.Graded.ModuleData.descendedEdge_lower",
+        "OAI.KLInvariance.Graded.ModuleData.descendedEdge_upper"
+      ],
+      "review": "Compared LinearDescent.descend and the graded descended/descendedEdge construction. Lift independence, homogeneous lifts, the lower quotient kernel, and both edge squares are explicit.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.scalar_inverse_degree",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/scalar_inverse_degree.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.mem_of_homogeneous_smul"
+      ],
+      "review": "Compared mem_of_homogeneous_smul. The component identity and injectivity of scalar multiplication recover degree n-d without a division operation.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.adjoint_primitivity",
+      "file": "docs/knowledge/nodes/kl.sheaves/adjoint_primitivity.md",
+      "source_declarations": [
+        "OAI.PerfectAdjoint.adjoint_comp",
+        "OAI.PerfectAdjoint.adjoint_adjoint",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.primitive_of_antiInvolution",
+        "OAI.KLInvariance.TitsSpace.bottAdjointSheaf_primitive"
+      ],
+      "review": "Compared the anti-involution argument and the descended word-adjoint identities. Removed the circular exposition reference to the boundary-pairing proof and linked the independent descent theorem.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.boundary_pairing",
+      "file": "docs/knowledge/nodes/kl.sheaves/boundary_pairing.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.boundarySheaf_symmetricPairing",
+        "OAI.KLInvariance.TitsSpace.bottCanonicalAdjointIso",
+        "OAI.KLInvariance.TitsSpace.bottCanonicalPerfectPairing_apply"
+      ],
+      "review": "Replaced the inaccurate fraction-field descent description by the actual integral support-annihilator argument. Expanded component idempotence, image-section equivalences, the algebraic duality inverse, and the canonical-pairing calculation. Recognition and top-to-global bijectivity remain topics for further detailed expansion.",
+      "pending": [
+        "Expand primitive recognition and top-to-global bijectivity as separate detailed arguments."
+      ]
+    },
+    {
+      "node": "kl.detail.costalk_reciprocity",
+      "file": "docs/knowledge/nodes/kl.sheaves/costalk_reciprocity.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.costalk_hilbert_of_duality",
+        "OAI.KLInvariance.BruhatGraph.costalk_hilbert_of_duality",
+        "OAI.KLInvariance.BruhatGraph.incomingEquivInversions",
+        "OAI.KLInvariance.BruhatGraph.incoming_card"
+      ],
+      "review": "Compared both costalk_hilbert_of_duality declarations and incomingEquivInversions/incoming_card. Detailed the dual basis, nonnegative kernel degrees, Hilbert denominator, and the special edge count on [1,b].",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.graded_maps_shifts",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/graded_maps_shifts.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.Hom",
+        "OAI.KLInvariance.Graded.ModuleData.shift",
+        "OAI.KLInvariance.Graded.ModuleData.Hom.shift"
+      ],
+      "review": "Read the local construction and its maps; expanded the defining data, quotient signs, matrix conventions, and worked examples.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.integral_adjoints",
+      "file": "docs/knowledge/nodes/kl.sheaves/integral_adjoints.md",
+      "source_declarations": [
+        "OAI.PerfectAdjoint.adjoint",
+        "OAI.PerfectAdjoint.pairing"
+      ],
+      "review": "Read the local construction and its maps; expanded the defining data, quotient signs, matrix conventions, and worked examples.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.word_sheaf",
+      "file": "docs/knowledge/nodes/kl.sheaves/word_sheaf.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottProjectionSheaf",
+        "OAI.KLInvariance.PairProjection.relation",
+        "OAI.KLInvariance.PairProjection.compatible_iff"
+      ],
+      "review": "Read the local construction and its maps; expanded the defining data, quotient signs, matrix conventions, and worked examples.",
+      "pending": []
+    },
+    {
+      "node": "kl.notes.word_stalks",
+      "file": "docs/knowledge/nodes/kl.word_modules/word_stalks.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottWeightProjection",
+        "OAI.KLInvariance.TitsSpace.bottStalk",
+        "OAI.KLInvariance.TitsSpace.bottStalkProjection",
+        "OAI.KLInvariance.TitsSpace.bottStalkProjection_surjective",
+        "OAI.KLInvariance.TitsSpace.bottWeightSupported",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateDenominator",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateLift"
+      ],
+      "review": "Read the local construction and its maps; expanded the defining data, quotient signs, matrix conventions, and worked examples.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.adjoint_properties",
+      "file": "docs/knowledge/nodes/kl.sheaves/adjoint_properties.md",
+      "source_declarations": [
+        "OAI.PerfectAdjoint.adjoint_comp",
+        "OAI.PerfectAdjoint.adjoint_idempotent",
+        "OAI.PerfectAdjoint.commutes_of_balanced",
+        "OAI.PerfectAdjoint.symmetric_pairing",
+        "OAI.PerfectAdjoint.adjoint_adjoint",
+        "OAI.PerfectAdjoint.adjoint_zero",
+        "OAI.KLInvariance.Graded.adjoint_homogeneous"
+      ],
+      "review": "Compared the composition, symmetry, involution, zero, balance-commutation, and homogeneous-adjoint proofs. Matrix conventions are stated separately in the definition.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.adjoint_summand_duality",
+      "file": "docs/knowledge/nodes/kl.sheaves/adjoint_summand_duality.md",
+      "source_declarations": [
+        "OAI.AdjointSummandDuality.dualSection",
+        "OAI.AdjointSummandDuality.dualProjection",
+        "OAI.AdjointSummandDuality.projection_section",
+        "OAI.AdjointSummandDuality.adjointSummand",
+        "OAI.AdjointSummandDuality.adjointEquivDual",
+        "OAI.PerfectAdjoint.adjoint_projector_eq",
+        "OAI.PerfectAdjoint.rangeAdjointEquivDual",
+        "OAI.PerfectAdjoint.rangeAdjointEquivDualRange"
+      ],
+      "review": "Compared dualSection, dualProjection, their splitting equation, adjointProjector_range, and rangeAdjointEquivDual. Both inverse maps and the range equality are explicit; symmetry is not used.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.costalk_duality_degree",
+      "file": "docs/knowledge/nodes/kl.sheaves/costalk_duality_degree.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.dualToSupport_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.costalkEquivDual_inverse_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.kernelEquivSingleSupport_apply",
+        "OAI.KLInvariance.BruhatGraph.incomingProduct_homogeneous"
+      ],
+      "review": "Compared dualToSupport_homogeneous and FreeSheaf.costalkEquivDual_inverse_homogeneous, including finite section grading, the exact incoming-product coordinate equation, and torsion-free scalar cancellation.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.image_sections",
+      "file": "docs/knowledge/nodes/kl.sheaves/image_sections.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageSection_fixed",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageSectionMap",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageSectionMap_bijective",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageSectionEquiv"
+      ],
+      "review": "Compared imageSection_fixed, imageSectionMap_bijective, and imageSectionEquiv. Retained ambient assignments on all vertices, assumed only vertex idempotence, and proved both directions of the section-image identification.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.projector_image",
+      "file": "docs/knowledge/nodes/kl.sheaves/projector_image.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.image",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageInclusion",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageProjection",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageSplit"
+      ],
+      "review": "Read the local construction and its maps; expanded the defining data, quotient signs, matrix conventions, and worked examples.",
+      "pending": []
+    },
+    {
+      "node": "kl.sheaves.word_adjoint_descent",
+      "file": "docs/knowledge/nodes/kl.sheaves/word_adjoint_descent.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bott_projection_zero_iff_annihilates_support",
+        "OAI.KLInvariance.TitsSpace.bottAdjoint_preserves_kernel",
+        "OAI.KLInvariance.TitsSpace.bottAdjoint_preserves_support",
+        "OAI.KLInvariance.TitsSpace.bottEndOfSheaf",
+        "OAI.KLInvariance.TitsSpace.bottEndOfSheaf_preserves_support",
+        "OAI.KLInvariance.TitsSpace.bottAdjointWordHom",
+        "OAI.KLInvariance.TitsSpace.bottAdjointSheaf",
+        "OAI.KLInvariance.TitsSpace.bottAdjointSheaf_vertex",
+        "OAI.KLInvariance.TitsSpace.bottEndOfAdjointSheaf"
+      ],
+      "review": "Compared bott_projection_zero_iff_annihilates_support, bottAdjoint_preserves_kernel, bottEndOfSheaf_preserves_support, bottAdjointSheaf, and bottEndOfAdjointSheaf. The proof follows integral annihilators and quotient descent.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.scaled_coordinate_lifts",
+      "file": "docs/knowledge/nodes/kl.word_modules/scaled_coordinate_lifts.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottCoordinateDenominator",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateDenominator_ne_zero",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_contains_scaled_coordinates",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateLift",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateLift_eval",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateLift_supported",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateExpansion"
+      ],
+      "review": "Compared the determinant, adjugate construction, coordinate lifts, and expansion in Frobenius. Explained why matrix injectivity implies nonzero determinant and verified the one-letter calculation.",
+      "pending": []
+    },
+    {
+      "node": "kl.word.support_duality",
+      "file": "docs/knowledge/nodes/kl.word_modules/word_support_duality.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.bott_weight_eigen",
+        "OAI.KLInvariance.TitsSpace.bott_eigen_supported",
+        "OAI.KLInvariance.TitsSpace.bott_distinct_weight_orthogonal",
+        "OAI.KLInvariance.TitsSpace.bott_supported_iff_annihilates",
+        "OAI.KLInvariance.TitsSpace.bottStalkDualToSupport",
+        "OAI.KLInvariance.TitsSpace.bottStalkDualToSupport_bijective",
+        "OAI.KLInvariance.TitsSpace.bottStalkDuality",
+        "OAI.KLInvariance.TitsSpace.coefficientAction_separates"
+      ],
+      "review": "Compared the right-action eigenvalue criterion, separation, distinct-weight orthogonality, scaled-coordinate expansion, both annihilator implications, and the stalk-duality inverse maps in Frobenius.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -907,7 +1166,10 @@
       "code": "A3",
       "title": "Graded modules and maps",
       "status": "in_progress",
-      "completion_evidence": []
+      "completion_evidence": [
+        "kl.algebra.perfect_inverse_degree",
+        "kl.algebra.scalar_inverse_degree"
+      ]
     },
     {
       "code": "A4",
@@ -919,7 +1181,9 @@
       "code": "A5",
       "title": "Bases, minimal covers, and projectivity",
       "status": "in_progress",
-      "completion_evidence": []
+      "completion_evidence": [
+        "kl.algebra.dual_basis_degrees"
+      ]
     },
     {
       "code": "A6",
@@ -931,7 +1195,10 @@
       "code": "A7",
       "title": "Algebra for support, quotients, and comparison",
       "status": "in_progress",
-      "completion_evidence": []
+      "completion_evidence": [
+        "kl.algebra.pair_projection",
+        "kl.algebra.quotient_endomorphism_descent"
+      ]
     },
     {
       "code": "W1",
@@ -954,8 +1221,15 @@
     {
       "code": "W4",
       "title": "Evaluation coordinates and stalk images",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.notes.word_stalks",
+        "kl.word.scaled_coordinate_lifts",
+        "kl.word.support_duality"
+      ],
+      "pending": [
+        "Expand wall maps and the reduced-word top-stalk normalization; connect the evaluation lattice constructions to the complete word-module setup."
+      ]
     },
     {
       "code": "W5",
@@ -1021,8 +1295,11 @@
     {
       "code": "S5",
       "title": "Summands, primitive objects, and decomposition",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.sheaves.projector_image",
+        "kl.sheaves.image_sections"
+      ]
     },
     {
       "code": "S6",
@@ -1053,17 +1330,25 @@
         "kl.detail.section_duality",
         "kl.sheaves.cut_balance",
         "kl.sheaves.supported_stalk_duality",
-        "kl.detail.costalk_duality"
+        "kl.detail.costalk_duality",
+        "kl.sheaves.costalk_duality_degree",
+        "kl.detail.integral_adjoints",
+        "kl.sheaves.adjoint_properties",
+        "kl.sheaves.adjoint_summand_duality",
+        "kl.sheaves.word_adjoint_descent"
       ],
       "pending": [
-        "Expand the homogeneous inverse calculation, integral adjoint descent and image sheaves, primitive recognition, and construction of the canonical boundary pairing."
+        "Expand top normalization of the adjoint projector, primitive recognition, and the top-to-global bijectivity used by the canonical comparison.",
+        "Finish the source-faithful account of the word pairing and its homogeneous degree, and the final coefficient transport."
       ]
     },
     {
       "code": "S9",
       "title": "Stalk characters and actual-character reciprocity",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.detail.costalk_reciprocity"
+      ]
     },
     {
       "code": "S10",
@@ -1199,9 +1484,9 @@
     }
   ],
   "next_steps": [
-    "Expand the homogeneous support-duality inverse and the integral-adjoint/boundary-pairing construction.",
-    "Complete word-module evaluation lattices and the remaining induced signed-plane structure.",
-    "Complete standard-parabolic inclusion, finite-support transport, and root-plane/moving-subgroup definitions.",
+    "Expand the top normalization, primitive recognition, and canonical boundary-comparison isomorphism.",
+    "Complete word-module definitions, the trace/tensor pairing degree, top stalks, and pair-kernel freeness.",
+    "Complete the remaining induced signed-plane structure, standard-parabolic inclusion, finite-support transport, and root-plane/moving-subgroup definitions.",
     "Review remaining Hecke, localization, path, and comparison proofs against their local source bodies.",
     "Complete the full source-to-KB coverage, linking, document, and public-deployment audit."
   ],
@@ -1414,7 +1699,20 @@
       "kl.sheaves.support_annihilator": "S6",
       "kl.sheaves.supported_stalk_duality": "S8",
       "kl.sheaves.costalk_support": "S6",
-      "kl.sheaves.boundary_image_identity": "S2"
+      "kl.sheaves.boundary_image_identity": "S2",
+      "kl.algebra.dual_basis_degrees": "A5",
+      "kl.algebra.perfect_inverse_degree": "A3",
+      "kl.algebra.scalar_inverse_degree": "A3",
+      "kl.sheaves.costalk_duality_degree": "S8",
+      "kl.sheaves.adjoint_properties": "S8",
+      "kl.sheaves.adjoint_summand_duality": "S8",
+      "kl.word.scaled_coordinate_lifts": "W4",
+      "kl.word.support_duality": "W4",
+      "kl.algebra.pair_projection": "A7",
+      "kl.algebra.quotient_endomorphism_descent": "A7",
+      "kl.sheaves.word_adjoint_descent": "S8",
+      "kl.sheaves.projector_image": "S5",
+      "kl.sheaves.image_sections": "S5"
     },
     "moved_nodes": [
       {
@@ -2248,7 +2546,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 196
+    "current_node_count": 209
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -2256,7 +2554,8 @@
     "Expanded realization and graded-algebra definitions and separated the plane-weight identity from polynomial degree.",
     "Expanded the signed Coxeter-action proof chain and the finite geometric reflection relations.",
     "Applied direct mathematical titles across all rendered pages and recorded the authoring requirement.",
-    "Expanded sheaf structures and the complete integral support-to-costalk duality chain, with a linked one-edge example and explicit Lean/notes correspondence."
+    "Expanded sheaf structures and the complete integral support-to-costalk duality chain, with a linked one-edge example and explicit Lean/notes correspondence.",
+    "Expanded homogeneous inverse duality, scalar degree cancellation, costalk Hilbert reciprocity, scaled word coordinates, integral adjoint descent, and image-section duality."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -2316,18 +2615,25 @@
       "source": "GradedModules.lean:1244, ModuleData.shift, piece n = M.piece (n-d)",
       "correction": "Multiplication by a degree-one label is a degree-zero map M(1) to M; the corrected sequence gives the Hilbert factor 1-q.",
       "scan": "Searched negative-one shift notation and degree-shift descriptions across the KB; the inconsistent negative-one expression occurred in this entry."
+    },
+    {
+      "node": "kl.detail.boundary_pairing",
+      "issue": "The former Step 2 described a fraction-field weight-block argument instead of the integral argument used to define bottAdjointSheaf.",
+      "source": "BalancedPairings.lean:98-152 and 687-758; projection-kernel annihilators, preservation of supported weights, and quotient descent.",
+      "correction": "Added detailed supporting nodes for weight-stalk duality, projection/edge descent, and the graded word adjoint; replaced the boundary proof and topic guide with this route.",
+      "scan": "Rechecked the adjoint-primitivity proof and removed its circular reference to the boundary-pairing proof."
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-19T03:17:21.793792+00:00",
+    "created_at": "2026-10-19T03:36:07.368403+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 196,
-    "html_pages_checked": 456,
-    "generated_definition_links_checked": 2021,
+    "node_count": 209,
+    "html_pages_checked": 469,
+    "generated_definition_links_checked": 2179,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "Fields of declarations explicitly linked from current nodes; separate full structure inventory below."
+    "field_audit_scope": "Fields of declarations explicitly linked from current nodes; the full structure inventory remains separately recorded."
   },
   "structure_coverage_scan": {
     "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",

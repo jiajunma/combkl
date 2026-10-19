@@ -49,11 +49,16 @@
     ],
     "kl.graded_algebra": [
       "kl.algebra.coefficient_algebra",
+      "kl.algebra.dual_basis_degrees",
       "kl.algebra.grading_components",
       "kl.algebra.homogeneous_basis",
       "kl.algebra.homogeneous_subquotients",
       "kl.algebra.kernel_saturation",
+      "kl.algebra.pair_projection",
+      "kl.algebra.perfect_inverse_degree",
       "kl.algebra.positive_ideal",
+      "kl.algebra.quotient_endomorphism_descent",
+      "kl.algebra.scalar_inverse_degree",
       "kl.algebra.scalar_quotient",
       "kl.algebra.scalar_twist",
       "kl.detail.coefficient_change",
@@ -189,20 +194,26 @@
       "kl.notes.boundary_image",
       "kl.notes.character_cancellation",
       "kl.notes.supported_pairings",
+      "kl.sheaves.adjoint_properties",
+      "kl.sheaves.adjoint_summand_duality",
       "kl.sheaves.boundary_existence",
       "kl.sheaves.boundary_image_identity",
       "kl.sheaves.boundary_sheaf",
+      "kl.sheaves.costalk_duality_degree",
       "kl.sheaves.costalk_support",
       "kl.sheaves.cut_balance",
       "kl.sheaves.flabbiness",
       "kl.sheaves.free_quotient_sheaf",
       "kl.sheaves.graph_sheaf",
+      "kl.sheaves.image_sections",
       "kl.sheaves.integral_cuts",
+      "kl.sheaves.projector_image",
       "kl.sheaves.relative_flabbiness",
       "kl.sheaves.support_annihilator",
       "kl.sheaves.supported_sections",
       "kl.sheaves.supported_stalk_duality",
-      "kl.sheaves.upward_kernel"
+      "kl.sheaves.upward_kernel",
+      "kl.sheaves.word_adjoint_descent"
     ],
     "kl.word_modules": [
       "kl.detail.word_character_formula",
@@ -213,7 +224,9 @@
       "kl.notes.perfect_pairings",
       "kl.notes.reflection_frobenius",
       "kl.notes.tensor_pairing",
-      "kl.notes.word_stalks"
+      "kl.notes.word_stalks",
+      "kl.word.scaled_coordinate_lifts",
+      "kl.word.support_duality"
     ]
   },
   "module_imports": {
@@ -446,6 +459,15 @@
       "paper_locations": []
     },
     {
+      "id": "kl.algebra.dual_basis_degrees",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.homogeneous_basis_repr",
+        "OAI.KLInvariance.Graded.dualBasis_homogeneous"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.algebra.grading_components",
       "chapter": "kl.graded_algebra",
       "lean_declarations": [
@@ -489,10 +511,56 @@
       "paper_locations": []
     },
     {
+      "id": "kl.algebra.pair_projection",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.PairProjection.relation",
+        "OAI.KLInvariance.PairProjection.Edge",
+        "OAI.KLInvariance.PairProjection.lower",
+        "OAI.KLInvariance.PairProjection.upper",
+        "OAI.KLInvariance.PairProjection.compatible_iff",
+        "OAI.KLInvariance.PairProjection.kernel_lower",
+        "OAI.KLInvariance.PairProjection.lower_surjective",
+        "OAI.KLInvariance.PairProjection.upper_surjective"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.algebra.perfect_inverse_degree",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.perfect_inverse_of_homogeneous_functional"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.algebra.positive_ideal",
       "chapter": "kl.graded_algebra",
       "lean_declarations": [
         "OAI.KLInvariance.Graded.positiveIdeal"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.algebra.quotient_endomorphism_descent",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.LinearDescent.descend",
+        "OAI.LinearDescent.descend_apply",
+        "OAI.LinearDescent.descend_idempotent",
+        "OAI.KLInvariance.Graded.ModuleData.descended",
+        "OAI.KLInvariance.Graded.ModuleData.lower_kernel_preserved",
+        "OAI.KLInvariance.Graded.ModuleData.descendedEdge",
+        "OAI.KLInvariance.Graded.ModuleData.descendedEdge_lower",
+        "OAI.KLInvariance.Graded.ModuleData.descendedEdge_upper"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.algebra.scalar_inverse_degree",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Graded.mem_of_homogeneous_smul"
       ],
       "paper_locations": []
     },
@@ -895,11 +963,12 @@
       "id": "kl.detail.costalk_reciprocity",
       "chapter": "kl.sheaves",
       "lean_declarations": [
-        "OAI.KLInvariance.BruhatGraph.costalk_hilbert_of_duality"
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.costalk_hilbert_of_duality",
+        "OAI.KLInvariance.BruhatGraph.costalk_hilbert_of_duality",
+        "OAI.KLInvariance.BruhatGraph.incomingEquivInversions",
+        "OAI.KLInvariance.BruhatGraph.incoming_card"
       ],
-      "paper_locations": [
-        "Related paper context; bg:normalization"
-      ]
+      "paper_locations": []
     },
     {
       "id": "kl.detail.diamond_closure",
@@ -2082,11 +2151,13 @@
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.bottWeightProjection",
         "OAI.KLInvariance.TitsSpace.bottStalk",
-        "OAI.KLInvariance.TitsSpace.bottStalkProjection_surjective"
+        "OAI.KLInvariance.TitsSpace.bottStalkProjection",
+        "OAI.KLInvariance.TitsSpace.bottStalkProjection_surjective",
+        "OAI.KLInvariance.TitsSpace.bottWeightSupported",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateDenominator",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateLift"
       ],
-      "paper_locations": [
-        "2. Real realizations and moment-graph sheaves; bg:normalization"
-      ]
+      "paper_locations": []
     },
     {
       "id": "kl.paths.dyer_paths",
@@ -2343,6 +2414,35 @@
       ]
     },
     {
+      "id": "kl.sheaves.adjoint_properties",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.PerfectAdjoint.adjoint_comp",
+        "OAI.PerfectAdjoint.adjoint_idempotent",
+        "OAI.PerfectAdjoint.commutes_of_balanced",
+        "OAI.PerfectAdjoint.symmetric_pairing",
+        "OAI.PerfectAdjoint.adjoint_adjoint",
+        "OAI.PerfectAdjoint.adjoint_zero",
+        "OAI.KLInvariance.Graded.adjoint_homogeneous"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.sheaves.adjoint_summand_duality",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.AdjointSummandDuality.dualSection",
+        "OAI.AdjointSummandDuality.dualProjection",
+        "OAI.AdjointSummandDuality.projection_section",
+        "OAI.AdjointSummandDuality.adjointSummand",
+        "OAI.AdjointSummandDuality.adjointEquivDual",
+        "OAI.PerfectAdjoint.adjoint_projector_eq",
+        "OAI.PerfectAdjoint.rangeAdjointEquivDual",
+        "OAI.PerfectAdjoint.rangeAdjointEquivDualRange"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.sheaves.boundary_existence",
       "chapter": "kl.sheaves",
       "lean_declarations": [
@@ -2373,6 +2473,17 @@
       "paper_locations": [
         "2. Real realizations and moment-graph sheaves; sec:background"
       ]
+    },
+    {
+      "id": "kl.sheaves.costalk_duality_degree",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.dualToSupport_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.costalkEquivDual_inverse_homogeneous",
+        "OAI.KLInvariance.BruhatGraph.FreeSheaf.kernelEquivSingleSupport_apply",
+        "OAI.KLInvariance.BruhatGraph.incomingProduct_homogeneous"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.sheaves.costalk_support",
@@ -2464,6 +2575,17 @@
       ]
     },
     {
+      "id": "kl.sheaves.image_sections",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageSection_fixed",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageSectionMap",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageSectionMap_bijective",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageSectionEquiv"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.sheaves.integral_cuts",
       "chapter": "kl.sheaves",
       "lean_declarations": [
@@ -2492,6 +2614,17 @@
       "paper_locations": [
         "2. Real realizations and moment-graph sheaves; sec:background"
       ]
+    },
+    {
+      "id": "kl.sheaves.projector_image",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.image",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageInclusion",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageProjection",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.Hom.imageSplit"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.sheaves.relative_flabbiness",
@@ -2549,6 +2682,51 @@
       "paper_locations": [
         "Moment-graph background; bg:normalization"
       ]
+    },
+    {
+      "id": "kl.sheaves.word_adjoint_descent",
+      "chapter": "kl.sheaves",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bott_projection_zero_iff_annihilates_support",
+        "OAI.KLInvariance.TitsSpace.bottAdjoint_preserves_kernel",
+        "OAI.KLInvariance.TitsSpace.bottAdjoint_preserves_support",
+        "OAI.KLInvariance.TitsSpace.bottEndOfSheaf",
+        "OAI.KLInvariance.TitsSpace.bottEndOfSheaf_preserves_support",
+        "OAI.KLInvariance.TitsSpace.bottAdjointWordHom",
+        "OAI.KLInvariance.TitsSpace.bottAdjointSheaf",
+        "OAI.KLInvariance.TitsSpace.bottAdjointSheaf_vertex",
+        "OAI.KLInvariance.TitsSpace.bottEndOfAdjointSheaf"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.scaled_coordinate_lifts",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bottCoordinateDenominator",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateDenominator_ne_zero",
+        "OAI.KLInvariance.TitsSpace.bottEvaluation_contains_scaled_coordinates",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateLift",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateLift_eval",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateLift_supported",
+        "OAI.KLInvariance.TitsSpace.bottCoordinateExpansion"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.word.support_duality",
+      "chapter": "kl.word_modules",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.bott_weight_eigen",
+        "OAI.KLInvariance.TitsSpace.bott_eigen_supported",
+        "OAI.KLInvariance.TitsSpace.bott_distinct_weight_orthogonal",
+        "OAI.KLInvariance.TitsSpace.bott_supported_iff_annihilates",
+        "OAI.KLInvariance.TitsSpace.bottStalkDualToSupport",
+        "OAI.KLInvariance.TitsSpace.bottStalkDualToSupport_bijective",
+        "OAI.KLInvariance.TitsSpace.bottStalkDuality",
+        "OAI.KLInvariance.TitsSpace.coefficientAction_separates"
+      ],
+      "paper_locations": []
     }
   ]
 }

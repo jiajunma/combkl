@@ -118,6 +118,14 @@ concepts:
   - weight evaluations
   - weight evaluation
   - weight projection
+  - weight stalk
+  - weight stalks
+  - weight-stalk projection
+  - weight-stalk projections
+  - weight-supported submodule
+  - evaluation denominator
+  - scaled coordinate lift
+  - scaled coordinate lifts
 - node: kl.duality.stalk_character
   terms:
   - stalk characters
@@ -280,6 +288,9 @@ concepts:
   - grading shift
   - graded shifts
   - graded shift
+  - homogeneous functional
+  - homogeneous functionals
+  - functional degree
 - node: kl.detail.coefficient_change
   terms:
   - coefficient transport
@@ -352,6 +363,10 @@ concepts:
   - integral adjoints
   - adjoint projector
   - adjoint projectors
+  - adjoint operator
+  - adjoint operators
+  - adjoint endomorphism
+  - dual map
 - node: kl.detail.local_models
   terms:
   - local models
@@ -555,3 +570,12 @@ concepts:
   - symmetric perfect section pairing
   - support orthogonality
   - support-orthogonality
+- node: kl.algebra.pair_projection
+  terms:
+  - pair-projection quotient
+  - pair-projection quotients
+  - pair relation
+- node: kl.sheaves.projector_image
+  terms:
+  - image sheaf
+  - image sheaves

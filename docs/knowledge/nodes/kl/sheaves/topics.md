@@ -164,7 +164,9 @@ This is the costalk-duality map. It transfers a finite dual basis to the full ou
 
 ## Degree reversal under support duality
 
-For a homogeneous basis vector \(m\) of degree \(d\), the functional sending \(m\) to \(1\) has degree \(-d\). This explains why duality reverses degrees.
+For a homogeneous basis vector \(m\) of degree \(d\), its coordinate functional has degree \(-d\): on a degree-\(j\) vector, it extracts a coefficient of degree \(j-d\).
+
+The homogeneous-representative theorem proves that a degree-\(r\) functional on sections is represented through a shift-\(L\) perfect pairing by a section of degree \(r+L\). The proof takes homogeneous components and uses injectivity of the pairing isomorphism. Removing a nonzero incoming product of degree \(n_x\) then produces a kernel vector of degree \(r+L-n_x\), by injectivity of scalar multiplication. Thus every degree in the following calculation is justified by a component argument.
 
 The constructed perfect pairing on a reduced word of length \(m\) sends input degrees \(i,j\) to polynomial degree \(i+j-m\). Support duality then identifies the full outgoing kernel at a vertex \(x\) with a shifted stalk dual. The product of incoming labels accounts for \(\ell(x)\) degrees. Thus a stalk basis degree \(d_i\) becomes a kernel basis degree
 \[
@@ -197,19 +199,48 @@ A section supported only at the lower vertex has the form \((\alpha h,0)\). The 
 \]
 Thus the degree-zero dual generator of the stalk corresponds to a supported generator of degree one. The factor \(2\) is an invertible scalar. This calculation shows concretely how the outgoing kernel is related to a shifted stalk dual; the general support-duality theorem constructs this relation with all incoming labels accounted for.
 
-## Adjoint images and the boundary-summand pairing
+## Adjoint maps, image sheaves, and the boundary pairing
 
-The splitting theorem embeds the normalized boundary sheaf as a split summand of a reduced-word sheaf. Let the inclusion and projection be \(i,p\), with \(pi=1\), and put \(e=ip\). Then \(e^2=e\).
+The splitting theorem supplies maps \(i:B\to W\) and \(p:W\to B\), with \(pi=1\), from the normalized boundary sheaf into a reduced-word sheaf. Their composite \(e=ip\) is a projector. The section equivalence identifies its action on global sections with an endomorphism \(F\) of the word module.
 
-A perfect bilinear form on \(\mathbb R^2\) with matrix \(\left(\begin{smallmatrix}0&1\\ 1&0\end{smallmatrix}\right)\) pairs the two coordinate lines with each other; its restriction to either line is zero. This example motivates the adjoint-image construction for the boundary summand.
-
-The perfect word pairing defines the integral adjoint \(e^*\) by
+The perfect word pairing defines
 \[
-\langle e^*u,v\rangle=\langle u,ev\rangle.
+F^*=D^{-1}F^\vee D,\qquad
+\langle F^*m,n\rangle=\langle m,Fn\rangle.
 \]
-It pairs the image of \(e^*\) perfectly with the image of \(e\). The formal proof descends the adjoint to sheaf maps, proves primitivity, and identifies its image with the same normalized boundary sheaf. It then proves that the canonical comparison map is an isomorphism. These maps and isomorphisms supply the perfect boundary duality.
+Composition reverses under the adjoint, so \(F^*\) is also a projector. Homogeneous representatives show that it has degree zero.
 
-The boundary-pairing entry supplies those maps and checks. Their role is to justify the same stalk–costalk grading calculation for the actual boundary sheaf.
+To descend this operator to stalks, fix a projection \(\pi_x\). Its kernel consists exactly of the word elements annihilated by every supported element at \(x\). The original sheaf map preserves that supported submodule. Hence, if \(\pi_x(m)=0\),
+\[
+\langle s,F^*m\rangle=\langle Fs,m\rangle=0
+\]
+for every supported \(s\), proving \(\pi_x(F^*m)=0\). Quotient descent defines the adjoint stalk map. The pair-projection quotient supplies the edge map and both commuting squares. This produces the graded sheaf projector \(e^*\).
+
+Its image sheaf \(C\) has the component images as stalks and edge modules. A section of this image sheaf is fixed by the section projector, and every value of the section projector is an image-sheaf section. Thus
+\[
+\Gamma(C)\simeq\operatorname{im}F^*.
+\]
+The algebraic adjoint-summand theorem now gives
+\[
+\Gamma(C)\simeq\Gamma(B)^*,\qquad
+c\longmapsto(w\mapsto\langle c,i(w)\rangle).
+\]
+Its inverse represents the extended functional \(\lambda\circ p\) by the perfect word form.
+
+Primitivity and top splitting recognize \(C\) as another copy of \(B\). The next step proves that the specified comparison
+\[
+h:B\to C,\qquad h(v)=e^*i(v)
+\]
+is an isomorphism. This comparison is bijective at the top; the boundary minimal-cover argument extends bijectivity down through the interval.
+
+Pull the displayed duality back through \(h\). For global sections \(v,w\) of \(B\),
+\[
+\langle h(v),i(w)\rangle
+=\langle F^*i(v),i(w)\rangle
+=\langle i(v),Fi(w)\rangle
+=\langle i(v),i(w)\rangle.
+\]
+The last equality uses \(Fi=i\). This proves that the induced perfect boundary pairing is the word form on the included sections. Its symmetry, degree shift, and support conditions pass through the inclusion maps.
 
 ## Cancellation of lower boundary models
 
@@ -282,6 +313,8 @@ The actual boundary character \(C\) satisfies the reciprocal identity developed 
 ### Summands, primitive objects, and decomposition
 
 - [[node:kl.detail.split_summands]]
+- [[node:kl.sheaves.projector_image]]
+- [[node:kl.sheaves.image_sections]]
 - [[node:kl.detail.primitive_projectors]]
 - [[node:kl.detail.primitive_summand]]
 - [[node:kl.detail.top_splitting]]
@@ -309,9 +342,13 @@ The actual boundary character \(C\) satisfies the reciprocal identity developed 
 - [[node:kl.sheaves.cut_balance]]
 - [[node:kl.sheaves.supported_stalk_duality]]
 - [[node:kl.detail.integral_adjoints]]
+- [[node:kl.sheaves.adjoint_properties]]
+- [[node:kl.sheaves.adjoint_summand_duality]]
+- [[node:kl.sheaves.word_adjoint_descent]]
 - [[node:kl.detail.adjoint_primitivity]]
 - [[node:kl.detail.boundary_pairing]]
 - [[node:kl.detail.costalk_duality]]
+- [[node:kl.sheaves.costalk_duality_degree]]
 
 ### Stalk characters and actual-character reciprocity
 

@@ -40,20 +40,57 @@ tags:
 
 # Integral adjoints for a perfect pairing
 
-Let \(R\) be commutative, and let \(d:M\xrightarrow{\sim}\operatorname{Hom}_R(M,R)\) be a perfect bilinear pairing, written \(\langle m,n\rangle=d(m)(n)\). For an \(R\)-linear endomorphism \(f\), define
+Let \(R\) be a commutative ring, \(M\) an \(R\)-module, and
 \[
-f^*=d^{-1}\circ f^\vee\circ d,\qquad
-f^\vee(\lambda)=\lambda\circ f.
+D:M\xrightarrow{\sim}M^*,\qquad
+\langle m,n\rangle=D(m)(n)
 \]
-Thus \(\langle f^*m,n\rangle=\langle m,fn\rangle\). Perfection supplies the inverse \(d^{-1}\), so the construction is over \(R\) itself. No passage to a fraction field is required.
+a perfect pairing. Given an \(R\)-linear endomorphism \(f:M\to M\), its dual map is precomposition:
+\[
+f^\vee:M^*\to M^*,\qquad f^\vee(\lambda)=\lambda\circ f.
+\]
+The adjoint of \(f\) is the endomorphism
+\[
+f^*=D^{-1}\circ f^\vee\circ D.
+\]
 
-Composition reverses: \((fg)^*=g^*f^*\). In particular, the adjoint of an idempotent is idempotent. If the pairing is symmetric, \((f^*)^*=f\). If an operator \(t\) is self-adjoint for the pairing and commutes with \(f\), the adjoint \(f^*\) also commutes with \(t\), by evaluating both sides against arbitrary vectors.
+For each \(m\), this formula represents the functional \(n\mapsto\langle m,fn\rangle\) by its unique first argument. Thus
+\[
+\langle f^*m,n\rangle=\langle m,fn\rangle.
+\]
+The equivalence \(D\) and its inverse are \(R\)-linear, so the adjoint is defined over \(R\).
 
-For a word-sheaf projector, further balance, grading, and support arguments prove that this module adjoint descends to stalks and edge modules. The definition of a module adjoint alone does not supply those sheaf maps.
+## The matrix formula
+
+Choose a finite free basis and let \(G_{ij}=\langle b_i,b_j\rangle\). For column vectors, the pairing is \(m^{\mathsf T}Gn\). If \(F\) represents \(f\) and \(F^*\) represents its adjoint, the defining equation reads
+\[
+(F^*)^{\mathsf T}G=GF.
+\]
+Perfection makes \(G\) invertible over \(R\), so
+\[
+F^*=(G^{\mathsf T})^{-1}F^{\mathsf T}G^{\mathsf T}.
+\]
+For a symmetric pairing, this simplifies to \(F^*=G^{-1}F^{\mathsf T}G\).
+
+## A projector and its adjoint
+
+Take \(M=R^2\) with
+\[
+\langle(a,b),(c,d)\rangle=ad+bc,\qquad
+G=\begin{pmatrix}0&1\\ 1&0\end{pmatrix}.
+\]
+The projector \(e(a,b)=(a,0)\) has adjoint \(e^*(a,b)=(0,b)\), because
+\[
+\langle e^*(a,b),(c,d)\rangle=bc
+=\langle(a,b),e(c,d)\rangle.
+\]
+Its image and adjoint image are the two coordinate lines. Pairing between them is multiplication of their coordinates, and hence perfect.
+
+Composition, idempotence, symmetry, and grading properties of adjoints are proved in [[node:kl.sheaves.adjoint_properties]]. The image-duality construction gives the corresponding equivalence for an arbitrary split module.
 
 ## References
 
-The precise Lean sources are listed below.
+The local source declarations below give the constructions and proofs.
 
 ## Lean formalization
 
