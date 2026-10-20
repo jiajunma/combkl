@@ -1437,3 +1437,27 @@ concepts:
   - signed later count
   topics:
   - kl.reflection_combinatorics
+- node: kl.dihedral.prefix_roots
+  terms:
+  - actual plane edge root
+  - actual plane edge roots
+  - prefix-root sequence
+  - prefix-root sequences
+  - two prefix-root sequences
+  - positive prefix root
+  - negative-path root
+  topics:
+  - kl.reflection_combinatorics
+  - kl.localization
+- node: kl.dihedral.native_later_counts
+  terms:
+  - actual dihedral after-indicator
+  - actual dihedral after-indicators
+  - native later-edge count
+  - native later-edge counts
+  - native later count
+  - native later counts
+  - native dihedral later counts
+  topics:
+  - kl.reflection_combinatorics
+  - kl.localization

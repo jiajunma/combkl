@@ -19,6 +19,7 @@ uses:
 - kl.dihedral.signed_lengths
 - kl.dihedral.plane_coset_graph
 - kl.dihedral.signed_reflection_action
+- kl.dihedral.native_count_difference
 lean:
   repository: openai-kl
   modules:
@@ -71,12 +72,11 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Are the signed-coordinate, parity, length and finite-period hypotheses explicit?
-  verdict: Refined the full source setup and both rank cases of transported_count_difference_all.
-    Replaced the compressed numerical table by the separately proved signed-count
-    theorem, and corrected the finite-label description to odd residues with constrained
-    Before comparisons. The detailed actual angular-root identification and full relative-interval
-    transport remain tracked expository prerequisites for O3.
+  prompt: Are the ambient and intrinsic systems, root signs, signed lengths, finite
+    representative bounds and counting domains explicit?
+  verdict: The exact transported setup and two rank cases are explicit. The actual
+    angular comparison and native count now have complete linked proofs; the full
+    relative-interval transport construction remains the outstanding expository prerequisite.
 tags:
 - Kazhdan-Lusztig
 - dihedral-counts
@@ -148,42 +148,25 @@ The same identity identifies every root used in the two after-indicators.
 
 The full range and injectivity of \(F\) give a bijection of the finite interval index sets. Thus \(h_x,h_y\) become the actual target dihedral later counts based at \(F(x),F(y)\), over \([F(x),F(c)]_{D'}\).
 
-They can also be summed over the full lower ideal \([1,F(c)]_{D'}\). A vertex outside the relative interval is not above \(F(x)\). An outgoing edge from either \(F(x)\) or \(F(y)\) would put its target above \(F(x)\), since \(F(x)\le F(y)\). Therefore every added term is zero. This is the interval_laterCount step.
+They can also be summed over the full lower ideal \([1,F(c)]_{D'}\). A vertex outside the relative interval is not above \(F(x)\). An outgoing edge from either \(F(x)\) or \(F(y)\) would put its target above \(F(x)\), since \(F(x)\le F(y)\). Therefore every added term is zero. This is the relative-interval assertion of the [[node:kl.dihedral.native_count_difference|native count-difference theorem]].
 
-### Step 3. Choose the signed representatives and compare labels
+### Step 3. Apply the native dihedral count
 
-Choose admissible signed representatives \(i,j,k\) of
-\(F(x),F(y),F(c)\), with their correct absolute lengths. If \(F(c)=F(y)\), choose \(k=j\); otherwise strict Bruhat length gives \(|j|<|k|\).
+The transported edge is \(F(x)\to_{D'}F(y)\), and order preservation gives \(F(y)\le_{D'}F(c)\). These are exactly the hypotheses of the [[node:kl.dihedral.native_count_difference|native count-difference theorem]], applied in the target plane with its actual geometric slope and current root \(\alpha'\).
 
-The edge criterion gives \(|i|<|j|\) and odd \(i+j\). At each internal rank \(0\le r<|k|\), the [[node:kl.dihedral.signed_lengths|signed-length theorem]] gives the correct lengths for \(w_r,w_{-r}\). If lengths are bounded, write \(m\) for the maximum length; then \(r<|k|\le m\) makes both indices admissible. In the unbounded case every index is admissible. The top index \(k\) and reference index \(j\) were chosen admissible.
-
-The [[node:kl.dihedral.signed_reflection_action|signed edge criterion]] makes both indicators zero when the length or parity condition fails. In the remaining edge cases, the actual angular comparison lemmas identify the two endpoint indicators with
+That theorem proves the two count translations term by term: admissible signed representatives give the correct intrinsic lengths; actual angular-root comparison gives the signed arrow indicators, using odd residues in the maximum-length case; the rank-fiber sum has a single top and zero identity terms. The [[node:kl.dihedral.signed_count_difference|signed-count difference theorem]] then yields
 \[
-\operatorname{aft}(i,i+j,z),\qquad
-\operatorname{aft}(j,i+j,z)
+h_x=h_y+\frac{\ell_{D'}(F(y))-\ell_{D'}(F(x))-1}{2}.
 \]
-at each signed representative \(z\).
 
-In the unbounded case the actual odd labels have the signed Before order. In the bounded case of maximum length \(m\), actual labels are ordered by their odd residues modulo \(2m\). The admissible vertex bounds and the [[node:kl.dihedral.signed_residue_comparison|finite-residue comparison theorem]] give the same Before tests for the same-source and next-source pairs used here.
+### Step 4. Substitute the transported length gap
 
-The [[node:kl.dihedral.lower_signed_sums|lower-interval signed-sum theorem]] now identifies the two sums as
+The relative length identity supplied by the full interval transport is
 \[
-h_x=\operatorname{cnt}(i,i+j,k),\qquad
-h_y=\operatorname{cnt}(j,i+j,k).
+\ell_{D'}(F(y))-\ell_{D'}(F(x))
+=\ell_D(y)-\ell_D(x).
 \]
-Its zero-at-identity hypothesis holds because an upward reflection edge cannot end at the identity.
-
-### Step 4. Apply the complete numerical count
-
-The [[node:kl.dihedral.signed_count_difference|signed-count difference theorem]] applies: the length gap is positive and odd, and the top satisfies \(k=j\) or \(|j|<|k|\). It gives
-\[
-h_x=h_y+\frac{|j|-|i|-1}{2}.
-\]
-The relative length-difference identity supplied by \(F\) gives
-\[
-|j|-|i|=\ell_D(y)-\ell_D(x).
-\]
-Substitution proves the required formula in this case.
+Replacing the numerator in Step 3 gives the required correction. This proves the formula for relative rank at least two.
 
 ### Step 5. Treat the smaller relative interval
 

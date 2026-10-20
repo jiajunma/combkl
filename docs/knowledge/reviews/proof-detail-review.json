@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 93652,
-  "theorem_walkthroughs": 319,
+  "revised_proof_words": 96001,
+  "theorem_walkthroughs": 327,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -1321,6 +1321,35 @@
       "review": "Read planeSimple_of_extreme. The positive partner sum places an extreme strictly between two distinct partners unless the inverted root is the extreme itself."
     },
     {
+      "node": "kl.dihedral.angular_indicator_tables",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_same_table",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_next_table",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.afterIndicator_one",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.afterIndicator_same",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.afterIndicator_next"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 341,
+      "proof_sha256": "cfdc0a07b6c8bbb2df18704ff43bbd9a1a7ac5d4acd73e1246e48c9eff191955",
+      "review": "Verified different GoodIndex requirements for same-source and next-source comparisons, all three reduced-length assumptions, odd labels, bounded/unbounded alternatives and both edge/nonedge indicator branches."
+    },
+    {
+      "node": "kl.dihedral.angular_order",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_infinite_order",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.max_length_pos",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.odd_residue_repr",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_finite_order"
+      ],
+      "proof_steps": 6,
+      "revised_proof_words": 367,
+      "proof_sha256": "deb86eeae851668606d699402ca038fe6d5199beef5ae8adbb2306e556f1da2f",
+      "review": "Reviewed all four infinite sign cases, common witness bounds, finite positivity of m, odd Euclidean residues, period substitution and prefix-root identification. The statements use the original ambient geometric slope."
+    },
+    {
       "node": "kl.dihedral.finite_common_upper",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -1386,6 +1415,31 @@
       "review": "Read two_elements_length, the exact unique_leftDescent proof through the two candidates, leftDescent_alt and indexWord_pos_ne_neg. Expanded the n+1 versus n-1 cancellation contradiction, exhaustive alternating forms, descent existence and the strict internal-rank hypothesis."
     },
     {
+      "node": "kl.dihedral.inversion_cuts",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.slope_lt_of_inverted_left",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.slope_lt_of_inverted_right",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.slope_lt_iff_inverted_left"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 297,
+      "proof_sha256": "a20658aff0b157d8466be937170bfa01a986458a7e00e27dc3a8cf385c2ad74b",
+      "review": "Checked all three cut statements for arbitrary ambient w, both strict endpoint comparisons, the two spanning-pair arguments and the nonnegative-cone argument giving the converse."
+    },
+    {
+      "node": "kl.dihedral.inversion_descent_bridge",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.simpleRoot_inverted_coset_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_inverted_iff"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 222,
+      "proof_sha256": "dc06207c229474777e7f73c51bb769cc06156a91ce3b9d9950f52d4a6afed743",
+      "review": "Verified the least ambient-length hypothesis, inverse-action direction, false/true generator roots, and the reflection hypothesis in the edge bridge; kept intrinsic length distinct from ambient length."
+    },
+    {
       "node": "kl.dihedral.lower_signed_sums",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -1398,6 +1452,20 @@
       "revised_proof_words": 259,
       "proof_sha256": "519875112bcb048000036d369e1a56709a25c34fad0d0d18b682243ecc0f7af2",
       "review": "Read all three fiber lemmas and the rank-partition proof of sum_lower_signed. Explained the two internal values, their distinctness, singleton top, zero-rank fiber and the exact f(1)=0 hypothesis that permits the doubled zero index."
+    },
+    {
+      "node": "kl.dihedral.middle_vertex_order",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.graphRoot_inverted_target",
+        "OAI.KLInvariance.TitsSpace.graphRoot_not_inverted_source",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.consecutive_slopes_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_slopes_iff"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 237,
+      "proof_sha256": "9f6d6e90dabe34b19476a1fc2befa5a6df277a217cd4a517836d6f278bd8ddd1",
+      "review": "Read both endpoint-sign proofs and both consecutive-root statements; expanded reflection multiplication, the mixed-sign application, the identity-coset substitution and distinctness of consecutive labels."
     },
     {
       "node": "kl.dihedral.minimal_plane_cosets",
@@ -1413,6 +1481,21 @@
       "revised_proof_words": 237,
       "proof_sha256": "43e358ba50287de6702613ce296095c8a25a86eccf9bfce15590107bbdf3b379",
       "review": "Read least coset existence and all root-sign transport lemmas in Tits. Kept the least ambient-length hypothesis, preserved both signs, and applied it after the subgroup inverse action."
+    },
+    {
+      "node": "kl.dihedral.native_count_difference",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.laterCount_same",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.laterCount_next",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.laterCount_difference",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.afterIndicator_eq_zero",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.interval_laterCount"
+      ],
+      "proof_steps": 6,
+      "revised_proof_words": 489,
+      "proof_sha256": "bef130893131c5fde90602e472c94dfdad00f54200f8e56c49bbc8f44a262765",
+      "review": "Reviewed the exact good-index choices including c=y, zero-at-identity rank expansion, internal positive/negative admissibility, both indicator substitutions, parity of the gap, and the full zero-added-term argument for arbitrary threshold and lower bound."
     },
     {
       "node": "kl.dihedral.odd_reflection_edges",
@@ -1503,6 +1586,32 @@
       "revised_proof_words": 236,
       "proof_sha256": "bf9fa62eebc5b7f9fad5927bcded4094635a3ea556194263b83a07a56f767c0f",
       "review": "Read inverse root action and planeLength_inv, plus both simple-step theorems. Explicit finite inversion bijection and zero half-root contribution precede the upward/downward substitutions."
+    },
+    {
+      "node": "kl.dihedral.positive_negative_order",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_positive_lt_negative"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 187,
+      "proof_sha256": "801e2522fd95f507b156af84469503c2224a0a67efbec38eccb376048cad2271",
+      "review": "Followed the source witness w_(k+1), computed both reflected indices and intrinsic lengths, checked the simple descent and applied the left cut with actual ambient roots."
+    },
+    {
+      "node": "kl.dihedral.prefix_order",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.prefixRoot_strictMono",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.negPrefixRoot_strictAnti",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_eq_of_label",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.prefixRoot_eq_edgeRoot",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.negPrefixRoot_eq_edgeRoot"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 292,
+      "proof_sha256": "bdaa1f02c0d08eb8655743250d1b7045ef7fc151947243bb6048047c645074e0",
+      "review": "Checked the adjacent comparisons, strict n+1<N bound for uniqueness of the negative-path descent, strictness from distinct path labels, transitive extension and both odd reflection labels."
     },
     {
       "node": "kl.dihedral.signed_comparison_tables",
@@ -2939,12 +3048,13 @@
       "source_declarations": [
         "OAI.KLInvariance.TitsSpace.functionalRatio_between",
         "OAI.KLInvariance.TitsSpace.positive_combination_of_slope_between",
-        "OAI.KLInvariance.TitsSpace.noninverted_of_positive_combination"
+        "OAI.KLInvariance.TitsSpace.noninverted_of_positive_combination",
+        "OAI.KLInvariance.TitsSpace.inverted_of_positive_combination"
       ],
-      "proof_steps": 4,
-      "revised_proof_words": 167,
-      "proof_sha256": "7178f49cc6418b84cee5bfb255ab5e5462890649f40bba2110bf912d36f3f0d2",
-      "review": "Read positive_combination_of_slope_between, functionalRatio_between, and convex noninversion. Solved the two height/slope equations explicitly and retained strict positivity of both coefficients."
+      "proof_steps": 5,
+      "revised_proof_words": 204,
+      "proof_sha256": "7f171e6c0cb4aae3ac02f3eb635e34aefbf532bdb1c10187607ae35b355cbfae",
+      "review": "Made the numerator and positive height explicit; checked both directions of slope betweenness and both coordinatewise sign-closure assertions, adding the inverted declaration used in the angular cuts."
     },
     {
       "node": "kl.paths.dyer_paths",
@@ -2981,9 +3091,9 @@
       ],
       "proof_steps": 5,
       "previous_proof_words": 165,
-      "revised_proof_words": 579,
-      "proof_sha256": "12e7bc9b64a89c03977b018d87a5a43da5215781d7620a64a881d268fae33bd0",
-      "review": "Refined the full source setup and both rank cases of transported_count_difference_all. Replaced the compressed numerical table by the separately proved signed-count theorem, and corrected the finite-label description to odd residues with constrained Before comparisons. The detailed actual angular-root identification and full relative-interval transport remain tracked expository prerequisites for O3."
+      "revised_proof_words": 459,
+      "proof_sha256": "6e40ccb326b29028083955114ce11ccc47229bd59b1159a5b51d44cbc20694bb",
+      "review": "The exact transported setup and two rank cases are explicit. The actual angular comparison and native count now have complete linked proofs; the full relative-interval transport construction remains the outstanding expository prerequisite."
     },
     {
       "node": "kl.paths.plane_degree",

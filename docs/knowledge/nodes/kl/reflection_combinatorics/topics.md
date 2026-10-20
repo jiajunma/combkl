@@ -163,13 +163,53 @@ under the top condition \(c=j\) or \(M<C\). Hence \(h_i=h_j+k\).
 
 For the long \(A_2\) edge with indices \(0\to3\) and top \(3\), the counts are \(1,0\). For indices \(1\to2\) with top \(3\), they are \(1,1\); the covering gap has exponent zero.
 
-## From integer counts to transported root counts
+## Actual roots, inversion cuts, and signed labels
 
-The actual angular-root comparison identifies the source's afterIndicator with the numerical arrow indicator on the chosen signed representatives. The rank-fiber sum then turns laterCount into countAfter.
+The integer labels acquire their geometric order through the actual roots of the ambient Coxeter system. Choose a plane basis \(a_L,a_R\) in increasing geometric slope, and let \(D\) be its induced dihedral subgroup. An intrinsic edge \(x\to_Dy\) has an actual plane edge root: the unique positive ambient root representing \(yx^{-1}\).
 
-For a transported interval, a full relative-interval bijection identifies both indicator sums in a target dihedral subgroup. Its coordinate identity identifies the actual target reflection roots, and its relative length identity identifies the correction \(k\). The [[node:kl.paths.later_count|transported-count theorem]] states this setup explicitly and treats the two-vertex relative interval separately.
+The first connection is between signs and order. If \(a_L\) is inverted at an ambient element \(w\), an inverted root \(a\) must precede a noninverted root \(b\) in this plane. Otherwise \(b\) lies strictly between \(a_L\) and \(a\) in slope, and is a positive linear combination of them. Applying \(w^{-1}\) would make \(b\) negative as well. This is the [[node:kl.dihedral.inversion_cuts|inversion-cut theorem]]. Its converse follows from the fact that every positive plane root lies in the nonnegative cone of the two endpoints.
 
-Thus the proof has three inputs: integer count arithmetic, the actual angular-root comparison, and full relative-interval transport. Their output is the numerical identity used by the local model comparison.
+On a two-edge path \(x\to y\to z\), the incoming root is inverted at \(y\), whereas the outgoing root is noninverted there. The inversion cut therefore makes increasing root slopes equivalent to inversion of \(a_L\) at \(y\). The [[node:kl.dihedral.inversion_descent_bridge|inversion-descent bridge]] identifies that sign with the intrinsic simple descent \(\ell_D(sy)<\ell_D(y)\). This gives a test using the middle vertex alone.
+
+The two prefix-root sequences apply this test to the paths of signed indices
+\[
+0,1,2,3,\ldots
+\qquad\text{and}\qquad
+0,-1,-2,-3,\ldots.
+\]
+The first sequence increases in slope. In the second sequence, each internal middle vertex has the other simple descent, and the [[node:kl.dihedral.internal_ranks|unique-descent theorem]] excludes the first one; the slopes decrease. A witness \(v\) of length \(N\) makes both arguments valid at indices \(n<N\).
+
+There is one further comparison in the unbounded case. For reflection parameters \(2k+1\) and \(-(2l+1)\), the element \(w_{k+1}\) separates their inversion signs: multiplication by the first reflection gives \(w_k\), of smaller length, while multiplication by the second gives \(w_{-(2l+k+2)}\), of greater length. Since \(a_L\) is inverted at \(w_{k+1}\), the inversion cut puts every positive parameter before every negative one.
+
+The [[node:kl.dihedral.angular_order|angular-order theorem]] now follows. In the unbounded case, the two monotone sequences and their separation give Before on odd integers. In the maximum-length case, with maximum \(m\), every odd parameter reduces to \(2n+1\) with \(0\le n<m\); a single prefix sequence orders the residues \(1,3,\ldots,2m-1\).
+
+## Actual indicator sums and the native count
+
+For a threshold root \(\alpha\), the actual dihedral after-indicator \(\varepsilon_D(x,\alpha,z)\) is one exactly when \(x\to_Dz\) is an edge with larger root slope. The native later-edge count \(h_D(x,\alpha;c)\) sums it over \(z\le_Dc\).
+
+Consider a current edge \(w_i\to w_j\). The [[node:kl.dihedral.angular_indicator_tables|angular-indicator theorem]] identifies the two endpoint indicators with
+\[
+\varepsilon_D(w_i,\alpha,w_z)=\operatorname{aft}(i,i+j,z),
+\qquad
+\varepsilon_D(w_j,\alpha,w_z)=\operatorname{aft}(j,i+j,z).
+\]
+The same-source formula requires admissible \(j,z\); the next-source formula requires admissible \(z\). Both retain the correct absolute lengths of the three signed words. In the finite case these conditions are exactly what converts residue comparison to the Before tests.
+
+The [[node:kl.dihedral.lower_signed_sums|lower-interval signed-sum theorem]] then identifies the actual counts with the numerical counts: each positive internal rank contributes its two vertices, the top occurs once, and the identity contributes zero. The [[node:kl.dihedral.native_count_difference|native count-difference theorem]] applies the complete integer calculation to obtain
+\[
+h_D(x,\alpha_{x\to y};c)
+=h_D(y,\alpha_{x\to y};c)
++\frac{\ell_D(y)-\ell_D(x)-1}{2},
+\qquad x\to_Dy\le_Dc.
+\]
+
+## Transported root counts
+
+For a transported interval, a full relative-interval bijection identifies both indicator sums with actual counts in a target dihedral subgroup. Its coordinate identity identifies every target reflection root, and its relative length identity identifies the correction. The [[node:kl.paths.later_count|transported-count theorem]] states this setup and treats the two-vertex relative interval separately.
+
+The sum may be enlarged from \([a,c]_D\) to the full lower ideal of \(c\) whenever its source is above \(a\). Every added vertex is outside the upward range of the source, so its indicator is zero. Thus the native count theorem applies directly after transport.
+
+The proof combines the integer count, actual angular order, and full relative-interval transport. Their resulting count difference is the exponent needed by the local model comparison.
 
 ## Edge-transfer matrices and path composition
 
@@ -299,6 +339,16 @@ The topic supplies the connections used later: order data can transport the edge
 - [[node:kl.dihedral.signed_residue_comparison]]
 - [[node:kl.dihedral.parity_rank_counts]]
 - [[node:kl.dihedral.signed_count_difference]]
+- [[node:kl.dihedral.prefix_roots]]
+- [[node:kl.dihedral.inversion_cuts]]
+- [[node:kl.dihedral.inversion_descent_bridge]]
+- [[node:kl.dihedral.middle_vertex_order]]
+- [[node:kl.dihedral.prefix_order]]
+- [[node:kl.dihedral.positive_negative_order]]
+- [[node:kl.dihedral.angular_order]]
+- [[node:kl.dihedral.native_later_counts]]
+- [[node:kl.dihedral.angular_indicator_tables]]
+- [[node:kl.dihedral.native_count_difference]]
 - [[node:kl.notes.relative_dihedral_transport]]
 - [[node:kl.paths.later_count]]
 

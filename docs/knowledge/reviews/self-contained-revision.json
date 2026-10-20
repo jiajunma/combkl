@@ -1287,17 +1287,6 @@
       "pending": []
     },
     {
-      "node": "kl.order.slope_cone",
-      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/slope_cone.md",
-      "source_declarations": [
-        "OAI.KLInvariance.TitsSpace.functionalRatio_between",
-        "OAI.KLInvariance.TitsSpace.positive_combination_of_slope_between",
-        "OAI.KLInvariance.TitsSpace.noninverted_of_positive_combination"
-      ],
-      "review": "Read positive_combination_of_slope_between, functionalRatio_between, and convex noninversion. Solved the two height/slope equations explicitly and retained strict positivity of both coefficients.",
-      "pending": []
-    },
-    {
       "node": "kl.realization.common_reflection_plane",
       "file": "docs/knowledge/nodes/kl.realizations/common_reflection_plane.md",
       "source_declarations": [
@@ -5477,6 +5466,133 @@
       "pending": []
     },
     {
+      "node": "kl.dihedral.prefix_roots",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/prefix_roots.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_plane",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.prefixRoot",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.negPrefixRoot"
+      ],
+      "review": "Defined edgeRoot in the actual ambient realization, justified plane membership, and stated both total prefix definitions including fallback values, witness range, positive-root codomain and exact signed labels.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.inversion_cuts",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/inversion_cuts.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.slope_lt_of_inverted_left",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.slope_lt_of_inverted_right",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.slope_lt_iff_inverted_left"
+      ],
+      "review": "Checked all three cut statements for arbitrary ambient w, both strict endpoint comparisons, the two spanning-pair arguments and the nonnegative-cone argument giving the converse.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.inversion_descent_bridge",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/inversion_descent_bridge.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.simpleRoot_inverted_coset_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_inverted_iff"
+      ],
+      "review": "Verified the least ambient-length hypothesis, inverse-action direction, false/true generator roots, and the reflection hypothesis in the edge bridge; kept intrinsic length distinct from ambient length.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.middle_vertex_order",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/middle_vertex_order.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.graphRoot_inverted_target",
+        "OAI.KLInvariance.TitsSpace.graphRoot_not_inverted_source",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.consecutive_slopes_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_slopes_iff"
+      ],
+      "review": "Read both endpoint-sign proofs and both consecutive-root statements; expanded reflection multiplication, the mixed-sign application, the identity-coset substitution and distinctness of consecutive labels.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.prefix_order",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/prefix_order.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.prefixRoot_strictMono",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.negPrefixRoot_strictAnti",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_eq_of_label",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.prefixRoot_eq_edgeRoot",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.negPrefixRoot_eq_edgeRoot"
+      ],
+      "review": "Checked the adjacent comparisons, strict n+1<N bound for uniqueness of the negative-path descent, strictness from distinct path labels, transitive extension and both odd reflection labels.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.positive_negative_order",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/positive_negative_order.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_positive_lt_negative"
+      ],
+      "review": "Followed the source witness w_(k+1), computed both reflected indices and intrinsic lengths, checked the simple descent and applied the left cut with actual ambient roots.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.angular_order",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/angular_order.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_infinite_order",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.max_length_pos",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.odd_residue_repr",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_finite_order"
+      ],
+      "review": "Reviewed all four infinite sign cases, common witness bounds, finite positivity of m, odd Euclidean residues, period substitution and prefix-root identification. The statements use the original ambient geometric slope.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.native_later_counts",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/native_later_counts.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.afterIndicator",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.laterCount"
+      ],
+      "review": "Defined both natural-valued quantities with arbitrary positive ambient threshold, strict slope condition, intrinsic lower interval and finite sum; distinguished actual roots from the signed integer indicator and supplied the A2 calculation.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.angular_indicator_tables",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/angular_indicator_tables.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_same_table",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_next_table",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.afterIndicator_one",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.afterIndicator_same",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.afterIndicator_next"
+      ],
+      "review": "Verified different GoodIndex requirements for same-source and next-source comparisons, all three reduced-length assumptions, odd labels, bounded/unbounded alternatives and both edge/nonedge indicator branches.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.native_count_difference",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/native_count_difference.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.laterCount_same",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.laterCount_next",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.laterCount_difference",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.afterIndicator_eq_zero",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.interval_laterCount"
+      ],
+      "review": "Reviewed the exact good-index choices including c=y, zero-at-identity rank expansion, internal positive/negative admissibility, both indicator substitutions, parity of the gap, and the full zero-added-term argument for arbitrary threshold and lower bound.",
+      "pending": []
+    },
+    {
+      "node": "kl.order.slope_cone",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/slope_cone.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.functionalRatio_between",
+        "OAI.KLInvariance.TitsSpace.positive_combination_of_slope_between",
+        "OAI.KLInvariance.TitsSpace.noninverted_of_positive_combination",
+        "OAI.KLInvariance.TitsSpace.inverted_of_positive_combination"
+      ],
+      "review": "Made the numerator and positive height explicit; checked both directions of slope betweenness and both coordinatewise sign-closure assertions, adding the inverted declaration used in the angular cuts.",
+      "pending": []
+    },
+    {
       "node": "kl.paths.later_count",
       "file": "docs/knowledge/nodes/kl.reflection_combinatorics/later_count.md",
       "source_declarations": [
@@ -5488,10 +5604,9 @@
         "OAI.KLInvariance.TitsSpace.PlaneBasis.transported_count_difference",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.transported_count_difference_all"
       ],
-      "review": "Refined the full source setup and both rank cases of transported_count_difference_all. Replaced the compressed numerical table by the separately proved signed-count theorem, and corrected the finite-label description to odd residues with constrained Before comparisons. The detailed actual angular-root identification and full relative-interval transport remain tracked expository prerequisites for O3.",
+      "review": "The exact transported setup and two rank cases are explicit. The actual angular comparison and native count now have complete linked proofs; the full relative-interval transport construction remains the outstanding expository prerequisite.",
       "pending": [
-        "Expand the actual prefix-root angular comparison and native laterCount bridge in separate entries.",
-        "Expand the full relative-interval transport theorem used in Step 1."
+        "Expand the full relative-interval transport construction and its range/coordinate/length identities before closing the transported-count exposition."
       ]
     }
   ],
@@ -6238,13 +6353,22 @@
         "kl.dihedral.signed_comparison_tables",
         "kl.dihedral.signed_residue_comparison",
         "kl.dihedral.parity_rank_counts",
-        "kl.dihedral.signed_count_difference"
+        "kl.dihedral.signed_count_difference",
+        "kl.dihedral.prefix_roots",
+        "kl.dihedral.inversion_cuts",
+        "kl.dihedral.inversion_descent_bridge",
+        "kl.dihedral.middle_vertex_order",
+        "kl.dihedral.prefix_order",
+        "kl.dihedral.positive_negative_order",
+        "kl.dihedral.angular_order",
+        "kl.dihedral.native_later_counts",
+        "kl.dihedral.angular_indicator_tables",
+        "kl.dihedral.native_count_difference"
       ],
       "pending": [
-        "Expand prefix-root definitions and the actual finite/infinite angular-root comparison.",
-        "Expand the native laterCount translation and the full relative-interval transport construction, then complete the transported count proof."
+        "Expand the full relative-interval transport construction, its full range and coordinate/length identities, then complete the transported-count exposition."
       ],
-      "review": "Reviewed signed evaluation, Euclidean negative indices, lengths and reflection labels, periods/GoodIndex, exact internal-rank fibers and unique descents, signed Before/arrow/count definitions, all sign and finite-residue comparisons, eligible-rank bijections, both top-rank inductions and the complete numerical count difference. Refined the transported statement and linked its numerical layer; actual angular and full-interval transport prerequisites remain."
+      "review": "Reviewed the signed arithmetic and the complete actual angular/native count chain: inversion cuts, sign/descent bridge, total prefix roots, monotonicity, positive/negative separation, all finite/infinite comparisons, exact indicator tables, lower-ideal sum and relative-interval restriction. The full relative-interval transport construction remains."
     },
     {
       "code": "O4",
@@ -6387,9 +6511,9 @@
         "kl.local.supported_edge_count"
       ],
       "pending": [
-        "Complete the actual angular/native and full transported count in O3, then verify the actual coset-model scaled equality and its transport to the localized boundary sheaf and ambient edge selections."
+        "Complete the full relative-interval transport in O3, then verify the actual coset-model scaled equality and its transport to the localized boundary sheaf and ambient edge selections."
       ],
-      "review": "Reviewed the exact lower/upper image and ScaledImages definitions, homogeneous components and two-edge example, kernel/image transport through one sheaf edge isomorphism, product/model-sum witnesses, the structure quotient/count criterion, actual coset root/factor reductions, endpoint selections and their supported target-vertex reindexing. The actual angular/transported count bridge and final comparison remain; the signed integer count has now been expanded."
+      "review": "Reviewed the exact lower/upper image and ScaledImages definitions, homogeneous components and two-edge example, kernel/image transport through one sheaf edge isomorphism, product/model-sum witnesses, the structure quotient/count criterion, actual coset root/factor reductions, endpoint selections and their supported target-vertex reindexing. The actual angular and native count bridge is now expanded in O3. Full interval transport and the final local comparison remain."
     },
     {
       "code": "L7",
@@ -6458,7 +6582,7 @@
     }
   ],
   "next_steps": [
-    "Expand actual prefix-root sequences and their finite/infinite angular order, then the native laterCount bridge and full relative-interval transport; finish the transported count and actual local image comparison.",
+    "Expand the full relative-interval transport construction and its range, coordinate and length identities; then finish the transported count and actual local image comparison.",
     "Complete the remaining Coxeter/parabolic, root-space and sheaf-operation exposition.",
     "Expand adapted orders, chamber changes, dihedral interval transport, schedules and the path-polynomial proof.",
     "Complete localization, local image comparison, edge inequalities and the simultaneous invariance induction.",
@@ -6958,7 +7082,17 @@
       "kl.dihedral.signed_comparison_tables": "O3",
       "kl.dihedral.signed_residue_comparison": "O3",
       "kl.dihedral.parity_rank_counts": "O3",
-      "kl.dihedral.signed_count_difference": "O3"
+      "kl.dihedral.signed_count_difference": "O3",
+      "kl.dihedral.prefix_roots": "O3",
+      "kl.dihedral.inversion_cuts": "O3",
+      "kl.dihedral.inversion_descent_bridge": "O3",
+      "kl.dihedral.middle_vertex_order": "O3",
+      "kl.dihedral.prefix_order": "O3",
+      "kl.dihedral.positive_negative_order": "O3",
+      "kl.dihedral.angular_order": "O3",
+      "kl.dihedral.native_later_counts": "O3",
+      "kl.dihedral.angular_indicator_tables": "O3",
+      "kl.dihedral.native_count_difference": "O3"
     },
     "moved_nodes": [
       {
@@ -7792,7 +7926,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 481
+    "current_node_count": 491
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -7826,7 +7960,8 @@
     "Completed L4: expanded the single-lift local-ring splitting and finite free remainder, the actual common outgoing image, model-sum properties, one-vertex extension and full finite descent. Corrected the old localized-decomposition prose from a graded-style two-lift route to the source single-lift proof. Generalized the reusable partial-isomorphism and finite-sum statements to their ungraded source forms and separated local/graded cover links.",
     "Completed L5: separated representative roots, the symmetric edge factor, its polynomial lift and actual edge endomorphism; proved nonvanishing, homogeneity, natural/integer degree conversion, prime-root nondivisibility and injectivity. Explained the individual intrinsic plane exponent and the localized association with its exact power, including absent support. Began L6 with the generic associated-product image calculation.",
     "Expanded L6 foundations: actual selected images and scalar-image witnesses, isomorphism and model-sum transport, the structure-model product/count criterion, exact coset quotient reductions, and the actual later-edge selections with their target-vertex bijection. L6 remains in progress until the numerical dihedral count and final local comparison are explained.",
-    "Expanded O3 signed-coordinate and numerical count foundations in 12 entries, including the finite representative convention and all parity induction cases. Corrected the transported-count explanation to use finite odd residues and the constrained raw comparisons, and made its interval/coset hypotheses explicit. O3 remains in progress for actual angular roots and full relative-interval transport."
+    "Expanded O3 signed-coordinate and numerical count foundations in 12 entries, including the finite representative convention and all parity induction cases. Corrected the transported-count explanation to use finite odd residues and the constrained raw comparisons, and made its interval/coset hypotheses explicit. O3 remains in progress for actual angular roots and full relative-interval transport.",
+    "Expanded the actual angular and native count layer in 10 new entries: actual edge/prefix roots, inversion cuts, ambient-sign/intrinsic-descent bridge, middle-vertex criterion, prefix order, sign separation, finite/infinite order, indicators and native count. Extended sign-cone closure, connected the transported parent to the complete native theorem and expanded the topic guide. O3 retains the full-interval transport prerequisite."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -8134,6 +8269,24 @@
         "kl.reflection_combinatorics"
       ],
       "review": "Uses precise multiword aliases for the integer comparison and numerical indicator/count; the ordinary English word Before is not registered alone."
+    },
+    {
+      "term": "actual plane edge root",
+      "target": "kl.dihedral.prefix_roots",
+      "topics": [
+        "kl.reflection_combinatorics",
+        "kl.localization"
+      ],
+      "review": "Links the ambient representing root and both witness-indexed prefix sequences; their signs refer to paths, not negative roots."
+    },
+    {
+      "term": "native later-edge count",
+      "target": "kl.dihedral.native_later_counts",
+      "topics": [
+        "kl.reflection_combinatorics",
+        "kl.localization"
+      ],
+      "review": "Links the actual-root threshold indicator and finite lower-ideal count, separately from the numerical signed count and from transported ambient selections."
     }
   ],
   "corrections": [
@@ -8153,22 +8306,22 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-20T02:19:36.225709+00:00",
+    "created_at": "2026-10-20T02:52:06.652367+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 481,
-    "html_pages_checked": 754,
-    "generated_definition_links_checked": 7288,
+    "node_count": 491,
+    "html_pages_checked": 764,
+    "generated_definition_links_checked": 7503,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks signed dihedral evaluations, reduced lengths, reflection labels, admissible indices, periods, rank fibers, signed comparisons and complete numerical count proofs. Documentation checks only.",
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks the actual ambient angular-root and native count exposition. Documentation checks only.",
     "focused_page_review": {
-      "entries": 13,
-      "complete_entries": 12,
+      "entries": 12,
+      "complete_entries": 11,
       "refined_composite_entries": 1,
-      "source_anchors": 74,
-      "signed_definition_links": 20,
-      "scope": "Read the saved definitions and proofs, including negative odd division, maximum-length repair, internal-rank cancellation, zero-rank and singleton-top terms, all sign and residue cases, eligible-rank bijection and both top-rank inductions. Verified the finite-domain hypotheses, numerical table, definition links and 41-stage/100-edge dependency refinement. Kept angular and full-interval transport exposition pending."
+      "source_anchors": 46,
+      "new_definition_links": 19,
+      "scope": "Read the saved root/sign constructions, exact ambient-to-intrinsic bridge, prefix bounds, all finite/infinite order cases, both GoodIndex conditions, native signed-sum translation and interval restriction. Checked the rendered formulas, definition destinations and source anchors. Full relative-interval transport remains pending."
     }
   },
   "structure_coverage_scan": {
@@ -8689,6 +8842,35 @@
         "kl.paths.later_count"
       ],
       "review": "The main transported statement now specifies both systems, the least representative, full relative interval bounds, current image root and actual indicator sums. Its numerical layer is linked to complete proofs. Detailed actual angular-root and full-interval transport explanations remain pending, so this refinement does not close O3."
+    },
+    {
+      "entries": [
+        "kl.dihedral.prefix_roots",
+        "kl.dihedral.prefix_order"
+      ],
+      "review": "Both prefix functions are total positive-ambient-root valued functions; their fallback endpoint values and n<length(v) comparison domain are explicit. The witness supplies reduced lengths, and actual roots are determined by left reflections."
+    },
+    {
+      "entries": [
+        "kl.dihedral.inversion_cuts",
+        "kl.dihedral.inversion_descent_bridge",
+        "kl.dihedral.middle_vertex_order"
+      ],
+      "review": "Inversion cuts hold for arbitrary ambient w. The coset descent bridge assumes a least representative in ambient length and concludes an intrinsic length inequality. The middle-vertex theorem checks the incoming/outgoing signs and keeps the two lengths distinct."
+    },
+    {
+      "entries": [
+        "kl.dihedral.positive_negative_order",
+        "kl.dihedral.angular_order"
+      ],
+      "review": "The infinite separator uses the source witness w_(k+1), while same-sign comparisons use a common longer witness. Finite order compares odd Euclidean residues modulo 2m. Notes/Lean proof-route differences and the notes-only κ classification are stated explicitly."
+    },
+    {
+      "entries": [
+        "kl.dihedral.angular_indicator_tables",
+        "kl.dihedral.native_count_difference"
+      ],
+      "review": "Both incident-edge configurations retain their distinct admissibility requirements and all reduced-length hypotheses. The native sum has zero identity terms and a singleton top; the top coordinate is j when c=y and otherwise has strictly larger absolute length. Interval restriction is proved for arbitrary positive threshold and a<=x."
     }
   ],
   "relationship_map_revision": {

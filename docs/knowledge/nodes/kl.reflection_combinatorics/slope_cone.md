@@ -15,10 +15,12 @@ lean:
   modules:
   - Decomposition
   - ReflectionSchedules
+  - DyerPaths
   declarations:
   - OAI.KLInvariance.TitsSpace.functionalRatio_between
   - OAI.KLInvariance.TitsSpace.positive_combination_of_slope_between
   - OAI.KLInvariance.TitsSpace.noninverted_of_positive_combination
+  - OAI.KLInvariance.TitsSpace.inverted_of_positive_combination
 source:
   spans:
   - artifact: openai-kl-source
@@ -33,13 +35,18 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.Decomposition:434
     format: lean-location
     note: OAI.KLInvariance.TitsSpace.noninverted_of_positive_combination
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.DyerPaths:844
+    format: lean-location
+    note: OAI.KLInvariance.TitsSpace.inverted_of_positive_combination
 verification:
   statement: accepted
   proof: accepted
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Does the exposition preserve the mathematical scope of its Lean declarations?
+  prompt: Are the ambient and intrinsic systems, root signs, signed lengths, finite
+    representative bounds and counting domains explicit?
   verdict: The stated hypotheses and conclusion follow the fixed source; explanatory
     derivations retain the original proof route.
 tags:
@@ -49,14 +56,14 @@ tags:
 
 # Slope betweenness is equivalent to a positive root combination
 
-Fix the injective geometric slope on positive roots of a finite-generator Coxeter system. Let \(a,b,c\) be positive roots, with \(c\in P(a,b)\) and \(s(a)<s(b)\). Then
+Fix a finite-generator real Coxeter system. Let \(h\) be its positive height functional and \(f\) the chosen separating linear functional; its injective geometric slope is \(s(a)=f(a)/h(a)\) on positive roots. All such roots have \(h(a)>0\). Let \(a,b,c\) be positive roots, with \(c\in P(a,b)\) and \(s(a)<s(b)\). Then
 \[
 s(a)<s(c)<s(b)
 \quad\Longleftrightarrow\quad
 c=ra+tb\text{ for some }r,t>0.
 \]
 
-A second positivity statement will be used with this cone: if \(c=ra+tb\) with \(r,t\ge0\), and \(w^{-1}a,w^{-1}b\) are positive, then \(w^{-1}c\) is positive.
+The same cone also controls inversion signs. If \(c=ra+tb\) with \(r,t\ge0\), and \(w^{-1}a,w^{-1}b\) are positive, then \(w^{-1}c\) is positive. If instead both transformed roots are negative, then \(w^{-1}c\) is negative. Equivalently, nonnegative combinations preserve a common noninversion or a common inversion sign.
 
 *Proof.*
 
@@ -93,13 +100,21 @@ This gives strict betweenness.
 
 ### Step 4. Preserve positivity under a common inverse action
 
-For the final assertion, linearity gives
+For the noninverted assertion, linearity gives
 \[
 w^{-1}c=r\,w^{-1}a+t\,w^{-1}b.
 \]
 Each coordinate is a sum of nonnegative terms. The vector is a nonzero root, since the group action is invertible and \(c\ne0\). It is therefore positive, as asserted.
 
-This convexity statement makes the two boundary roots of a plane sufficient for detecting an inversion of a positive root inside their cone.
+### Step 5. Preserve a common inverted sign
+
+If \(w^{-1}a,w^{-1}b\) are negative, their coordinates are nonpositive. For each coordinate \(j\),
+\[
+(w^{-1}c)_j=r(w^{-1}a)_j+t(w^{-1}b)_j\le0
+\]
+because \(r,t\ge0\). Again \(w^{-1}c\) is a nonzero root. It is therefore negative, proving the inverted version.
+
+These two closure statements combine with the endpoint bounds of a plane basis to determine the inversion cuts in that plane.
 
 ## References
 
@@ -112,3 +127,5 @@ The local source declarations below define the objects and prove the stated prop
 `OAI.KLInvariance.TitsSpace.positive_combination_of_slope_between`: [Decomposition.lean:395](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean#L395).
 
 `OAI.KLInvariance.TitsSpace.noninverted_of_positive_combination`: [Decomposition.lean:434](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean#L434).
+
+`OAI.KLInvariance.TitsSpace.inverted_of_positive_combination`: [DyerPaths.lean:844](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L844).

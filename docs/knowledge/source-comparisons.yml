@@ -1212,3 +1212,66 @@ comparisons:
     transport are distinct inputs to the final identity. The Blueprint states the
     interval and coset bounds and separates finite root residues from the constrained
     raw signed comparisons.
+- id: actual-angular-root-order
+  kind: Ambient inversion cuts in place of a root-coordinate recurrence
+  nodes:
+  - kl.dihedral.prefix_roots
+  - kl.dihedral.inversion_cuts
+  - kl.dihedral.inversion_descent_bridge
+  - kl.dihedral.middle_vertex_order
+  - kl.dihedral.prefix_order
+  - kl.dihedral.positive_negative_order
+  - kl.dihedral.angular_order
+  paper_labels:
+  - dih:midpoint-order
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.slope_lt_iff_inverted_left
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_slopes_iff
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.prefixRoot_strictMono
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.negPrefixRoot_strictAnti
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_positive_lt_negative
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_infinite_order
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_finite_order
+  paper: The notes set \(\kappa=-(a_L,a_R)/2\), where the parentheses denote the ambient
+    Tits form. The midpoint-order lemma writes prefix roots using \(p_0=0\), \(p_1=1\)
+    and \(p_{n+1}=2\kappa p_n-p_{n-1}\). It obtains \(\kappa=\cos(\pi/m)\) in finite
+    type and \(\kappa\ge1\) in infinite type, then compares the resulting coordinate
+    ratios. The functional ratio gives that angular order or its reverse.
+  lean: PlaneBasis chooses its endpoint roots in increasing geometric slope. Convexity
+    of inversion signs gives a middle-descent test, which orders the two actual ambient
+    prefix-root sequences. A separating element \(w_{k+1}\) compares the two rays.
+    Unbounded lengths give the signed Before order; a maximum length gives the odd
+    residue order modulo 2m.
+  consequence: The ordering conclusion is developed along Lean’s inversion and length
+    proof. The additional classification of \(\kappa\) in the notes is not a conclusion
+    of these Lean angular-order declarations.
+- id: native-angular-indicator-count
+  kind: From actual root slopes to nonnegative endpoint counts
+  nodes:
+  - kl.dihedral.native_later_counts
+  - kl.dihedral.angular_indicator_tables
+  - kl.dihedral.native_count_difference
+  paper_labels:
+  - dih:midpoint-order
+  - dih:count
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.afterIndicator
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_same_table
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_next_table
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.laterCount
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.laterCount_same
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.laterCount_next
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.laterCount_difference
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.interval_laterCount
+  paper: The later-edge lemma first transports a relative interval, then uses the
+    midpoint-order table to calculate the difference of two outgoing counts. Its proof
+    also treats reversal of the angular order by subtracting earlier and later edges
+    from total outgoing counts.
+  lean: The native count is first defined over the full lower ideal in the induced
+    dihedral group. Actual root comparisons are translated into signed indicators
+    with explicit reduced-length and GoodIndex hypotheses. The two nonnegative counts
+    are evaluated separately. interval_laterCount then removes zero terms to restrict
+    either count to a relative interval.
+  consequence: The Blueprint gives the native count independently of interval transport,
+    with the exact hypotheses of both indicator tables. Its slope orientation is the
+    increasing orientation of the chosen PlaneBasis.
