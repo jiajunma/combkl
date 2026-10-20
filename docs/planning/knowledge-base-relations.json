@@ -31,6 +31,25 @@
       ]
     },
     {
+      "id": "oc",
+      "title": "Signed coordinates and rank arithmetic",
+      "topics": [
+        "O3"
+      ],
+      "requires": [
+        "c"
+      ],
+      "output": "Signed group evaluations, admissible vertex indices, internal-rank shape and the exact integer later-count difference.",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.indexWord",
+        "OAI.KLInvariance.Dihedral.GoodIndex",
+        "OAI.KLInvariance.Dihedral.two_elements_length",
+        "OAI.KLInvariance.Dihedral.sum_lower_signed",
+        "OAI.KLInvariance.SignedDihedral.Before",
+        "OAI.KLInvariance.SignedDihedral.countAfter_difference"
+      ]
+    },
+    {
       "id": "r",
       "title": "Realizations and roots",
       "topics": [
@@ -399,6 +418,25 @@
       ]
     },
     {
+      "id": "on",
+      "title": "Actual dihedral angular counts",
+      "topics": [
+        "O3"
+      ],
+      "requires": [
+        "oc",
+        "og"
+      ],
+      "output": "Actual ambient prefix-root order, finite/infinite label comparisons, and the native laterCount identity.",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.prefixRoot_strictMono",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.negPrefixRoot_strictAnti",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_finite_order",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_infinite_order",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.laterCount_difference"
+      ]
+    },
+    {
       "id": "oe",
       "title": "Reflection-edge reconstruction",
       "topics": [
@@ -407,7 +445,8 @@
       "requires": [
         "ow",
         "og",
-        "c"
+        "c",
+        "oc"
       ],
       "output": "Reflection edges recovered from interval order and transported under isomorphism.",
       "lean_declarations": [
@@ -464,6 +503,24 @@
         "OAI.KLInvariance.BruhatGraph.transportedEdge",
         "OAI.KLInvariance.BruhatGraph.chronologicalSchedule",
         "OAI.KLInvariance.BruhatGraph.suffix_target_iff"
+      ]
+    },
+    {
+      "id": "od",
+      "title": "Full interval transport and later counts",
+      "topics": [
+        "O3"
+      ],
+      "requires": [
+        "on",
+        "oe",
+        "og"
+      ],
+      "output": "A full target relative interval with exact root coordinates and length gaps, and the transported later-edge count in every rank.",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.transport_interval",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.interval_map_count",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.transported_count_difference_all"
       ]
     },
     {
@@ -578,7 +635,8 @@
       "requires": [
         "lm",
         "lf",
-        "ot"
+        "ot",
+        "od"
       ],
       "output": "Actual endpoint selections and their supported counts, scalar-image comparison in each model, and transport of both embedded images through the model edge isomorphism.",
       "lean_declarations": [
@@ -1041,11 +1099,12 @@
     "structures": 35,
     "inductives": 3,
     "topic_count": 61,
-    "stage_count": 38,
-    "edge_count": 92,
+    "stage_count": 41,
+    "edge_count": 100,
     "topological_order": [
       "c",
       "a",
+      "oc",
       "r",
       "h",
       "s",
@@ -1062,10 +1121,12 @@
       "og",
       "wc",
       "ws",
+      "on",
       "oe",
       "os",
       "l0",
       "sp",
+      "od",
       "op",
       "ot",
       "lm",
@@ -1273,6 +1334,28 @@
         "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel_reduction_associated",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledOutgoing",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.supported_card_count"
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "scope": "Separate integer counts, actual angular counts and full interval transport",
+      "change": "Added oc for signed/rank arithmetic, on for actual dihedral angular counts and od for full interval transport plus transported counts. The internal-rank shape feeds reflection-edge reconstruction; the local image comparison now explicitly requires the transported count. The nine branches and 61 subtopics are unchanged.",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.indexWord",
+        "OAI.KLInvariance.Dihedral.GoodIndex",
+        "OAI.KLInvariance.Dihedral.two_elements_length",
+        "OAI.KLInvariance.Dihedral.sum_lower_signed",
+        "OAI.KLInvariance.SignedDihedral.Before",
+        "OAI.KLInvariance.SignedDihedral.countAfter_difference",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.prefixRoot_strictMono",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.negPrefixRoot_strictAnti",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_finite_order",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_infinite_order",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.laterCount_difference",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.transport_interval",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.interval_map_count",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.transported_count_difference_all",
+        "OAI.KLInvariance.Dihedral.diamondEdges_of_bruhatStep"
       ]
     }
   ]

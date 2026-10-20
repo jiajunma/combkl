@@ -1106,3 +1106,109 @@ comparisons:
   consequence: This reindexing identifies the sums to which the transported dihedral
     count theorem applies. It supplies the edge-set interpretation of that theorem
     without replacing its numerical count argument.
+- id: signed-dihedral-evaluation
+  kind: The signed model constructed from word and length identities
+  nodes:
+  - kl.dihedral.signed_words
+  - kl.dihedral.signed_lengths
+  - kl.dihedral.signed_reflection_action
+  - kl.dihedral.good_indices
+  - kl.dihedral.signed_period
+  - kl.dihedral.internal_ranks
+  - kl.dihedral.lower_signed_sums
+  paper_labels:
+  - dih:shape
+  - dih:midpoint-order
+  lean_declarations:
+  - OAI.KLInvariance.Dihedral.indexWord
+  - OAI.KLInvariance.Dihedral.length_alt_le_length
+  - OAI.KLInvariance.Dihedral.indexWord_reflection_mul
+  - OAI.KLInvariance.Dihedral.rotation_pow_max
+  - OAI.KLInvariance.Dihedral.GoodIndex
+  - OAI.KLInvariance.Dihedral.two_elements_length
+  - OAI.KLInvariance.Dihedral.sum_lower_signed
+  paper: The notes index the two alternating rays by positive and negative integers,
+    use -m<i<=m in finite type, and obtain reflection labels as doubled midpoints
+    i+j. The interval-shape lemma gives two vertices in each internal rank and a singleton
+    top.
+  lean: indexWord evaluates rotation powers using Euclidean integer division. A diagram
+    automorphism and reduced prefixes prove the length statements. A maximum length
+    gives rotation period 2m, and GoodIndex selects the negative-open, positive-closed
+    range. The internal-rank and signed-sum lemmas retain the zero-rank and singleton-top
+    cases explicitly.
+  consequence: The Blueprint separates integer parameters from their group values,
+    and separates the vertex representative range from the odd reflection-label residues
+    used in finite type.
+- id: signed-midpoint-comparison
+  kind: Explicit integer comparisons behind the midpoint table
+  nodes:
+  - kl.dihedral.signed_counts
+  - kl.dihedral.signed_comparison_tables
+  - kl.dihedral.signed_residue_comparison
+  paper_labels:
+  - dih:midpoint-order
+  - dih:count
+  lean_declarations:
+  - OAI.KLInvariance.SignedDihedral.Before
+  - OAI.KLInvariance.SignedDihedral.before_same_source_pos
+  - OAI.KLInvariance.SignedDihedral.before_same_source_neg
+  - OAI.KLInvariance.SignedDihedral.before_next_source
+  - OAI.KLInvariance.SignedDihedral.finite_before_same
+  - OAI.KLInvariance.SignedDihedral.finite_before_next
+  - OAI.KLInvariance.SignedDihedral.arrowAfter
+  paper: The midpoint table compares the labels of edges at the two current endpoints.
+    Infinite type uses the two signed blocks; finite type uses residues modulo 2m
+    and the represented endpoint bounds to check the mixed-sign comparisons.
+  lean: Before is an explicit relation on integers. The same-source and next-source
+    formulas are proved under absolute-length inequalities. Separate finite_before
+    lemmas identify residue comparison with Before only in those constrained configurations.
+    arrowAfter then includes the length and parity tests.
+  consequence: The Blueprint proves the sign and residue inequalities and keeps their
+    hypotheses explicit. The actual root-slope identification uses the separate angular
+    comparison lemmas.
+- id: signed-count-arithmetic
+  kind: The same difference from separate nonnegative counts
+  nodes:
+  - kl.dihedral.parity_rank_counts
+  - kl.dihedral.signed_count_difference
+  paper_labels:
+  - dih:count
+  lean_declarations:
+  - OAI.KLInvariance.SignedDihedral.eligible_ranks_card
+  - OAI.KLInvariance.SignedDihedral.total_outgoing_count
+  - OAI.KLInvariance.SignedDihedral.positiveCount_formula
+  - OAI.KLInvariance.SignedDihedral.countAfter_pos_formula
+  - OAI.KLInvariance.SignedDihedral.countAfter_neg_formula
+  - OAI.KLInvariance.SignedDihedral.countAfter_next_formula
+  - OAI.KLInvariance.SignedDihedral.countAfter_difference
+  paper: The notes count the k intermediate contributions and, for the positive upper
+    index, cancel the extra opposite endpoint against an alternating-sign tail sum.
+    They then subtract the endpoint counts.
+  lean: The numerical proof evaluates both nonnegative counts separately. An explicit
+    parity-rank bijection gives k; induction on the top rank evaluates total_outgoing_count
+    and positiveCount. The sign cases give the two closed formulas, whose difference
+    is k.
+  consequence: The Blueprint follows the finite bijection and both induction calculations,
+    including the first extension past the reference rank and the top-equals-current-upper
+    case.
+- id: transported-count-interfaces
+  kind: A full-interval reindexing followed by the signed count
+  nodes:
+  - kl.paths.later_count
+  paper_labels:
+  - dih:count
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.interval_map_count
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.transported_count_difference
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.transported_count_difference_all
+  paper: The proof treats relative rank one separately, then transports the full relative
+    interval to a target dihedral coset and applies the target angular count while
+    preserving the relative length gap.
+  lean: The transport theorem returns coordinate equality, injectivity, full interval
+    range, edge/order correspondence and relative length identities. These identify
+    the actual target root and both finite sums. The small-rank branch proves there
+    are exactly two vertices and checks each indicator is zero.
+  consequence: The numerical calculation, actual angular-root comparison and full-interval
+    transport are distinct inputs to the final identity. The Blueprint states the
+    interval and coset bounds and separates finite root residues from the constrained
+    raw signed comparisons.

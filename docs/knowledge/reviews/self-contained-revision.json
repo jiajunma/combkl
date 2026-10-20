@@ -5312,6 +5312,187 @@
       ],
       "review": "Read the complete sum_bij_ne_zero proof of supported_card_count. Expanded all interval-domain checks, target injectivity, reconstruction from a nonzero target indicator through both edge equivalences, and the zero terms. Preserved the general threshold and a<=x hypothesis without inserting x<=c.",
       "pending": []
+    },
+    {
+      "node": "kl.dihedral.signed_words",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/signed_words.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.rotation",
+        "OAI.KLInvariance.Dihedral.indexWord",
+        "OAI.KLInvariance.Dihedral.indexWord_even",
+        "OAI.KLInvariance.Dihedral.indexWord_odd",
+        "OAI.KLInvariance.Dihedral.indexWord_nat",
+        "OAI.KLInvariance.Dihedral.indexWord_neg_nat"
+      ],
+      "review": "Read rotation and indexWord with Euclidean integer division, then both parity formulas and the positive/negative alternating-word identities. Distinguished the integer coordinate from the evaluated group element and worked out the negative odd exponent explicitly.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.signed_lengths",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/signed_lengths.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.swapHom",
+        "OAI.KLInvariance.Dihedral.swapHom_involutive",
+        "OAI.KLInvariance.Dihedral.swap",
+        "OAI.KLInvariance.Dihedral.swap_wordProd",
+        "OAI.KLInvariance.Dihedral.length_swap",
+        "OAI.KLInvariance.Dihedral.swap_alt",
+        "OAI.KLInvariance.Dihedral.length_alt_le_length",
+        "OAI.KLInvariance.Dihedral.length_indexWord_nat",
+        "OAI.KLInvariance.Dihedral.length_indexWord_neg_nat",
+        "OAI.KLInvariance.Dihedral.length_indexWord",
+        "OAI.KLInvariance.Dihedral.exists_indexWord"
+      ],
+      "review": "Read the diagram-swap construction, its involution and length inequalities, the reduced-prefix proof of length_alt_le_length and all signed-length/existence specializations. Preserved the existence of a sufficiently long element as the hypothesis for the length equality.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.signed_reflection_action",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/signed_reflection_action.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.simple_rotation",
+        "OAI.KLInvariance.Dihedral.simple_rotation_zpow",
+        "OAI.KLInvariance.Dihedral.indexWord_reflection_mul",
+        "OAI.KLInvariance.Dihedral.indexWord_label",
+        "OAI.KLInvariance.Dihedral.index_step_iff"
+      ],
+      "review": "Read both parity cases of indexWord_reflection_mul, the right-cancellation proof of indexWord_label and index_step_iff. Preserved group equality for arbitrary integer indices, and retained the reduced-length hypotheses for the edge criterion rather than assigning length |i| to every index.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.good_indices",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/good_signed_indices.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.GoodIndex"
+      ],
+      "review": "Read the exact universally quantified GoodIndex predicate. Explained its unbounded and bounded cases, distinguished the chosen vertex range from reflection-label parameters, and recorded the A2 duplicate top as an illustration of the period theorem.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.signed_period",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/signed_period.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.indexWord_add_even",
+        "OAI.KLInvariance.Dihedral.rotation_pow_max",
+        "OAI.KLInvariance.Dihedral.indexWord_period",
+        "OAI.KLInvariance.Dihedral.indexWord_mod_period",
+        "OAI.KLInvariance.Dihedral.maximal_or_unbounded",
+        "OAI.KLInvariance.Dihedral.max_length_positive",
+        "OAI.KLInvariance.Dihedral.goodIndex_nat",
+        "OAI.KLInvariance.Dihedral.goodIndex_neg_nat",
+        "OAI.KLInvariance.Dihedral.exists_good_index"
+      ],
+      "review": "Read the even-shift identity, maximum-length rotation argument, period and remainder formulas, length dichotomy and exists_good_index repair. Preserved the generic period statement, explained the zero-modulus convention, and retained the explicit exclusion of the negative maximum.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.internal_ranks",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/internal_ranks.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.two_elements_length",
+        "OAI.KLInvariance.Dihedral.unique_leftDescent",
+        "OAI.KLInvariance.Dihedral.leftDescent_alt",
+        "OAI.KLInvariance.Dihedral.indexWord_pos_ne_neg"
+      ],
+      "review": "Read two_elements_length, the exact unique_leftDescent proof through the two candidates, leftDescent_alt and indexWord_pos_ne_neg. Expanded the n+1 versus n-1 cancellation contradiction, exhaustive alternating forms, descent existence and the strict internal-rank hypothesis.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.lower_signed_sums",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/lower_signed_sums.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.lower_length_fiber",
+        "OAI.KLInvariance.Dihedral.lower_zero_fiber",
+        "OAI.KLInvariance.Dihedral.lower_top_fiber",
+        "OAI.KLInvariance.Dihedral.sum_lower_signed"
+      ],
+      "review": "Read all three fiber lemmas and the rank-partition proof of sum_lower_signed. Explained the two internal values, their distinctness, singleton top, zero-rank fiber and the exact f(1)=0 hypothesis that permits the doubled zero index.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.signed_counts",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/signed_counts.md",
+      "source_declarations": [
+        "OAI.KLInvariance.SignedDihedral.Before",
+        "OAI.KLInvariance.SignedDihedral.arrowAfter",
+        "OAI.KLInvariance.SignedDihedral.countAfter",
+        "OAI.KLInvariance.SignedDihedral.arrowAfter_of_not_lt",
+        "OAI.KLInvariance.SignedDihedral.arrowAfter_self"
+      ],
+      "review": "Read Before, arrowAfter and countAfter with their unrestricted integer arguments. Defined the zero-parameter behavior, length/parity/order tests, double internal ranks and singleton top, and evaluated a complete small indicator example. Kept the integer comparison separate from its later geometric identification.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.signed_comparison_tables",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/signed_comparison_tables.md",
+      "source_declarations": [
+        "OAI.KLInvariance.SignedDihedral.before_same_source_pos",
+        "OAI.KLInvariance.SignedDihedral.before_same_source_neg",
+        "OAI.KLInvariance.SignedDihedral.before_next_source",
+        "OAI.KLInvariance.SignedDihedral.odd_add_natAbs",
+        "OAI.KLInvariance.SignedDihedral.odd_sub_natAbs",
+        "OAI.KLInvariance.SignedDihedral.odd_add_abs",
+        "OAI.KLInvariance.SignedDihedral.arrowAfter_pos",
+        "OAI.KLInvariance.SignedDihedral.arrowAfter_neg",
+        "OAI.KLInvariance.SignedDihedral.arrowAfter_next",
+        "OAI.KLInvariance.SignedDihedral.arrowAfter_far"
+      ],
+      "review": "Read the three Before comparison proofs and the parity/arrowAfter specializations. Expanded all four sign combinations using the dominant absolute value, proved the parity conversion and retained the exact conjunctions in the positive, negative and next-source indicator formulas.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.signed_residue_comparison",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/signed_residue_comparison.md",
+      "source_declarations": [
+        "OAI.KLInvariance.SignedDihedral.midpoint_mod",
+        "OAI.KLInvariance.SignedDihedral.finite_before_same",
+        "OAI.KLInvariance.SignedDihedral.finite_before_next"
+      ],
+      "review": "Read midpoint_mod and both finite_before proofs. Expanded the strict range bounds, same-sign shifts and both mixed-sign inequalities. Retained GoodIndex-style bounds on both upper endpoints for the same-source result, but only on z for the next-source result, and kept the statement as a constrained residue comparison.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.parity_rank_counts",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/parity_rank_counts.md",
+      "source_declarations": [
+        "OAI.KLInvariance.SignedDihedral.eligible_ranks_card",
+        "OAI.KLInvariance.SignedDihedral.total_outgoing_count",
+        "OAI.KLInvariance.SignedDihedral.positiveCount",
+        "OAI.KLInvariance.SignedDihedral.positiveCount_formula"
+      ],
+      "review": "Read eligible_ranks_card and both Nat.le_induction proofs total_outgoing_count/positiveCount_formula. Expanded the explicit rank bijection, both base cases, the first step at the lower boundary, and both parity changes at every later step. Kept all natural-number inequalities and the odd-gap hypothesis.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.signed_count_difference",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/signed_count_difference.md",
+      "source_declarations": [
+        "OAI.KLInvariance.SignedDihedral.countAfter_base",
+        "OAI.KLInvariance.SignedDihedral.countAfter_pos_formula",
+        "OAI.KLInvariance.SignedDihedral.countAfter_neg_formula",
+        "OAI.KLInvariance.SignedDihedral.countAfter_next_formula",
+        "OAI.KLInvariance.SignedDihedral.countAfter_difference"
+      ],
+      "review": "Read countAfter_base, all three closed formulas and countAfter_difference. Verified the exact top condition c=j or |j|<|c|, expanded the positive/negative lower counts and upper-source count through the two parity sums, and retained the singleton-top and empty intermediate-rank cases.",
+      "pending": []
+    },
+    {
+      "node": "kl.paths.later_count",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/later_count.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_same_table",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_next_table",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.laterCount_difference",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.interval_laterCount",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.interval_map_count",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.transported_count_difference",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.transported_count_difference_all"
+      ],
+      "review": "Refined the full source setup and both rank cases of transported_count_difference_all. Replaced the compressed numerical table by the separately proved signed-count theorem, and corrected the finite-label description to odd residues with constrained Before comparisons. The detailed actual angular-root identification and full relative-interval transport remain tracked expository prerequisites for O3.",
+      "pending": [
+        "Expand the actual prefix-root angular comparison and native laterCount bridge in separate entries.",
+        "Expand the full relative-interval transport theorem used in Step 1."
+      ]
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -6045,12 +6226,25 @@
       "status": "in_progress",
       "completion_evidence": [
         "kl.dihedral.odd_reflection_edges",
-        "kl.dihedral.finite_common_upper"
+        "kl.dihedral.finite_common_upper",
+        "kl.dihedral.signed_words",
+        "kl.dihedral.signed_lengths",
+        "kl.dihedral.signed_reflection_action",
+        "kl.dihedral.good_indices",
+        "kl.dihedral.signed_period",
+        "kl.dihedral.internal_ranks",
+        "kl.dihedral.lower_signed_sums",
+        "kl.dihedral.signed_counts",
+        "kl.dihedral.signed_comparison_tables",
+        "kl.dihedral.signed_residue_comparison",
+        "kl.dihedral.parity_rank_counts",
+        "kl.dihedral.signed_count_difference"
       ],
       "pending": [
-        "Expand signed dihedral indices and flip identities, relative interval transport and the later-edge counts used in local comparison."
+        "Expand prefix-root definitions and the actual finite/infinite angular-root comparison.",
+        "Expand the native laterCount translation and the full relative-interval transport construction, then complete the transported count proof."
       ],
-      "review": "Reviewed the two-generator reflection/parity and directed-edge criteria. The interval transport and counting arguments remain."
+      "review": "Reviewed signed evaluation, Euclidean negative indices, lengths and reflection labels, periods/GoodIndex, exact internal-rank fibers and unique descents, signed Before/arrow/count definitions, all sign and finite-residue comparisons, eligible-rank bijections, both top-rank inductions and the complete numerical count difference. Refined the transported statement and linked its numerical layer; actual angular and full-interval transport prerequisites remain."
     },
     {
       "code": "O4",
@@ -6193,9 +6387,9 @@
         "kl.local.supported_edge_count"
       ],
       "pending": [
-        "Expand the native and transported numerical later-edge count in O3, then verify the actual coset-model scaled equality and its transport to the localized boundary sheaf and ambient edge selections."
+        "Complete the actual angular/native and full transported count in O3, then verify the actual coset-model scaled equality and its transport to the localized boundary sheaf and ambient edge selections."
       ],
-      "review": "Reviewed the exact lower/upper image and ScaledImages definitions, homogeneous components and two-edge example, kernel/image transport through one sheaf edge isomorphism, product/model-sum witnesses, the structure quotient/count criterion, actual coset root/factor reductions, endpoint selections and their supported target-vertex reindexing. The numerical count and final actual comparison remain."
+      "review": "Reviewed the exact lower/upper image and ScaledImages definitions, homogeneous components and two-edge example, kernel/image transport through one sheaf edge isomorphism, product/model-sum witnesses, the structure quotient/count criterion, actual coset root/factor reductions, endpoint selections and their supported target-vertex reindexing. The actual angular/transported count bridge and final comparison remain; the signed integer count has now been expanded."
     },
     {
       "code": "L7",
@@ -6264,7 +6458,7 @@
     }
   ],
   "next_steps": [
-    "Expand O3 signed dihedral coordinates, angular comparison tables and the native/transported later-edge count; then apply it to the actual local scaled-image equality and ambient transport.",
+    "Expand actual prefix-root sequences and their finite/infinite angular order, then the native laterCount bridge and full relative-interval transport; finish the transported count and actual local image comparison.",
     "Complete the remaining Coxeter/parabolic, root-space and sheaf-operation exposition.",
     "Expand adapted orders, chamber changes, dihedral interval transport, schedules and the path-polynomial proof.",
     "Complete localization, local image comparison, edge inequalities and the simultaneous invariance induction.",
@@ -6752,7 +6946,19 @@
       "kl.local.structure_scaled_images": "L6",
       "kl.local.coset_edge_reduction": "L6",
       "kl.local.coset_later_selections": "L6",
-      "kl.local.supported_edge_count": "L6"
+      "kl.local.supported_edge_count": "L6",
+      "kl.dihedral.signed_words": "O3",
+      "kl.dihedral.signed_lengths": "O3",
+      "kl.dihedral.signed_reflection_action": "O3",
+      "kl.dihedral.good_indices": "O3",
+      "kl.dihedral.signed_period": "O3",
+      "kl.dihedral.internal_ranks": "O3",
+      "kl.dihedral.lower_signed_sums": "O3",
+      "kl.dihedral.signed_counts": "O3",
+      "kl.dihedral.signed_comparison_tables": "O3",
+      "kl.dihedral.signed_residue_comparison": "O3",
+      "kl.dihedral.parity_rank_counts": "O3",
+      "kl.dihedral.signed_count_difference": "O3"
     },
     "moved_nodes": [
       {
@@ -7586,7 +7792,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 469
+    "current_node_count": 481
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -7619,7 +7825,8 @@
     "Completed L3: transported native structure models through scalar extension and the finite relative coset embedding, checked exact canonical root labels and all local-model fields, and proved the arbitrary selected-kernel and both edge-image product formulas. Explained prime-label relative primality after localization. Began L4 by separating local-model data from finite ungraded sums.",
     "Completed L4: expanded the single-lift local-ring splitting and finite free remainder, the actual common outgoing image, model-sum properties, one-vertex extension and full finite descent. Corrected the old localized-decomposition prose from a graded-style two-lift route to the source single-lift proof. Generalized the reusable partial-isomorphism and finite-sum statements to their ungraded source forms and separated local/graded cover links.",
     "Completed L5: separated representative roots, the symmetric edge factor, its polynomial lift and actual edge endomorphism; proved nonvanishing, homogeneity, natural/integer degree conversion, prime-root nondivisibility and injectivity. Explained the individual intrinsic plane exponent and the localized association with its exact power, including absent support. Began L6 with the generic associated-product image calculation.",
-    "Expanded L6 foundations: actual selected images and scalar-image witnesses, isomorphism and model-sum transport, the structure-model product/count criterion, exact coset quotient reductions, and the actual later-edge selections with their target-vertex bijection. L6 remains in progress until the numerical dihedral count and final local comparison are explained."
+    "Expanded L6 foundations: actual selected images and scalar-image witnesses, isomorphism and model-sum transport, the structure-model product/count criterion, exact coset quotient reductions, and the actual later-edge selections with their target-vertex bijection. L6 remains in progress until the numerical dihedral count and final local comparison are explained.",
+    "Expanded O3 signed-coordinate and numerical count foundations in 12 entries, including the finite representative convention and all parity induction cases. Corrected the transported-count explanation to use finite odd residues and the constrained raw comparisons, and made its interval/coset hypotheses explicit. O3 remains in progress for actual angular roots and full relative-interval transport."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -7903,6 +8110,30 @@
       "term": "target after-indicator",
       "target": "kl.local.coset_later_selections",
       "review": "Precise target/coset phrases link in localization and reflection combinatorics; bare after-indicator and later-edge-selection aliases are restricted to localization to leave the native dihedral count terminology distinct."
+    },
+    {
+      "term": "signed word value",
+      "target": "kl.dihedral.signed_words",
+      "topics": [
+        "kl.reflection_combinatorics"
+      ],
+      "review": "Links the group-valued integer evaluation and its two alternating rays, with the negative odd division convention explicit."
+    },
+    {
+      "term": "admissible signed index",
+      "target": "kl.dihedral.good_indices",
+      "topics": [
+        "kl.reflection_combinatorics"
+      ],
+      "review": "Links the maximum-length bound on vertex representatives, separately from finite reflection-label residues."
+    },
+    {
+      "term": "Before relation",
+      "target": "kl.dihedral.signed_counts",
+      "topics": [
+        "kl.reflection_combinatorics"
+      ],
+      "review": "Uses precise multiword aliases for the integer comparison and numerical indicator/count; the ordinary English word Before is not registered alone."
     }
   ],
   "corrections": [
@@ -7922,20 +8153,22 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-20T00:29:39.110200+00:00",
+    "created_at": "2026-10-20T02:19:36.225709+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 469,
-    "html_pages_checked": 741,
-    "generated_definition_links_checked": 7167,
+    "node_count": 481,
+    "html_pages_checked": 754,
+    "generated_definition_links_checked": 7288,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks actual selected images, ScaledImages witnesses, sheaf-isomorphism and product/model-sum transport, the structure quotient/count criterion, coset coefficient reductions and actual later-edge selections. Documentation checks only.",
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks signed dihedral evaluations, reduced lengths, reflection labels, admissible indices, periods, rank fibers, signed comparisons and complete numerical count proofs. Documentation checks only.",
     "focused_page_review": {
-      "entries": 8,
-      "source_anchors": 42,
-      "image_definition_links": 36,
-      "scope": "Read all saved definitions and proofs; checked both witness directions, both image maps through one edge isomorphism, the shared scalar in products, actual quotient rings, root distinctions, the interval-domain checks and target-vertex counting bijection. Verified epsilon notation, supported-edge application hypotheses, definition destinations and forward count navigation outside the proof dependency graph."
+      "entries": 13,
+      "complete_entries": 12,
+      "refined_composite_entries": 1,
+      "source_anchors": 74,
+      "signed_definition_links": 20,
+      "scope": "Read the saved definitions and proofs, including negative odd division, maximum-length repair, internal-rank cancellation, zero-rank and singleton-top terms, all sign and residue cases, eligible-rank bijection and both top-rank inductions. Verified the finite-domain hypotheses, numerical table, definition links and 41-stage/100-edge dependency refinement. Kept angular and full-interval transport exposition pending."
     }
   },
   "structure_coverage_scan": {
@@ -8420,13 +8653,66 @@
         "kl.local.supported_edge_count"
       ],
       "review": "The reindexing theorem uses a<=x and the lower ambient bound at a; it does not assume x<=c. The target bijection handles empty intervals/selections and counts only nonzero after-indicators. It identifies the finite sums but does not replace the separate numerical dihedral count proof."
+    },
+    {
+      "entries": [
+        "kl.dihedral.signed_words",
+        "kl.dihedral.signed_lengths",
+        "kl.dihedral.signed_reflection_action"
+      ],
+      "review": "Signed indices evaluate group elements; the length equality requires a sufficiently long element or is part of a chosen reduced representative. The reflection multiplication formula holds as a group equality for all integer indices, and the edge criterion separately retains the reduced-length hypotheses."
+    },
+    {
+      "entries": [
+        "kl.dihedral.good_indices",
+        "kl.dihedral.signed_period",
+        "kl.dihedral.signed_residue_comparison"
+      ],
+      "review": "GoodIndex selects -m<i<=m for vertices in the maximum-length case. Reflection labels use odd endpoint sums and their residues modulo 2m. Raw Before agrees with residue comparison in the two incident-edge configurations under their exact bounds; it is not an unrestricted finite root order."
+    },
+    {
+      "entries": [
+        "kl.dihedral.internal_ranks",
+        "kl.dihedral.lower_signed_sums"
+      ],
+      "review": "Two distinct elements and a unique left descent require a positive rank strictly below an existing greater length. The lower interval has a singleton top, and sum_lower_signed uses f(1)=0 to account for the doubled zero index. The zero-length top is treated separately."
+    },
+    {
+      "entries": [
+        "kl.dihedral.parity_rank_counts",
+        "kl.dihedral.signed_count_difference"
+      ],
+      "review": "The numerical proof follows Lean: an explicit eligible-rank bijection and two inductions on the top rank compute the nonnegative counts separately. The first step at C=L or C=M and both later parity cases are explicit. The top hypothesis is c=j or |j|<|c|, not merely |j|<=|c|."
+    },
+    {
+      "entries": [
+        "kl.paths.later_count"
+      ],
+      "review": "The main transported statement now specifies both systems, the least representative, full relative interval bounds, current image root and actual indicator sums. Its numerical layer is linked to complete proofs. Detailed actual angular-root and full-interval transport explanations remain pending, so this refinement does not close O3."
     }
   ],
   "relationship_map_revision": {
-    "stage_count": 38,
-    "edge_count": 92,
+    "stage_count": 41,
+    "edge_count": 100,
     "route": "Top splitting and primitive recognition feed the boundary-pairing route; full model decomposition feeds simultaneous character formulas.",
     "evidence": "BoundarySheaf.splitIn_of_top_split, iso_of_primitive_top_split, GradedSheaf.exists_modelSumIso and bottCharacter_decomposition_both.",
-    "latest_anchor_refinement": "Recorded actual ScaledImages witnesses, both image transports, model sums, the quotient/count criterion, exact coset reductions and target-vertex reindexing. The 38-stage, 92-edge graph remains acyclic. The numerical count is a forward application of the reindexing result and remains the next O3 proof-detail task."
+    "latest_anchor_refinement": "Refined the count route into oc (signed/rank arithmetic), on (actual angular counts) and od (full interval transport and transported counts). Internal-rank shape feeds reconstruction, and li explicitly receives od. The 41-stage, 100-edge graph is acyclic; the nine branches and 61 subtopics are unchanged.",
+    "count_route_evidence": [
+      "OAI.KLInvariance.Dihedral.indexWord",
+      "OAI.KLInvariance.Dihedral.GoodIndex",
+      "OAI.KLInvariance.Dihedral.two_elements_length",
+      "OAI.KLInvariance.Dihedral.sum_lower_signed",
+      "OAI.KLInvariance.SignedDihedral.Before",
+      "OAI.KLInvariance.SignedDihedral.countAfter_difference",
+      "OAI.KLInvariance.TitsSpace.PlaneBasis.prefixRoot_strictMono",
+      "OAI.KLInvariance.TitsSpace.PlaneBasis.negPrefixRoot_strictAnti",
+      "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_finite_order",
+      "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_infinite_order",
+      "OAI.KLInvariance.TitsSpace.PlaneBasis.laterCount_difference",
+      "OAI.KLInvariance.TitsSpace.PlaneBasis.transport_interval",
+      "OAI.KLInvariance.TitsSpace.PlaneBasis.interval_map_count",
+      "OAI.KLInvariance.TitsSpace.PlaneBasis.transported_count_difference_all",
+      "OAI.KLInvariance.Dihedral.diamondEdges_of_bruhatStep"
+    ]
   }
 }

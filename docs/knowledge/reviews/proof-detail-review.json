@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 90515,
-  "theorem_walkthroughs": 310,
+  "revised_proof_words": 93652,
+  "theorem_walkthroughs": 319,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -1372,6 +1372,34 @@
       "review": "Read simple_sign and InducedSigned.simple/act. Checked representation, plane membership, all four sign cases, and the order of actions in word induction."
     },
     {
+      "node": "kl.dihedral.internal_ranks",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.two_elements_length",
+        "OAI.KLInvariance.Dihedral.unique_leftDescent",
+        "OAI.KLInvariance.Dihedral.leftDescent_alt",
+        "OAI.KLInvariance.Dihedral.indexWord_pos_ne_neg"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 347,
+      "proof_sha256": "20eebf7ce934c7909c7ac37ecd2b4da73d6b8316db963f094c4bef186a3b815b",
+      "review": "Read two_elements_length, the exact unique_leftDescent proof through the two candidates, leftDescent_alt and indexWord_pos_ne_neg. Expanded the n+1 versus n-1 cancellation contradiction, exhaustive alternating forms, descent existence and the strict internal-rank hypothesis."
+    },
+    {
+      "node": "kl.dihedral.lower_signed_sums",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.lower_length_fiber",
+        "OAI.KLInvariance.Dihedral.lower_zero_fiber",
+        "OAI.KLInvariance.Dihedral.lower_top_fiber",
+        "OAI.KLInvariance.Dihedral.sum_lower_signed"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 259,
+      "proof_sha256": "519875112bcb048000036d369e1a56709a25c34fad0d0d18b682243ecc0f7af2",
+      "review": "Read all three fiber lemmas and the rank-partition proof of sum_lower_signed. Explained the two internal values, their distinctness, singleton top, zero-rank fiber and the exact f(1)=0 hypothesis that permits the doubled zero index."
+    },
+    {
       "node": "kl.dihedral.minimal_plane_cosets",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -1400,6 +1428,20 @@
       "revised_proof_words": 264,
       "proof_sha256": "30dfef7102fd9ce1372c164b6ac893b082a1f502a16881001fbaf493bf3b8462",
       "review": "Read the odd alternating-word conjugation induction and both parity characterizations. Kept the two-generator hypothesis, arbitrary finite or infinite group, and the direction and strict length condition of BruhatStep."
+    },
+    {
+      "node": "kl.dihedral.parity_rank_counts",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.SignedDihedral.eligible_ranks_card",
+        "OAI.KLInvariance.SignedDihedral.total_outgoing_count",
+        "OAI.KLInvariance.SignedDihedral.positiveCount",
+        "OAI.KLInvariance.SignedDihedral.positiveCount_formula"
+      ],
+      "proof_steps": 6,
+      "revised_proof_words": 417,
+      "proof_sha256": "4c8cadc12461f0cbdd22b96325d5cfc7b0150cac26cef46952f3538536a1cb83",
+      "review": "Read eligible_ranks_card and both Nat.le_induction proofs total_outgoing_count/positiveCount_formula. Expanded the explicit rank bijection, both base cases, the first step at the lower boundary, and both parity changes at every later step. Kept all natural-number inequalities and the odd-gap hypothesis."
     },
     {
       "node": "kl.dihedral.plane_basis_existence",
@@ -1461,6 +1503,109 @@
       "revised_proof_words": 236,
       "proof_sha256": "bf9fa62eebc5b7f9fad5927bcded4094635a3ea556194263b83a07a56f767c0f",
       "review": "Read inverse root action and planeLength_inv, plus both simple-step theorems. Explicit finite inversion bijection and zero half-root contribution precede the upward/downward substitutions."
+    },
+    {
+      "node": "kl.dihedral.signed_comparison_tables",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.SignedDihedral.before_same_source_pos",
+        "OAI.KLInvariance.SignedDihedral.before_same_source_neg",
+        "OAI.KLInvariance.SignedDihedral.before_next_source",
+        "OAI.KLInvariance.SignedDihedral.odd_add_natAbs",
+        "OAI.KLInvariance.SignedDihedral.odd_sub_natAbs",
+        "OAI.KLInvariance.SignedDihedral.odd_add_abs",
+        "OAI.KLInvariance.SignedDihedral.arrowAfter_pos",
+        "OAI.KLInvariance.SignedDihedral.arrowAfter_neg",
+        "OAI.KLInvariance.SignedDihedral.arrowAfter_next",
+        "OAI.KLInvariance.SignedDihedral.arrowAfter_far"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 373,
+      "proof_sha256": "e83368859093910ec9f1cbc76a346b771b1d0222aee70852b4c949c7a11f37a1",
+      "review": "Read the three Before comparison proofs and the parity/arrowAfter specializations. Expanded all four sign combinations using the dominant absolute value, proved the parity conversion and retained the exact conjunctions in the positive, negative and next-source indicator formulas."
+    },
+    {
+      "node": "kl.dihedral.signed_count_difference",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.SignedDihedral.countAfter_base",
+        "OAI.KLInvariance.SignedDihedral.countAfter_pos_formula",
+        "OAI.KLInvariance.SignedDihedral.countAfter_neg_formula",
+        "OAI.KLInvariance.SignedDihedral.countAfter_next_formula",
+        "OAI.KLInvariance.SignedDihedral.countAfter_difference"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 416,
+      "proof_sha256": "50c1e7c943c9d1a70ad97094f5ed68719e9c4fa1ab3bcd8d0063200ede18c2a8",
+      "review": "Read countAfter_base, all three closed formulas and countAfter_difference. Verified the exact top condition c=j or |j|<|c|, expanded the positive/negative lower counts and upper-source count through the two parity sums, and retained the singleton-top and empty intermediate-rank cases."
+    },
+    {
+      "node": "kl.dihedral.signed_lengths",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.swapHom",
+        "OAI.KLInvariance.Dihedral.swapHom_involutive",
+        "OAI.KLInvariance.Dihedral.swap",
+        "OAI.KLInvariance.Dihedral.swap_wordProd",
+        "OAI.KLInvariance.Dihedral.length_swap",
+        "OAI.KLInvariance.Dihedral.swap_alt",
+        "OAI.KLInvariance.Dihedral.length_alt_le_length",
+        "OAI.KLInvariance.Dihedral.length_indexWord_nat",
+        "OAI.KLInvariance.Dihedral.length_indexWord_neg_nat",
+        "OAI.KLInvariance.Dihedral.length_indexWord",
+        "OAI.KLInvariance.Dihedral.exists_indexWord"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 312,
+      "proof_sha256": "397b0df21baac73db4c1952919e97aa45cf2bd76c7c2a05336f5eea18e9f44b7",
+      "review": "Read the diagram-swap construction, its involution and length inequalities, the reduced-prefix proof of length_alt_le_length and all signed-length/existence specializations. Preserved the existence of a sufficiently long element as the hypothesis for the length equality."
+    },
+    {
+      "node": "kl.dihedral.signed_period",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.indexWord_add_even",
+        "OAI.KLInvariance.Dihedral.rotation_pow_max",
+        "OAI.KLInvariance.Dihedral.indexWord_period",
+        "OAI.KLInvariance.Dihedral.indexWord_mod_period",
+        "OAI.KLInvariance.Dihedral.maximal_or_unbounded",
+        "OAI.KLInvariance.Dihedral.max_length_positive",
+        "OAI.KLInvariance.Dihedral.goodIndex_nat",
+        "OAI.KLInvariance.Dihedral.goodIndex_neg_nat",
+        "OAI.KLInvariance.Dihedral.exists_good_index"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 342,
+      "proof_sha256": "feff560611731bce5430e17de7c0f9caf94c47c855dd15b469e6f60c3b1ba930",
+      "review": "Read the even-shift identity, maximum-length rotation argument, period and remainder formulas, length dichotomy and exists_good_index repair. Preserved the generic period statement, explained the zero-modulus convention, and retained the explicit exclusion of the negative maximum."
+    },
+    {
+      "node": "kl.dihedral.signed_reflection_action",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.simple_rotation",
+        "OAI.KLInvariance.Dihedral.simple_rotation_zpow",
+        "OAI.KLInvariance.Dihedral.indexWord_reflection_mul",
+        "OAI.KLInvariance.Dihedral.indexWord_label",
+        "OAI.KLInvariance.Dihedral.index_step_iff"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 273,
+      "proof_sha256": "b1dba9ddefc49249de20b4139b36cd24b292c3686bfae8db03b228c4409513b1",
+      "review": "Read both parity cases of indexWord_reflection_mul, the right-cancellation proof of indexWord_label and index_step_iff. Preserved group equality for arbitrary integer indices, and retained the reduced-length hypotheses for the edge criterion rather than assigning length |i| to every index."
+    },
+    {
+      "node": "kl.dihedral.signed_residue_comparison",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.SignedDihedral.midpoint_mod",
+        "OAI.KLInvariance.SignedDihedral.finite_before_same",
+        "OAI.KLInvariance.SignedDihedral.finite_before_next"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 335,
+      "proof_sha256": "8459c8dc171081b556888490b7ae97b1ae899ecf72d5d1f47310cb3874d4aca6",
+      "review": "Read midpoint_mod and both finite_before proofs. Expanded the strict range bounds, same-sign shifts and both mixed-sign inequalities. Retained GoodIndex-style bounds on both upper endpoints for the same-source result, but only on z for the next-source result, and kept the statement as a constrained residue comparison."
     },
     {
       "node": "kl.dihedral.two_involutions",
@@ -2826,13 +2971,19 @@
     {
       "node": "kl.paths.later_count",
       "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_same_table",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_next_table",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.laterCount_difference",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.interval_laterCount",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.interval_map_count",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.transported_count_difference",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.transported_count_difference_all"
       ],
       "proof_steps": 5,
       "previous_proof_words": 165,
-      "revised_proof_words": 516,
-      "proof_sha256": "e001df36a843e90fe4d42541ac00c60c4f3baeccdd6f3bf9cf8a542053ad85c7",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 579,
+      "proof_sha256": "12e7bc9b64a89c03977b018d87a5a43da5215781d7620a64a881d268fae33bd0",
+      "review": "Refined the full source setup and both rank cases of transported_count_difference_all. Replaced the compressed numerical table by the separately proved signed-count theorem, and corrected the finite-label description to odd residues with constrained Before comparisons. The detailed actual angular-root identification and full relative-interval transport remain tracked expository prerequisites for O3."
     },
     {
       "node": "kl.paths.plane_degree",

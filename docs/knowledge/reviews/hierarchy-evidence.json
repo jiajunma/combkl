@@ -278,19 +278,31 @@
       "kl.detail.transported_schedule",
       "kl.dihedral.angular_extremes_simple",
       "kl.dihedral.finite_common_upper",
+      "kl.dihedral.good_indices",
       "kl.dihedral.induced_inversions",
       "kl.dihedral.induced_reflections_length",
       "kl.dihedral.induced_signed",
       "kl.dihedral.induced_signed_action",
       "kl.dihedral.induced_system",
+      "kl.dihedral.internal_ranks",
+      "kl.dihedral.lower_signed_sums",
       "kl.dihedral.minimal_plane_cosets",
       "kl.dihedral.odd_reflection_edges",
+      "kl.dihedral.parity_rank_counts",
       "kl.dihedral.plane_basis_existence",
       "kl.dihedral.plane_coset_graph",
       "kl.dihedral.plane_generation",
       "kl.dihedral.plane_length",
       "kl.dihedral.plane_simple",
       "kl.dihedral.plane_simple_steps",
+      "kl.dihedral.signed_comparison_tables",
+      "kl.dihedral.signed_count_difference",
+      "kl.dihedral.signed_counts",
+      "kl.dihedral.signed_lengths",
+      "kl.dihedral.signed_period",
+      "kl.dihedral.signed_reflection_action",
+      "kl.dihedral.signed_residue_comparison",
+      "kl.dihedral.signed_words",
       "kl.dihedral.two_involutions",
       "kl.geometry.plane_inversion_change",
       "kl.geometry.plane_weight_sum",
@@ -2534,6 +2546,14 @@
       "paper_locations": []
     },
     {
+      "id": "kl.dihedral.good_indices",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.GoodIndex"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.dihedral.induced_inversions",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
@@ -2583,6 +2603,28 @@
       "paper_locations": []
     },
     {
+      "id": "kl.dihedral.internal_ranks",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.two_elements_length",
+        "OAI.KLInvariance.Dihedral.unique_leftDescent",
+        "OAI.KLInvariance.Dihedral.leftDescent_alt",
+        "OAI.KLInvariance.Dihedral.indexWord_pos_ne_neg"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.lower_signed_sums",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.lower_length_fiber",
+        "OAI.KLInvariance.Dihedral.lower_zero_fiber",
+        "OAI.KLInvariance.Dihedral.lower_top_fiber",
+        "OAI.KLInvariance.Dihedral.sum_lower_signed"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.dihedral.minimal_plane_cosets",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
@@ -2603,6 +2645,17 @@
         "OAI.KLInvariance.Dihedral.reflection_iff_odd",
         "OAI.KLInvariance.Dihedral.step_iff_odd",
         "OAI.KLInvariance.Dihedral.reflection_of_parity"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.parity_rank_counts",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.SignedDihedral.eligible_ranks_card",
+        "OAI.KLInvariance.SignedDihedral.total_outgoing_count",
+        "OAI.KLInvariance.SignedDihedral.positiveCount",
+        "OAI.KLInvariance.SignedDihedral.positiveCount_formula"
       ],
       "paper_locations": []
     },
@@ -2670,6 +2723,116 @@
         "OAI.KLInvariance.TitsSpace.PlaneSimple.planeWeight_eq_zero",
         "OAI.KLInvariance.TitsSpace.PlaneSimple.planeLength_step",
         "OAI.KLInvariance.TitsSpace.PlaneSimple.planeLength_step_down"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.signed_comparison_tables",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.SignedDihedral.before_same_source_pos",
+        "OAI.KLInvariance.SignedDihedral.before_same_source_neg",
+        "OAI.KLInvariance.SignedDihedral.before_next_source",
+        "OAI.KLInvariance.SignedDihedral.odd_add_natAbs",
+        "OAI.KLInvariance.SignedDihedral.odd_sub_natAbs",
+        "OAI.KLInvariance.SignedDihedral.odd_add_abs",
+        "OAI.KLInvariance.SignedDihedral.arrowAfter_pos",
+        "OAI.KLInvariance.SignedDihedral.arrowAfter_neg",
+        "OAI.KLInvariance.SignedDihedral.arrowAfter_next",
+        "OAI.KLInvariance.SignedDihedral.arrowAfter_far"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.signed_count_difference",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.SignedDihedral.countAfter_base",
+        "OAI.KLInvariance.SignedDihedral.countAfter_pos_formula",
+        "OAI.KLInvariance.SignedDihedral.countAfter_neg_formula",
+        "OAI.KLInvariance.SignedDihedral.countAfter_next_formula",
+        "OAI.KLInvariance.SignedDihedral.countAfter_difference"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.signed_counts",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.SignedDihedral.Before",
+        "OAI.KLInvariance.SignedDihedral.arrowAfter",
+        "OAI.KLInvariance.SignedDihedral.countAfter",
+        "OAI.KLInvariance.SignedDihedral.arrowAfter_of_not_lt",
+        "OAI.KLInvariance.SignedDihedral.arrowAfter_self"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.signed_lengths",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.swapHom",
+        "OAI.KLInvariance.Dihedral.swapHom_involutive",
+        "OAI.KLInvariance.Dihedral.swap",
+        "OAI.KLInvariance.Dihedral.swap_wordProd",
+        "OAI.KLInvariance.Dihedral.length_swap",
+        "OAI.KLInvariance.Dihedral.swap_alt",
+        "OAI.KLInvariance.Dihedral.length_alt_le_length",
+        "OAI.KLInvariance.Dihedral.length_indexWord_nat",
+        "OAI.KLInvariance.Dihedral.length_indexWord_neg_nat",
+        "OAI.KLInvariance.Dihedral.length_indexWord",
+        "OAI.KLInvariance.Dihedral.exists_indexWord"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.signed_period",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.indexWord_add_even",
+        "OAI.KLInvariance.Dihedral.rotation_pow_max",
+        "OAI.KLInvariance.Dihedral.indexWord_period",
+        "OAI.KLInvariance.Dihedral.indexWord_mod_period",
+        "OAI.KLInvariance.Dihedral.maximal_or_unbounded",
+        "OAI.KLInvariance.Dihedral.max_length_positive",
+        "OAI.KLInvariance.Dihedral.goodIndex_nat",
+        "OAI.KLInvariance.Dihedral.goodIndex_neg_nat",
+        "OAI.KLInvariance.Dihedral.exists_good_index"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.signed_reflection_action",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.simple_rotation",
+        "OAI.KLInvariance.Dihedral.simple_rotation_zpow",
+        "OAI.KLInvariance.Dihedral.indexWord_reflection_mul",
+        "OAI.KLInvariance.Dihedral.indexWord_label",
+        "OAI.KLInvariance.Dihedral.index_step_iff"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.signed_residue_comparison",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.SignedDihedral.midpoint_mod",
+        "OAI.KLInvariance.SignedDihedral.finite_before_same",
+        "OAI.KLInvariance.SignedDihedral.finite_before_next"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.signed_words",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.rotation",
+        "OAI.KLInvariance.Dihedral.indexWord",
+        "OAI.KLInvariance.Dihedral.indexWord_even",
+        "OAI.KLInvariance.Dihedral.indexWord_odd",
+        "OAI.KLInvariance.Dihedral.indexWord_nat",
+        "OAI.KLInvariance.Dihedral.indexWord_neg_nat"
       ],
       "paper_locations": []
     },
@@ -4277,10 +4440,16 @@
       "id": "kl.paths.later_count",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_same_table",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_next_table",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.laterCount_difference",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.interval_laterCount",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.interval_map_count",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.transported_count_difference",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.transported_count_difference_all"
       ],
       "paper_locations": [
-        "3. Dihedral intervals and transported reflection orders; sec:dihedral"
+        "3. Later edges and the degree formula; dih:count"
       ]
     },
     {

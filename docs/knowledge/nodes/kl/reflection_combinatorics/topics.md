@@ -81,6 +81,96 @@ To transport a model from an interval to a finite relative lower ideal \(K\), ch
 
 The [[node:kl.dihedral.finite_common_upper|finite-common-upper-bound theorem]] therefore places \(K\) inside an intrinsic interval \([1,d_0]_D\). The inclusion preserves and reflects the intrinsic order. This gives a finite interval model whose supported edges can be pulled back to the coset graph.
 
+## Signed evaluations of alternating words
+
+Write \(s,t\) for the two simple generators and \(r=st\). The signed word values are
+\[
+w_{2n}=r^n,\qquad w_{2n+1}=r^ns\qquad(n\in\mathbb Z).
+\]
+Positive indices evaluate alternating words beginning with \(s\); negative indices begin with \(t\). In particular
+\[
+w_{-2}=ts,\quad w_{-1}=t,\quad w_0=1,\quad w_1=s,\quad w_2=st.
+\]
+For a negative odd index, the integer quotient matters: \(w_{-1}=r^{-1}s=t\).
+
+Every group element has a representative whose absolute index is its length. To prove that both rays are reduced through a rank \(n\), choose an element of length at least \(n\), take a reduced alternating prefix and exchange the generators by the diagram automorphism. The [[node:kl.dihedral.signed_lengths|signed-length theorem]] gives the full argument.
+
+For an odd reflection parameter \(q\), the [[node:kl.dihedral.signed_reflection_action|signed reflection-action theorem]] gives
+\[
+w_qw_i=w_{q-i}.
+\]
+Consequently the left reflection of an edge \(w_i\to w_j\) has parameter \(i+j\), its doubled midpoint.
+
+## Vertex representatives and finite reflection parameters
+
+If a maximum length \(m\) exists, both generators descend at a maximum-length element. Its two alternating expressions give \(w_m=w_{-m}\), and the even-shift identity
+\(w_{i+2n}=r^nw_i\) then gives \(r^m=1\). Signed values are periodic with period \(2m\).
+
+The admissible signed indices select \(-m<i\le m\). In type \(A_2\), this gives \(-2,-1,0,1,2,3\), with \(w_{-3}=w_3=sts\).
+
+| Object | Coordinate convention in the bounded case |
+|---|---|
+| Vertex | Choose \(i\) with \(-m<i\le m\) and \(\ell(w_i)=|i|\). |
+| Reflection label | Use the odd endpoint sum \(i+j\), then its residue modulo \(2m\). |
+
+When lengths are unbounded, every integer is admissible. The [[node:kl.dihedral.signed_period|period-and-representative theorem]] proves both regimes and the repair of the negative longest index.
+
+## Two internal vertices and one top
+
+At a positive rank \(n\) below an existing larger length, there are exactly two elements. If the two alternating words of length \(n\) were equal, prefixing one simple generator would identify a reduced word of length \(n+1\) with a word of length \(n-1\), a contradiction. Their distinctness also gives the unique simple descent at an internal rank.
+
+In the lower interval below \(c\), each internal positive rank therefore contributes \(w_n,w_{-n}\), while the top rank contributes only \(c\). For a function with \(f(1)=0\),
+\[
+\sum_{z\le c}f(z)=
+\sum_{0\le n<\ell(c)}(f(w_n)+f(w_{-n}))+f(c).
+\]
+The doubled zero index contributes zero. The [[node:kl.dihedral.lower_signed_sums|lower-interval signed-sum theorem]] explains this exact reindexing.
+
+## The signed comparison and its residue form
+
+The Before relation places positive signed parameters before negative ones, and uses the ordinary increasing order within each sign. The numerical arrow indicator is
+\[
+\operatorname{aft}(i,q,z)
+=[\,|i|<|z|,\ i+z\text{ odd},\ q\prec i+z\,].
+\]
+Here brackets denote the zero-or-one indicator of the displayed conditions.
+
+For \(|i|<|j|\), the sign of \(i+j\) is the sign of \(j\). The [[node:kl.dihedral.signed_comparison_tables|signed-comparison theorem]] evaluates the same-source and next-source tests using this observation. For example, when \(j>0\), a negative endpoint from \(i\) passes the order test, while a positive endpoint must lie beyond \(j\).
+
+For finite reflection parameters, the residues are ordered increasingly. The [[node:kl.dihedral.signed_residue_comparison|finite-residue comparison theorem]] proves that this residue test agrees with the raw Before test in the two incident-edge configurations, using their admissible endpoint bounds. For \(m=3\), the same-source comparison of parameters \(3\) and \(-1\) becomes \(3<5\) modulo \(6\).
+
+## The numerical count with a moving top
+
+Put \(L=|i|\), \(M=|j|\), \(C=|c|\), and assume a positive odd gap \(M-L=2k+1\). The eligible internal ranks below \(M\) are exactly
+\[
+L+1,L+3,\ldots,L+2k-1,
+\]
+with bijection \(a\mapsto L+1+2a\) from \(0\le a<k\).
+
+Above a reference rank, an eligible internal level contributes two signed endpoints, and the top contributes one if its parity is eligible. The [[node:kl.dihedral.parity_rank_counts|parity-rank count theorem]] proves by induction that increasing the top rank adds exactly one: an eligible old top changes from one contribution to two while the next top contributes zero, or an ineligible old top contributes zero and the next top contributes one. The initial boundary step is checked separately.
+
+For the lower source with \(j>0\), the first step above rank \(M\) adds the opposite endpoint at rank \(M\). The source's positiveCount induction then gives \(k+(C-M)\). For \(j<0\), the signed comparison removes every contribution at or above rank \(M\), leaving \(k\).
+
+The [[node:kl.dihedral.signed_count_difference|signed-count difference theorem]] obtains the complete table:
+\[
+\begin{array}{c|cc}
+ &h_i&h_j\\
+j>0&k+(C-M)&C-M\\
+j<0&k&0
+\end{array}
+\]
+under the top condition \(c=j\) or \(M<C\). Hence \(h_i=h_j+k\).
+
+For the long \(A_2\) edge with indices \(0\to3\) and top \(3\), the counts are \(1,0\). For indices \(1\to2\) with top \(3\), they are \(1,1\); the covering gap has exponent zero.
+
+## From integer counts to transported root counts
+
+The actual angular-root comparison identifies the source's afterIndicator with the numerical arrow indicator on the chosen signed representatives. The rank-fiber sum then turns laterCount into countAfter.
+
+For a transported interval, a full relative-interval bijection identifies both indicator sums in a target dihedral subgroup. Its coordinate identity identifies the actual target reflection roots, and its relative length identity identifies the correction \(k\). The [[node:kl.paths.later_count|transported-count theorem]] states this setup explicitly and treats the two-vertex relative interval separately.
+
+Thus the proof has three inputs: integer count arithmetic, the actual angular-root comparison, and full relative-interval transport. Their output is the numerical identity used by the local model comparison.
+
 ## Edge-transfer matrices and path composition
 
 For an edge \(x\to y\), let \(E_{xy}\) be the matrix with a single \(1\) in row \(x\), column \(y\). On a column vector it copies coordinate \(y\) into coordinate \(x\). Define
@@ -197,6 +287,18 @@ The topic supplies the connections used later: order data can transport the edge
 
 - [[node:kl.dihedral.odd_reflection_edges]]
 - [[node:kl.dihedral.finite_common_upper]]
+- [[node:kl.dihedral.signed_words]]
+- [[node:kl.dihedral.signed_lengths]]
+- [[node:kl.dihedral.signed_reflection_action]]
+- [[node:kl.dihedral.good_indices]]
+- [[node:kl.dihedral.signed_period]]
+- [[node:kl.dihedral.internal_ranks]]
+- [[node:kl.dihedral.lower_signed_sums]]
+- [[node:kl.dihedral.signed_counts]]
+- [[node:kl.dihedral.signed_comparison_tables]]
+- [[node:kl.dihedral.signed_residue_comparison]]
+- [[node:kl.dihedral.parity_rank_counts]]
+- [[node:kl.dihedral.signed_count_difference]]
 - [[node:kl.notes.relative_dihedral_transport]]
 - [[node:kl.paths.later_count]]
 

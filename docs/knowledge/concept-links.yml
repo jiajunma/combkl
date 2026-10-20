@@ -1406,3 +1406,34 @@ concepts:
   - scheduled upper selection
   topics:
   - kl.localization
+- node: kl.dihedral.signed_words
+  terms:
+  - signed word value
+  - signed word values
+  - signed coordinate
+  - signed coordinates
+  - signed vertex coordinate
+  - signed vertex coordinates
+  - dihedral rotation
+  topics:
+  - kl.reflection_combinatorics
+- node: kl.dihedral.good_indices
+  terms:
+  - admissible signed index
+  - admissible signed indices
+  - admissible vertex indices
+  - admissible signed representatives
+  - admissible signed representative
+  topics:
+  - kl.reflection_combinatorics
+- node: kl.dihedral.signed_counts
+  terms:
+  - Before relation
+  - signed Before order
+  - signed label comparison
+  - signed arrow indicator
+  - numerical arrow indicator
+  - finite signed count
+  - signed later count
+  topics:
+  - kl.reflection_combinatorics

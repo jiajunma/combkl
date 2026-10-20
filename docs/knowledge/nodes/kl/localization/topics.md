@@ -547,7 +547,7 @@ The [[node:kl.local.supported_edge_count|supported-edge counting theorem]] gives
 \]
 The bijection sends an edge to its target. Conversely, a nonzero summand supplies a target reflection edge; reflection-edge transport and the coset step equivalence recover the unique selected source edge. The support bound puts its target in the same relative interval.
 
-The numerical difference of these two sums is the input supplied by the [[node:kl.paths.later_count|transported dihedral count theorem]]. Reindexing provides the exact connection between that numerical theorem and the selected kernels of the model.
+The numerical difference of these two sums is the input supplied by the [[node:kl.paths.later_count|transported dihedral count theorem]]. The [[node:kl.dihedral.signed_count_difference|signed-count difference theorem]] evaluates the integer-coordinate counts by a finite rank bijection and two parity inductions. Its numerical top condition is that the top equals the current upper endpoint or has strictly larger length. The actual angular comparison and full interval transport identify those numerical counts with the sums here. Reindexing provides the exact connection between that numerical theorem and the selected kernels of the model.
 
 ## The common quotient for all reduced labels
 
