@@ -142,6 +142,8 @@ Now an isomorphism \(\phi\) transports each source reflection edge to a target r
 
 The scores come from the target realization. Relative-dihedral transport identifies the relevant rank-two configurations, and its counting theorems provide the schedule properties used in the source comparison.
 
+The local model comparison specializes the transported schedule to two outgoing selections, one at each endpoint of the current edge. Both use the target root of that edge as a common slope threshold. The coset later-edge selections entry defines these sets, and the [[node:kl.local.supported_edge_count|supported-edge counting theorem]] reindexes them by target vertices in the full relative interval. This identifies the two finite indicator sums whose numerical difference is computed by the [[node:kl.paths.later_count|dihedral count theorem]].
+
 ## Edge factors and their degrees
 
 Fix a source edge \(e:x\to y\) with root label \(\alpha_e\). Work in the edge coefficient ring \(A/(\alpha_e)\). Other root labels are reduced modulo \(\alpha_e\). The edge factor \(f_e\) is a product of these reduced linear factors with multiplicities determined by root-plane counts.

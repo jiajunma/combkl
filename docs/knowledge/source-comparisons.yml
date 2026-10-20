@@ -1030,3 +1030,79 @@ comparisons:
   consequence: The Blueprint explains the unit and power calculations explicitly.
     The later-edge count remains the stated hypothesis of the product-image lemma
     until the dihedral transport argument supplies it.
+- id: embedded-images-through-model-isomorphisms
+  kind: The same embedded images through one edge component
+  nodes:
+  - kl.detail.edge_images
+  - kl.detail.scaled_images
+  - kl.local.image_isomorphism_transport
+  - kl.local.model_sum_scaled_images
+  paper_labels:
+  - edge:bound
+  lean_declarations:
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.lowerImage
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.upperImage
+  - OAI.KLInvariance.MomentGraph.Sheaf.ScaledImages
+  - OAI.KLInvariance.MomentGraph.Sheaf.Iso.map_lowerImage
+  - OAI.KLInvariance.MomentGraph.Sheaf.Iso.map_upperImage
+  - OAI.KLInvariance.MomentGraph.Sheaf.Iso.scaledImages
+  - OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.scaledImages
+  paper: The model decomposition carries both localized kernels and their endpoint
+    images into the model summands. Its single edge component carries both comparison
+    submodules, and linearity carries the correction scalar through that same map.
+  lean: Selected-kernel membership and both image equalities are proved for arbitrary
+    sheaf isomorphisms over a commutative ring. ScaledImages is an elementwise witness
+    equivalence, identified with submodule equality. Coordinatewise witness transport
+    proves the product and model-sum statements with one common scalar.
+  consequence: The Blueprint defines the actual submodules and witnesses before transporting
+    them. The generic ungraded transport is the one applied to the local model decomposition.
+- id: actual-model-quotient-comparison
+  kind: Associated products in the actual model edge quotient
+  nodes:
+  - kl.local.structure_scaled_images
+  - kl.local.coset_edge_reduction
+  paper_labels:
+  - edge:bound
+  lean_declarations:
+  - OAI.KLInvariance.MomentGraph.Sheaf.structure_scaledImages
+  - OAI.KLInvariance.MomentGraph.Sheaf.structure_scaledImages_of_count
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel_eq_root
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.reducedCosetRoot
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel_reduction_associated
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.cosetFactor_reduction_associated
+  paper: In each supported rank-one model, the two images are principal product ideals
+    in the localized edge ring. Their reduced labels have the same uniformizer up
+    to units, and the correction factor supplies the exponent difference.
+  lean: The structure-model theorem uses the exact quotient R/(alpha_e) as the edge
+    coefficient ring and derives equality from association of the two scalar products.
+    The actual coset labels are identified with localized ambient root forms before
+    the label and factor associations are imported. A zero edge module gives the equality
+    directly.
+  consequence: The Blueprint keeps the quotient action, root inequality and count
+    hypotheses explicit. The actual supported case combines these algebraic inputs
+    with the transported later-edge count.
+- id: coset-later-selection-reindexing
+  kind: Endpoint selections and their finite indicator sums
+  nodes:
+  - kl.local.coset_later_selections
+  - kl.local.supported_edge_count
+  paper_labels:
+  - dih:count
+  - edge:bound
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.ambientAfterIndicator
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledOutgoing
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.mappedCosetRoot
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledLower
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledUpper
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.supported_card_count
+  paper: The notes select outgoing edges strictly later than the current edge in the
+    transported target label order, then count the supported selections in the full
+    relative interval. Incident image labels have no ties.
+  lean: A target after-indicator tests an upward reflection edge and a strict geometric-slope
+    comparison. Both endpoint selections use the mapped current root as one threshold.
+    supported_card_count proves an explicit target-vertex bijection between supported
+    selected edges and the nonzero terms of the finite indicator sum.
+  consequence: This reindexing identifies the sums to which the transported dihedral
+    count theorem applies. It supplies the edge-set interpretation of that theorem
+    without replacing its numerical count argument.

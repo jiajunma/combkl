@@ -580,12 +580,20 @@
         "lf",
         "ot"
       ],
-      "output": "Equality of scaled model images, transported to localized boundary images.",
+      "output": "Actual endpoint selections and their supported counts, scalar-image comparison in each model, and transport of both embedded images through the model edge isomorphism.",
       "lean_declarations": [
         "OAI.KLInvariance.MomentGraph.Sheaf.ScaledImages",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.localized_boundary_scaledImages",
         "OAI.KLInvariance.LocalProducts.associated_prod_scale",
-        "OAI.KLInvariance.LocalProducts.product_image_scale"
+        "OAI.KLInvariance.LocalProducts.product_image_scale",
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.map_lowerImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.map_upperImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.scaledImages",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.scaledImages",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structure_scaledImages_of_count",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel_reduction_associated",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledOutgoing",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.supported_card_count"
       ]
     },
     {
@@ -1249,6 +1257,22 @@
         "OAI.KLInvariance.TitsSpace.edgeFactor_local_associated",
         "OAI.KLInvariance.LocalProducts.associated_prod_scale",
         "OAI.KLInvariance.LocalProducts.product_image_scale"
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "scope": "Embedded images and actual coset endpoint selections",
+      "change": "Defined both actual images and scalar witnesses, proved isomorphism and product/model-sum transport, and gave the exact model quotient/count criterion and coset reductions. Defined the two endpoint selections using one target root threshold and proved their supported target-vertex reindexing. The numerical dihedral count and final actual comparison remain in progress.",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.ScaledImages",
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.map_lowerImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.map_upperImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.scaledImages",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.scaledImages",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structure_scaledImages_of_count",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel_reduction_associated",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledOutgoing",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.supported_card_count"
       ]
     }
   ]

@@ -178,8 +178,10 @@
       "kl.detail.quotient_image_free",
       "kl.detail.scaled_images",
       "kl.detail.structure_sheaves",
+      "kl.local.coset_edge_reduction",
       "kl.local.coset_graph",
       "kl.local.coset_kernel_products",
+      "kl.local.coset_later_selections",
       "kl.local.coset_outgoing_lifts",
       "kl.local.coset_structure_models",
       "kl.local.cover_lift_surjectivity",
@@ -197,6 +199,7 @@
       "kl.local.flow_down",
       "kl.local.flow_down_flabbiness",
       "kl.local.free_target_localization",
+      "kl.local.image_isomorphism_transport",
       "kl.local.induced_flow_down",
       "kl.local.induced_label_primes",
       "kl.local.local_structure_models",
@@ -210,6 +213,7 @@
       "kl.local.minimal_covers",
       "kl.local.model_decomposition",
       "kl.local.model_sum_properties",
+      "kl.local.model_sum_scaled_images",
       "kl.local.model_sum_step",
       "kl.local.model_sums",
       "kl.local.orbit_spline_congruence",
@@ -222,7 +226,9 @@
       "kl.local.structure_edge_images",
       "kl.local.structure_kernel_products",
       "kl.local.structure_model_transport",
+      "kl.local.structure_scaled_images",
       "kl.local.structure_sheaf_properties",
+      "kl.local.supported_edge_count",
       "kl.notes.dihedral_models",
       "kl.notes.sheaf_localization",
       "kl.notes.upper_image_free",
@@ -1833,11 +1839,13 @@
       "id": "kl.detail.edge_images",
       "chapter": "kl.localization",
       "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.upwardSubmodule",
         "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerImage",
-        "OAI.KLInvariance.MomentGraph.GradedSheaf.upperImage"
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.upperImage",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.upperImage_homogeneous"
       ],
       "paper_locations": [
-        "Related paper context; edge:lattice"
+        "5. Comparison of edge images; edge:bound"
       ]
     },
     {
@@ -2261,11 +2269,12 @@
       "id": "kl.detail.scaled_images",
       "chapter": "kl.localization",
       "lean_declarations": [
+        "OAI.KLInvariance.EmbeddedModule.scaled",
         "OAI.KLInvariance.MomentGraph.Sheaf.ScaledImages",
         "OAI.KLInvariance.MomentGraph.Sheaf.scaledImages_iff"
       ],
       "paper_locations": [
-        "Related paper context; edge:lattice"
+        "5. Comparison of edge images; edge:bound"
       ]
     },
     {
@@ -3332,6 +3341,18 @@
       "paper_locations": []
     },
     {
+      "id": "kl.local.coset_edge_reduction",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetRoot_eq",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel_eq_root",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.reducedCosetRoot",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel_reduction_associated",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetFactor_reduction_associated"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.local.coset_graph",
       "chapter": "kl.localization",
       "lean_declarations": [
@@ -3353,6 +3374,25 @@
         "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel_relPrime",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_supported_pairwise",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_kernel_product"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.local.coset_later_selections",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.ambientAfterIndicator",
+        "OAI.KLInvariance.TitsSpace.ambientAfterIndicator_edge_self",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetUpperVertex",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.outgoing_upper",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledOutgoing",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetEdge_target_upper",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.mappedCosetRoot",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledLower",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledUpper",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledLower_self",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledLower_root_ne",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.outgoingUpper_root_ne"
       ],
       "paper_locations": []
     },
@@ -3539,6 +3579,20 @@
       ]
     },
     {
+      "id": "kl.local.image_isomorphism_transport",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.upwardKernel_iff",
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.map_upwardKernel",
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.map_lowerImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.map_upperImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.scaledImages",
+        "OAI.KLInvariance.EmbeddedModule.map_scaled",
+        "OAI.KLInvariance.EmbeddedModule.map_eq_scaled_iff"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.local.induced_flow_down",
       "chapter": "kl.localization",
       "lean_declarations": [
@@ -3681,6 +3735,19 @@
       "paper_locations": []
     },
     {
+      "id": "kl.local.model_sum_scaled_images",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.prod_upwardKernel_iff",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pi_upwardKernel_iff",
+        "OAI.KLInvariance.MomentGraph.Sheaf.prod_scaledImages",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pi_scaledImages",
+        "OAI.KLInvariance.MomentGraph.Sheaf.zero_scaledImages",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.scaledImages"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.local.model_sum_step",
       "chapter": "kl.localization",
       "lean_declarations": [
@@ -3813,6 +3880,15 @@
       "paper_locations": []
     },
     {
+      "id": "kl.local.structure_scaled_images",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.structure_scaledImages",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structure_scaledImages_of_count"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.local.structure_sheaf_properties",
       "chapter": "kl.localization",
       "lean_declarations": [
@@ -3822,6 +3898,16 @@
         "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_generated",
         "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_upperQuotient",
         "OAI.KLInvariance.MomentGraph.Sheaf.structureSheaf_minimal"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.local.supported_edge_count",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.outgoing_step",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.outgoing_target_injective",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.supported_card_count"
       ],
       "paper_locations": []
     },

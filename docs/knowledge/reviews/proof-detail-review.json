@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 88955,
-  "theorem_walkthroughs": 305,
+  "revised_proof_words": 90515,
+  "theorem_walkthroughs": 310,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -2034,6 +2034,21 @@
       "review": "Read the parallel normalized/unnormalized cyclic-action proofs. Expanded reduced-tail induction, inversion in the right action, commuting-map extensionality and the standard ascent products."
     },
     {
+      "node": "kl.local.coset_edge_reduction",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetRoot_eq",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel_eq_root",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.reducedCosetRoot",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel_reduction_associated",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetFactor_reduction_associated"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 297,
+      "proof_sha256": "2a279d3fd72cdaf3d4fb1afdcf94fabdf974783803778189bcd3d4b43f126835",
+      "review": "Read the exact cosetRoot/label equalities, reducedCosetRoot and both association lemmas. Retained the actual quotient by cosetLabel e, proved its equality with the generic localized root quotient, kept inequality of the positive roots rather than merely inequality of edges, and applied the fixed polynomial factor at the ambient source."
+    },
+    {
       "node": "kl.local.coset_kernel_products",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2225,6 +2240,23 @@
       "review": "Read the exact Noetherian-UFD height-one equivalence and intersection theorem. Retained global scalar generic span and free target, and linked the fully expanded prime-removal proof."
     },
     {
+      "node": "kl.local.image_isomorphism_transport",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.upwardKernel_iff",
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.map_upwardKernel",
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.map_lowerImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.map_upperImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.scaledImages",
+        "OAI.KLInvariance.EmbeddedModule.map_scaled",
+        "OAI.KLInvariance.EmbeddedModule.map_eq_scaled_iff"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 332,
+      "proof_sha256": "ad3120699062b4a84a435d6ba12b6778589da96bf76169d71fbd4a895e8e8d69",
+      "review": "Read selected-kernel transport and both endpoint image lemmas, EmbeddedModule.map_scaled/map_eq_scaled_iff and Iso.scaledImages. Expanded both kernel containments, both image containments, scalar commutation and inverse transport; retained arbitrary coefficients and no grading, quotient or finiteness hypothesis."
+    },
+    {
       "node": "kl.local.induced_flow_down",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2366,6 +2398,22 @@
       "review": "Read all six ungraded ModelSum property inductions. Expanded the zero case, finite bases, quotient kernels, section extension and ideal-coordinate insertion. Kept the minimality hypothesis x outside the allowed center set and required no upper-set condition on U."
     },
     {
+      "node": "kl.local.model_sum_scaled_images",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.prod_upwardKernel_iff",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pi_upwardKernel_iff",
+        "OAI.KLInvariance.MomentGraph.Sheaf.prod_scaledImages",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pi_scaledImages",
+        "OAI.KLInvariance.MomentGraph.Sheaf.zero_scaledImages",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.scaledImages"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 379,
+      "proof_sha256": "e864b3502aa121e486f014182c8e2a640d04e8e267b770cd09e2d85f1a60ad6a",
+      "review": "Read the binary and arbitrary-product kernel equivalences, both witness directions in prod/pi_scaledImages, zero_scaledImages and the ModelSum induction. Retained the same scalar in every summand and the general family statement, with finiteness only in the actual ModelSum construction."
+    },
+    {
       "node": "kl.local.model_sum_step",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2494,6 +2542,18 @@
       "review": "Read the scalar tensor and quotient coordinate maps, baseChangePi_natural, structureBaseChangeIso, its separate flat finite-graph flabbiness consequence, and structurePullbackIso. Preserved the order-reflection hypothesis and checked both endpoint squares on supported and zero coordinates."
     },
     {
+      "node": "kl.local.structure_scaled_images",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.structure_scaledImages",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structure_scaledImages_of_count"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 238,
+      "proof_sha256": "3d2230c750fb5b6c4698d927ed38b8088c8c8b51addd5a4e400f451c41567181",
+      "review": "Read both structure_scaledImages statements and proofs. Preserved finite edges, the product-divisibility ring structure and separate supported-selection coprimality hypotheses. Identified the actual quotient action, proved both unit-image containments and the cardinality-to-association calculation, and explained the direct zero-edge branch."
+    },
+    {
       "node": "kl.local.structure_sheaf_properties",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2508,6 +2568,19 @@
       "revised_proof_words": 310,
       "proof_sha256": "189b727dfdc284ea7eceb62d071482a14e3819d5bc368cd5d7033e38a4349aeb",
       "review": "Read all basic structureSheaf property lemmas and the local minimality proof. Preserved arbitrary commutative rings for the basic properties, and the separate local-ring, maximal-ideal-label and outgoing-edge hypotheses for minimality."
+    },
+    {
+      "node": "kl.local.supported_edge_count",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.outgoing_step",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.outgoing_target_injective",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.supported_card_count"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 314,
+      "proof_sha256": "34b607e572406097defdec37f0f670071eb842eddf9b7cca76169e668ee986df",
+      "review": "Read the complete sum_bij_ne_zero proof of supported_card_count. Expanded all interval-domain checks, target injectivity, reconstruction from a nonzero target indicator through both edge equivalences, and the zero terms. Preserved the general threshold and a<=x hypothesis without inserting x<=c."
     },
     {
       "node": "kl.main.combinatorial_invariance",

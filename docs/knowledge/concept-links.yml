@@ -1381,3 +1381,28 @@ concepts:
   - polynomial lifts
   topics:
   - kl.localization
+- node: kl.detail.scaled_images
+  terms:
+  - scalar image
+  - scalar images
+  - scalar-image submodule
+  - scalar-image submodules
+  topics:
+  - kl.localization
+- node: kl.local.coset_later_selections
+  terms:
+  - target after-indicator
+  - coset later-edge selection
+  - coset later-edge selections
+  topics:
+  - kl.localization
+  - kl.reflection_combinatorics
+- node: kl.local.coset_later_selections
+  terms:
+  - after-indicator
+  - later-edge selection
+  - later-edge selections
+  - scheduled lower selection
+  - scheduled upper selection
+  topics:
+  - kl.localization

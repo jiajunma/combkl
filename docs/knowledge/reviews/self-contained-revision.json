@@ -5206,6 +5206,112 @@
       ],
       "review": "Read all five LocalProducts lemmas with their arbitrary commutative scalar rings and compatible module actions. Expanded divisibility-to-image inclusion, both association containments, products of units, the exact cardinality/power identity and the final scalar-tower calculation. Kept the count as a hypothesis for the later dihedral application.",
       "pending": []
+    },
+    {
+      "node": "kl.detail.edge_images",
+      "file": "docs/knowledge/nodes/kl.localization/edge_images.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.upwardSubmodule",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerImage",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.upperImage",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.upperImage_homogeneous"
+      ],
+      "review": "Read the actual polynomial graded lowerImage/upperImage definitions and upwardSubmodule as the underlying ungraded selected kernel. Expanded the membership witnesses, both homogeneous-component arguments and a complete two-edge example. Preserved the general ungraded notation used in the transport lemmas.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.scaled_images",
+      "file": "docs/knowledge/nodes/kl.localization/scaled_images.md",
+      "source_declarations": [
+        "OAI.KLInvariance.EmbeddedModule.scaled",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ScaledImages",
+        "OAI.KLInvariance.MomentGraph.Sheaf.scaledImages_iff"
+      ],
+      "review": "Read EmbeddedModule.scaled, ScaledImages and both directions of scaledImages_iff. Defined the scalar image for arbitrary modules, expanded both layers of membership witnesses, kept the arbitrary commutative ring and scalar, and distinguished the local equality, global inclusion and later global equality without changing the underlying images.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.image_isomorphism_transport",
+      "file": "docs/knowledge/nodes/kl.localization/image_isomorphism_transport.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.upwardKernel_iff",
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.map_upwardKernel",
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.map_lowerImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.map_upperImage",
+        "OAI.KLInvariance.MomentGraph.Sheaf.Iso.scaledImages",
+        "OAI.KLInvariance.EmbeddedModule.map_scaled",
+        "OAI.KLInvariance.EmbeddedModule.map_eq_scaled_iff"
+      ],
+      "review": "Read selected-kernel transport and both endpoint image lemmas, EmbeddedModule.map_scaled/map_eq_scaled_iff and Iso.scaledImages. Expanded both kernel containments, both image containments, scalar commutation and inverse transport; retained arbitrary coefficients and no grading, quotient or finiteness hypothesis.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.model_sum_scaled_images",
+      "file": "docs/knowledge/nodes/kl.localization/model_sum_scaled_images.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.prod_upwardKernel_iff",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pi_upwardKernel_iff",
+        "OAI.KLInvariance.MomentGraph.Sheaf.prod_scaledImages",
+        "OAI.KLInvariance.MomentGraph.Sheaf.pi_scaledImages",
+        "OAI.KLInvariance.MomentGraph.Sheaf.zero_scaledImages",
+        "OAI.KLInvariance.MomentGraph.Sheaf.ModelSum.scaledImages"
+      ],
+      "review": "Read the binary and arbitrary-product kernel equivalences, both witness directions in prod/pi_scaledImages, zero_scaledImages and the ModelSum induction. Retained the same scalar in every summand and the general family statement, with finiteness only in the actual ModelSum construction.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.structure_scaled_images",
+      "file": "docs/knowledge/nodes/kl.localization/structure_scaled_images.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.structure_scaledImages",
+        "OAI.KLInvariance.MomentGraph.Sheaf.structure_scaledImages_of_count"
+      ],
+      "review": "Read both structure_scaledImages statements and proofs. Preserved finite edges, the product-divisibility ring structure and separate supported-selection coprimality hypotheses. Identified the actual quotient action, proved both unit-image containments and the cardinality-to-association calculation, and explained the direct zero-edge branch.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.coset_edge_reduction",
+      "file": "docs/knowledge/nodes/kl.localization/coset_edge_reduction.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetRoot_eq",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel_eq_root",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.reducedCosetRoot",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetLabel_reduction_associated",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetFactor_reduction_associated"
+      ],
+      "review": "Read the exact cosetRoot/label equalities, reducedCosetRoot and both association lemmas. Retained the actual quotient by cosetLabel e, proved its equality with the generic localized root quotient, kept inequality of the positive roots rather than merely inequality of edges, and applied the fixed polynomial factor at the ambient source.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.coset_later_selections",
+      "file": "docs/knowledge/nodes/kl.localization/coset_later_selections.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.ambientAfterIndicator",
+        "OAI.KLInvariance.TitsSpace.ambientAfterIndicator_edge_self",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetUpperVertex",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.outgoing_upper",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledOutgoing",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetEdge_target_upper",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.mappedCosetRoot",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledLower",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledUpper",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledLower_self",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledLower_root_ne",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.outgoingUpper_root_ne"
+      ],
+      "review": "Read ambientAfterIndicator and its self-edge value, both interval endpoint membership checks, mappedCosetRoot, scheduledOutgoing/Lower/Upper, strict self-exclusion and the two distinct-root arguments. Preserved the source lower bound u<=x*a0, the target geometric slope and the one common threshold; kept these local model selections separate from the global schedule construction.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.supported_edge_count",
+      "file": "docs/knowledge/nodes/kl.localization/supported_edge_count.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.outgoing_step",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.outgoing_target_injective",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.supported_card_count"
+      ],
+      "review": "Read the complete sum_bij_ne_zero proof of supported_card_count. Expanded all interval-domain checks, target injectivity, reconstruction from a nonzero target indicator through both edge equivalences, and the zero terms. Preserved the general threshold and a<=x hypothesis without inserting x<=c.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -6076,12 +6182,20 @@
       "title": "Embedded lower and upper images",
       "status": "in_progress",
       "completion_evidence": [
-        "kl.local.product_image_scaling"
+        "kl.local.product_image_scaling",
+        "kl.detail.edge_images",
+        "kl.detail.scaled_images",
+        "kl.local.image_isomorphism_transport",
+        "kl.local.model_sum_scaled_images",
+        "kl.local.structure_scaled_images",
+        "kl.local.coset_edge_reduction",
+        "kl.local.coset_later_selections",
+        "kl.local.supported_edge_count"
       ],
       "pending": [
-        "Expand actual lower/upper-image and scalar-image definitions, transport through sheaf isomorphisms and finite model sums, and the actual local comparison using transported later-edge counts."
+        "Expand the native and transported numerical later-edge count in O3, then verify the actual coset-model scaled equality and its transport to the localized boundary sheaf and ambient edge selections."
       ],
-      "review": "Added the general compatible-scalar-ring product-image theorem, with explicit unit products and the exact cardinality hypothesis. The actual edge selections, transported count and sheaf-image equality remain to be developed."
+      "review": "Reviewed the exact lower/upper image and ScaledImages definitions, homogeneous components and two-edge example, kernel/image transport through one sheaf edge isomorphism, product/model-sum witnesses, the structure quotient/count criterion, actual coset root/factor reductions, endpoint selections and their supported target-vertex reindexing. The numerical count and final actual comparison remain."
     },
     {
       "code": "L7",
@@ -6150,7 +6264,7 @@
     }
   ],
   "next_steps": [
-    "Expand actual selected edge images and their transport under sheaf isomorphisms/model sums, then supply the transported dihedral later-edge count and prove the local image equality.",
+    "Expand O3 signed dihedral coordinates, angular comparison tables and the native/transported later-edge count; then apply it to the actual local scaled-image equality and ambient transport.",
     "Complete the remaining Coxeter/parabolic, root-space and sheaf-operation exposition.",
     "Expand adapted orders, chamber changes, dihedral interval transport, schedules and the path-polynomial proof.",
     "Complete localization, local image comparison, edge inequalities and the simultaneous invariance induction.",
@@ -6632,7 +6746,13 @@
       "kl.local.edge_factor_action_properties": "L5",
       "kl.local.factor_relative_degree": "L5",
       "kl.local.factor_plane_reduction": "L5",
-      "kl.local.product_image_scaling": "L6"
+      "kl.local.product_image_scaling": "L6",
+      "kl.local.image_isomorphism_transport": "L6",
+      "kl.local.model_sum_scaled_images": "L6",
+      "kl.local.structure_scaled_images": "L6",
+      "kl.local.coset_edge_reduction": "L6",
+      "kl.local.coset_later_selections": "L6",
+      "kl.local.supported_edge_count": "L6"
     },
     "moved_nodes": [
       {
@@ -7466,7 +7586,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 463
+    "current_node_count": 469
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -7498,7 +7618,8 @@
     "Expanded the native dihedral model construction into its full dependency chain: general Coxeter parity matching, independent normal-value prescription, single- and double-zero orbit factors, product interpolation, supported outgoing products and the finite upper-set flabbiness induction. Added an explicit A2 section calculation. L3 remains in progress for localized coset-model transport and product/image formulas.",
     "Completed L3: transported native structure models through scalar extension and the finite relative coset embedding, checked exact canonical root labels and all local-model fields, and proved the arbitrary selected-kernel and both edge-image product formulas. Explained prime-label relative primality after localization. Began L4 by separating local-model data from finite ungraded sums.",
     "Completed L4: expanded the single-lift local-ring splitting and finite free remainder, the actual common outgoing image, model-sum properties, one-vertex extension and full finite descent. Corrected the old localized-decomposition prose from a graded-style two-lift route to the source single-lift proof. Generalized the reusable partial-isomorphism and finite-sum statements to their ungraded source forms and separated local/graded cover links.",
-    "Completed L5: separated representative roots, the symmetric edge factor, its polynomial lift and actual edge endomorphism; proved nonvanishing, homogeneity, natural/integer degree conversion, prime-root nondivisibility and injectivity. Explained the individual intrinsic plane exponent and the localized association with its exact power, including absent support. Began L6 with the generic associated-product image calculation."
+    "Completed L5: separated representative roots, the symmetric edge factor, its polynomial lift and actual edge endomorphism; proved nonvanishing, homogeneity, natural/integer degree conversion, prime-root nondivisibility and injectivity. Explained the individual intrinsic plane exponent and the localized association with its exact power, including absent support. Began L6 with the generic associated-product image calculation.",
+    "Expanded L6 foundations: actual selected images and scalar-image witnesses, isomorphism and model-sum transport, the structure-model product/count criterion, exact coset quotient reductions, and the actual later-edge selections with their target-vertex bijection. L6 remains in progress until the numerical dihedral count and final local comparison are explained."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -7769,6 +7890,19 @@
         "kl.localization"
       ],
       "review": "Inspected all current occurrences in localization; they refer to the pre-quotient correction-factor product. Added the short phrase only in this topic so it does not capture unrelated lifting constructions."
+    },
+    {
+      "term": "scalar image",
+      "target": "kl.detail.scaled_images",
+      "topics": [
+        "kl.localization"
+      ],
+      "review": "Inspected current localization occurrences; the aliases denote scalar multiples of submodules. The rewritten definition explains EmbeddedModule.scaled before the sheaf predicate."
+    },
+    {
+      "term": "target after-indicator",
+      "target": "kl.local.coset_later_selections",
+      "review": "Precise target/coset phrases link in localization and reflection combinatorics; bare after-indicator and later-edge-selection aliases are restricted to localization to leave the native dihedral count terminology distinct."
     }
   ],
   "corrections": [
@@ -7788,20 +7922,20 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-19T23:59:36.911571+00:00",
+    "created_at": "2026-10-20T00:29:39.110200+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 463,
-    "html_pages_checked": 734,
-    "generated_definition_links_checked": 6973,
+    "node_count": 469,
+    "html_pages_checked": 741,
+    "generated_definition_links_checked": 7167,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks supported-plane root choices, edge factors, polynomial lifts, the actual graded injective edge action, intrinsic plane degrees and local associated-product image calculations. Documentation checks only.",
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks actual selected images, ScaledImages witnesses, sheaf-isomorphism and product/model-sum transport, the structure quotient/count criterion, coset coefficient reductions and actual later-edge selections. Documentation checks only.",
     "focused_page_review": {
-      "entries": 11,
+      "entries": 8,
       "source_anchors": 42,
-      "factor_definition_links": 45,
-      "scope": "Read all saved statements and proof steps; verified representative choices, original/extended root maps, symmetric and polynomial quotients, natural/integer exponents, prime-power nondivisibility, actual quotient-module cancellation, intrinsic coset lengths and the absent-plane branch. Checked definition destinations, source anchors, both guide routes and the generic scalar-product hypotheses."
+      "image_definition_links": 36,
+      "scope": "Read all saved definitions and proofs; checked both witness directions, both image maps through one edge isomorphism, the shared scalar in products, actual quotient rings, root distinctions, the interval-domain checks and target-vertex counting bijection. Verified epsilon notation, supported-edge application hypotheses, definition destinations and forward count navigation outside the proof dependency graph."
     }
   },
   "structure_coverage_scan": {
@@ -8252,6 +8386,40 @@
         "kl.local.product_image_scaling"
       ],
       "review": "The product-image theorem is over arbitrary compatible commutative scalar rings and modules. Its cardinality equation is a hypothesis. Application references to structure models and the correction factor are navigation, not prerequisites of this general scalar-image result."
+    },
+    {
+      "entries": [
+        "kl.detail.edge_images",
+        "kl.detail.scaled_images"
+      ],
+      "review": "The named lowerImage/upperImage definitions are graded polynomial-coefficient constructions; their underlying selected kernels and image formulas are the same ungraded submodules used by ScaledImages. The scalar-image definition and witness equivalence hold over an arbitrary commutative ring."
+    },
+    {
+      "entries": [
+        "kl.local.image_isomorphism_transport",
+        "kl.local.model_sum_scaled_images"
+      ],
+      "review": "Both endpoint images use the same edge component of the sheaf isomorphism. Scalar commutation and inverse transport require its R-linearity. Product witnesses are coordinatewise for arbitrary families, and the finite ModelSum induction uses one common scalar for every center."
+    },
+    {
+      "entries": [
+        "kl.local.structure_scaled_images",
+        "kl.local.coset_edge_reduction"
+      ],
+      "review": "The structure criterion retains selected-label coprimality and the association/count hypotheses in the actual quotient R/(alpha_e). Coset label equality identifies this quotient with the generic localized root quotient. The root-distinctness condition is stronger than edge inequality and is retained exactly; unsupported model edges give zero equality directly."
+    },
+    {
+      "entries": [
+        "kl.local.coset_later_selections",
+        "kl.local.supported_edge_count"
+      ],
+      "review": "These are the local model selections specialized to a relative coset, assigned to L6 rather than replacing the global O6 schedule construction. Both endpoint selections use the mapped current target root and strict target slopes. The source lower bound guarantees every endpoint is in the domain of the interval isomorphism."
+    },
+    {
+      "entries": [
+        "kl.local.supported_edge_count"
+      ],
+      "review": "The reindexing theorem uses a<=x and the lower ambient bound at a; it does not assume x<=c. The target bijection handles empty intervals/selections and counts only nonzero after-indicators. It identifies the finite sums but does not replace the separate numerical dihedral count proof."
     }
   ],
   "relationship_map_revision": {
@@ -8259,6 +8427,6 @@
     "edge_count": 92,
     "route": "Top splitting and primitive recognition feed the boundary-pairing route; full model decomposition feeds simultaneous character formulas.",
     "evidence": "BoundarySheaf.splitIn_of_top_split, iso_of_primitive_top_split, GradedSheaf.exists_modelSumIso and bottCharacter_decomposition_both.",
-    "latest_anchor_refinement": "Completed the correction factor interfaces from chosen roots to the actual edge action and local power, with the individual coset weight identity. The 38-stage, 92-edge graph remains acyclic. The generic associated-product image lemma starts L6 with the later-edge count retained as a hypothesis."
+    "latest_anchor_refinement": "Recorded actual ScaledImages witnesses, both image transports, model sums, the quotient/count criterion, exact coset reductions and target-vertex reindexing. The 38-stage, 92-edge graph remains acyclic. The numerical count is a forward application of the reindexing result and remains the next O3 proof-detail task."
   }
 }

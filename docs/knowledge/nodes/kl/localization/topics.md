@@ -10,6 +10,18 @@ Both are submodules of \(B^e\). The goal is \(I_e\subseteq f_eJ_e\), where \(f_e
 
 The freeness hypothesis concerns the upper kernel \(K_y\). It gives a free target for the lower-image comparison.
 
+## The selected images and their witnesses
+
+For an outgoing selection \(F\) at \(x\), a vector belongs to \(K_x(F)\) exactly when every restriction selected by \(F\) is zero. An edge value \(\xi\) belongs to the lower image \(I_e\) when there is a vector \(v\in K_x(F)\) with \(\rho^-_e(v)=\xi\). The upper image has the corresponding upper-stalk witnesses.
+
+For a concrete calculation, take \(R=k[a,b]\) and two edges \(e:x\to y\), \(f:x\to z\), labelled by \(a,b\). Put \(R\) at all three vertices and use the quotient restrictions to \(R/(a)\), \(R/(b)\). Selecting only \(f\) at \(x\) gives \(K_x=bR\); an empty selection at \(y\) gives \(K_y=R\). Thus inside \(E=R/(a)\),
+\[
+I_e=\overline bE,\qquad J_e=E.
+\]
+An element \(\overline b[u]\) has lower witness \(bu\) and upper witness \(u\) after multiplication by \(b\).
+
+For any scalar \(r\), the equality \(I_e=rJ_e\) says that every lower witness can be matched to an upper witness with the same edge value after scaling, and conversely. This is the ScaledImages proposition used in the local comparison.
+
 ## Freeness of the upper image over the edge ring
 
 The upper quotient rule gives
@@ -30,7 +42,7 @@ J_e\simeq K_y/\alpha K_y.
 \]
 If \(K_y\) has an \(A\)-basis of \(r\) elements, their residue classes give a basis of this quotient over \(C=A/(\alpha)\). Thus \(J_e\) is a free \(C\)-module. Multiplication by the nonzero factor \(f_e\) identifies it with another free module, \(f_eJ_e\), embedded in the same edge module.
 
-This explains exactly where upper-kernel freeness is consumed. Finite generation or equality of ranks would not supply this free target.
+This is the role of upper-kernel freeness in the free-target membership argument.
 
 ## Localization in polynomial coordinates
 
@@ -394,6 +406,32 @@ The initial processed set is empty, with the zero model sum and vacuous partial 
 
 For the actual localized boundary sheaf, the coset vertex set is finite, its stalks are finite free tensors over \(R_P\), and the localized-coset properties supply the upper quotients, generation and flabbiness. The coset models supply every local-model field. The [[node:kl.local.localized_decomposition|localized decomposition theorem]] applies the generic finite descent to exactly these objects.
 
+## One edge map transports both images
+
+Let \(j:B\simeq C\) be a sheaf isomorphism over the current coefficient ring. For a selected outgoing edge \(f\) at \(x\),
+\[
+\rho^{C,-}_f(j_xv)=j_f(\rho^{B,-}_fv).
+\]
+The right side is zero exactly when the original restriction is zero, because \(j_f\) is injective. Using \(j_x^{-1}\) gives equality of the transported kernel submodules.
+
+The same restriction squares give
+\[
+j_e(I_e^B)=I_e^C,\qquad j_e(J_e^B)=J_e^C.
+\]
+Linearity gives \(j_e(rJ)=rj_e(J)\). The [[node:kl.local.image_isomorphism_transport|image-isomorphism transport theorem]] therefore carries scaled equality to \(C\), and its inverse carries it back to \(B\). The single edge component \(j_e\) is used throughout.
+
+For the local decomposition, this is the map from the actual localized edge module to the product of model edge modules. The scalar is the same element of the plane ring on both sides.
+
+## A common scalar through the model sum
+
+Suppose each model summand satisfies \(I_e^{(i)}=rJ_e^{(i)}\). A lower witness in their product gives a lower witness in every coordinate. Choose the corresponding upper witnesses and form their tuple. Selected zero restrictions hold coordinatewise, and so does
+\[
+r\rho^+_e((w_i)_i)=(r\rho^{i,+}_e(w_i))_i.
+\]
+This proves one direction of the scaled equality; choosing lower witnesses from upper ones proves the other.
+
+The [[node:kl.local.model_sum_scaled_images|model-sum scaled-image theorem]] begins with the zero sheaf and applies this product argument at every addition of copies of a model. Thus a single correction scalar works through the full finite sum once it works for every center.
+
 ## The finite root-plane product
 
 Fix an upward edge \(e:x\to y\) and its canonical positive root \(a\), so \(r_ax=y\). The geometric plane weights \(k_P(x,a)\) are nonnegative integers with finite support. They count the half-root representatives of contributing root pairs grouped by the plane they span with \(a\).
@@ -474,6 +512,55 @@ The real scalar \(t\) is a unit. The [[node:kl.local.factor_plane_reduction|loca
 q_{P,a}(\eta_P(F_{x,a}))\sim p^{k_P}.
 \]
 If \(P\) is absent from the weight support, then \(k_P=0\); all factors are units and their product is associated to \(1\).
+
+## The actual later conditions in target coordinates
+
+Fix the interval order isomorphism \(\varphi:[u,b]\simeq[u',b']\), the relative coset graph \(K\), and an edge \(e:x\to_Dy\) with \(u\le xa_0\). Its image edge has canonical positive target root
+\[
+\alpha'_e=a_{\varphi(xa_0),\varphi(ya_0)}.
+\]
+The target after-indicator \(\varepsilon(p,\alpha',q)\) is \(1\) exactly when \(p\to q\) is a reflection edge whose root has geometric slope strictly greater than that of \(\alpha'\).
+
+The coset later-edge selections are
+\[
+F_e=\{x\to_Dz:\varepsilon(\varphi(xa_0),\alpha'_e,\varphi(za_0))=1\},
+\]
+\[
+H_e=\{y\to_Dz:\varepsilon(\varphi(ya_0),\alpha'_e,\varphi(za_0))=1\}.
+\]
+Every endpoint used by \(\varphi\) belongs to its source interval: it is above \(xa_0\) and below \(b\). Both selections use the same threshold.
+
+The current edge is excluded from \(F_e\) by strictness. Another selected lower edge with the same source root would have the same reflection and target, hence be that excluded edge. An outgoing upper edge with the current root would reflect \(y\) back to \(x\), contradicting upward length. Thus the source labels of all selected conditions survive the current root quotient.
+
+## Supported edge sets as finite vertex sums
+
+Fix a model center \(c\) supporting the current edge, so \(y\le_Dc\). Let \(F_{e,c}\) and \(H_{e,c}\) consist of the selected edges whose targets lie below \(c\).
+
+The [[node:kl.local.supported_edge_count|supported-edge counting theorem]] gives, over the common relative interval \([x,c]_D\),
+\[
+|F_{e,c}|=\sum_{z\in[x,c]_D}
+ \varepsilon(\varphi(xa_0),\alpha'_e,\varphi(za_0)),
+\]
+\[
+|H_{e,c}|=\sum_{z\in[x,c]_D}
+ \varepsilon(\varphi(ya_0),\alpha'_e,\varphi(za_0)).
+\]
+The bijection sends an edge to its target. Conversely, a nonzero summand supplies a target reflection edge; reflection-edge transport and the coset step equivalence recover the unique selected source edge. The support bound puts its target in the same relative interval.
+
+The numerical difference of these two sums is the input supplied by the [[node:kl.paths.later_count|transported dihedral count theorem]]. Reindexing provides the exact connection between that numerical theorem and the selected kernels of the model.
+
+## The common quotient for all reduced labels
+
+Let \(a\) be the positive source root of the current edge and \(\gamma_e\) its actual label in \(R_P\). The [[node:kl.local.coset_edge_reduction|coset edge-reduction theorem]] proves the equality
+\[
+\gamma_e=\lambda_P(a),
+\]
+so its coefficient quotient is exactly \(R_P/(\lambda_P(a))\).
+
+Choose a positive \(\beta\ne a\) spanning \(P\) with \(a\), and put
+\(p=[\lambda_P(\beta)]\) in that quotient. Each selected source root lies in \(P\) and differs from \(a\), so its reduced label is associated to \(p\). The reduced correction scalar is associated to \(p^{k_P}\), by the localized-factor calculation.
+
+These statements all use the current model edge coefficient ring. The [[node:kl.local.structure_scaled_images|structure-model scaled-image theorem]] converts them and the supported count equation into an equality in the model edge module. If the model does not support the current edge, its edge module is zero and both witness statements hold using zero vectors.
 
 ## Converting the later-edge count into equality of images
 
@@ -602,6 +689,12 @@ The logical order to retain is: free upper kernel, free edge target, local model
 
 - [[node:kl.detail.edge_images]]
 - [[node:kl.detail.scaled_images]]
+- [[node:kl.local.image_isomorphism_transport]]
+- [[node:kl.local.model_sum_scaled_images]]
+- [[node:kl.local.structure_scaled_images]]
+- [[node:kl.local.coset_edge_reduction]]
+- [[node:kl.local.coset_later_selections]]
+- [[node:kl.local.supported_edge_count]]
 - [[node:kl.local.product_image_scaling]]
 - [[node:kl.notes.upper_image_free]]
 - [[node:kl.detail.quotient_image_free]]
