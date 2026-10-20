@@ -13,15 +13,13 @@ uses:
 - kl.notes.reflection_order
 - kl.detail.transported_schedule
 - kl.detail.root_reflection_correspondence
+- kl.paths.ambient_after_indicator
 lean:
   repository: openai-kl
   modules:
-  - DihedralIntervals
   - PlaneLocalization
   - TerminalKernels
   declarations:
-  - OAI.KLInvariance.TitsSpace.ambientAfterIndicator
-  - OAI.KLInvariance.TitsSpace.ambientAfterIndicator_edge_self
   - OAI.KLInvariance.TitsSpace.PlaneBasis.cosetUpperVertex
   - OAI.KLInvariance.TitsSpace.PlaneBasis.outgoing_upper
   - OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledOutgoing
@@ -34,14 +32,6 @@ lean:
   - OAI.KLInvariance.TitsSpace.PlaneBasis.outgoingUpper_root_ne
 source:
   spans:
-  - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.DihedralIntervals:2107
-    format: lean-location
-    note: OAI.KLInvariance.TitsSpace.ambientAfterIndicator
-  - artifact: openai-kl-source
-    locator: OAI.RepresentationTheory.KazhdanLusztig.DihedralIntervals:2120
-    format: lean-location
-    note: OAI.KLInvariance.TitsSpace.ambientAfterIndicator_edge_self
   - artifact: openai-kl-source
     locator: OAI.RepresentationTheory.KazhdanLusztig.PlaneLocalization:1001
     format: lean-location
@@ -88,8 +78,8 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Are the ambient modules, pairing orientation, scalar types, grading conventions
-    and quantified hypotheses explicit?
+  prompt: Are the ambient/coset domains, intrinsic ranks, injectivity, full-range
+    and exact-intermediate hypotheses explicit?
   verdict: Read ambientAfterIndicator and its self-edge value, both interval endpoint
     membership checks, mappedCosetRoot, scheduledOutgoing/Lower/Upper, strict self-exclusion
     and the two distinct-root arguments. Preserved the source lower bound u<=x*a0,
@@ -191,10 +181,6 @@ Selection uses the target roots and their slopes. Reduction uses the source root
 The local source declarations below give the construction and proof.
 
 ## Lean formalization
-
-`OAI.KLInvariance.TitsSpace.ambientAfterIndicator`: [DihedralIntervals.lean:2107](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L2107).
-
-`OAI.KLInvariance.TitsSpace.ambientAfterIndicator_edge_self`: [DihedralIntervals.lean:2120](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L2120).
 
 `OAI.KLInvariance.TitsSpace.PlaneBasis.cosetUpperVertex`: [PlaneLocalization.lean:1001](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/PlaneLocalization.lean#L1001).
 

@@ -5272,26 +5272,6 @@
       "pending": []
     },
     {
-      "node": "kl.local.coset_later_selections",
-      "file": "docs/knowledge/nodes/kl.localization/coset_later_selections.md",
-      "source_declarations": [
-        "OAI.KLInvariance.TitsSpace.ambientAfterIndicator",
-        "OAI.KLInvariance.TitsSpace.ambientAfterIndicator_edge_self",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetUpperVertex",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.outgoing_upper",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledOutgoing",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetEdge_target_upper",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.mappedCosetRoot",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledLower",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledUpper",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledLower_self",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledLower_root_ne",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.outgoingUpper_root_ne"
-      ],
-      "review": "Read ambientAfterIndicator and its self-edge value, both interval endpoint membership checks, mappedCosetRoot, scheduledOutgoing/Lower/Upper, strict self-exclusion and the two distinct-root arguments. Preserved the source lower bound u<=x*a0, the target geometric slope and the one common threshold; kept these local model selections separate from the global schedule construction.",
-      "pending": []
-    },
-    {
       "node": "kl.local.supported_edge_count",
       "file": "docs/knowledge/nodes/kl.localization/supported_edge_count.md",
       "source_declarations": [
@@ -5489,16 +5469,6 @@
       "pending": []
     },
     {
-      "node": "kl.dihedral.inversion_descent_bridge",
-      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/inversion_descent_bridge.md",
-      "source_declarations": [
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.simpleRoot_inverted_coset_iff",
-        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_inverted_iff"
-      ],
-      "review": "Verified the least ambient-length hypothesis, inverse-action direction, false/true generator roots, and the reflection hypothesis in the edge bridge; kept intrinsic length distinct from ambient length.",
-      "pending": []
-    },
-    {
       "node": "kl.dihedral.middle_vertex_order",
       "file": "docs/knowledge/nodes/kl.reflection_combinatorics/middle_vertex_order.md",
       "source_declarations": [
@@ -5593,6 +5563,113 @@
       "pending": []
     },
     {
+      "node": "kl.dihedral.two_step_planes",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/two_step_planes.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.graphRoot_ne_of_same_source",
+        "OAI.KLInvariance.TitsSpace.graphRoot_ne_of_path",
+        "OAI.KLInvariance.TitsSpace.graphRoot_square_plane",
+        "OAI.KLInvariance.TitsSpace.graphRoot_mem_of_coset",
+        "OAI.KLInvariance.TitsSpace.mem_coset_of_graphRoot",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.graphRoot_mem",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.graphRoot_path_plane",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.twoStep_mem_coset"
+      ],
+      "review": "Checked square-plane equality through the nondegenerate extension and projection, both root-distinctness arguments, membership propagation and coset confinement without imposing a minimal-representative hypothesis.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.relative_rank_fibers",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/relative_rank_fibers.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.two_interval_elements_length",
+        "OAI.KLInvariance.Dihedral.exists_interval_length",
+        "OAI.KLInvariance.Dihedral.two_step_rank_two",
+        "OAI.KLInvariance.Dihedral.rank_two_of_two_step_bound"
+      ],
+      "review": "Expanded exact relative rank fibers and existence, the gap-two intermediate equivalence, and Lean’s three-intermediate contradiction for the converse, including parity and strict internal-rank bounds.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.coset_interval_embedding",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/coset_interval_embedding.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetIntervalMap"
+      ],
+      "review": "Specified every ambient endpoint and least-representative condition, multiplication direction, membership proof, cancellation, graph equivalence and the source definition’s possible empty domain.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.two_step_transport",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/two_step_transport.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.ambient_two_step_rank_two",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.twoStep_interval_iff",
+        "OAI.KLInvariance.intervalIso_twoStep_iff"
+      ],
+      "review": "Checked all ambient intermediates, coset confinement, the least-representative graph equivalence, relative-interval membership, and the general arbitrary-generator interval-isomorphism transport by inverse images.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.image_plane_coset",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/image_plane_coset.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.dihedral_image_in_plane"
+      ],
+      "review": "Expanded the graph-image construction with its general source/finite-generator target hypotheses, injectivity, initial roots, complete strong induction, n-2 boundary case, exact two-vertex rank and plane/coset propagation.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.affine_rank_preservation",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/affine_rank_preservation.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.map_cover_length",
+        "OAI.KLInvariance.Dihedral.map_length_affine"
+      ],
+      "review": "Read the exact two hypotheses without assuming injectivity, expanded the extension-above and top-boundary extension-below cases, and checked the strong-induction predecessor and affine identity.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.full_interval_range",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/full_interval_range.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.range_eq_interval_of_rank_two"
+      ],
+      "review": "Verified order reflection via affine ranks and injectivity, both endpoint cases, the natural source-rank construction, exact strict bounds and exhaustion of the two-element target rank.",
+      "pending": []
+    },
+    {
+      "node": "kl.paths.ambient_after_indicator",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/ambient_after_indicator.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.ambientAfterIndicator",
+        "OAI.KLInvariance.TitsSpace.ambientAfterIndicator_of_le",
+        "OAI.KLInvariance.TitsSpace.ambientAfterIndicator_edge_self"
+      ],
+      "review": "Separated the general ambient threshold predicate from the later coset selections, retained the arbitrary positive threshold and strict comparison, and explained both zero lemmas directly from their source proofs.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.indicator_transport",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/indicator_transport.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_coset",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.ambientAfterIndicator_coset",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.interval_map_count"
+      ],
+      "review": "Checked exact left-label cancellation and both indicator branches. For reindexing, retained only injectivity and full interval range as hypotheses, constructed the actual finite bijection and derived the lower-bound comparison from range membership.",
+      "pending": []
+    },
+    {
+      "node": "kl.notes.relative_dihedral_transport",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/relative_dihedral_transport.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.transport_interval"
+      ],
+      "review": "Replaced the compressed transport explanation with the exact source hypotheses and all returned data: plane/basis, least target representative, injection, coordinate identity, order/edge equivalences, affine ranks and full range. Checked every application through explicit intermediate-set transport and rank-two detection.",
+      "pending": []
+    },
+    {
       "node": "kl.paths.later_count",
       "file": "docs/knowledge/nodes/kl.reflection_combinatorics/later_count.md",
       "source_declarations": [
@@ -5604,10 +5681,36 @@
         "OAI.KLInvariance.TitsSpace.PlaneBasis.transported_count_difference",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.transported_count_difference_all"
       ],
-      "review": "The exact transported setup and two rank cases are explicit. The actual angular comparison and native count now have complete linked proofs; the full relative-interval transport construction remains the outstanding expository prerequisite.",
-      "pending": [
-        "Expand the full relative-interval transport construction and its range/coordinate/length identities before closing the transported-count exposition."
-      ]
+      "review": "Reviewed the full transported count after expansion of the exact interval transport and indicator bijection. The argument checks source/target coordinates, all edge-root identities, both finite sums, target native count, relative length substitution and every rank-one zero term.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.coset_later_selections",
+      "file": "docs/knowledge/nodes/kl.localization/coset_later_selections.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetUpperVertex",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.outgoing_upper",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledOutgoing",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetEdge_target_upper",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.mappedCosetRoot",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledLower",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledUpper",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledLower_self",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledLower_root_ne",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.outgoingUpper_root_ne"
+      ],
+      "review": "The ambient indicator and its edge-self zero lemma now have a standalone definition home. The local page retains the transported threshold, all coset selections and their exact ambient bounds, with a dependency on that definition.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.inversion_descent_bridge",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/inversion_descent_bridge.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.simpleRoot_inverted_coset_iff",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_inverted_iff"
+      ],
+      "review": "Retained the previously reviewed ambient-sign/intrinsic-descent proof and made the coset in the standalone least-length hypothesis explicit as D a0.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -6338,7 +6441,7 @@
     {
       "code": "O3",
       "title": "Dihedral interval combinatorics",
-      "status": "in_progress",
+      "status": "exposition_reviewed",
       "completion_evidence": [
         "kl.dihedral.odd_reflection_edges",
         "kl.dihedral.finite_common_upper",
@@ -6363,12 +6466,21 @@
         "kl.dihedral.angular_order",
         "kl.dihedral.native_later_counts",
         "kl.dihedral.angular_indicator_tables",
-        "kl.dihedral.native_count_difference"
+        "kl.dihedral.native_count_difference",
+        "kl.dihedral.two_step_planes",
+        "kl.dihedral.relative_rank_fibers",
+        "kl.dihedral.coset_interval_embedding",
+        "kl.dihedral.two_step_transport",
+        "kl.dihedral.image_plane_coset",
+        "kl.dihedral.affine_rank_preservation",
+        "kl.dihedral.full_interval_range",
+        "kl.paths.ambient_after_indicator",
+        "kl.dihedral.indicator_transport",
+        "kl.notes.relative_dihedral_transport",
+        "kl.paths.later_count"
       ],
-      "pending": [
-        "Expand the full relative-interval transport construction, its full range and coordinate/length identities, then complete the transported-count exposition."
-      ],
-      "review": "Reviewed the signed arithmetic and the complete actual angular/native count chain: inversion cuts, sign/descent bridge, total prefix roots, monotonicity, positive/negative separation, all finite/infinite comparisons, exact indicator tables, lower-ideal sum and relative-interval restriction. The full relative-interval transport construction remains."
+      "pending": [],
+      "review": "Reviewed the complete dihedral interval/count development: signed evaluation and rank arithmetic; actual ambient angular order; exact native indicators/counts; root-plane confinement and image induction; exact two-edge intermediate transport; affine relative ranks and full target range; least-representative coordinates; indicator reindexing; and the transported later count in all ranks. Reflection-graph reconstruction is an explicitly linked prerequisite in O5, whose own exposition status remains separate."
     },
     {
       "code": "O4",
@@ -6511,9 +6623,9 @@
         "kl.local.supported_edge_count"
       ],
       "pending": [
-        "Complete the full relative-interval transport in O3, then verify the actual coset-model scaled equality and its transport to the localized boundary sheaf and ambient edge selections."
+        "Verify the actual coset-model scaled equality using the now-expanded transported count, then its transport to the localized boundary sheaf and ambient edge selections."
       ],
-      "review": "Reviewed the exact lower/upper image and ScaledImages definitions, homogeneous components and two-edge example, kernel/image transport through one sheaf edge isomorphism, product/model-sum witnesses, the structure quotient/count criterion, actual coset root/factor reductions, endpoint selections and their supported target-vertex reindexing. The actual angular and native count bridge is now expanded in O3. Full interval transport and the final local comparison remain."
+      "review": "Reviewed the exact lower/upper image and ScaledImages definitions, homogeneous components and two-edge example, kernel/image transport through one sheaf edge isomorphism, product/model-sum witnesses, the structure quotient/count criterion, actual coset root/factor reductions, endpoint selections and their supported target-vertex reindexing. The full angular, native and transported count is now expanded in O3. The final actual coset-model and localized-boundary comparisons remain."
     },
     {
       "code": "L7",
@@ -6582,7 +6694,7 @@
     }
   ],
   "next_steps": [
-    "Expand the full relative-interval transport construction and its range, coordinate and length identities; then finish the transported count and actual local image comparison.",
+    "Complete the actual coset-model scaled-image equality and its transfer to the localized boundary sheaf and ambient endpoint selections (L6), using the now-expanded transported count.",
     "Complete the remaining Coxeter/parabolic, root-space and sheaf-operation exposition.",
     "Expand adapted orders, chamber changes, dihedral interval transport, schedules and the path-polynomial proof.",
     "Complete localization, local image comparison, edge inequalities and the simultaneous invariance induction.",
@@ -7092,7 +7204,16 @@
       "kl.dihedral.angular_order": "O3",
       "kl.dihedral.native_later_counts": "O3",
       "kl.dihedral.angular_indicator_tables": "O3",
-      "kl.dihedral.native_count_difference": "O3"
+      "kl.dihedral.native_count_difference": "O3",
+      "kl.dihedral.two_step_planes": "O3",
+      "kl.dihedral.relative_rank_fibers": "O3",
+      "kl.dihedral.coset_interval_embedding": "O3",
+      "kl.dihedral.two_step_transport": "O3",
+      "kl.dihedral.image_plane_coset": "O3",
+      "kl.dihedral.affine_rank_preservation": "O3",
+      "kl.dihedral.full_interval_range": "O3",
+      "kl.paths.ambient_after_indicator": "O3",
+      "kl.dihedral.indicator_transport": "O3"
     },
     "moved_nodes": [
       {
@@ -7926,7 +8047,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 491
+    "current_node_count": 500
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -7961,7 +8082,8 @@
     "Completed L5: separated representative roots, the symmetric edge factor, its polynomial lift and actual edge endomorphism; proved nonvanishing, homogeneity, natural/integer degree conversion, prime-root nondivisibility and injectivity. Explained the individual intrinsic plane exponent and the localized association with its exact power, including absent support. Began L6 with the generic associated-product image calculation.",
     "Expanded L6 foundations: actual selected images and scalar-image witnesses, isomorphism and model-sum transport, the structure-model product/count criterion, exact coset quotient reductions, and the actual later-edge selections with their target-vertex bijection. L6 remains in progress until the numerical dihedral count and final local comparison are explained.",
     "Expanded O3 signed-coordinate and numerical count foundations in 12 entries, including the finite representative convention and all parity induction cases. Corrected the transported-count explanation to use finite odd residues and the constrained raw comparisons, and made its interval/coset hypotheses explicit. O3 remains in progress for actual angular roots and full relative-interval transport.",
-    "Expanded the actual angular and native count layer in 10 new entries: actual edge/prefix roots, inversion cuts, ambient-sign/intrinsic-descent bridge, middle-vertex criterion, prefix order, sign separation, finite/infinite order, indicators and native count. Extended sign-cone closure, connected the transported parent to the complete native theorem and expanded the topic guide. O3 retains the full-interval transport prerequisite."
+    "Expanded the actual angular and native count layer in 10 new entries: actual edge/prefix roots, inversion cuts, ambient-sign/intrinsic-descent bridge, middle-vertex criterion, prefix order, sign separation, finite/infinite order, indicators and native count. Extended sign-cone closure, connected the transported parent to the complete native theorem and expanded the topic guide. O3 retains the full-interval transport prerequisite.",
+    "Completed O3 exposition with 9 new entries and expanded full-transport/transported-count proofs. The development now states exact ambient and relative domains, proves common-plane propagation and the three-intermediate rank test, derives affine ranks and full range, and reindexes actual indicators through a finite bijection. Moved the general ambient after-indicator to its own definition home; retained local coset selections at L6."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -8243,8 +8365,8 @@
     },
     {
       "term": "target after-indicator",
-      "target": "kl.local.coset_later_selections",
-      "review": "Precise target/coset phrases link in localization and reflection combinatorics; bare after-indicator and later-edge-selection aliases are restricted to localization to leave the native dihedral count terminology distinct."
+      "target": "kl.paths.ambient_after_indicator",
+      "review": "The general ambient predicate now has its own definition node; transported coset selections link to it."
     },
     {
       "term": "signed word value",
@@ -8287,6 +8409,20 @@
         "kl.localization"
       ],
       "review": "Links the actual-root threshold indicator and finite lower-ideal count, separately from the numerical signed count and from transported ambient selections."
+    },
+    {
+      "term": "coset interval embedding",
+      "target": "kl.dihedral.coset_interval_embedding",
+      "topics": [
+        "kl.reflection_combinatorics",
+        "kl.localization"
+      ],
+      "review": "Defines right multiplication by the least representative with exact ambient lower/upper bounds and injectivity."
+    },
+    {
+      "term": "ambient after-indicator",
+      "target": "kl.paths.ambient_after_indicator",
+      "review": "Unscoped precise alias for the general ambient root-threshold predicate. The generic after-indicator alias is scoped to localization; the native dihedral aliases retain their separate home."
     }
   ],
   "corrections": [
@@ -8306,22 +8442,21 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-20T02:52:06.652367+00:00",
+    "created_at": "2026-10-20T03:10:04.222212+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 491,
-    "html_pages_checked": 764,
-    "generated_definition_links_checked": 7503,
+    "node_count": 500,
+    "html_pages_checked": 773,
+    "generated_definition_links_checked": 7628,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks the actual ambient angular-root and native count exposition. Documentation checks only.",
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks full relative-interval transport and actual indicator reindexing. Documentation checks only.",
     "focused_page_review": {
-      "entries": 12,
-      "complete_entries": 11,
-      "refined_composite_entries": 1,
+      "entries": 13,
+      "new_entries": 9,
       "source_anchors": 46,
-      "new_definition_links": 19,
-      "scope": "Read the saved root/sign constructions, exact ambient-to-intrinsic bridge, prefix bounds, all finite/infinite order cases, both GoodIndex conditions, native signed-sum translation and interval restriction. Checked the rendered formulas, definition destinations and source anchors. Full relative-interval transport remains pending."
+      "new_definition_links": 15,
+      "scope": "Read the saved common-plane and coset induction, exact intermediate-set transport, rank-two converse, both cover-extension cases, affine ranks, full-range construction and all target coordinate fields. Checked actual indicator/root equality and finite reindexing, the rank-one count, source links and definition destinations. O3 exposition is reviewed; L6 and O5 remain tracked separately."
     }
   },
   "structure_coverage_scan": {
@@ -8871,6 +9006,42 @@
         "kl.dihedral.native_count_difference"
       ],
       "review": "Both incident-edge configurations retain their distinct admissibility requirements and all reduced-length hypotheses. The native sum has zero identity terms and a singleton top; the top coordinate is j when c=y and otherwise has strictly larger absolute length. Interval restriction is proved for arbitrary positive threshold and a<=x."
+    },
+    {
+      "entries": [
+        "kl.dihedral.two_step_planes",
+        "kl.dihedral.image_plane_coset"
+      ],
+      "review": "Root-plane confinement does not require a least representative. The full graph-image assertion requires a source interval of relative rank at least two, injectivity and preservation of directed edges; its strong induction uses exact n-2 and n-1 layers."
+    },
+    {
+      "entries": [
+        "kl.dihedral.relative_rank_fibers",
+        "kl.dihedral.two_step_transport"
+      ],
+      "review": "The native converse uses one known path and a two-value bound, then contradicts a larger even gap with three distinct intermediates. Exact ambient intermediate sets are obtained by coset confinement and transported by pulling back every target intermediate inside the full ambient interval."
+    },
+    {
+      "entries": [
+        "kl.dihedral.affine_rank_preservation",
+        "kl.dihedral.full_interval_range"
+      ],
+      "review": "Affine rank preservation needs edge preservation and preservation of every gap-two pair; injectivity is added for order reflection and full range. Both the top-boundary cover case and strict target-interior rank exhaustion are explicit."
+    },
+    {
+      "entries": [
+        "kl.notes.relative_dihedral_transport",
+        "kl.paths.later_count"
+      ],
+      "review": "The full transport returns a least target representative and intrinsic coordinates F(z)=phi(z*a0)*(a0 prime)^-1, with seven properties including full range. The transported count follows by root/indicator equality, finite reindexing, the native difference, and affine length substitution. Rank one is checked term by term."
+    },
+    {
+      "entries": [
+        "kl.paths.ambient_after_indicator",
+        "kl.dihedral.indicator_transport",
+        "kl.local.coset_later_selections"
+      ],
+      "review": "The ambient threshold predicate has its own definition home. Indicator reindexing assumes injectivity and full interval range, while edge and order preservation are supplied separately by the main construction. The local selection page retains its specialized transported threshold and outgoing-edge sets."
     }
   ],
   "relationship_map_revision": {

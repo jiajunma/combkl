@@ -1,15 +1,24 @@
 ---
 id: kl.notes.relative_dihedral_transport
-title: Relative dihedral intervals and their transport
+title: Full transport of a relative dihedral interval
 kind: theorem
 status: proved
 primary_topic: kl.reflection_combinatorics
 topics:
 - kl.reflection_combinatorics
 uses:
-- kl.notes.relative_dihedral_intervals
+- kl.dihedral.coset_interval_embedding
+- kl.dihedral.image_plane_coset
+- kl.dihedral.two_step_transport
+- kl.dihedral.relative_rank_fibers
+- kl.dihedral.affine_rank_preservation
+- kl.dihedral.full_interval_range
+- kl.dihedral.plane_basis_existence
+- kl.dihedral.minimal_plane_cosets
+- kl.dihedral.plane_coset_graph
 - kl.paths.graph_invariance
-- kl.detail.plane_basis
+- kl.dihedral.odd_reflection_edges
+- kl.coxeter.dihedral_bruhat_order
 lean:
   repository: openai-kl
   modules:
@@ -32,69 +41,160 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Are the mathematical hypotheses and scope retained from the referenced declarations?
-  verdict: The exposition follows the fixed Lean source; worked calculations explain
-    the constructions.
+  prompt: Are the ambient/coset domains, intrinsic ranks, injectivity, full-range
+    and exact-intermediate hypotheses explicit?
+  verdict: 'Replaced the compressed transport explanation with the exact source hypotheses
+    and all returned data: plane/basis, least target representative, injection, coordinate
+    identity, order/edge equivalences, affine ranks and full range. Checked every
+    application through explicit intermediate-set transport and rank-two detection.'
 tags:
 - Kazhdan-Lusztig
-- dihedral
+- dihedral-counts
 ---
 
-# Relative dihedral intervals and their transport
+# Full transport of a relative dihedral interval
 
-A root plane \(\Pi\) determines a maximal dihedral reflection subgroup \(D_\Pi\). This subgroup has its own canonical Coxeter generators and its own Bruhat order. On a coset \(Da_0\), use a representative \(a_0\) of minimal ambient length to transfer this relative order.
-
-Relative comparability implies ambient comparability. The construction does not identify the relative order with the entire order induced from the ambient group.
-
-Let a relative interval \([x,c]_D\) of rank at least two lie inside \([u,b]\). If \(\phi:[u,b]\simeq[u',b']\), there is a target root-plane subgroup \(D'\) such that
+Fix finite-generator real Coxeter systems \(W,W'\) and an interval order isomorphism
 \[
-\phi([x,c]_D)=[\phi(x),\phi(c)]_{D'}.
+\varphi:[u,b]_W\xrightarrow{\sim}[u',b']_{W'}.
 \]
-The restriction preserves relative order, relative rank differences, and directed reflection edges.
+In \(W\), choose a plane basis \(B\), its induced dihedral subgroup \(D\), and a least coset representative \(a_0\), so that
+\(\ell_W(a_0)\le\ell_W(da_0)\) for every \(d\in D\).
+Choose \(g,k\in D\) satisfying
+\[
+g\le_Dk,\qquad \ell_D(g)+2\le\ell_D(k),\qquad
+u\le_Wga_0,\qquad ka_0\le_Wb.
+\]
+Let \(J=[g,k]_D\), and use the coset interval embedding to interpret \(\varphi(za_0)\) for \(z\in J\).
+
+There exist a target root plane \(P'\), a plane basis \(B'\) for it, its induced subgroup \(D'\), a least representative \(a'_0\) for the target coset, and an injective map
+\[
+F:J\longrightarrow D'
+\]
+with the following properties:
+\[
+\begin{aligned}
+F(z)a'_0&=\varphi(za_0),\\
+F(x)\le_{D'}F(y)&\Longleftrightarrow x\le_Dy,\\
+F(x)\to_{D'}F(y)&\Longleftrightarrow x\to_Dy,\\
+\ell_{D'}(F(z))+\ell_D(g)&=\ell_{D'}(F(g))+\ell_D(z),\\
+\operatorname{range}(F)&=[F(g),F(k)]_{D'}.
+\end{aligned}
+\]
+Here \(x,y,z\in J\), and least means
+\[
+\ell_{W'}(a'_0)\le\ell_{W'}(d'a'_0)\qquad(d'\in D').
+\]
+Thus the ambient image is the entire relative target interval in \(D'a'_0\), with exact coordinates and relative length differences.
+
+<!-- source-comparison:start -->
+## Relation to the OpenAI notes
+
+**Explicit coordinates, affine lengths and full target range.**
+
+**OpenAI notes:** The proposition describes the image directly as a full relative interval in a target plane coset. Its proof recovers covers from rank-two intervals and exhausts each internal target rank with two image vertices. [dih:transport](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/03-dihedral.tex#L276).
+
+**Lean (primary):** The construction chooses a least target representative and writes F(z) as the ambient image multiplied on the right by its inverse. Rank-two preservation gives consecutive-rank preservation, then an affine length identity by induction. Injectivity and the two-element internal ranks give the exact full range. The theorem returns all coordinate, order, edge and length properties explicitly. [DyerPaths:676](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L676), [DyerPaths:504](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L504), [DyerPaths:536](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L536), [DyerPaths:567](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L567), [DyerPaths:736](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L736).
+
+**Role in the proof:** The Blueprint uses the intrinsic coordinate map F and retains every ambient endpoint bound. The source and target bottom lengths may differ by the constant prescribed by the affine identity.
+<!-- source-comparison:end -->
 
 *Proof.*
 
-### Step 1. Transport the relative interval as an actual graph
+### Step 1. Compose the coset embedding with the given isomorphism
 
-Choose a minimal representative \(a_0\) of the source dihedral coset. The map \(z\mapsto za_0\) identifies relative reflection edges with ambient ones. Compose it with the given interval order isomorphism \(\phi\), obtaining an injective vertex map \(f\) that sends every relative edge to an ambient target edge by graph invariance.
-
-The assumed relative rank is at least two, so the interval has two distinct atoms above its bottom. Their image edge labels give two distinct reflections and hence two independent root directions.
-
-### Step 2. Show that all images lie in one target root plane coset
-
-Let \(P'\) be the plane spanned by these initial roots. Around a rank-two diamond, both two-edge paths have the same product of reflections. The moving-image identity identifies the plane spanned by each pair of labels. Since the two initial directions are independent, that plane is \(P'\).
-
-Apply this successively through the two-vertex internal ranks: once the labels entering a rank lie in \(P'\), the diamonds to the next rank place their outgoing labels in \(P'\) too. Every image vertex is therefore reached from the bottom by reflections in the same maximal plane subgroup \(D'\).
-
-Choose a minimal representative \(a'\) of this target coset and define
-\(F(z)=f(z)(a')^{-1}\in D'\).
-Then \(F(z)a'=f(z)\), and injectivity of \(f\) implies injectivity of \(F\).
-
-### Step 3. Detect relative rank two from the number of paths
-
-Take source vertices at relative rank distance two. The relative interval between them has exactly two middle vertices, and its ambient directed two-edge paths have precisely these intermediates. Graph invariance transports that exact two-path count: every target intermediate lies in the ambient interval and pulls back.
-
-In a dihedral coset, if endpoints have positive even relative difference \(r\), the internal odd ranks supply exactly \(r\) two-edge paths. All such paths are ambient paths, and the common-plane calculation places all ambient intermediates back in this coset. The transported count is two, so \(r=2\).
-
-### Step 4. Recover the consecutive ranks
-
-Every consecutive-rank edge in an interval of rank at least two lies in a consecutive two-edge path. Step 3 makes the target total gap two. Its two edge gaps are positive integers, so both are one. Thus every relative cover is sent to a relative cover.
-
-Following a saturated chain yields
+Define
 \[
-\ell_{D'}(F(z))-\ell_{D'}(F(x))
-=\ell_D(z)-\ell_D(x).
+f:J\to W',\qquad f(z)=\varphi(za_0).
 \]
+The coset interval embedding proves that each argument \(za_0\) lies in \([u,b]_W\). It is injective by right cancellation, and \(\varphi\) is injective, so \(f\) is injective.
 
-### Step 5. Prove surjectivity onto the full relative interval
+If \(x\to_Dy\), the source [[node:kl.dihedral.plane_coset_graph|coset graph theorem]] gives \(xa_0\to_Wya_0\). The [[node:kl.paths.graph_invariance|reflection-graph invariance theorem]] then gives \(f(x)\to_{W'}f(y)\). Thus \(f\) preserves every directed reflection edge of \(J\).
 
-The image contains the two endpoints and two distinct vertices in every internal rank. A dihedral interval of the same rank has exactly those numbers of vertices. There is therefore no additional target vertex at any rank, and the image is the whole interval.
+### Step 2. Construct the target plane and a least coset coordinate
 
-Relative order is determined by strict length comparison or equality; relative reflection edges are determined by positive odd length difference. Injectivity and the rank identity preserve and reflect both predicates. This proves every part of the claimed transport, including its range statement.
+The [[node:kl.dihedral.image_plane_coset|image-plane theorem]] applies because \(J\) has relative rank at least two. It supplies distinct positive roots \(\alpha,\beta\) and a plane \(P'=P(\alpha,\beta)\) such that
+\[
+f(z)f(g)^{-1}\in D'\qquad(z\in J),
+\]
+where \(D'\) is the plane subgroup.
+
+The [[node:kl.dihedral.plane_basis_existence|plane-basis existence theorem]] supplies \(B'\), giving \(D'\) its intrinsic dihedral Coxeter system. The [[node:kl.dihedral.minimal_plane_cosets|least-coset representative theorem]] supplies \(a'_0\) and \(g_0\in D'\) with
+\[
+f(g)=g_0a'_0,\qquad
+\ell_{W'}(a'_0)\le\ell_{W'}(d'a'_0)\quad(d'\in D').
+\]
+For every \(z\),
+\[
+f(z)(a'_0)^{-1}
+=f(z)f(g)^{-1}g_0\in D'.
+\]
+Define \(F(z)\) to be this subgroup element. Multiplication gives the coordinate identity \(F(z)a'_0=f(z)\).
+
+If \(F(x)=F(y)\), multiplication by \(a'_0\) gives \(f(x)=f(y)\), hence \(x=y\). Thus \(F\) is injective.
+
+### Step 3. Preserve intrinsic edges in the target coordinates
+
+Step 1 gives the ambient edge \(f(x)\to_{W'}f(y)\) whenever \(x\to_Dy\). Substitute \(f(x)=F(x)a'_0\) and \(f(y)=F(y)a'_0\).
+
+The target representative is least, so the target [[node:kl.dihedral.plane_coset_graph|coset graph theorem]] turns this ambient edge into the intrinsic edge \(F(x)\to_{D'}F(y)\). This supplies the edge-preservation hypothesis for the rank arguments below.
+
+### Step 4. Transport an exact rank-two intermediate set
+
+Take \(x,y\in J\) with \(\ell_D(y)=\ell_D(x)+2\). The [[node:kl.dihedral.two_step_transport|two-step transport theorem]] gives distinct \(a,c\in J\) such that all ambient source two-edge paths from \(xa_0\) to \(ya_0\) have precisely the intermediates \(aa_0,ca_0\).
+
+Its interval-isomorphism assertion therefore gives, for every \(z'\in W'\),
+\[
+f(x)\to_{W'}z'\to_{W'}f(y)
+\quad\Longleftrightarrow\quad
+z'=f(a)\text{ or }z'=f(c).
+\]
+The known path through \(f(a)\) becomes an intrinsic path
+\(F(x)\to_{D'}F(a)\to_{D'}F(y)\)
+by the target [[node:kl.dihedral.plane_coset_graph|coset graph theorem]].
+
+### Step 5. Recover target gap two
+
+Consider any intrinsic intermediate \(d'\) with
+\(F(x)\to_{D'}d'\to_{D'}F(y)\).
+Multiplying by \(a'_0\) gives an ambient path through \(d'a'_0\). Step 4 forces
+\[
+d'a'_0=f(a)=F(a)a'_0
+\quad\text{or}\quad
+d'a'_0=f(c)=F(c)a'_0.
+\]
+Right cancellation gives \(d'=F(a)\) or \(d'=F(c)\).
+
+There is a path through \(F(a)\), and every intermediate lies in a set of at most two elements. The [[node:kl.dihedral.relative_rank_fibers|rank-two detection theorem]] therefore gives
+\[
+\ell_{D'}(F(y))=\ell_{D'}(F(x))+2.
+\]
+Its three-intermediate contradiction verifies this for every source pair of gap two.
+
+### Step 6. Recover all relative ranks and orders
+
+The [[node:kl.dihedral.affine_rank_preservation|affine-rank theorem]] applies to Step 3, Step 5 and the total source rank assumption. It gives
+\[
+\ell_{D'}(F(z))+\ell_D(g)=\ell_{D'}(F(g))+\ell_D(z)
+\qquad(z\in J).
+\]
+Subtracting the identities for \(x,y\) preserves their length difference.
+
+The [[node:kl.coxeter.dihedral_bruhat_order|dihedral Bruhat comparison theorem]] describes order as strict length comparison or equality. The affine identity preserves the first alternative, and injectivity preserves and reflects the second. Hence \(F(x)\le_{D'}F(y)\) exactly when \(x\le_Dy\).
+
+### Step 7. Reflect edges and exhaust the target interval
+
+The [[node:kl.dihedral.odd_reflection_edges|odd-gap edge criterion]] describes an edge by a positive odd intrinsic length difference. The difference identity from Step 6 therefore preserves and reflects edges.
+
+Finally the [[node:kl.dihedral.full_interval_range|full-range theorem]] applies to the injective map \(F\), its edge preservation and its preservation of gap two. It gives
+\(\operatorname{range}(F)=[F(g),F(k)]_{D'}\).
+This verifies the last field and completes the construction.
+
+For a rank-pattern illustration, if \(\ell_D(g)=2\), \(\ell_D(k)=5\), and \(\ell_{D'}(F(g))=4\), the image has lengths \(4,5,6,7\), with vertex counts \(1,2,2,1\). The common shift of two is determined by the bottom coordinate; each relative gap is preserved.
 
 ## References
 
-[3. Dihedral intervals and transported reflection orders](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/03-dihedral.tex#L276).
+The local source declarations below give the construction and proof.
 
 ## Lean formalization
 

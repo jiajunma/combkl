@@ -1208,10 +1208,10 @@ comparisons:
     range, edge/order correspondence and relative length identities. These identify
     the actual target root and both finite sums. The small-rank branch proves there
     are exactly two vertices and checks each indicator is zero.
-  consequence: The numerical calculation, actual angular-root comparison and full-interval
-    transport are distinct inputs to the final identity. The Blueprint states the
-    interval and coset bounds and separates finite root residues from the constrained
-    raw signed comparisons.
+  consequence: The full-interval construction, actual root and indicator identities,
+    finite bijection, native angular count and relative length substitution are developed
+    in linked proofs. The final formula treats the two-vertex case by checking every
+    summand.
 - id: actual-angular-root-order
   kind: Ambient inversion cuts in place of a root-coordinate recurrence
   nodes:
@@ -1275,3 +1275,98 @@ comparisons:
   consequence: The Blueprint gives the native count independently of interval transport,
     with the exact hypotheses of both indicator tables. Its slope orientation is the
     increasing orientation of the chosen PlaneBasis.
+- id: two-edge-plane-confinement
+  kind: The common-plane argument in the actual ambient realization
+  nodes:
+  - kl.dihedral.two_step_planes
+  - kl.dihedral.image_plane_coset
+  paper_labels:
+  - dih:plane
+  - dih:transport
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.graphRoot_square_plane
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.twoStep_mem_coset
+  - OAI.KLInvariance.TitsSpace.dihedral_image_in_plane
+  paper: The notes identify the root plane of two paths by equality of their two-reflection
+    products. In the transport proof, diamonds propagate the initial plane through
+    all relative ranks.
+  lean: The product argument is applied in the nondegenerate extended realization
+    and projected to the original root space. Coset membership propagates along a
+    root in that plane. dihedral_image_in_plane organizes the propagation as strong
+    induction on the absolute source length, selecting one vertex two ranks below
+    and two vertices one rank below.
+  consequence: The Blueprint states the plane equality, the coset-confinement result
+    and the entire graph-image induction separately, including the first two ranks
+    and the boundary case for the predecessor.
+- id: rank-two-intermediate-detection
+  kind: Exact intermediates and the three-vertex contradiction
+  nodes:
+  - kl.dihedral.relative_rank_fibers
+  - kl.dihedral.two_step_transport
+  paper_labels:
+  - dih:shape
+  - dih:relative-paths
+  - dih:transport
+  lean_declarations:
+  - OAI.KLInvariance.Dihedral.two_interval_elements_length
+  - OAI.KLInvariance.Dihedral.two_step_rank_two
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.ambient_two_step_rank_two
+  - OAI.KLInvariance.Dihedral.rank_two_of_two_step_bound
+  - OAI.KLInvariance.intervalIso_twoStep_iff
+  paper: The interval-shape lemma counts exactly r two-edge paths when the positive
+    relative length gap r is even. The transport proof uses the equality of ambient
+    intermediate sets to conclude that the target gap is two.
+  lean: The native gap-two result lists two intermediates. For the converse, a gap
+    at least four produces two distinct vertices one rank above the bottom and a third
+    three ranks above it. All three are two-edge intermediates, contradicting the
+    assumed two-value bound. Ambient interval membership then permits inverse transport
+    of every target intermediate.
+  consequence: The Blueprint follows the three-intermediate contradiction and proves
+    the ambient and transported intermediate-set equivalences in both directions.
+- id: full-relative-interval-coordinate-transport
+  kind: Explicit coordinates, affine lengths and full target range
+  nodes:
+  - kl.dihedral.coset_interval_embedding
+  - kl.dihedral.affine_rank_preservation
+  - kl.dihedral.full_interval_range
+  - kl.notes.relative_dihedral_transport
+  paper_labels:
+  - dih:transport
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.cosetIntervalMap
+  - OAI.KLInvariance.Dihedral.map_cover_length
+  - OAI.KLInvariance.Dihedral.map_length_affine
+  - OAI.KLInvariance.Dihedral.range_eq_interval_of_rank_two
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.transport_interval
+  paper: The proposition describes the image directly as a full relative interval
+    in a target plane coset. Its proof recovers covers from rank-two intervals and
+    exhausts each internal target rank with two image vertices.
+  lean: The construction chooses a least target representative and writes F(z) as
+    the ambient image multiplied on the right by its inverse. Rank-two preservation
+    gives consecutive-rank preservation, then an affine length identity by induction.
+    Injectivity and the two-element internal ranks give the exact full range. The
+    theorem returns all coordinate, order, edge and length properties explicitly.
+  consequence: The Blueprint uses the intrinsic coordinate map F and retains every
+    ambient endpoint bound. The source and target bottom lengths may differ by the
+    constant prescribed by the affine identity.
+- id: actual-indicator-reindexing
+  kind: Root equality and a bijection of the full interval index sets
+  nodes:
+  - kl.paths.ambient_after_indicator
+  - kl.dihedral.indicator_transport
+  paper_labels:
+  - dih:count
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.ambientAfterIndicator
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_coset
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.ambientAfterIndicator_coset
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.interval_map_count
+  paper: The later-edge proof identifies the transported schedule with the actual
+    target root order after identifying the target coset with its dihedral group.
+  lean: edgeRoot_coset checks the unchanged left reflection under multiplication by
+    the representative. The indicator equality treats edges and nonedges. interval_map_count
+    constructs a bijection from injectivity and full range alone, reindexes the finite
+    sum, and then uses the zero terms outside the relative interval to obtain the
+    native lower-ideal count.
+  consequence: The Blueprint explains the actual threshold predicate, each root and
+    indicator identity, and the finite reindexing map with their separate hypotheses.

@@ -20,6 +20,9 @@ uses:
 - kl.dihedral.plane_coset_graph
 - kl.dihedral.signed_reflection_action
 - kl.dihedral.native_count_difference
+- kl.dihedral.indicator_transport
+- kl.paths.ambient_after_indicator
+- kl.dihedral.coset_interval_embedding
 lean:
   repository: openai-kl
   modules:
@@ -72,11 +75,12 @@ verification:
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Are the ambient and intrinsic systems, root signs, signed lengths, finite
-    representative bounds and counting domains explicit?
-  verdict: The exact transported setup and two rank cases are explicit. The actual
-    angular comparison and native count now have complete linked proofs; the full
-    relative-interval transport construction remains the outstanding expository prerequisite.
+  prompt: Are the ambient/coset domains, intrinsic ranks, injectivity, full-range
+    and exact-intermediate hypotheses explicit?
+  verdict: Reviewed the full transported count after expansion of the exact interval
+    transport and indicator bijection. The argument checks source/target coordinates,
+    all edge-root identities, both finite sums, target native count, relative length
+    substitution and every rank-one zero term.
 tags:
 - Kazhdan-Lusztig
 - dihedral-counts
@@ -121,7 +125,7 @@ The intrinsic edge has a positive odd length gap, so the correction is a nonnega
 
 **Lean (primary):** The transport theorem returns coordinate equality, injectivity, full interval range, edge/order correspondence and relative length identities. These identify the actual target root and both finite sums. The small-rank branch proves there are exactly two vertices and checks each indicator is zero. [DihedralIntervals:2064](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L2064), [DihedralIntervals:2145](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L2145), [DihedralIntervals:2200](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean#L2200).
 
-**Role in the proof:** The numerical calculation, actual angular-root comparison and full-interval transport are distinct inputs to the final identity. The Blueprint states the interval and coset bounds and separates finite root residues from the constrained raw signed comparisons.
+**Role in the proof:** The full-interval construction, actual root and indicator identities, finite bijection, native angular count and relative length substitution are developed in linked proofs. The final formula treats the two-vertex case by checking every summand.
 <!-- source-comparison:end -->
 
 *Proof.*
@@ -144,11 +148,25 @@ The coordinate identity identifies the current target root with the intrinsic ro
 \]
 The same identity identifies every root used in the two after-indicators.
 
-### Step 2. Reindex the two sums and enlarge to a lower ideal
+### Step 2. Identify every indicator and reindex the sums
 
-The full range and injectivity of \(F\) give a bijection of the finite interval index sets. Thus \(h_x,h_y\) become the actual target dihedral later counts based at \(F(x),F(y)\), over \([F(x),F(c)]_{D'}\).
+For each \(p,z\in[x,c]_D\), the target coordinate identity gives
+\[
+\varphi(pa_0)=F(p)a'_0,\qquad \varphi(za_0)=F(z)a'_0.
+\]
+The [[node:kl.dihedral.indicator_transport|coset-count transport theorem]] therefore identifies the ambient summand with the intrinsic one:
+\[
+\varepsilon(\varphi(pa_0),\alpha',\varphi(za_0))
+=\varepsilon_{D'}(F(p),\alpha',F(z)).
+\]
+The root identification in Step 1 makes \(\alpha'\) the actual current edge root for this intrinsic count.
 
-They can also be summed over the full lower ideal \([1,F(c)]_{D'}\). A vertex outside the relative interval is not above \(F(x)\). An outgoing edge from either \(F(x)\) or \(F(y)\) would put its target above \(F(x)\), since \(F(x)\le F(y)\). Therefore every added term is zero. This is the relative-interval assertion of the [[node:kl.dihedral.native_count_difference|native count-difference theorem]].
+The full range and injectivity of \(F\) are exactly the finite-reindexing hypotheses of the same theorem. For \(p=x\) and \(p=y\), respectively, it gives
+\[
+h_x=h_{D'}(F(x),\alpha';F(c)),\qquad
+h_y=h_{D'}(F(y),\alpha';F(c)).
+\]
+The theorem explicitly builds the bijection onto \([F(x),F(c)]_{D'}\). It then adds only zero terms to sum over the full lower ideal of \(F(c)\): a removed vertex is not above \(F(x)\), while an edge from either \(F(x)\) or \(F(y)\) would put it above \(F(x)\).
 
 ### Step 3. Apply the native dihedral count
 

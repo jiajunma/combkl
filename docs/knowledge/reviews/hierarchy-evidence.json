@@ -276,11 +276,16 @@
       "kl.detail.plane_basis",
       "kl.detail.transfer_properties",
       "kl.detail.transported_schedule",
+      "kl.dihedral.affine_rank_preservation",
       "kl.dihedral.angular_extremes_simple",
       "kl.dihedral.angular_indicator_tables",
       "kl.dihedral.angular_order",
+      "kl.dihedral.coset_interval_embedding",
       "kl.dihedral.finite_common_upper",
+      "kl.dihedral.full_interval_range",
       "kl.dihedral.good_indices",
+      "kl.dihedral.image_plane_coset",
+      "kl.dihedral.indicator_transport",
       "kl.dihedral.induced_inversions",
       "kl.dihedral.induced_reflections_length",
       "kl.dihedral.induced_signed",
@@ -305,6 +310,7 @@
       "kl.dihedral.positive_negative_order",
       "kl.dihedral.prefix_order",
       "kl.dihedral.prefix_roots",
+      "kl.dihedral.relative_rank_fibers",
       "kl.dihedral.signed_comparison_tables",
       "kl.dihedral.signed_count_difference",
       "kl.dihedral.signed_counts",
@@ -314,6 +320,8 @@
       "kl.dihedral.signed_residue_comparison",
       "kl.dihedral.signed_words",
       "kl.dihedral.two_involutions",
+      "kl.dihedral.two_step_planes",
+      "kl.dihedral.two_step_transport",
       "kl.geometry.plane_inversion_change",
       "kl.geometry.plane_weight_sum",
       "kl.geometry.plane_weights",
@@ -323,6 +331,7 @@
       "kl.notes.relative_dihedral_transport",
       "kl.order.root_slopes",
       "kl.order.slope_cone",
+      "kl.paths.ambient_after_indicator",
       "kl.paths.dyer_paths",
       "kl.paths.graph_invariance",
       "kl.paths.later_count"
@@ -2539,6 +2548,15 @@
       "paper_locations": []
     },
     {
+      "id": "kl.dihedral.affine_rank_preservation",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.map_cover_length",
+        "OAI.KLInvariance.Dihedral.map_length_affine"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.dihedral.angular_extremes_simple",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
@@ -2570,6 +2588,14 @@
       "paper_locations": []
     },
     {
+      "id": "kl.dihedral.coset_interval_embedding",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetIntervalMap"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.dihedral.finite_common_upper",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
@@ -2579,10 +2605,36 @@
       "paper_locations": []
     },
     {
+      "id": "kl.dihedral.full_interval_range",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.range_eq_interval_of_rank_two"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.dihedral.good_indices",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
         "OAI.KLInvariance.Dihedral.GoodIndex"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.image_plane_coset",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.dihedral_image_in_plane"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.indicator_transport",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_coset",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.ambientAfterIndicator_coset",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.interval_map_count"
       ],
       "paper_locations": []
     },
@@ -2842,6 +2894,17 @@
       "paper_locations": []
     },
     {
+      "id": "kl.dihedral.relative_rank_fibers",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.two_interval_elements_length",
+        "OAI.KLInvariance.Dihedral.exists_interval_length",
+        "OAI.KLInvariance.Dihedral.two_step_rank_two",
+        "OAI.KLInvariance.Dihedral.rank_two_of_two_step_bound"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.dihedral.signed_comparison_tables",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
@@ -2963,6 +3026,31 @@
         "OAI.KLInvariance.Dihedral.pairLift_range",
         "OAI.KLInvariance.Dihedral.pairSystem",
         "OAI.KLInvariance.Dihedral.pairSystem_simple"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.two_step_planes",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.graphRoot_ne_of_same_source",
+        "OAI.KLInvariance.TitsSpace.graphRoot_ne_of_path",
+        "OAI.KLInvariance.TitsSpace.graphRoot_square_plane",
+        "OAI.KLInvariance.TitsSpace.graphRoot_mem_of_coset",
+        "OAI.KLInvariance.TitsSpace.mem_coset_of_graphRoot",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.graphRoot_mem",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.graphRoot_path_plane",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.twoStep_mem_coset"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.two_step_transport",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.ambient_two_step_rank_two",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.twoStep_interval_iff",
+        "OAI.KLInvariance.intervalIso_twoStep_iff"
       ],
       "paper_locations": []
     },
@@ -3659,8 +3747,6 @@
       "id": "kl.local.coset_later_selections",
       "chapter": "kl.localization",
       "lean_declarations": [
-        "OAI.KLInvariance.TitsSpace.ambientAfterIndicator",
-        "OAI.KLInvariance.TitsSpace.ambientAfterIndicator_edge_self",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.cosetUpperVertex",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.outgoing_upper",
         "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledOutgoing",
@@ -4529,6 +4615,16 @@
         "OAI.KLInvariance.TitsSpace.positive_combination_of_slope_between",
         "OAI.KLInvariance.TitsSpace.noninverted_of_positive_combination",
         "OAI.KLInvariance.TitsSpace.inverted_of_positive_combination"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.paths.ambient_after_indicator",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.ambientAfterIndicator",
+        "OAI.KLInvariance.TitsSpace.ambientAfterIndicator_of_le",
+        "OAI.KLInvariance.TitsSpace.ambientAfterIndicator_edge_self"
       ],
       "paper_locations": []
     },

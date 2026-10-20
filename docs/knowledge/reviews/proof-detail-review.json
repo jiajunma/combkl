@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 96001,
-  "theorem_walkthroughs": 327,
+  "revised_proof_words": 98345,
+  "theorem_walkthroughs": 334,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -1310,6 +1310,18 @@
       "review": "Replaced the combined outline with the complete simultaneous-induction assembly, explicit empty-word support, root-sign case, two old hypotheses at each new step, finite generation, both edge-kernel inclusions and the free-kernel isomorphism."
     },
     {
+      "node": "kl.dihedral.affine_rank_preservation",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.map_cover_length",
+        "OAI.KLInvariance.Dihedral.map_length_affine"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 253,
+      "proof_sha256": "59f3c08a7f0ada568d7bec1003d2abdc588844d2552a27da67d65acfc8ec61b4",
+      "review": "Read the exact two hypotheses without assuming injectivity, expanded the extension-above and top-boundary extension-below cases, and checked the strong-induction predecessor and affine identity."
+    },
+    {
       "node": "kl.dihedral.angular_extremes_simple",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -1360,6 +1372,41 @@
       "revised_proof_words": 237,
       "proof_sha256": "e20bad3f048ac42dc3ae541aef7168a7a8bc632289e688e46adb2f1d5c1cde73",
       "review": "Read bruhat_top_of_all_descents and both branches of exists_common_upper. Expanded the word induction with the exact upper-envelope inequality, the bounded natural-length maximum, the unbounded finite-set length bound, and the empty-set case."
+    },
+    {
+      "node": "kl.dihedral.full_interval_range",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.range_eq_interval_of_rank_two"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 270,
+      "proof_sha256": "a0523192fbfb3491932ae693cbb6d5de31b9c9e54fdc0907e05aa9eeddeeb0a9",
+      "review": "Verified order reflection via affine ranks and injectivity, both endpoint cases, the natural source-rank construction, exact strict bounds and exhaustion of the two-element target rank."
+    },
+    {
+      "node": "kl.dihedral.image_plane_coset",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.dihedral_image_in_plane"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 358,
+      "proof_sha256": "e2ea14952d41e9b5311899ec462d6b655c9cd7b0cad7f42c342c40a90af02c2f",
+      "review": "Expanded the graph-image construction with its general source/finite-generator target hypotheses, injectivity, initial roots, complete strong induction, n-2 boundary case, exact two-vertex rank and plane/coset propagation."
+    },
+    {
+      "node": "kl.dihedral.indicator_transport",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_coset",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.ambientAfterIndicator_coset",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.interval_map_count"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 344,
+      "proof_sha256": "1ad77a2925c2d5fd1b1c6e27adc8e665d9c56c9e3f0d72528020b63c22a26ecd",
+      "review": "Checked exact left-label cancellation and both indicator branches. For reindexing, retained only injectivity and full interval range as hypotheses, constructed the actual finite bijection and derived the lower-bound comparison from range membership."
     },
     {
       "node": "kl.dihedral.induced_inversions",
@@ -1437,7 +1484,7 @@
       "proof_steps": 3,
       "revised_proof_words": 222,
       "proof_sha256": "dc06207c229474777e7f73c51bb769cc06156a91ce3b9d9950f52d4a6afed743",
-      "review": "Verified the least ambient-length hypothesis, inverse-action direction, false/true generator roots, and the reflection hypothesis in the edge bridge; kept intrinsic length distinct from ambient length."
+      "review": "Retained the previously reviewed ambient-sign/intrinsic-descent proof and made the coset in the standalone least-length hypothesis explicit as D a0."
     },
     {
       "node": "kl.dihedral.lower_signed_sums",
@@ -1614,6 +1661,20 @@
       "review": "Checked the adjacent comparisons, strict n+1<N bound for uniqueness of the negative-path descent, strictness from distinct path labels, transitive extension and both odd reflection labels."
     },
     {
+      "node": "kl.dihedral.relative_rank_fibers",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.two_interval_elements_length",
+        "OAI.KLInvariance.Dihedral.exists_interval_length",
+        "OAI.KLInvariance.Dihedral.two_step_rank_two",
+        "OAI.KLInvariance.Dihedral.rank_two_of_two_step_bound"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 388,
+      "proof_sha256": "7127f37b5b905eaf7e9090a16c136e2e7aa062174aecb4d4c5ed70361ca64bdf",
+      "review": "Expanded exact relative rank fibers and existence, the gap-two intermediate equivalence, and Lean’s three-intermediate contradiction for the converse, including parity and strict internal-rank bounds."
+    },
+    {
       "node": "kl.dihedral.signed_comparison_tables",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -1733,6 +1794,37 @@
       "revised_proof_words": 327,
       "proof_sha256": "f850017655f723c42d6e6d20e0b33984cce8cfc59b24b48bab810513b1b3d107",
       "review": "Read pairMatrix, pairLift, injective_of_simple_order, pairLift_range and pairSystem. Alternating even and odd reduced words prove injectivity in finite and infinite product-order cases."
+    },
+    {
+      "node": "kl.dihedral.two_step_planes",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.graphRoot_ne_of_same_source",
+        "OAI.KLInvariance.TitsSpace.graphRoot_ne_of_path",
+        "OAI.KLInvariance.TitsSpace.graphRoot_square_plane",
+        "OAI.KLInvariance.TitsSpace.graphRoot_mem_of_coset",
+        "OAI.KLInvariance.TitsSpace.mem_coset_of_graphRoot",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.graphRoot_mem",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.graphRoot_path_plane",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.twoStep_mem_coset"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 382,
+      "proof_sha256": "5c55e56b95504d09dc764b15cc472fdeba50c6d93be0b6bea0d7faf95587f736",
+      "review": "Checked square-plane equality through the nondegenerate extension and projection, both root-distinctness arguments, membership propagation and coset confinement without imposing a minimal-representative hypothesis."
+    },
+    {
+      "node": "kl.dihedral.two_step_transport",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.ambient_two_step_rank_two",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.twoStep_interval_iff",
+        "OAI.KLInvariance.intervalIso_twoStep_iff"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 257,
+      "proof_sha256": "8ebe8c0d31e211a8eae95137745b591456ccbfd606b3217e859b56132a52dd7b",
+      "review": "Checked all ambient intermediates, coset confinement, the least-representative graph equivalence, relative-interval membership, and the general arbitrary-generator interval-isomorphism transport by inverse images."
     },
     {
       "node": "kl.duality.actual_character_reciprocity",
@@ -2997,11 +3089,11 @@
       "source_declarations": [
         "OAI.KLInvariance.TitsSpace.PlaneBasis.transport_interval"
       ],
-      "proof_steps": 5,
+      "proof_steps": 7,
       "previous_proof_words": 137,
-      "revised_proof_words": 485,
-      "proof_sha256": "a20d2fa42cc6b5bc9e5aa0d770a59a05b679378830b578fac359a234175554e1",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 548,
+      "proof_sha256": "cd165437b0d3d950d0e06b73a9ca61a1aaa1cba720b405a8de7e223fe1cdd1fb",
+      "review": "Replaced the compressed transport explanation with the exact source hypotheses and all returned data: plane/basis, least target representative, injection, coordinate identity, order/edge equivalences, affine ranks and full range. Checked every application through explicit intermediate-set transport and rank-two detection."
     },
     {
       "node": "kl.notes.sheaf_localization",
@@ -3091,9 +3183,9 @@
       ],
       "proof_steps": 5,
       "previous_proof_words": 165,
-      "revised_proof_words": 459,
-      "proof_sha256": "6e40ccb326b29028083955114ce11ccc47229bd59b1159a5b51d44cbc20694bb",
-      "review": "The exact transported setup and two rank cases are explicit. The actual angular comparison and native count now have complete linked proofs; the full relative-interval transport construction remains the outstanding expository prerequisite."
+      "revised_proof_words": 488,
+      "proof_sha256": "961375d8e6f73cf6f6c898e3656dfee673609cfa2685c9d97e23a3bcb397edec",
+      "review": "Reviewed the full transported count after expansion of the exact interval transport and indicator bijection. The argument checks source/target coordinates, all edge-root identities, both finite sums, target native count, relative length substitution and every rank-one zero term."
     },
     {
       "node": "kl.paths.plane_degree",

@@ -1391,7 +1391,6 @@ concepts:
   - kl.localization
 - node: kl.local.coset_later_selections
   terms:
-  - target after-indicator
   - coset later-edge selection
   - coset later-edge selections
   topics:
@@ -1399,7 +1398,6 @@ concepts:
   - kl.reflection_combinatorics
 - node: kl.local.coset_later_selections
   terms:
-  - after-indicator
   - later-edge selection
   - later-edge selections
   - scheduled lower selection
@@ -1460,4 +1458,22 @@ concepts:
   - native dihedral later counts
   topics:
   - kl.reflection_combinatorics
+  - kl.localization
+- node: kl.dihedral.coset_interval_embedding
+  terms:
+  - coset interval embedding
+  - coset interval embeddings
+  topics:
+  - kl.reflection_combinatorics
+  - kl.localization
+- node: kl.paths.ambient_after_indicator
+  terms:
+  - ambient after-indicator
+  - ambient after-indicators
+  - target after-indicator
+  - target after-indicators
+- node: kl.paths.ambient_after_indicator
+  terms:
+  - after-indicator
+  topics:
   - kl.localization

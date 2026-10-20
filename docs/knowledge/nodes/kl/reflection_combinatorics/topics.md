@@ -203,13 +203,57 @@ h_D(x,\alpha_{x\to y};c)
 \qquad x\to_Dy\le_Dc.
 \]
 
-## Transported root counts
+## The full relative interval in the target
 
-For a transported interval, a full relative-interval bijection identifies both indicator sums with actual counts in a target dihedral subgroup. Its coordinate identity identifies every target reflection root, and its relative length identity identifies the correction. The [[node:kl.paths.later_count|transported-count theorem]] states this setup and treats the two-vertex relative interval separately.
+Start with a relative interval \(J=[g,k]_D\) in a plane subgroup and a least coset representative \(a_0\). Ambient endpoint bounds make the coset interval embedding
+\[
+z\longmapsto za_0\in[u,b]_W
+\]
+well-defined. Composing it with an ambient interval order isomorphism gives \(f(z)=\varphi(za_0)\). Reflection-graph invariance makes this an injective map preserving the directed reflection edges.
 
-The sum may be enlarged from \([a,c]_D\) to the full lower ideal of \(c\) whenever its source is above \(a\). Every added vertex is outside the upward range of the source, so its indicator is zero. Thus the native count theorem applies directly after transport.
+For relative rank at least two, the first internal rank has exactly two vertices. Their image edges from the bottom give two independent root directions and hence a plane \(P'\). The [[node:kl.dihedral.two_step_planes|two-edge plane theorem]] explains how this plane propagates. In a diamond \(p\to q,s\to z\), the two reflection products are equal because both paths have the same endpoints. The product determines the common root plane. Once \(f(p),f(q),f(s)\) lie in the plane coset, the last edge puts \(f(z)\) there too. The [[node:kl.dihedral.image_plane_coset|image-plane theorem]] carries this out by induction, with all vertex choices inside \(J\).
 
-The proof combines the integer count, actual angular order, and full relative-interval transport. Their resulting count difference is the exponent needed by the local model comparison.
+Choose a least representative \(a'_0\) of that target coset. The intrinsic coordinate of each image is
+\[
+F(z)=f(z)(a'_0)^{-1}\in D',\qquad F(z)a'_0=f(z).
+\]
+This equality is later used to identify actual reflection labels and root thresholds.
+
+The next step determines relative ranks. A source pair two ranks apart has exactly two intermediate vertices for two-edge paths, including ambient paths. Coset confinement proves this ambient assertion. Any target intermediate lies between the image endpoints in the full ambient interval, so the interval isomorphism pulls it back. The exact two-element set is therefore preserved.
+
+In a dihedral group, a two-edge path has a positive even total length gap. If that gap were at least four, two vertices one rank above the bottom and a third three ranks above it would all be intermediates. Their distinctness contradicts the two-element bound. This is the [[node:kl.dihedral.relative_rank_fibers|rank-two detection theorem]] used by Lean.
+
+Now place a consecutive source pair in a path of total gap two. If its upper vertex is below the interval top, extend above; at the top, extend below. The two positive target gaps sum to two, so each is one. The [[node:kl.dihedral.affine_rank_preservation|affine-rank theorem]] then inducts upward to obtain
+\[
+\ell_{D'}(F(z))+\ell_D(g)
+=\ell_{D'}(F(g))+\ell_D(z).
+\]
+
+For example, source lengths \(2,3,4,5\) and target bottom length \(4\) force target lengths \(4,5,6,7\). The relative rank fibers have sizes \(1,2,2,1\) on both sides. This illustrates the constant shift in absolute intrinsic lengths.
+
+To prove the full range, take an interior target vertex of length \(n'\). The affine formula determines a strict internal source rank. Its two vertices have distinct images of length \(n'\). The target dihedral group has exactly two elements of that length below the image top, so the chosen target vertex is already one of these images. Endpoints are images by construction. The [[node:kl.dihedral.full_interval_range|full-range theorem]] thus gives
+\[
+\operatorname{range}(F)=[F(g),F(k)]_{D'}.
+\]
+The same rank identity and injectivity preserve and reflect order; the positive odd-gap criterion preserves and reflects reflection edges. The [[node:kl.notes.relative_dihedral_transport|full relative-interval transport theorem]] assembles these facts with the exact coordinate equation.
+
+## Reindexing the transported root counts
+
+For the current edge \(x\to_Dy\), let \(\alpha'\) be the positive root of its ambient target image. The ambient after-indicator counts an edge when its target root slope is strictly greater than this threshold.
+
+Multiplication by the target representative preserves the left reflection:
+\[
+(F(z)a'_0)(F(p)a'_0)^{-1}=F(z)F(p)^{-1}.
+\]
+Thus the actual root is unchanged. The [[node:kl.dihedral.indicator_transport|coset-count transport theorem]] identifies each ambient after-indicator with its intrinsic counterpart, checking both the edge and nonedge cases.
+
+Injectivity and full range give a bijection between the source relative interval and the target relative interval. Reindexing either endpoint count by this bijection is therefore exact. The sum may then be enlarged to the full lower ideal of the target top: a removed vertex is not above the interval bottom, so it cannot be the target of an outgoing edge from either current source.
+
+The [[node:kl.dihedral.native_count_difference|native count-difference theorem]] now applies in the target dihedral group. The affine rank identity converts its correction back to
+\[
+\frac{\ell_D(y)-\ell_D(x)-1}{2}.
+\]
+For a relative interval of rank one, there are only the current endpoints. The two zero properties of the ambient after-indicator show that every term vanishes, and the correction is also zero. This completes the [[node:kl.paths.later_count|transported-count theorem]] in every rank.
 
 ## Edge-transfer matrices and path composition
 
@@ -349,7 +393,16 @@ The topic supplies the connections used later: order data can transport the edge
 - [[node:kl.dihedral.native_later_counts]]
 - [[node:kl.dihedral.angular_indicator_tables]]
 - [[node:kl.dihedral.native_count_difference]]
+- [[node:kl.dihedral.two_step_planes]]
+- [[node:kl.dihedral.relative_rank_fibers]]
+- [[node:kl.dihedral.coset_interval_embedding]]
+- [[node:kl.dihedral.two_step_transport]]
+- [[node:kl.dihedral.image_plane_coset]]
+- [[node:kl.dihedral.affine_rank_preservation]]
+- [[node:kl.dihedral.full_interval_range]]
 - [[node:kl.notes.relative_dihedral_transport]]
+- [[node:kl.paths.ambient_after_indicator]]
+- [[node:kl.dihedral.indicator_transport]]
 - [[node:kl.paths.later_count]]
 
 ### Reconstruction of reflection edges

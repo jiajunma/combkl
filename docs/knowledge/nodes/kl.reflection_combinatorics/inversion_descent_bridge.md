@@ -49,7 +49,7 @@ tags:
 
 Let \(B=(a_L,a_R)\) be a plane basis in a finite-generator real Coxeter system \(W\). Let \(D\) be its induced dihedral group, with generators \(s,t\), intrinsic length \(\ell_D\), and ambient length denoted by \(\ell_W\). Put \(a_s=a_L\) and \(a_t=a_R\). Write \(\operatorname{Inv}_W(g,a)\) when the inverse ambient action \(g^{-1}a\) is a negative root.
 
-Suppose \(a_0\in W\) is least in its left coset:
+Suppose \(a_0\in W\) is least in the coset \(Da_0\):
 \[
 \ell_W(a_0)\le\ell_W(za_0)\qquad(z\in D).
 \]
