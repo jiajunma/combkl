@@ -2665,16 +2665,6 @@
       "pending": []
     },
     {
-      "node": "kl.algebra.scalar_quotient",
-      "file": "docs/knowledge/nodes/kl.graded_algebra/scalar_quotient.md",
-      "source_declarations": [
-        "OAI.KLInvariance.Graded.ModuleData.scalarQuotient",
-        "OAI.KLInvariance.EdgeImage.reducedInclusion"
-      ],
-      "review": "Rechecked scalar quotient and reduced inclusion definitions. Added module-specific regularity and retained the saturation criterion and quotient-ring action.",
-      "pending": []
-    },
-    {
       "node": "kl.detail.coefficient_change",
       "file": "docs/knowledge/nodes/kl.graded_algebra/coefficient_change.md",
       "source_declarations": [
@@ -5771,6 +5761,180 @@
       ],
       "review": "Expanded both actual ambient comparison theorems: finite basis/system hypotheses, arbitrary beta distinct from current root, existence of coset edge, source-bound transfer, exact source/mapped roots and fixed scalar, both selected-kernel identities and the two restrictions into one identical edge module.",
       "pending": []
+    },
+    {
+      "node": "kl.algebra.scalar_quotient",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/scalar_quotient.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Graded.ModuleData.scalarQuotient",
+        "OAI.KLInvariance.EdgeImage.reducedInclusion",
+        "OAI.KLInvariance.ScalarQuotient.submodule"
+      ],
+      "review": "Added the exact same-carrier quotient-ring submodule construction, with compatible scalar actions and quotient-surjectivity proof of scalar closure.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.scalar_image_free",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/scalar_image_free.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ScalarQuotient.scalarImage",
+        "OAI.KLInvariance.ScalarQuotient.free_scalarImage"
+      ],
+      "review": "Checked arbitrary commutative coefficients, quotient-action compatibility, same-carrier images, injectivity on the ambient module and basis transfer without a finiteness hypothesis.",
+      "pending": []
+    },
+    {
+      "node": "kl.algebra.tensor_local_denominator",
+      "file": "docs/knowledge/nodes/kl.graded_algebra/tensor_local_denominator.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TensorLocalMembership.baseChange_eq_localized",
+        "OAI.KLInvariance.TensorLocalMembership.denominator"
+      ],
+      "review": "Read the equality between embedded base change and localized submodules, and the exact two-factor denominator proof; kept arbitrary modules and the second factor clearing localized equality.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.quotient_image_free",
+      "file": "docs/knowledge/nodes/kl.localization/quotient_image_free.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ScalarQuotient.saturated_image_free"
+      ],
+      "review": "Retained the explicit restricted-kernel, quotient isomorphism and reduced-basis proof; made the commutative ring and compatible quotient action explicit, and connected the source coordinate presentation.",
+      "pending": []
+    },
+    {
+      "node": "kl.notes.upper_image_free",
+      "file": "docs/knowledge/nodes/kl.localization/upper_image_free.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.edgeTorsion",
+        "OAI.KLInvariance.BruhatGraph.edgeModule",
+        "OAI.KLInvariance.BruhatGraph.edgeModule_tower",
+        "OAI.KLInvariance.BruhatGraph.edgeModule_free",
+        "OAI.KLInvariance.BruhatGraph.upperImage_free",
+        "OAI.KLInvariance.BruhatGraph.incoming_label_regular_outgoing",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.upwardSubmodule_saturated"
+      ],
+      "review": "Expanded the full finite-basis/BoundarySheaf setup, actual quotient action and free edge presentation, incoming/outgoing prime nondivisibility, coordinatewise regularity, selected-kernel saturation, Noetherian finiteness and quotient-basis transfer. Preserved arbitrary outgoing selections.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.outgoing_label_product",
+      "file": "docs/knowledge/nodes/kl.localization/outgoing_label_product.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.outgoingLabelProduct",
+        "OAI.KLInvariance.MomentGraph.Sheaf.outgoingLabelProduct_dvd"
+      ],
+      "review": "Defined the finite selected-edge product with its empty case, exact edge indexing and factor-divisibility identity; separated the definition from its sheaf-image consequence.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.outgoing_product_image",
+      "file": "docs/knowledge/nodes/kl.localization/outgoing_product_image.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.outgoingLabelProduct_smul_mem",
+        "OAI.KLInvariance.MomentGraph.Sheaf.outgoingLabelProduct_smul_upperImage"
+      ],
+      "review": "Verified the generic commutative-ring, finite-edge, label-annihilation and upper-surjectivity hypotheses, with the explicit factor and lift witnesses and the empty-selection case.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.root_factor_divisibility",
+      "file": "docs/knowledge/nodes/kl.localization/root_factor_divisibility.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.planePrime_span",
+        "OAI.KLInvariance.BruhatGraph.reducedRoot_dvd_iff_mem_plane",
+        "OAI.KLInvariance.BruhatGraph.reducedFactor_ne_zero",
+        "OAI.KLInvariance.BruhatGraph.prime_dvd_reducedFactor",
+        "OAI.KLInvariance.BruhatGraph.incoming_root_ne_outgoing",
+        "OAI.KLInvariance.BruhatGraph.reducedKernelProduct_ne_zero",
+        "OAI.KLInvariance.BruhatGraph.prime_dvd_reducedKernelProduct"
+      ],
+      "review": "Checked the generic quotient-divisibility/plane-ideal equivalence, including equal roots, and the actual edge-product hypotheses for nonzero factors and prime-divisor classification in the quotient domain.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.scaled_image_denominator",
+      "file": "docs/knowledge/nodes/kl.localization/scaled_image_denominator.md",
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.scaledImages_denominator"
+      ],
+      "review": "Verified arbitrary coefficient localization, finite-edge flat kernel/image identities, the actual upper witness, equality of base-changed scalar multiplication on pure tensors and the two-factor denominator lemma.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.plane_denominator_membership",
+      "file": "docs/knowledge/nodes/kl.localization/plane_denominator_membership.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.mem_of_plane_denominators"
+      ],
+      "review": "Checked the two compatible actions, C-torsion-free ambient module and C-free target, the three quantified multiplier assumptions, both prime cases, and the exact specialization of the reviewed prime-removal theorem.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.boundary_edge_inclusion",
+      "file": "docs/knowledge/nodes/kl.localization/boundary_edge_inclusion.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.boundary_edge_image_le"
+      ],
+      "review": "Verified the exact [1,b] boundary sheaf, source-above-u condition and common target threshold; checked C-actions and target freeness, explicit multiplier f times the outgoing product, root classification and all plane-denominator hypotheses before the final inclusion.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.transported_schedule",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/transported_schedule.md",
+      "source_declarations": [
+        "OAI.KLInvariance.SchedulePaths.sortedSchedule",
+        "OAI.KLInvariance.SchedulePaths.mem_sortedSchedule",
+        "OAI.KLInvariance.SchedulePaths.sortedSchedule_nodup",
+        "OAI.KLInvariance.SchedulePaths.sortedSchedule_pairwise",
+        "OAI.KLInvariance.BruhatGraph.transportedEdge",
+        "OAI.KLInvariance.BruhatGraph.transportedEdge_injective",
+        "OAI.KLInvariance.BruhatGraph.transportedEdge_lift",
+        "OAI.KLInvariance.BruhatGraph.transportedScore",
+        "OAI.KLInvariance.BruhatGraph.transportedSlope",
+        "OAI.KLInvariance.BruhatGraph.transportedScore_eq",
+        "OAI.KLInvariance.BruhatGraph.transportedSchedule",
+        "OAI.KLInvariance.BruhatGraph.transportedSchedule_nodup",
+        "OAI.KLInvariance.BruhatGraph.transportedSchedule_full",
+        "OAI.KLInvariance.BruhatGraph.transportedSchedule_pairwise",
+        "OAI.KLInvariance.BruhatGraph.chronologicalSchedule",
+        "OAI.KLInvariance.BruhatGraph.chronologicalSchedule_pairwise",
+        "OAI.KLInvariance.BruhatGraph.chronologicalSchedule_nodup",
+        "OAI.KLInvariance.BruhatGraph.chronologicalSchedule_full",
+        "OAI.KLInvariance.BruhatGraph.remainingConditions",
+        "OAI.KLInvariance.BruhatGraph.remainingConditions_nil",
+        "OAI.KLInvariance.BruhatGraph.remainingConditions_cons_source",
+        "OAI.KLInvariance.BruhatGraph.remainingConditions_cons_other"
+      ],
+      "review": "Expanded exact target-edge transport and its inverse construction, the diagonal lex score, merge-sort membership/no-duplication/order, reversal, and the basic outgoing remaining-condition definition. Kept weak sorting separate from the strict endpoint suffix theorem. The remaining-condition recursion is the exact insert identity for arbitrary lists; deletion of one condition is asserted only for a duplicate-free list.",
+      "pending": []
+    },
+    {
+      "node": "kl.paths.schedule_suffixes",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/schedule_suffixes.md",
+      "source_declarations": [
+        "OAI.KLInvariance.SchedulePaths.mem_suffix_iff_score_lt",
+        "OAI.KLInvariance.SchedulePaths.mem_suffix_iff_score_lt_injective",
+        "OAI.KLInvariance.BruhatGraph.transportedSlope_source_unique",
+        "OAI.KLInvariance.BruhatGraph.transportedSlope_path_ne",
+        "OAI.KLInvariance.BruhatGraph.suffix_source_iff",
+        "OAI.KLInvariance.BruhatGraph.suffix_target_iff",
+        "OAI.KLInvariance.BruhatGraph.ambientLater_upperInclusion",
+        "OAI.KLInvariance.BruhatGraph.remainingConditions_source_ambient",
+        "OAI.KLInvariance.BruhatGraph.remainingConditions_target_ambient"
+      ],
+      "review": "Checked both generic sorted-list cases, no-duplicate use for a current-source tie, target-root injectivity and consecutive-edge inequality, full-schedule membership and the exact ambient set/source-bound identification.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.edge_inclusion",
+      "file": "docs/knowledge/nodes/kl.localization/edge_inclusion.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.intervalBoundary",
+        "OAI.KLInvariance.BruhatGraph.schedule_edge_image_le"
+      ],
+      "review": "Replaced the broad parent outline with the exact restricted canonical boundary sheaf, suffix and upper-kernel freeness hypotheses; checked both condition-set equalities, literal kernel transfer, ambient inclusion and unchanged root/scalar/restriction maps.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -6124,7 +6288,9 @@
         "kl.algebra.projective_range_splittings",
         "kl.algebra.two_stage_projectivity",
         "kl.algebra.flat_embedded_modules",
-        "kl.algebra.scalar_quotient_basis"
+        "kl.algebra.scalar_quotient_basis",
+        "kl.algebra.scalar_image_free",
+        "kl.algebra.tensor_local_denominator"
       ],
       "pending": [],
       "review": "Reviewed quotient and pair-projection descent, saturation and free reduced images, finite free scalar-quotient presentations, the explicit projective-kernel retraction, and free/projective target prime-denominator membership."
@@ -6563,8 +6729,15 @@
     {
       "code": "O6",
       "title": "Schedules and their transport",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.detail.transported_schedule",
+        "kl.paths.schedule_suffixes"
+      ],
+      "pending": [
+        "Expand score blocks, generic cutoffs and the remaining upper-interval schedule restriction identities used by the path and endpoint arguments."
+      ],
+      "review": "Reviewed transported edge coordinates/injectivity/inverse construction, diagonal lex score, finite sorting/no-duplication and reversal, exact remaining-condition insert identity, both incident-edge score comparisons and the strict suffix-to-ambient-selection identities. General blocks and cutoff/restriction constructions remain."
     },
     {
       "code": "O7",
@@ -6686,7 +6859,9 @@
         "kl.local.localized_boundary_scaled_images",
         "kl.local.ambient_later_edges",
         "kl.local.actual_edge_coset",
-        "kl.local.ambient_plane_scaled_images"
+        "kl.local.ambient_plane_scaled_images",
+        "kl.detail.quotient_image_free",
+        "kl.notes.upper_image_free"
       ],
       "pending": [],
       "review": "Reviewed embedded lower/upper images and scaling, isomorphism and model-sum transport, structure quotient products, actual coset root/factor reductions, endpoint selections and supported counts, the exact count-to-weight identity, every coset structure-model case, actual localized-boundary equality, ambient later sets and pullback identities, actual-edge coset coordinates and the final ambient root-plane equality. Local-to-global membership and upper-freeness arguments remain separate in L7/I1."
@@ -6694,13 +6869,19 @@
     {
       "code": "L7",
       "title": "From local comparison to the global edge inclusion",
-      "status": "in_progress",
+      "status": "exposition_reviewed",
       "completion_evidence": [
-        "kl.local.free_target_localization"
+        "kl.local.free_target_localization",
+        "kl.local.outgoing_label_product",
+        "kl.local.outgoing_product_image",
+        "kl.local.root_factor_divisibility",
+        "kl.local.scaled_image_denominator",
+        "kl.local.plane_denominator_membership",
+        "kl.local.boundary_edge_inclusion",
+        "kl.local.edge_inclusion"
       ],
-      "pending": [
-        "Expand the complete assembly of local image comparisons into the global edge inclusion; the free/projective membership algebra is now explicit."
-      ]
+      "pending": [],
+      "review": "Reviewed the actual quotient-ring free target, outgoing product multiplier, nonzero reduction and root prime-factor classification, tensor/local scaled-image denominator witnesses, both prime cases and the actual global boundary-edge inclusion. The exact chronological suffix and upper-interval kernel identities transfer this inclusion to schedule_edge_image_le. The normalized Hilbert increment remains in I1."
     },
     {
       "code": "I1",
@@ -6710,7 +6891,7 @@
         "kl.comparison.normalized_kernel"
       ],
       "pending": [
-        "Complete the edge-image inequality, its freeness assumptions and normalized state transition."
+        "Expand the normalized Hilbert state transition and its equality criterion using the now-detailed actual edge-image inclusion and upper-image freeness."
       ]
     },
     {
@@ -6758,7 +6939,7 @@
     }
   ],
   "next_steps": [
-    "Complete L7: derive local denominator witnesses from the actual plane equality, assemble the irreducible-prime cases, and apply free-target membership to the global edge inclusion. Expand the upper-kernel/edge-image freeness inputs in I1 where needed.",
+    "Expand the I1 normalized Hilbert increment and equality criterion from the global edge-image inclusion; then the complete schedule comparison and reverse reconstruction of freeness. Continue O6 blocks/cutoffs and O7 path/order comparisons at their actual prerequisites.",
     "Complete the remaining Coxeter/parabolic, root-space and sheaf-operation exposition.",
     "Expand adapted orders, chamber changes, dihedral interval transport, schedules and the path-polynomial proof.",
     "Complete localization, local image comparison, edge inequalities and the simultaneous invariance induction.",
@@ -7283,7 +7464,16 @@
       "kl.local.localized_boundary_scaled_images": "L6",
       "kl.local.ambient_later_edges": "L6",
       "kl.local.actual_edge_coset": "L6",
-      "kl.local.ambient_plane_scaled_images": "L6"
+      "kl.local.ambient_plane_scaled_images": "L6",
+      "kl.algebra.scalar_image_free": "A7",
+      "kl.algebra.tensor_local_denominator": "A7",
+      "kl.local.outgoing_label_product": "L7",
+      "kl.local.outgoing_product_image": "L7",
+      "kl.local.root_factor_divisibility": "L7",
+      "kl.local.scaled_image_denominator": "L7",
+      "kl.local.plane_denominator_membership": "L7",
+      "kl.local.boundary_edge_inclusion": "L7",
+      "kl.paths.schedule_suffixes": "O6"
     },
     "moved_nodes": [
       {
@@ -8117,7 +8307,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 506
+    "current_node_count": 515
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -8154,7 +8344,8 @@
     "Expanded O3 signed-coordinate and numerical count foundations in 12 entries, including the finite representative convention and all parity induction cases. Corrected the transported-count explanation to use finite odd residues and the constrained raw comparisons, and made its interval/coset hypotheses explicit. O3 remains in progress for actual angular roots and full relative-interval transport.",
     "Expanded the actual angular and native count layer in 10 new entries: actual edge/prefix roots, inversion cuts, ambient-sign/intrinsic-descent bridge, middle-vertex criterion, prefix order, sign separation, finite/infinite order, indicators and native count. Extended sign-cone closure, connected the transported parent to the complete native theorem and expanded the topic guide. O3 retains the full-interval transport prerequisite.",
     "Completed O3 exposition with 9 new entries and expanded full-transport/transported-count proofs. The development now states exact ambient and relative domains, proves common-plane propagation and the three-intermediate rank test, derives affine ranks and full range, and reindexes actual indicators through a finite bijection. Moved the general ambient after-indicator to its own definition home; retained local coset selections at L6.",
-    "Completed L6 with six new entries: supported count equals plane weight; every actual structure model has the scaled equality; the localized boundary sheaf inherits it through one edge isomorphism; ambient later sets and mapped roots have their own definition; actual edges have least-coset coordinates; and the equality holds in the actual ambient localized edge module. Expanded the topic guide through these maps."
+    "Completed L6 with six new entries: supported count equals plane weight; every actual structure model has the scaled equality; the localized boundary sheaf inherits it through one edge isomorphism; ambient later sets and mapped roots have their own definition; actual edges have least-coset coordinates; and the equality holds in the actual ambient localized edge module. Expanded the topic guide through these maps.",
+    "Completed L7: quotient-ring free target, explicit correction/outgoing global multiplier, root-factor prime classification, tensor and scaled-image denominator witnesses, plane-denominator membership, actual ambient inclusion and exact schedule-suffix specialization. Added nine nodes, expanded five existing entries, and moved the remaining-condition term alias to the schedule definition. O6 is in progress for blocks/cutoffs beyond the endpoint suffix interface."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -8504,6 +8695,27 @@
         "kl.invariance"
       ],
       "review": "Links the full ambient edge subset with source-bound witnesses and the mapped edge root. Its coset pullback is stated and proved in the same definition entry."
+    },
+    {
+      "term": "outgoing label product",
+      "target": "kl.local.outgoing_label_product",
+      "review": "Links the finite product indexed by outgoing selected edges, including the empty product and the generic kernel/image consequences."
+    },
+    {
+      "term": "remaining conditions",
+      "target": "kl.detail.transported_schedule",
+      "review": "The term now resolves to the list-based outgoing set before its use in the Hilbert-state definition. The schedule-state node keeps its own Hilbert normalization."
+    },
+    {
+      "term": "selected kernel",
+      "target": "kl.sheaves.upward_kernel",
+      "topics": [
+        "kl.sheaves",
+        "kl.localization",
+        "kl.invariance",
+        "kl.reflection_combinatorics"
+      ],
+      "review": "Added the selected-kernel phrases used by the actual sheaf and schedule arguments, scoped to their sheaf applications."
     }
   ],
   "corrections": [
@@ -8523,21 +8735,21 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-20T05:05:45.867540+00:00",
+    "created_at": "2026-10-20T05:34:46.598244+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 506,
-    "html_pages_checked": 780,
-    "generated_definition_links_checked": 7805,
+    "node_count": 515,
+    "html_pages_checked": 789,
+    "generated_definition_links_checked": 8058,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks actual local scaled-image equalities and ambient selection transfers. Documentation checks only.",
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks quotient-ring freeness, localization multipliers, global edge-image inclusion and the exact chronological suffix interface. Documentation checks only.",
     "focused_page_review": {
-      "entries": 6,
-      "new_entries": 6,
-      "source_anchors": 12,
-      "new_definition_links": 6,
-      "scope": "Read the supported count and natural plane exponent, both model support cases, quotient/product associations, same-scalar model sum, one-edge-map isomorphism transport, ambient source bounds, exact coset coordinates and both selected-kernel identities. Checked formulas, definition destinations and source anchors. L6 is reviewed; L7 and I1 remain in progress."
+      "entries": 14,
+      "new_entries": 9,
+      "source_anchors": 62,
+      "definition_links": 47,
+      "scope": "Read all saved statements and proofs against the source: compatible actions and finiteness, incoming-label regularity, outgoing products, two-factor tensor clearing, root prime-divisor classification, both prime cases, actual ambient inclusion and literal suffix/kernel restriction identities. Checked no-duplicate versus arbitrary-list conditions separately. L7 is reviewed; O6 blocks/cutoffs and I1 Hilbert increments remain."
     }
   },
   "structure_coverage_scan": {
@@ -9144,6 +9356,38 @@
         "kl.local.ambient_plane_scaled_images"
       ],
       "review": "ambientLater includes an explicit source-above-u condition on the full graph [1,b]. Coset selections are its inverse images. The actual-edge construction verifies both coordinates and vertex bounds, after which root, mapped threshold, polynomial scalar, kernels and both restrictions are identified in the same localized edge module."
+    },
+    {
+      "entries": [
+        "kl.algebra.scalar_quotient",
+        "kl.algebra.scalar_image_free",
+        "kl.detail.quotient_image_free",
+        "kl.notes.upper_image_free"
+      ],
+      "review": "All quotient actions retain their compatibility with the original scalar action. Freeness is over A for the selected upper kernel and over C=A/(alpha) for the edge image and corrected target. Actual finiteness of the upper kernel uses the finite-variable polynomial ring and the finite upper stalk."
+    },
+    {
+      "entries": [
+        "kl.algebra.tensor_local_denominator",
+        "kl.local.scaled_image_denominator"
+      ],
+      "review": "Tensor localization clears both the representative denominator and a factor clearing equality in the localized module. The generic denominator lemma assumes no torsion-free module; the sheaf application checks finite-edge flat kernel/image transport and the base-changed scalar map."
+    },
+    {
+      "entries": [
+        "kl.local.root_factor_divisibility",
+        "kl.local.plane_denominator_membership",
+        "kl.local.boundary_edge_inclusion"
+      ],
+      "review": "The quotient divisibility/ideal statement allows any second positive root. Prime-factor classification supplies a distinct root where needed. Prime witnesses split into divisors of the fixed nonzero reduced multiplier and the other primes; the latter use the global multiplier itself."
+    },
+    {
+      "entries": [
+        "kl.detail.transported_schedule",
+        "kl.paths.schedule_suffixes",
+        "kl.local.edge_inclusion"
+      ],
+      "review": "The actual lex score is the diagonal pair of geometric slopes. Sorting is weak; strictness at the two current endpoints follows from same-source injectivity and consecutive-edge inequality. For arbitrary lists the condition recursion is an insert identity; deleting exactly one condition uses no repetitions. The final inclusion retains the actual suffix and upper-kernel freeness assumptions."
     }
   ],
   "relationship_map_revision": {

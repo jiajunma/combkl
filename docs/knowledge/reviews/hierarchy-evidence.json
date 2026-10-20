@@ -128,12 +128,14 @@
       "kl.algebra.root_label_primes",
       "kl.algebra.root_quotient_coordinates",
       "kl.algebra.scalar_free_presentation",
+      "kl.algebra.scalar_image_free",
       "kl.algebra.scalar_inverse_degree",
       "kl.algebra.scalar_quotient",
       "kl.algebra.scalar_quotient_basis",
       "kl.algebra.scalar_quotient_regular",
       "kl.algebra.scalar_twist",
       "kl.algebra.subquotient_gradings",
+      "kl.algebra.tensor_local_denominator",
       "kl.algebra.tensor_scalar_quotient",
       "kl.algebra.two_stage_projectivity",
       "kl.detail.coefficient_change",
@@ -181,6 +183,7 @@
       "kl.local.actual_edge_coset",
       "kl.local.ambient_later_edges",
       "kl.local.ambient_plane_scaled_images",
+      "kl.local.boundary_edge_inclusion",
       "kl.local.coset_edge_reduction",
       "kl.local.coset_graph",
       "kl.local.coset_kernel_products",
@@ -224,8 +227,13 @@
       "kl.local.orbit_spline_congruence",
       "kl.local.orbit_spline_factors",
       "kl.local.orbit_splines",
+      "kl.local.outgoing_label_product",
+      "kl.local.outgoing_product_image",
+      "kl.local.plane_denominator_membership",
       "kl.local.plane_prime_membership",
       "kl.local.product_image_scaling",
+      "kl.local.root_factor_divisibility",
+      "kl.local.scaled_image_denominator",
       "kl.local.selected_model_product",
       "kl.local.stalk_splitting",
       "kl.local.structure_edge_images",
@@ -340,7 +348,8 @@
       "kl.paths.ambient_after_indicator",
       "kl.paths.dyer_paths",
       "kl.paths.graph_invariance",
-      "kl.paths.later_count"
+      "kl.paths.later_count",
+      "kl.paths.schedule_suffixes"
     ],
     "kl.sheaves": [
       "kl.detail.adjoint_primitivity",
@@ -1251,6 +1260,15 @@
       "paper_locations": []
     },
     {
+      "id": "kl.algebra.scalar_image_free",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.ScalarQuotient.scalarImage",
+        "OAI.KLInvariance.ScalarQuotient.free_scalarImage"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.algebra.scalar_inverse_degree",
       "chapter": "kl.graded_algebra",
       "lean_declarations": [
@@ -1263,7 +1281,8 @@
       "chapter": "kl.graded_algebra",
       "lean_declarations": [
         "OAI.KLInvariance.Graded.ModuleData.scalarQuotient",
-        "OAI.KLInvariance.EdgeImage.reducedInclusion"
+        "OAI.KLInvariance.EdgeImage.reducedInclusion",
+        "OAI.KLInvariance.ScalarQuotient.submodule"
       ],
       "paper_locations": []
     },
@@ -1312,6 +1331,15 @@
         "OAI.KLInvariance.Graded.ModuleData.quotient",
         "OAI.KLInvariance.Graded.ModuleData.subtype",
         "OAI.KLInvariance.Graded.ModuleData.quotientMap"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.algebra.tensor_local_denominator",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.TensorLocalMembership.baseChange_eq_localized",
+        "OAI.KLInvariance.TensorLocalMembership.denominator"
       ],
       "paper_locations": []
     },
@@ -2220,7 +2248,7 @@
         "OAI.KLInvariance.ScalarQuotient.saturated_image_free"
       ],
       "paper_locations": [
-        "Related paper context; edge:lattice"
+        "5. Edge-image bound; edge:bound"
       ]
     },
     {
@@ -2435,8 +2463,28 @@
       "id": "kl.detail.transported_schedule",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
+        "OAI.KLInvariance.SchedulePaths.sortedSchedule",
+        "OAI.KLInvariance.SchedulePaths.mem_sortedSchedule",
+        "OAI.KLInvariance.SchedulePaths.sortedSchedule_nodup",
+        "OAI.KLInvariance.SchedulePaths.sortedSchedule_pairwise",
+        "OAI.KLInvariance.BruhatGraph.transportedEdge",
+        "OAI.KLInvariance.BruhatGraph.transportedEdge_injective",
+        "OAI.KLInvariance.BruhatGraph.transportedEdge_lift",
+        "OAI.KLInvariance.BruhatGraph.transportedScore",
+        "OAI.KLInvariance.BruhatGraph.transportedSlope",
+        "OAI.KLInvariance.BruhatGraph.transportedScore_eq",
         "OAI.KLInvariance.BruhatGraph.transportedSchedule",
-        "OAI.KLInvariance.BruhatGraph.chronologicalSchedule"
+        "OAI.KLInvariance.BruhatGraph.transportedSchedule_nodup",
+        "OAI.KLInvariance.BruhatGraph.transportedSchedule_full",
+        "OAI.KLInvariance.BruhatGraph.transportedSchedule_pairwise",
+        "OAI.KLInvariance.BruhatGraph.chronologicalSchedule",
+        "OAI.KLInvariance.BruhatGraph.chronologicalSchedule_pairwise",
+        "OAI.KLInvariance.BruhatGraph.chronologicalSchedule_nodup",
+        "OAI.KLInvariance.BruhatGraph.chronologicalSchedule_full",
+        "OAI.KLInvariance.BruhatGraph.remainingConditions",
+        "OAI.KLInvariance.BruhatGraph.remainingConditions_nil",
+        "OAI.KLInvariance.BruhatGraph.remainingConditions_cons_source",
+        "OAI.KLInvariance.BruhatGraph.remainingConditions_cons_other"
       ],
       "paper_locations": [
         "Related paper context; sec:dihedral"
@@ -3743,6 +3791,14 @@
       "paper_locations": []
     },
     {
+      "id": "kl.local.boundary_edge_inclusion",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.boundary_edge_image_le"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.local.coset_edge_reduction",
       "chapter": "kl.localization",
       "lean_declarations": [
@@ -3915,6 +3971,7 @@
       "id": "kl.local.edge_inclusion",
       "chapter": "kl.localization",
       "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.intervalBoundary",
         "OAI.KLInvariance.BruhatGraph.schedule_edge_image_le"
       ],
       "paper_locations": [
@@ -4217,6 +4274,32 @@
       "paper_locations": []
     },
     {
+      "id": "kl.local.outgoing_label_product",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.outgoingLabelProduct",
+        "OAI.KLInvariance.MomentGraph.Sheaf.outgoingLabelProduct_dvd"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.local.outgoing_product_image",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.outgoingLabelProduct_smul_mem",
+        "OAI.KLInvariance.MomentGraph.Sheaf.outgoingLabelProduct_smul_upperImage"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.local.plane_denominator_membership",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.mem_of_plane_denominators"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.local.plane_prime_membership",
       "chapter": "kl.localization",
       "lean_declarations": [
@@ -4240,6 +4323,28 @@
         "OAI.KLInvariance.LocalProducts.associated_prod_power",
         "OAI.KLInvariance.LocalProducts.associated_prod_scale",
         "OAI.KLInvariance.LocalProducts.product_image_scale"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.local.root_factor_divisibility",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.planePrime_span",
+        "OAI.KLInvariance.BruhatGraph.reducedRoot_dvd_iff_mem_plane",
+        "OAI.KLInvariance.BruhatGraph.reducedFactor_ne_zero",
+        "OAI.KLInvariance.BruhatGraph.prime_dvd_reducedFactor",
+        "OAI.KLInvariance.BruhatGraph.incoming_root_ne_outgoing",
+        "OAI.KLInvariance.BruhatGraph.reducedKernelProduct_ne_zero",
+        "OAI.KLInvariance.BruhatGraph.prime_dvd_reducedKernelProduct"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.local.scaled_image_denominator",
+      "chapter": "kl.localization",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.scaledImages_denominator"
       ],
       "paper_locations": []
     },
@@ -4634,7 +4739,13 @@
       "id": "kl.notes.upper_image_free",
       "chapter": "kl.localization",
       "lean_declarations": [
-        "OAI.KLInvariance.BruhatGraph.upperImage_free"
+        "OAI.KLInvariance.BruhatGraph.edgeTorsion",
+        "OAI.KLInvariance.BruhatGraph.edgeModule",
+        "OAI.KLInvariance.BruhatGraph.edgeModule_tower",
+        "OAI.KLInvariance.BruhatGraph.edgeModule_free",
+        "OAI.KLInvariance.BruhatGraph.upperImage_free",
+        "OAI.KLInvariance.BruhatGraph.incoming_label_regular_outgoing",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.upwardSubmodule_saturated"
       ],
       "paper_locations": [
         "5. Comparison of edge images; edge:bound"
@@ -4730,6 +4841,22 @@
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.edgeFactorDegree_cast",
         "OAI.KLInvariance.TitsSpace.edgeFactor_degree_formula"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.paths.schedule_suffixes",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.SchedulePaths.mem_suffix_iff_score_lt",
+        "OAI.KLInvariance.SchedulePaths.mem_suffix_iff_score_lt_injective",
+        "OAI.KLInvariance.BruhatGraph.transportedSlope_source_unique",
+        "OAI.KLInvariance.BruhatGraph.transportedSlope_path_ne",
+        "OAI.KLInvariance.BruhatGraph.suffix_source_iff",
+        "OAI.KLInvariance.BruhatGraph.suffix_target_iff",
+        "OAI.KLInvariance.BruhatGraph.ambientLater_upperInclusion",
+        "OAI.KLInvariance.BruhatGraph.remainingConditions_source_ambient",
+        "OAI.KLInvariance.BruhatGraph.remainingConditions_target_ambient"
       ],
       "paper_locations": []
     },

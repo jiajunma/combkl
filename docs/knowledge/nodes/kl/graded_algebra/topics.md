@@ -430,6 +430,15 @@ F(q)=G(q)+qH(q).
 \]
 This [[node:kl.algebra.hilbert_numerators|numerator theorem]] is the bridge from the real degreewise exact sequences of word stalks to their Hecke coefficient recursions.
 
+## Quotient scalar images and tensor denominators
+
+An \(A\)-submodule of a module already acted on by \(C=A/(a)\) is stable under \(C\): choose an \(A\)-representative of each quotient scalar and use compatibility of actions. The [[node:kl.algebra.scalar_image_free|scalar-image theorem]] identifies multiplication by \(z\in A\) with multiplication by its class in \(C\). If that action is injective, it transfers a free \(C\)-basis to the scalar image. This is the algebra used for the corrected upper edge image.
+
+For a localization \(S=P^{-1}A\), the embedded tensor extension of a submodule consists of fractions with numerators in it. If \(1\otimes x\) belongs to that image, write it as \(m/s\). Equality of fractions supplies another \(t\in P\) with \(tm=(ts)x\), so \(ts\) sends \(x\) into the original submodule. The [[node:kl.algebra.tensor_local_denominator|tensor-denominator theorem]] retains this second factor, which is needed for arbitrary modules.
+
+- [[node:kl.algebra.scalar_image_free]]
+- [[node:kl.algebra.tensor_local_denominator]]
+
 ## Definitions and proofs by construction
 
 ### The realization coefficient algebra

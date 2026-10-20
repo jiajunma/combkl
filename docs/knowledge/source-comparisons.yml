@@ -1440,3 +1440,124 @@ comparisons:
   consequence: The Blueprint defines the ambient selection before transferring the
     two endpoint kernels, and constructs the relative coordinates with both endpoint
     bounds and the exact equality of edges.
+- id: actual-quotient-image-freeness
+  kind: Compatible quotient actions and the actual free upper image
+  nodes:
+  - kl.algebra.scalar_quotient
+  - kl.algebra.scalar_image_free
+  - kl.detail.quotient_image_free
+  - kl.notes.upper_image_free
+  paper_labels:
+  - edge:bound
+  lean_declarations:
+  - OAI.KLInvariance.ScalarQuotient.submodule
+  - OAI.KLInvariance.ScalarQuotient.saturated_image_free
+  - OAI.KLInvariance.BruhatGraph.edgeModule_free
+  - OAI.KLInvariance.BruhatGraph.upperImage_free
+  - OAI.KLInvariance.ScalarQuotient.free_scalarImage
+  paper: The notes identify the upper image with the selected upper kernel modulo
+    the current root label. Saturation gives this quotient, and freeness of the upper
+    kernel gives freeness over the edge coefficient ring. Multiplication by the nonzero
+    correction then gives the free target.
+  lean: The quotient action and its scalar tower are explicit. A finite free scalar
+    presentation gives the edge-module basis. Regularity of the incoming label on
+    every outgoing edge module gives saturation; Noetherian finiteness permits the
+    finite quotient presentation. A separate same-carrier quotient-submodule construction
+    and injective scalar-image map give freeness of the corrected target.
+  consequence: The Blueprint retains the precise coefficient ring of each freeness
+    statement, all action compatibilities, the arbitrary outgoing selection and the
+    finite-basis hypothesis used for finiteness.
+- id: explicit-edge-denominator-products
+  kind: The correction and outgoing products supply one global multiplier
+  nodes:
+  - kl.local.outgoing_label_product
+  - kl.local.outgoing_product_image
+  - kl.local.root_factor_divisibility
+  paper_labels:
+  - edge:bound
+  lean_declarations:
+  - OAI.KLInvariance.MomentGraph.Sheaf.outgoingLabelProduct
+  - OAI.KLInvariance.MomentGraph.Sheaf.outgoingLabelProduct_smul_upperImage
+  - OAI.KLInvariance.BruhatGraph.reducedRoot_dvd_iff_mem_plane
+  - OAI.KLInvariance.BruhatGraph.prime_dvd_reducedFactor
+  - OAI.KLInvariance.BruhatGraph.prime_dvd_reducedKernelProduct
+  paper: The notes multiply the upper outgoing labels to obtain a nonzero reduced
+    scalar whose multiples lie in the upper image. The correction factor gives a free
+    target of full generic rank, and primes containing reduced roots are related to
+    plane primes.
+  lean: The outgoing product is defined for any finite graph and selection. Label
+    annihilation and an upper lift prove its image containment. The actual reduced
+    outgoing and correction products are nonzero, and every prime divisor of their
+    product is associated to one reduced independent root. Quotient divisibility by
+    that root is equivalent to membership in its plane ideal.
+  consequence: The Blueprint gives the explicit global multiplier and the complete
+    factor classification used by the membership theorem.
+- id: tensor-local-denominator-witness
+  kind: Two denominator factors convert localized membership into a scalar witness
+  nodes:
+  - kl.algebra.tensor_local_denominator
+  - kl.local.scaled_image_denominator
+  paper_labels:
+  - edge:bound
+  - edge:lattice
+  lean_declarations:
+  - OAI.KLInvariance.TensorLocalMembership.baseChange_eq_localized
+  - OAI.KLInvariance.TensorLocalMembership.denominator
+  - OAI.KLInvariance.MomentGraph.Sheaf.scaledImages_denominator
+  paper: The notes pass from localized image equality to local membership in the free
+    target, using flatness to commute localization with the finite kernel and image
+    constructions.
+  lean: The embedded tensor image is identified with a localized submodule. A numerator
+    denominator and a second factor clearing equality in the localized module give
+    an original-module scalar witness. The sheaf application verifies flat lower/upper
+    image identities and compatibility of the scalar map on pure tensors before applying
+    this lemma.
+  consequence: The Blueprint displays both denominator factors and explains the exact
+    transition from an equality of localized edge images to a multiplier outside the
+    plane prime.
+- id: plane-prime-global-inclusion
+  kind: Prime divisors of one multiplier organize the local-to-global step
+  nodes:
+  - kl.local.plane_denominator_membership
+  - kl.local.boundary_edge_inclusion
+  paper_labels:
+  - edge:lattice
+  - edge:bound
+  lean_declarations:
+  - OAI.KLInvariance.BruhatGraph.mem_of_plane_denominators
+  - OAI.KLInvariance.BruhatGraph.boundary_edge_image_le
+  paper: The notes use membership in a free target at height-one primes. Primes avoiding
+    all reduced root labels give the full localized edge module; root primes use the
+    dihedral local comparison.
+  lean: The proof fixes one global multiplier, the correction lift times the outgoing
+    label product. A prime dividing its reduction is associated to a reduced root
+    and receives the corresponding plane witness. A prime not dividing it uses the
+    global multiplier itself. The free-target prime-removal theorem then gives membership.
+  consequence: The Blueprint follows these two prime cases and checks quotient-ring
+    freeness, torsion-free cancellation, nonzero global multiplication and every local
+    witness before concluding the inclusion.
+- id: schedule-suffix-global-inclusion
+  kind: Exact suffix conditions specialize the ambient inclusion
+  nodes:
+  - kl.detail.transported_schedule
+  - kl.paths.schedule_suffixes
+  - kl.local.edge_inclusion
+  paper_labels:
+  - dih:count
+  - edge:bound
+  lean_declarations:
+  - OAI.KLInvariance.BruhatGraph.transportedSchedule
+  - OAI.KLInvariance.BruhatGraph.transportedScore_eq
+  - OAI.KLInvariance.BruhatGraph.chronologicalSchedule
+  - OAI.KLInvariance.BruhatGraph.remainingConditions_source_ambient
+  - OAI.KLInvariance.BruhatGraph.remainingConditions_target_ambient
+  - OAI.KLInvariance.BruhatGraph.schedule_edge_image_le
+  paper: The notes formulate the current endpoint conditions as the edges strictly
+    later than the current edge in a transported reflection order.
+  lean: The actual schedule is a complete duplicate-free sorted list with a diagonal
+    lexicographic score; its reverse is chronological. Two sorted-list lemmas, same-source
+    score injectivity and consecutive-edge score inequality identify both suffix selections
+    with the ambient later-edge set. Upper-interval restriction then transfers both
+    kernels and the upper freeness hypothesis.
+  consequence: The Blueprint states the exact suffix assumption and distinguishes
+    weak list ordering from the strict score test at the two current endpoints.

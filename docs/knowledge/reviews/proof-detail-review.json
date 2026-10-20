@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 100060,
-  "theorem_walkthroughs": 339,
+  "revised_proof_words": 102262,
+  "theorem_walkthroughs": 347,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -471,6 +471,18 @@
       "review": "Read every scalarQuotientMap/scalarKernelMap declaration and both presentation theorems. Kept the domain and nonzero-label assumptions, induced A-action on P, finite quotient basis and explicit regular-scalar kernel."
     },
     {
+      "node": "kl.algebra.scalar_image_free",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.ScalarQuotient.scalarImage",
+        "OAI.KLInvariance.ScalarQuotient.free_scalarImage"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 189,
+      "proof_sha256": "b11713fbf01cb1abc3cde59f66ffdead5be74040470e544509df6ba87bf9f222",
+      "review": "Checked arbitrary commutative coefficients, quotient-action compatibility, same-carrier images, injectivity on the ambient module and basis transfer without a finiteness hypothesis."
+    },
+    {
       "node": "kl.algebra.scalar_inverse_degree",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -526,6 +538,18 @@
       "revised_proof_words": 304,
       "proof_sha256": "77db6d4f34e8765aa8241580fa98b0ccb0b5e16033aeffa80dae0bb5b542b06d",
       "review": "Read sub_isInternal and quotient_isInternal via image_isInternal. Included well-defined quotient components, finite-sum independence, scalar compatibility and the precise finiteness assumptions."
+    },
+    {
+      "node": "kl.algebra.tensor_local_denominator",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TensorLocalMembership.baseChange_eq_localized",
+        "OAI.KLInvariance.TensorLocalMembership.denominator"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 253,
+      "proof_sha256": "77e6d5428889ad7c0f4ddf38efd6f52d9cc0f6e67861a58b0aef3e6563c5a47f",
+      "review": "Read the equality between embedded base change and localized submodules, and the exact two-factor denominator proof; kept arbitrary modules and the second factor clearing localized equality."
     },
     {
       "node": "kl.algebra.tensor_scalar_quotient",
@@ -1107,9 +1131,9 @@
       ],
       "proof_steps": 3,
       "previous_proof_words": 101,
-      "revised_proof_words": 222,
-      "proof_sha256": "907f0ffdc212f0994b556aee27cef1ad1f9bfa91a13411d20f41f56a8c662cff",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 234,
+      "proof_sha256": "b71fbfdafb25b26bb89dd75e4781ff0d4b33d26775e566df6b3a82b7430ca131",
+      "review": "Retained the explicit restricted-kernel, quotient isomorphism and reduced-basis proof; made the commutative ring and compatible quotient action explicit, and connected the source coordinate presentation."
     },
     {
       "node": "kl.detail.r_kernel",
@@ -2403,6 +2427,17 @@
       "review": "Expanded both actual ambient comparison theorems: finite basis/system hypotheses, arbitrary beta distinct from current root, existence of coset edge, source-bound transfer, exact source/mapped roots and fixed scalar, both selected-kernel identities and the two restrictions into one identical edge module."
     },
     {
+      "node": "kl.local.boundary_edge_inclusion",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.boundary_edge_image_le"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 377,
+      "proof_sha256": "c1164019abc9eb68fdc538f1ff2c2baa4d38d34874670a98a39a987af81c76ff",
+      "review": "Verified the exact [1,b] boundary sheaf, source-above-u condition and common target threshold; checked C-actions and target freeness, explicit multiplier f times the outgoing product, root classification and all plane-denominator hypotheses before the final inclusion."
+    },
+    {
       "node": "kl.local.coset_edge_reduction",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2559,13 +2594,14 @@
     {
       "node": "kl.local.edge_inclusion",
       "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.intervalBoundary",
         "OAI.KLInvariance.BruhatGraph.schedule_edge_image_le"
       ],
-      "proof_steps": 6,
+      "proof_steps": 4,
       "previous_proof_words": 228,
-      "revised_proof_words": 571,
-      "proof_sha256": "a99a02557d0cc0720abaf3bdad12c9d769260cc8096b6e0cc32d0a5f075afff1",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 335,
+      "proof_sha256": "f36bac5834797638bfb18faf3b62c049e51e7c233c5a409754345f6f394c4dbd",
+      "review": "Replaced the broad parent outline with the exact restricted canonical boundary sheaf, suffix and upper-kernel freeness hypotheses; checked both condition-set equalities, literal kernel transfer, ambient inclusion and unchanged root/scalar/restriction maps."
     },
     {
       "node": "kl.local.factor_plane_reduction",
@@ -2845,6 +2881,29 @@
       "review": "Read the single-factor vector, root-independence norm argument, extended normal-form independence, prescribed (-1,0) pair and three value calculations. Kept both representing-root hypotheses, the group product directions and x!=z."
     },
     {
+      "node": "kl.local.outgoing_product_image",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.outgoingLabelProduct_smul_mem",
+        "OAI.KLInvariance.MomentGraph.Sheaf.outgoingLabelProduct_smul_upperImage"
+      ],
+      "proof_steps": 2,
+      "revised_proof_words": 135,
+      "proof_sha256": "be86d40d5d140f8929e342e7cafb2b4daa9a386813117d014d17a1d2fd3dfa41",
+      "review": "Verified the generic commutative-ring, finite-edge, label-annihilation and upper-surjectivity hypotheses, with the explicit factor and lift witnesses and the empty-selection case."
+    },
+    {
+      "node": "kl.local.plane_denominator_membership",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.mem_of_plane_denominators"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 269,
+      "proof_sha256": "3395592da6c4e1b03bf503ad024d733190fee200f8ecd413668d5c306d526353",
+      "review": "Checked the two compatible actions, C-torsion-free ambient module and C-free target, the three quantified multiplier assumptions, both prime cases, and the exact specialization of the reviewed prime-removal theorem."
+    },
+    {
       "node": "kl.local.plane_prime_membership",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2876,6 +2935,34 @@
       "revised_proof_words": 246,
       "proof_sha256": "9113d996c55f2c90a306370f1441ee8a49821c029d507904498d98a739e49be4",
       "review": "Read all five LocalProducts lemmas with their arbitrary commutative scalar rings and compatible module actions. Expanded divisibility-to-image inclusion, both association containments, products of units, the exact cardinality/power identity and the final scalar-tower calculation. Kept the count as a hypothesis for the later dihedral application."
+    },
+    {
+      "node": "kl.local.root_factor_divisibility",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.planePrime_span",
+        "OAI.KLInvariance.BruhatGraph.reducedRoot_dvd_iff_mem_plane",
+        "OAI.KLInvariance.BruhatGraph.reducedFactor_ne_zero",
+        "OAI.KLInvariance.BruhatGraph.prime_dvd_reducedFactor",
+        "OAI.KLInvariance.BruhatGraph.incoming_root_ne_outgoing",
+        "OAI.KLInvariance.BruhatGraph.reducedKernelProduct_ne_zero",
+        "OAI.KLInvariance.BruhatGraph.prime_dvd_reducedKernelProduct"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 388,
+      "proof_sha256": "2df2342c8193cf12db43c412c7162a0cf53672d3410889078619379df5845930",
+      "review": "Checked the generic quotient-divisibility/plane-ideal equivalence, including equal roots, and the actual edge-product hypotheses for nonzero factors and prime-divisor classification in the quotient domain."
+    },
+    {
+      "node": "kl.local.scaled_image_denominator",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.Sheaf.scaledImages_denominator"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 236,
+      "proof_sha256": "9dfcf81a6628303717f1d129ea280cdbd5c37b345f973ab271fd0a0349d80306",
+      "review": "Verified arbitrary coefficient localization, finite-edge flat kernel/image identities, the actual upper witness, equality of base-changed scalar multiplication on pure tensors and the two-factor denominator lemma."
     },
     {
       "node": "kl.local.stalk_splitting",
@@ -3182,13 +3269,19 @@
     {
       "node": "kl.notes.upper_image_free",
       "source_declarations": [
-        "OAI.KLInvariance.BruhatGraph.upperImage_free"
+        "OAI.KLInvariance.BruhatGraph.edgeTorsion",
+        "OAI.KLInvariance.BruhatGraph.edgeModule",
+        "OAI.KLInvariance.BruhatGraph.edgeModule_tower",
+        "OAI.KLInvariance.BruhatGraph.edgeModule_free",
+        "OAI.KLInvariance.BruhatGraph.upperImage_free",
+        "OAI.KLInvariance.BruhatGraph.incoming_label_regular_outgoing",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.upwardSubmodule_saturated"
       ],
-      "proof_steps": 3,
+      "proof_steps": 5,
       "previous_proof_words": 140,
-      "revised_proof_words": 265,
-      "proof_sha256": "cd4f85811f6cbfffadb3a378ba2984dff0bfd16a4d674dc52783e1385a872ba6",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 447,
+      "proof_sha256": "c87cc787ec45ea672359e06ce3a55c3a01e9f0f842430a5956fef096332a3ee9",
+      "review": "Expanded the full finite-basis/BoundarySheaf setup, actual quotient action and free edge presentation, incoming/outgoing prime nondivisibility, coordinatewise regularity, selected-kernel saturation, Noetherian finiteness and quotient-basis transfer. Preserved arbitrary outgoing selections."
     },
     {
       "node": "kl.order.slope_cone",
@@ -3254,6 +3347,25 @@
       "revised_proof_words": 263,
       "proof_sha256": "6eed02bd397f2eaf9afec158d23f14c0959d6907c135e4c2d151ebb68d9e9b3c",
       "review": "Read the exact natural-to-integer conversion in edgeFactorDegree_cast and the noninversion hypothesis of edgeFactor_degree_formula. Reused the separate nonzero/homogeneity theorem and expanded the cover and A2 long-edge examples while retaining the noncanonical representative choice."
+    },
+    {
+      "node": "kl.paths.schedule_suffixes",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.SchedulePaths.mem_suffix_iff_score_lt",
+        "OAI.KLInvariance.SchedulePaths.mem_suffix_iff_score_lt_injective",
+        "OAI.KLInvariance.BruhatGraph.transportedSlope_source_unique",
+        "OAI.KLInvariance.BruhatGraph.transportedSlope_path_ne",
+        "OAI.KLInvariance.BruhatGraph.suffix_source_iff",
+        "OAI.KLInvariance.BruhatGraph.suffix_target_iff",
+        "OAI.KLInvariance.BruhatGraph.ambientLater_upperInclusion",
+        "OAI.KLInvariance.BruhatGraph.remainingConditions_source_ambient",
+        "OAI.KLInvariance.BruhatGraph.remainingConditions_target_ambient"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 397,
+      "proof_sha256": "d5c034f4c06cb3377d104ece8a8d89721a587d78d16b67659741d403d41b57d9",
+      "review": "Checked both generic sorted-list cases, no-duplicate use for a current-source tie, target-root injectivity and consecutive-edge inequality, full-schedule membership and the exact ambient set/source-bound identification."
     },
     {
       "node": "kl.realization.alternating_root_formula",

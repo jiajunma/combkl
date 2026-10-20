@@ -269,6 +269,11 @@ concepts:
   - transported schedules
   - chronological schedule
   - reflection schedule
+  - remaining conditions
+  - remaining outgoing selection
+  - remaining outgoing selections
+  - transported slope
+  - transported slopes
 - node: kl.detail.edge_images
   terms:
   - lower edge image
@@ -284,7 +289,6 @@ concepts:
   terms:
   - schedule state
   - schedule states
-  - remaining conditions
 - node: kl.detail.rtilde_family
   terms:
   - normalized R-polynomials
@@ -1489,3 +1493,28 @@ concepts:
   - kl.localization
   - kl.reflection_combinatorics
   - kl.invariance
+- node: kl.local.outgoing_label_product
+  terms:
+  - outgoing label product
+  - outgoing label products
+- node: kl.algebra.scalar_quotient
+  terms:
+  - quotient-ring submodule
+  - same-carrier quotient-ring submodule
+  - same-carrier quotient submodule
+  topics:
+  - kl.graded_algebra
+  - kl.localization
+- node: kl.sheaves.upward_kernel
+  terms:
+  - selected kernel
+  - selected kernels
+  - selected upper kernel
+  - selected upper kernels
+  - upper selected kernel
+  - upper selected kernels
+  topics:
+  - kl.sheaves
+  - kl.localization
+  - kl.invariance
+  - kl.reflection_combinatorics

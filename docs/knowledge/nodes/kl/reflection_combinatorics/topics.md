@@ -318,6 +318,16 @@ The scores come from the target realization. Relative-dihedral transport identif
 
 The local model comparison specializes the transported schedule to two outgoing selections, one at each endpoint of the current edge. Both use the target root of that edge as a common slope threshold. The coset later-edge selections entry defines these sets, and the [[node:kl.local.supported_edge_count|supported-edge counting theorem]] reindexes them by target vertices in the full relative interval. This identifies the two finite indicator sums whose numerical difference is computed by the [[node:kl.paths.later_count|dihedral count theorem]].
 
+## Chronological suffixes and strict later scores
+
+For the actual transported schedule, each edge receives the target geometric slope of its image root. Lean stores the score as the lexicographic pair \((s(e),s(e))\), and merge-sorts the full finite edge set in weakly decreasing order. Reversal gives a complete duplicate-free chronological list in weakly increasing order.
+
+Consider a suffix whose first edge is \(e:x\to y\), followed by \(q\). If an outgoing edge at \(x\) has the same score as \(e\), injectivity of geometric slope gives the same target reflection. The common source then gives the same target, so it is \(e\) itself. The no-repetition property excludes it from \(q\). An outgoing edge at \(y\) cannot have that score: its target reflection would be the current reflection again, sending the path back to \(x\).
+
+For either endpoint, a remaining outgoing edge therefore occurs in \(q\) exactly when its score is strictly greater than that of \(e\). An earlier position has score at most the current one; a later position has score at least it, and the incident-root arguments make it strict. The [[node:kl.paths.schedule_suffixes|schedule-suffix theorem]] gives this proof and identifies both remaining selections with the pullback of one ambient later-edge set.
+
+This is the condition-set identity used when the global ambient image inclusion is applied to a step of the chronological schedule.
+
 ## Edge factors and their degrees
 
 Fix a source edge \(e:x\to y\) with root label \(\alpha_e\). Work in the edge coefficient ring \(A/(\alpha_e)\). Other root labels are reduced modulo \(\alpha_e\). The edge factor \(f_e\) is a product of these reduced linear factors with multiplicities determined by root-plane counts.
@@ -414,6 +424,7 @@ The topic supplies the connections used later: order data can transport the edge
 ### Schedules and their transport
 
 - [[node:kl.detail.transported_schedule]]
+- [[node:kl.paths.schedule_suffixes]]
 
 ### Paths and transfer products
 

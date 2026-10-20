@@ -10,6 +10,8 @@ uses:
 - kl.detail.upper_quotient
 - kl.sheaves.upward_kernel
 - kl.algebra.kernel_saturation
+- kl.algebra.scalar_quotient
+- kl.algebra.scalar_quotient_basis
 lean:
   repository: openai-kl
   modules:
@@ -23,27 +25,27 @@ source:
     format: lean-location
     note: OAI.KLInvariance.ScalarQuotient.saturated_image_free
   - artifact: openai-kl-paper
-    locator: Related paper context; edge:lattice
+    locator: 5. Edge-image bound; edge:bound
     format: section
-    note: Contextual correspondence, not a claim that this Lean result appears verbatim
-      in the preprint.
+    note: The saturated upper-kernel quotient argument in the edge-image proof.
 verification:
   statement: accepted
   proof: accepted
   alignment: aligned
 generality:
   reviewed: true
-  prompt: Does the entry preserve the source hypotheses, construction, and conclusion?
+  prompt: Are the scalar actions, finiteness and freeness hypotheses, original embedded
+    submodules, localization multipliers and schedule assumptions explicit?
   verdict: Read against the named Lean declarations and surrounding variable context;
     explanatory examples are distinguished from the formal statement.
 tags:
 - Kazhdan-Lusztig
-- localization
+- global-inclusion
 ---
 
 # Freeness of a saturated image over the edge quotient ring
 
-Let \(q:M\to N\) be \(R\)-linear, with \(N\) an \(R/(a)\)-module and
+Let \(R\) be a commutative ring, \(a\in R\), and \(M,N\) be \(R\)-modules. Suppose \(N\) also has a compatible \(R/(a)\)-action, so \(rv=\overline r\,v\). Let \(q:M\to N\) be \(R\)-linear, with
 \[
 \ker q=aM.
 \]
@@ -52,6 +54,18 @@ Let \(L\subseteq M\) be finite free and saturated with respect to \(a\):
 av\in L\quad\Longrightarrow\quad v\in L.
 \]
 Then \(q(L)\), regarded as a module over \(R/(a)\), is free.
+
+<!-- source-comparison:start -->
+## Relation to the OpenAI notes
+
+**Compatible quotient actions and the actual free upper image.**
+
+**OpenAI notes:** The notes identify the upper image with the selected upper kernel modulo the current root label. Saturation gives this quotient, and freeness of the upper kernel gives freeness over the edge coefficient ring. Multiplication by the nonzero correction then gives the free target. [edge:bound](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/05-comparison.tex#L47).
+
+**Lean (primary):** The quotient action and its scalar tower are explicit. A finite free scalar presentation gives the edge-module basis. Regularity of the incoming label on every outgoing edge module gives saturation; Noetherian finiteness permits the finite quotient presentation. A separate same-carrier quotient-submodule construction and injective scalar-image map give freeness of the corrected target. [TerminalKernels:613](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean#L613), [TerminalKernels:624](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean#L624), [TerminalKernels:681](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean#L681), [TerminalKernels:691](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean#L691), [TerminalKernels:880](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean#L880).
+
+**Role in the proof:** The Blueprint retains the precise coefficient ring of each freeness statement, all action compatibilities, the arbitrary outgoing selection and the finite-basis hypothesis used for finiteness.
+<!-- source-comparison:end -->
 
 *Proof.*
 
@@ -77,7 +91,7 @@ Choose a finite \(R\)-basis \(e_1,\ldots,e_r\) of \(L\). Every vector in \(L/aL\
 
 If \(\sum_i\overline c_i[e_i]=0\), lift the coefficients to \(c_i\in R\). The vector \(\sum_ic_ie_i\) belongs to \(aL\), so it equals \(a\sum_id_ie_i\). Uniqueness of basis coordinates gives \(c_i=ad_i\), hence every \(\overline c_i=0\). Thus the residue classes are independent.
 
-They form a free \(R/(a)\)-basis, and the isomorphism in Step 2 transfers it to \(I\).
+They form a free \(R/(a)\)-basis, and the isomorphism in Step 2 transfers it to \(I\). This is the [[node:kl.algebra.scalar_quotient_basis|coordinate-reduction presentation theorem]] applied to the restricted map \(q_L\).
 
 ## References
 
