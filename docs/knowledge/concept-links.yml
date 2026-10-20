@@ -1477,3 +1477,15 @@ concepts:
   - after-indicator
   topics:
   - kl.localization
+- node: kl.local.ambient_later_edges
+  terms:
+  - mapped edge root
+  - mapped edge roots
+  - ambient later-edge set
+  - ambient later-edge sets
+  - ambient later-edge selection
+  - ambient later-edge selections
+  topics:
+  - kl.localization
+  - kl.reflection_combinatorics
+  - kl.invariance

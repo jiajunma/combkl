@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 98345,
-  "theorem_walkthroughs": 334,
+  "revised_proof_words": 100060,
+  "theorem_walkthroughs": 339,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -2380,6 +2380,29 @@
       "review": "Read the parallel normalized/unnormalized cyclic-action proofs. Expanded reduced-tail induction, inversion in the right action, commuting-map extensionality and the standard ascent products."
     },
     {
+      "node": "kl.local.actual_edge_coset",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.exists_coset_edge"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 199,
+      "proof_sha256": "de4f161d80eac4a9df8f8721a637f9b801469ce7496a40f2b770e465b3cf139b",
+      "review": "Checked arbitrary actual edge/root membership, least source coordinates, target=t*g, both upper bounds and identity lower bounds, intrinsic edge recovery and exact equality of endpoint-pair edges."
+    },
+    {
+      "node": "kl.local.ambient_plane_scaled_images",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.ambient_boundary_scaledImages",
+        "OAI.KLInvariance.BruhatGraph.boundary_plane_scaledImages"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 471,
+      "proof_sha256": "f6de8b22c6233ef90a81db8670bcfd917468eab4fb41ba36a6af1c571b6ad251",
+      "review": "Expanded both actual ambient comparison theorems: finite basis/system hypotheses, arbitrary beta distinct from current root, existence of coset edge, source-bound transfer, exact source/mapped roots and fixed scalar, both selected-kernel identities and the two restrictions into one identical edge module."
+    },
+    {
       "node": "kl.local.coset_edge_reduction",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -2407,6 +2430,17 @@
       "revised_proof_words": 370,
       "proof_sha256": "2c360c8bfa729a18af538c31236a367a31646d145e4cc48409edde8d9768f837",
       "review": "Read injectivity of the ambient coset-edge map, the distinct same-source label argument, coset_supported_pairwise and coset_kernel_product. Traced primality and nondivisibility before localization, verified the local product-divisibility hypotheses, and derived both edge-image formulas through the previously proved generic theorem."
+    },
+    {
+      "node": "kl.local.coset_model_scaled_images",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_structure_scaledImages"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 480,
+      "proof_sha256": "f4f236bf74ba297fdd8aab6050c89921f8df4de550e3962621dec54f51811857",
+      "review": "Verified every actual coset-model hypothesis: all centers, unsupported zero branch, finite edge selections, choice of independent reference root, both root-inequality arguments, relative primality, actual quotient associations, fixed correction scalar and supported count."
     },
     {
       "node": "kl.local.coset_outgoing_lifts",
@@ -2645,6 +2679,17 @@
       "revised_proof_words": 336,
       "proof_sha256": "51ec3f756ecd7e8910c01b7bf4f29c2250c0462c9fdfd9f67ba4052321090297",
       "review": "Read structureLocalModels field by field, the general flat local-algebra hypotheses of localModels, and modelLabel_mem_maximal/localizedModels. Explained the outgoing-below path and kept the general local-ring label condition separate from its plane-ring verification."
+    },
+    {
+      "node": "kl.local.localized_boundary_scaled_images",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localized_boundary_scaledImages"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 317,
+      "proof_sha256": "17dbce7d59ac7827f8a924d8846cc3ef82c69b26599a49d274c330f7560bfcd6",
+      "review": "Read the actual localized-boundary proof, verified finite edge instances and the exact decomposition input, then expanded the common-scalar model-sum argument and both-image transport through one injective edge component."
     },
     {
       "node": "kl.local.localized_coset_kernels",
@@ -2914,6 +2959,17 @@
       "revised_proof_words": 310,
       "proof_sha256": "189b727dfdc284ea7eceb62d071482a14e3819d5bc368cd5d7033e38a4349aeb",
       "review": "Read all basic structureSheaf property lemmas and the local minimality proof. Preserved arbitrary commutative rings for the basic properties, and the separate local-ring, maximal-ideal-label and outgoing-edge hypotheses for minimality."
+    },
+    {
+      "node": "kl.local.supported_count_weight",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.supported_count_difference"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 248,
+      "proof_sha256": "6b1bf2fca904cb662660a3bffd13b3e37d7b10732f065b00fd70c615d28289c6",
+      "review": "Checked the source lower bound, model upper bound and supported condition y<=c; applied both supported-cardinality bijections over [x,c], the all-ranks count and the exact natural plane-weight formula."
     },
     {
       "node": "kl.local.supported_edge_count",

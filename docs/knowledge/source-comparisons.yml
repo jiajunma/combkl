@@ -1370,3 +1370,73 @@ comparisons:
     native lower-ideal count.
   consequence: The Blueprint explains the actual threshold predicate, each root and
     indicator identity, and the finite reindexing map with their separate hypotheses.
+- id: actual-supported-model-equality
+  kind: The transported count in the actual model edge quotient
+  nodes:
+  - kl.local.supported_count_weight
+  - kl.local.coset_model_scaled_images
+  paper_labels:
+  - dih:count
+  - edge:bound
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.supported_count_difference
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.coset_structure_scaledImages
+  paper: In a supported model, the notes identify the two localized image ideals through
+    their valuations. The later-edge counts differ by the plane weight, which is also
+    the valuation of the correction factor.
+  lean: The exact supported selections are counted by finite target-vertex sums. The
+    all-ranks transported count and planeWeight_coset_edge identify their difference.
+    Each label and the fixed correction lift are then compared up to units in the
+    actual quotient by cosetLabel e, and structure_scaledImages_of_count gives the
+    image equality. An unsupported model has a zero edge module.
+  consequence: The Blueprint checks the selection, root-inequality, pairwise-relative-primality,
+    quotient and count hypotheses separately, then multiplies the unit associations
+    to obtain the exact embedded equality.
+- id: actual-localized-boundary-equality
+  kind: One edge component carries both images and the common scalar
+  nodes:
+  - kl.local.localized_boundary_scaled_images
+  - kl.local.ambient_plane_scaled_images
+  paper_labels:
+  - edge:bound
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.localized_boundary_scaledImages
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.ambient_boundary_scaledImages
+  - OAI.KLInvariance.BruhatGraph.boundary_plane_scaledImages
+  paper: The notes decompose the localized sheaf, compare both image ideals in every
+    supported model copy, and use the same linear edge component of the decomposition
+    to recover equality in the original localized edge module. This calculation appears
+    within the edge-image proposition, whose global conclusion assumes upper-kernel
+    freeness.
+  lean: A ModelSum argument gives the common-scalar equality in the model sum; Iso.scaledImages
+    transports it to the actual localized boundary sheaf. Selected-kernel pullback
+    then gives the ambient equality. Finally exists_coset_edge supplies coordinates
+    for any actual edge in a plane. These local equalities are proved before upper-kernel
+    freeness is used in the global inclusion.
+  consequence: The Blueprint follows the identical stalk and edge modules through
+    each map, verifies the exact selections and root/factor identities, and states
+    the local equality with its own hypotheses.
+- id: ambient-scheduled-selection-coordinates
+  kind: The full ambient edge set and its relative-coset restriction
+  nodes:
+  - kl.local.ambient_later_edges
+  - kl.local.actual_edge_coset
+  paper_labels:
+  - dih:plane
+  - edge:bound
+  lean_declarations:
+  - OAI.KLInvariance.BruhatGraph.ambientLater
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledOutgoing_eq
+  - OAI.KLInvariance.BruhatGraph.mappedEdgeRoot
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.exists_coset_edge
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.mappedCosetRoot_eq
+  paper: The local comparison uses the plane-subgroup coset through the current ambient
+    edge and restricts the transported later-edge conditions to that coset.
+  lean: ambientLater is an edge set on the full graph [1,b], with an explicit source-above-u
+    witness. scheduledOutgoing_eq is its inverse-image identity on the coset graph.
+    Least coset coordinates for the source and multiplication by the actual edge reflection
+    construct the relative edge, and both mapped-root definitions evaluate the same
+    target edge.
+  consequence: The Blueprint defines the ambient selection before transferring the
+    two endpoint kernels, and constructs the relative coordinates with both endpoint
+    bounds and the exact equality of edges.

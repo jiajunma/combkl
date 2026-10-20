@@ -5711,6 +5711,66 @@
       ],
       "review": "Retained the previously reviewed ambient-sign/intrinsic-descent proof and made the coset in the standalone least-length hypothesis explicit as D a0.",
       "pending": []
+    },
+    {
+      "node": "kl.local.supported_count_weight",
+      "file": "docs/knowledge/nodes/kl.localization/supported_count_weight.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.supported_count_difference"
+      ],
+      "review": "Checked the source lower bound, model upper bound and supported condition y<=c; applied both supported-cardinality bijections over [x,c], the all-ranks count and the exact natural plane-weight formula.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.coset_model_scaled_images",
+      "file": "docs/knowledge/nodes/kl.localization/coset_model_scaled_images.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.coset_structure_scaledImages"
+      ],
+      "review": "Verified every actual coset-model hypothesis: all centers, unsupported zero branch, finite edge selections, choice of independent reference root, both root-inequality arguments, relative primality, actual quotient associations, fixed correction scalar and supported count.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.localized_boundary_scaled_images",
+      "file": "docs/knowledge/nodes/kl.localization/localized_boundary_scaled_images.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.localized_boundary_scaledImages"
+      ],
+      "review": "Read the actual localized-boundary proof, verified finite edge instances and the exact decomposition input, then expanded the common-scalar model-sum argument and both-image transport through one injective edge component.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.ambient_later_edges",
+      "file": "docs/knowledge/nodes/kl.localization/ambient_later_edges.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.upperSource",
+        "OAI.KLInvariance.BruhatGraph.upperTarget",
+        "OAI.KLInvariance.BruhatGraph.mappedEdgeRoot",
+        "OAI.KLInvariance.BruhatGraph.ambientLater",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.scheduledOutgoing_eq",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.mappedCosetRoot_eq"
+      ],
+      "review": "Defined the endpoint interval data, mapped root and ambient edge set with the existential source bound; checked both membership directions of scheduledOutgoing_eq and the exact coincidence of mapped coset and ambient roots.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.actual_edge_coset",
+      "file": "docs/knowledge/nodes/kl.localization/actual_edge_coset.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.exists_coset_edge"
+      ],
+      "review": "Checked arbitrary actual edge/root membership, least source coordinates, target=t*g, both upper bounds and identity lower bounds, intrinsic edge recovery and exact equality of endpoint-pair edges.",
+      "pending": []
+    },
+    {
+      "node": "kl.local.ambient_plane_scaled_images",
+      "file": "docs/knowledge/nodes/kl.localization/ambient_plane_scaled_images.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.ambient_boundary_scaledImages",
+        "OAI.KLInvariance.BruhatGraph.boundary_plane_scaledImages"
+      ],
+      "review": "Expanded both actual ambient comparison theorems: finite basis/system hypotheses, arbitrary beta distinct from current root, existence of coset edge, source-bound transfer, exact source/mapped roots and fixed scalar, both selected-kernel identities and the two restrictions into one identical edge module.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -6610,7 +6670,7 @@
     {
       "code": "L6",
       "title": "Embedded lower and upper images",
-      "status": "in_progress",
+      "status": "exposition_reviewed",
       "completion_evidence": [
         "kl.local.product_image_scaling",
         "kl.detail.edge_images",
@@ -6620,12 +6680,16 @@
         "kl.local.structure_scaled_images",
         "kl.local.coset_edge_reduction",
         "kl.local.coset_later_selections",
-        "kl.local.supported_edge_count"
+        "kl.local.supported_edge_count",
+        "kl.local.supported_count_weight",
+        "kl.local.coset_model_scaled_images",
+        "kl.local.localized_boundary_scaled_images",
+        "kl.local.ambient_later_edges",
+        "kl.local.actual_edge_coset",
+        "kl.local.ambient_plane_scaled_images"
       ],
-      "pending": [
-        "Verify the actual coset-model scaled equality using the now-expanded transported count, then its transport to the localized boundary sheaf and ambient edge selections."
-      ],
-      "review": "Reviewed the exact lower/upper image and ScaledImages definitions, homogeneous components and two-edge example, kernel/image transport through one sheaf edge isomorphism, product/model-sum witnesses, the structure quotient/count criterion, actual coset root/factor reductions, endpoint selections and their supported target-vertex reindexing. The full angular, native and transported count is now expanded in O3. The final actual coset-model and localized-boundary comparisons remain."
+      "pending": [],
+      "review": "Reviewed embedded lower/upper images and scaling, isomorphism and model-sum transport, structure quotient products, actual coset root/factor reductions, endpoint selections and supported counts, the exact count-to-weight identity, every coset structure-model case, actual localized-boundary equality, ambient later sets and pullback identities, actual-edge coset coordinates and the final ambient root-plane equality. Local-to-global membership and upper-freeness arguments remain separate in L7/I1."
     },
     {
       "code": "L7",
@@ -6694,7 +6758,7 @@
     }
   ],
   "next_steps": [
-    "Complete the actual coset-model scaled-image equality and its transfer to the localized boundary sheaf and ambient endpoint selections (L6), using the now-expanded transported count.",
+    "Complete L7: derive local denominator witnesses from the actual plane equality, assemble the irreducible-prime cases, and apply free-target membership to the global edge inclusion. Expand the upper-kernel/edge-image freeness inputs in I1 where needed.",
     "Complete the remaining Coxeter/parabolic, root-space and sheaf-operation exposition.",
     "Expand adapted orders, chamber changes, dihedral interval transport, schedules and the path-polynomial proof.",
     "Complete localization, local image comparison, edge inequalities and the simultaneous invariance induction.",
@@ -7213,7 +7277,13 @@
       "kl.dihedral.affine_rank_preservation": "O3",
       "kl.dihedral.full_interval_range": "O3",
       "kl.paths.ambient_after_indicator": "O3",
-      "kl.dihedral.indicator_transport": "O3"
+      "kl.dihedral.indicator_transport": "O3",
+      "kl.local.supported_count_weight": "L6",
+      "kl.local.coset_model_scaled_images": "L6",
+      "kl.local.localized_boundary_scaled_images": "L6",
+      "kl.local.ambient_later_edges": "L6",
+      "kl.local.actual_edge_coset": "L6",
+      "kl.local.ambient_plane_scaled_images": "L6"
     },
     "moved_nodes": [
       {
@@ -8047,7 +8117,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 500
+    "current_node_count": 506
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -8083,7 +8153,8 @@
     "Expanded L6 foundations: actual selected images and scalar-image witnesses, isomorphism and model-sum transport, the structure-model product/count criterion, exact coset quotient reductions, and the actual later-edge selections with their target-vertex bijection. L6 remains in progress until the numerical dihedral count and final local comparison are explained.",
     "Expanded O3 signed-coordinate and numerical count foundations in 12 entries, including the finite representative convention and all parity induction cases. Corrected the transported-count explanation to use finite odd residues and the constrained raw comparisons, and made its interval/coset hypotheses explicit. O3 remains in progress for actual angular roots and full relative-interval transport.",
     "Expanded the actual angular and native count layer in 10 new entries: actual edge/prefix roots, inversion cuts, ambient-sign/intrinsic-descent bridge, middle-vertex criterion, prefix order, sign separation, finite/infinite order, indicators and native count. Extended sign-cone closure, connected the transported parent to the complete native theorem and expanded the topic guide. O3 retains the full-interval transport prerequisite.",
-    "Completed O3 exposition with 9 new entries and expanded full-transport/transported-count proofs. The development now states exact ambient and relative domains, proves common-plane propagation and the three-intermediate rank test, derives affine ranks and full range, and reindexes actual indicators through a finite bijection. Moved the general ambient after-indicator to its own definition home; retained local coset selections at L6."
+    "Completed O3 exposition with 9 new entries and expanded full-transport/transported-count proofs. The development now states exact ambient and relative domains, proves common-plane propagation and the three-intermediate rank test, derives affine ranks and full range, and reindexes actual indicators through a finite bijection. Moved the general ambient after-indicator to its own definition home; retained local coset selections at L6.",
+    "Completed L6 with six new entries: supported count equals plane weight; every actual structure model has the scaled equality; the localized boundary sheaf inherits it through one edge isomorphism; ambient later sets and mapped roots have their own definition; actual edges have least-coset coordinates; and the equality holds in the actual ambient localized edge module. Expanded the topic guide through these maps."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -8423,6 +8494,16 @@
       "term": "ambient after-indicator",
       "target": "kl.paths.ambient_after_indicator",
       "review": "Unscoped precise alias for the general ambient root-threshold predicate. The generic after-indicator alias is scoped to localization; the native dihedral aliases retain their separate home."
+    },
+    {
+      "term": "ambient later-edge set",
+      "target": "kl.local.ambient_later_edges",
+      "topics": [
+        "kl.localization",
+        "kl.reflection_combinatorics",
+        "kl.invariance"
+      ],
+      "review": "Links the full ambient edge subset with source-bound witnesses and the mapped edge root. Its coset pullback is stated and proved in the same definition entry."
     }
   ],
   "corrections": [
@@ -8442,21 +8523,21 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-10-20T03:10:04.222212+00:00",
+    "created_at": "2026-10-20T05:05:45.867540+00:00",
     "mdblueprint_revision": "5a0878ca0c0d9e0d3904c4bd134b6613b023b449",
-    "node_count": 500,
-    "html_pages_checked": 773,
-    "generated_definition_links_checked": 7628,
+    "node_count": 506,
+    "html_pages_checked": 780,
+    "generated_definition_links_checked": 7805,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 20,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks full relative-interval transport and actual indicator reindexing. Documentation checks only.",
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks actual local scaled-image equalities and ambient selection transfers. Documentation checks only.",
     "focused_page_review": {
-      "entries": 13,
-      "new_entries": 9,
-      "source_anchors": 46,
-      "new_definition_links": 15,
-      "scope": "Read the saved common-plane and coset induction, exact intermediate-set transport, rank-two converse, both cover-extension cases, affine ranks, full-range construction and all target coordinate fields. Checked actual indicator/root equality and finite reindexing, the rank-one count, source links and definition destinations. O3 exposition is reviewed; L6 and O5 remain tracked separately."
+      "entries": 6,
+      "new_entries": 6,
+      "source_anchors": 12,
+      "new_definition_links": 6,
+      "scope": "Read the supported count and natural plane exponent, both model support cases, quotient/product associations, same-scalar model sum, one-edge-map isomorphism transport, ambient source bounds, exact coset coordinates and both selected-kernel identities. Checked formulas, definition destinations and source anchors. L6 is reviewed; L7 and I1 remain in progress."
     }
   },
   "structure_coverage_scan": {
@@ -9042,6 +9123,27 @@
         "kl.local.coset_later_selections"
       ],
       "review": "The ambient threshold predicate has its own definition home. Indicator reindexing assumes injectivity and full interval range, while edge and order preservation are supplied separately by the main construction. The local selection page retains its specialized transported threshold and outgoing-edge sets."
+    },
+    {
+      "entries": [
+        "kl.local.supported_count_weight",
+        "kl.local.coset_model_scaled_images"
+      ],
+      "review": "The supported count retains y<=c and both ambient interval bounds. The model theorem covers every center: the unsupported edge module is zero, while the supported case checks relative primality, both root inequalities, actual quotient associations and the exact natural plane weight."
+    },
+    {
+      "entries": [
+        "kl.local.localized_boundary_scaled_images"
+      ],
+      "review": "The actual localized boundary sheaf uses a finite basis. Its finite model decomposition is ungraded; the same scalar works in all summands, and one linear injective edge component carries both comparison submodules back."
+    },
+    {
+      "entries": [
+        "kl.local.ambient_later_edges",
+        "kl.local.actual_edge_coset",
+        "kl.local.ambient_plane_scaled_images"
+      ],
+      "review": "ambientLater includes an explicit source-above-u condition on the full graph [1,b]. Coset selections are its inverse images. The actual-edge construction verifies both coordinates and vertex bounds, after which root, mapped threshold, polynomial scalar, kernels and both restrictions are identified in the same localized edge module."
     }
   ],
   "relationship_map_revision": {

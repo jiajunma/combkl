@@ -549,6 +549,12 @@ The bijection sends an edge to its target. Conversely, a nonzero summand supplie
 
 The numerical difference of these two sums is the input supplied by the [[node:kl.paths.later_count|transported dihedral count theorem]]. The [[node:kl.dihedral.signed_count_difference|signed-count difference theorem]] evaluates the integer-coordinate counts by a finite rank bijection and two parity inductions. Its numerical top condition is that the top equals the current upper endpoint or has strictly larger length. The actual angular comparison and full interval transport identify those numerical counts with the sums here. Reindexing provides the exact connection between that numerical theorem and the selected kernels of the model.
 
+Let \(a\) be the positive source root of the current coset edge. The [[node:kl.local.supported_count_weight|supported-count weight theorem]] now combines these sums with the relative edge-degree identity:
+\[
+|F_{e,c}|=|H_{e,c}|+\bigl(k_P(xa_0,a)\bigr)_{\mathbb N}.
+\]
+The same current source root \(a\), least representative \(a_0\), and plane \(P\) occur in the correction factor. This is the exact count input for the model comparison.
+
 ## The common quotient for all reduced labels
 
 Let \(a\) be the positive source root of the current edge and \(\gamma_e\) its actual label in \(R_P\). The [[node:kl.local.coset_edge_reduction|coset edge-reduction theorem]] proves the equality
@@ -574,7 +580,56 @@ the two scalar products are associated after including the correction factor.
 
 The [[node:kl.local.product_image_scaling|product-image scaling theorem]] converts this into equality of submodules. If two scalars differ by a unit acting on the module, their scalar images coincide; multiplication by the unit and its inverse prove the two containments. Its general formulation uses compatible scalar actions \(R\to S\), so it applies to a plane-ring module carrying the quotient coefficient action.
 
-The remaining local comparison verifies the actual selected edge sets, their reduced labels and this count. The resulting equality is then transported through the single edge component of the model decomposition.
+The [[node:kl.local.coset_model_scaled_images|coset-model scaled-image theorem]] verifies these conditions for every actual center \(c\). It chooses one plane-basis root different from the current root as the reference factor, checks the lower and upper selected-root inequalities, and applies the supported-count identity. A center not supporting the edge has a zero edge module.
+
+For the long \(A_2\) edge at model top \(sts\), the supported counts are \(1,0\), while the plane weight is one. Thus the lower image is a unit multiple of \(p\) times the edge quotient, the upper image is the whole quotient, and the correction gives their equality.
+
+## Scaled images through the model decomposition
+
+Let
+\[
+\mathcal C=j^*(R_P\otimes_A\mathcal B_b)
+\]
+be the localized coset sheaf of the boundary sheaf. Its decomposition supplies an \(R_P\)-linear sheaf isomorphism
+\(\psi:\mathcal C\simeq\mathcal M\)
+to a finite model sum.
+
+The model-sum theorem applies the same correction scalar \(r_e=\eta_P(F_{xa_0,a})\) to every summand. Hence \(L_e^{\mathcal M}=r_eU_e^{\mathcal M}\). The single edge component of \(\psi\) identifies both images, so
+\[
+\psi_e(L_e^{\mathcal C})
+=L_e^{\mathcal M}
+=r_eU_e^{\mathcal M}
+=r_e\psi_e(U_e^{\mathcal C})
+=\psi_e(r_eU_e^{\mathcal C}).
+\]
+Injectivity of \(\psi_e\) gives equality of the original two submodules. The [[node:kl.local.localized_boundary_scaled_images|localized-boundary comparison theorem]] develops each map in this chain. Its decomposition is ungraded, and \(R_P\)-linearity is exactly what permits the scalar to pass through the edge map.
+
+## Ambient later-edge sets and the two kernel identities
+
+To place this equality in the actual ambient graph, define one ambient later-edge set \(T_{\varphi,\alpha'}\) on \([1,b]\). An edge belongs when its source is above \(u\) and its image root has slope larger than the target threshold \(\alpha'\). The source bound puts both image endpoints in the domain of \(\varphi\).
+
+For the mapped edge root of the current edge, the coset selections are the inverse images of this one set under \(j_E\), separately at the lower and upper vertices. The [[node:kl.local.ambient_later_edges|ambient later-edge definition]] proves this membership identity and the equality of the mapped roots.
+
+The localized coset sheaf is a pullback, so its endpoint stalks and current edge module are the actual ambient localized modules at the corresponding vertices and edge. The [[node:kl.local.localized_coset_kernels|selected-kernel theorem]] gives
+\[
+K_x^{\mathcal C}(j_E^{-1}T)
+=K_{xa_0}^{R_P\otimes_A\mathcal B_b}(T),
+\]
+and the corresponding equality at \(y\). Every surviving ambient edge equation has a relative lift; every other localized edge module is zero. Both lower and upper restrictions are the ambient restriction maps into the same localized edge module. Substitution transfers the scaled equality without changing its ambient module.
+
+## An arbitrary edge at a root-plane prime
+
+Take an actual edge \(e:p\to q\) of \([1,b]\), with \(u\le p\), positive root \(a\), and any positive root \(\beta\ne a\). Put \(P=\operatorname{span}\{a,\beta\}\), and choose a plane basis.
+
+The [[node:kl.local.actual_edge_coset|actual-edge coset theorem]] chooses \(p=ga_0\) with \(a_0\) least. Since the reflection \(t=qp^{-1}\) has its root in \(P\), it lies in the plane subgroup; the target coordinate is \(h=tg\), so \(q=ha_0\). The ambient edge becomes the intrinsic edge \(g\to_Dh\), and its coset graph image is exactly \(e\).
+
+The source root, mapped target threshold and correction scalar agree under these endpoint identities. The [[node:kl.local.ambient_plane_scaled_images|ambient plane-comparison theorem]] therefore gives
+\[
+\rho_e^-\bigl(K_p^{\mathcal B_R}(T_p)\bigr)
+=\eta_P(F_{p,a})\,
+\rho_e^+\bigl(K_q^{\mathcal B_R}(T_q)\bigr)
+\]
+inside \(\mathcal B_R^e=R_P\otimes_A\mathcal B_b^e\), with both selections obtained from the same ambient later-edge set. These are the root-plane equalities used by the global inclusion argument.
 
 ## Recover global membership using the free target
 
@@ -695,6 +750,12 @@ The logical order to retain is: free upper kernel, free edge target, local model
 - [[node:kl.local.coset_edge_reduction]]
 - [[node:kl.local.coset_later_selections]]
 - [[node:kl.local.supported_edge_count]]
+- [[node:kl.local.supported_count_weight]]
+- [[node:kl.local.coset_model_scaled_images]]
+- [[node:kl.local.localized_boundary_scaled_images]]
+- [[node:kl.local.ambient_later_edges]]
+- [[node:kl.local.actual_edge_coset]]
+- [[node:kl.local.ambient_plane_scaled_images]]
 - [[node:kl.local.product_image_scaling]]
 - [[node:kl.notes.upper_image_free]]
 - [[node:kl.detail.quotient_image_free]]
