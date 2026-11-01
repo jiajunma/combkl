@@ -24,9 +24,10 @@ The [[node:kl.comparison.edge_increment|one-edge Hilbert comparison]] turns that
 11. [[node:kl.local.edge_inclusion]] — Obtain the conditional image inclusion.
 12. [[node:kl.comparison.edge_increment]] — Convert it into the normalized numerical step.
 13. [[node:kl.detail.schedule_comparison]] — Iterate the bound under the upper-freeness hypotheses.
-14. [[node:kl.detail.endpoint_equality]] — Make endpoints exact when the R-data agree.
-15. [[node:kl.detail.reverse_projectivity]] — Recover projective kernels from the resulting image equalities.
-16. [[node:kl.comparison.rtilde_invariance]] — Follow the simultaneous induction.
-17. [[node:kl.main.kl_finite]] — Identify the canonical KL polynomials after R-invariance.
-18. [[node:kl.main.finite_interval_model]] — Reduce an arbitrary interval to finite support.
-19. [[node:kl.main.combinatorial_invariance]] — Read the unrestricted final theorem.
+14. [[node:kl.comparison.schedule_upper_freeness]] — Supply image inclusions from the exact upper suffix kernels.
+15. [[node:kl.detail.endpoint_equality]] — Make endpoints exact when the R-data agree.
+16. [[node:kl.detail.reverse_projectivity]] — Recover projective kernels from the resulting image equalities.
+17. [[node:kl.comparison.rtilde_invariance]] — Follow the simultaneous induction.
+18. [[node:kl.main.kl_finite]] — Identify the canonical KL polynomials after R-invariance.
+19. [[node:kl.main.finite_interval_model]] — Reduce an arbitrary interval to finite support.
+20. [[node:kl.main.combinatorial_invariance]] — Read the unrestricted final theorem.

@@ -1631,3 +1631,100 @@ comparisons:
   consequence: The Blueprint preserves the conditional image-inclusion interface,
     explains the positive defect in every integer degree and treats the actual correction
     map as a specialization of the generic image theorem.
+- id: ordered-transfer-interface
+  kind: Coordinate operators and ordered products
+  nodes:
+  - kl.comparison.positive_transfer
+  - kl.detail.transfer_properties
+  paper_labels:
+  - eq:step
+  - eq:comparison
+  lean_declarations:
+  - OAI.KLInvariance.SchedulePaths.step
+  - OAI.KLInvariance.SchedulePaths.dispatch
+  - OAI.KLInvariance.SchedulePaths.step_monotone
+  - OAI.KLInvariance.SchedulePaths.step_injective
+  - OAI.KLInvariance.SchedulePaths.dispatch_monotone
+  - OAI.KLInvariance.SchedulePaths.dispatch_injective
+  - OAI.KLInvariance.SchedulePaths.dispatch_append'
+  paper: The notes attach a matrix 1+T E_xy to each edge and apply these matrices
+    in chronological order. Their product is subsequently expanded into decreasing-label
+    paths.
+  lean: The operator is defined on functions from the vertex type, over any semiring.
+    Dispatch puts the head edge outside the recursively computed tail, so a chronological
+    list must be reversed. Real monotonicity uses T >= 0; injectivity uses distinct
+    endpoints. Concatenation is an explicit recursive identity.
+  consequence: The coordinate calculation explains the matrix action and the list
+    reversal. The two-edge example records the degree-two contribution when an upper-edge
+    transfer precedes the lower-edge transfer.
+- id: remaining-list-schedule
+  kind: Actual suffix conditions and the conditional whole-list bound
+  nodes:
+  - kl.detail.schedule_state
+  - kl.detail.schedule_comparison
+  - kl.comparison.schedule_upper_freeness
+  paper_labels:
+  - eq:state
+  - eq:step
+  - eq:comparison
+  - edge:bound
+  lean_declarations:
+  - OAI.KLInvariance.BruhatGraph.remainingConditions
+  - OAI.KLInvariance.BruhatGraph.scheduleState_step
+  - OAI.KLInvariance.BruhatGraph.scheduleState_le
+  - OAI.KLInvariance.BruhatGraph.schedule_edge_image_le
+  - OAI.KLInvariance.BruhatGraph.schedule_comparison_of_upper_freeness
+  paper: The comparison processes the increasing edge schedule, retains the equations
+    on unprocessed outgoing edges, and propagates the single-edge estimate through
+    the complete matrix product.
+  lean: The numerical theorem first accepts any finite list with image inclusion at
+    every nonempty suffix. A separate theorem takes the actual chronological schedule
+    and freeness of each upper suffix kernel. Exact suffix-to-ambient kernel identities
+    let it apply the global edge inclusion before invoking the numerical theorem.
+  consequence: The Blueprint spells out the set-valued remaining conditions, source
+    and non-source coordinate changes, suffix quantifiers and reversed product. The
+    source-specific upper-freeness step has its own entry.
+- id: remaining-list-exactness
+  kind: Cancellation through the remaining transfer product
+  nodes:
+  - kl.comparison.no_deficit
+  paper_labels:
+  - eq:step
+  - eq:comparison
+  - eq:image-equality
+  lean_declarations:
+  - OAI.KLInvariance.Comparison.state_le_ideal
+  - OAI.KLInvariance.Comparison.every_step_eq_of_endpoint_eq
+  - OAI.KLInvariance.SchedulePaths.remaining_steps_eq
+  - OAI.KLInvariance.BruhatGraph.edgeImages_eq_of_scheduleState_eq
+  paper: Exact endpoint comparison forces the positive Hilbert defects to vanish and
+    hence makes the embedded lower and corrected upper images equal.
+  lean: 'The finite-index statement removes the last transfer. The actual sheaf application
+    uses a remaining-list statement: sandwich the tail-product values between equal
+    endpoints, use injectivity of the tail product to recover exactness of the head
+    removal, and recurse on the tail. Source-coordinate equality then invokes the
+    normalized edge-increment equality criterion.'
+  consequence: Both induction interfaces are explained. The actual embedded-image
+    conclusion retains every suffix inclusion and the positive comparison-parameter
+    hypotheses.
+- id: actual-character-dispatch
+  kind: Transfer comparison before the target path-matrix identification
+  nodes:
+  - kl.comparison.global_comparison
+  paper_labels:
+  - eq:endpoints
+  - eq:comparison
+  lean_declarations:
+  - OAI.KLInvariance.BruhatGraph.schedule_final_scaledStalk
+  - OAI.KLInvariance.BruhatGraph.transported_initial_scaledStalk
+  - OAI.KLInvariance.BruhatGraph.actual_comparison_of_upper_freeness
+  paper: The notes identify the state endpoints with normalized KL vectors and present
+    the accumulated bound using the target R-matrix.
+  lean: The declared actual_comparison_of_upper_freeness theorem concludes an inequality
+    with the dispatch operator applied to the actual source-character vector at the
+    inverse parameter. Its proof substitutes the full- and empty-kernel endpoint identities
+    into the schedule bound. The path-matrix identification is a separate input to
+    later comparison results.
+  consequence: The entry states that exact dispatch conclusion, derives both endpoint
+    substitutions, and links the subsequent geometric path identification. The actual
+    source-character polynomial remains explicit.

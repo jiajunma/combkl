@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 103854,
-  "theorem_walkthroughs": 351,
+  "revised_proof_words": 105074,
+  "theorem_walkthroughs": 352,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -640,24 +640,30 @@
     {
       "node": "kl.comparison.global_comparison",
       "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.schedule_final_scaledStalk",
+        "OAI.KLInvariance.BruhatGraph.transported_initial_scaledStalk",
         "OAI.KLInvariance.BruhatGraph.actual_comparison_of_upper_freeness"
       ],
       "proof_steps": 5,
       "previous_proof_words": 42,
-      "revised_proof_words": 272,
-      "proof_sha256": "04a59e66390f7d107ed3afe2722c26f70dceb77c11ab4da1ac01f1bc9d75431c",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 326,
+      "proof_sha256": "ca9d45a138f5bf818b00a7a6ab1c3f21f768ab87a982bc554dcc776b24560954",
+      "review": "Matched the declared theorem to its actual dispatch conclusion. Checked all upper-freeness quantifiers, source actual character, full/empty kernel transport, positive denominator cancellation and integer exponent computation. Kept the later target R-matrix identification as the next linked result."
     },
     {
       "node": "kl.comparison.no_deficit",
       "source_declarations": [
-        "OAI.KLInvariance.Comparison.every_step_eq_of_endpoint_eq"
+        "OAI.KLInvariance.Comparison.idealState",
+        "OAI.KLInvariance.Comparison.state_le_ideal",
+        "OAI.KLInvariance.Comparison.every_step_eq_of_endpoint_eq",
+        "OAI.KLInvariance.SchedulePaths.remaining_steps_eq",
+        "OAI.KLInvariance.BruhatGraph.edgeImages_eq_of_scheduleState_eq"
       ],
-      "proof_steps": 5,
+      "proof_steps": 7,
       "previous_proof_words": 143,
-      "revised_proof_words": 295,
-      "proof_sha256": "fb9dc2af12e3b4f57eeb6a07f70b33ffd341cec55d725bb5be1fbf9de68ccde3",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 595,
+      "proof_sha256": "b1fec556342c9e60ce2f092f395230401f67937e51c26af964a008869238ffad",
+      "review": "Read both Comparison finite-index and SchedulePaths remaining-list proofs. Followed the actual head/tail sandwich, tail-product injectivity, recovered shorter endpoint, suffix split and normalized source-coordinate image criterion; preserved all conditional hypotheses."
     },
     {
       "node": "kl.comparison.raw_edge_increment",
@@ -732,6 +738,19 @@
       "revised_proof_words": 368,
       "proof_sha256": "183d03e91754854b72144e0c4ca1078dd7c790b7f869b378bcb7af377df31f51",
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+    },
+    {
+      "node": "kl.comparison.schedule_upper_freeness",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.intervalBoundary",
+        "OAI.KLInvariance.BruhatGraph.schedule_edge_image_le",
+        "OAI.KLInvariance.BruhatGraph.schedule_comparison_of_upper_freeness"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 425,
+      "proof_sha256": "f9b6d8384e1c0ac9fb5e682e836c19e6ed6cc272a57188d541e7ed213796ac8a",
+      "review": "Read intervalBoundary and schedule_edge_image_le through both actual kernel equalities, transfer of upper freeness, ambient inclusion and correction-map identification; then followed schedule_comparison_of_upper_freeness and double reversal."
     },
     {
       "node": "kl.coxeter.bruhat_successor",
@@ -1276,13 +1295,15 @@
     {
       "node": "kl.detail.schedule_comparison",
       "source_declarations": [
+        "OAI.KLInvariance.SchedulePaths.remaining_state_le",
+        "OAI.KLInvariance.BruhatGraph.scheduleState_step",
         "OAI.KLInvariance.BruhatGraph.scheduleState_le"
       ],
-      "proof_steps": 4,
+      "proof_steps": 7,
       "previous_proof_words": 109,
-      "revised_proof_words": 227,
-      "proof_sha256": "250c70a870c775e0cb758be44ea10158545832d1443701b83c87256604815e63",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 451,
+      "proof_sha256": "d00e6401ec514940e8bdf3f61b6ad9c2a162b0089e7364bf5025688971bcebe7",
+      "review": "Read scheduleState_step and scheduleState_le in their full boundary-sheaf context, and followed remaining_state_le head/tail induction. Checked every suffix inclusion, source/target conditions, arbitrary-list scope and reversed concatenation."
     },
     {
       "node": "kl.detail.strong_exchange",
@@ -1310,13 +1331,18 @@
       "node": "kl.detail.transfer_properties",
       "source_declarations": [
         "OAI.KLInvariance.Comparison.transfer_monotone",
-        "OAI.KLInvariance.Comparison.transfer_injective"
+        "OAI.KLInvariance.Comparison.transfer_injective",
+        "OAI.KLInvariance.SchedulePaths.step_monotone",
+        "OAI.KLInvariance.SchedulePaths.step_injective",
+        "OAI.KLInvariance.SchedulePaths.dispatch_monotone",
+        "OAI.KLInvariance.SchedulePaths.dispatch_injective",
+        "OAI.KLInvariance.SchedulePaths.dispatch_append'"
       ],
-      "proof_steps": 3,
+      "proof_steps": 5,
       "previous_proof_words": 76,
-      "revised_proof_words": 162,
-      "proof_sha256": "406dbc926c6ed4ee38cc470f898ccaa4636668ea008bf586d1fa8ab0918fd28e",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 379,
+      "proof_sha256": "929e4465d46576b05b9a838539a8a099bb970ffdd3755dcd191795c33a2c4723",
+      "review": "Checked the separate hypotheses for monotonicity and injectivity, arbitrary vertex sets and real vectors, nil/cons inductions and the exact concatenation order."
     },
     {
       "node": "kl.detail.word_character_formula",

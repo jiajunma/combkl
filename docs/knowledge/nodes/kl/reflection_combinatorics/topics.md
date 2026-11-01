@@ -349,6 +349,19 @@ Localization and edge-image comparison use this factor to compare embedded edge 
 The topic supplies the connections used later: order data can transport the edge schedule, and the schedule has both an algebraic path interpretation and controlled local correction factors.
 
 
+## Transfer order and the contribution of a two-edge path
+
+For a directed edge \(e:x\to y\), the elementary transfer changes coordinate \(x\) to \(v_x+T v_y\), leaving the other coordinates unchanged. Dispatch on \([e_1,\ldots,e_m]\) means \(U_{e_1}\cdots U_{e_m}\), so the chronological processing list appears in reverse order in that expression.
+
+For \(e:x\to y\), \(f:y\to z\), processing \(f\) before \(e\) gives
+\[
+(a,b,c)\longmapsto(a,b+Tc,c)
+\longmapsto(a+Tb+T^2c,b+Tc,c).
+\]
+Thus the product associated with the path \(x\to y\to z\) contributes \(T^2c\) at \(x\). Reversing the processing order gives \((a+Tb,b+Tc,c)\). The ordered path expansion generalizes this calculation by choosing which edge contributions occur in the full product.
+
+For real \(T\ge0\), each transfer preserves the coordinatewise order. For distinct endpoints it is injective, since the unchanged upper coordinate can be subtracted back out of the lower one. The transfer-properties theorem proves that both properties pass to finite products. Order preservation propagates the sheaf Hilbert bounds, and injectivity recovers exactness at earlier stages when the final comparison is an equality.
+
 ## Definitions and proofs by construction
 
 ### Geometric orders on roots
@@ -428,10 +441,10 @@ The topic supplies the connections used later: order data can transport the edge
 
 ### Paths and transfer products
 
-- [[node:kl.notes.path_product]]
-- [[node:kl.paths.dyer_paths]]
 - [[node:kl.comparison.positive_transfer]]
 - [[node:kl.detail.transfer_properties]]
+- [[node:kl.notes.path_product]]
+- [[node:kl.paths.dyer_paths]]
 
 ## Inversion changes by root plane
 

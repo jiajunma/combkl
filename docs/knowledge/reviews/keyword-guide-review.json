@@ -109,6 +109,7 @@
         "kl.local.edge_inclusion",
         "kl.comparison.edge_increment",
         "kl.detail.schedule_comparison",
+        "kl.comparison.schedule_upper_freeness",
         "kl.detail.endpoint_equality",
         "kl.detail.reverse_projectivity",
         "kl.comparison.rtilde_invariance",
@@ -116,8 +117,9 @@
         "kl.main.finite_interval_model",
         "kl.main.combinatorial_invariance"
       ],
-      "content_sha256": "ca13fb9b0e3f539999ebeeceb4d9a5223671679b59a4e18d0ebbcc76dfc818f4",
-      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+      "content_sha256": "49ffed5bab35157cbe9cb0397a69151403d3e3960147cb1518c43e79a1633627",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph.",
+      "scope_review": " Added the explicit upper-suffix-freeness step between generic list propagation and exact endpoints."
     },
     {
       "keyword": "background",
@@ -202,12 +204,14 @@
         "kl.detail.transfer_properties",
         "kl.detail.schedule_state",
         "kl.detail.schedule_comparison",
+        "kl.comparison.schedule_upper_freeness",
         "kl.comparison.no_deficit",
         "kl.detail.reverse_projectivity",
         "kl.comparison.reverse_freeness"
       ],
-      "content_sha256": "9d1ab539d600230433e68639722aaf82fb497164742551a0dc79096ddae0514e",
-      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+      "content_sha256": "68d92f9c3a81e33920ddea1473b10a2d808e11fdcd5f0d766109bf07c3848feb",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph.",
+      "scope_review": " Added the explicit upper-suffix-freeness step between generic list propagation and exact endpoints."
     },
     {
       "keyword": "correction-factors",

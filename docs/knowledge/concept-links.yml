@@ -188,6 +188,10 @@ concepts:
   - elementary transfer
   - edge transfers
   - edge transfer
+  - dispatch operator
+  - dispatch operators
+  - ordered transfer product
+  - ordered transfer products
 - node: kl.main.finite_interval_model
   terms:
   - finite-support models
@@ -273,9 +277,6 @@ concepts:
   - transported schedules
   - chronological schedule
   - reflection schedule
-  - remaining conditions
-  - remaining outgoing selection
-  - remaining outgoing selections
   - transported slope
   - transported slopes
 - node: kl.detail.edge_images
@@ -293,6 +294,13 @@ concepts:
   terms:
   - schedule state
   - schedule states
+  - remaining conditions
+  - remaining outgoing selection
+  - remaining outgoing selections
+  - remaining-condition set
+  - remaining-condition sets
+  - Hilbert-state vector
+  - Hilbert-state vectors
 - node: kl.detail.rtilde_family
   terms:
   - normalized R-polynomials

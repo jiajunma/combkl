@@ -167,6 +167,7 @@
       "kl.comparison.rtilde_invariance",
       "kl.comparison.rtilde_row_comparison",
       "kl.comparison.rtilde_step",
+      "kl.comparison.schedule_upper_freeness",
       "kl.detail.endpoint_equality",
       "kl.detail.kernel_exact_sequence",
       "kl.detail.reverse_projectivity",
@@ -1431,6 +1432,8 @@
       "id": "kl.comparison.global_comparison",
       "chapter": "kl.invariance",
       "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.schedule_final_scaledStalk",
+        "OAI.KLInvariance.BruhatGraph.transported_initial_scaledStalk",
         "OAI.KLInvariance.BruhatGraph.actual_comparison_of_upper_freeness"
       ],
       "paper_locations": [
@@ -1441,7 +1444,11 @@
       "id": "kl.comparison.no_deficit",
       "chapter": "kl.invariance",
       "lean_declarations": [
-        "OAI.KLInvariance.Comparison.every_step_eq_of_endpoint_eq"
+        "OAI.KLInvariance.Comparison.idealState",
+        "OAI.KLInvariance.Comparison.state_le_ideal",
+        "OAI.KLInvariance.Comparison.every_step_eq_of_endpoint_eq",
+        "OAI.KLInvariance.SchedulePaths.remaining_steps_eq",
+        "OAI.KLInvariance.BruhatGraph.edgeImages_eq_of_scheduleState_eq"
       ],
       "paper_locations": [
         "6. Reciprocity and simultaneous induction; sec:induction"
@@ -1464,8 +1471,9 @@
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
         "OAI.KLInvariance.Comparison.transfer",
-        "OAI.KLInvariance.Comparison.transfer_monotone",
-        "OAI.KLInvariance.Comparison.transfer_injective"
+        "OAI.KLInvariance.Comparison.idealState",
+        "OAI.KLInvariance.SchedulePaths.step",
+        "OAI.KLInvariance.SchedulePaths.dispatch"
       ],
       "paper_locations": [
         "6. Reciprocity and simultaneous induction; sec:induction"
@@ -1536,6 +1544,16 @@
       "paper_locations": [
         "6. Reciprocity and simultaneous induction; sec:induction"
       ]
+    },
+    {
+      "id": "kl.comparison.schedule_upper_freeness",
+      "chapter": "kl.invariance",
+      "lean_declarations": [
+        "OAI.KLInvariance.BruhatGraph.intervalBoundary",
+        "OAI.KLInvariance.BruhatGraph.schedule_edge_image_le",
+        "OAI.KLInvariance.BruhatGraph.schedule_comparison_of_upper_freeness"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.coxeter.alternating_words",
@@ -2407,6 +2425,8 @@
       "id": "kl.detail.schedule_comparison",
       "chapter": "kl.invariance",
       "lean_declarations": [
+        "OAI.KLInvariance.SchedulePaths.remaining_state_le",
+        "OAI.KLInvariance.BruhatGraph.scheduleState_step",
         "OAI.KLInvariance.BruhatGraph.scheduleState_le"
       ],
       "paper_locations": [
@@ -2418,6 +2438,9 @@
       "chapter": "kl.invariance",
       "lean_declarations": [
         "OAI.KLInvariance.BruhatGraph.remainingConditions",
+        "OAI.KLInvariance.BruhatGraph.remainingConditions_nil",
+        "OAI.KLInvariance.BruhatGraph.remainingConditions_cons_source",
+        "OAI.KLInvariance.BruhatGraph.remainingConditions_cons_other",
         "OAI.KLInvariance.BruhatGraph.scheduleState"
       ],
       "paper_locations": [
@@ -2514,7 +2537,12 @@
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
         "OAI.KLInvariance.Comparison.transfer_monotone",
-        "OAI.KLInvariance.Comparison.transfer_injective"
+        "OAI.KLInvariance.Comparison.transfer_injective",
+        "OAI.KLInvariance.SchedulePaths.step_monotone",
+        "OAI.KLInvariance.SchedulePaths.step_injective",
+        "OAI.KLInvariance.SchedulePaths.dispatch_monotone",
+        "OAI.KLInvariance.SchedulePaths.dispatch_injective",
+        "OAI.KLInvariance.SchedulePaths.dispatch_append'"
       ],
       "paper_locations": [
         "Related paper context; sec:induction"

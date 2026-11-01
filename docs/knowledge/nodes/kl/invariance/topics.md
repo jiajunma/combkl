@@ -119,23 +119,58 @@ D_{\mathrm{next}}\le U_eD_{\mathrm{current}}
 \]
 coordinatewise. The possible gap measures the failure of the lower image to fill the corrected upper image.
 
-## Follow a list of edges
+## Remaining conditions and the ordered transfer bound
 
-A schedule is a finite list of edges to process. At each vertex, its remaining conditions are the outgoing edges still in that list. Removing the first edge changes only the kernel at its lower endpoint. A suffix is the final segment of the list left after some initial edges have been removed.
+Let \(P=[e_1,\ldots,e_m]\) be the chronological edge list. After its first \(i\) edges have been removed, the remaining list is the suffix \(p_i=[e_{i+1},\ldots,e_m]\). Thus \(p_0=P\) and \(p_m=[]\). At vertex \(x\), the outgoing conditions are
+\[
+F_{p_i}(x)=\{e:s(e)=x,\ e\text{ occurs in }p_i\}.
+\]
+The schedule state \(D_{p_i}(t)\) uses the Hilbert value of exactly this selected kernel. At a removal \(e_i:x\to y\), the source selection loses its current edge, while every other selection stays unchanged. In particular the upper coordinate at \(y\) has the same value before and after removal.
 
-The full list therefore starts with full outgoing kernels at all vertices. The empty list ends with the full stalks. The sequence of intermediate states records every suffix kernel, not merely the endpoints.
+Write \(U_e(T)\) for the elementary transfer, with \(T=t^{-1}-t>0\). At the changed coordinate the [[node:kl.comparison.edge_increment|one-edge Hilbert comparison]] gives the inequality, and at the other coordinates the states are equal. Hence
+\[
+D_{p_i}(t)\le U_{e_i}(T)D_{p_{i-1}}(t).
+\]
+Each transfer preserves coordinatewise order. For the first two steps this gives
+\[
+D_{p_2}\le U_{e_2}D_{p_1}
+\le U_{e_2}U_{e_1}D_{p_0}.
+\]
+The [[node:kl.detail.schedule_comparison|full transfer inequality]] repeats this induction with every suffix hypothesis explicit, obtaining
+\[
+D_{[]}(t)\le U_{e_m}(T)\cdots U_{e_1}(T)D_P(t)
+=\mathcal D_{P^{\mathrm{rev}}}(T)D_P(t).
+\]
+The reversal comes from the definition of dispatch: its first edge supplies the outermost operator.
 
-Elementary transfers preserve coordinatewise inequalities because \(T>0\). Iterating the one-edge bound yields a bound by the product of transfers. reflection orders and paths identifies that product with the target normalized R-matrix.
+## Upper suffix kernels supply the inclusions
 
-For the actual character \(C_{x,b}\), put
+For the schedule transported by \(\phi:[u,b]\simeq[u',b']\), the required hypothesis is freeness of
+\[
+K_{r(e)}(F_q(r(e)))
+\quad\text{for every suffix }e::q\preceq_{\mathrm{suf}}P.
+\]
+The [[node:kl.paths.schedule_suffixes|chronological suffix identification]] matches these conditions with the ambient strict-later selections at both endpoints. Upper-interval restriction identifies the selected modules inside the same actual stalks. The free upper module therefore supplies precisely the freeness hypothesis of the [[node:kl.local.edge_inclusion|global edge inclusion]].
+
+The [[node:kl.comparison.schedule_upper_freeness|comparison under upper-kernel freeness]] performs this substitution at every suffix and then applies the [[node:kl.detail.schedule_comparison|full transfer inequality]]. This is the step where the geometric image theorem enters the numerical process.
+
+## Actual-character endpoints of the schedule
+
+For the actual source boundary-sheaf character \(C_{x,b}\), define
 \[
 c_x(t)=t^{\ell(x)-\ell(b)}C_{x,b}(t^2).
 \]
-word modules and sheaf duality identifies the endpoint states as \(c(t^{-1})\) and \(c(t)\). Hence the accumulated inequality is
+The empty schedule selects the whole stalk. Its Hilbert denominator \((1-t^2)^N\) cancels against the state scale, giving \(D_{[]}(t)=c(t)\). The full schedule selects the full outgoing kernel. The [[node:kl.duality.normalized_character_endpoints|normalized endpoint identities]] use homogeneous section duality to give its Hilbert value
 \[
-c(t)\le \widetilde R'(t^{-1}-t)c(t^{-1}),
+\frac{(t^2)^{\ell(b)-\ell(x)}C_{x,b}(t^{-2})}{(1-t^2)^N}.
 \]
-where the prime denotes the target Coxeter system whose order supplied the transported schedule.
+Multiplication by the same scale leaves \(t^{\ell(b)-\ell(x)}C_{x,b}(t^{-2})=c_x(t^{-1})\). Hence \(D_P(t)=c(t^{-1})\).
+
+Substituting these vectors into the transfer bound gives
+\[
+c(t)\le\mathcal D_{P^{\mathrm{rev}}}(t^{-1}-t)c(t^{-1}).
+\]
+The [[node:kl.paths.dyer_paths|geometric path identity]] identifies this ordered product with the target normalized R-matrix. That identification yields the matrix inequality used below; both endpoint vectors are constructed from the actual source sheaf.
 
 ## Endpoint equality and vanishing intermediate deficits
 
@@ -186,7 +221,7 @@ The graded projective-to-free theorem applies with the polynomial coefficient ri
 
 ## Inputs supplied by induction
 
-this topic has proved implications: upper freeness gives comparison, and exact endpoints give new freeness. the simultaneous invariance induction supplies upper freeness from smaller intervals and proves R-matrix equality, which makes the endpoints exact.
+The upper-freeness hypothesis supplies comparison, and exact endpoints recover free suffix kernels. The simultaneous invariance induction supplies the upper freeness from smaller intervals and proves the R-matrix equality that makes the endpoints exact.
 
 The order is therefore essential:
 \[
@@ -195,12 +230,12 @@ The order is therefore essential:
 \ \Longrightarrow\ \text{image equality}
 \ \Longrightarrow\ \text{projectivity and freeness}.
 \]
-The middle step comes from the simultaneous induction; it is not available merely from the local inclusion.
+The simultaneous induction supplies the endpoint equality in the middle of this sequence.
 
 
 ## Simultaneous induction on interval rank
 
-The question is: **how do we use a comparison that assumes freeness to prove the freeness needed by later comparisons, without arguing in a circle?** The answer is to prove two assertions together on smaller intervals, then prove KL-invariance in a separate induction.
+The first induction proves R-invariance together with the suffix-kernel freeness needed in later comparisons. A second induction proves equality of the canonical KL polynomials.
 
 We compare \([a,b]\) and \([a',b']\) through an order isomorphism \(\phi\). Their common rank is
 \[
@@ -208,7 +243,7 @@ d=\ell(b)-\ell(a)=\ell(b')-\ell(a').
 \]
 Coxeter combinatorics proved equality of these rank differences. For now assume that the simple-generator sets are finite, so the real realizations and module constructions are available.
 
-## State all parts of the induction
+## The simultaneous induction assertions
 
 For each interval isomorphism, prove simultaneously:
 
@@ -222,7 +257,7 @@ At \(d=0\), each interval has one vertex. The R-polynomial is the diagonal value
 
 Now suppose the assertions are known for every smaller rank. The proof must obtain two different kinds of information from that hypothesis.
 
-## Identify the smaller intervals that provide the inputs
+## Smaller intervals supplying the induction inputs
 
 If \(z<b\), the initial interval \([a,z]\) has smaller rank. The restriction of \(\phi\) identifies it with \([a',\phi(z)]\). Induction supplies
 \[
@@ -232,15 +267,15 @@ These are the already-known entries in the bottom matrix row.
 
 At a current edge \(x\to y\), we have \(y>a\). Hence the upper interval \([y,b]\) also has smaller rank. Induction supplies its suffix-kernel freeness, which must be matched with the upper kernel required at that step.
 
-Why does it match? Restriction to \([y,b]\) retains every outgoing edge at \(y\). The transported scores are unchanged. The remaining outgoing edges are exactly the ones past the current score, and hence form the appropriate suffix conditions in the restricted schedule. An outgoing edge at \(y\) cannot have the same reflection label as the incoming edge from \(x\): that reflection sends \(y\) back to \(x\), not upward.
+Restriction to \([y,b]\) retains every outgoing edge at \(y\). The transported scores are unchanged. The remaining outgoing edges are exactly the ones past the current score, and hence form the appropriate suffix conditions in the restricted schedule. An outgoing edge at \(y\) cannot have the same reflection label as the incoming edge from \(x\): that reflection sends \(y\) back to \(x\), not upward.
 
-Thus the smaller upper interval supplies exactly the required free module, not just an unrelated free kernel. No new freeness at the current bottom \(a\) has been assumed.
+The selected-kernel identification transports the free basis supplied by the smaller upper interval to the required upper module.
 
-## Cancel a whole matrix comparison down to one unknown entry
+## Cancellation of the known matrix entries
 
 Fix \(0<t<1\), and put \(T=t^{-1}-t\). Let \(c(t)\) be the normalized actual boundary-character vector of the source system. It is the same vector in both formulas below.
 
-word modules and sheaf duality gives the exact source identity
+Actual-character reciprocity gives the exact source identity
 \[
 c_a(t)=\sum_{a\le z\le b}\widetilde R_{a,z}(T)c_z(t^{-1}).
 \]
@@ -249,7 +284,7 @@ The upper freeness from Step 2 permits the transported comparison from Hilbert c
 c_a(t)\le
 \sum_{a\le z\le b}\widetilde R'_{a',\phi(z)}(T)c_z(t^{-1}).
 \]
-We are applying a target matrix to a source vector. We have not asserted that the source and target sheaf characters are equal.
+The transported comparison applies the target R-matrix to the same actual source-character vector used by source reciprocity.
 
 For every \(z<b\), the two R-entries agree by induction. Let \(S(t)\) denote the sum of all those common terms. The normalized top character is \(c_b(t^{-1})=1\). The two formulas reduce to
 \[
@@ -258,7 +293,7 @@ S(t)+\widetilde R_{a,b}(T)
 \]
 Subtract \(S(t)\), obtaining the desired one-sided inequality for the new entry.
 
-## Turn two inequalities into polynomial equality
+## Polynomial equality from the two comparisons
 
 Apply the same reasoning to \(\phi^{-1}\), now using the target's own actual-character vector and the reverse freeness hypotheses. It gives
 \[
@@ -273,9 +308,9 @@ There are infinitely many such values: if \(0<s<t<1\), then
 \]
 A nonzero polynomial over the reals has only finitely many roots, so the difference polynomial is zero. Injectivity of the integer-to-real coefficient map gives equality of the original integer polynomials.
 
-This R-step does not use the strict half-degree bound of a KL polynomial. That bound enters the later P-step.
+The strict half-degree bound enters the subsequent canonical P-induction.
 
-## Close the freeness assertions at the same rank
+## Recovery of freeness at the current rank
 
 Every proper subinterval already has R-invariance, and Step 4 gives the one new full-interval entry. Thus the entire R-matrices on the two intervals agree. Noncomparable entries vanish in both matrices.
 
@@ -290,7 +325,7 @@ Apply Hilbert comparison in its established order. Exact endpoints remove every 
 
 This proves both new freeness assertions after proving the new R-entry. The induction closes because each freeness hypothesis used before Step 4 came from a strictly smaller interval.
 
-## Now begin a separate induction for canonical KL polynomials
+## A separate induction for canonical KL polynomials
 
 The R-stage is complete. We now use the canonical family \(P\), constructed in Hecke algebra and polynomial invariants with its strict degree bound.
 
@@ -327,9 +362,9 @@ p(q)=q^dp(q^{-1})\qquad(0<q<1).
 
 Suppose \(p\ne0\) and let its highest degree be \(m\). Both original polynomials have degree below \(d/2\), so \(m<d/2\). Every exponent in \(p(q)\) is at most \(m\), while every exponent in \(q^dp(q^{-1})\) is at least \(d-m>m\). Their nonzero terms occupy disjoint degree ranges. They cannot be the same polynomial.
 
-The identity on infinitely many \(q\) makes it a polynomial identity, so this contradiction proves \(p=0\). This establishes canonical KL equality in finite-generator systems. It never required identifying an actual sheaf character \(C\) with \(P\).
+The identity on infinitely many \(q\) makes it a polynomial identity, so this contradiction proves \(p=0\). This establishes canonical KL equality in finite-generator systems from the common R-matrix and the canonical degree bound.
 
-## Remove the finite-generator restriction
+## Transport from finite-generator models
 
 Choose a reduced word for each top endpoint \(b,b'\). Each word uses finitely many simple generators. By the subword criterion, every element of the corresponding lower ideal uses only those generators.
 
@@ -337,13 +372,13 @@ The standard parabolic construction supplies finite-generator Coxeter systems an
 
 Transport \(\phi\) into these models, apply the finite-generator theorem, and transport the polynomial equality back. The groups in the models may still be infinite; it is the generating sets that have become finite.
 
-## Reconstruct the proof without collapsing its two inductions
+## The two inductions and their inputs
 
 The first induction proves R-invariance together with freeness in both directions. Its decisive operation is cancelling known R-row entries against one actual-character vector, then using the inverse interval isomorphism.
 
 The second induction compares canonical KL vectors using the common R-matrix. Its decisive operation is eliminating a reciprocal polynomial difference by the strict degree bound.
 
-This is the Lean route. The source-comparison entries explain its relationship to the P-first presentation in the OpenAI notes. Following the separate objects and induction hypotheses is necessary to understand why the argument has no circular freeness assumption.
+The source-comparison entries relate this R-first route in Lean to the P-first presentation in the OpenAI notes. The upper freeness used before a new R-step comes from smaller intervals; the new R-equality then gives freeness at the current rank.
 
 
 ## Definitions and proofs by construction
@@ -360,6 +395,7 @@ This is the Lean route. The source-comparison entries explain its relationship t
 
 - [[node:kl.detail.schedule_state]]
 - [[node:kl.detail.schedule_comparison]]
+- [[node:kl.comparison.schedule_upper_freeness]]
 - [[node:kl.comparison.global_comparison]]
 
 ### Endpoint identities

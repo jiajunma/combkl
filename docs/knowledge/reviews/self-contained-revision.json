@@ -6012,6 +6012,92 @@
       ],
       "review": "Retained the reviewed integer-graded convergence proof and made the one-variable hypothesis A=k[X] explicit in the quotient example with Hilbert value one.",
       "pending": []
+    },
+    {
+      "node": "kl.comparison.positive_transfer",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/positive_transfer.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Comparison.transfer",
+        "OAI.KLInvariance.Comparison.idealState",
+        "OAI.KLInvariance.SchedulePaths.step",
+        "OAI.KLInvariance.SchedulePaths.dispatch"
+      ],
+      "review": "Read the semiring-valued step/dispatch definitions and the real transfer/idealState interface. Stated sources and targets, column action, recursive product order, chronological reversal and both two-edge computations.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.transfer_properties",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/transfer_properties.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Comparison.transfer_monotone",
+        "OAI.KLInvariance.Comparison.transfer_injective",
+        "OAI.KLInvariance.SchedulePaths.step_monotone",
+        "OAI.KLInvariance.SchedulePaths.step_injective",
+        "OAI.KLInvariance.SchedulePaths.dispatch_monotone",
+        "OAI.KLInvariance.SchedulePaths.dispatch_injective",
+        "OAI.KLInvariance.SchedulePaths.dispatch_append'"
+      ],
+      "review": "Checked the separate hypotheses for monotonicity and injectivity, arbitrary vertex sets and real vectors, nil/cons inductions and the exact concatenation order.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.schedule_state",
+      "file": "docs/knowledge/nodes/kl.invariance/schedule_state.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.remainingConditions",
+        "OAI.KLInvariance.BruhatGraph.remainingConditions_nil",
+        "OAI.KLInvariance.BruhatGraph.remainingConditions_cons_source",
+        "OAI.KLInvariance.BruhatGraph.remainingConditions_cons_other",
+        "OAI.KLInvariance.BruhatGraph.scheduleState"
+      ],
+      "review": "Read the inherited finite-generator, finite-basis and boundary-sheaf context; checked all three remainingConditions identities, repeated-edge membership, ModuleData.nonneg, scale exponents and the one-edge model.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.schedule_comparison",
+      "file": "docs/knowledge/nodes/kl.invariance/schedule_comparison.md",
+      "source_declarations": [
+        "OAI.KLInvariance.SchedulePaths.remaining_state_le",
+        "OAI.KLInvariance.BruhatGraph.scheduleState_step",
+        "OAI.KLInvariance.BruhatGraph.scheduleState_le"
+      ],
+      "review": "Read scheduleState_step and scheduleState_le in their full boundary-sheaf context, and followed remaining_state_le head/tail induction. Checked every suffix inclusion, source/target conditions, arbitrary-list scope and reversed concatenation.",
+      "pending": []
+    },
+    {
+      "node": "kl.comparison.schedule_upper_freeness",
+      "file": "docs/knowledge/nodes/kl.invariance/schedule_upper_freeness.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.intervalBoundary",
+        "OAI.KLInvariance.BruhatGraph.schedule_edge_image_le",
+        "OAI.KLInvariance.BruhatGraph.schedule_comparison_of_upper_freeness"
+      ],
+      "review": "Read intervalBoundary and schedule_edge_image_le through both actual kernel equalities, transfer of upper freeness, ambient inclusion and correction-map identification; then followed schedule_comparison_of_upper_freeness and double reversal.",
+      "pending": []
+    },
+    {
+      "node": "kl.comparison.global_comparison",
+      "file": "docs/knowledge/nodes/kl.invariance/global_comparison.md",
+      "source_declarations": [
+        "OAI.KLInvariance.BruhatGraph.schedule_final_scaledStalk",
+        "OAI.KLInvariance.BruhatGraph.transported_initial_scaledStalk",
+        "OAI.KLInvariance.BruhatGraph.actual_comparison_of_upper_freeness"
+      ],
+      "review": "Matched the declared theorem to its actual dispatch conclusion. Checked all upper-freeness quantifiers, source actual character, full/empty kernel transport, positive denominator cancellation and integer exponent computation. Kept the later target R-matrix identification as the next linked result.",
+      "pending": []
+    },
+    {
+      "node": "kl.comparison.no_deficit",
+      "file": "docs/knowledge/nodes/kl.invariance/no_deficit.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Comparison.idealState",
+        "OAI.KLInvariance.Comparison.state_le_ideal",
+        "OAI.KLInvariance.Comparison.every_step_eq_of_endpoint_eq",
+        "OAI.KLInvariance.SchedulePaths.remaining_steps_eq",
+        "OAI.KLInvariance.BruhatGraph.edgeImages_eq_of_scheduleState_eq"
+      ],
+      "review": "Read both Comparison finite-index and SchedulePaths remaining-list proofs. Followed the actual head/tail sandwich, tail-product injectivity, recovered shorter endpoint, suffix split and normalized source-coordinate image criterion; preserved all conditional hypotheses.",
+      "pending": []
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -6821,8 +6907,15 @@
     {
       "code": "O7",
       "title": "Paths and transfer products",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "in_progress",
+      "completion_evidence": [
+        "kl.comparison.positive_transfer",
+        "kl.detail.transfer_properties"
+      ],
+      "pending": [
+        "Expand the full ordered path-product formula, decreasing-label subpaths, tie handling and the geometric Dyer identity."
+      ],
+      "review": "The semiring step/dispatch definitions, real order/injectivity statements, concatenation proof and two-edge path calculation have been expanded against their actual source declarations."
     },
     {
       "code": "L1",
@@ -6979,8 +7072,15 @@
     {
       "code": "I2",
       "title": "A complete schedule",
-      "status": "pending",
-      "completion_evidence": []
+      "status": "exposition_reviewed",
+      "completion_evidence": [
+        "kl.detail.schedule_state",
+        "kl.detail.schedule_comparison",
+        "kl.comparison.schedule_upper_freeness",
+        "kl.comparison.global_comparison"
+      ],
+      "pending": [],
+      "review": "Reviewed the exact remaining-condition sets and Hilbert-state definition; source/other-coordinate changes; generic monotone tail-product induction with the list reversal; actual upper-kernel freeness at every chronological suffix and its ambient-kernel transport; and substitution of the actual character endpoints into the dispatch inequality. The separate path identification belongs to O7 and the transported endpoint matrix calculation to I3."
     },
     {
       "code": "I3",
@@ -6990,7 +7090,7 @@
         "kl.detail.endpoint_equality"
       ],
       "pending": [
-        "Complete the schedule/path-product derivation and transported matrix calculation; the actual-character endpoint and reciprocity inputs are now detailed."
+        "Complete the geometric path-product and transported matrix calculation; I2 now supplies the detailed dispatch bound and actual-character endpoint substitutions."
       ]
     },
     {
@@ -6998,7 +7098,11 @@
       "title": "Equality and reverse reconstruction of freeness",
       "status": "in_progress",
       "completion_evidence": [
-        "kl.detail.reverse_projectivity"
+        "kl.detail.reverse_projectivity",
+        "kl.comparison.no_deficit"
+      ],
+      "pending": [
+        "Expand the full reverse schedule traversal and propagation of freeness; the actual remaining-list exact-step and image-equality arguments are now detailed alongside the reviewed one-step projectivity argument."
       ]
     },
     {
@@ -7021,7 +7125,7 @@
     }
   ],
   "next_steps": [
-    "Expand I2: actual schedule-state changes, monotone elementary transfers and iteration under the precise upper-kernel freeness hypothesis. Then develop the exact endpoint comparison and reverse freeness argument; retain O6/O7 pending order/path prerequisites.",
+    "Expand O7 and the remaining O6 order/path inputs, then finish the transported endpoint identity I3, reverse freeness I4 and the two final inductions. The current schedule comparison is reviewed with its exact upper-freeness hypotheses.",
     "Complete the remaining Coxeter/parabolic, root-space and sheaf-operation exposition.",
     "Expand adapted orders, chamber changes, dihedral interval transport, schedules and the path-polynomial proof.",
     "Complete localization, local image comparison, edge inequalities and the simultaneous invariance induction.",
@@ -7559,7 +7663,8 @@
       "kl.algebra.shifted_image_hilbert": "A6",
       "kl.algebra.saturated_image_hilbert": "A6",
       "kl.comparison.raw_edge_increment": "I1",
-      "kl.comparison.edge_normalization": "I1"
+      "kl.comparison.edge_normalization": "I1",
+      "kl.comparison.schedule_upper_freeness": "I2"
     },
     "moved_nodes": [
       {
@@ -8393,7 +8498,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 519
+    "current_node_count": 520
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -8433,7 +8538,8 @@
     "Completed L6 with six new entries: supported count equals plane weight; every actual structure model has the scaled equality; the localized boundary sheaf inherits it through one edge isomorphism; ambient later sets and mapped roots have their own definition; actual edges have least-coset coordinates; and the equality holds in the actual ambient localized edge module. Expanded the topic guide through these maps.",
     "Completed L7: quotient-ring free target, explicit correction/outgoing global multiplier, root-factor prime classification, tensor and scaled-image denominator witnesses, plane-denominator membership, actual ambient inclusion and exact schedule-suffix specialization. Added nine nodes, expanded five existing entries, and moved the remaining-condition term alias to the schedule definition. O6 is in progress for blocks/cutoffs beyond the endpoint suffix interface.",
     "Completed I1 with four new theorem entries and expanded kernel/normalization/edge-increment entries. Kept integer indexing together with ModuleData.nonneg for sheaf applications, made the one-variable quotient example explicit, supplied actual image-piece and saturation proofs, and added the normalized equality criterion and a worked nonnegative one-edge example with positive defect.",
-    "Authored mathematical introductions and checked reading routes for all 36 current keyword pages, including a main-theorem route through path products, local/global images, Hilbert comparison, exact endpoints and reverse freeness. Added renderer support and a project coverage/freshness gate."
+    "Authored mathematical introductions and checked reading routes for all 36 current keyword pages, including a main-theorem route through path products, local/global images, Hilbert comparison, exact endpoints and reverse freeness. Added renderer support and a project coverage/freshness gate.",
+    "Completed I2: explicit remaining-list states, all-suffix numerical propagation, a separate upper-freeness-to-inclusion theorem and actual-character endpoint substitution. Expanded transfer composition and both exact-step induction interfaces; added a two-edge calculation and updated the keyword routes."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -8809,6 +8915,11 @@
       "term": "kernel Hilbert value",
       "target": "kl.comparison.normalized_kernel",
       "review": "Links actual selected-kernel intersection pieces and their real Hilbert value, then the state scale and normalized kernel. Added exact state-scale and normalized-kernel-value aliases."
+    },
+    {
+      "term": "remaining conditions",
+      "target": "kl.detail.schedule_state",
+      "review": "Moved remaining-condition aliases to the explicit list-to-outgoing-selection definition and added Hilbert-state-vector aliases. Dispatch and ordered-transfer-product aliases resolve to the expanded elementary-transfer definition."
     }
   ],
   "corrections": [
@@ -8828,34 +8939,34 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-11-01T08:16:34+00:00",
+    "created_at": "2026-11-01T13:13:45.196938+00:00",
     "mdblueprint_revision": "acbbb0696e5c85844aee1d8b6a90591a29690606",
-    "node_count": 519,
-    "html_pages_checked": 794,
-    "generated_definition_links_checked": 8441,
+    "node_count": 520,
+    "html_pages_checked": 795,
+    "generated_definition_links_checked": 8545,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 27,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks homogeneous image values, the integer-indexed one-condition sequence with ModuleData.nonneg, raw and normalized Hilbert increments and their equality criteria. Documentation checks only.",
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks the exact suffix-state selections, conditional schedule comparison, actual-character dispatch conclusion and recovery of actual edge-image equality. Documentation checks only.",
     "focused_page_review": {
-      "entries": 8,
-      "new_entries": 4,
-      "source_anchors": 38,
-      "normalization_definition_links": 13,
-      "scope": "Read the saved hypotheses and proofs against Lean: component image maps, generic parameter ranges, saturation and exact scalar kernel, integer-degree convergence, raw embedded inclusion and positive defect, coefficient-basis cardinality, integer normalization and nonzero-scale cancellation. Preserved ModuleData.nonneg for sheaf applications; the negative-degree example belongs to the broader generic module lemma. Checked the strict-defect example and definition/source links. I1 is reviewed; I2 and O6 remain unfinished."
+      "entries": 7,
+      "new_entries": 1,
+      "source_anchors": 30,
+      "definition_alias_occurrences_checked": 8,
+      "scope": "Reviewed the source bodies for step/dispatch and their order/injectivity properties, all three remaining-condition identities, every-suffix propagation, actual upper-kernel transport, positive-parameter endpoint substitution and both exact-step inductions. The generic bound and actual upper-freeness specialization remain separate. I2 is reviewed; path identification, reverse traversal and the final inductions remain in progress."
     },
     "mdblueprint_focused_tests_passed": 254,
     "katex": {
       "renderer": "KaTeX",
       "version": "0.16.46",
-      "occurrences_checked": 23747,
-      "distinct_formulas_checked": 10718,
+      "occurrences_checked": 24043,
+      "distinct_formulas_checked": 10850,
       "browser_used": false
     },
     "keyword_guide_review": {
       "guides": 36,
-      "reading_route_links_checked": 260,
-      "definition_links_in_guides_checked": 284,
+      "reading_route_links_checked": 262,
+      "definition_links_in_guides_checked": 288,
       "scope": "Reviewed the mathematical introductions and reading routes; checked their rendered order, generated destinations and Lean source availability. The remaining topic exposition is recorded separately."
     }
   },
@@ -9538,6 +9649,18 @@
         "kl.comparison.normalized_kernel"
       ],
       "review": "Re-read GradedModules.lean:1051-1059 and GradedSheaves.lean:20-24 while checking keyword prerequisites. Corrected an unpublished expansion that had transferred the general Hilbert-module degree scope to GradedSheaf. Removed the broad finite graded module aliases from the nonnegative ModuleData definition; precise nonnegative and module-data aliases remain."
+    },
+    {
+      "entries": [
+        "kl.comparison.positive_transfer",
+        "kl.detail.transfer_properties",
+        "kl.detail.schedule_state",
+        "kl.detail.schedule_comparison",
+        "kl.comparison.schedule_upper_freeness",
+        "kl.comparison.global_comparison",
+        "kl.comparison.no_deficit"
+      ],
+      "review": "The generic transfer bound accepts arbitrary finite lists and nonnegative real T. Distinct endpoints are used for injectivity. The actual schedule comparison assumes upper-kernel freeness at every exact chronological suffix. actual_comparison_of_upper_freeness concludes a dispatch inequality for the actual source-character vector; target R-matrix identification is a separate path theorem. The remaining-list no-deficit proof cancels the tail product and recurses on the tail."
     }
   ],
   "relationship_map_revision": {
@@ -9574,6 +9697,7 @@
     "checks": {
       "mdblueprint_focused_tests": 254,
       "project_document_tests": 27
-    }
+    },
+    "reading_route_references": 262
   }
 }
