@@ -14,6 +14,8 @@ uses:
 - kl.paths.sorted_path_selection
 - kl.paths.bruhat_path_polynomial
 - kl.dihedral.plane_path_reversal
+- kl.order.chamber_existence
+- kl.paths.adapted_path_identification
 lean:
   repository: openai-kl
   modules:
@@ -38,11 +40,10 @@ verification:
 generality:
   reviewed: true
   prompt: Does the exposition preserve the mathematical scope of its Lean declarations?
-  verdict: Stated finite-generator and both lower-region endpoint hypotheses for the
-    polynomial entry theorem. Expanded the intrinsic plane-block step using the actual
-    interval flip, middle-descent test and path involution. The adapted rotation,
-    ambient block transfer and generic-pencil exposition remain in the topic review
-    plan.
+  verdict: Retained the exact finite-generator/lower-region statement. The adapted
+    chamber, rotation, path recursion and intrinsic plane reversal are now linked
+    to complete developments. Ambient coset-plane block transport, the generic-pencil
+    argument and the exact decreasing-entry comparison remain pending exposition.
 tags:
 - Kazhdan-Lusztig
 - background
@@ -85,20 +86,21 @@ The [[node:kl.notes.path_product|path-sum expansion]] expresses the left side as
 
 On the finite lower region below \(b\), expand the transfer product using [[node:kl.notes.path_product]]. Its \((x,y)\)-entry is the sum of \(X^{|p|}\) over directed paths whose edges occur in the schedule order. The [[node:kl.paths.sorted_path_selection|sorted-path selection theorem]] makes the weak schedule order strict along every contributing path, because equal root labels cannot be composable.
 
-### Step 2. The adapted-order recursion
+### Step 2. A height-denominator chamber order and its path polynomial
 
-Choose a geometric ratio order whose numerator lies in the chamber adapted to \(y\). If \(y\ne1\), its chamber-rotation construction chooses a simple descent \(s\) and a second ratio order for \(sy\). In the original order the simple root is least; in the rotated order it is greatest. Reflection by \(s\) identifies the orderings of all other roots.
-
-Split increasing paths according to whether they use that least simple edge. If \(sx<x\), such an edge cannot start a directed path from \(x\), and reflection transports all paths to paths from \(sx\) to \(sy\). If \(sx>x\), paths omitting the simple edge transport to paths from \(sx\) to \(sy\); paths using it must use it first and transport, after removing it, to paths from \(x\) to \(sy\). Removing that first edge removes one factor of \(X\).
-
-Thus the path polynomials obey exactly
+The [[node:kl.order.chamber_existence|prescribed-chamber existence theorem]] gives a ratio order \(O\) in the chamber of \(y\), with height denominator. The [[node:kl.paths.adapted_path_identification|adapted path identification]] therefore gives
 \[
-F_{x,y}=\begin{cases}
-F_{sx,sy},&sx<x,\\
-F_{sx,sy}+TF_{x,sy},&sx>x.
+F_O(x,y;X)=\widetilde R_{x,y}(X).
+\]
+Its proof rotates at a least simple descent \(s\), obtaining \(O'\) in the chamber of \(sy\), with \(\ell(sy)<\ell(y)\). The [[node:kl.paths.path_polynomial_recursion|path-polynomial recursion]] uses \(O'\) on both smaller terms:
+\[
+F_O(x,y;X)=
+\begin{cases}
+F_{O'}(sx,sy;X),&\ell(sx)<\ell(x),\\
+F_{O'}(sx,sy;X)+X F_{O'}(x,sy;X),&\ell(x)<\ell(sx).
 \end{cases}
 \]
-The empty path gives \(F_{x,x}=1\), and there are no paths outside Bruhat order. Induction on \(\ell(y)\), using the rotated order at each step, identifies this adapted path polynomial with the Hecke-defined \(\widetilde R_{x,y}\).
+The [[node:kl.paths.rotated_path_sum|rotated path-sum theorem]] accounts for the paths avoiding the chosen simple label; the [[node:kl.paths.simple_prefix_split|simple-prefix decomposition]] accounts for the extra \(X\). Strong induction over all orders and both endpoints then matches the [[node:kl.detail.rtilde_recursion|normalized R-recursion]]. The linked entries give the parameter construction, the two finite path bijections and every induction substitution.
 
 ### Step 3. The full intrinsic root-plane block
 

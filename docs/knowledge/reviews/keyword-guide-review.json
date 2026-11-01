@@ -104,6 +104,9 @@
         "kl.paths.graph_invariance",
         "kl.paths.directed_paths",
         "kl.notes.path_product",
+        "kl.order.rotation_exists",
+        "kl.paths.path_polynomial_recursion",
+        "kl.paths.adapted_path_identification",
         "kl.dihedral.plane_path_reversal",
         "kl.paths.dyer_paths",
         "kl.sheaves.boundary_sheaf",
@@ -120,9 +123,9 @@
         "kl.main.finite_interval_model",
         "kl.main.combinatorial_invariance"
       ],
-      "content_sha256": "46c9add5f3d7ae8edfea351e25d8a0583c07f2c2234da5020b404bd129518533",
+      "content_sha256": "e679c0b0408541773912e8fef3371ef97776800e148f3dc4907faee2853db509",
       "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph.",
-      "scope_review": " Added the explicit upper-suffix-freeness step between generic list propagation and exact endpoints. Added the directed-path, exact sum and full intrinsic-plane reversal route; the main geometric identification remains linked separately."
+      "scope_review": " Added the explicit upper-suffix-freeness step between generic list propagation and exact endpoints. Added the directed-path, exact sum and full intrinsic-plane reversal route; the main geometric identification remains linked separately. Added chamber choice, ratio rotation, the two-order path recursion and adapted identification before the geometric order comparison."
     },
     {
       "keyword": "background",
@@ -625,18 +628,24 @@
         "kl.order.root_slopes",
         "kl.order.slope_cone",
         "kl.detail.geometric_functional",
+        "kl.notes.reflection_order",
+        "kl.order.chamber_existence",
+        "kl.order.rotated_ratio_order",
         "kl.detail.diamond_reconstruction",
         "kl.detail.transported_schedule",
         "kl.paths.schedule_suffixes",
         "kl.paths.directed_paths",
         "kl.notes.path_product",
         "kl.paths.bruhat_path_polynomial",
+        "kl.order.rotation_exists",
+        "kl.paths.path_polynomial_recursion",
+        "kl.paths.adapted_path_identification",
         "kl.dihedral.plane_path_reversal",
         "kl.paths.dyer_paths"
       ],
-      "content_sha256": "de9af6d5778c2ff68d5205098333aa473f060fbea5edec5010c6b65386382599",
+      "content_sha256": "b10421476ea66ec13881239a325b3dd821dda12bc135b90337fce0c8b986f0b2",
       "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph.",
-      "scope_review": " Added the directed-path, exact sum and full intrinsic-plane reversal route; the main geometric identification remains linked separately."
+      "scope_review": " Added the directed-path, exact sum and full intrinsic-plane reversal route; the main geometric identification remains linked separately. Added chamber choice, ratio rotation, the two-order path recursion and adapted identification before the geometric order comparison."
     },
     {
       "keyword": "root-geometry",

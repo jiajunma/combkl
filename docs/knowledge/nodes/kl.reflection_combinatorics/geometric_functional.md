@@ -10,6 +10,7 @@ uses:
 - kl.order.root_slopes
 - kl.detail.positive_roots
 - kl.realization.tits_form
+- kl.order.polynomial_functionals
 lean:
   repository: openai-kl
   modules:
@@ -39,8 +40,9 @@ verification:
 generality:
   reviewed: true
   prompt: Does the entry preserve the source hypotheses, construction, and conclusion?
-  verdict: Read against the named Lean declarations and surrounding variable context;
-    explanatory examples are distinguished from the formal statement.
+  verdict: Rechecked normalized-root injectivity, countability from finite words,
+    the coordinate-polynomial avoidance construction and positive-combination betweenness.
+    Linked the standalone coordinate-polynomial and moment-functional definitions.
 tags:
 - Kazhdan-Lusztig
 - reflection_orders
@@ -81,7 +83,7 @@ Enumerate coordinates by \(0,\ldots,N-1\), and for a real parameter \(t\) define
 \[
 f_t(v)=\sum_{j=0}^{N-1}v_jt^j.
 \]
-For distinct normalized roots \(\widehat\alpha,\widehat\beta\), their difference is nonzero. Thus
+The [[node:kl.order.polynomial_functionals|coordinate-polynomial construction]] gives this family and recovers each vector from the polynomial coefficients. For distinct normalized roots \(\widehat\alpha,\widehat\beta\), their difference is nonzero. Thus
 \(f_t(\widehat\alpha-\widehat\beta)\) is a nonzero polynomial in \(t\), with only finitely many roots.
 
 There are countably many root pairs. The union of these finite forbidden sets is countable, while \(\mathbb R\) is uncountable. Choose \(t\) outside the union and set \(f=f_t\). Then all numbers \(f(\widehat\alpha)=f(\alpha)/h(\alpha)\) are distinct.
@@ -106,8 +108,6 @@ Distinct slopes give a total order. On each root plane, normalized positive root
 [Related paper context](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/03-dihedral.tex#L2).
 
 ## Lean formalization
-
-
 
 `OAI.KLInvariance.TitsSpace.exists_geometric_functional`: [ReflectionSchedules.lean:126](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L126).
 

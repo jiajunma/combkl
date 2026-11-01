@@ -158,6 +158,11 @@ concepts:
   - ratio order
   - ratio-order datum
   - adapted order
+  - ratio orders
+  - chamber condition
+  - chamber conditions
+  - chamber order
+  - chamber orders
 - node: kl.notes.relative_dihedral_intervals
   terms:
   - relative Bruhat order
@@ -1566,3 +1571,39 @@ concepts:
   - internal-rank flips
   - plane edge slope
   - plane edge slopes
+- node: kl.notes.reflection_order
+  terms:
+  - positive functional
+  - positive functionals
+  topics:
+  - kl.reflection_combinatorics
+- node: kl.order.polynomial_functionals
+  terms:
+  - coordinate polynomial
+  - coordinate polynomials
+  - moment functional
+  - moment functionals
+  - polynomial perturbation
+  - polynomial perturbations
+- node: kl.order.rotated_ratio_order
+  terms:
+  - rotated ratio order
+  - rotated ratio orders
+  - turned ratio order
+  - turned numerator
+  - turned denominator
+  - ratio-order rotation
+  - ratio-order rotations
+- node: kl.paths.simple_rotation
+  terms:
+  - edge rotation
+  - edge rotations
+  - edge-rotation map
+  - edge-rotation maps
+  - avoidance predicate
+  - avoidance condition
+  - avoiding path set
+  - avoiding path sets
+  - simple-edge prefix
+  - simple-labelled edge
+  - simple-labelled edges

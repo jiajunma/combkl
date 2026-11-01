@@ -1022,16 +1022,6 @@
       "pending": []
     },
     {
-      "node": "kl.detail.geometric_functional",
-      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/geometric_functional.md",
-      "source_declarations": [
-        "OAI.KLInvariance.TitsSpace.exists_geometric_functional",
-        "OAI.KLInvariance.TitsSpace.functionalRatio_between"
-      ],
-      "review": "Rechecked moment-curve generic-functional existence against the local source; its inputs now link to the independent height/normalized-root definitions.",
-      "pending": []
-    },
-    {
       "node": "kl.detail.plane_basis",
       "file": "docs/knowledge/nodes/kl.reflection_combinatorics/plane_basis.md",
       "source_declarations": [
@@ -1243,21 +1233,6 @@
         "OAI.KLInvariance.TitsSpace.planeWeight",
         "OAI.KLInvariance.TitsSpace.inversionVector",
         "OAI.KLInvariance.TitsSpace.rootChange"
-      ],
-      "review": "Read the local definitions and structure fields. Explained the original root-space domain, slope or length convention, subgroup construction, and sign data; worked examples are exposition.",
-      "pending": []
-    },
-    {
-      "node": "kl.notes.reflection_order",
-      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/reflection_order.md",
-      "source_declarations": [
-        "OAI.KLInvariance.TitsSpace.RatioOrder",
-        "OAI.KLInvariance.TitsSpace.RatioOrder.slope",
-        "OAI.KLInvariance.TitsSpace.RatioOrder.denominator_pos",
-        "OAI.KLInvariance.TitsSpace.RatioOrder.Adapted",
-        "OAI.KLInvariance.TitsSpace.geometricFunctional",
-        "OAI.KLInvariance.TitsSpace.geometricSlope",
-        "OAI.KLInvariance.TitsSpace.geometricSlope_injective"
       ],
       "review": "Read the local definitions and structure fields. Explained the original root-space domain, slope or length convention, subgroup construction, and sign data; worked examples are exposition.",
       "pending": []
@@ -6232,15 +6207,193 @@
       "pending": []
     },
     {
+      "node": "kl.order.polynomial_functionals",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/polynomial_functionals.md",
+      "source_declarations": [
+        "OAI.KLInvariance.ReflectionSchedules.coordinatePolynomial",
+        "OAI.KLInvariance.ReflectionSchedules.coordinatePolynomial_coeff",
+        "OAI.KLInvariance.ReflectionSchedules.coordinatePolynomial_injective",
+        "OAI.KLInvariance.ReflectionSchedules.momentFunctional",
+        "OAI.KLInvariance.ReflectionSchedules.coordinatePolynomial_eval"
+      ],
+      "review": "Read the finite-coordinate polynomial, coefficient recovery, injectivity, momentFunctional linearity and evaluation identity. Explained the exact f0+tau*momentFunctional(tau) perturbation used by chamber existence.",
+      "pending": []
+    },
+    {
+      "node": "kl.order.chamber_adaptation",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/chamber_adaptation.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.RatioOrder.adapted_of_chamber",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.simple_lower_bound",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.exists_least_simple",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.least_simple_descent"
+      ],
+      "review": "Read adapted_of_chamber and the least-simple lemmas. Preserved the distinct chamber and adapted hypotheses, both inverse-root sign cases, the coordinate sum argument and the nonempty-generator deduction from y!=1.",
+      "pending": []
+    },
+    {
+      "node": "kl.order.chamber_existence",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/chamber_existence.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.exists_ratioOrder_chamber_height",
+        "OAI.KLInvariance.TitsSpace.exists_ratioOrder_chamber"
+      ],
+      "review": "Read the exact f0+tau*momentFunctional(tau) construction. Checked the finite open positivity set containing zero, normalized-root injectivity, nonzero difference polynomials, countability/finite-zero avoidance and all four RatioOrder fields.",
+      "pending": []
+    },
+    {
+      "node": "kl.order.rotated_ratio_order",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/rotated_ratio_order.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.positiveAction_simplePositive",
+        "OAI.KLInvariance.TitsSpace.simple_action_nonneg",
+        "OAI.KLInvariance.TitsSpace.simple_positiveAction_val",
+        "OAI.KLInvariance.TitsSpace.simple_positiveAction_ne",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.turnNumerator",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.turnDenominator",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.turn_ratio_injective",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.turn"
+      ],
+      "review": "Read simple-root positiveAction facts and the turn construction. Preserved generic k!=0 and denominator positivity; proved injectivity by the exact cross multiplication and positive-root permutation. Checked the fractional-linear formula and A2 values by substitution.",
+      "pending": []
+    },
+    {
+      "node": "kl.order.rotation_exists",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/rotation_exists.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.exists_uniform_pos_lt",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.exists_turn_parameter",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.turn_chamber",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.turn_simple_greatest",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.turn_slope_lt_iff",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.exists_rotation"
+      ],
+      "review": "Read the finite gap construction, positivity checks on each simple root, turn_chamber, comparison through one and the positive-denominator cross multiplication. Preserved the exact non-simple comparisons and both strict endpoint-order conditions of exists_rotation.",
+      "pending": []
+    },
+    {
+      "node": "kl.paths.simple_rotation",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/simple_rotation.md",
+      "source_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.rootLabel_simple_iff",
+        "OAI.KLInvariance.AdaptedDyer.rotateEdge",
+        "OAI.KLInvariance.AdaptedDyer.Nonsimple",
+        "OAI.KLInvariance.AdaptedDyer.nonsimplePaths",
+        "OAI.KLInvariance.AdaptedDyer.mem_nonsimplePaths",
+        "OAI.KLInvariance.AdaptedDyer.simpleEdge",
+        "OAI.KLInvariance.AdaptedDyer.simpleEdge_source",
+        "OAI.KLInvariance.AdaptedDyer.simpleEdge_target",
+        "OAI.KLInvariance.AdaptedDyer.simpleEdge_root"
+      ],
+      "review": "Read the root-label/endpoint equivalence, total rotateEdge definition, Nonsimple on arbitrary lists, filtered nonsimplePaths and simpleEdge data. Kept the chosen-label meaning and the separate hypotheses for a simple prefix and the non-simple endpoint map.",
+      "pending": []
+    },
+    {
+      "node": "kl.paths.simple_rotation_transport",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/simple_rotation_transport.md",
+      "source_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.rotateEdge_val",
+        "OAI.KLInvariance.AdaptedDyer.rotateEdge_root",
+        "OAI.KLInvariance.AdaptedDyer.rotateEdge_nonsimple",
+        "OAI.KLInvariance.AdaptedDyer.rotateEdge_involutive",
+        "OAI.KLInvariance.AdaptedDyer.path_map_of_mem",
+        "OAI.KLInvariance.AdaptedDyer.path_rotate",
+        "OAI.KLInvariance.AdaptedDyer.nonsimple_map",
+        "OAI.KLInvariance.AdaptedDyer.path_map_twice",
+        "OAI.KLInvariance.AdaptedDyer.path_rotate_iff",
+        "OAI.KLInvariance.AdaptedDyer.paths_rotate_iff"
+      ],
+      "review": "Read actual endpoint/root-label rotation, exclusion preservation and total involution. Explained path_map_of_mem with hypotheses only on the list and used both directions of the exact two-order slope comparison before applying mem_paths.",
+      "pending": []
+    },
+    {
+      "node": "kl.paths.extremal_label_paths",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/extremal_label_paths.md",
+      "source_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.nonsimple_of_greatest",
+        "OAI.KLInvariance.AdaptedDyer.nonsimple_tail_of_least",
+        "OAI.KLInvariance.AdaptedDyer.nonsimple_of_least_descent"
+      ],
+      "review": "Read all three extremal-label exclusion lemmas. Preserved the arbitrary-list scope of the least-label tail statement, the initial descent condition and the exact negated final descent condition for a greatest label.",
+      "pending": []
+    },
+    {
+      "node": "kl.paths.rotated_path_sum",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/rotated_path_sum.md",
+      "source_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.sum_nonsimple_rotate"
+      ],
+      "review": "Read sum_nonsimple_rotate and every finite-bijection clause. Retained only the source greatest-label/comparison hypotheses and top descent, explicitly proved avoidance at the rotated endpoint and constructed the inverse using the same two-order equivalence.",
+      "pending": []
+    },
+    {
+      "node": "kl.paths.simple_prefix_split",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/simple_prefix_split.md",
+      "source_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.cons_simple_mem",
+        "OAI.KLInvariance.AdaptedDyer.not_nonsimple_iff_cons",
+        "OAI.KLInvariance.AdaptedDyer.polynomial_split"
+      ],
+      "review": "Read the prefix membership proof, both directions of not_nonsimple_iff_cons and polynomial_split. Retained the least-label and initial-ascent hypotheses, actual-edge equality by endpoints, unique tail recovery and the exact one-edge weight factor.",
+      "pending": []
+    },
+    {
+      "node": "kl.paths.path_polynomial_recursion",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/path_polynomial_recursion.md",
+      "source_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.polynomial_recursion"
+      ],
+      "review": "Read polynomial_recursion and both branches. Verified that only the path splitting uses the least-label assumption, that both partial sums use the greatest-label rotation theorem, and that every smaller polynomial uses O-prime. Checked the A2 paths by their left-reflection labels.",
+      "pending": []
+    },
+    {
+      "node": "kl.paths.adapted_path_identification",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/adapted_path_identification.md",
+      "source_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.polynomial_eq_rTilde",
+        "OAI.KLInvariance.AdaptedDyer.exists_dyer_schedule"
+      ],
+      "review": "Read polynomial_eq_rTilde and exists_dyer_schedule. Made the strong induction quantify over the order and both endpoints, handled both x cases at y=1, checked the two smaller O-prime instances and matched the exact Hecke recursion. The statement retains Chamber(y).",
+      "pending": []
+    },
+    {
+      "node": "kl.notes.reflection_order",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/reflection_order.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.RatioOrder",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.slope",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.denominator_pos",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.Adapted",
+        "OAI.KLInvariance.TitsSpace.geometricFunctional",
+        "OAI.KLInvariance.TitsSpace.geometricSlope",
+        "OAI.KLInvariance.TitsSpace.geometricSlope_injective",
+        "OAI.KLInvariance.TitsSpace.PositiveFunctional",
+        "OAI.KLInvariance.TitsSpace.PositiveFunctional.root_pos",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.Chamber"
+      ],
+      "review": "Explained all RatioOrder fields, the exact PositiveFunctional condition, the separate Adapted and Chamber predicates and the same A2 example; linked the proved chamber implication, existence and rotation constructions.",
+      "pending": []
+    },
+    {
+      "node": "kl.detail.geometric_functional",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/geometric_functional.md",
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.exists_geometric_functional",
+        "OAI.KLInvariance.TitsSpace.functionalRatio_between"
+      ],
+      "review": "Rechecked normalized-root injectivity, countability from finite words, the coordinate-polynomial avoidance construction and positive-combination betweenness. Linked the standalone coordinate-polynomial and moment-functional definitions.",
+      "pending": []
+    },
+    {
       "node": "kl.paths.dyer_paths",
       "file": "docs/knowledge/nodes/kl.reflection_combinatorics/dyer_paths.md",
       "source_declarations": [
         "OAI.KLInvariance.WallDyer.geometric_entry_eq_rTilde"
       ],
-      "review": "Stated finite-generator and both lower-region endpoint hypotheses for the polynomial entry theorem. Expanded the intrinsic plane-block step using the actual interval flip, middle-descent test and path involution. The adapted rotation, ambient block transfer and generic-pencil exposition remain in the topic review plan.",
+      "review": "Retained the exact finite-generator/lower-region statement. The adapted chamber, rotation, path recursion and intrinsic plane reversal are now linked to complete developments. Ambient coset-plane block transport, the generic-pencil argument and the exact decreasing-entry comparison remain pending exposition.",
       "pending": [
-        "Expand adapted chamber rotation and path-polynomial recursion.",
-        "Expand the ambient coset block transfer and generic-pencil/order-independence proof."
+        "Expand ambient coset-plane block transport and generic-pencil order independence.",
+        "Develop the exact negative-numerator path-set comparison and final geometric entry identification."
       ]
     }
   ],
@@ -6942,11 +7095,19 @@
       "status": "in_progress",
       "completion_evidence": [
         "kl.order.root_slopes",
-        "kl.order.slope_cone"
+        "kl.order.slope_cone",
+        "kl.order.polynomial_functionals",
+        "kl.order.chamber_adaptation",
+        "kl.order.chamber_existence",
+        "kl.order.rotated_ratio_order",
+        "kl.order.rotation_exists",
+        "kl.notes.reflection_order",
+        "kl.detail.geometric_functional"
       ],
       "pending": [
-        "Expand the adapted-order existence, chamber moves, rotations, and generic-pencil/root-plane-block comparison arguments."
-      ]
+        "Expand generic pencils, root-plane tie blocks and the order-independence argument."
+      ],
+      "review": "Reviewed ratio-order fields and both chamber/adapted predicates, coordinate-polynomial functionals, prescribed-chamber existence, least-simple descent, the generic turn construction and the negative-parameter order rotation. The finite positivity argument and the full non-simple slope comparison are detailed. Generic pencil and block comparison exposition remains."
     },
     {
       "code": "O2",
@@ -7063,13 +7224,20 @@
         "kl.paths.bruhat_path_polynomial",
         "kl.paths.bruhat_path_selection",
         "kl.dihedral.interval_flip",
-        "kl.dihedral.plane_path_reversal"
+        "kl.dihedral.plane_path_reversal",
+        "kl.paths.simple_rotation",
+        "kl.paths.simple_rotation_transport",
+        "kl.paths.extremal_label_paths",
+        "kl.paths.rotated_path_sum",
+        "kl.paths.simple_prefix_split",
+        "kl.paths.path_polynomial_recursion",
+        "kl.paths.adapted_path_identification"
       ],
       "pending": [
-        "Expand adapted chamber existence/rotation and the increasing-path polynomial recursion.",
-        "Expand ambient coset transfer of the full plane-block identity and the generic-pencil/order-independence proof, then finish the geometric R-entry identification."
+        "Expand ambient coset transport of the intrinsic plane-block identity and generic-pencil order independence.",
+        "Develop negative-numerator path-set/entry comparison and finish the fixed geometric R-entry identification."
       ],
-      "review": "Reviewed generic directed-path and selected-set definitions; semiring position-sublist and finite-set expansion; strict sorted selection; graph and local-label path transport; involution reindexing; the actual increasing Bruhat polynomial and endpoint bounds; and the complete intrinsic dihedral path reversal through middle descents. The final geometric theorem has a precise endpoint statement and links this detailed intrinsic calculation; its remaining adapted-order and pencil steps are still pending."
+      "review": "The generic path calculus and intrinsic plane reversal are reviewed. The adapted part is now fully developed: total edge rotation and chosen-label avoidance, on-list path transport, extremal-label exclusions, both finite path bijections, the two-order polynomial recursion and strong induction with the exact Chamber hypothesis. The remaining work is the ambient/order-independence comparison."
     },
     {
       "code": "L1",
@@ -7279,7 +7447,7 @@
     }
   ],
   "next_steps": [
-    "Continue O7 through the adapted chamber and rotation constructions, simple-edge path splitting and polynomial recursion. Then expand the ambient plane-block transfer and generic-pencil order-independence argument in O1/O6, finish I3/I4 and the final inductions.",
+    "Develop the WallDyer functional scores, complete root-plane tie blocks and ambient coset path transfer; prove generic-pencil order independence and the negative-numerator comparison, closing O1/O7. Then finish the outstanding O6 restriction/cutoff facts, I3/I4 and the final inductions.",
     "Complete the remaining Coxeter/parabolic, root-space and sheaf-operation exposition.",
     "Expand adapted orders, chamber changes, dihedral interval transport, schedules and the path-polynomial proof.",
     "Complete localization, local image comparison, edge inequalities and the simultaneous invariance induction.",
@@ -7826,7 +7994,19 @@
       "kl.paths.bruhat_path_polynomial": "O7",
       "kl.paths.bruhat_path_selection": "O7",
       "kl.dihedral.interval_flip": "O7",
-      "kl.dihedral.plane_path_reversal": "O7"
+      "kl.dihedral.plane_path_reversal": "O7",
+      "kl.order.polynomial_functionals": "O1",
+      "kl.order.chamber_adaptation": "O1",
+      "kl.order.chamber_existence": "O1",
+      "kl.order.rotated_ratio_order": "O1",
+      "kl.order.rotation_exists": "O1",
+      "kl.paths.simple_rotation": "O7",
+      "kl.paths.simple_rotation_transport": "O7",
+      "kl.paths.extremal_label_paths": "O7",
+      "kl.paths.rotated_path_sum": "O7",
+      "kl.paths.simple_prefix_split": "O7",
+      "kl.paths.path_polynomial_recursion": "O7",
+      "kl.paths.adapted_path_identification": "O7"
     },
     "moved_nodes": [
       {
@@ -8660,7 +8840,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 528
+    "current_node_count": 540
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -8702,7 +8882,8 @@
     "Completed I1 with four new theorem entries and expanded kernel/normalization/edge-increment entries. Kept integer indexing together with ModuleData.nonneg for sheaf applications, made the one-variable quotient example explicit, supplied actual image-piece and saturation proofs, and added the normalized equality criterion and a worked nonnegative one-edge example with positive defect.",
     "Authored mathematical introductions and checked reading routes for all 36 current keyword pages, including a main-theorem route through path products, local/global images, Hilbert comparison, exact endpoints and reverse freeness. Added renderer support and a project coverage/freshness gate.",
     "Completed I2: explicit remaining-list states, all-suffix numerical propagation, a separate upper-freeness-to-inclusion theorem and actual-character endpoint substitution. Expanded transfer composition and both exact-step induction interfaces; added a two-edge calculation and updated the keyword routes.",
-    "Expanded O7 with eight new path and interval-flip entries, the complete semiring path expansion, both directions of sorted path transport, and the full intrinsic plane reversal. Updated the final geometric theorem to its exact finite-generator/lower-region scope and linked the detailed plane step. The adapted chamber recursion and ambient pencil argument remain pending."
+    "Expanded O7 with eight new path and interval-flip entries, the complete semiring path expansion, both directions of sorted path transport, and the full intrinsic plane reversal. Updated the final geometric theorem to its exact finite-generator/lower-region scope and linked the detailed plane step. The adapted chamber recursion and ambient pencil argument remain pending.",
+    "Added twelve definitions and theorems completing the adapted chamber-to-path-recursion development. Expanded RatioOrder with its Chamber predicate, linked coordinate-polynomial genericity, derived the turn parameter and fractional-linear comparisons, proved the avoiding and simple-prefix bijections, and completed the adapted R-identification. Consolidated the topic guide and updated the main and reflection-order keyword routes."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -9098,6 +9279,26 @@
       "term": "interval flip",
       "target": "kl.dihedral.interval_flip",
       "review": "Links rank-cut, interval and edge involutions, with the induced actual-root slope definition and the well-definedness calculations."
+    },
+    {
+      "term": "chamber condition",
+      "target": "kl.notes.reflection_order",
+      "review": "Added the exact Chamber and PositiveFunctional predicates with code references; retained the distinct Adapted sign definition."
+    },
+    {
+      "term": "coordinate polynomial",
+      "target": "kl.order.polynomial_functionals",
+      "review": "Defined coefficient encoding, coefficient recovery, momentFunctional and the polynomial perturbation used by chamber choice."
+    },
+    {
+      "term": "rotated ratio order",
+      "target": "kl.order.rotated_ratio_order",
+      "review": "Defined both turned functionals, generic k/positivity hypotheses, slope injectivity and the fractional-linear slope formula."
+    },
+    {
+      "term": "edge rotation",
+      "target": "kl.paths.simple_rotation",
+      "review": "Defined the total edge map, simple-labelled edge, chosen-label avoidance and the filtered finite path set; kept order rotation and edge rotation as distinct definition targets."
     }
   ],
   "corrections": [
@@ -9117,34 +9318,34 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-11-01T13:40:27.688369+00:00",
+    "created_at": "2026-11-01T14:17:15.561711+00:00",
     "mdblueprint_revision": "acbbb0696e5c85844aee1d8b6a90591a29690606",
-    "node_count": 528,
-    "html_pages_checked": 803,
-    "generated_definition_links_checked": 8714,
+    "node_count": 540,
+    "html_pages_checked": 815,
+    "generated_definition_links_checked": 9012,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 27,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision explains directed paths, finite path sets, actual Bruhat path polynomials and the rank/interval/edge flip constructions. Documentation checks only.",
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision explains Chamber and PositiveFunctional, coordinate polynomials, turned ratio orders, and the chosen-label edge/path constructions. Documentation checks only.",
     "focused_page_review": {
-      "entries": 10,
-      "new_entries": 8,
-      "source_anchors": 61,
-      "definition_alias_occurrences_checked": 49,
-      "scope": "Reviewed nine complete path developments and a scoped refinement of the final geometric theorem. Checked position-sublist multiplicities, absence-of-repetition hypotheses, both sorted-path transport directions, actual Bruhat labels and endpoint bounds, the internal-descent switch and fixed-endpoint plane reversal. The final geometric theorem still has adapted chamber, ambient block and pencil arguments pending. Corrected the shared rotation/signed-index period comparison."
+      "entries": 15,
+      "new_entries": 12,
+      "source_anchors": 67,
+      "definition_alias_occurrences_checked": 64,
+      "scope": "Reviewed prescribed-chamber existence, finite turn-parameter choice and the fractional-linear comparison; verified the total edge map and on-list endpoint conditions; proved the avoiding-path rotation and simple-prefix bijections, the two-order recursion and both strong-induction substitutions. Checked the A2 slopes and path calculations. The ambient block, generic pencil and final decreasing-entry comparison remain pending."
     },
     "mdblueprint_focused_tests_passed": 254,
     "katex": {
       "renderer": "KaTeX",
       "version": "0.16.46",
-      "occurrences_checked": 24551,
-      "distinct_formulas_checked": 11038,
+      "occurrences_checked": 25162,
+      "distinct_formulas_checked": 11284,
       "browser_used": false
     },
     "keyword_guide_review": {
       "guides": 36,
-      "reading_route_links_checked": 271,
-      "definition_links_in_guides_checked": 297,
+      "reading_route_links_checked": 280,
+      "definition_links_in_guides_checked": 305,
       "scope": "Reviewed the mathematical introductions and reading routes; checked their rendered order, generated destinations and Lean source availability. The remaining topic exposition is recorded separately."
     }
   },
@@ -9876,6 +10077,40 @@
         "kl.dihedral.lower_signed_sums"
       ],
       "review": "Corrected the shared source-comparison wording from rotation period 2m to the exact source assertions: rotation^m=1 for maximum length m, which gives signed-index period 2m. Read rotation_pow_max and indexWord_period and added the latter source citation."
+    },
+    {
+      "entries": [
+        "kl.notes.reflection_order",
+        "kl.order.polynomial_functionals",
+        "kl.order.chamber_adaptation",
+        "kl.order.chamber_existence"
+      ],
+      "review": "Chamber means numerator positivity on the y-transformed simple roots. Its proved implication gives the Adapted inversion-sign condition. The prescribed-chamber theorem uses height denominator, f0=height composed with inverse action, and f_tau=f0+tau*momentFunctional(tau). Its genericity proof is independent of the separate unrestricted generic-functional existence theorem; the dependency graph reflects that."
+    },
+    {
+      "entries": [
+        "kl.order.rotated_ratio_order",
+        "kl.order.rotation_exists"
+      ],
+      "review": "The turn construction retains k!=0 and positivity of the new denominator. The rotation theorem chooses k<0 using finitely many simple-root image gaps, checks every simple denominator, transports the chamber to sy and proves the other slope comparisons by cross multiplication. The A2 worked example uses the same f(a)=-1,f(b)=3 data as the ratio-order definition."
+    },
+    {
+      "entries": [
+        "kl.paths.simple_rotation",
+        "kl.paths.simple_rotation_transport",
+        "kl.paths.extremal_label_paths",
+        "kl.paths.rotated_path_sum",
+        "kl.paths.simple_prefix_split"
+      ],
+      "review": "Nonsimple excludes one chosen simple label on an arbitrary edge list. The total edge map fixes excluded simple edges and agrees with left multiplication only on avoiding lists. The two-order path-transport theorem assumes its comparison condition directly. The greatest-label target-ascent condition establishes surjectivity of the avoiding-path rotation, while the least-label initial-ascent condition establishes the prefix bijection."
+    },
+    {
+      "entries": [
+        "kl.paths.path_polynomial_recursion",
+        "kl.paths.adapted_path_identification",
+        "kl.paths.dyer_paths"
+      ],
+      "review": "Every smaller path polynomial in the recursion uses O-prime. The strong induction quantifies over O,x,y and substitutes both lower endpoints at sy, retaining Chamber(y). The final geometric theorem now links the complete adapted proof but still records ambient block, pencil and negative-numerator comparison exposition as pending."
     }
   ],
   "relationship_map_revision": {
@@ -9913,6 +10148,6 @@
       "mdblueprint_focused_tests": 254,
       "project_document_tests": 27
     },
-    "reading_route_references": 271
+    "reading_route_references": 280
   }
 }

@@ -350,18 +350,30 @@
       "kl.notes.reflection_order",
       "kl.notes.relative_dihedral_intervals",
       "kl.notes.relative_dihedral_transport",
+      "kl.order.chamber_adaptation",
+      "kl.order.chamber_existence",
+      "kl.order.polynomial_functionals",
       "kl.order.root_slopes",
+      "kl.order.rotated_ratio_order",
+      "kl.order.rotation_exists",
       "kl.order.slope_cone",
+      "kl.paths.adapted_path_identification",
       "kl.paths.ambient_after_indicator",
       "kl.paths.bruhat_path_polynomial",
       "kl.paths.bruhat_path_selection",
       "kl.paths.directed_paths",
       "kl.paths.dyer_paths",
+      "kl.paths.extremal_label_paths",
       "kl.paths.graph_invariance",
       "kl.paths.later_count",
       "kl.paths.path_involution",
+      "kl.paths.path_polynomial_recursion",
       "kl.paths.path_transport",
+      "kl.paths.rotated_path_sum",
       "kl.paths.schedule_suffixes",
+      "kl.paths.simple_prefix_split",
+      "kl.paths.simple_rotation",
+      "kl.paths.simple_rotation_transport",
       "kl.paths.sorted_path_selection"
     ],
     "kl.sheaves": [
@@ -4809,7 +4821,10 @@
         "OAI.KLInvariance.TitsSpace.RatioOrder.Adapted",
         "OAI.KLInvariance.TitsSpace.geometricFunctional",
         "OAI.KLInvariance.TitsSpace.geometricSlope",
-        "OAI.KLInvariance.TitsSpace.geometricSlope_injective"
+        "OAI.KLInvariance.TitsSpace.geometricSlope_injective",
+        "OAI.KLInvariance.TitsSpace.PositiveFunctional",
+        "OAI.KLInvariance.TitsSpace.PositiveFunctional.root_pos",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.Chamber"
       ],
       "paper_locations": []
     },
@@ -4904,6 +4919,38 @@
       "paper_locations": []
     },
     {
+      "id": "kl.order.chamber_adaptation",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.RatioOrder.adapted_of_chamber",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.simple_lower_bound",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.exists_least_simple",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.least_simple_descent"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.order.chamber_existence",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.exists_ratioOrder_chamber_height",
+        "OAI.KLInvariance.TitsSpace.exists_ratioOrder_chamber"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.order.polynomial_functionals",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.ReflectionSchedules.coordinatePolynomial",
+        "OAI.KLInvariance.ReflectionSchedules.coordinatePolynomial_coeff",
+        "OAI.KLInvariance.ReflectionSchedules.coordinatePolynomial_injective",
+        "OAI.KLInvariance.ReflectionSchedules.momentFunctional",
+        "OAI.KLInvariance.ReflectionSchedules.coordinatePolynomial_eval"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.order.root_slopes",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
@@ -4915,6 +4962,34 @@
       "paper_locations": []
     },
     {
+      "id": "kl.order.rotated_ratio_order",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.positiveAction_simplePositive",
+        "OAI.KLInvariance.TitsSpace.simple_action_nonneg",
+        "OAI.KLInvariance.TitsSpace.simple_positiveAction_val",
+        "OAI.KLInvariance.TitsSpace.simple_positiveAction_ne",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.turnNumerator",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.turnDenominator",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.turn_ratio_injective",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.turn"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.order.rotation_exists",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.TitsSpace.exists_uniform_pos_lt",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.exists_turn_parameter",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.turn_chamber",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.turn_simple_greatest",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.turn_slope_lt_iff",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.exists_rotation"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.order.slope_cone",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
@@ -4922,6 +4997,15 @@
         "OAI.KLInvariance.TitsSpace.positive_combination_of_slope_between",
         "OAI.KLInvariance.TitsSpace.noninverted_of_positive_combination",
         "OAI.KLInvariance.TitsSpace.inverted_of_positive_combination"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.paths.adapted_path_identification",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.polynomial_eq_rTilde",
+        "OAI.KLInvariance.AdaptedDyer.exists_dyer_schedule"
       ],
       "paper_locations": []
     },
@@ -4993,6 +5077,16 @@
       ]
     },
     {
+      "id": "kl.paths.extremal_label_paths",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.nonsimple_of_greatest",
+        "OAI.KLInvariance.AdaptedDyer.nonsimple_tail_of_least",
+        "OAI.KLInvariance.AdaptedDyer.nonsimple_of_least_descent"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.paths.graph_invariance",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
@@ -5027,6 +5121,14 @@
       "paper_locations": []
     },
     {
+      "id": "kl.paths.path_polynomial_recursion",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.polynomial_recursion"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.paths.path_transport",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
@@ -5047,6 +5149,14 @@
       "paper_locations": []
     },
     {
+      "id": "kl.paths.rotated_path_sum",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.sum_nonsimple_rotate"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.paths.schedule_suffixes",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
@@ -5059,6 +5169,49 @@
         "OAI.KLInvariance.BruhatGraph.ambientLater_upperInclusion",
         "OAI.KLInvariance.BruhatGraph.remainingConditions_source_ambient",
         "OAI.KLInvariance.BruhatGraph.remainingConditions_target_ambient"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.paths.simple_prefix_split",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.cons_simple_mem",
+        "OAI.KLInvariance.AdaptedDyer.not_nonsimple_iff_cons",
+        "OAI.KLInvariance.AdaptedDyer.polynomial_split"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.paths.simple_rotation",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.rootLabel_simple_iff",
+        "OAI.KLInvariance.AdaptedDyer.rotateEdge",
+        "OAI.KLInvariance.AdaptedDyer.Nonsimple",
+        "OAI.KLInvariance.AdaptedDyer.nonsimplePaths",
+        "OAI.KLInvariance.AdaptedDyer.mem_nonsimplePaths",
+        "OAI.KLInvariance.AdaptedDyer.simpleEdge",
+        "OAI.KLInvariance.AdaptedDyer.simpleEdge_source",
+        "OAI.KLInvariance.AdaptedDyer.simpleEdge_target",
+        "OAI.KLInvariance.AdaptedDyer.simpleEdge_root"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.paths.simple_rotation_transport",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.rotateEdge_val",
+        "OAI.KLInvariance.AdaptedDyer.rotateEdge_root",
+        "OAI.KLInvariance.AdaptedDyer.rotateEdge_nonsimple",
+        "OAI.KLInvariance.AdaptedDyer.rotateEdge_involutive",
+        "OAI.KLInvariance.AdaptedDyer.path_map_of_mem",
+        "OAI.KLInvariance.AdaptedDyer.path_rotate",
+        "OAI.KLInvariance.AdaptedDyer.nonsimple_map",
+        "OAI.KLInvariance.AdaptedDyer.path_map_twice",
+        "OAI.KLInvariance.AdaptedDyer.path_rotate_iff",
+        "OAI.KLInvariance.AdaptedDyer.paths_rotate_iff"
       ],
       "paper_locations": []
     },

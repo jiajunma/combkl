@@ -1839,3 +1839,112 @@ comparisons:
   consequence: The path polynomial, its actual edge labels, finite schedule, membership
     criterion, dispatch identity and diagonal/zero values are developed before the
     later identification theorem.
+- id: prescribed-chamber-ratio-order
+  kind: An actual chamber numerator and the inversion-sign order
+  nodes:
+  - kl.notes.reflection_order
+  - kl.order.polynomial_functionals
+  - kl.order.chamber_adaptation
+  - kl.order.chamber_existence
+  paper_labels:
+  - bg:paths
+  - sec:background
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.RatioOrder.Chamber
+  - OAI.KLInvariance.TitsSpace.RatioOrder.Adapted
+  - OAI.KLInvariance.TitsSpace.RatioOrder.adapted_of_chamber
+  - OAI.KLInvariance.TitsSpace.RatioOrder.least_simple_descent
+  - OAI.KLInvariance.TitsSpace.exists_ratioOrder_chamber_height
+  - OAI.KLInvariance.ReflectionSchedules.coordinatePolynomial
+  - OAI.KLInvariance.ReflectionSchedules.momentFunctional
+  paper: The notes cite the reflection-order path formula and construct separating
+    ratios of linear functionals for the geometric orders used in comparison.
+  lean: The path proof chooses a numerator positive on the transformed simple roots
+    of a prescribed chamber. It implies the inversion-sign condition and supplies
+    a least simple descent. Existence uses height composed with the inverse action,
+    a polynomial perturbation preserving finitely many strict inequalities, and avoidance
+    of countably many root-tie polynomials.
+  consequence: The Blueprint distinguishes the Chamber and Adapted predicates and
+    explains the coordinate-polynomial family used to satisfy genericity and chamber
+    positivity together.
+- id: actual-ratio-order-rotation
+  kind: A fractional-linear change of slopes at a simple descent
+  nodes:
+  - kl.order.rotated_ratio_order
+  - kl.order.rotation_exists
+  paper_labels:
+  - bg:paths
+  lean_declarations:
+  - OAI.KLInvariance.TitsSpace.RatioOrder.turnNumerator
+  - OAI.KLInvariance.TitsSpace.RatioOrder.turnDenominator
+  - OAI.KLInvariance.TitsSpace.RatioOrder.turn_ratio_injective
+  - OAI.KLInvariance.TitsSpace.RatioOrder.exists_turn_parameter
+  - OAI.KLInvariance.TitsSpace.RatioOrder.turn_chamber
+  - OAI.KLInvariance.TitsSpace.RatioOrder.turn_simple_greatest
+  - OAI.KLInvariance.TitsSpace.RatioOrder.turn_slope_lt_iff
+  - OAI.KLInvariance.TitsSpace.RatioOrder.exists_rotation
+  paper: The background path formula is cited for reflection orders, with the decreasing
+    version obtained by reversing an order.
+  lean: 'The adapted proof explicitly constructs a second ratio order: compose the
+    numerator with a simple reflection and compose numerator minus k times denominator
+    with the same reflection. A finite positive-gap choice gives negative k and a
+    positive new denominator. The new chamber is indexed by the shorter element; the
+    chosen simple root becomes greatest and other reflected comparisons are preserved.'
+  consequence: The construction retains its generic k!=0 and positivity hypotheses,
+    while the rotation theorem states its negative-parameter conditions. The A2 example
+    computes the old and new slopes through the same formulas.
+- id: simple-label-path-bijections
+  kind: Actual edge rotation and the two path-sum bijections
+  nodes:
+  - kl.paths.simple_rotation
+  - kl.paths.simple_rotation_transport
+  - kl.paths.extremal_label_paths
+  - kl.paths.rotated_path_sum
+  - kl.paths.simple_prefix_split
+  paper_labels:
+  - bg:paths
+  - eq:bg-path-formula
+  lean_declarations:
+  - OAI.KLInvariance.AdaptedDyer.rotateEdge
+  - OAI.KLInvariance.AdaptedDyer.Nonsimple
+  - OAI.KLInvariance.AdaptedDyer.nonsimplePaths
+  - OAI.KLInvariance.AdaptedDyer.path_rotate_iff
+  - OAI.KLInvariance.AdaptedDyer.paths_rotate_iff
+  - OAI.KLInvariance.AdaptedDyer.nonsimple_of_greatest
+  - OAI.KLInvariance.AdaptedDyer.nonsimple_of_least_descent
+  - OAI.KLInvariance.AdaptedDyer.sum_nonsimple_rotate
+  - OAI.KLInvariance.AdaptedDyer.not_nonsimple_iff_cons
+  - OAI.KLInvariance.AdaptedDyer.polynomial_split
+  paper: The notes present the increasing-path expression as the normalized R-polynomial
+    and cite Dyer for the formula.
+  lean: The independent path proof partitions actual finite path sets by avoidance
+    of one chosen simple label. Rotating the avoiding paths gives a full target path
+    set because the chosen label is greatest there and the rotated endpoint is an
+    ascent. Paths containing the least label are obtained by prefixing the uniquely
+    determined simple edge.
+  consequence: The Blueprint defines the exact avoidance predicate and total edge
+    map, proves both finite bijections and identifies the extra polynomial factor
+    with the prefixed edge.
+- id: adapted-path-polynomial-induction
+  kind: Two orders in the recursion and strong induction on the top length
+  nodes:
+  - kl.paths.path_polynomial_recursion
+  - kl.paths.adapted_path_identification
+  paper_labels:
+  - bg:paths
+  - eq:bg-path-formula
+  lean_declarations:
+  - OAI.KLInvariance.AdaptedDyer.polynomial_recursion
+  - OAI.KLInvariance.AdaptedDyer.polynomial_eq_rTilde
+  - OAI.KLInvariance.AdaptedDyer.exists_dyer_schedule
+  - OAI.KLInvariance.Hecke.rTilde_recursion
+  paper: The normalized R-polynomial is introduced in the path-formula theorem through
+    the weighted sum of increasing reflection paths.
+  lean: The path polynomial and Hecke R-family are defined separately. The geometric
+    rotation gives a recursion with the second order on every smaller polynomial.
+    Strong induction quantifies over the order and both endpoints, applies twice at
+    the shorter upper endpoint and matches the already proved Hecke recursion. The
+    hypothesis of this identification is Chamber(y).
+  consequence: The exact chamber hypothesis, both smaller induction instances, the
+    identity-top cases and the two-order recurrence are stated explicitly. The later
+    geometric-order comparison uses this adapted identification as an input.

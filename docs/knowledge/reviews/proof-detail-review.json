@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 107378,
-  "theorem_walkthroughs": 357,
+  "revised_proof_words": 110316,
+  "theorem_walkthroughs": 366,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -1071,9 +1071,9 @@
       ],
       "proof_steps": 4,
       "previous_proof_words": 103,
-      "revised_proof_words": 264,
-      "proof_sha256": "547b888a25f1d0b7dda51795fd80189ff79ac6a40fe69ed34fb7d6204c6c210c",
-      "review": "Rechecked moment-curve generic-functional existence against the local source; its inputs now link to the independent height/normalized-root definitions."
+      "revised_proof_words": 278,
+      "proof_sha256": "67169e9f1d0b78f92b76fd32d2398a9881fb41b85856179774b206539293722f",
+      "review": "Rechecked normalized-root injectivity, countability from finite words, the coordinate-polynomial avoidance construction and positive-combination betweenness. Linked the standalone coordinate-polynomial and moment-functional definitions."
     },
     {
       "node": "kl.detail.hecke_quadratic_identity",
@@ -3399,6 +3399,48 @@
       "review": "Expanded the full finite-basis/BoundarySheaf setup, actual quotient action and free edge presentation, incoming/outgoing prime nondivisibility, coordinatewise regularity, selected-kernel saturation, Noetherian finiteness and quotient-basis transfer. Preserved arbitrary outgoing selections."
     },
     {
+      "node": "kl.order.chamber_adaptation",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.RatioOrder.adapted_of_chamber",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.simple_lower_bound",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.exists_least_simple",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.least_simple_descent"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 266,
+      "proof_sha256": "06d70860cd009f9372b9c101a77fdfdd3b3b9d66c94e6fc87419e851f28f4592",
+      "review": "Read adapted_of_chamber and the least-simple lemmas. Preserved the distinct chamber and adapted hypotheses, both inverse-root sign cases, the coordinate sum argument and the nonempty-generator deduction from y!=1."
+    },
+    {
+      "node": "kl.order.chamber_existence",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.exists_ratioOrder_chamber_height",
+        "OAI.KLInvariance.TitsSpace.exists_ratioOrder_chamber"
+      ],
+      "proof_steps": 6,
+      "revised_proof_words": 378,
+      "proof_sha256": "c05e5a05edbeb16f8c59eded00155479a71a14d685bea3f115027923f1a9969c",
+      "review": "Read the exact f0+tau*momentFunctional(tau) construction. Checked the finite open positivity set containing zero, normalized-root injectivity, nonzero difference polynomials, countability/finite-zero avoidance and all four RatioOrder fields."
+    },
+    {
+      "node": "kl.order.rotation_exists",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.TitsSpace.exists_uniform_pos_lt",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.exists_turn_parameter",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.turn_chamber",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.turn_simple_greatest",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.turn_slope_lt_iff",
+        "OAI.KLInvariance.TitsSpace.RatioOrder.exists_rotation"
+      ],
+      "proof_steps": 6,
+      "revised_proof_words": 391,
+      "proof_sha256": "8f81fe5a3e76ae80ab3b2274b864c9f8cb05a98a4b227a5260904bbe4caa57b4",
+      "review": "Read the finite gap construction, positivity checks on each simple root, turn_chamber, comparison through one and the positive-denominator cross multiplication. Preserved the exact non-simple comparisons and both strict endpoint-order conditions of exists_rotation."
+    },
+    {
       "node": "kl.order.slope_cone",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -3411,6 +3453,18 @@
       "revised_proof_words": 204,
       "proof_sha256": "7f171e6c0cb4aae3ac02f3eb635e34aefbf532bdb1c10187607ae35b355cbfae",
       "review": "Made the numerator and positive height explicit; checked both directions of slope betweenness and both coordinatewise sign-closure assertions, adding the inverted declaration used in the angular cuts."
+    },
+    {
+      "node": "kl.paths.adapted_path_identification",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.polynomial_eq_rTilde",
+        "OAI.KLInvariance.AdaptedDyer.exists_dyer_schedule"
+      ],
+      "proof_steps": 6,
+      "revised_proof_words": 374,
+      "proof_sha256": "3ff5998a130245a9bc77ff441ef5d7388f8c0c646716fefee0441e486340f4e1",
+      "review": "Read polynomial_eq_rTilde and exists_dyer_schedule. Made the strong induction quantify over the order and both endpoints, handled both x cases at y=1, checked the two smaller O-prime instances and matched the exact Hecke recursion. The statement retains Chamber(y)."
     },
     {
       "node": "kl.paths.bruhat_path_selection",
@@ -3442,9 +3496,22 @@
       ],
       "proof_steps": 5,
       "previous_proof_words": 58,
-      "revised_proof_words": 832,
-      "proof_sha256": "b95747448cdea9b6be040bdca004b7120f3abc9a0b4938fbec05a7cfd76814f9",
-      "review": "Stated finite-generator and both lower-region endpoint hypotheses for the polynomial entry theorem. Expanded the intrinsic plane-block step using the actual interval flip, middle-descent test and path involution. The adapted rotation, ambient block transfer and generic-pencil exposition remain in the topic review plan."
+      "revised_proof_words": 771,
+      "proof_sha256": "fcab08eaad142a6bdaf2844aaa539f998c9dc8b901d21fb9c3c59f9feb2f9c9c",
+      "review": "Retained the exact finite-generator/lower-region statement. The adapted chamber, rotation, path recursion and intrinsic plane reversal are now linked to complete developments. Ambient coset-plane block transport, the generic-pencil argument and the exact decreasing-entry comparison remain pending exposition."
+    },
+    {
+      "node": "kl.paths.extremal_label_paths",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.nonsimple_of_greatest",
+        "OAI.KLInvariance.AdaptedDyer.nonsimple_tail_of_least",
+        "OAI.KLInvariance.AdaptedDyer.nonsimple_of_least_descent"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 306,
+      "proof_sha256": "5f40e89b594a6e73c065e0a166a4b16ce9128319c86a2c167b749a40bbfd58d6",
+      "review": "Read all three extremal-label exclusion lemmas. Preserved the arbitrary-list scope of the least-label tail statement, the initial descent condition and the exact negated final descent condition for a greatest label."
     },
     {
       "node": "kl.paths.graph_invariance",
@@ -3486,6 +3553,17 @@
       "review": "Read the exact involution theorem with both finite-path membership directions and both no-duplicate hypotheses. Explained the inverse bijections, preservation of list length and finite-sum reindexing over an arbitrary semiring."
     },
     {
+      "node": "kl.paths.path_polynomial_recursion",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.polynomial_recursion"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 304,
+      "proof_sha256": "d99ff189570cc76e92a25d2ae7b26fc91561e08a50d4d2d84d02dff1a97bdc63",
+      "review": "Read polynomial_recursion and both branches. Verified that only the path splitting uses the least-label assumption, that both partial sums use the greatest-label rotation theorem, and that every smaller polynomial uses O-prime. Checked the A2 paths by their left-reflection labels."
+    },
+    {
       "node": "kl.paths.path_transport",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -3512,6 +3590,17 @@
       "review": "Read the exact natural-to-integer conversion in edgeFactorDegree_cast and the noninversion hypothesis of edgeFactor_degree_formula. Reused the separate nonzero/homogeneity theorem and expanded the cover and A2 long-edge examples while retaining the noncanonical representative choice."
     },
     {
+      "node": "kl.paths.rotated_path_sum",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.sum_nonsimple_rotate"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 252,
+      "proof_sha256": "c4127d82a3fd72e587c4dadeec8a10c88444d85e4edbbd2e6a1d04b478df3e3b",
+      "review": "Read sum_nonsimple_rotate and every finite-bijection clause. Retained only the source greatest-label/comparison hypotheses and top descent, explicitly proved avoidance at the rotated endpoint and constructed the inverse using the same two-order equivalence."
+    },
+    {
       "node": "kl.paths.schedule_suffixes",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -3529,6 +3618,39 @@
       "revised_proof_words": 397,
       "proof_sha256": "d5c034f4c06cb3377d104ece8a8d89721a587d78d16b67659741d403d41b57d9",
       "review": "Checked both generic sorted-list cases, no-duplicate use for a current-source tie, target-root injectivity and consecutive-edge inequality, full-schedule membership and the exact ambient set/source-bound identification."
+    },
+    {
+      "node": "kl.paths.simple_prefix_split",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.cons_simple_mem",
+        "OAI.KLInvariance.AdaptedDyer.not_nonsimple_iff_cons",
+        "OAI.KLInvariance.AdaptedDyer.polynomial_split"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 339,
+      "proof_sha256": "9fe1e58e093c359f23b32da86392b7dcb716aed442b1c186a9e6ab96fe28e231",
+      "review": "Read the prefix membership proof, both directions of not_nonsimple_iff_cons and polynomial_split. Retained the least-label and initial-ascent hypotheses, actual-edge equality by endpoints, unique tail recovery and the exact one-edge weight factor."
+    },
+    {
+      "node": "kl.paths.simple_rotation_transport",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.rotateEdge_val",
+        "OAI.KLInvariance.AdaptedDyer.rotateEdge_root",
+        "OAI.KLInvariance.AdaptedDyer.rotateEdge_nonsimple",
+        "OAI.KLInvariance.AdaptedDyer.rotateEdge_involutive",
+        "OAI.KLInvariance.AdaptedDyer.path_map_of_mem",
+        "OAI.KLInvariance.AdaptedDyer.path_rotate",
+        "OAI.KLInvariance.AdaptedDyer.nonsimple_map",
+        "OAI.KLInvariance.AdaptedDyer.path_map_twice",
+        "OAI.KLInvariance.AdaptedDyer.path_rotate_iff",
+        "OAI.KLInvariance.AdaptedDyer.paths_rotate_iff"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 375,
+      "proof_sha256": "818cc37026958c9a8d9ff0df13172c330e533c0da6040818ef874da176efd842",
+      "review": "Read actual endpoint/root-label rotation, exclusion preservation and total involution. Explained path_map_of_mem with hypotheses only on the list and used both directions of the exact two-order slope comparison before applying mem_paths."
     },
     {
       "node": "kl.paths.sorted_path_selection",

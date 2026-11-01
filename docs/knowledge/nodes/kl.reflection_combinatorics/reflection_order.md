@@ -23,6 +23,9 @@ lean:
   - OAI.KLInvariance.TitsSpace.geometricFunctional
   - OAI.KLInvariance.TitsSpace.geometricSlope
   - OAI.KLInvariance.TitsSpace.geometricSlope_injective
+  - OAI.KLInvariance.TitsSpace.PositiveFunctional
+  - OAI.KLInvariance.TitsSpace.PositiveFunctional.root_pos
+  - OAI.KLInvariance.TitsSpace.RatioOrder.Chamber
 source:
   spans:
   - artifact: openai-kl-source
@@ -53,6 +56,18 @@ source:
     locator: OAI.RepresentationTheory.KazhdanLusztig.ReflectionSchedules:507
     format: lean-location
     note: OAI.KLInvariance.TitsSpace.geometricSlope_injective
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.DyerPaths:1163
+    format: lean-location
+    note: OAI.KLInvariance.TitsSpace.PositiveFunctional
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.DyerPaths:1165
+    format: lean-location
+    note: OAI.KLInvariance.TitsSpace.PositiveFunctional.root_pos
+  - artifact: openai-kl-source
+    locator: OAI.RepresentationTheory.KazhdanLusztig.DyerPaths:1240
+    format: lean-location
+    note: OAI.KLInvariance.TitsSpace.RatioOrder.Chamber
 verification:
   definition: accepted
   proof: not_applicable
@@ -60,8 +75,9 @@ verification:
 generality:
   reviewed: true
   prompt: Are the source hypotheses retained?
-  verdict: The statement and proof follow the fixed formal development and its paper
-    counterpart.
+  verdict: Explained all RatioOrder fields, the exact PositiveFunctional condition,
+    the separate Adapted and Chamber predicates and the same A2 example; linked the
+    proved chamber implication, existence and rotation constructions.
 tags:
 - Kazhdan-Lusztig
 - background
@@ -79,7 +95,7 @@ s(a)=\frac{f(a)}{h(a)}\qquad(a\in\Phi^+)
 \]
 are all distinct.
 
-The denominator is positive on every positive root. Indeed, write
+The predicate `PositiveFunctional h` means precisely `h` is positive on every simple root. The denominator is then positive on every positive root. Indeed, write
 \(a=\sum_i a_i\alpha_i\), where \(a_i\ge0\) and at least one coefficient is positive. Then
 \[
 h(a)=\sum_i a_i h(\alpha_i)>0.
@@ -116,6 +132,24 @@ for every positive root \(a\). The zero cut then separates the inversion set of 
 In type \(A_2\), take simple roots \(a,b\), use height as denominator, and choose
 \(f(a)=-1,f(b)=3\). The slopes of \(a,a+b,b\) are \(-1,1,3\). The sole negative slope is that of \(a\), so the order is adapted to the simple reflection \(r_a\).
 
+## The chamber condition on the numerator
+
+Write \(\rho(w)\) for the linear action of \(w\) on \(V_0\). The ratio order lies in the chamber indexed by \(y\) when
+\[
+f(\rho(y)\alpha_i)>0\quad\text{for every simple index }i.
+\]
+This is `RatioOrder.Chamber y`. It says that the transported functional \(f\circ\rho(y)\) is positive on the simple roots.
+
+The [[node:kl.order.chamber_adaptation|chamber and least-descent theorem]] proves that this implies the adapted condition above: evaluate \(f\circ\rho(y)\) on the positive or negative root \(\rho(y^{-1})a\), then divide by the positive denominator. It also proves that, for \(y\ne1\), a least-slope simple root gives a left descent of \(y\).
+
+The [[node:kl.order.chamber_existence|prescribed-chamber existence theorem]] chooses a generic numerator in this chamber with height denominator. The [[node:kl.order.rotated_ratio_order|rotated ratio-order construction]] then changes both functionals through a simple reflection. The [[node:kl.order.rotation_exists|order-rotation theorem]] puts the new numerator in the chamber of the shorter element \(s_i y\) while moving the least simple root to greatest position.
+
+In the \(A_2\) example above, \(s_a(a)=-a\) and \(s_a(b)=a+b\). Hence
+\[
+f(s_a(a))=1,\qquad f(s_a(b))=2.
+\]
+The chosen order therefore satisfies the chamber condition at \(s_a\), as well as the stated inversion-sign condition.
+
 ## Ordering edges of a finite interval
 
 Each reflection edge has a positive-root label. Restricting the order to the finitely many edge labels in a Bruhat interval gives an edge schedule.
@@ -124,13 +158,23 @@ Two edges with the same reflection label cannot share a vertex: the reflection s
 
 An interval isomorphism also transports an edge schedule from a target interval to its source. The dihedral transport theorems establish the local order and counting properties used by that transported schedule.
 
+<!-- source-comparison:start -->
+## Relation to the OpenAI notes
+
+**An actual chamber numerator and the inversion-sign order.**
+
+**OpenAI notes:** The notes cite the reflection-order path formula and construct separating ratios of linear functionals for the geometric orders used in comparison. [bg:paths](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L185), [sec:background](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/build/02-background.tex#L2).
+
+**Lean (primary):** The path proof chooses a numerator positive on the transformed simple roots of a prescribed chamber. It implies the inversion-sign condition and supplies a least simple descent. Existence uses height composed with the inverse action, a polynomial perturbation preserving finitely many strict inequalities, and avoidance of countably many root-tie polynomials. [DyerPaths:1240](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L1240), [DyerPaths:1198](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L1198), [DyerPaths:1242](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L1242), [DyerPaths:1220](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L1220), [DyerPaths:1266](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L1266), [ReflectionSchedules:18](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L18), [ReflectionSchedules:39](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L39).
+
+**Role in the proof:** The Blueprint distinguishes the Chamber and Adapted predicates and explains the coordinate-polynomial family used to satisfy genericity and chamber positivity together.
+<!-- source-comparison:end -->
+
 ## References
 
 The local source declarations below give the definitions and their properties.
 
 ## Lean formalization
-
-The fields `denominator`, `numerator`, `positive`, and `generic` record the two functionals and the two conditions above. The predicate `Adapted` records the zero-cut inversion condition.
 
 `OAI.KLInvariance.TitsSpace.RatioOrder`: [DyerPaths.lean:1181](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L1181).
 
@@ -145,3 +189,9 @@ The fields `denominator`, `numerator`, `positive`, and `generic` record the two 
 `OAI.KLInvariance.TitsSpace.geometricSlope`: [ReflectionSchedules.lean:505](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L505).
 
 `OAI.KLInvariance.TitsSpace.geometricSlope_injective`: [ReflectionSchedules.lean:507](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean#L507).
+
+`OAI.KLInvariance.TitsSpace.PositiveFunctional`: [DyerPaths.lean:1163](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L1163).
+
+`OAI.KLInvariance.TitsSpace.PositiveFunctional.root_pos`: [DyerPaths.lean:1165](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L1165).
+
+`OAI.KLInvariance.TitsSpace.RatioOrder.Chamber`: [DyerPaths.lean:1240](https://github.com/jiajunma/combkl/blob/108243e05ed46235bf82dc30d4d90c794579776f/sources/openai-math/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean#L1240).
