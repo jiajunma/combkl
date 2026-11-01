@@ -6098,6 +6098,150 @@
       ],
       "review": "Read both Comparison finite-index and SchedulePaths remaining-list proofs. Followed the actual head/tail sandwich, tail-product injectivity, recovered shorter endpoint, suffix split and normalized source-coordinate image criterion; preserved all conditional hypotheses.",
       "pending": []
+    },
+    {
+      "node": "kl.paths.directed_paths",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/directed_paths.md",
+      "source_declarations": [
+        "OAI.KLInvariance.SchedulePaths.IsPath",
+        "OAI.KLInvariance.SchedulePaths.pathTerm",
+        "OAI.KLInvariance.SchedulePaths.subpaths",
+        "OAI.KLInvariance.SchedulePaths.mem_subpaths"
+      ],
+      "review": "Read IsPath, pathTerm and subpaths with their arbitrary graph and semiring parameters. Explained endpoint recursion, delta vectors, position-sublist multiplicity and finite-set membership without assuming finite vertex or edge types.",
+      "pending": []
+    },
+    {
+      "node": "kl.notes.path_product",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/path_product.md",
+      "source_declarations": [
+        "OAI.KLInvariance.SchedulePaths.dispatch_eq_path_sum",
+        "OAI.KLInvariance.SchedulePaths.pathTerm_delta",
+        "OAI.KLInvariance.SchedulePaths.entry_eq_weighted_paths",
+        "OAI.KLInvariance.SchedulePaths.dispatch_eq_subpaths_sum"
+      ],
+      "review": "Followed dispatch_eq_path_sum, delta evaluation and the no-duplicate conversion to subpaths. Kept arbitrary graph types and semiring scalars, position multiplicities, empty paths and the exact product orientation.",
+      "pending": []
+    },
+    {
+      "node": "kl.paths.sorted_path_selection",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/sorted_path_selection.md",
+      "source_declarations": [
+        "OAI.KLInvariance.SchedulePaths.decreasing_of_schedule_path",
+        "OAI.KLInvariance.SchedulePaths.sublist_of_decreasing_subset"
+      ],
+      "review": "Read both generic list proofs, including the strict-label membership argument when the containing head differs. Preserved the separate tie condition for path strictness and the weaker hypotheses for strict-subset sublist recovery.",
+      "pending": []
+    },
+    {
+      "node": "kl.paths.path_transport",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/path_transport.md",
+      "source_declarations": [
+        "OAI.KLInvariance.SchedulePaths.IsPath.map",
+        "OAI.KLInvariance.SchedulePaths.IsPath.isChain",
+        "OAI.KLInvariance.SchedulePaths.IsPath.pairwise_map_of_local",
+        "OAI.KLInvariance.SchedulePaths.subpaths_map_of_sorted"
+      ],
+      "review": "Read IsPath.map, its adjacent-incidence proof, pairwise_map_of_local and the exact same-graph sorted-schedule specialization. Retained arbitrary graph maps, linearly ordered labels, target fullness, source tie hypothesis and fixed endpoints.",
+      "pending": []
+    },
+    {
+      "node": "kl.paths.path_involution",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/path_involution.md",
+      "source_declarations": [
+        "OAI.KLInvariance.SchedulePaths.dispatch_eq_of_path_involution"
+      ],
+      "review": "Read the exact involution theorem with both finite-path membership directions and both no-duplicate hypotheses. Explained the inverse bijections, preservation of list length and finite-sum reindexing over an arbitrary semiring.",
+      "pending": []
+    },
+    {
+      "node": "kl.paths.bruhat_path_polynomial",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/bruhat_path_polynomial.md",
+      "source_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.Edge",
+        "OAI.KLInvariance.AdaptedDyer.source",
+        "OAI.KLInvariance.AdaptedDyer.target",
+        "OAI.KLInvariance.AdaptedDyer.rootLabel",
+        "OAI.KLInvariance.AdaptedDyer.score",
+        "OAI.KLInvariance.AdaptedDyer.edgeFinset",
+        "OAI.KLInvariance.AdaptedDyer.schedule",
+        "OAI.KLInvariance.AdaptedDyer.paths",
+        "OAI.KLInvariance.AdaptedDyer.polynomial"
+      ],
+      "review": "Read the actual global Bruhat-edge type, positive-root label, ratio score, finite lower edge set, increasing sorted schedule and path-polynomial definition. Preserved finite-generator context, left labels, reflection edges beyond covers and the use of y as the schedule top.",
+      "pending": []
+    },
+    {
+      "node": "kl.paths.bruhat_path_selection",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/bruhat_path_selection.md",
+      "source_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.target_eq_root",
+        "OAI.KLInvariance.AdaptedDyer.rootLabel_ne_of_join",
+        "OAI.KLInvariance.AdaptedDyer.score_ties",
+        "OAI.KLInvariance.AdaptedDyer.mem_edgeFinset",
+        "OAI.KLInvariance.AdaptedDyer.mem_schedule",
+        "OAI.KLInvariance.AdaptedDyer.schedule_nodup",
+        "OAI.KLInvariance.AdaptedDyer.schedule_increasing",
+        "OAI.KLInvariance.AdaptedDyer.path_le",
+        "OAI.KLInvariance.AdaptedDyer.path_targets_le",
+        "OAI.KLInvariance.AdaptedDyer.mem_paths",
+        "OAI.KLInvariance.AdaptedDyer.polynomial_dispatch",
+        "OAI.KLInvariance.AdaptedDyer.polynomial_diagonal",
+        "OAI.KLInvariance.AdaptedDyer.polynomial_zero"
+      ],
+      "review": "Read finite edge membership and sorting, source path_le and path_targets_le inductions, score_ties, both directions of mem_paths and polynomial_dispatch. Also read the diagonal and outside-order polynomial lemmas and supplied their endpoint-length proofs.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.interval_flip",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/interval_flip.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.rankFlip",
+        "OAI.KLInvariance.Dihedral.length_rankFlip",
+        "OAI.KLInvariance.Dihedral.rankFlip_involutive",
+        "OAI.KLInvariance.Dihedral.rankFlip_lower",
+        "OAI.KLInvariance.Dihedral.rankFlip_upper",
+        "OAI.KLInvariance.Dihedral.rankFlip_bruhat_iff",
+        "OAI.KLInvariance.Dihedral.rankFlip_step_iff",
+        "OAI.KLInvariance.Dihedral.intervalFlip",
+        "OAI.KLInvariance.Dihedral.intervalFlip_involutive",
+        "OAI.KLInvariance.Dihedral.edgeFlip",
+        "OAI.KLInvariance.Dihedral.edgeFlip_source",
+        "OAI.KLInvariance.Dihedral.edgeFlip_target",
+        "OAI.KLInvariance.Dihedral.edgeFlip_involutive",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.intervalEdgeSlope"
+      ],
+      "review": "Read the rank-cut definition and its length/involution identities, order and odd-step equivalences, interval and edge equivalence constructors, endpoint equations and induced actual-root slope definition. Checked the A2 example as an explanatory calculation.",
+      "pending": []
+    },
+    {
+      "node": "kl.dihedral.plane_path_reversal",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/plane_path_reversal.md",
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.descent_swap",
+        "OAI.KLInvariance.Dihedral.unique_leftDescent",
+        "OAI.KLInvariance.Dihedral.descent_swap_false_iff_not",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_ne_of_path",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_slopes_rankFlip",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.intervalEdgeSlope_flip",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.intervalEdgeSlope_ties",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.intervalEdgeSlope_flip_reverse",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.dispatch_reverse_endpoints"
+      ],
+      "review": "Read the actual middle-descent and flipped-slope proofs, including strict internal-rank hypotheses and slope distinctness. Verified both signed-label applications of subpaths_map_of_sorted, endpoint fixing, fullness/Nodup and the final involution reindexing. The result is the fixed endpoint entry of a full intrinsic interval.",
+      "pending": []
+    },
+    {
+      "node": "kl.paths.dyer_paths",
+      "file": "docs/knowledge/nodes/kl.reflection_combinatorics/dyer_paths.md",
+      "source_declarations": [
+        "OAI.KLInvariance.WallDyer.geometric_entry_eq_rTilde"
+      ],
+      "review": "Stated finite-generator and both lower-region endpoint hypotheses for the polynomial entry theorem. Expanded the intrinsic plane-block step using the actual interval flip, middle-descent test and path involution. The adapted rotation, ambient block transfer and generic-pencil exposition remain in the topic review plan.",
+      "pending": [
+        "Expand adapted chamber rotation and path-polynomial recursion.",
+        "Expand the ambient coset block transfer and generic-pencil/order-independence proof."
+      ]
     }
   ],
   "remaining_scope": "Apply the full nine-branch/61-subtopic hierarchy; expand all concept groups and theorem proofs, generate semantic and Lean links, validate and publish.",
@@ -6910,12 +7054,22 @@
       "status": "in_progress",
       "completion_evidence": [
         "kl.comparison.positive_transfer",
-        "kl.detail.transfer_properties"
+        "kl.detail.transfer_properties",
+        "kl.paths.directed_paths",
+        "kl.notes.path_product",
+        "kl.paths.sorted_path_selection",
+        "kl.paths.path_transport",
+        "kl.paths.path_involution",
+        "kl.paths.bruhat_path_polynomial",
+        "kl.paths.bruhat_path_selection",
+        "kl.dihedral.interval_flip",
+        "kl.dihedral.plane_path_reversal"
       ],
       "pending": [
-        "Expand the full ordered path-product formula, decreasing-label subpaths, tie handling and the geometric Dyer identity."
+        "Expand adapted chamber existence/rotation and the increasing-path polynomial recursion.",
+        "Expand ambient coset transfer of the full plane-block identity and the generic-pencil/order-independence proof, then finish the geometric R-entry identification."
       ],
-      "review": "The semiring step/dispatch definitions, real order/injectivity statements, concatenation proof and two-edge path calculation have been expanded against their actual source declarations."
+      "review": "Reviewed generic directed-path and selected-set definitions; semiring position-sublist and finite-set expansion; strict sorted selection; graph and local-label path transport; involution reindexing; the actual increasing Bruhat polynomial and endpoint bounds; and the complete intrinsic dihedral path reversal through middle descents. The final geometric theorem has a precise endpoint statement and links this detailed intrinsic calculation; its remaining adapted-order and pencil steps are still pending."
     },
     {
       "code": "L1",
@@ -7125,7 +7279,7 @@
     }
   ],
   "next_steps": [
-    "Expand O7 and the remaining O6 order/path inputs, then finish the transported endpoint identity I3, reverse freeness I4 and the two final inductions. The current schedule comparison is reviewed with its exact upper-freeness hypotheses.",
+    "Continue O7 through the adapted chamber and rotation constructions, simple-edge path splitting and polynomial recursion. Then expand the ambient plane-block transfer and generic-pencil order-independence argument in O1/O6, finish I3/I4 and the final inductions.",
     "Complete the remaining Coxeter/parabolic, root-space and sheaf-operation exposition.",
     "Expand adapted orders, chamber changes, dihedral interval transport, schedules and the path-polynomial proof.",
     "Complete localization, local image comparison, edge inequalities and the simultaneous invariance induction.",
@@ -7664,7 +7818,15 @@
       "kl.algebra.saturated_image_hilbert": "A6",
       "kl.comparison.raw_edge_increment": "I1",
       "kl.comparison.edge_normalization": "I1",
-      "kl.comparison.schedule_upper_freeness": "I2"
+      "kl.comparison.schedule_upper_freeness": "I2",
+      "kl.paths.directed_paths": "O7",
+      "kl.paths.sorted_path_selection": "O7",
+      "kl.paths.path_transport": "O7",
+      "kl.paths.path_involution": "O7",
+      "kl.paths.bruhat_path_polynomial": "O7",
+      "kl.paths.bruhat_path_selection": "O7",
+      "kl.dihedral.interval_flip": "O7",
+      "kl.dihedral.plane_path_reversal": "O7"
     },
     "moved_nodes": [
       {
@@ -8498,7 +8660,7 @@
     ],
     "stable_ids_preserved": 154,
     "registered_homes": 9,
-    "current_node_count": 520
+    "current_node_count": 528
   },
   "completed_milestones": [
     "Applied the approved nine mathematical homes and assigned every current entry to a subtopic.",
@@ -8539,7 +8701,8 @@
     "Completed L7: quotient-ring free target, explicit correction/outgoing global multiplier, root-factor prime classification, tensor and scaled-image denominator witnesses, plane-denominator membership, actual ambient inclusion and exact schedule-suffix specialization. Added nine nodes, expanded five existing entries, and moved the remaining-condition term alias to the schedule definition. O6 is in progress for blocks/cutoffs beyond the endpoint suffix interface.",
     "Completed I1 with four new theorem entries and expanded kernel/normalization/edge-increment entries. Kept integer indexing together with ModuleData.nonneg for sheaf applications, made the one-variable quotient example explicit, supplied actual image-piece and saturation proofs, and added the normalized equality criterion and a worked nonnegative one-edge example with positive defect.",
     "Authored mathematical introductions and checked reading routes for all 36 current keyword pages, including a main-theorem route through path products, local/global images, Hilbert comparison, exact endpoints and reverse freeness. Added renderer support and a project coverage/freshness gate.",
-    "Completed I2: explicit remaining-list states, all-suffix numerical propagation, a separate upper-freeness-to-inclusion theorem and actual-character endpoint substitution. Expanded transfer composition and both exact-step induction interfaces; added a two-edge calculation and updated the keyword routes."
+    "Completed I2: explicit remaining-list states, all-suffix numerical propagation, a separate upper-freeness-to-inclusion theorem and actual-character endpoint substitution. Expanded transfer composition and both exact-step induction interfaces; added a two-edge calculation and updated the keyword routes.",
+    "Expanded O7 with eight new path and interval-flip entries, the complete semiring path expansion, both directions of sorted path transport, and the full intrinsic plane reversal. Updated the final geometric theorem to its exact finite-generator/lower-region scope and linked the detailed plane step. The adapted chamber recursion and ambient pencil argument remain pending."
   ],
   "source_comparison_prose": "Replaced precautionary reading instructions in all nine comparison categories by the mathematical role and proof route of each source.",
   "title_style_revision": {
@@ -8920,6 +9083,21 @@
       "term": "remaining conditions",
       "target": "kl.detail.schedule_state",
       "review": "Moved remaining-condition aliases to the explicit list-to-outgoing-selection definition and added Hilbert-state-vector aliases. Dispatch and ordered-transfer-product aliases resolve to the expanded elementary-transfer definition."
+    },
+    {
+      "term": "directed paths",
+      "target": "kl.paths.directed_paths",
+      "review": "Added definitions for the edge-list predicate, recursive path term, delta vector, position sublists and selected finite path set; all term links are generated from the registry."
+    },
+    {
+      "term": "increasing Bruhat path polynomial",
+      "target": "kl.paths.bruhat_path_polynomial",
+      "review": "The actual left-root edge scores, lower finite edge set, increasing sorted schedule and path polynomial are defined together; the separate theorem proves the strict path-membership criterion."
+    },
+    {
+      "term": "interval flip",
+      "target": "kl.dihedral.interval_flip",
+      "review": "Links rank-cut, interval and edge involutions, with the induced actual-root slope definition and the well-definedness calculations."
     }
   ],
   "corrections": [
@@ -8939,34 +9117,34 @@
     }
   ],
   "last_document_validation": {
-    "created_at": "2026-11-01T13:13:45.196938+00:00",
+    "created_at": "2026-11-01T13:40:27.688369+00:00",
     "mdblueprint_revision": "acbbb0696e5c85844aee1d8b6a90591a29690606",
-    "node_count": 520,
-    "html_pages_checked": 795,
-    "generated_definition_links_checked": 8545,
+    "node_count": 528,
+    "html_pages_checked": 803,
+    "generated_definition_links_checked": 8714,
     "snapshot_files_verified": 81,
     "broken_links": [],
     "tests_passed": 27,
-    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision checks the exact suffix-state selections, conditional schedule comparison, actual-character dispatch conclusion and recovery of actual edge-image equality. Documentation checks only.",
+    "field_audit_scope": "All 35 local structures retain direct mappings and complete field coverage. This revision explains directed paths, finite path sets, actual Bruhat path polynomials and the rank/interval/edge flip constructions. Documentation checks only.",
     "focused_page_review": {
-      "entries": 7,
-      "new_entries": 1,
-      "source_anchors": 30,
-      "definition_alias_occurrences_checked": 8,
-      "scope": "Reviewed the source bodies for step/dispatch and their order/injectivity properties, all three remaining-condition identities, every-suffix propagation, actual upper-kernel transport, positive-parameter endpoint substitution and both exact-step inductions. The generic bound and actual upper-freeness specialization remain separate. I2 is reviewed; path identification, reverse traversal and the final inductions remain in progress."
+      "entries": 10,
+      "new_entries": 8,
+      "source_anchors": 61,
+      "definition_alias_occurrences_checked": 49,
+      "scope": "Reviewed nine complete path developments and a scoped refinement of the final geometric theorem. Checked position-sublist multiplicities, absence-of-repetition hypotheses, both sorted-path transport directions, actual Bruhat labels and endpoint bounds, the internal-descent switch and fixed-endpoint plane reversal. The final geometric theorem still has adapted chamber, ambient block and pencil arguments pending. Corrected the shared rotation/signed-index period comparison."
     },
     "mdblueprint_focused_tests_passed": 254,
     "katex": {
       "renderer": "KaTeX",
       "version": "0.16.46",
-      "occurrences_checked": 24043,
-      "distinct_formulas_checked": 10850,
+      "occurrences_checked": 24551,
+      "distinct_formulas_checked": 11038,
       "browser_used": false
     },
     "keyword_guide_review": {
       "guides": 36,
-      "reading_route_links_checked": 262,
-      "definition_links_in_guides_checked": 288,
+      "reading_route_links_checked": 271,
+      "definition_links_in_guides_checked": 297,
       "scope": "Reviewed the mathematical introductions and reading routes; checked their rendered order, generated destinations and Lean source availability. The remaining topic exposition is recorded separately."
     }
   },
@@ -9661,6 +9839,43 @@
         "kl.comparison.no_deficit"
       ],
       "review": "The generic transfer bound accepts arbitrary finite lists and nonnegative real T. Distinct endpoints are used for injectivity. The actual schedule comparison assumes upper-kernel freeness at every exact chronological suffix. actual_comparison_of_upper_freeness concludes a dispatch inequality for the actual source-character vector; target R-matrix identification is a separate path theorem. The remaining-list no-deficit proof cancels the tail product and recurses on the tail."
+    },
+    {
+      "entries": [
+        "kl.paths.directed_paths",
+        "kl.notes.path_product",
+        "kl.paths.sorted_path_selection",
+        "kl.paths.path_transport",
+        "kl.paths.path_involution"
+      ],
+      "review": "The generic list expansion uses arbitrary graph types and any semiring. Position sublists retain multiplicities; the finite path-set sum assumes no repeated schedule edge. Strictness of a weakly sorted path uses noncomposable ties. Strict-subset sublist recovery has no tie or no-duplicate hypothesis. Path transport checks endpoint equations and adjacent label comparisons; the involution theorem explicitly requires both selected-set membership directions."
+    },
+    {
+      "entries": [
+        "kl.paths.bruhat_path_polynomial",
+        "kl.paths.bruhat_path_selection",
+        "kl.paths.dyer_paths"
+      ],
+      "review": "The actual increasing schedule uses all reflection edges below the final endpoint and a ratio-order score. Path endpoint bounds themselves hold without finite generators. The path polynomial is defined before the Hecke-family identification; the geometric entry theorem uses a finite-generator system with both x <= b and y <= b. Its adapted chamber recursion and generic-pencil proof are still pending exposition."
+    },
+    {
+      "entries": [
+        "kl.dihedral.interval_flip",
+        "kl.dihedral.plane_path_reversal"
+      ],
+      "review": "The rank-cut map preserves length and is involutive, so the dihedral length/equality and odd-gap criteria preserve order and edges. The middle vertex of a composable pair is strictly internal and has a unique simple descent, which the flip exchanges. Both signed-label path-map directions are checked. The resulting operator identity is between the fixed endpoint entries of a full intrinsic interval."
+    },
+    {
+      "entries": [
+        "kl.dihedral.signed_words",
+        "kl.dihedral.signed_lengths",
+        "kl.dihedral.signed_reflection_action",
+        "kl.dihedral.good_indices",
+        "kl.dihedral.signed_period",
+        "kl.dihedral.internal_ranks",
+        "kl.dihedral.lower_signed_sums"
+      ],
+      "review": "Corrected the shared source-comparison wording from rotation period 2m to the exact source assertions: rotation^m=1 for maximum length m, which gives signed-index period 2m. Read rotation_pow_max and indexWord_period and added the latter source citation."
     }
   ],
   "relationship_map_revision": {
@@ -9698,6 +9913,6 @@
       "mdblueprint_focused_tests": 254,
       "project_document_tests": 27
     },
-    "reading_route_references": 262
+    "reading_route_references": 271
   }
 }

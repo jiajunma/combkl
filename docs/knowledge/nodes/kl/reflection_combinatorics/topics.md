@@ -362,6 +362,32 @@ Thus the product associated with the path \(x\to y\to z\) contributes \(T^2c\) a
 
 For real \(T\ge0\), each transfer preserves the coordinatewise order. For distinct endpoints it is injective, since the unchanged upper coordinate can be subtracted back out of the lower one. The transfer-properties theorem proves that both properties pass to finite products. Order preservation propagates the sheaf Hilbert bounds, and injectivity recovers exactness at earlier stages when the final comparison is an equality.
 
+## From position choices to directed paths
+
+A directed path is an edge list with matching successive endpoints. Its path term multiplies by \(T\) at each edge and reads the vector at the final vertex. With delta initial data at \(y\), that term is \(T^m\) for an \(m\)-edge path from \(x\) to \(y\), and zero for a failed incidence condition.
+
+Expanding each transfer into its identity and edge contribution chooses a sublist of positions. The [[node:kl.notes.path_product|path-sum expansion]] proves this by separating the head-position choices into omitted and retained cases. When the schedule lists every edge once, different position choices give different edge lists, so the sum becomes a finite sum over the selected path set. For a repeated schedule \([e,e]\), the two singleton position choices would both contribute the list \([e]\); this accounts for the no-repetition condition in the finite-set formula.
+
+The [[node:kl.paths.sorted_path_selection|sorted-path selection theorem]] converts the list ordering into a strict path condition. Successive path edges are composable, while equal reflection labels cannot be composable. Weak sorting therefore becomes strict along the path. Conversely, a strictly sorted path whose edges occur in a weakly sorted schedule is automatically a sublist of that schedule; the proof recovers it by matching or discarding the containing head.
+
+## The actual increasing Bruhat path polynomial
+
+For a ratio order \(O\), score each reflection edge by the slope of its positive left root. The finite edge set below \(y\) consists exactly of edges with target at most \(y\). Its increasing sorted list defines the finite selected paths from \(x\) to \(y\), and
+\[
+F_O(x,y;X)=\sum_q X^{|q|}.
+\]
+The [[node:kl.paths.bruhat_path_selection|Bruhat path-selection theorem]] proves that these are precisely the increasing directed paths. The endpoint-bound argument keeps every such path in the finite lower region. It also gives vanishing when \(x\not\le y\); strict increase of length leaves only the empty path when \(x=y\).
+
+The [[node:kl.notes.path_product|path-sum expansion]] identifies this polynomial with the appropriate transfer-product entry. Its later identification with the Hecke-defined normalized R-polynomial uses the path recursion for an adapted chamber and the invariance of geometric entries under changes of functional.
+
+## The root-plane path involution
+
+In an intrinsic two-generator interval, the [[node:kl.dihedral.interval_flip|interval-flip construction]] fixes its endpoints and switches the internal-rank vertices. The map preserves lengths, Bruhat order and reflection edges. Its edge involution therefore maps directed paths to directed paths with the same fixed endpoints and length.
+
+For a composable pair through a middle vertex, the [[node:kl.dihedral.middle_vertex_order|middle-vertex slope test]] expresses its label comparison as a simple-descent condition. The middle vertex has exactly one simple descent, and the internal flip exchanges it. Thus the comparison reverses after the edge map.
+
+[[node:kl.paths.path_transport|Sorted path transport]] turns this local comparison into a map from decreasing paths in a full schedule to paths in the reverse schedule. The same involution supplies the inverse map. The [[node:kl.paths.path_involution|path-involution theorem]] reindexes the weighted finite sums, proving the [[node:kl.dihedral.plane_path_reversal|plane-path reversal theorem]]. This full intrinsic-interval identity is the local block calculation used by the geometric order-independence argument.
+
 ## Definitions and proofs by construction
 
 ### Geometric orders on roots
@@ -443,7 +469,15 @@ For real \(T\ge0\), each transfer preserves the coordinatewise order. For distin
 
 - [[node:kl.comparison.positive_transfer]]
 - [[node:kl.detail.transfer_properties]]
+- [[node:kl.paths.directed_paths]]
 - [[node:kl.notes.path_product]]
+- [[node:kl.paths.sorted_path_selection]]
+- [[node:kl.paths.path_transport]]
+- [[node:kl.paths.path_involution]]
+- [[node:kl.paths.bruhat_path_polynomial]]
+- [[node:kl.paths.bruhat_path_selection]]
+- [[node:kl.dihedral.interval_flip]]
+- [[node:kl.dihedral.plane_path_reversal]]
 - [[node:kl.paths.dyer_paths]]
 
 ## Inversion changes by root plane

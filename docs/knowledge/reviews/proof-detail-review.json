@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 105074,
-  "theorem_walkthroughs": 352,
+  "revised_proof_words": 107378,
+  "theorem_walkthroughs": 357,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -1739,6 +1739,25 @@
       "review": "Read reflection_inverts_endpoint, inverted_after_mul, planeLength_conj_drop and rootRef_mem_pairClosure. Expanded the second inversion, count drop by two, nonnegative induction, and both subgroup containments."
     },
     {
+      "node": "kl.dihedral.plane_path_reversal",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Dihedral.descent_swap",
+        "OAI.KLInvariance.Dihedral.unique_leftDescent",
+        "OAI.KLInvariance.Dihedral.descent_swap_false_iff_not",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_ne_of_path",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_slopes_rankFlip",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.intervalEdgeSlope_flip",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.intervalEdgeSlope_ties",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.intervalEdgeSlope_flip_reverse",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.dispatch_reverse_endpoints"
+      ],
+      "proof_steps": 8,
+      "revised_proof_words": 656,
+      "proof_sha256": "ba78c4f9eb074acaa419ff4d018c2ce0359c7ebf5b0ecb6ea2ecbe3388b1f871",
+      "review": "Read the actual middle-descent and flipped-slope proofs, including strict internal-rank hypotheses and slope distinctness. Verified both signed-label applications of subpaths_map_of_sorted, endpoint fixing, fullness/Nodup and the final involution reindexing. The result is the fixed endpoint entry of a full intrinsic interval."
+    },
+    {
       "node": "kl.dihedral.plane_simple_steps",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -3282,14 +3301,16 @@
     {
       "node": "kl.notes.path_product",
       "source_declarations": [
-        "OAI.KLInvariance.SchedulePaths.dispatch",
+        "OAI.KLInvariance.SchedulePaths.dispatch_eq_path_sum",
+        "OAI.KLInvariance.SchedulePaths.pathTerm_delta",
+        "OAI.KLInvariance.SchedulePaths.entry_eq_weighted_paths",
         "OAI.KLInvariance.SchedulePaths.dispatch_eq_subpaths_sum"
       ],
-      "proof_steps": 4,
+      "proof_steps": 6,
       "previous_proof_words": 132,
-      "revised_proof_words": 270,
-      "proof_sha256": "5c06ac70e26d6a8cb34fa38e82627ab0682498b089266cefa182689f37d91f85",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 517,
+      "proof_sha256": "3639a928466e76423ddd0a8dfa2a51bb2bde9e36ae49f20bdb4883af8878f070",
+      "review": "Followed dispatch_eq_path_sum, delta evaluation and the no-duplicate conversion to subpaths. Kept arbitrary graph types and semiring scalars, position multiplicities, empty paths and the exact product orientation."
     },
     {
       "node": "kl.notes.reflection_faithfulness",
@@ -3392,15 +3413,38 @@
       "review": "Made the numerator and positive height explicit; checked both directions of slope betweenness and both coordinatewise sign-closure assertions, adding the inverted declaration used in the angular cuts."
     },
     {
+      "node": "kl.paths.bruhat_path_selection",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.target_eq_root",
+        "OAI.KLInvariance.AdaptedDyer.rootLabel_ne_of_join",
+        "OAI.KLInvariance.AdaptedDyer.score_ties",
+        "OAI.KLInvariance.AdaptedDyer.mem_edgeFinset",
+        "OAI.KLInvariance.AdaptedDyer.mem_schedule",
+        "OAI.KLInvariance.AdaptedDyer.schedule_nodup",
+        "OAI.KLInvariance.AdaptedDyer.schedule_increasing",
+        "OAI.KLInvariance.AdaptedDyer.path_le",
+        "OAI.KLInvariance.AdaptedDyer.path_targets_le",
+        "OAI.KLInvariance.AdaptedDyer.mem_paths",
+        "OAI.KLInvariance.AdaptedDyer.polynomial_dispatch",
+        "OAI.KLInvariance.AdaptedDyer.polynomial_diagonal",
+        "OAI.KLInvariance.AdaptedDyer.polynomial_zero"
+      ],
+      "proof_steps": 7,
+      "revised_proof_words": 487,
+      "proof_sha256": "a3c968c39dec2d548a0a5c4cf58752868142d121147c0898eeb4d674762cc883",
+      "review": "Read finite edge membership and sorting, source path_le and path_targets_le inductions, score_ties, both directions of mem_paths and polynomial_dispatch. Also read the diagonal and outside-order polynomial lemmas and supplied their endpoint-length proofs."
+    },
+    {
       "node": "kl.paths.dyer_paths",
       "source_declarations": [
         "OAI.KLInvariance.WallDyer.geometric_entry_eq_rTilde"
       ],
       "proof_steps": 5,
       "previous_proof_words": 58,
-      "revised_proof_words": 869,
-      "proof_sha256": "fa1c5b52875dd642471d9f9481cf86d1d0bab64f4b0ace70c73a1901bd741a6c",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 832,
+      "proof_sha256": "b95747448cdea9b6be040bdca004b7120f3abc9a0b4938fbec05a7cfd76814f9",
+      "review": "Stated finite-generator and both lower-region endpoint hypotheses for the polynomial entry theorem. Expanded the intrinsic plane-block step using the actual interval flip, middle-descent test and path involution. The adapted rotation, ambient block transfer and generic-pencil exposition remain in the topic review plan."
     },
     {
       "node": "kl.paths.graph_invariance",
@@ -3429,6 +3473,31 @@
       "revised_proof_words": 488,
       "proof_sha256": "961375d8e6f73cf6f6c898e3656dfee673609cfa2685c9d97e23a3bcb397edec",
       "review": "Reviewed the full transported count after expansion of the exact interval transport and indicator bijection. The argument checks source/target coordinates, all edge-root identities, both finite sums, target native count, relative length substitution and every rank-one zero term."
+    },
+    {
+      "node": "kl.paths.path_involution",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.SchedulePaths.dispatch_eq_of_path_involution"
+      ],
+      "proof_steps": 3,
+      "revised_proof_words": 204,
+      "proof_sha256": "21edc0cc41c843114a7df44cf9ceb2f32b68db2169ab670a439daa8437867e90",
+      "review": "Read the exact involution theorem with both finite-path membership directions and both no-duplicate hypotheses. Explained the inverse bijections, preservation of list length and finite-sum reindexing over an arbitrary semiring."
+    },
+    {
+      "node": "kl.paths.path_transport",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.SchedulePaths.IsPath.map",
+        "OAI.KLInvariance.SchedulePaths.IsPath.isChain",
+        "OAI.KLInvariance.SchedulePaths.IsPath.pairwise_map_of_local",
+        "OAI.KLInvariance.SchedulePaths.subpaths_map_of_sorted"
+      ],
+      "proof_steps": 5,
+      "revised_proof_words": 360,
+      "proof_sha256": "728fd196b1645384bf3913c95ca372f72ec9e0132ce43ff60d653b6b087eb9d7",
+      "review": "Read IsPath.map, its adjacent-incidence proof, pairwise_map_of_local and the exact same-graph sorted-schedule specialization. Retained arbitrary graph maps, linearly ordered labels, target fullness, source tie hypothesis and fixed endpoints."
     },
     {
       "node": "kl.paths.plane_degree",
@@ -3460,6 +3529,18 @@
       "revised_proof_words": 397,
       "proof_sha256": "d5c034f4c06cb3377d104ece8a8d89721a587d78d16b67659741d403d41b57d9",
       "review": "Checked both generic sorted-list cases, no-duplicate use for a current-source tie, target-root injectivity and consecutive-edge inequality, full-schedule membership and the exact ambient set/source-bound identification."
+    },
+    {
+      "node": "kl.paths.sorted_path_selection",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.SchedulePaths.decreasing_of_schedule_path",
+        "OAI.KLInvariance.SchedulePaths.sublist_of_decreasing_subset"
+      ],
+      "proof_steps": 6,
+      "revised_proof_words": 387,
+      "proof_sha256": "4dc977d30306cbd6b41b0c49a69007759cc0d698655e2dca1c163ed16b393b3e",
+      "review": "Read both generic list proofs, including the strict-label membership argument when the containing head differs. Preserved the separate tie condition for path strictness and the weaker hypotheses for strict-subset sublist recovery."
     },
     {
       "node": "kl.realization.alternating_root_formula",

@@ -1130,15 +1130,16 @@ comparisons:
   - OAI.KLInvariance.Dihedral.GoodIndex
   - OAI.KLInvariance.Dihedral.two_elements_length
   - OAI.KLInvariance.Dihedral.sum_lower_signed
+  - OAI.KLInvariance.Dihedral.indexWord_period
   paper: The notes index the two alternating rays by positive and negative integers,
     use -m<i<=m in finite type, and obtain reflection labels as doubled midpoints
     i+j. The interval-shape lemma gives two vertices in each internal rank and a singleton
     top.
   lean: indexWord evaluates rotation powers using Euclidean integer division. A diagram
     automorphism and reduced prefixes prove the length statements. A maximum length
-    gives rotation period 2m, and GoodIndex selects the negative-open, positive-closed
-    range. The internal-rank and signed-sum lemmas retain the zero-rank and singleton-top
-    cases explicitly.
+    m gives rotation^m=1, hence signed-index period 2m; GoodIndex selects the negative-open,
+    positive-closed range. The internal-rank and signed-sum lemmas retain the zero-rank
+    and singleton-top cases explicitly.
   consequence: The Blueprint separates integer parameters from their group values,
     and separates the vertex representative range from the odd reflection-label residues
     used in finite type.
@@ -1728,3 +1729,113 @@ comparisons:
   consequence: The entry states that exact dispatch conclusion, derives both endpoint
     substitutions, and links the subsequent geometric path identification. The actual
     source-character polynomial remains explicit.
+- id: actual-path-list-expansion
+  kind: Position sublists and the finite selected-path set
+  nodes:
+  - kl.paths.directed_paths
+  - kl.notes.path_product
+  paper_labels:
+  - bg:paths
+  - eq:step
+  - eq:comparison
+  lean_declarations:
+  - OAI.KLInvariance.SchedulePaths.IsPath
+  - OAI.KLInvariance.SchedulePaths.pathTerm
+  - OAI.KLInvariance.SchedulePaths.dispatch_eq_path_sum
+  - OAI.KLInvariance.SchedulePaths.pathTerm_delta
+  - OAI.KLInvariance.SchedulePaths.subpaths
+  - OAI.KLInvariance.SchedulePaths.dispatch_eq_subpaths_sum
+  paper: The notes expand the elementary matrix product into weighted directed paths
+    and use a schedule listing each edge once.
+  lean: The generic semiring identity first sums over all position sublists, retaining
+    their multiplicities. Delta evaluation makes each term a path-length weight or
+    zero. A separate theorem uses absence of repeated schedule edges to pass to the
+    finite set of actual path lists.
+  consequence: The Blueprint defines the path predicate, path term, delta vector and
+    selected path set before proving the expansion. A repeated-edge calculation explains
+    the multiplicity distinction.
+- id: sorted-paths-and-involutions
+  kind: Local comparisons determine the selected path transport
+  nodes:
+  - kl.paths.sorted_path_selection
+  - kl.paths.path_transport
+  - kl.paths.path_involution
+  paper_labels:
+  - bg:paths
+  - dih:relative-paths
+  lean_declarations:
+  - OAI.KLInvariance.SchedulePaths.decreasing_of_schedule_path
+  - OAI.KLInvariance.SchedulePaths.sublist_of_decreasing_subset
+  - OAI.KLInvariance.SchedulePaths.IsPath.map
+  - OAI.KLInvariance.SchedulePaths.IsPath.pairwise_map_of_local
+  - OAI.KLInvariance.SchedulePaths.subpaths_map_of_sorted
+  - OAI.KLInvariance.SchedulePaths.dispatch_eq_of_path_involution
+  paper: The notes use strict reflection-label paths and observe that equal-label
+    reflection edges are disjoint. Relative graph identifications transport the underlying
+    directed edges.
+  lean: The list lemmas separate weak sorting, strict path order and sublist recovery.
+    A graph map transports incidence, and comparisons only on composable adjacent
+    edges imply the full strict order on a mapped path. An edge involution with both
+    path-membership directions preserves lengths and reindexes the two finite path
+    sums.
+  consequence: Each map, membership condition and order hypothesis is explicit. The
+    path-set transport supplies the finite bijection used in the root-plane reversal
+    calculation.
+- id: intrinsic-plane-path-reversal
+  kind: A complete intrinsic interval supplies the root-plane identity
+  nodes:
+  - kl.dihedral.interval_flip
+  - kl.dihedral.plane_path_reversal
+  paper_labels:
+  - bg:paths
+  - dih:shape
+  - dih:midpoint-order
+  lean_declarations:
+  - OAI.KLInvariance.Dihedral.rankFlip
+  - OAI.KLInvariance.Dihedral.intervalFlip
+  - OAI.KLInvariance.Dihedral.edgeFlip
+  - OAI.KLInvariance.Dihedral.descent_swap_false_iff_not
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_slopes_rankFlip
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.intervalEdgeSlope
+  - OAI.KLInvariance.TitsSpace.PlaneBasis.dispatch_reverse_endpoints
+  paper: The notes state the increasing and decreasing path formulas and develop the
+    two-vertex internal ranks and angular comparisons in the dihedral section.
+  lean: The local identity fixes the two endpoints of a full intrinsic interval and
+    switches its internal-rank vertices. The middle-descent test proves reversal of
+    adjacent actual-root slope comparisons. A length-preserving involution then identifies
+    the two endpoint entries for a full sorted edge list and its reverse.
+  consequence: The Blueprint gives the interval and edge maps, verifies both directions
+    of sorted path transport and states the precise endpoint-entry equality. The later
+    ambient plane-block application uses this intrinsic identity through the coset
+    graph.
+- id: actual-bruhat-path-polynomial
+  kind: The increasing path polynomial before the R-family identification
+  nodes:
+  - kl.paths.bruhat_path_polynomial
+  - kl.paths.bruhat_path_selection
+  paper_labels:
+  - bg:paths
+  - eq:bg-path-formula
+  lean_declarations:
+  - OAI.KLInvariance.AdaptedDyer.Edge
+  - OAI.KLInvariance.AdaptedDyer.rootLabel
+  - OAI.KLInvariance.AdaptedDyer.score
+  - OAI.KLInvariance.AdaptedDyer.edgeFinset
+  - OAI.KLInvariance.AdaptedDyer.schedule
+  - OAI.KLInvariance.AdaptedDyer.paths
+  - OAI.KLInvariance.AdaptedDyer.mem_paths
+  - OAI.KLInvariance.AdaptedDyer.polynomial
+  - OAI.KLInvariance.AdaptedDyer.polynomial_dispatch
+  - OAI.KLInvariance.AdaptedDyer.polynomial_diagonal
+  - OAI.KLInvariance.AdaptedDyer.polynomial_zero
+  paper: The path-formula statement presents the normalized R-polynomial as the weighted
+    sum of increasing reflection paths and notes that all paths lie in the finite
+    interval between their endpoints.
+  lean: AdaptedDyer first defines a path polynomial from the sorted finite edge list
+    below the final endpoint. Endpoint bounds and noncomposable score ties prove that
+    its selected lists are precisely the strictly increasing directed paths. Its equality
+    to the independently constructed Hecke family is proved afterwards under the adapted
+    chamber hypothesis, followed by order independence.
+  consequence: The path polynomial, its actual edge labels, finite schedule, membership
+    criterion, dispatch identity and diagonal/zero values are developed before the
+    later identification theorem.

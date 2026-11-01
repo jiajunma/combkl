@@ -1530,3 +1530,39 @@ concepts:
   - kl.localization
   - kl.invariance
   - kl.reflection_combinatorics
+- node: kl.paths.directed_paths
+  terms:
+  - directed path
+  - directed paths
+  - directed edge list
+  - directed edge lists
+  - path term
+  - path terms
+  - path weight
+  - path weights
+  - delta vector
+  - delta vectors
+  - selected path set
+  - selected path sets
+  - position sublist
+  - position sublists
+- node: kl.paths.bruhat_path_polynomial
+  terms:
+  - Bruhat path polynomial
+  - Bruhat path polynomials
+  - increasing Bruhat path polynomial
+  - increasing path polynomial
+  - increasing path polynomials
+- node: kl.dihedral.interval_flip
+  terms:
+  - interval flip
+  - interval flips
+  - edge flip
+  - edge flips
+  - rank flip
+  - rank flips
+  - rank-cut map
+  - internal-rank flip
+  - internal-rank flips
+  - plane edge slope
+  - plane edge slopes

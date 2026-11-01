@@ -311,6 +311,7 @@
       "kl.dihedral.induced_signed_action",
       "kl.dihedral.induced_system",
       "kl.dihedral.internal_ranks",
+      "kl.dihedral.interval_flip",
       "kl.dihedral.inversion_cuts",
       "kl.dihedral.inversion_descent_bridge",
       "kl.dihedral.lower_signed_sums",
@@ -324,6 +325,7 @@
       "kl.dihedral.plane_coset_graph",
       "kl.dihedral.plane_generation",
       "kl.dihedral.plane_length",
+      "kl.dihedral.plane_path_reversal",
       "kl.dihedral.plane_simple",
       "kl.dihedral.plane_simple_steps",
       "kl.dihedral.positive_negative_order",
@@ -351,10 +353,16 @@
       "kl.order.root_slopes",
       "kl.order.slope_cone",
       "kl.paths.ambient_after_indicator",
+      "kl.paths.bruhat_path_polynomial",
+      "kl.paths.bruhat_path_selection",
+      "kl.paths.directed_paths",
       "kl.paths.dyer_paths",
       "kl.paths.graph_invariance",
       "kl.paths.later_count",
-      "kl.paths.schedule_suffixes"
+      "kl.paths.path_involution",
+      "kl.paths.path_transport",
+      "kl.paths.schedule_suffixes",
+      "kl.paths.sorted_path_selection"
     ],
     "kl.sheaves": [
       "kl.detail.adjoint_primitivity",
@@ -2842,6 +2850,27 @@
       "paper_locations": []
     },
     {
+      "id": "kl.dihedral.interval_flip",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.rankFlip",
+        "OAI.KLInvariance.Dihedral.length_rankFlip",
+        "OAI.KLInvariance.Dihedral.rankFlip_involutive",
+        "OAI.KLInvariance.Dihedral.rankFlip_lower",
+        "OAI.KLInvariance.Dihedral.rankFlip_upper",
+        "OAI.KLInvariance.Dihedral.rankFlip_bruhat_iff",
+        "OAI.KLInvariance.Dihedral.rankFlip_step_iff",
+        "OAI.KLInvariance.Dihedral.intervalFlip",
+        "OAI.KLInvariance.Dihedral.intervalFlip_involutive",
+        "OAI.KLInvariance.Dihedral.edgeFlip",
+        "OAI.KLInvariance.Dihedral.edgeFlip_source",
+        "OAI.KLInvariance.Dihedral.edgeFlip_target",
+        "OAI.KLInvariance.Dihedral.edgeFlip_involutive",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.intervalEdgeSlope"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.dihedral.inversion_cuts",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
@@ -2982,6 +3011,22 @@
       "lean_declarations": [
         "OAI.KLInvariance.TitsSpace.planeLength",
         "OAI.KLInvariance.TitsSpace.planeLength_nonneg"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.dihedral.plane_path_reversal",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.Dihedral.descent_swap",
+        "OAI.KLInvariance.Dihedral.unique_leftDescent",
+        "OAI.KLInvariance.Dihedral.descent_swap_false_iff_not",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_ne_of_path",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.edgeRoot_slopes_rankFlip",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.intervalEdgeSlope_flip",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.intervalEdgeSlope_ties",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.intervalEdgeSlope_flip_reverse",
+        "OAI.KLInvariance.TitsSpace.PlaneBasis.dispatch_reverse_endpoints"
       ],
       "paper_locations": []
     },
@@ -4703,7 +4748,9 @@
       "id": "kl.notes.path_product",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
-        "OAI.KLInvariance.SchedulePaths.dispatch",
+        "OAI.KLInvariance.SchedulePaths.dispatch_eq_path_sum",
+        "OAI.KLInvariance.SchedulePaths.pathTerm_delta",
+        "OAI.KLInvariance.SchedulePaths.entry_eq_weighted_paths",
         "OAI.KLInvariance.SchedulePaths.dispatch_eq_subpaths_sum"
       ],
       "paper_locations": [
@@ -4889,6 +4936,53 @@
       "paper_locations": []
     },
     {
+      "id": "kl.paths.bruhat_path_polynomial",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.Edge",
+        "OAI.KLInvariance.AdaptedDyer.source",
+        "OAI.KLInvariance.AdaptedDyer.target",
+        "OAI.KLInvariance.AdaptedDyer.rootLabel",
+        "OAI.KLInvariance.AdaptedDyer.score",
+        "OAI.KLInvariance.AdaptedDyer.edgeFinset",
+        "OAI.KLInvariance.AdaptedDyer.schedule",
+        "OAI.KLInvariance.AdaptedDyer.paths",
+        "OAI.KLInvariance.AdaptedDyer.polynomial"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.paths.bruhat_path_selection",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.AdaptedDyer.target_eq_root",
+        "OAI.KLInvariance.AdaptedDyer.rootLabel_ne_of_join",
+        "OAI.KLInvariance.AdaptedDyer.score_ties",
+        "OAI.KLInvariance.AdaptedDyer.mem_edgeFinset",
+        "OAI.KLInvariance.AdaptedDyer.mem_schedule",
+        "OAI.KLInvariance.AdaptedDyer.schedule_nodup",
+        "OAI.KLInvariance.AdaptedDyer.schedule_increasing",
+        "OAI.KLInvariance.AdaptedDyer.path_le",
+        "OAI.KLInvariance.AdaptedDyer.path_targets_le",
+        "OAI.KLInvariance.AdaptedDyer.mem_paths",
+        "OAI.KLInvariance.AdaptedDyer.polynomial_dispatch",
+        "OAI.KLInvariance.AdaptedDyer.polynomial_diagonal",
+        "OAI.KLInvariance.AdaptedDyer.polynomial_zero"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.paths.directed_paths",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.SchedulePaths.IsPath",
+        "OAI.KLInvariance.SchedulePaths.pathTerm",
+        "OAI.KLInvariance.SchedulePaths.subpaths",
+        "OAI.KLInvariance.SchedulePaths.mem_subpaths"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.paths.dyer_paths",
       "chapter": "kl.reflection_combinatorics",
       "lean_declarations": [
@@ -4925,6 +5019,25 @@
       ]
     },
     {
+      "id": "kl.paths.path_involution",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.SchedulePaths.dispatch_eq_of_path_involution"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.paths.path_transport",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.SchedulePaths.IsPath.map",
+        "OAI.KLInvariance.SchedulePaths.IsPath.isChain",
+        "OAI.KLInvariance.SchedulePaths.IsPath.pairwise_map_of_local",
+        "OAI.KLInvariance.SchedulePaths.subpaths_map_of_sorted"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.paths.plane_degree",
       "chapter": "kl.localization",
       "lean_declarations": [
@@ -4946,6 +5059,15 @@
         "OAI.KLInvariance.BruhatGraph.ambientLater_upperInclusion",
         "OAI.KLInvariance.BruhatGraph.remainingConditions_source_ambient",
         "OAI.KLInvariance.BruhatGraph.remainingConditions_target_ambient"
+      ],
+      "paper_locations": []
+    },
+    {
+      "id": "kl.paths.sorted_path_selection",
+      "chapter": "kl.reflection_combinatorics",
+      "lean_declarations": [
+        "OAI.KLInvariance.SchedulePaths.decreasing_of_schedule_path",
+        "OAI.KLInvariance.SchedulePaths.sublist_of_decreasing_subset"
       ],
       "paper_locations": []
     },

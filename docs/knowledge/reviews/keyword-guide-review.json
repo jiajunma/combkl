@@ -102,6 +102,9 @@
         "kl.foundations.canonical_kl",
         "kl.detail.polynomial_labels",
         "kl.paths.graph_invariance",
+        "kl.paths.directed_paths",
+        "kl.notes.path_product",
+        "kl.dihedral.plane_path_reversal",
         "kl.paths.dyer_paths",
         "kl.sheaves.boundary_sheaf",
         "kl.duality.actual_character_reciprocity",
@@ -117,9 +120,9 @@
         "kl.main.finite_interval_model",
         "kl.main.combinatorial_invariance"
       ],
-      "content_sha256": "49ffed5bab35157cbe9cb0397a69151403d3e3960147cb1518c43e79a1633627",
+      "content_sha256": "46c9add5f3d7ae8edfea351e25d8a0583c07f2c2234da5020b404bd129518533",
       "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph.",
-      "scope_review": " Added the explicit upper-suffix-freeness step between generic list propagation and exact endpoints."
+      "scope_review": " Added the explicit upper-suffix-freeness step between generic list propagation and exact endpoints. Added the directed-path, exact sum and full intrinsic-plane reversal route; the main geometric identification remains linked separately."
     },
     {
       "keyword": "background",
@@ -261,10 +264,13 @@
         "kl.detail.plane_basis",
         "kl.dihedral.induced_system",
         "kl.dihedral.plane_coset_graph",
-        "kl.notes.relative_dihedral_transport"
+        "kl.notes.relative_dihedral_transport",
+        "kl.dihedral.interval_flip",
+        "kl.dihedral.plane_path_reversal"
       ],
-      "content_sha256": "7a1c2518dc6b7af537161838824982846ae5e8fc8da257c65c4bf2319ce075d9",
-      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+      "content_sha256": "d9637c2643ca1b705fabe77f91ec42afcc7237111549fb8f80f3c9da1997149f",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph.",
+      "scope_review": " Added the directed-path, exact sum and full intrinsic-plane reversal route; the main geometric identification remains linked separately."
     },
     {
       "keyword": "dihedral-counts",
@@ -622,10 +628,15 @@
         "kl.detail.diamond_reconstruction",
         "kl.detail.transported_schedule",
         "kl.paths.schedule_suffixes",
+        "kl.paths.directed_paths",
+        "kl.notes.path_product",
+        "kl.paths.bruhat_path_polynomial",
+        "kl.dihedral.plane_path_reversal",
         "kl.paths.dyer_paths"
       ],
-      "content_sha256": "9a864cb47fc4a7ae0e37a1f84aa6feea9c7008a50e844b6bbc8eb597c95b0b76",
-      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+      "content_sha256": "de9af6d5778c2ff68d5205098333aa473f060fbea5edec5010c6b65386382599",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph.",
+      "scope_review": " Added the directed-path, exact sum and full intrinsic-plane reversal route; the main geometric identification remains linked separately."
     },
     {
       "keyword": "root-geometry",

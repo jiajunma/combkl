@@ -17,17 +17,20 @@ The [[node:kl.comparison.edge_increment|one-edge Hilbert comparison]] turns that
 4. [[node:kl.foundations.canonical_kl]] — Identify the polynomial family in the conclusion.
 5. [[node:kl.detail.polynomial_labels]] — Connect root geometry with coefficient labels.
 6. [[node:kl.paths.graph_invariance]] — Recover the reflection edges from the order.
-7. [[node:kl.paths.dyer_paths]] — Identify the geometric path product with R-data.
-8. [[node:kl.sheaves.boundary_sheaf]] — Introduce the actual sheaf used by comparison.
-9. [[node:kl.duality.actual_character_reciprocity]] — Obtain the actual sheaf-character identity.
-10. [[node:kl.local.localized_decomposition]] — Construct the local models used in comparison.
-11. [[node:kl.local.edge_inclusion]] — Obtain the conditional image inclusion.
-12. [[node:kl.comparison.edge_increment]] — Convert it into the normalized numerical step.
-13. [[node:kl.detail.schedule_comparison]] — Iterate the bound under the upper-freeness hypotheses.
-14. [[node:kl.comparison.schedule_upper_freeness]] — Supply image inclusions from the exact upper suffix kernels.
-15. [[node:kl.detail.endpoint_equality]] — Make endpoints exact when the R-data agree.
-16. [[node:kl.detail.reverse_projectivity]] — Recover projective kernels from the resulting image equalities.
-17. [[node:kl.comparison.rtilde_invariance]] — Follow the simultaneous induction.
-18. [[node:kl.main.kl_finite]] — Identify the canonical KL polynomials after R-invariance.
-19. [[node:kl.main.finite_interval_model]] — Reduce an arbitrary interval to finite support.
-20. [[node:kl.main.combinatorial_invariance]] — Read the unrestricted final theorem.
+7. [[node:kl.paths.directed_paths]] — Define directed edge lists and their selected path sets.
+8. [[node:kl.notes.path_product]] — Expand the transfer entry into weighted paths.
+9. [[node:kl.dihedral.plane_path_reversal]] — Prove the full intrinsic plane-block identity.
+10. [[node:kl.paths.dyer_paths]] — Identify the geometric path product with R-data.
+11. [[node:kl.sheaves.boundary_sheaf]] — Introduce the actual sheaf used by comparison.
+12. [[node:kl.duality.actual_character_reciprocity]] — Obtain the actual sheaf-character identity.
+13. [[node:kl.local.localized_decomposition]] — Construct the local models used in comparison.
+14. [[node:kl.local.edge_inclusion]] — Obtain the conditional image inclusion.
+15. [[node:kl.comparison.edge_increment]] — Convert it into the normalized numerical step.
+16. [[node:kl.detail.schedule_comparison]] — Iterate the bound under the upper-freeness hypotheses.
+17. [[node:kl.comparison.schedule_upper_freeness]] — Supply image inclusions from the exact upper suffix kernels.
+18. [[node:kl.detail.endpoint_equality]] — Make endpoints exact when the R-data agree.
+19. [[node:kl.detail.reverse_projectivity]] — Recover projective kernels from the resulting image equalities.
+20. [[node:kl.comparison.rtilde_invariance]] — Follow the simultaneous induction.
+21. [[node:kl.main.kl_finite]] — Identify the canonical KL polynomials after R-invariance.
+22. [[node:kl.main.finite_interval_model]] — Reduce an arbitrary interval to finite support.
+23. [[node:kl.main.combinatorial_invariance]] — Read the unrestricted final theorem.
