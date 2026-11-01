@@ -439,6 +439,16 @@ For a localization \(S=P^{-1}A\), the embedded tensor extension of a submodule c
 - [[node:kl.algebra.scalar_image_free]]
 - [[node:kl.algebra.tensor_local_denominator]]
 
+## Homogeneous image maps in the Hilbert calculation
+
+A degree-\(d\) map sends the degree-\((n-d)\) part of a vector to the degree-\(n\) part of its image. For a homogeneous submodule \(S\), taking that component of any preimage makes the map
+\[
+S_{n-d}\longrightarrow f(S)_n
+\]
+surjective. If \(f\) is injective, this is a piece isomorphism. Translation of the summable integer-indexed series gives \(H_{f(S)}(q)=q^dH_S(q)\), as proved in the [[node:kl.algebra.shifted_image_hilbert|homogeneous-image shift theorem]].
+
+For a degree-zero map with kernel \(aM\), saturation gives the restricted kernel \(aS\). Graded exactness then gives \(H_S=H_{aS}+H_{f(S)}\), and the scalar shift gives \(H_{f(S)}=(1-q^{\deg a})H_S\). The [[node:kl.algebra.saturated_image_hilbert|saturated-image Hilbert theorem]] states the exact action, regularity, finite-piece and convergence hypotheses. These are the two calculations used for corrected upper edge images.
+
 ## Definitions and proofs by construction
 
 ### The realization coefficient algebra
@@ -510,6 +520,8 @@ For a localization \(S=P^{-1}A\), the embedded tensor extension of a submodule c
 - [[node:kl.detail.hilbert_exactness]]
 - [[node:kl.algebra.hilbert_image_exactness]]
 - [[node:kl.algebra.hilbert_scalar_quotient]]
+- [[node:kl.algebra.shifted_image_hilbert]]
+- [[node:kl.algebra.saturated_image_hilbert]]
 - [[node:kl.algebra.hilbert_defect]]
 - [[node:kl.sheaves.hilbert_detection]]
 

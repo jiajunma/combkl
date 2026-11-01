@@ -127,6 +127,7 @@
       "kl.algebra.reflected_dual_character",
       "kl.algebra.root_label_primes",
       "kl.algebra.root_quotient_coordinates",
+      "kl.algebra.saturated_image_hilbert",
       "kl.algebra.scalar_free_presentation",
       "kl.algebra.scalar_image_free",
       "kl.algebra.scalar_inverse_degree",
@@ -134,6 +135,7 @@
       "kl.algebra.scalar_quotient_basis",
       "kl.algebra.scalar_quotient_regular",
       "kl.algebra.scalar_twist",
+      "kl.algebra.shifted_image_hilbert",
       "kl.algebra.subquotient_gradings",
       "kl.algebra.tensor_local_denominator",
       "kl.algebra.tensor_scalar_quotient",
@@ -155,10 +157,12 @@
     ],
     "kl.invariance": [
       "kl.comparison.edge_increment",
+      "kl.comparison.edge_normalization",
       "kl.comparison.free_suffixes",
       "kl.comparison.global_comparison",
       "kl.comparison.no_deficit",
       "kl.comparison.normalized_kernel",
+      "kl.comparison.raw_edge_increment",
       "kl.comparison.reverse_freeness",
       "kl.comparison.rtilde_invariance",
       "kl.comparison.rtilde_row_comparison",
@@ -1246,6 +1250,18 @@
       "paper_locations": []
     },
     {
+      "id": "kl.algebra.saturated_image_hilbert",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hilbert.imageMap",
+        "OAI.KLInvariance.Hilbert.imageMap_surjective",
+        "OAI.KLInvariance.Hilbert.imageMap_ker",
+        "OAI.KLInvariance.Hilbert.map_homogeneous",
+        "OAI.KLInvariance.Hilbert.saturated_image_value"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.algebra.scalar_free_presentation",
       "chapter": "kl.graded_algebra",
       "lean_declarations": [
@@ -1318,6 +1334,18 @@
       "paper_locations": []
     },
     {
+      "id": "kl.algebra.shifted_image_hilbert",
+      "chapter": "kl.graded_algebra",
+      "lean_declarations": [
+        "OAI.KLInvariance.Hilbert.shifted_map_homogeneous",
+        "OAI.KLInvariance.Hilbert.shiftedImagePieceMap",
+        "OAI.KLInvariance.Hilbert.shiftedImagePieceMap_surjective",
+        "OAI.KLInvariance.Hilbert.shiftedImagePieceEquiv",
+        "OAI.KLInvariance.Hilbert.shifted_image_value"
+      ],
+      "paper_locations": []
+    },
+    {
       "id": "kl.algebra.subquotient_gradings",
       "chapter": "kl.graded_algebra",
       "lean_declarations": [
@@ -1369,11 +1397,25 @@
       "id": "kl.comparison.edge_increment",
       "chapter": "kl.invariance",
       "lean_declarations": [
-        "OAI.KLInvariance.BruhatGraph.normalized_edge_increment_le"
+        "OAI.KLInvariance.BruhatGraph.normalized_edge_increment_le",
+        "OAI.KLInvariance.BruhatGraph.normalized_edge_increment_eq_iff",
+        "OAI.KLInvariance.Comparison.scaled_increment_eq_iff"
       ],
       "paper_locations": [
         "6. Reciprocity and simultaneous induction; sec:induction"
       ]
+    },
+    {
+      "id": "kl.comparison.edge_normalization",
+      "chapter": "kl.invariance",
+      "lean_declarations": [
+        "OAI.KLInvariance.Comparison.edge_scalar_identity",
+        "OAI.KLInvariance.Comparison.transferCoefficient_pos",
+        "OAI.KLInvariance.Comparison.stateScale_pos",
+        "OAI.KLInvariance.BruhatGraph.stateScale_positive",
+        "OAI.KLInvariance.BruhatGraph.edge_stateScale"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.comparison.free_suffixes",
@@ -1409,8 +1451,9 @@
       "id": "kl.comparison.normalized_kernel",
       "chapter": "kl.invariance",
       "lean_declarations": [
-        "OAI.KLInvariance.BruhatGraph.normalizedKernel",
-        "OAI.KLInvariance.BruhatGraph.stateScale"
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelHilbert",
+        "OAI.KLInvariance.BruhatGraph.stateScale",
+        "OAI.KLInvariance.BruhatGraph.normalizedKernel"
       ],
       "paper_locations": [
         "6. Reciprocity and simultaneous induction; sec:induction"
@@ -1427,6 +1470,20 @@
       "paper_locations": [
         "6. Reciprocity and simultaneous induction; sec:induction"
       ]
+    },
+    {
+      "id": "kl.comparison.raw_edge_increment",
+      "chapter": "kl.invariance",
+      "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.upper_image_value",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.shifted_upperImage_value",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.edge_increment_le",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.edge_increment_eq_iff",
+        "OAI.KLInvariance.BruhatGraph.actual_edge_increment_le",
+        "OAI.KLInvariance.BruhatGraph.actual_edge_increment_eq_iff",
+        "OAI.KLInvariance.BruhatGraph.label_regular_stalk"
+      ],
+      "paper_locations": []
     },
     {
       "id": "kl.comparison.reciprocal_rigidity",
@@ -2053,6 +2110,10 @@
       "id": "kl.detail.kernel_exact_sequence",
       "chapter": "kl.invariance",
       "lean_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerAt",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerAt_map",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.upwardKernel_insert",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.hilbert_edge_increment",
         "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelHilbert_edge"
       ],
       "paper_locations": [

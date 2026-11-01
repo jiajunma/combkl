@@ -3,8 +3,8 @@
   "authority": "Lean is primary when the preprint and formal development differ",
   "source_revision": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
   "previous_proof_words": 7246,
-  "revised_proof_words": 102262,
-  "theorem_walkthroughs": 347,
+  "revised_proof_words": 103854,
+  "theorem_walkthroughs": 351,
   "review_criteria": [
     "Explicit local notation and hypotheses",
     "Intermediate identities and map constructions explained",
@@ -159,9 +159,9 @@
         "OAI.KLInvariance.Hilbert.summable_term"
       ],
       "proof_steps": 4,
-      "revised_proof_words": 212,
-      "proof_sha256": "a579b4c8ec01648c543c10bafc2de2df37efbe1d1f07c99b70393546c8c92196",
-      "review": "Read polynomialModule_piece_finite, summable_polynomialModule and summable_term. Kept arbitrary integer grading and arbitrary k-subspaces; expanded homogeneous preimages and termwise domination by a finite shifted free cover."
+      "revised_proof_words": 216,
+      "proof_sha256": "8f78d0a8f459ca15e69ebca348bacbe6fe26b4963ebceff991f1bb2e4d365499",
+      "review": "Retained the reviewed integer-graded convergence proof and made the one-variable hypothesis A=k[X] explicit in the quotient example with Hilbert value one."
     },
     {
       "node": "kl.algebra.hilbert_image_exactness",
@@ -454,6 +454,21 @@
       "review": "Re-read the symmetric quotient coordinates and added the actual polynomial EdgeRing equivalence, its generator formula, domain/UFD transport and prime reduced-positive-root argument from TerminalKernels."
     },
     {
+      "node": "kl.algebra.saturated_image_hilbert",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Hilbert.imageMap",
+        "OAI.KLInvariance.Hilbert.imageMap_surjective",
+        "OAI.KLInvariance.Hilbert.imageMap_ker",
+        "OAI.KLInvariance.Hilbert.map_homogeneous",
+        "OAI.KLInvariance.Hilbert.saturated_image_value"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 293,
+      "proof_sha256": "6092ad1579e9b69c06b573f6f6547c90d926a5635a3f094fefbcf54ad6f8b93d",
+      "review": "Checked generic coefficient and decomposition hypotheses, finite pieces of the domain, homogeneous saturated S, exact scalar kernel and scalar injectivity. Expanded the actual-image map, both kernel directions, graded exactness and the scalar shift; preserved q>0 with explicit summability."
+    },
+    {
       "node": "kl.algebra.scalar_free_presentation",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -520,6 +535,21 @@
       "review": "Read the finite-basis scalar divisibility criterion and scalar_quotient_regular. Preserved the general commutative ring, prime-element and exact-kernel assumptions and reproduced the coordinate argument."
     },
     {
+      "node": "kl.algebra.shifted_image_hilbert",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Hilbert.shifted_map_homogeneous",
+        "OAI.KLInvariance.Hilbert.shiftedImagePieceMap",
+        "OAI.KLInvariance.Hilbert.shiftedImagePieceMap_surjective",
+        "OAI.KLInvariance.Hilbert.shiftedImagePieceEquiv",
+        "OAI.KLInvariance.Hilbert.shifted_image_value"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 259,
+      "proof_sha256": "07e141ebe7131760752b7bc62775a57da27da17d61f8c9141bddeaece6999610",
+      "review": "Read all shifted-image maps and the value proof; preserved generic compatible scalar actions, integer degree, q!=0 and summability. Explained image homogeneity, the component preimage, piece equivalence, finrank coefficients and the translation of the bilateral series."
+    },
+    {
       "node": "kl.algebra.subquotient_gradings",
       "previous_proof_words": 0,
       "source_declarations": [
@@ -582,13 +612,30 @@
     {
       "node": "kl.comparison.edge_increment",
       "source_declarations": [
-        "OAI.KLInvariance.BruhatGraph.normalized_edge_increment_le"
+        "OAI.KLInvariance.BruhatGraph.normalized_edge_increment_le",
+        "OAI.KLInvariance.BruhatGraph.normalized_edge_increment_eq_iff",
+        "OAI.KLInvariance.Comparison.scaled_increment_eq_iff"
       ],
       "proof_steps": 4,
       "previous_proof_words": 62,
-      "revised_proof_words": 236,
-      "proof_sha256": "2e387415af0c7ae1b639e28a91c5c9f48616ae74ddffe279f935280f2c2933c7",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 355,
+      "proof_sha256": "3ce8d65ddba2d311436846a27b8fb7fc73795fd73e2c9bf53e0f4f6314a3b4aa",
+      "review": "Replaced the compressed parent with the exact one-system BoundarySheaf, arbitrary selections and conditional image-inclusion setup. Expanded both normalized inequality and iff criterion via positive scaling and cancellation; kept upper-kernel freeness only in the separate chronological application."
+    },
+    {
+      "node": "kl.comparison.edge_normalization",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.Comparison.edge_scalar_identity",
+        "OAI.KLInvariance.Comparison.transferCoefficient_pos",
+        "OAI.KLInvariance.Comparison.stateScale_pos",
+        "OAI.KLInvariance.BruhatGraph.stateScale_positive",
+        "OAI.KLInvariance.BruhatGraph.edge_stateScale"
+      ],
+      "proof_steps": 4,
+      "revised_proof_words": 198,
+      "proof_sha256": "c27a508bc2644998436237257844e7692c3537e611bbdc944792e169938f5ad1",
+      "review": "Checked the integer-power identity under t!=0, strict positivity for 0<t<1, the actual length-degree substitution and the common polynomial-variable scale. Included cover and gap-three calculations with the same coefficient."
     },
     {
       "node": "kl.comparison.global_comparison",
@@ -611,6 +658,23 @@
       "revised_proof_words": 295,
       "proof_sha256": "fb9dc2af12e3b4f57eeb6a07f70b33ffd341cec55d725bb5be1fbf9de68ccde3",
       "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+    },
+    {
+      "node": "kl.comparison.raw_edge_increment",
+      "previous_proof_words": 0,
+      "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.upper_image_value",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.shifted_upperImage_value",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.edge_increment_le",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.edge_increment_eq_iff",
+        "OAI.KLInvariance.BruhatGraph.actual_edge_increment_le",
+        "OAI.KLInvariance.BruhatGraph.actual_edge_increment_eq_iff",
+        "OAI.KLInvariance.BruhatGraph.label_regular_stalk"
+      ],
+      "proof_steps": 6,
+      "revised_proof_words": 573,
+      "proof_sha256": "88147d1f6d7b1d0f7aba13fdc3aab8bfd4d83a5b10fe68d71afc437024716b15",
+      "review": "Read generic edge-value proofs together with GradedSheaf/ModuleData fields. Retained nonnegative support of the sheaf modules, arbitrary selections, regularity and embedded inclusion; expanded equality detection and the explicit nonnegative one-edge example."
     },
     {
       "node": "kl.comparison.reciprocal_rigidity",
@@ -1039,13 +1103,17 @@
     {
       "node": "kl.detail.kernel_exact_sequence",
       "source_declarations": [
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerAt",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.lowerAt_map",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.upwardKernel_insert",
+        "OAI.KLInvariance.MomentGraph.GradedSheaf.hilbert_edge_increment",
         "OAI.KLInvariance.MomentGraph.GradedSheaf.kernelHilbert_edge"
       ],
-      "proof_steps": 4,
+      "proof_steps": 5,
       "previous_proof_words": 89,
-      "revised_proof_words": 272,
-      "proof_sha256": "80b773404673eb78978cabc82d0c7487674a8909beca3c95e3f10c2476a33499",
-      "review": "Explicit mathematical derivation read against the named source proof and its helper statements; word counts are descriptive, not a completeness test."
+      "revised_proof_words": 418,
+      "proof_sha256": "a2c4806ea491d3128ff87dc935aa6a4dfa946bee8d26cbf07831b2518e259d47",
+      "review": "Read GradedSheaf.vertex/edge and ModuleData.nonneg as inherited hypotheses. Preserved integer indexing and zero negative pieces, generic positive-q/summability assumptions, polynomial convergence, both kernel directions, degreewise surjectivity and the already-selected edge case."
     },
     {
       "node": "kl.detail.kl_recursion",

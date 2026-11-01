@@ -97,6 +97,7 @@ designated documents; this section is the reusable authoring contract.
   illustrative calculations appropriately, preserve the general hypotheses,
   and use reader feedback rather than word counts or successful builds to
   assess whether an explanation has become understandable.
+- Keyword pages must be authored mathematical guides as well as indexes. Explain the starting definitions, the relationships among the main results, the proof dependencies and the role of the subject in the main theorem. Give a reading route from concepts to proofs, with Python-generated node and definition links; a list of matching tagged nodes alone is insufficient.
 - Give detailed proofs, not abstract proof summaries. State the ambient
   objects and hypotheses, define local notation, and explain each inference
   and displayed equality. For induction, give the induction statement, base

@@ -61,8 +61,6 @@ concepts:
   - lower-half operation
 - node: kl.sheaves.graded_module
   terms:
-  - finite graded module
-  - finite graded modules
   - finite nonnegatively graded module
   - finite nonnegatively graded modules
   - graded module data
@@ -178,6 +176,12 @@ concepts:
   - Hilbert state
   - normalized Hilbert state
   - state normalization
+  - kernel Hilbert value
+  - kernel Hilbert values
+  - state scale
+  - state scales
+  - normalized kernel value
+  - normalized kernel values
 - node: kl.comparison.positive_transfer
   terms:
   - elementary transfers

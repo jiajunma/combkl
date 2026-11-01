@@ -1,61 +1,97 @@
 # Hilbert comparison and combinatorial invariance
 
-The proof turns inclusions of edge images into numerical inequalities, then uses exact endpoints to recover image equality and projective kernels. It first converts each inclusion into an inequality of real numbers. It then forces equality, recovers equality of submodules, and only afterward proves freeness.
+The proof uses an established inclusion of edge images to obtain a numerical bound. Exact endpoint identities later force these bounds to be equalities, which recover equality of the images and freeness of additional kernels. In the schedule application, the upper selected kernel freeness needed for the image inclusion is supplied by induction.
 
 We will calculate the whole process for the one-edge sheaf from moment-graph sheaves. The general argument uses the same operations at each edge, with the hypotheses supplied by the simultaneous invariance induction.
 
-## Removing one equation enlarges a kernel by an image
+## One outgoing condition and its actual image
 
-Suppose the remaining outgoing conditions at \(x\) are \(F\cup\{e\}\), where \(e:x\to y\). Set
+Let \(e:x\to y\) be an edge, and let \(F\) be the other selected outgoing conditions at \(x\). Put
 \[
-K'=K_x(F\cup\{e\}),\qquad K=K_x(F),\qquad I_e=\rho_{x,e}(K).
+K'=K_x(F\cup\{e\}),\qquad K=K_x(F),\qquad I_e=\rho_e^-(K).
 \]
-Restrict \(\rho_{x,e}\) to \(K\), with codomain its actual image \(I_e\). This map is surjective by definition. A vector is in its kernel exactly when it satisfies both the old conditions \(F\) and the additional condition \(e\). Thus its kernel is \(K'\), giving
+Restriction with codomain \(I_e\) is surjective. Its kernel consists precisely of the vectors already satisfying \(F\) whose \(e\)-restriction is also zero. Thus
 \[
 0\longrightarrow K'\longrightarrow K\longrightarrow I_e\longrightarrow0.
 \]
-All maps preserve degree, so homogeneous dimensions and convergent Hilbert values add:
+The [[node:kl.detail.kernel_exact_sequence|one-condition exact-sequence theorem]] checks both kernel directions and surjectivity in each homogeneous degree.
+
+Hilbert values use all integer degrees:
+\[
+H_K(q)=\sum_{n\in\mathbb Z}\dim_{\mathbb R}K_nq^n.
+\]
+The graded module data used by the sheaf impose \(M_n=0\) for \(n<0\). Therefore the displayed sum also equals its sum over \(n\ge0\). Finite polynomial modules have finite-dimensional pieces and convergent values for \(0<q<1\). The generic Hilbert image lemmas are stated for integer gradings; the sheaf application retains the additional nonnegative-support field.
+
+Degreewise exactness and convergence give
 \[
 H_K(q)-H_{K'}(q)=H_{I_e}(q).
 \]
-
-In the one-edge example, \(K'=\alpha A\), \(K=A\), and \(I_e=A/(\alpha)\). The identity is
+For the one-edge example over \(A=\mathbb R[\alpha]\), \(K'=\alpha A\), \(K=A\), and \(I_e=A/(\alpha)\), so the identity is
 \[
 \frac1{1-q}-\frac q{1-q}=1.
 \]
-This calculation has not used a free basis for an arbitrary partial kernel; the general exactness statement is available before that freeness has been proved.
 
-## Choose a normalization that makes every edge use the same coefficient
+## The two factors in the upper-image value
 
-Let \(A\) have \(N\) degree-one variables, let \(b\) be the top, and choose \(0<t<1\). Put \(q=t^2\). For the current remaining conditions define the state coordinate
+Let \(H\) be an outgoing selection at the upper vertex \(y\), and \(J_e=\rho_e^+(K_y(H))\). The current label \(\alpha_e\) acts injectively on every selected outgoing edge module. Therefore
 \[
-D_x=(1-t^2)^N t^{\ell(x)-\ell(b)}H_{K_x}(t^2).
+\alpha_ev\in K_y(H)\quad\Longrightarrow\quad v\in K_y(H):
 \]
-A state is simply the vector of these real numbers, one for each vertex. The factor \((1-t^2)^N\) removes the usual polynomial-ring denominator. The power of \(t\) adjusts for the vertex's distance from the top.
+apply each selected restriction and cancel \(\alpha_e\) on its target edge module.
 
-Why this particular power? localization and edge-image comparison gives \(I_e\subseteq f_eJ_e\), with
+This saturation identifies the restricted upper-map kernel with \(\alpha_eK_y(H)\). The [[node:kl.algebra.saturated_image_hilbert|saturated-image Hilbert theorem]], with the degree-one current label, gives
 \[
-k=\deg f_e=\frac{\ell(y)-\ell(x)-1}{2}.
+H_{J_e}(q)=(1-q)H_{K_y(H)}(q).
 \]
-Let \(K_y\) be the required upper kernel, assumed free. Its image is \(J_e\simeq K_y/\alpha_eK_y\). Since the label has degree one and acts injectively, exactness gives
+For an injective correction map of degree \(k\), the [[node:kl.algebra.shifted_image_hilbert|homogeneous-image shift theorem]] gives
 \[
-H_{J_e}(q)=(1-q)H_{K_y}(q).
+H_{f_eJ_e}(q)=q^kH_{J_e}(q)
+=q^k(1-q)H_{K_y(H)}(q).
 \]
-Multiplication by the regular degree-\(k\) factor gives
-\[
-H_{f_eJ_e}(q)=q^k(1-q)H_{K_y}(q).
-\]
-Inclusion gives \(H_{I_e}\le H_{f_eJ_e}\). Multiply by the lower state's scale and divide by the upper state's scale. The resulting coefficient is
-\[
-\begin{aligned}
-t^{\ell(x)-\ell(y)}t^{2k}(1-t^2)
-&=t^{\ell(x)-\ell(y)+\ell(y)-\ell(x)-1}(1-t^2)\\
-&=t^{-1}-t.
-\end{aligned}
-\]
-Thus every edge has the same positive coefficient \(T=t^{-1}-t\), regardless of its length jump.
+It constructs the piece isomorphism by taking the degree-\((n-k)\) component of a preimage in degree \(n\).
 
-## Calculate the complete one-edge state
+The [[node:kl.comparison.raw_edge_increment|raw edge-increment theorem]] now uses the embedded inclusion \(I_e\subseteq f_eJ_e\) to compare their piece dimensions. This inclusion is supplied by the global edge theorem when the required upper selected kernel is free. The Hilbert calculation starts from the inclusion and the actual label/correction regularity.
+
+## Equality at one positive parameter
+
+The difference between the upper bound and the lower increment is
+\[
+\sum_{n\in\mathbb Z}
+\bigl(\dim(f_eJ_e)_n-\dim(I_e)_n\bigr)q^n.
+\]
+Every term is nonnegative, and every \(q^n\) is positive. If the sum is zero, the dimensions agree in every degree. Inclusion then gives equality of the finite-dimensional pieces; homogeneity of the larger image gives equality of the full embedded submodules.
+
+The [[node:kl.comparison.raw_edge_increment|raw edge-increment theorem]] proves this equivalence at the chosen \(q\). Its one-edge example uses lower image \((X,Y)\) inside the edge quotient \(\mathbb R[X,Y]\). The constant quotient contributes a defect of one: at \(q=1/2\), the lower increment is \(3\) and the upper bound is \(4\).
+
+## Normalization of the one-edge coefficient
+
+Let \(A\) have \(N\) degree-one variables, with \(N\) the cardinality of the actual finite coefficient basis. Choose \(0<t<1\), put \(q=t^2\), and define
+\[
+s_x(t)=(1-t^2)^N t^{\ell(x)-\ell(b)},\qquad
+D_x(t,F)=s_x(t)H_{K_x(F)}(t^2).
+\]
+The exponent is an integer. The state scale is strictly positive throughout the comparison range.
+
+The edge degree is \(k=(\ell(y)-\ell(x)-1)/2\). Put \(m=\ell(x)-\ell(b)\) and \(n=\ell(y)-\ell(b)\), so \(m+2k=n-1\). The [[node:kl.comparison.edge_normalization|edge-normalization theorem]] computes
+\[
+t^m(t^2)^k(1-t^2)
+=t^{n-1}(1-t^2)
+=(t^{-1}-t)t^n.
+\]
+Multiplying by \((1-t^2)^N\) gives
+\[
+s_x(t)(t^2)^k(1-t^2)=T(t)s_y(t),
+\qquad T(t)=t^{-1}-t>0.
+\]
+A cover has \(k=0\); an edge of length gap three has \(k=1\). The scale compensates for either gap and leaves the same coefficient \(T(t)\).
+
+Multiplying the raw inequality by \(s_x(t)>0\) therefore yields
+\[
+D_x(t,F)\le D_x(t,F\cup\{e\})+T(t)D_y(t,H).
+\]
+The [[node:kl.comparison.edge_increment|normalized edge-increment theorem]] also proves the equality criterion: cancel the nonzero scale to recover raw equality, then apply the embedded-image criterion above.
+
+## A complete one-edge state calculation
 
 Take \(A=\mathbb R[\alpha]\), \(x=1\), \(y=b=s\), so \(N=1\), \(\ell(x)=0\), \(\ell(y)=1\). Initially the edge condition is still present. The kernels are \(\alpha A\) at \(x\) and \(A\) at \(y\). Their normalized state is
 \[
@@ -316,6 +352,8 @@ This is the Lean route. The source-comparison entries explain its relationship t
 
 - [[node:kl.detail.kernel_exact_sequence]]
 - [[node:kl.comparison.normalized_kernel]]
+- [[node:kl.comparison.raw_edge_increment]]
+- [[node:kl.comparison.edge_normalization]]
 - [[node:kl.comparison.edge_increment]]
 
 ### A complete schedule

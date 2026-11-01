@@ -1,0 +1,671 @@
+{
+  "scope": "Authored keyword introductions and reading routes; linked-node proof exposition has its separate review.",
+  "keyword_count": 36,
+  "guides": [
+    {
+      "keyword": "Bruhat",
+      "file": "docs/knowledge/keywords/Bruhat.md",
+      "title": "Bruhat order, ranks and reflection edges",
+      "primary_topic": "kl.coxeter",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.foundations.bruhat_order",
+        "kl.foundations.bruhat_step",
+        "kl.foundations.subword",
+        "kl.detail.bruhat_lifting",
+        "kl.foundations.rank_preservation",
+        "kl.paths.graph_invariance"
+      ],
+      "content_sha256": "4a13e2cc064f8b1da94cbd1531966fdb3525287710bb6a44a9198b8b77823d1b",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "Coxeter",
+      "file": "docs/knowledge/keywords/Coxeter.md",
+      "title": "Words, reflections and Coxeter combinatorics",
+      "primary_topic": "kl.coxeter",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.coxeter.word_data",
+        "kl.detail.strong_exchange",
+        "kl.foundations.subword",
+        "kl.coxeter.dihedral_reduced_words",
+        "kl.foundations.finite_intervals",
+        "kl.coxeter.parabolic_subgroups"
+      ],
+      "content_sha256": "01a8ebfde06b59324450c45b274834163dff4d722765be9dd0ff62f8a9362d2a",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "Frobenius-duality",
+      "file": "docs/knowledge/keywords/Frobenius-duality.md",
+      "title": "Reflection traces, word objects and section duality",
+      "primary_topic": "kl.word_modules",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.word.invariant_subalgebra",
+        "kl.word.reflection_trace",
+        "kl.word.frobenius_data",
+        "kl.word.simple_frobenius_data",
+        "kl.notes.bott_samelson",
+        "kl.sheaves.word_section_pairing",
+        "kl.detail.boundary_pairing"
+      ],
+      "content_sha256": "e676b1f54c5094daf1821d2a2b3b23f7a413488f7e3c292683f1c1f8fcc33021",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "Hecke",
+      "file": "docs/knowledge/keywords/Hecke.md",
+      "title": "Hecke operators, the bar transform and canonical polynomials",
+      "primary_topic": "kl.02_hecke_polynomials",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.definitions.hecke_operators",
+        "kl.definitions.hecke_quadratic_relation",
+        "kl.definitions.bar_involution",
+        "kl.detail.rtilde_family",
+        "kl.detail.rtilde_recursion",
+        "kl.foundations.canonical_kl"
+      ],
+      "content_sha256": "29c15984d106d4fcab603f5a00e4a537921d84550bc488a5b72ece64687f34f4",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "Hilbert-comparison",
+      "file": "docs/knowledge/keywords/Hilbert-comparison.md",
+      "title": "From selected kernels to the normalized one-edge comparison",
+      "primary_topic": "kl.invariance",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.comparison.normalized_kernel",
+        "kl.detail.kernel_exact_sequence",
+        "kl.algebra.saturated_image_hilbert",
+        "kl.algebra.shifted_image_hilbert",
+        "kl.comparison.raw_edge_increment",
+        "kl.comparison.edge_normalization",
+        "kl.comparison.edge_increment"
+      ],
+      "content_sha256": "c499fb576b4874303bc4dcc0363e36b7669cf09134c686a42846f5e508db7e25",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "Kazhdan-Lusztig",
+      "file": "docs/knowledge/keywords/Kazhdan-Lusztig.md",
+      "title": "The proof of combinatorial invariance",
+      "primary_topic": "kl.invariance",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.foundations.bruhat_order",
+        "kl.definitions.hecke_operators",
+        "kl.definitions.bar_involution",
+        "kl.foundations.canonical_kl",
+        "kl.detail.polynomial_labels",
+        "kl.paths.graph_invariance",
+        "kl.paths.dyer_paths",
+        "kl.sheaves.boundary_sheaf",
+        "kl.duality.actual_character_reciprocity",
+        "kl.local.localized_decomposition",
+        "kl.local.edge_inclusion",
+        "kl.comparison.edge_increment",
+        "kl.detail.schedule_comparison",
+        "kl.detail.endpoint_equality",
+        "kl.detail.reverse_projectivity",
+        "kl.comparison.rtilde_invariance",
+        "kl.main.kl_finite",
+        "kl.main.finite_interval_model",
+        "kl.main.combinatorial_invariance"
+      ],
+      "content_sha256": "ca13fb9b0e3f539999ebeeceb4d9a5223671679b59a4e18d0ebbcc76dfc818f4",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "background",
+      "file": "docs/knowledge/keywords/background.md",
+      "title": "Prerequisites that meet in the main proof",
+      "primary_topic": "kl.graded_algebra",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.coxeter.word_data",
+        "kl.detail.strong_exchange",
+        "kl.realization.tits_form",
+        "kl.detail.polynomial_labels",
+        "kl.sheaves.graded_module",
+        "kl.detail.hilbert_values",
+        "kl.algebra.hilbert_convergence"
+      ],
+      "content_sha256": "1c4f3b96ab17158f722fcf642b30de91375fd604eea7224874275bed872b0a4f",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "bruhat_order",
+      "file": "docs/knowledge/keywords/bruhat_order.md",
+      "title": "Strong exchange as an input to Bruhat order",
+      "primary_topic": "kl.coxeter",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.coxeter.word_data",
+        "kl.detail.strong_exchange",
+        "kl.foundations.subword",
+        "kl.detail.bruhat_lifting",
+        "kl.paths.graph_invariance"
+      ],
+      "content_sha256": "14f120f7020bfa2ef9d63b59544a1953fa9317095511b11b0e294d22558d0129",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "coefficient-rings",
+      "file": "docs/knowledge/keywords/coefficient-rings.md",
+      "title": "Root labels, edge quotients and plane localizations",
+      "primary_topic": "kl.localization",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.algebra.coefficient_algebra",
+        "kl.algebra.edge_coefficient_ring",
+        "kl.sheaves.edge_coefficient_module",
+        "kl.local.plane_prime_membership",
+        "kl.local.localized_edge_ring",
+        "kl.local.localized_root_reduction",
+        "kl.local.coset_edge_reduction"
+      ],
+      "content_sha256": "1cdc9072f8c5422ef6cb635210fbd024c550f7800460d63d6cb0f2b4d30d9175",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "combinatorial_invariance",
+      "file": "docs/knowledge/keywords/combinatorial_invariance.md",
+      "title": "Exact endpoints in the proof of combinatorial invariance",
+      "primary_topic": "kl.invariance",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.detail.graded_character",
+        "kl.comparison.normalized_kernel",
+        "kl.duality.normalized_character_endpoints",
+        "kl.duality.actual_character_reciprocity",
+        "kl.detail.endpoint_equality",
+        "kl.comparison.no_deficit",
+        "kl.comparison.rtilde_invariance",
+        "kl.main.kl_finite",
+        "kl.main.combinatorial_invariance"
+      ],
+      "content_sha256": "9a5c9cbb8a5b6025a4393c3a14ed4c0608a7dd2b11fac15777b5688d3f903aab",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "comparison_and_freeness",
+      "file": "docs/knowledge/keywords/comparison_and_freeness.md",
+      "title": "Positive transfers, exact endpoints and recovered free kernels",
+      "primary_topic": "kl.invariance",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.comparison.positive_transfer",
+        "kl.detail.transfer_properties",
+        "kl.detail.schedule_state",
+        "kl.detail.schedule_comparison",
+        "kl.comparison.no_deficit",
+        "kl.detail.reverse_projectivity",
+        "kl.comparison.reverse_freeness"
+      ],
+      "content_sha256": "9d1ab539d600230433e68639722aaf82fb497164742551a0dc79096ddae0514e",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "correction-factors",
+      "file": "docs/knowledge/keywords/correction-factors.md",
+      "title": "Geometric weights and the correction acting on an edge image",
+      "primary_topic": "kl.localization",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.geometry.plane_weights",
+        "kl.geometry.plane_weight_sum",
+        "kl.detail.edge_factor",
+        "kl.local.edge_factor_lift",
+        "kl.local.factor_plane_reduction",
+        "kl.local.edge_factor_action_properties",
+        "kl.comparison.edge_normalization"
+      ],
+      "content_sha256": "9012df4b55270ef0aa32ab1a8c2fd0f6968e733148c8316c27235a77b427b9c9",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "definitions",
+      "file": "docs/knowledge/keywords/definitions.md",
+      "title": "The quadratic relation and the constructions it supports",
+      "primary_topic": "kl.02_hecke_polynomials",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.definitions.hecke_operators",
+        "kl.definitions.hecke_quadratic_relation",
+        "kl.notes.hecke_action",
+        "kl.definitions.bar_involution",
+        "kl.detail.rtilde_family",
+        "kl.foundations.canonical_kl"
+      ],
+      "content_sha256": "6bb09aaa22584f144dcca88be1d7027b4e641481d2e08a08046b596a503f59f9",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "dihedral",
+      "file": "docs/knowledge/keywords/dihedral.md",
+      "title": "The rank-two systems used by the proof",
+      "primary_topic": "kl.reflection_combinatorics",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.coxeter.alternating_words",
+        "kl.coxeter.dihedral_bruhat_order",
+        "kl.dihedral.odd_reflection_edges",
+        "kl.detail.plane_basis",
+        "kl.dihedral.induced_system",
+        "kl.dihedral.plane_coset_graph",
+        "kl.notes.relative_dihedral_transport"
+      ],
+      "content_sha256": "7a1c2518dc6b7af537161838824982846ae5e8fc8da257c65c4bf2319ce075d9",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "dihedral-counts",
+      "file": "docs/knowledge/keywords/dihedral-counts.md",
+      "title": "From signed vertices to the transported later-edge count",
+      "primary_topic": "kl.reflection_combinatorics",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.dihedral.signed_words",
+        "kl.dihedral.good_indices",
+        "kl.dihedral.prefix_roots",
+        "kl.dihedral.angular_order",
+        "kl.dihedral.signed_counts",
+        "kl.dihedral.native_count_difference",
+        "kl.dihedral.indicator_transport",
+        "kl.paths.later_count"
+      ],
+      "content_sha256": "bf8c19ebdc6fc8eac57bebec575472d92cf1b50525f4e5cd2c75378c117164c5",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "duality_and_characters",
+      "file": "docs/knowledge/keywords/duality_and_characters.md",
+      "title": "From sheaf duality to character reciprocity and endpoints",
+      "primary_topic": "kl.sheaves",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.detail.graded_character",
+        "kl.sheaves.supported_stalk_duality",
+        "kl.duality.word_kernel_character",
+        "kl.duality.boundary_kernel_character",
+        "kl.duality.actual_character_reciprocity",
+        "kl.duality.scaled_reciprocity",
+        "kl.duality.normalized_character_endpoints"
+      ],
+      "content_sha256": "ffd7435577fd0f42438790dc05dc53a6bcf8453e547226136bd3023d76fa44e2",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "embedded-images",
+      "file": "docs/knowledge/keywords/embedded-images.md",
+      "title": "Two submodules of one edge module",
+      "primary_topic": "kl.localization",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.detail.edge_images",
+        "kl.detail.scaled_images",
+        "kl.local.image_isomorphism_transport",
+        "kl.local.model_sum_scaled_images",
+        "kl.local.localized_boundary_scaled_images",
+        "kl.local.boundary_edge_inclusion",
+        "kl.comparison.raw_edge_increment"
+      ],
+      "content_sha256": "0427b18cfb56fccd889860b8971d90d15016f093204b0943310d5a52e39cf32b",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "global-inclusion",
+      "file": "docs/knowledge/keywords/global-inclusion.md",
+      "title": "From plane-local equality to global image inclusion",
+      "primary_topic": "kl.localization",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.notes.upper_image_free",
+        "kl.local.outgoing_label_product",
+        "kl.local.outgoing_product_image",
+        "kl.local.root_factor_divisibility",
+        "kl.local.scaled_image_denominator",
+        "kl.local.plane_denominator_membership",
+        "kl.local.edge_inclusion"
+      ],
+      "content_sha256": "eb9c3a85fab96afe22f8950f65d7339cd8b2a9771d63e7edd3a97f015b842bb6",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "graded-algebra",
+      "file": "docs/knowledge/keywords/graded-algebra.md",
+      "title": "Graded coefficients, module data and Hilbert calculations",
+      "primary_topic": "kl.graded_algebra",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.algebra.grading_components",
+        "kl.sheaves.graded_module",
+        "kl.algebra.component_transport",
+        "kl.detail.hilbert_values",
+        "kl.algebra.hilbert_convergence",
+        "kl.algebra.shifted_image_hilbert",
+        "kl.algebra.saturated_image_hilbert",
+        "kl.comparison.normalized_kernel"
+      ],
+      "content_sha256": "5a7c8cf0e8066717b1b38d26e986c19b4ace08af0c842e003948addf0b1f7eb0",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "graded-duality",
+      "file": "docs/knowledge/keywords/graded-duality.md",
+      "title": "Local intersection data and related character conditions",
+      "primary_topic": "kl.sheaves",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.detail.local_intersection",
+        "kl.duality.local_intersection_properties",
+        "kl.detail.local_diagonal_degree",
+        "kl.duality.costalk_freeness_condition",
+        "kl.duality.character_identity_condition",
+        "kl.duality.character_endpoint_substitution"
+      ],
+      "content_sha256": "3375e24a894ecb7fee4cd81aad0cd8a7d71d6aaea3a4a634508b429cfad10e6d",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "hecke_polynomials",
+      "file": "docs/knowledge/keywords/hecke_polynomials.md",
+      "title": "The R-family and the later KL uniqueness step",
+      "primary_topic": "kl.02_hecke_polynomials",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.definitions.bar_involution",
+        "kl.detail.rtilde_family",
+        "kl.detail.rtilde_recursion",
+        "kl.foundations.rtilde",
+        "kl.paths.dyer_paths",
+        "kl.comparison.rtilde_invariance",
+        "kl.main.kl_finite"
+      ],
+      "content_sha256": "d5c3c5ffe05ac130e7646cdbbc331041fcce62da1735da3abc41d933d457b1e7",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "induction",
+      "file": "docs/knowledge/keywords/induction.md",
+      "title": "The two induction stages of combinatorial invariance",
+      "primary_topic": "kl.invariance",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.comparison.free_suffixes",
+        "kl.detail.rtilde_family",
+        "kl.comparison.rtilde_step",
+        "kl.comparison.rtilde_row_comparison",
+        "kl.detail.endpoint_equality",
+        "kl.comparison.rtilde_invariance",
+        "kl.main.kl_finite",
+        "kl.main.combinatorial_invariance"
+      ],
+      "content_sha256": "00874d7586211b8586aee769cc084b72d9a11184e95eb7b8662e4fa6feeb377e",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "interpolation",
+      "file": "docs/knowledge/keywords/interpolation.md",
+      "title": "Orbit-spline interpolation and flabbiness of the models",
+      "primary_topic": "kl.localization",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.local.orbit_splines",
+        "kl.local.orbit_spline_congruence",
+        "kl.local.orbit_spline_factors",
+        "kl.local.flow_down",
+        "kl.local.dihedral_interpolation",
+        "kl.local.induced_label_primes",
+        "kl.local.flow_down_flabbiness"
+      ],
+      "content_sha256": "c448e30a916afbfc30d0343f0f4941587ba825c75d78644dd8b618efa3c575ec",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "intervals",
+      "file": "docs/knowledge/keywords/intervals.md",
+      "title": "Finite intervals and their transported structure",
+      "primary_topic": "kl.coxeter",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.foundations.interval",
+        "kl.foundations.finite_intervals",
+        "kl.foundations.rank_preservation",
+        "kl.notes.relative_dihedral_intervals",
+        "kl.notes.relative_dihedral_transport",
+        "kl.main.finite_interval_model",
+        "kl.main.finite_model_transport"
+      ],
+      "content_sha256": "2f5c23fa0755e3b0a3f85e52cd10ae3789f6fce94ef093bd9b2c79505b9679d8",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "introduction",
+      "file": "docs/knowledge/keywords/introduction.md",
+      "title": "A starting route into the Blueprint",
+      "primary_topic": "kl.invariance",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.coxeter.word_data",
+        "kl.foundations.bruhat_order",
+        "kl.definitions.hecke_operators",
+        "kl.sheaves.graph_sheaf",
+        "kl.sheaves.upward_kernel",
+        "kl.comparison.normalized_kernel",
+        "kl.comparison.edge_increment",
+        "kl.main.combinatorial_invariance"
+      ],
+      "content_sha256": "5415a964af1a546c1960899ff0f6ddaff60d500539b3121dde4d78c280b57bd8",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "local-comparison",
+      "file": "docs/knowledge/keywords/local-comparison.md",
+      "title": "The actual local scaled-image calculation",
+      "primary_topic": "kl.localization",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.local.coset_later_selections",
+        "kl.local.supported_count_weight",
+        "kl.local.coset_edge_reduction",
+        "kl.local.coset_model_scaled_images",
+        "kl.local.localized_boundary_scaled_images",
+        "kl.local.ambient_later_edges",
+        "kl.local.ambient_plane_scaled_images"
+      ],
+      "content_sha256": "2cdeeec31374a55c49e22af4528cb5fc29bed831e1c261dc8471efcb0fb98c51",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "local-decomposition",
+      "file": "docs/knowledge/keywords/local-decomposition.md",
+      "title": "The finite construction of a local model decomposition",
+      "primary_topic": "kl.localization",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.detail.local_models",
+        "kl.local.minimal_covers",
+        "kl.local.cover_lift_surjectivity",
+        "kl.local.cover_splitting",
+        "kl.local.model_sum_step",
+        "kl.local.model_decomposition",
+        "kl.local.localized_decomposition"
+      ],
+      "content_sha256": "34b289ab7331805c2d7201596d2663924b9093dd6083493875850db21769fdfc",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "local-model-transport",
+      "file": "docs/knowledge/keywords/local-model-transport.md",
+      "title": "Transporting structure models to the actual plane coset",
+      "primary_topic": "kl.localization",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.detail.structure_sheaves",
+        "kl.detail.dihedral_model_properties",
+        "kl.dihedral.finite_common_upper",
+        "kl.local.structure_model_transport",
+        "kl.local.coset_structure_models",
+        "kl.detail.local_models",
+        "kl.local.coset_kernel_products"
+      ],
+      "content_sha256": "a3584de9c5c6940c3c2fc563b0f0f33e5a30e23339cbccc31042215d2da6f286",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "localization",
+      "file": "docs/knowledge/keywords/localization.md",
+      "title": "Localization from root labels to actual edge images",
+      "primary_topic": "kl.localization",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.detail.localization_rings",
+        "kl.local.plane_prime_membership",
+        "kl.notes.sheaf_localization",
+        "kl.local.localized_coset",
+        "kl.local.localized_decomposition",
+        "kl.local.ambient_plane_scaled_images",
+        "kl.local.scaled_image_denominator"
+      ],
+      "content_sha256": "61d312766d73d45ace57c80ed7473cd3b30bc0f39a80c845f33845dda2a5fde6",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "module-algebra",
+      "file": "docs/knowledge/keywords/module-algebra.md",
+      "title": "The module calculations behind image comparison and freeness",
+      "primary_topic": "kl.graded_algebra",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.algebra.scalar_quotient",
+        "kl.algebra.scalar_quotient_basis",
+        "kl.algebra.scalar_image_free",
+        "kl.algebra.tensor_local_denominator",
+        "kl.algebra.projective_local_membership",
+        "kl.algebra.kernel_projectivity"
+      ],
+      "content_sha256": "803f911e482661f9eaf47ad16e8bdc886f2a29668534504081a884de2594ab6c",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "moment_graph_sheaves",
+      "file": "docs/knowledge/keywords/moment_graph_sheaves.md",
+      "title": "Graph sheaves, selected kernels and the boundary construction",
+      "primary_topic": "kl.sheaves",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.detail.ordered_graph",
+        "kl.sheaves.graph_sheaf",
+        "kl.sheaves.graded_module",
+        "kl.sheaves.upward_kernel",
+        "kl.sheaves.flabbiness",
+        "kl.sheaves.minimal_cover",
+        "kl.sheaves.boundary_sheaf",
+        "kl.local.localized_decomposition"
+      ],
+      "content_sha256": "8234f02dd02ced170e079171b657c822504bfbdd3ae2aea52493cfb658ead719",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "realization",
+      "file": "docs/knowledge/keywords/realization.md",
+      "title": "The Tits form and the extended realization",
+      "primary_topic": "kl.realizations",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.realization.tits_form",
+        "kl.realization.linear_reflection",
+        "kl.detail.positive_roots",
+        "kl.notes.extended_realization",
+        "kl.realization.common_reflection_plane",
+        "kl.algebra.coefficient_algebra"
+      ],
+      "content_sha256": "3c22fbf71257b5d30771c313da2f2056c31f6d3697e2e18291ec79564da3696f",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "realizations_and_grading",
+      "file": "docs/knowledge/keywords/realizations_and_grading.md",
+      "title": "From root geometry to graded polynomial labels",
+      "primary_topic": "kl.realizations",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.notes.extended_realization",
+        "kl.algebra.coefficient_algebra",
+        "kl.detail.polynomial_labels",
+        "kl.algebra.root_label_primes",
+        "kl.algebra.edge_coefficient_ring",
+        "kl.algebra.hilbert_scalar_quotient"
+      ],
+      "content_sha256": "29ade775e187875ed8d5a345486ef38ab68e325392d56ecd828cd2b898c5f3c6",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "reflection_orders",
+      "file": "docs/knowledge/keywords/reflection_orders.md",
+      "title": "Geometric root orders and transported edge schedules",
+      "primary_topic": "kl.reflection_combinatorics",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.order.root_slopes",
+        "kl.order.slope_cone",
+        "kl.detail.geometric_functional",
+        "kl.detail.diamond_reconstruction",
+        "kl.detail.transported_schedule",
+        "kl.paths.schedule_suffixes",
+        "kl.paths.dyer_paths"
+      ],
+      "content_sha256": "9a864cb47fc4a7ae0e37a1f84aa6feea9c7008a50e844b6bbc8eb597c95b0b76",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "root-geometry",
+      "file": "docs/knowledge/keywords/root-geometry.md",
+      "title": "Root signs, planes and geometric weights",
+      "primary_topic": "kl.reflection_combinatorics",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.detail.positive_roots",
+        "kl.detail.root_inversions",
+        "kl.realization.root_planes",
+        "kl.geometry.plane_weights",
+        "kl.geometry.plane_inversion_change",
+        "kl.geometry.plane_weight_sum",
+        "kl.local.factor_relative_degree"
+      ],
+      "content_sha256": "2d5acf73a6c1974adb13834e8afa0fc5555917b4f18318e3a720404c75b818aa",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    },
+    {
+      "keyword": "sheaf-operations",
+      "file": "docs/knowledge/keywords/sheaf-operations.md",
+      "title": "Sheaf operations that retain the actual kernel and image maps",
+      "primary_topic": "kl.sheaves",
+      "status": "reviewed",
+      "reading_nodes": [
+        "kl.detail.base_change",
+        "kl.sheaves.flat_section_base_change",
+        "kl.sheaves.base_change_properties",
+        "kl.sheaves.pullback_selected_kernels",
+        "kl.sheaves.upper_interval_kernels",
+        "kl.local.localized_coset_kernels"
+      ],
+      "content_sha256": "ba84ddcb5c11f89c8c1f88e3b46582993062aec852fb37c5cc82b33f3a8257ee",
+      "review": "Reviewed the introduction as a mathematical reading guide: starting objects, the sequence of linked results and the role of those results in the main invariance proof. The reading route contains definitions and proved statements; it is navigation rather than an added proof-dependency graph."
+    }
+  ],
+  "specific_scope_checks": [
+    "The sheaf guides retain ModuleData.nonneg; generic Hilbert-module results are described separately.",
+    "The realization guides identify the finite-generator setting and extension by the dual of the radical.",
+    "The image-comparison guides retain the upper-kernel freeness hypothesis for the global inclusion.",
+    "The character guides use the actual sheaf characters, with canonical KL identification in its later polynomial step.",
+    "The local-intersection guide retains the nonzero-diagonal hypothesis.",
+    "The main-theorem route includes the geometric path identity, conditional schedule comparison, exact endpoint implication and reverse projectivity before the simultaneous induction.",
+    "The finite dihedral reflection parameters use odd residues modulo twice the maximum intrinsic length; the two-reflection plane statement retains distinctness."
+  ]
+}

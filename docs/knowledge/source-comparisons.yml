@@ -178,6 +178,7 @@ comparisons:
   - kl.detail.schedule_state
   - kl.duality.scaled_stalk
   - kl.duality.scaled_reciprocity
+  - kl.comparison.edge_normalization
   paper_labels:
   - eq:state
   - eq:step
@@ -187,6 +188,8 @@ comparisons:
   - OAI.KLInvariance.BruhatGraph.normalized_edge_increment_le
   - OAI.KLInvariance.BruhatGraph.scaledStalk
   - OAI.KLInvariance.BruhatGraph.scaledStalk_reciprocity
+  - OAI.KLInvariance.Comparison.edge_scalar_identity
+  - OAI.KLInvariance.BruhatGraph.edge_stateScale
   paper: The comparison uses \(0<q<1\), scale \(q^{-d/2}(1-q)^N\), and transfer coefficient
     \(q^{-1/2}-q^{1/2}\).
   lean: The comparison uses \(0<t<1\) and substitutes \(q=t^2\). Its scale is \(t^{-d}(1-t^2)^N\)
@@ -1561,3 +1564,70 @@ comparisons:
     kernels and the upper freeness hypothesis.
   consequence: The Blueprint states the exact suffix assumption and distinguishes
     weak list ordering from the strict score test at the two current endpoints.
+- id: homogeneous-image-hilbert-calculus
+  kind: Actual image pieces and exact scalar-image values
+  nodes:
+  - kl.algebra.shifted_image_hilbert
+  - kl.algebra.saturated_image_hilbert
+  paper_labels:
+  - eq:step
+  - edge:bound
+  lean_declarations:
+  - OAI.KLInvariance.Hilbert.shiftedImagePieceMap
+  - OAI.KLInvariance.Hilbert.shiftedImagePieceEquiv
+  - OAI.KLInvariance.Hilbert.shifted_image_value
+  - OAI.KLInvariance.Hilbert.imageMap_ker
+  - OAI.KLInvariance.Hilbert.saturated_image_value
+  paper: The comparison proof multiplies the upper-kernel Hilbert series by the linear-quotient
+    factor and the correction degree shift.
+  lean: The general image-shift theorem constructs an actual isomorphism of homogeneous
+    intersection pieces and reindexes a summable integer-indexed series. The saturated-image
+    theorem separately identifies the restricted map’s kernel with the scalar image,
+    applies degreewise exactness and subtracts its Hilbert value.
+  consequence: 'The Blueprint explains both constructions and retains their distinct
+    generic parameter hypotheses: nonzero q for the shift and positive q for saturated-image
+    exactness, each with explicit summability.'
+- id: one-condition-integer-hilbert-exactness
+  kind: Integer-graded exactness before the polynomial specialization
+  nodes:
+  - kl.detail.kernel_exact_sequence
+  paper_labels:
+  - eq:state
+  - eq:step
+  lean_declarations:
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.upwardKernel_insert
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.hilbert_edge_increment
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.kernelHilbert_edge
+  paper: The notes use the exact sequence for removing one kernel condition and evaluate
+    the Hilbert series of finitely generated kernels bounded below in degree.
+  lean: The sheaf lemma uses integer-indexed pieces, positive q and summability of
+    the original selected kernel. Its GradedSheaf data consist of ModuleData objects
+    whose nonneg field makes all negative pieces zero. The polynomial specialization
+    supplies finite piece dimensions and convergence for 0<q<1. Adding an already-present
+    condition gives the same kernel and zero image.
+  consequence: The Blueprint retains both the integer indexing and the nonnegative
+    support of the sheaf modules. The broader generic Hilbert-module lemmas and their
+    negative-degree example are developed separately.
+- id: raw-edge-hilbert-equality
+  kind: Numerical equality detects equality of the embedded images
+  nodes:
+  - kl.comparison.raw_edge_increment
+  paper_labels:
+  - eq:step
+  - eq:image-equality
+  lean_declarations:
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.shifted_upperImage_value
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.edge_increment_le
+  - OAI.KLInvariance.MomentGraph.GradedSheaf.edge_increment_eq_iff
+  - OAI.KLInvariance.BruhatGraph.actual_edge_increment_le
+  - OAI.KLInvariance.BruhatGraph.actual_edge_increment_eq_iff
+  paper: The notes bound the lower-kernel increase by the corrected upper-image Hilbert
+    value. After the global endpoint comparison forces equality, positive degreewise
+    defects recover equality of the two actual images.
+  lean: The single-edge theorem proves the inequality and its exact equality criterion
+    together for a homogeneous injective edge map, conditional on the actual image
+    inclusion. The Bruhat specialization verifies the label and correction regularity
+    hypotheses directly.
+  consequence: The Blueprint preserves the conditional image-inclusion interface,
+    explains the positive defect in every integer degree and treats the actual correction
+    map as a specialization of the generic image theorem.

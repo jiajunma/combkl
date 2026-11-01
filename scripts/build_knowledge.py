@@ -90,6 +90,78 @@ def validate_proof_walkthroughs(nodes):
             "check_scope": "Matches reviewed prose; does not certify mathematical completeness"}
 
 
+def validate_keyword_guides(nodes, knowledge: Path = KNOWLEDGE) -> dict:
+    """Require reviewed reading guides; hashes check staleness, not prose quality."""
+    from tools.knowledge.node_refs import NODE_REF_RE
+    from tools.knowledge.parser import parse_frontmatter
+
+    by_id = {node.id: node for node in nodes}
+    keywords = {tag for node in nodes for tag in node.tags}
+    directory = knowledge / "keywords"
+    paths = {}
+    for keyword in sorted(keywords):
+        path = directory / f"{keyword}.md"
+        if path.resolve().parent != directory.resolve():
+            raise ValueError(f"Unsafe keyword-guide path: {keyword!r}")
+        paths[keyword] = path
+    missing = [key for key, path in paths.items() if not path.is_file()]
+    if missing:
+        raise ValueError(f"Missing keyword guides: {missing}")
+
+    data = json.loads((knowledge / "reviews" / "keyword-guide-review.json").read_text())
+    entries = data.get("guides", [])
+    records = {entry["keyword"]: entry for entry in entries}
+    if len(records) != len(entries) or set(records) != keywords:
+        raise ValueError("Keyword-guide review coverage does not match the current keywords")
+    topics = {
+        ".".join(node.primary_topic.split(".")[:depth])
+        for node in nodes
+        for depth in range(1, len(node.primary_topic.split(".")) + 1)
+    }
+    reading_count = 0
+    for keyword, path in paths.items():
+        raw = path.read_bytes()
+        metadata, body = parse_frontmatter(raw.decode("utf-8"), path)
+        scope = metadata.get("primary_topic")
+        if not isinstance(scope, str) or scope not in topics:
+            raise ValueError(f"Unknown keyword-guide topic: {keyword}")
+        title = metadata.get("title")
+        if not isinstance(title, str) or not title.strip():
+            raise ValueError(f"Missing keyword-guide title: {keyword}")
+        introduction, marker, _ = body.partition("## Reading sequence")
+        if not marker or not introduction.strip():
+            raise ValueError(f"Missing introductory exposition in keyword guide: {keyword}")
+        if re.search(r"[\u3400-\u4dbf\u4e00-\u9fff]", title + body):
+            raise ValueError(f"Non-English keyword guide: {keyword}")
+        if re.search(r"^(?:#{1,6}\s+)?(?:What|Why|How)\b", title, re.I) or re.search(
+            r"^#{1,6}\s+(?:What|Why|How)\b", body, re.I | re.M
+        ):
+            raise ValueError(f"Question-form keyword-guide heading: {keyword}")
+        references = {match.group(1) for match in NODE_REF_RE.finditer(body)}
+        unknown = references - by_id.keys()
+        if unknown:
+            raise ValueError(f"Unknown keyword-guide node: {keyword}: {sorted(unknown)}")
+        record = records[keyword]
+        if record.get("status") != "reviewed":
+            raise ValueError(f"Keyword guide has no exposition review: {keyword}")
+        if record.get("content_sha256") != hashlib.sha256(raw).hexdigest():
+            raise ValueError(f"Keyword guide changed since review: {keyword}")
+        route = record.get("reading_nodes")
+        if not isinstance(route, list) or any(
+            not isinstance(node_id, str) or node_id not in references for node_id in route
+        ):
+            raise ValueError(f"Invalid keyword-guide reading route: {keyword}")
+        kinds = {by_id[node_id].kind for node_id in route}
+        if not {"definition", "theorem"} <= kinds:
+            raise ValueError(f"Keyword route needs a definition and theorem: {keyword}")
+        reading_count += len(route)
+    return {
+        "keyword_guides_checked": len(paths),
+        "keyword_reading_references_checked": reading_count,
+        "keyword_guide_check_scope": "Coverage, references and reviewed-text freshness; exposition reviewed separately",
+    }
+
+
 def validate_blueprint_hierarchy(nodes, index, config) -> dict:
     """Check the mathematical chapter registry and source correspondence."""
     registered = {topic.id for topic in config.topics if topic.id != "kl"}
@@ -377,6 +449,7 @@ def main() -> None:
     source_comparisons = update_comparisons(KNOWLEDGE, nodes, index, repository, check=True)
     navigation = DefinitionLinks.load(KNOWLEDGE, nodes).summary()
     hierarchy = validate_blueprint_hierarchy(nodes, index, config)
+    keyword_guides = validate_keyword_guides(nodes)
     inventory = declaration_inventory(index, nodes)
     diagnostics = check_knowledge_base(KNOWLEDGE, strict_lean_placeholders=True)
     for diagnostic in diagnostics:
@@ -430,6 +503,7 @@ def main() -> None:
         "node_statuses": dict(Counter(node.status for node in nodes)),
         "proof_exposition_review": proof_detail,
         "source_comparisons": source_comparisons,
+        "keyword_guides": keyword_guides,
         "diagnostics": [str(d) for d in diagnostics],
         "browser_automation_used": False,
         **checks,
